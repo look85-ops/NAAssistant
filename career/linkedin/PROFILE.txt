@@ -1,0 +1,61 @@
+LinkedIn — тексты для перезапуска (готово к вставке)
+
+1) Headline (A/B на 2 недели)
+- Неделя 1 (использовать сейчас): Руководитель L&D × AI | Enablement для продаж и маркетинга | Минск (релокация, осень 2026)
+- Неделя 2: Менеджер образовательных проектов / Senior L&D / Методолог
+
+Метрики: Search Appearances, Profile Views, входящие сообщения. Переключать варианты раз в 7 дней и сравнить CTR (Views/Search Appearances).
+
+2) About / Summary — LinkedIn‑оптимизировано (≤ 2 600 знаков)
+Помогаю компаниям превращать обучение в результат: рост конверсии и win rate, снижение time‑to‑productivity, рост NPS. Соединяю L&D, маркетинг и AI: провожу discovery, проектирую форматы (microlearning, playbooks/job aids), настраиваю онбординг и клиентское обучение (Customer Education). Измеряю влияние через Learning Analytics и adoption.
+
+Работаю data‑informed и продуктово: гипотезы → MVP → итерации → метрики. Выравниваю ожидания через матрицу компетенций и role‑based треки. Фокус — Enablement для продаж и маркетинга и быстрый выход на продуктивность.
+
+Готовлюсь к релокации в Минск осенью 2026; открыта к гибридному и удалённому формату. Ищу роль Learning Product Manager / руководителя L&D, где обучение — рычаг роста бизнеса. Связаться: Telegram @mrk_natalia, email look85@gmail.com.
+
+3) Experience — LinkedIn‑оптимизировано
+
+Корпоративный университет ОАО «РЖД» — Главный методист / Менеджер образовательных проектов (2024–н.в.)
+- Запустила программу развития руководителей путевого комплекса: матрица компетенций, microlearning, playbooks/job aids, ToT; 400+ руководителей обучены (2024–2025).
+- Ввела Learning Analytics и когорты 30/60/90: NPS 9.7 (март 2026), рост adoption; программа масштабирована на новые ЦА.
+- Организовала отбор и подготовку 24 преподавателей из 8 регионов; аудит качества контента и пользовательского опыта.
+- Премия «Смарт Пирамида — 2024». Инструменты: Notion, Loom, Tilda, Google Suite, GenAI.
+
+Сбер — Менеджер образовательных программ (СберБизнес) (2021)
+- Вела портфель обучения для 9 000+ сотрудников: discovery с держателями функций, архитектура решений, работа с подрядчиком.
+- Перезапустила онбординг: модульная программа + job aids, role‑based треки; −30% TTP в пилотах, adoption ключевых инструментов до 85% (когорты 30/60/90).
+- Управляла командой (4 чел.) и вендором; QA контента и обновления по обратной связи.
+
+МГТУ им. Н.Э. Баумана — Менеджер образовательных проектов (2023–2024)
+- Разработала программы ДПО для внешних заказчиков «с нуля» (72+ ак.ч.): discovery, дизайн, запуск.
+- Спроектировала систему непрерывного развития: role‑based треки, методподдержка преподавателей; улучшение качества по обратной связи.
+
+4) Featured (закрепы)
+- Портфолио (Tilda): http://proposalmn.tilda.ws
+- 1–2 кейса (PDF/Notion): проблема → подход → метрики → артефакты (добавить по готовности)
+- Дека AI‑демо/фреймворк (PDF/Canva) — по готовности
+
+5) Skills (первые — ключевые)
+- Learning & Development; Enablement (Sales/Marketing); Онбординг
+- Customer Education; Learning Analytics; Матрица компетенций
+- Microlearning; Playbooks / Job Aids; Content Strategy
+- Stakeholder & Vendor Management; Training of Trainers
+- GenAI for Content; Prompting; Workflow Automation
+- Инструменты: Notion, Miro, Tilda, Canva, Loom, Google Suite
+
+6) Open to Work
+- Roles: Learning Product Manager; Head/Lead of L&D
+- Location: Минск (основной), Remote (EU‑friendly time)
+- Start: Q4 2026 (релокация); ранее — для remote/contract
+
+7) Контакты
+- Email: look85@gmail.com
+- Telegram: @mrk_natalia
+
+8) SEO — Top‑10 ключевых слов (вставить частями в About и Experience)
+Enablement; Онбординг; Learning Analytics; Customer Education; Microlearning; Playbooks/Job Aids; Матрица компетенций; Time‑to‑Productivity / Time‑to‑First‑Deal; Adoption; Data‑informed.
+
+9) План A/B‑теста заголовка
+- Неделя 1: Вариант «Руководитель L&D × AI … Минск (релокация)»
+- Неделя 2: Вариант «Менеджер образовательных проектов / Senior L&D / Методолог»
+- Метрики: Search Appearances, Profile Views, входящие; сравнить CTR (Views/Search Appearances) и конверсию во входящие.
