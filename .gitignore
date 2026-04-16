@@ -35,5 +35,8 @@ dist/
 *.secret
 secrets/
 
+# Personal files to keep local only
+резюме.txt
+
 # macOS (if synced across systems)
 .DS_Store

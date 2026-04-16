@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портфолио L&D-специалиста · v2</title>
+  <meta name="description" content="Наталья Марценюк — L&D-специалист, методолог. Создание образовательных систем с нуля: от отдельных курсов до программ федерального масштаба. Заказчики: СБЕР, ФРИИ, МойОфис, МГТУ им. Баумана, ОАО «РЖД».">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111111;
+      --bg-elev: #1A1A1A;
+      --text: #EAEAEA;
+      --muted: #BBBBBB;
+      --border: #444444;
+      --accent: #F2A900;
+      --radius: 12px;
+      --s1: 8px;
+      --s2: 16px;
+      --s3: 24px;
+      --s4: 32px;
+      --gap: 56px;
+      --maxw: 1080px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.25);
+      --t: 200ms ease;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--s3)}
+
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(17,17,17,.95),rgba(17,17,17,.7) 60%,rgba(17,17,17,0));backdrop-filter:blur(6px);border-bottom:1px solid rgba(68,68,68,.5)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:var(--s2) 0}
+    .brand{display:flex;align-items:center;gap:8px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block}
+    .brand .dot-sm{width:6px;height:6px;opacity:.9}
+    nav[aria-label="Основная"] a{color:var(--text);text-decoration:none;margin-left:var(--s3);font-weight:500}
+    nav[aria-label="Основная"] a:hover{color:var(--accent)}
+
+    section{padding:var(--gap) 0}
+    section h2{margin:0 0 var(--s3);font-size:clamp(28px,3vw,44px);font-weight:700;color:var(--accent);letter-spacing:-.4px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+    .card{background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s4);transition:border-color var(--t),transform var(--t);min-height:220px}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .card h3{margin:0 0 8px;font-size:20px}
+    .card ul{margin:0;padding-left:18px;color:var(--muted)}
+    .muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#111;font-weight:600;padding:10px 18px;border-radius:8px;text-decoration:none}
+
+    .hero{padding:calc(var(--gap) + 24px) 0 var(--gap);border-bottom:1px solid var(--border);background:radial-gradient(1200px 600px at 110% -10%,rgba(242,169,0,.12),rgba(0,0,0,0) 60%),radial-gradient(1200px 600px at -10% -20%,rgba(255,255,255,.02),rgba(0,0,0,0) 50%)}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:var(--s4);align-items:center}
+    .hero h1{margin:var(--s2) 0 var(--s2);font-size:clamp(30px,4vw,52px);line-height:1.15;letter-spacing:-.5px}
+    .hero h1 .role{font-size:.6em;font-weight:600;white-space:nowrap;color:var(--muted)}
+    .facts{margin:0 0 var(--s3)}
+    .facts p{margin:0 0 6px;color:var(--muted)}
+
+    .project{display:grid;grid-template-columns:1fr 2fr;gap:var(--s4);background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s4); margin-bottom: var(--s3)}
+    .project h3{margin:0 0 8px}
+    .project .meta{display:flex;gap:var(--s2);flex-wrap:wrap;margin:6px 0 12px}
+    .project .meta .tag{display:inline-flex;align-items:center;font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:#161616}
+    .project a.more{color:var(--accent);text-decoration:none}
+
+    .artifacts-list{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3)}
+    .artifact{display:block;background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s3);color:var(--text) !important;text-decoration:none}
+    .artifact .go{margin-top:8px;text-align:right;color:var(--accent);font-weight:600}
+    .artifact::after{content:''}
+    main a{color:var(--accent)}
+    .project a.more{display:block;text-align:right;margin-top:8px;color:var(--accent)}
+    .subcard{border:1px solid #EAEAEA;border-radius:10px;padding: var(--s3); margin-top: var(--s3)}
+    /* Swap hover behaviors */
+    #expertise .card:hover{border-color:var(--border);transform:none}
+    #artifacts .artifact{transition:border-color var(--t), transform var(--t)}
+    #artifacts .artifact:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+    footer{border-top:1px solid var(--border);padding:var(--s4) 0;color:var(--muted);font-size:14px}
+    @media(max-width:1024px){.grid-3{grid-template-columns:repeat(2,1fr)}.project{grid-template-columns:1fr}}
+    @media(max-width:768px){.grid-3,.artifacts-list{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Бренд">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="dot dot-sm" aria-hidden="true"></span>
+        <span class="dot dot-sm" aria-hidden="true"></span>
+      </div>
+      <nav aria-label="Основная">
+        <a href="#expertise">Экспертиза</a>
+        <a href="#artifacts">Артефакты</a>
+        <a href="#now">Сейчас</a>
+        <a href="#projects">Проекты</a>
+        <a href="#ai">AI</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Наталья Марценюк <span class="role">L&D-специалист · Методолог · 10+ лет опыта</span></h1>
+          <div class="facts">
+            <p>Создаю образовательные системы с нуля: от отдельных курсов до программ федерального масштаба.</p>
+            <p>Заказчики: СБЕР, ФРИИ, МойОфис, МГТУ им. Баумана, ОАО «РЖД».</p>
+          </div>
+          <a class="btn" href="#contacts">Связаться</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Экспертиза -->
+    <section id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <h2 id="expertise-title">Экспертиза</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Разработка образовательных платформ</h3>
+            <ul>
+              <li>Формирование ТЗ</li>
+              <li>Пользовательские сценарии</li>
+              <li>Учебные траектории</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Проектирование программ с нуля</h3>
+            <ul>
+              <li>Бриф заказчика, оценка ЦА</li>
+              <li>Концепция курса, ТЗ</li>
+              <li>Learning Journey Map, форматы и оценка</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Разработка контента</h3>
+            <ul>
+              <li>Очные, смешанные и онлайн‑форматы</li>
+              <li>Сценарии тренингов</li>
+              <li>Лонгриды и чек‑листы</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Методический аудит</h3>
+            <ul>
+              <li>Анализ действующих курсов</li>
+              <li>Актуализация и переработка</li>
+              <li>Методическое сопровождение</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Организация и процессы</h3>
+            <ul>
+              <li>Запуск системы обучения</li>
+              <li>Упаковка образовательных продуктов</li>
+              <li>Внутренние коммуникации</li>
+              <li>Команда преподавателей</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>AI‑интеграции</h3>
+            <ul>
+              <li>Прототипирование контента</li>
+              <li>Визуальный стиль</li>
+              <li>Автоматизация процессов</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Артефакты -->
+    <section id="artifacts" aria-labelledby="artifacts-title">
+      <div class="container">
+        <h2 id="artifacts-title">Рабочие артефакты и примеры</h2>
+        <div class="artifacts-list">
+          <a class="artifact" href="https://drive.google.com/file/d/1zmNa7zAke39dAOFRgZRqpw6BRV4LD9C5/view?usp=drive_link" target="_blank" rel="noopener">
+            Пример брифа для разработки программы обучения
+            <div class="go">Подробнее →</div>
+          </a>
+          <a class="artifact" href="https://drive.google.com/file/d/1KMIjz7ciqGxRQ0wimsKA1knm5bXQE80y/view?usp=drive_link" target="_blank" rel="noopener">
+            Пример ТЗ на разработку программы обучения
+            <div class="go">Подробнее →</div>
+          </a>
+          <a class="artifact" href="https://drive.google.com/file/d/1wLbDWVvUblXsFg1zpNUIA_PLZrHZx5cO/view?usp=drive_link" target="_blank" rel="noopener">
+            Пример концепции и структуры программы повышения квалификации
+            <div class="go">Подробнее →</div>
+          </a>
+          <a class="artifact" href="https://drive.google.com/file/d/1_GADWBff8WNUIrFctrkPK3JFO4UdqHcu/view?usp=drive_link" target="_blank" rel="noopener">
+            Фрагмент рабочей тетради
+            <div class="go">Подробнее →</div>
+          </a>
+          <a class="artifact" href="https://docs.google.com/spreadsheets/d/1Qp_DoPT3JJDwSHje1f6svnEQf0axdUz3/edit?usp=drive_link&ouid=109501770407362748133&rtpof=true&sd=true" target="_blank" rel="noopener">
+            Пример плана адаптации и обучения новых сотрудников
+            <div class="go">Подробнее →</div>
+          </a>
+          <a class="artifact" href="https://drive.google.com/file/d/1bXjFeK2iRzTJkgPU_wu2bkoY9d2S-oMv/view?usp=sharing" target="_blank" rel="noopener">
+            Фрагмент сценария для преподавателя
+            <div class="go">Подробнее →</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сейчас -->
+    <section id="now" aria-labelledby="now-title">
+      <div class="container">
+        <h2 id="now-title">Над чем я работаю сейчас</h2>
+        <div class="card" style="border-color: var(--accent);">
+          <h3 style="margin-top:0">Корпоративный университет РЖД</h3>
+          <div class="meta">
+            <span class="tag">Период: 02.2024 — наст.</span>
+            <span class="tag">Роль: Главный методист / Менеджер образовательных проектов</span>
+          </div>
+          <div class="subcard" style="border-color: var(--border)">
+            <h4 class="accent" style="margin:0 0 8px; color: var(--accent)">Программа развития профессиональных компетенций руководителей «Профессионал+. Путь»</h4>
+            <p><strong>Что сделала:</strong></p>
+            <ul>
+              <li>Разработала с нуля структуру и содержательную часть (190 ак. ч., смешанное)</li>
+              <li>Спроектировала методологию и учебно‑методические материалы</li>
+            </ul>
+            <p><strong>Для кого:</strong> руководители хозяйства пути и управления движением по всей сети.</p>
+            <p><strong>Цель:</strong> актуализация прикладных инженерных знаний и развитие единой управленческой культуры.</p>
+            <p><strong>Достижения:</strong></p>
+            <ul>
+              <li>490+ руководителей обучено</li>
+              <li>NPS 9,7</li>
+              <li>Премия «СМАРТ пирамида — 2024», «Лучшая программа корпоративного обучения», 2‑е место</li>
+              <li>Призёр конкурса лучших образовательных практик «Лидеры транспортного образования»</li>
+            </ul>
+            <a class="more" href="https://drive.google.com/file/d/12c6vQuhFnXhbmWmjpxsmp2XGHY8aR91w/view?usp=drive_link" target="_blank" rel="noopener">Архитектура программы →</a>
+          </div>
+
+          <div class="subcard" style="border-color: var(--border)">
+            <h4 class="accent" style="margin:0 0 8px; color: var(--accent)">Программа развития компетенций руководителя путевого комплекса «Академия пути»</h4>
+            <p><strong>Что сделала:</strong></p>
+            <ul>
+              <li>Разработана совместно с руководством Управления пути и сооружений (ЦП) Центральной дирекции инфраструктуры</li>
+            </ul>
+            <p><strong>Для кого:</strong> 24 управленца путевого комплекса, кадровый резерв ЦП.</p>
+            <p><strong>Цель:</strong> развитие управленческих компетенций руководителей; повышение знаний о технических и технологических трендах и возможностях.</p>
+            <a class="more" href="https://drive.google.com/file/d/1EpkrlSOrBjmt8TaFtfrMsP79-5fSwugv/view?usp=drive_link" target="_blank" rel="noopener">Архитектура программы →</a>
+          </div>
+
+          <div class="subcard" style="border-color: var(--border)">
+            <h4 class="accent" style="margin:0 0 8px">Медиа о проектах</h4>
+            <ul>
+              <li><a href="https://universitetrzd.ru/news/o-starte-vtorogo-potoka-obucheniya-rukovoditeley-zheleznodorozhnoy-otrasli-po-programmam-professiona/?sphrase_id=78186%3C" target="_blank" rel="noopener">О старте второго потока обучения руководителей «Профессионал плюс» →</a></li>
+              <li><a href="https://bypass.rgups.ru/news/v-rgups-sostoialsia-vypusk-pervoi-gruppy-slushatelei-programmy-povysheniia-kvalifikatcii-rukovoditelei-i-spetcialistov-oao-rzhd/?special=0" target="_blank" rel="noopener">Выпуск первой группы «Профессионал.+ПУТЬ» (РГУПС) →</a></li>
+              <li><a href="https://gudok.ru/newspaper/?ID=1737293" target="_blank" rel="noopener">Руководители нового уровня →</a></li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- Реализованные проекты -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Реализованные проекты</h2>
+
+        <article class="project" aria-label="МГТУ им. Н. Э. Баумана">
+          <div>
+            <h3>МГТУ им. Н. Э. Баумана</h3>
+            <div class="meta">
+              <span class="tag">Период: 05.2023 — 02.2024</span>
+              <span class="tag">Роль: Менеджер образовательных проектов</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Что сделала:</strong></p>
+            <ul>
+              <li>Спроектировала программы ДПО для внешних заказчиков (от 72 ак. ч.)</li>
+              <li>Разработала систему непрерывного развития сотрудников Кластера «Инженерия в науках о жизни»</li>
+            </ul>
+            <p><strong>Для кого:</strong> внешние заказчики, сотрудники Кластера.</p>
+            <p><strong>Цель:</strong> актуализация программ и усиление практико‑ориентированной составляющей.</p>
+          </div>
+        </article>
+
+        <article class="project" aria-label="СБЕР">
+          <div>
+            <h3>СБЕР</h3>
+            <div class="meta">
+              <span class="tag">Период: 04.2021 — 11.2021</span>
+              <span class="tag">Роль: Менеджер образовательных программ</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Что сделала:</strong></p>
+            <ul>
+              <li>Разработала образовательные решения под бизнес‑задачи коммерческого блока</li>
+              <li>Провела диагностику потребностей, спроектировала концепцию и архитектуру программ</li>
+            </ul>
+            <p><strong>Для кого:</strong> сотрудники и руководители коммерческого блока (9 000+).</p>
+            <p><strong>Цель:</strong> развитие ключевых компетенций и повышение операционной эффективности.</p>
+          </div>
+        </article>
+
+        <article class="project" aria-label="ФРИИ">
+          <div>
+            <h3>ФРИИ</h3>
+            <div class="meta">
+              <span class="tag">Период: 2021</span>
+              <span class="tag">Роль: Методолог</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Что сделала:</strong></p>
+            <ul>
+              <li>Спроектировала программу внутренних инноваций для ЗАО «Протек»</li>
+            </ul>
+            <p><strong>Для кого:</strong> внутренние команды и проектные лидеры заказчика.</p>
+            <p><strong>Цель:</strong> генерация и отбор инициатив, ускорение внедрения изменений.</p>
+          </div>
+        </article>
+
+        <article class="project" aria-label="ГБУ Малый бизнес Москвы">
+          <div>
+            <h3>ГБУ Малый бизнес Москвы</h3>
+            <div class="meta">
+              <span class="tag">Период: 06.2020 — 03.2021</span>
+              <span class="tag">Роль: Менеджер образовательных проектов</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Что сделала:</strong></p>
+            <ul>
+              <li>Запустила и сопровождала 4 отраслевых акселератора (услуги, рестораны, соцпроекты, спорт)</li>
+              <li>Разработала концепцию образовательной платформы: сценарии, траектории, ТЗ</li>
+              <li>Управляла подрядчиками и качеством</li>
+            </ul>
+            <p><strong>Для кого:</strong> предприниматели малого и среднего бизнеса Москвы.</p>
+            <p><strong>Цель:</strong> масштабирование и рост выручки проектов участников.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Кейсы с AI -->
+    <section id="ai" aria-labelledby="ai-title">
+      <div class="container">
+        <h2 id="ai-title">Кейсы с AI</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Valenwaybot</h3>
+            <p class="muted">Ситуативная развлекательная фича для ЦА «Профессионал+, Путь»</p>
+            <a class="more" href="https://t.me/Valenwaybot" target="_blank" rel="noopener">Подробнее →</a>
+          </div>
+          <div class="card">
+            <h3>Пет‑проект «Сомелье тишины»</h3>
+            <ul>
+              <li>Когнитивная разгрузка и управление вниманием</li>
+              <li>AI‑прототипирование контента и визуала</li>
+            </ul>
+            <a class="more" href="https://t.me/sommelier_of_silence" target="_blank" rel="noopener">Канал →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <h2 id="contacts-title">Давайте знакомиться</h2>
+        <p class="muted">Открыта к офферам и проектам (в том числе удалённым). Напишите пару слов о задаче — предложу формат и шаги.</p>
+        <p>Email: look85@gmail.com · Telegram: @mrk_natalia</p>
+        <div class="card" style="margin-top: var(--s3)">
+              <h3 style="margin-top:0">О чём поговорим</h3>
+              <ul>
+                <li>Бизнес‑цель обучения и ЦА</li>
+                <li>Форматы и ограничения</li>
+                <li>Метрики успеха</li>
+                <li>Сроки и ресурсы</li>
+              </ul>
+            </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" role="contentinfo">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--s2)">
+        <small>© Наталья Марценюк 2026</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
