@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портфолио L&D-специалиста</title>
+  <meta name="description" content="L&D-специалист, методолог с 10+ лет опыта. Запуск образовательных проектов под бизнес-задачи. Корпоративные и государственные заказчики: СБЕР, ФРИИ, МойОфис, МГТУ им. Н. Э. Баумана, ОАО «РЖД».">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #111111;
+      --bg-elev: #1A1A1A;
+      --text: #EAEAEA;
+      --muted: #BBBBBB;
+      --border: #444444;
+      --accent: #F2A900;
+      --radius: 12px;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --section-gap: 56px;
+      --maxw: 1080px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.25);
+      --transition: 200ms ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--space-3);
+    }
+
+    /* Header & Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(180deg, rgba(17,17,17,0.95), rgba(17,17,17,0.75) 60%, rgba(17,17,17,0));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(68,68,68,0.5);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-2) 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .brand .dot {
+      width: 12px; height: 12px; border-radius: 50%; background: var(--accent);
+      display: inline-block;
+    }
+    .brand .dot-sm { width: 6px; height: 6px; opacity: 0.9; }
+    nav[aria-label="Основная"] a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: var(--space-3);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    nav[aria-label="Основная"] a:hover,
+    nav[aria-label="Основная"] a:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .burger {
+      display: none;
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      border-radius: 8px;
+      align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .burger:hover { border-color: var(--accent); }
+    .burger span, .burger span::before, .burger span::after {
+      display: block; width: 18px; height: 2px; background: var(--text); position: relative;
+      transition: transform var(--transition);
+    }
+    .burger span::before, .burger span::after {
+      content: ""; position: absolute; left: 0;
+    }
+    .burger span::before { top: -6px; }
+    .burger span::after { top: 6px; }
+
+    /* Hero */
+    .hero {
+      padding: calc(var(--section-gap) + 24px) 0 var(--section-gap);
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(1200px 600px at 110% -10%, rgba(242,169,0,0.12), rgba(0,0,0,0) 60%),
+        radial-gradient(1200px 600px at -10% -20%, rgba(255,255,255,0.02), rgba(0,0,0,0) 50%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-4);
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px;
+      font-size: 12px; letter-spacing: 0.3px; text-transform: uppercase; color: var(--muted);
+    }
+    .eyebrow .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 999px; }
+    .hero h1 {
+      margin: var(--space-2) 0 var(--space-3);
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 .role { font-size: 0.6em; font-weight: 600; white-space: nowrap; color: var(--muted); }
+    .hero h1 .role { font-size: 0.6em; font-weight: 600; white-space: nowrap; color: var(--muted); }
+    .hero p.lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0 0 var(--space-4);
+      max-width: 60ch;
+    }
+    .facts {
+      margin: 0 0 var(--space-3);
+      color: var(--muted);
+    }
+    .facts p { margin: 0 0 6px; }
+    .cta-row {
+      display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+      background: var(--accent); color: #111111; font-weight: 600;
+      padding: 12px 24px; border-radius: 8px; text-decoration: none;
+      transition: filter var(--transition), transform var(--transition);
+    }
+    .btn:hover { filter: brightness(0.92); transform: translateY(-1px); }
+    .btn.secondary {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      box-shadow: var(--shadow);
+    }
+    .hero-card ul {
+      margin: 0; padding-left: 18px; color: var(--muted);
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--muted);
+      background: #161616; border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px;
+    }
+
+    /* Section base */
+    section { padding: var(--section-gap) 0; }
+    section h2 {
+      margin: 0 0 var(--space-3);
+      font-size: clamp(28px, 3vw, 48px);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.4px;
+    }
+    section p.section-lead {
+      color: var(--muted);
+      margin: 0 0 var(--space-4);
+      max-width: 70ch;
+    }
+
+    /* Logos */
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-3);
+      align-items: center; justify-items: center;
+    }
+    .logos img {
+      width: 100%; max-width: 160px;
+      filter: grayscale(100%); opacity: 0.7;
+      transition: filter var(--transition), opacity var(--transition), transform var(--transition);
+    }
+    .logos img:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-2px); }
+
+    /* Expertise */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+    }
+    .card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      min-height: 240px;
+      display: flex; flex-direction: column; gap: var(--space-2);
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .card h3 { margin: 0; font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); }
+    .card ul { margin: 0; padding-left: 18px; color: var(--muted); }
+    .card .tagrow { margin-top: auto; display: flex; gap: var(--space-2); flex-wrap: wrap; }
+    .tag {
+      display: inline-flex; align-items: center;
+      font-size: 12px; padding: 6px 10px; border: 1px solid var(--border);
+      border-radius: 999px; color: var(--muted); background: #161616;
+    }
+
+    /* Projects */
+    .project {
+      display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-4);
+      background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: var(--space-4);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .project:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .project h3 { margin-top: 0; }
+    .project .meta { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-2) 0; }
+    .project a.more {
+      color: var(--accent); text-decoration: none; font-weight: 600;
+      border-bottom: 1px dashed transparent;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .project a.more:hover { border-color: var(--accent); }
+
+    .casepack { margin-top: var(--space-4); display: flex; justify-content: center; }
+
+    /* Contacts */
+    .contacts {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-4); align-items: start;
+    }
+    .contact-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+    }
+    .contact-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-3); }
+    .contact-actions .btn { min-width: 200px; justify-content: flex-start; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: var(--space-4) 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms ease, transform 600ms ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .contacts { grid-template-columns: 1fr; }
+      .logos { grid-template-columns: repeat(3, 1fr); }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      nav[aria-label="Основная"] {
+        position: absolute; right: var(--space-3); top: 64px;
+        background: var(--bg-elev);
+        border: 1px solid var(--border);
+        padding: var(--space-3);
+        border-radius: var(--radius);
+        display: none;
+        flex-direction: column;
+      }
+      nav[aria-label="Основная"].open { display: flex; }
+      nav[aria-label="Основная"] a { margin: var(--space-2) 0 0 0; }
+      .burger { display: inline-flex; }
+      .logos { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; }
+      .hero p.lead { font-size: 16px; }
+      section h2 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Бренд">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="dot dot-sm" aria-hidden="true"></span>
+        <span class="dot dot-sm" aria-hidden="true"></span>
+      </div>
+      <button class="burger" aria-label="Меню" aria-controls="main-nav" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav id="main-nav" aria-label="Основная">
+        <a href="#projects">Проекты</a>
+        <a href="#expertise">Экспертиза</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid reveal">
+        <div>
+          <h1>Наталья Марценюк <span class="role">L&D-специалист · Методолог · 10+ лет опыта</span></h1>
+          <div class="facts">
+            <p>Создаю образовательные системы с нуля: от отдельных курсов до программ федерального масштаба.</p>
+            <p>Заказчики: СБЕР, ФРИИ, МойОфис, МГТУ им. Баумана, ОАО «РЖД».</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn" href="#contacts" aria-label="Перейти к контактам">Связаться</a>
+            <a class="btn secondary" href="#projects" aria-label="Перейти к проектам">Смотреть проекты</a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    
+
+    <!-- Expertise -->
+    <section id="expertise" aria-labelledby="expertise-title">
+      <div class="container reveal">
+        <h2 id="expertise-title">Экспертиза</h2>
+        <div class="grid-3">
+          <div class="card" role="article">
+            <h3>Разработка образовательных платформ</h3>
+            <ul>
+              <li>Формирование ТЗ</li>
+              <li>Пользовательские сценарии</li>
+              <li>Учебные траектории</li>
+            </ul>
+          </div>
+          <div class="card" role="article">
+            <h3>Проектирование программ с нуля</h3>
+            <ul>
+              <li>Бриф заказчика, оценка ЦА</li>
+              <li>Концепция курса, ТЗ</li>
+              <li>Learning Journey Map, форматы и оценка</li>
+            </ul>
+          </div>
+          <div class="card" role="article">
+            <h3>Разработка контента</h3>
+            <ul>
+              <li>Очные, смешанные и онлайн‑форматы</li>
+              <li>Сценарии тренингов</li>
+              <li>Лонгриды и чек‑листы</li>
+            </ul>
+          </div>
+          <div class="card" role="article">
+            <h3>Методический аудит</h3>
+            <ul>
+              <li>Анализ действующих курсов</li>
+              <li>Актуализация и переработка</li>
+              <li>Методическое сопровождение</li>
+            </ul>
+          </div>
+          <div class="card" role="article">
+            <h3>Организация и процессы</h3>
+            <ul>
+              <li>Запуск системы обучения</li>
+              <li>Упаковка образовательных продуктов</li>
+              <li>Внутренние коммуникации</li>
+              <li>Команда преподавателей</li>
+            </ul>
+          </div>
+          <div class="card" role="article">
+            <h3>AI‑интеграции</h3>
+            <ul>
+              <li>Прототипирование контента</li>
+              <li>Визуальный стиль</li>
+              <li>Автоматизация процессов</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Pack -->
+    <section aria-label="Кейс‑пак">
+      <div class="container reveal">
+        <div class="casepack">
+          <a class="btn" href="materials/index.html" aria-label="Посмотреть кейс-пак" target="_blank" rel="noopener">Посмотреть кейс‑пак</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container reveal">
+        <h2 id="projects-title">Проекты</h2>
+
+        <article class="project" aria-label="РЖД">
+          <div>
+            <h3>РЖД</h3>
+            <div class="meta">
+              <span class="tag">Период: 02.2024 — наст.</span>
+              <span class="tag">Роль: Главный методист / Менеджер образовательных проектов</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Суть проекта:</strong></p>
+            <ul>
+              <li>Разработала с нуля флагманскую программу «Профессионал+. Путь» (190 ак. ч., смешанное)</li>
+              <li>Спроектировала методологию и учебно‑методические материалы</li>
+              <li>Подобрала и координировала 24 преподавателей из 8 регионов</li>
+            </ul>
+            <p><strong>Для кого:</strong> руководители хозяйства пути и управления движением по всей сети.</p>
+            <p><strong>Цель:</strong> актуализация прикладных инженерных знаний и развитие единой управленческой культуры.</p>
+            <p><strong>Достижения:</strong> премия «СМАРТ пирамида — 2024», «Лучшая программа корпоративного обучения», 2‑е место; NPS 9,7.</p>
+            <a class="more" href="https://universitetrzd.ru/news/o-starte-vtorogo-potoka-obucheniya-rukovoditeley-zheleznodorozhnoy-otrasli-po-programmam-professiona/" target="_blank" rel="noopener" aria-label="Подробнее о программах Профессионал+ на сайте Университета РЖД">Подробнее →</a>
+          </div>
+        </article>
+
+        <article class="project" aria-label="СБЕР">
+          <div>
+            <h3>СБЕР</h3>
+            <div class="meta">
+              <span class="tag">Период: 04.2021 — 11.2021</span>
+              <span class="tag">Роль: Менеджер образовательных программ</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Суть проекта:</strong></p>
+            <ul>
+              <li>Разработала образовательные решения под бизнес‑задачи коммерческого блока</li>
+              <li>Провела диагностику потребностей, спроектировала концепцию и архитектуру программ</li>
+            </ul>
+            <p><strong>Для кого:</strong> сотрудники и руководители коммерческого блока (9 000+).</p>
+            <p><strong>Цель:</strong> развитие ключевых компетенций и повышение операционной эффективности.</p>
+          </div>
+        </article>
+
+        <article class="project" aria-label="МГТУ им. Н. Э. Баумана">
+          <div>
+            <h3>МГТУ им. Н. Э. Баумана</h3>
+            <div class="meta">
+              <span class="tag">Период: 05.2023 — 02.2024</span>
+              <span class="tag">Роль: Менеджер образовательных проектов</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Суть проекта:</strong></p>
+            <ul>
+              <li>Спроектировала программы ДПО для внешних заказчиков (от 72 ак. ч.)</li>
+              <li>Разработала систему непрерывного развития сотрудников Кластера «Инженерия в науках о жизни»</li>
+            </ul>
+            <p><strong>Для кого:</strong> внешние заказчики, сотрудники Кластера.</p>
+            <p><strong>Цель:</strong> актуализация программ и усиление практико‑ориентированной составляющей.</p>
+          </div>
+        </article>
+
+        <article class="project" aria-label="ФРИИ">
+          <div>
+            <h3>ФРИИ</h3>
+            <div class="meta">
+              <span class="tag">Период: 2021</span>
+              <span class="tag">Роль: Менеджер образовательных проектов (фриланс)</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Суть проекта:</strong></p>
+            <ul>
+              <li>Спроектировала программу внутренних инноваций для ЗАО «Протек»</li>
+            </ul>
+            <p><strong>Для кого:</strong> внутренние команды и проектные лидеры заказчика.</p>
+            <p><strong>Цель:</strong> генерация и отбор инициатив, ускорение внедрения изменений.</p>
+          </div>
+        </article>
+
+        <article class="project" aria-label="Малый бизнес Москвы">
+          <div>
+            <h3>Малый бизнес Москвы — отраслевые акселераторы</h3>
+            <div class="meta">
+              <span class="tag">Период: 06.2020 — 03.2021</span>
+              <span class="tag">Роль: Менеджер образовательных проектов</span>
+            </div>
+          </div>
+          <div>
+            <p><strong>Суть проекта:</strong></p>
+            <ul>
+              <li>Запустила и сопровождала 4 отраслевых акселератора (услуги, рестораны, соцпроекты, спорт)</li>
+              <li>Разработала концепцию образовательной платформы: сценарии, траектории, ТЗ</li>
+              <li>Управляла подрядчиками и качеством</li>
+            </ul>
+            <p><strong>Для кого:</strong> предприниматели малого и среднего бизнеса Москвы.</p>
+            <p><strong>Цель:</strong> масштабирование и рост выручки проектов участников.</p>
+            <a class="more" href="https://ekogradmoscow.ru/novosti/novosti-press-sluzhb/itogi-otraslevykh-biznes-akseleratorov-mbm-okolo-200-predprinimatelej-moskvy-vyveli-biznes-na-novyj-uroven-v-2020-godu?tmpl=component&print=1&layout=default" target="_blank" rel="noopener">Подробнее →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- AI Cases -->
+    <section aria-labelledby="ai-cases-title">
+      <div class="container reveal">
+        <h2 id="ai-cases-title">Кейсы с AI</h2>
+        <div class="grid-3">
+          <div class="card" role="article">
+            <h3>Valenwaybot</h3>
+            <ul>
+              <li>Ситуативная механика для ЦА «Профессионал+. Путь»</li>
+            </ul>
+            <div class="tagrow">
+              <a class="more" href="https://t.me/Valenwaybot" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Подробнее →</a>
+            </div>
+          </div>
+          <div class="card" role="article">
+            <h3>Пет‑проект «Сомелье тишины»</h3>
+            <ul>
+              <li>Когнитивная разгрузка и управление вниманием</li>
+              <li>AI‑прототипирование контента и визуала</li>
+            </ul>
+            <div class="tagrow">
+              <a class="more" href="https://t.me/sommelier_of_silence" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Канал →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts reveal">
+        <div>
+          <h2 id="contacts-title">Давайте знакомиться</h2>
+          <p class="section-lead">Открыта к офферам и проектам (в том числе удалённым). Напишите пару слов о задаче — предложу формат и шаги.</p>
+          <p style="margin-top: var(--space-3); color: var(--text); font-weight: 500;">
+            Email: look85@gmail.com · Telegram: @mrk_natalia
+          </p>
+        </div>
+        <aside class="contact-card" aria-label="Мини‑бриф">
+          <h3 style="margin-top:0">О чём поговорим</h3>
+          <ul>
+            <li>Бизнес‑цель обучения и ЦА</li>
+            <li>Форматы и ограничения</li>
+            <li>Метрики успеха</li>
+            <li>Сроки и ресурсы</li>
+          </ul>
+
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" role="contentinfo">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-2)">
+        <small>© Наталья Марценюк L&D · Сделано с заботой о деталях</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const nav = document.getElementById('main-nav');
+    if (burger && nav) {
+      burger.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          nav.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
