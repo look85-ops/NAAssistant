@@ -102,6 +102,8 @@
 | career-architect | Резюме (в т.ч. BY-версия), LinkedIn, анализ вакансий (hh/rabota.by), сопроводительные | `career/` | Карьерные запросы, адаптация под рынок РБ/РФ/INT |
 | product-analyst | Формулировка фич, превращение идей в бэклог с критериями | `docs/BACKLOG.md`, `backlog/` | Добавление/уточнение идей и задач |
 | post-writer | Анализ и написание постов под позиционирование L&D × AI | `career/posts/` | Подготовка контента, рост охватов |
+| frontend_analyst | Создание ТЗ для фронтенд-разработчика | `docs/` | `/create-spec` |
+| frontend_developer | Генерация HTML по ТЗ | `(stdout)` | `/generate-html` |
 
 ---
 
@@ -113,6 +115,8 @@
 | `/career-architect` | Карьерный консультант |
 | `/linkedin-init` | Создать/проверить структуру LinkedIn (PROFILE/KEYWORDS, career/posts/) |
 | `/post-writer` | Анализ и написание LinkedIn-постов |
+| `/create-spec` | Создать ТЗ для фронтенд-разработчика |
+| `/generate-html` | Сгенерировать HTML по утверждённому ТЗ |
 | `/init-backlog` | Инициализировать/очистить бэклог |
 | `/idea` | Превратить сырую идею в фичу бэклога |
 | `/start-task F-NNN` | Взять фичу, проверить архитектуру, начать разработку |
