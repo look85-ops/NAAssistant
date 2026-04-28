@@ -1,42 +1,12 @@
-########################################
-# General
-########################################
-# OS
-Thumbs.db
-Desktop.ini
-*.log
-
-# Editors/IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.tox/
-.venv/
-venv/
-env/
-
-# Packaging / builds
-build/
 dist/
-*.egg-info/
-
-# Env / secrets (keep out of git)
-.env
-.env.*
-*.secret
-secrets/
-
-# Personal files to keep local only
-резюме.txt
-
-# macOS (if synced across systems)
-.DS_Store
+docs/aos/tools/
+*.pdf
+*.html
+*.exe
+*.dll
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.rar
