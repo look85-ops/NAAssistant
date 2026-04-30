@@ -143,6 +143,8 @@
 | `/ralph` | Превратить PRD в план задач и проверки (шаблон в `docs/prd/TASK_PLAN_TEMPLATE.md`, описание в `.opencode/command/ralph.md`) |
 | `/enable-skills` | Проверить и зафиксировать используемые внешние навыки (см. `docs/skills/ADOPTED_SKILLS.md`) |
 | `/webapp-test` | Быстрый smoke-check портфолио перед деплоем (см. `.opencode/command/webapp-test.md`) |
+| `/pr-summary` | Краткое саммари PR через GitHub CLI с динамической инъекцией контекста (см. `.opencode/command/pr-summary.md`) |
+| `/skills-audit` | Список установленных skills с подсчётом строк (см. `scripts/skills-audit.ps1`) |
 
 ### Обновления в этом релизе
 - Агенты обновлены под контекст Натальи: добавлены категории `[Brand]`, `[Market]`
@@ -165,6 +167,11 @@
 1. `/start-task F-NNN` → проверить архитектуру, начать разработку
 2. Работа над фичей
 3. `/finish-task` → закрыть задачу, выполнить «ритуал обучения» и закоммитить
+
+### Динамическая инъекция контекста в skills
+- Используем паттерн `!<command>` для подстановки актуальных данных CLI в промпт (см. `docs/skills/DYNAMIC_CONTEXT.md`).
+- По умолчанию включены guardrails: allowlist команд, лимиты вывода, маскирование секретов (см. `docs/skills/SHELL_GUARDS.md`).
+- Для PR используем `/pr-summary` (GitHub CLI `gh pr diff/view`).
 
 ### Course Ops
 
