@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bot‑методолог (MVP) — черновик</title>
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --accent:#2563eb; }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+    .wrap{max-width:860px;margin:40px auto;padding:0 16px}
+    h1{font-size:28px;margin:0 0 8px}
+    h2{font-size:20px;margin:28px 0 8px}
+    p,li{color:var(--muted)}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin:16px 0}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    textarea{width:100%;min-height:110px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font:14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace}
+    button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 14px;cursor:pointer}
+    .muted{font-size:12px;color:#64748b}
+    code{background:#f1f5f9;border:1px solid #e2e8f0;padding:1px 4px;border-radius:4px}
+    pre{background:#0b1220;color:#e2e8f0;padding:12px;border-radius:8px;overflow:auto}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Bot‑методолог: быстрые черновики методических материалов</h1>
+      <p class="muted">MVP (черновик интерфейса). Деплой позже; сейчас работаем локально и через тестовые эндпоинты.</p>
+    </header>
+
+    <section class="card">
+      <h2>Что уже есть</h2>
+      <ul>
+        <li>API‑скелет: <code>GET /health</code>, <code>POST /chat</code> (OpenAI‑совместимый формат).</li>
+        <li>Провайдер: OpenRouter (по умолчанию <code>deepseek/deepseek-chat</code>). NVIDIA — позже.</li>
+        <li>Эта страница — локальный черновик (подключение к API по URL ниже).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Мини‑демо (через ваш API)</h2>
+      <p class="muted">Укажите базовый URL API (например, <code>http://localhost:8000</code> или URL вашего Space), затем отправьте пробу.</p>
+      <div class="row">
+        <input id="apiBase" placeholder="http://localhost:8000" style="flex:1;min-width:260px;padding:10px;border:1px solid #cbd5e1;border-radius:8px" />
+        <select id="endpoint" style="padding:10px;border:1px solid #cbd5e1;border-radius:8px">
+          <option value="/api/chat">/api/chat (Flask локально)</option>
+          <option value="/chat">/chat (HF Space)</option>
+        </select>
+      </div>
+      <textarea id="prompt" placeholder="Опиши 2–3 тезиса для секции: снижение галлюцинаций через подстановку CLI‑данных и экономия токенов с помощью двух hook‑ов"></textarea>
+      <div class="row">
+        <button onclick="send()">Отправить</button>
+        <button onclick="clearOut()" style="background:#64748b">Очистить</button>
+      </div>
+      <pre id="out" class="card" style="margin:12px 0 0"></pre>
+      <p class="muted" id="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>API контракт</h2>
+      <p><strong>Health:</strong> <code>GET /health</code> → <code>{"status":"ok"}</code></p>
+      <p><strong>Chat:</strong> <code>POST /api/chat</code> (локально) или <code>POST /chat</code> (Space)</p>
+      <pre>{
+  "message": "Сформулируй 2 тезиса о снижении галлюцинаций через CLI‑контекст"
+}
+— или —
+{
+  "messages": [{"role": "user", "content": "..."}],
+  "model": "deepseek/deepseek-chat"
+}</pre>
+    </section>
+
+    <section class="card">
+      <h2>Дорожная карта MVP</h2>
+      <ul>
+        <li>Деплой API (HF Space / Netlify Functions) и подключение на этой странице.</li>
+        <li>2–3 сценария генерации (бриф, конспект раздела, проверочные).</li>
+        <li>Мини‑журнал запросов (кто/когда/что) без персональных данных.</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    async function send(){
+      const base = (document.getElementById('apiBase').value || '').trim() || 'http://localhost:8000';
+      const ep = document.getElementById('endpoint').value;
+      const prompt = (document.getElementById('prompt').value || '').trim();
+      const out = document.getElementById('out');
+      const status = document.getElementById('status');
+      out.textContent = '';
+      status.textContent = 'Запрос...';
+      try{
+        const res = await fetch(base.replace(/\/$/,'') + ep, {
+          method:'POST',
+          headers:{'Content-Type':'application/json; charset=utf-8'},
+          body: JSON.stringify({ message: prompt })
+        });
+        const data = await res.json();
+        if(!res.ok){
+          out.textContent = JSON.stringify(data, null, 2);
+          status.textContent = 'Ошибка вызова API';
+          return;
+        }
+        out.textContent = (data && (data.output || JSON.stringify(data,null,2))) || 'Пустой ответ';
+        status.textContent = 'Готово';
+      }catch(e){
+        status.textContent = 'Backend недоступен. Проверьте URL и эндпоинт.';
+      }
+    }
+    function clearOut(){
+      document.getElementById('out').textContent='';
+      document.getElementById('status').textContent='';
+    }
+  </script>
+</body>
+</html>
