@@ -1,7 +1,8 @@
 dist/
 docs/aos/tools/
 *.pdf
-*.html
+# Allow portfolio HTML assets for GitHub Pages
+!portfolio/*.html
 *.exe
 *.dll
 *.zip
