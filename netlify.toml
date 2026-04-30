@@ -1,8 +1,16 @@
 [build]
   publish = "portfolio"
-  command = ""
+  command = "echo Building static site;"
 
-[[redirects]]
-  from = "/"
-  to = "/index2.html"
-  status = 200
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/json; charset=utf-8"
