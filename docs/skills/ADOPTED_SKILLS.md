@@ -54,3 +54,5 @@ Adoption Guideline:
 ## Internal Skills
 These are project-specific and live inside this repository.
 - Learning Designer (Course Ops, «Профессионал +. Путь»): `.opencode/agent/learning-designer.md` — методические паттерны для архитектуры дня и сценариев.
+- Code Quality: `CODE_QUALITY.md` — единый интерфейс верификации кода перед коммитом.
+- Web Scraping: `WEB_SCRAPING.md` — универсальный скрапинг для career research.

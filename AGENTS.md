@@ -145,6 +145,7 @@
 | `/webapp-test` | Быстрый smoke-check портфолио перед деплоем (см. `.opencode/command/webapp-test.md`) |
 | `/pr-summary` | Краткое саммари PR через GitHub CLI с динамической инъекцией контекста (см. `.opencode/command/pr-summary.md`) |
 | `/skills-audit` | Список установленных skills с подсчётом строк (см. `scripts/skills-audit.ps1`) |
+| `/verify` | Проверка качества кода (lint + typecheck) перед коммитом (см. `docs/skills/CODE_QUALITY.md`) |
 
 ### Обновления в этом релизе
 - Агенты обновлены под контекст Натальи: добавлены категории `[Brand]`, `[Market]`

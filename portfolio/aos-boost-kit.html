@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AOS Boost Kit (BY) · L&D × AI продукт</title>
+  <meta name="description" content="AOS Boost Kit — готовый пакет для роста вовлечённости и полезности обучения. Быстрый пилот 4–6 недель, шаблоны, промпт‑пак, чек‑листы. Для корпоративного L&D и производственных/тех компаний в РБ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FAF9F7;--bg-elev:#FFFFFF;--text:#0F172A;--muted:#475569;--border:#E5E7EB;
+      --accent:#3A5A78;--accent-2:#22C1A0;--radius:12px;--s1:8px;--s2:16px;--s3:24px;--s4:32px;--gap:56px;--maxw:940px;--t:200ms ease
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--s3)}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(250,250,250,.95),rgba(250,250,250,.75) 60%,rgba(250,250,250,0));backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:var(--s2) 0}
+    .brand{display:flex;align-items:center;gap:8px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent)}
+    a{color:var(--accent);text-decoration:none}
+    .hero{padding:calc(var(--gap) + 12px) 0 var(--gap);border-bottom:1px solid var(--border)}
+    h1{margin:0 0 var(--s2);font-size:clamp(28px,4vw,44px);line-height:1.15}
+    h2{margin:var(--s4) 0 var(--s2);font-size:clamp(22px,3vw,28px);color:var(--accent)}
+    .lead{color:var(--muted)}
+    .card{background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s3)}
+    .grid{display:grid;gap:var(--s3)}
+    .grid-2{grid-template-columns:1fr 1fr}
+    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:600;padding:10px 16px;border-radius:8px}
+    .badge{display:inline-flex;align-items:center;font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:#fff;margin-right:8px}
+    ul{margin:0 0 var(--s2);padding-left:18px}
+    footer{border-top:1px solid var(--border);padding:var(--s4) 0;color:var(--muted);font-size:14px;margin-top:var(--gap)}
+    @media(max-width:860px){.grid-2{grid-template-columns:1fr}}
+  </style>
+  <!-- страница продукта для портфолио; без внешних артефактов репозитория -->
+  </head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Бренд">
+        <span class="dot" aria-hidden="true"></span>
+      </div>
+      <nav aria-label="Навигация"><a href="/index2-light.html">← Назад в портфолио</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>AOS Boost Kit (BY)</h1>
+        <p class="lead">Готовый L&D × AI‑пакет для роста «вовлечённости» и «практической полезности» обучения за 4–6 недель. Для корпоративного L&D и производственных/тех компаний в РБ.</p>
+        <div style="margin-top:12px">
+          <span class="badge">Формат: пилот → пакет</span>
+          <span class="badge">Срок: 4–6 недель</span>
+          <span class="badge">Интеграция: лёгкая</span>
+        </div>
+        <p style="margin-top:16px"><a class="cta" href="#contact">Запросить демо</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid grid-2">
+        <div class="card">
+          <h2>Для кого</h2>
+          <ul>
+            <li>Корпоративный L&D в Беларуси</li>
+            <li>Производственные и тех компании (очно/смешанно)</li>
+          </ul>
+          <h2>Проблема</h2>
+          <ul>
+            <li>Высокие оценки не всегда = практическая польза</li>
+            <li>Выездные/практические дни «расползаются» и съедают эффект</li>
+            <li>Много ручной рутины при актуализации контента</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Что внутри пакета</h2>
+          <ul>
+            <li>Диагностика AOS и базовый отчёт (до/после)</li>
+            <li>2 «усилителя» контента: Экономика обслуживания и Инновации (NDT/обслуживание)</li>
+            <li>Стандартизация выездного дня (чек‑лист, фокус‑вопросы)</li>
+            <li>Промпт‑пак и мини‑SOP для ускорения методологов</li>
+            <li>План A/B и аналитика комментариев (локально, без внешних API)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid grid-2">
+        <div class="card">
+          <h2>Как это работает</h2>
+          <ul>
+            <li>Неделя 1: базовый замер, план A/B</li>
+            <li>Неделя 2: внедрение правок и пакет материалов</li>
+            <li>Недели 3–4: пилот и сбор AOS/комментариев</li>
+            <li>Неделя 5: сравнение контроль/вариант, выводы</li>
+            <li>Неделя 6: упаковка результата в ваш стандарт</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Результат</h2>
+          <ul>
+            <li>Рост «интереса» и «практической полезности» по AOS</li>
+            <li>Чёткий «выездной день» с измеримым вкладом</li>
+            <li>×2 скорость выпуска/правок модулей за счёт промптов и SOP</li>
+            <li>Пакет «под ключ» для масштабирования на другие курсы</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container card">
+        <h2>Запросить демо</h2>
+        <p class="lead">Покажу «до/после», план A/B и рабочие материалы пакета на примере близкого к вам кейса.</p>
+        <p>Email: <a href="mailto:look85@gmail.com">look85@gmail.com</a> · Telegram: <a href="https://t.me/mrk_natalia" target="_blank" rel="noopener">@mrk_natalia</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container"><small>© Наталья Марценюк 2026</small></div>
+  </footer>
+</body>
+</html>

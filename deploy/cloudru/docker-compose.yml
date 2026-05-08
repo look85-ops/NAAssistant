@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  cucpo-chat:
+    build:
+      context: ../../spaces/cucpo-chat
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - PORT=7860
+    ports:
+      - "80:7860"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
