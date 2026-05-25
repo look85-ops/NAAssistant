@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Послание случайно | дофамин-автомат</title>
+  <meta name="description" content="Сайт-бот, который дарит абсурдные, милые и вдохновляющие послания. Бессмысленная нежность для всех." />
+  <meta name="theme-color" content="#ff69b4" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg:#FF69B4; --text:#fff; --accent:#39FF14; --accent2:#00F0FF; --bubble-bot:#2D1B3D; --bubble-user:#3D2B5D; --font:'Inter',sans-serif; }
+    body { background: var(--bg); font-family: var(--font); color: var(--text); min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; overflow-x: hidden; position: relative; }
+    body.theme-pink {}
+    .container { position: relative; z-index:2; width: 100%; max-width: 520px; height: 100vh; padding: 20px; display: flex; flex-direction: column; }
+    .theme-selector { position: fixed; top: 16px; right: 16px; display:flex; gap:8px; background: rgba(0,0,0,.5); padding:6px; border-radius:30px; z-index:10 }
+    .theme-btn { width:22px; height:22px; border-radius:50%; border:2px solid #fff; cursor:pointer }
+    .theme-pink-btn { background:#FF69B4 }
+    .chat-header { text-align:center; border-bottom:1px solid rgba(255,255,255,0.18); padding:12px 0 14px; margin-bottom:8px }
+    .chat-header h1 { font-size:2rem; font-weight:900; color:#fff; text-shadow:0 0 10px rgba(255,105,180,.5), 0 0 18px rgba(57,255,20,.25); letter-spacing:-.02em }
+    .chat-header .subtitle { margin-top:4px; font-size:.95rem; color:rgba(255,255,255,.85) }
+    .chat-messages { flex:1; overflow-y:auto; padding:10px 0; display:flex; flex-direction:column; gap:14px }
+    .message-row { display:flex; align-items:flex-end; gap:8px }
+    .avatar { width:36px; height:36px; border-radius:50%; background:var(--bubble-bot); display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0 }
+    .bubble { max-width:78%; padding:12px 16px; border-radius:18px; font-size:1.14rem; line-height:1.4; word-break:break-word; position:relative; animation:bIn .3s ease }
+    .bot .bubble { background:var(--bubble-bot); border:1px solid var(--accent); border-bottom-left-radius:4px }
+    @keyframes bIn { from { opacity:0; transform: translateY(10px) } to { opacity:1; transform: translateY(0)} }
+    .lever-area { text-align:center; margin:14px 0 10px }
+    .lever { font-size:4.2rem; cursor:pointer; display:inline-block; user-select:none; filter: drop-shadow(0 0 14px var(--accent)) drop-shadow(0 0 24px rgba(57,255,20,.25)); animation: float 2s ease-in-out infinite }
+    .lever:active { transform: translateY(12px) scale(.9); animation:none }
+    @keyframes float { 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-8px)} }
+    .lever-hint { margin-top:6px; color:rgba(255,255,255,.85); font-size:.95rem }
+    .reactions { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; justify-content:center }
+    .reaction-btn { background:rgba(255,255,255,.1); border:1px solid var(--accent); color:#fff; padding:6px 12px; border-radius:20px; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:6px }
+    .share-panel { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; justify-content:center }
+    .share-option { background: rgba(255,255,255,0.1); border:1px solid var(--accent); color:#fff; padding:8px 12px; border-radius:20px; cursor:pointer; font-size:.95rem }
+    canvas#imageCanvas { display:none }
+  </style>
+</head>
+<body class="theme-pink">
+  <canvas id="glitchCanvas"></canvas>
+  <canvas id="imageCanvas" width="1080" height="1920"></canvas>
+
+  <div class="container">
+    <div class="chat-header">
+      <h1>Послание случайно</h1>
+      <div class="subtitle">Дофамин по запросу — бессмысленная нежность для всех</div>
+    </div>
+
+    <div class="lever-area">
+      <div class="lever" id="lever">🕹️</div>
+      <div class="lever-hint">дёрни за рычаг</div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <div class="share-panel" id="sharePanel">
+      <button class="share-option" id="copyBtn">📋 Текст</button>
+      <button class="share-option" id="imageBtn">🖼️ Картинка</button>
+      <button class="share-option" id="webShareBtn">📤 Поделиться</button>
+    </div>
+  </div>
+
+  <script>
+    // API config (autodetect Netlify Functions)
+    let API_BASE = '';
+    let MODEL = 'anthropic/claude-3.7-sonnet';
+    (function initApi(){
+      try{
+        const sp = new URLSearchParams(location.search);
+        const qApi = sp.get('api'); const qModel = sp.get('model');
+        API_BASE = qApi || localStorage.getItem('ma_api_base') || '';
+        MODEL = qModel || localStorage.getItem('ma_model') || MODEL;
+        if (qApi) localStorage.setItem('ma_api_base', API_BASE);
+        if (qModel) localStorage.setItem('ma_model', MODEL);
+        if (!API_BASE && /netlify\.app$/.test(location.hostname)) {
+          API_BASE = '/.netlify/functions'; localStorage.setItem('ma_api_base', API_BASE);
+        }
+      }catch(_){ }
+    })();
+
+    // Safe local pool
+    const LOCAL_MESSAGES = [
+      '✨ Сегодня ты справишься даже с распутыванием наушников с первого раза',
+      '🎯 Ты мощнее, чем Wi‑Fi сигнал у окна',
+      '⚡ Твоя продуктивность сегодня на уровне батарейки Duracell — может, немного б/у, но всё ещё работает!',
+      '🌌 Ты существуешь. И это уже невероятное достижение на фоне бесконечности космоса',
+      '💫 Твоё существование статистически невероятно. А ты вот просто существуешь. Магия',
+      '⭐ Ты — временная конфигурация атомов, которая умеет переживать и любить. Это круто',
+      '💐 Ты пахнешь лучше, чем свежеоткрытая пачка печенья Oreo',
+      '🌟 Твоя энергия сегодня как первый глоток кофе — неожиданно бодрит окружающих',
+      '🍪 Вселенная шепчет: сегодня можно съесть печеньку ДО обеда',
+      '🌈 Можно есть круассан руками. Всегда можно',
+      '🎨 Сегодня официально разрешено ничего не делать. Вселенная подписала документы',
+      '🦖 Если бы ты был динозавром, то самым милым тираннозавром',
+      '🧀 Ты круче, чем сыр с плесенью. И я говорю это как комплимент',
+      '🚀 Если бы ты был планетой, ты бы точно был той, на которой есть Wi‑Fi',
+      '🧦 Ты как носок, / который нашёлся после стирки / — неожиданная радость!',
+      '🍕 Пицца остыла, / но ты всё равно её съел / — вот это характер'
+    ];
+
+    const CATEGORIES = [
+      { key: 'absurd_support', title: 'Абсурдная поддержка' },
+      { key: 'cosmic', title: 'Космическая перспектива' },
+      { key: 'weird_compliments', title: 'Странные комплименты' },
+      { key: 'silly_compares', title: 'Нелепые сравнения' },
+      { key: 'generative_chaos', title: 'Генеративный хаос' },
+      { key: 'equations', title: 'Случайные уравнения счастья' },
+      { key: 'haiku_fars', title: 'Хайку-фарс' },
+      { key: 'odd_truths', title: 'Случайные истины' }
+    ];
+
+    let lastCat = null; let currentMessageText = '';
+
+    function buildPrompt(prevKey){
+      const banned = ['религия','политика','токсичный позитив','обесценивание чувств','цитаты великих','усталость/выгорание','финансы/долги','одиночество','внешность/вес','ментальное здоровье','сарказм про неудачи','работа/карьера негатив'];
+      const sys = `Ты генерируешь одно короткое послание в стиле «бессмысленная нежность»: дружелюбно, с лёгким абсурдом, без банальностей и токсичного позитива. Русский язык. Длина 50–200 символов. Эмодзи: ровно один в начале, опционально один в конце, максимум 2 всего. Избегай клише. Запрещённые темы: ${banned.join(', ')}.`;
+      const user = `Выбери случайную категорию из списка (ключ и краткое имя):\n${CATEGORIES.map(c=>`- ${c.key}: ${c.title}`).join('\n')}\nНе используй категорию "${prevKey||''}" подряд. Сгенерируй одно послание и верни ЧИСТЫЙ JSON без форматирования и без обратных кавычек: {"text":"...","category_key":"..."}.`;
+      return { sys, user };
+    }
+
+    async function generateRemote(){
+      const { sys, user } = buildPrompt(lastCat);
+      const res = await fetch((API_BASE||'').replace(/\/$/,'') + '/chat', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ model: MODEL, messages:[{role:'system',content:sys},{role:'user',content:user}] })
+      });
+      if (!res.ok) throw new Error('upstream '+res.status);
+      const data = await res.json();
+      const out = data?.output || data?.choices?.[0]?.message?.content || '';
+      try {
+        const j = JSON.parse(out);
+        currentMessageText = String(j.text||'').trim();
+        lastCat = String(j.category_key||'').trim() || lastCat;
+      } catch(_) {
+        currentMessageText = String(out).trim();
+      }
+      if (!currentMessageText) throw new Error('empty');
+    }
+
+    function generateLocal(){
+      currentMessageText = LOCAL_MESSAGES[Math.floor(Math.random()*LOCAL_MESSAGES.length)];
+    }
+
+    async function generate(){
+      try { if (API_BASE) await generateRemote(); else generateLocal(); }
+      catch(_) { generateLocal(); }
+      renderMessage(currentMessageText);
+    }
+
+    // UI helpers
+    const chatMessages = document.getElementById('chatMessages');
+    function addMessage(text){
+      const row = document.createElement('div'); row.className='message-row bot';
+      row.innerHTML = `<div class="avatar">🧃</div><div class="bubble">${escapeHtml(text)}</div>`;
+      chatMessages.appendChild(row); chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    function renderMessage(text){
+      chatMessages.innerHTML = '';
+      addMessage('🧃 Твоё послание...');
+      addMessage(text);
+      renderReactions();
+    }
+    function escapeHtml(s){ return s.replace(/[&<>]/g, ch=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[ch])); }
+
+    // Reactions
+    const reactionsEl = document.createElement('div'); reactionsEl.className='reactions'; reactionsEl.style.marginTop='8px';
+    let reactionCounts = {}; (function load(){ try{reactionCounts=JSON.parse(localStorage.getItem('ma_react')||'{}')}catch(_){reactionCounts={}} })();
+    function save(){ try{localStorage.setItem('ma_react', JSON.stringify(reactionCounts))}catch(_){} }
+    function inc(key){ reactionCounts[key]=(reactionCounts[key]||0)+1; save(); renderReactions(); }
+    function renderReactions(){
+      const anchor = document.getElementById('chatMessages');
+      if (!reactionsEl.isConnected) anchor.insertAdjacentElement('afterend', reactionsEl);
+      if (!currentMessageText) { reactionsEl.hidden=true; reactionsEl.innerHTML=''; return; }
+      const set = ['💖','😹','🤝','💅']; reactionsEl.innerHTML='';
+      set.forEach(e=>{ const b=document.createElement('button'); b.className='reaction-btn'; const c=reactionCounts[e]||0; b.innerHTML=`${e} <span class="count">${c}</span>`; b.onclick=()=>inc(e); reactionsEl.appendChild(b); });
+      reactionsEl.hidden=false;
+    }
+
+    // Share
+    const copyBtn = document.getElementById('copyBtn');
+    const imageBtn = document.getElementById('imageBtn');
+    const webShareBtn = document.getElementById('webShareBtn');
+    copyBtn.onclick = async ()=>{ if(!currentMessageText) return; try{ await navigator.clipboard.writeText(currentMessageText); alert('Скопировано! ✨'); }catch{ alert('Скопируй вручную:\n'+currentMessageText);} };
+    webShareBtn.onclick = async ()=>{ if(!currentMessageText) return; if(navigator.share){ try{ await navigator.share({ title:'Послание случайно', text: currentMessageText, url: location.protocol.startsWith('http')?location.href:undefined }); }catch(_){} } else { copyBtn.click(); } };
+
+    // Image share
+    const imageCanvas = document.getElementById('imageCanvas');
+    function wrapText(ctx, text, maxWidth) {
+      const words = text.split(' '); const lines=[]; let line='';
+      for(const w of words){ const test=line+w+' '; if(ctx.measureText(test).width>maxWidth && line){ lines.push(line.trim()); line=w+' '; } else line=test; }
+      if(line) lines.push(line.trim()); return lines;
+    }
+    function gradient(ctx,w,h){ const g=ctx.createLinearGradient(0,0,w,h); g.addColorStop(0,'#ff69b4'); g.addColorStop(1,'#39ff14'); return g; }
+    function glitch(ctx,w,h){ ctx.fillStyle='rgba(255,255,255,0.08)'; for(let i=0;i<18;i++) ctx.fillRect(0, Math.random()*h, w, 1+Math.random()*2); }
+    function watermark(ctx,w,h){ ctx.font='28px Inter, system-ui, sans-serif'; ctx.fillStyle='rgba(255,255,255,0.85)'; ctx.textAlign='center'; ctx.fillText('Послание случайно. Бессмысленная нежность для всех', w/2, h-60); }
+    imageBtn.onclick = ()=>{
+      if(!currentMessageText) return; const c=imageCanvas, ctx=c.getContext('2d'), w=c.width, h=c.height;
+      ctx.fillStyle = gradient(ctx,w,h); ctx.fillRect(0,0,w,h); glitch(ctx,w,h);
+      ctx.fillStyle='#fff'; ctx.textAlign='center'; ctx.shadowColor='rgba(0,0,0,0.35)'; ctx.shadowBlur=14;
+      ctx.font='bold 56px Inter, system-ui, sans-serif'; const lines = wrapText(ctx, currentMessageText, w-140);
+      let y = h/2 - (lines.length-1)*56*0.8; lines.forEach(ln=>{ ctx.fillText(ln, w/2, y); y+=56*1.2; }); watermark(ctx,w,h);
+      const url=c.toDataURL('image/png'); const win=window.open('', '_blank'); if (win&&win.document) { const site = location.protocol.startsWith('http')?location.href.split('?')[0]:''; win.document.write(`<img src="${url}" style="max-width:100%"><br><p>Сохрани и делись ✨</p>${site?`<p><a href="${site}" target="_blank" rel="noopener">Перейти на сайт</a></p>`:''}`); } else { const a=document.createElement('a'); a.href=url; a.download='message.png'; a.click(); }
+    };
+
+    // Lever action
+    document.getElementById('lever').onclick = () => { generate(); };
+
+    // Pink theme class
+    document.body.className = 'theme-pink';
+    
+    // Glitch canvas background like 57dce9
+    (function glitchBg(){
+      const c = document.getElementById('glitchCanvas');
+      if (!c) return;
+      const g = c.getContext('2d');
+      function resize(){ c.width = window.innerWidth; c.height = window.innerHeight; }
+      window.addEventListener('resize', resize); resize();
+      let parts = [];
+      function init(n=50){ parts = []; for(let i=0;i<n;i++) parts.push({
+        x: Math.random()*c.width, y: Math.random()*c.height,
+        r: 2 + Math.random()*6,
+        sx: (Math.random()-.5)*0.9, sy: (Math.random()-.5)*0.9,
+        hue: Math.random()<0.5? 120: 180, // 120≈green, 180≈cyan
+        op: .25 + .5*Math.random(), life: 180+Math.random()*240
+      }); }
+      init();
+      function tick(){
+        g.clearRect(0,0,c.width,c.height);
+        for(const p of parts){
+          // мягкое свечение зелёных «летающих» кружков
+          const grad = g.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*3);
+          grad.addColorStop(0, `hsla(${p.hue}, 100%, 60%, ${p.op})`);
+          grad.addColorStop(1, 'hsla(0,0%,0%,0)');
+          g.fillStyle = grad;
+          g.beginPath(); g.arc(p.x, p.y, p.r*3, 0, Math.PI*2); g.fill();
+          // движение
+          p.x += p.sx; p.y += p.sy; p.op = Math.max(.15, Math.min(.9, p.op + (Math.random()-.5)*0.02));
+          if (--p.life<0 || p.x< -20 || p.x> c.width+20 || p.y< -20 || p.y> c.height+20) {
+            p.x = Math.random()*c.width; p.y = Math.random()*c.height; p.life = 180+Math.random()*240;
+          }
+        }
+        // редкая розовая линия-глитч для динамики
+        if (Math.random()<0.04){ g.globalAlpha=.28; g.fillStyle='#FF69B4'; g.fillRect(0, Math.random()*c.height, c.width, 2); g.globalAlpha=1; }
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
+    // Greeting
+    addMessage('✨ Привет! Я дофамин-автомат. Дёрни рычаг.');
+
+    // If incoming msg param
+    (function fromUrl(){ const p=new URLSearchParams(location.search); if(p.has('msg')){ currentMessageText = decodeURIComponent(p.get('msg')); renderMessage(currentMessageText); } })();
+
+    // PWA service worker (optional)
+    if ('serviceWorker' in navigator) { window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(()=>{}); }); }
+  </script>
+</body>
+</html>

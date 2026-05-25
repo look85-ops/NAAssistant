@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Бустер методиста — Инженер Иванов</title>
+    <!-- Google Fonts & simple reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f5;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            padding: 2rem 1rem;
+            color: #1a2c2e;
+        }
+
+        /* главный контейнер — карточка */
+        .booster-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* шапка с названием и подзаголовком */
+        .hero {
+            padding: 2rem 2rem 1rem 2rem;
+            border-bottom: 1px solid #e9edf2;
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c5f4a, #1e4a3a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .subhead {
+            color: #5c6f6d;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            border-left: 3px solid #d0b48a;
+            padding-left: 1rem;
+        }
+
+        /* две колонки: легенда + карточка Иванова */
+        .two-columns {
+            display: flex;
+            gap: 1.8rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+        }
+        .legend-panel {
+            flex: 1.2;
+            background: #fafbfd;
+            border-radius: 1.5rem;
+            padding: 1.4rem;
+            border: 1px solid #eef2f8;
+        }
+        .engineer-panel {
+            flex: 2;
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 1px solid #eef2f8;
+            padding: 1.4rem;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.02);
+        }
+        .legend-title, .engineer-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legend-text {
+            color: #2e4a42;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        .goal-text {
+            background: #f0f4f0;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+        .engineer-stats {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            background: #f9fafc;
+            padding: 0.8rem 1rem;
+            border-radius: 1.5rem;
+        }
+        .engineer-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .health-wrapper {
+            flex: 2;
+            min-width: 150px;
+        }
+        .health-bar-bg {
+            background: #e2e6ea;
+            border-radius: 40px;
+            height: 12px;
+            overflow: hidden;
+        }
+        .health-fill {
+            background: linear-gradient(90deg, #2b9348, #55a630);
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
+            transition: width 0.2s ease;
+        }
+        .health-value {
+            font-weight: 700;
+            background: #1e2e2a;
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* сетка кнопок */
+        .actions-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+        .action-btn {
+            background: white;
+            border: 1px solid #dce3e9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            color: #1f3e38;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .action-btn:hover {
+            background: #f0f4f9;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-color: #cbd7e2;
+        }
+        .message-area {
+            background: #fef9e6;
+            border-left: 5px solid #d0b48a;
+            padding: 1rem;
+            border-radius: 1.2rem;
+            margin: 1.2rem 0;
+            font-size: 0.9rem;
+            color: #3b4b44;
+        }
+        .reset-btn {
+            background: #eef2f5;
+            border: 1px solid #cdd7df;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .reset-btn:hover {
+            background: #e2e8ef;
+        }
+        .advice-block {
+            background: #fdf0e6;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #859b96;
+            border-top: 1px solid #ecf0f3;
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 750px) {
+            .two-columns { flex-direction: column; }
+            .hero, .two-columns { padding: 1.5rem; }
+            .action-btn { font-size: 0.75rem; padding: 0.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="booster-card">
+    <div class="hero">
+        <h1>🧰 Бустер методиста</h1>
+        <div class="subhead">Инструменты для проектирования обучения с эмпатией</div>
+    </div>
+
+    <div class="two-columns">
+        <!-- Левая колонка: Легенда, Цель, контекст -->
+        <div class="legend-panel">
+            <div class="legend-title">📌 Легенда</div>
+            <div class="legend-text">
+                Инженер Иванов приехал на обучение после ночной смены. Неделя была плотной: аварийная заявка, разборы и отчёт, дома — заботы.<br><br>
+                Он ждёт, что обучение поможет с реальными задачами и облегчит работу.<br>
+                <strong>Ваши решения влияют на его энергию, внимание и мотивацию.</strong>
+            </div>
+            <div class="goal-text">
+                🎯 <strong>Для чего:</strong> быстро проверить эмоциональную и когнитивную нагрузку от форматов.<br>
+                🕹️ <strong>Что делать:</strong> выбирай действия и следи за «здоровьем» Иванова.<br>
+                ⚖️ <strong>Цель:</strong> найти баланс теории, практики и пауз.
+            </div>
+        </div>
+
+        <!-- Правая колонка: Иванов и игровая механика -->
+        <div class="engineer-panel">
+            <div class="engineer-title">👷‍♂️ Инженер Иванов</div>
+            <div class="engineer-stats">
+                <div class="engineer-name">⚙️ Состояние</div>
+                <div class="health-wrapper">
+                    <div class="health-bar-bg"><div class="health-fill" id="healthFill" style="width: 100%"></div></div>
+                </div>
+                <div class="health-value" id="healthValue">❤️ 100</div>
+            </div>
+
+            <div class="actions-grid" id="actionsContainer"></div>
+
+            <div class="message-area" id="gameMessage">
+                💬 Кликай на действия — смотри, как реагирует Иванов
+            </div>
+
+            <button class="reset-btn" id="resetGameBtn">🔄 Перезапустить обучение</button>
+            <div id="adviceContainer"></div>
+        </div>
+    </div>
+    <footer>Бустер методиста — играй, анализируй, улучшай обучение</footer>
+</div>
+
+<script>
+    // ------------------------------------------------------------
+    //  СПИСОК ДЕЙСТВИЙ (полностью повторяет твою задумку)
+    // ------------------------------------------------------------
+    const actionsList = [
+        { text: "📖 40 минут теории", delta: -18, reply: "Иванов начал клевать носом и потерял нить." },
+        { text: "🧩 Кейс без разбора", delta: -12, reply: "Иванов завис и чувствует себя тупым." },
+        { text: "☕️ Кофе-пауза", delta: +15, reply: "Иванов ожил, выпил кофе, даже улыбнулся." },
+        { text: "📊 Тест 30 вопросов", delta: -10, reply: "Иванов выдохнул: «Опять эти тесты...»" },
+        { text: "🎭 Ролевая игра", delta: +5, reply: "Иванов немного напрягся, но включился." },
+        { text: "📹 Лекция 90 минут", delta: -25, reply: "Иванов умер внутри. Глаза стеклянные." },
+        { text: "🏆 Публичное признание успеха", delta: +20, reply: "Иванов покраснел, но доволен — его заметили." },
+        { text: "📝 Домашка на выходные", delta: -8, reply: "Иванов вздохнул: «Никакой жизни»." },
+        { text: "👥 Работа в парах", delta: +5, reply: "Иванов оживился, коллеги помогают." },
+        { text: "📄 Инструкция 15 страниц", delta: -20, reply: "Иванов утонул в тексте и потерял волю к жизни." }
+    ];
+
+    let health = 100;
+    let gameActive = true;
+
+    const healthFill = document.getElementById('healthFill');
+    const healthValueSpan = document.getElementById('healthValue');
+    const gameMessageDiv = document.getElementById('gameMessage');
+    const actionsContainer = document.getElementById('actionsContainer');
+    const resetBtn = document.getElementById('resetGameBtn');
+    const adviceContainer = document.getElementById('adviceContainer');
+
+    function updateUI() {
+        let percent = Math.max(0, Math.min(100, health));
+        healthFill.style.width = percent + "%";
+        healthValueSpan.innerText = "❤️ " + Math.floor(health);
+        // меняем цвет шкалы при критическом уровне
+        if (health < 25) {
+            healthFill.style.background = "#d9534f";
+        } else {
+            healthFill.style.background = "linear-gradient(90deg, #2b9348, #55a630)";
+        }
+    }
+
+    function setMessage(msg, isError = false) {
+        gameMessageDiv.innerHTML = "💬 " + msg;
+        if (isError) gameMessageDiv.style.borderLeftColor = "#d9534f";
+        else gameMessageDiv.style.borderLeftColor = "#d0b48a";
+    }
+
+    function endGame() {
+        gameActive = false;
+        setMessage("💀 Инженер Иванов погиб. Обучение провалено.", true);
+        adviceContainer.innerHTML = `<div class="advice-block">📌 Совет методисту: слишком много теории, нет пауз, недостаточно вовлечения. Добавь активностей, кофе-брейков, практики.</div>`;
+    }
+
+    function applyAction(action) {
+        if (!gameActive) {
+            setMessage("Игра закончена. Нажми «Перезапустить обучение».", true);
+            return;
+        }
+        let newHealth = health + action.delta;
+        newHealth = Math.min(100, Math.max(0, newHealth));
+        health = newHealth;
+        setMessage(action.reply);
+        updateUI();
+
+        if (health <= 0) {
+            endGame();
+        } else if (health < 30 && gameActive) {
+            setMessage(action.reply + " (Иванов на грани выгорания! Срочно добавь ресурсных активностей.)");
+        }
+    }
+
+    function resetGame() {
+        health = 100;
+        gameActive = true;
+        updateUI();
+        setMessage("🔄 Обучение перезапущено. Попробуй новую стратегию.");
+        adviceContainer.innerHTML = "";
+    }
+
+    function renderButtons() {
+        actionsContainer.innerHTML = "";
+        actionsList.forEach(action => {
+            const btn = document.createElement('button');
+            btn.className = 'action-btn';
+            btn.innerHTML = action.text;
+            btn.addEventListener('click', () => applyAction(action));
+            actionsContainer.appendChild(btn);
+        });
+    }
+
+    renderButtons();
+    resetBtn.addEventListener('click', resetGame);
+    updateUI();
+</script>
+</body>
+</html>

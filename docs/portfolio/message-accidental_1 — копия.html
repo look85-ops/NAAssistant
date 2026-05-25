@@ -3,29 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Послание случайно 🧃 — Дофамин по запросу</title>
-  <meta name="description" content="Дёрни рычаг и получи случайную дозу дофамина: абсурдные, милые и вдохновляющие послания для поднятия настроения.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#FF69B4">
-  <link rel="canonical" href="https://look85-ops.github.io/NAAssistant/message-accidental/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Послание случайно 🧃 — Дофамин-автомат">
-  <meta property="og:description" content="Дёрни рычаг и получи случайную дозу дофамина!">
-  <meta property="og:url" content="https://look85-ops.github.io/NAAssistant/message-accidental/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Послание случайно">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:image" content="https://look85-ops.github.io/NAAssistant/portfolio/preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Послание случайно — дофамин-автомат">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Послание случайно 🧃 — Дофамин-автомат">
-  <meta name="twitter:description" content="Дёрни рычаг и получи случайную дозу дофамина!">
-  <meta name="twitter:image" content="https://look85-ops.github.io/NAAssistant/portfolio/preview.png">
+  <title>Послание случайно | дофамин-автомат 🧃</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
@@ -145,28 +123,6 @@
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-8px); }
-    }
-
-    .lever-hint {
-      margin-top: 10px;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: rgba(0,0,0,0.35);
-      color: #fff;
-      font-size: 0.85rem;
-      border: 1px dashed var(--accent2);
-      animation: hintBob 1.6s ease-in-out infinite;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    .lever-hint.hidden {
-      opacity: 0;
-      transform: translateY(-6px);
-      pointer-events: none;
-    }
-    @keyframes hintBob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
     }
 
     .chat-messages {
@@ -349,14 +305,13 @@
   <div class="container">
     <div class="chat-header">
       <h1>Послание случайно</h1>
-      <div class="status"><span class="status-dot"></span> Дофамин по запросу. Бессмысленная радость для всех</div>
+      <div class="status"><span class="status-dot"></span> дофамин-автомат онлайн</div>
     </div>
 
     <!-- Рычаг сразу после заголовка -->
     <div class="lever-area">
       <div class="lever-handle" id="leverHandle">🕹️</div>
       <div style="color:var(--accent); font-size:0.8rem;">дёрни рычаг</div>
-      <div class="lever-hint" id="leverHint">👇 нажми и получи послание</div>
     </div>
 
     <div class="chat-messages" id="chatMessages"></div>
@@ -370,157 +325,6 @@
   <div class="friend-toggle-btn" id="friendToggleBtn">👥</div>
 
   <script>
-    // ---------- AI ПРОКСИ ----------
-    const AI_API = 'https://thrgbbnh-nmbot.hf.space/chat';
-    const AI_MODEL = 'deepseek/deepseek-chat';
-    const AI_FALLBACK_MODEL = 'google/gemini-2.5-flash-lite';
-    let aiBusy = false;
-
-    function sanitizeAiText(raw) {
-      let s = String(raw || '').trim();
-      s = s.replace(/^```[\s\S]*?\n([\s\S]*?)\n```$/m, '$1').trim();
-      s = s.replace(/^`+|`+$/g, '').trim();
-      const lines = s.split(/\r?\n/).map(x => x.trim()).filter(Boolean);
-      const isPrefix = (x) => /^(послание( для тебя)?|ответ|вот|итог|твоё послание)\s*[:：]\s*$/i.test(x) || (/[:：]$/.test(x) && x.length < 40);
-      let chosen = lines.find(x => !isPrefix(x)) || lines[0] || '';
-      s = chosen;
-      s = s.replace(/^(послание( для тебя)?|ответ|вот|твоё послание)\s*[:：]\s*/i, '').trim();
-      s = s.replace(/^\s*(?:[-•—]|\d+[\.\)])\s+/u, '').trim();
-      const emojiRe = /\p{Extended_Pictographic}/u;
-      const firstEmojiMatch = s.match(emojiRe);
-      if (firstEmojiMatch) {
-        const firstIdx = s.indexOf(firstEmojiMatch[0]);
-        const after = s.slice(firstIdx + firstEmojiMatch[0].length);
-        const cutMatch = after.match(/[\.!?…]+\s+(?=\p{Extended_Pictographic})/u);
-        if (cutMatch) {
-          const cutAt = firstIdx + firstEmojiMatch[0].length + after.indexOf(cutMatch[0]) + cutMatch[0].length;
-          s = s.slice(0, cutAt).trim();
-        }
-      }
-      s = s.replace(/\s*[\(\[][^()\[\]]{0,200}[\)\]]\s*$/u, '').trim();
-      s = s.replace(/\s*[—\-–]\s*(Примечание|Комментарий|Note)\s*[:：].*$/iu, '').trim();
-      s = s.replace(/^[«"'“”„]+|[»"'“”„]+$/g, '').trim();
-      return s;
-    }
-
-    async function aiGenerate({ friendName = null } = {}) {
-      const banned = 'религия, политика, токсичный позитив, выгорание, финансы/долги, одиночество, внешность/вес, ментальное здоровье, сарказм про неудачи, работа/карьера негатив';
-      const sys = [
-        'Ты — бот «Послание случайно». Позиционирование: «Дофамин по запросу — бессмысленная нежность для всех».',
-        'Твоя цель: подарить микро‑момент радости через одно короткое послание.',
-        '',
-        'ПРИНЦИПЫ ГЕНЕРАЦИИ:',
-        '— Баланс абсурда и искренности, без чистого рандома и без банальной мотивации.',
-        '— Неожиданные сравнения и метафоры — чем неожиданнее, тем лучше.',
-        '— Длина 50–200 символов, 1–3 предложения.',
-        '— Эмодзи: один в начале обязательно, опционально один в конце; максимум 2 на послание.',
-        '— Без токсичного позитива и клише в стиле Instagram‑коучей.',
-        '',
-        'КАТЕГОРИИ (выбирай случайную, по возможности отличную от прошлой):',
-        '1) Абсурдная поддержка — поддержка через абсурдные «достижения».',
-        '   Примеры: ✨ Сегодня ты справишься даже с распутыванием наушников с первого раза',
-        '            🎯 Ты мощнее, чем Wi‑Fi сигнал у окна',
-        '2) Космическая перспектива — философия с лёгким абсурдом.',
-        '   Примеры: 🌌 Ты существуешь. И это уже невероятное достижение на фоне бесконечности космоса',
-        '            ⭐ Ты — временная конфигурация атомов, которая умеет переживать и любить. Это круто',
-        '3) Странные комплименты — комплимент через неожиданное сравнение.',
-        '   Примеры: 💐 Ты пахнешь лучше, чем свежеоткрытая пачка печенья Oreo',
-        '            🌟 Твоя энергия сегодня как первый глоток кофе — неожиданно бодрит окружающих',
-        '4) Генеративный хаос — разрешения и советы «от вселенной».',
-        '   Примеры: 🍪 Вселенная шепчет: сегодня можно съесть печеньку ДО обеда',
-        '            🎨 Сегодня официально разрешено ничего не делать. Вселенная подписала документы',
-        '5) Уравнения счастья — формулы из несвязанных элементов.',
-        '   Примеры: 💛 Твоя улыбка + пятница + пицца = идеальная формула счастья',
-        '            🎪 Кот + тёплый плед + дождь за окном = абсолютное совершенство',
-        '6) Нелепые сравнения — сравнение человека с необычным.',
-        '   Примеры: 🦖 Если бы ты был динозавром, то самым милым тираннозавром',
-        '            🚀 Если бы ты был планетой, ты бы точно был той, на которой есть Wi‑Fi',
-        '7) Хайку‑фарс — три части через « / », абсурдный финал.',
-        '   Примеры: 🧦 Ты как носок, / который нашёлся после стирки / — неожиданная радость',
-        '            🍕 Пицца остыла, / но ты всё равно её съел / — вот это характер',
-        '8) Случайные истины — технически правда, но странно сформулировано.',
-        '   Примеры: 🐱 Кто‑то сейчас думает о тебе. Возможно, это твой кот, но всё равно считается',
-        '            🌍 В параллельной вселенной ты уже герой. Здесь тоже неплохо справляешься',
-        '',
-        'ЗАПРЕЩЕНО (категорически):',
-        '— Религия, политика, идеологии.',
-        '— Токсичная мотивация: «просто будь счастлив», «всё зависит от тебя», «не грусти, улыбнись».',
-        '— Обесценивание чувств: «могло быть хуже», «у других ещё хуже», «соберись, это ерунда».',
-        '— Цитаты великих («как сказал Эйнштейн…», «Конфуций говорил…»).',
-        `— Триггерные темы: ${banned}.`,
-        '',
-        'СТРОГИЕ ПРАВИЛА ВЫВОДА:',
-        '— Верни РОВНО ОДНО послание. Не два, не список, не варианты.',
-        '— Верни ТОЛЬКО сам текст послания, одной строкой, без переносов.',
-        '— Никаких пояснений, комментариев, мета‑замечаний, подсчётов символов или эмодзи.',
-        '— Никаких префиксов вроде «Послание:», «Послание для тебя:», «Ответ:», «Вот:».',
-        '— Не оборачивай текст в кавычки, скобки или код‑блок.',
-        '— Максимум 2 эмодзи во всём ответе. Не начинай новое предложение с эмодзи.'
-      ].join('\n');
-
-      const lastText = (() => { try { return localStorage.getItem('ma_last_text') || ''; } catch (_) { return ''; } })();
-      const avoid = lastText ? `\nИзбегай повтора по смыслу и формулировкам с прошлым посланием: «${lastText}». Выбери другую категорию.` : '';
-
-      const user = (friendName
-        ? `Сгенерируй короткое тёплое послание про дружбу с человеком по имени «${friendName}». Имя используй естественно.`
-        : `Сгенерируй неожиданное доброе абсурдное послание для случайного человека.`
-      ) + avoid + '\nВерни только сам текст, без объяснений.';
-      const ctrl = new AbortController();
-      const tm = setTimeout(() => ctrl.abort(), 20000);
-      try {
-        const res = await fetch(AI_API, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            model: AI_MODEL,
-            fallback_model: AI_FALLBACK_MODEL,
-            temperature: 0.9,
-            max_tokens: 120,
-            messages: [
-              { role: 'system', content: sys },
-              { role: 'user', content: user }
-            ]
-          }),
-          signal: ctrl.signal
-        });
-        clearTimeout(tm);
-        if (!res.ok) throw new Error('upstream ' + res.status);
-        const data = await res.json();
-        const raw = (data && (data.output || data?.raw?.choices?.[0]?.message?.content)) || '';
-        const text = sanitizeAiText(raw);
-        if (!text) throw new Error('empty');
-        return text;
-      } finally {
-        clearTimeout(tm);
-      }
-    }
-
-    function pickLocalFallback(friendName) {
-      if (friendName) {
-        const t = friendTemplates[Math.floor(Math.random() * friendTemplates.length)];
-        return t.replace('[имя]', friendName);
-      }
-      return messages[Math.floor(Math.random() * messages.length)];
-    }
-
-    async function pullLever(friendName = null) {
-      if (aiBusy) return;
-      aiBusy = true;
-      chatMessages.innerHTML = '';
-      addMessageToChat('🧃 Включаю автомат… секунду', 'bot');
-      try {
-        const text = await aiGenerate({ friendName });
-        generateMessage(text);
-        try { localStorage.setItem('ma_last_text', text); } catch (_) {}
-      } catch (e) {
-        const fb = pickLocalFallback(friendName);
-        generateMessage(fb);
-        try { localStorage.setItem('ma_last_text', fb); } catch (_) {}
-      } finally {
-        aiBusy = false;
-      }
-    }
-
     // ---------- ПАЛИТРЫ ТЕМ ----------
     const themes = {
       pink: { bg: '#FF69B4', accent: '#39FF14', accent2: '#00F0FF', bubbleBot: '#2D1B3D', bubbleUser: '#3D2B5D' },
@@ -798,20 +602,10 @@
       vibrate();
     }
 
-    // микро-хинт: скрываем после первого клика, помним между визитами
-    const leverHint = document.getElementById('leverHint');
-    function hideLeverHint() {
-      if (!leverHint) return;
-      leverHint.classList.add('hidden');
-      try { localStorage.setItem('ma_lever_hint_seen', '1'); } catch (_) {}
-    }
-    try { if (localStorage.getItem('ma_lever_hint_seen') === '1') leverHint?.classList.add('hidden'); } catch (_) {}
-
     // рычаг
     leverHandle.addEventListener('click', (e)=>{
       e.preventDefault();
-      hideLeverHint();
-      pullLever();
+      generateMessage(messages[Math.floor(Math.random()*messages.length)]);
     });
 
     // друг
@@ -823,9 +617,11 @@
     friendSubmitBtn.addEventListener('click', ()=>{
       const name = friendNameInput.value.trim();
       if (!name) return;
+      const template = friendTemplates[Math.floor(Math.random()*friendTemplates.length)];
+      const msg = template.replace('[имя]', name);
+      generateMessage(msg);
       friendInputArea.style.display = 'none';
       friendNameInput.value = '';
-      pullLever(name);
     });
 
     // URL параметр
@@ -833,7 +629,7 @@
     if (urlParams.has('msg')) {
       generateMessage(decodeURIComponent(urlParams.get('msg')));
     } else {
-      addMessageToChat('✨ Привет! Дёрни рычаг и получи порцию дофамина', 'bot');
+      addMessageToChat('✨ Привет! Дёрни рычаг или отправь послание другу.', 'bot');
     }
 
     // встряхивание
@@ -845,7 +641,7 @@
         const mag = Math.sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
         if (mag>25 && Date.now()-lastShake>1000) {
           lastShake = Date.now();
-          pullLever();
+          generateMessage(messages[Math.floor(Math.random()*messages.length)]);
         }
       });
     }
