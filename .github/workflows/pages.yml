@@ -3,10 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'portfolio/**'
-      - '.github/workflows/pages.yml'
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -14,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -24,17 +21,58 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload artifact (portfolio)
+      - name: Build static site folder
+        run: |
+          set -e
+          mkdir -p dist
+          # Publish portfolio and methodist-booster as-is
+          cp -r portfolio dist/portfolio
+          cp -r methodist-booster dist/methodist-booster
+          # Minimal landing index with links and redirect to portfolio
+          cat > dist/index.html <<'EOF'
+          <!doctype html>
+          <html lang="ru">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Natalia L&amp;D — GitHub Pages</title>
+            <meta http-equiv="refresh" content="0; url=./portfolio/index2-light.html" />
+            <style>
+              body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',sans-serif;line-height:1.5;padding:2rem;color:#0f172a;background:#f8fafc}
+              a{color:#0ea5e9;text-decoration:none}
+              .wrap{max-width:720px;margin:0 auto}
+              .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin:12px 0}
+              .muted{color:#64748b}
+            </style>
+          </head>
+          <body>
+            <div class="wrap">
+              <h1>Natalia L&amp;D — публикации</h1>
+              <p class="muted">Автопереход на портфолио. Если не сработало — ссылки ниже.</p>
+              <div class="card">
+                <h2>Портфолио</h2>
+                <p><a href="./portfolio/index2-light.html">Открыть портфолио</a></p>
+              </div>
+              <div class="card">
+                <h2>Бустер методиста (MVP)</h2>
+                <p><a href="./methodist-booster/">Открыть Бустер</a></p>
+              </div>
+            </div>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio
+          path: dist
 
   deploy:
-    runs-on: ubuntu-latest
-    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
