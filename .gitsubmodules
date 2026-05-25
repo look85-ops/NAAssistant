@@ -1,0 +1,8 @@
+This repository previously contained a git submodule at path "methodist-booster"
+but lacks a .gitmodules entry. To simplify GitHub Pages publishing, we vendor the
+current contents directly into the repository. If you need to switch back to a
+submodule, restore a proper .gitmodules with the submodule URL and run:
+
+ git submodule deinit -f methodist-booster
+ git rm -f methodist-booster
+ git submodule add <url> methodist-booster
