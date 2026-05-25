@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бустер методиста · Ленддинг</title>
+  <meta name="description" content="Бустер методиста — инструменты для L&D: симулятор ученика, AI‑активности, фасилитационные карты, аудит обучения и 1‑страничное видение." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0F172A; --bg2:#0B1222; --text:#E5E7EB; --muted:#94A3B8; --border:#243042;
+      --mint:#22C1A0; --violet:#6D5CE7; --sky:#38BDF8; --slate:#3a5a78;
+      --radius: 16px; --s1:10px; --s2:16px; --s3:24px; --s4:36px; --gap:56px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
+      background:
+        radial-gradient(1000px 900px at 12% -10%, rgba(34,193,160,.16) 0%, transparent 60%),
+        radial-gradient(1200px 900px at 88% 0%, rgba(109,92,231,.14) 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+    .container{max-width:1120px;margin:0 auto;padding:0 var(--s3)}
+    .hero{padding: calc(var(--s4) + 10px) 0 var(--s3)}
+    .brand{display:flex;align-items:center;gap:10px;margin-bottom:var(--s2)}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--mint)}
+    .dot.v{background:var(--violet)} .dot.s{background:var(--sky)}
+    h1{margin:0;font-size:clamp(28px,4vw,48px);letter-spacing:-.3px}
+    .sub{color:var(--muted);max-width:760px;margin:10px 0 0}
+    .cta{display:flex;gap:10px;margin-top:var(--s3)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;border:1px solid var(--border);text-decoration:none;font-weight:600}
+    .btn.primary{background:linear-gradient(90deg, var(--mint), var(--violet));color:#0B1222;border-color:transparent}
+    .btn.ghost{color:var(--text)}
+    .grid{display:grid;gap:var(--s3)}
+    .modules{grid-template-columns:repeat(5,1fr);margin: var(--gap) 0}
+    .card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s3)}
+    .card h3{margin:0 0 .5rem 0;font-size:18px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+    .how{grid-template-columns:repeat(3,1fr);margin: var(--gap) 0}
+    .benefits{grid-template-columns:repeat(4,1fr);margin: var(--gap) 0}
+    .mini{display:flex;align-items:center;gap:var(--s3);margin: var(--gap) 0}
+    .mini .screen{flex:1;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .mini .text{flex:1}
+    .faq{grid-template-columns:repeat(2,1fr);margin: var(--gap) 0}
+    details{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:var(--s2)}
+    summary{cursor:pointer;font-weight:600}
+    footer{border-top:1px solid var(--border);padding: var(--s3) 0;color:var(--muted);font-size:13px;margin-top: var(--gap)}
+    @media (max-width: 980px){ .modules{grid-template-columns:repeat(3,1fr)} .benefits{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 680px){ .modules{grid-template-columns:repeat(2,1fr)} .how{grid-template-columns:1fr} .mini{flex-direction:column} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero" aria-label="Вступление">
+      <div class="brand"><span class="dot"></span><span class="dot v"></span><span class="dot s"></span></div>
+      <h1>Бустер методиста</h1>
+      <p class="sub">Практический хаб для L&D: симулятор эмоций ученика, AI‑активности, фасилитационные карты, аудит обучения и 1‑страничное видение. Меньше слов — больше действий.</p>
+      <div class="cta">
+        <a class="btn primary" href="./game.html" aria-label="Открыть инструменты">Открыть инструменты</a>
+        <a class="btn ghost" href="./style-concepts.html" aria-label="Посмотреть визуальные концепции">Визуальные концепции</a>
+      </div>
+    </section>
+
+    <section aria-label="Модули" class="grid modules">
+      <div class="card"><h3>🎭 Иванов</h3><p>Почувствуйте баланс между теорией, практикой и паузами.</p></div>
+      <div class="card"><h3>⚡ Активности (AI)</h3><p>Идеи под цель, время и формат. Пресеты в один клик.</p></div>
+      <div class="card"><h3>🎴 Карты</h3><p>Вопросы для осмысления и командных решений.</p></div>
+      <div class="card"><h3>🔍 Аудит</h3><p>Подберите обучение и подготовьте разговор с заказчиком.</p></div>
+      <div class="card"><h3>🎯 Видение</h3><p>Соберите 1‑страничный документ для команды и заказчика.</p></div>
+    </section>
+
+    <section aria-label="Как это работает" class="grid how">
+      <div class="card"><h3>1. Выберите модуль</h3><p>Симулятор, активности, карты, аудит или видение — в зависимости от задачи.</p></div>
+      <div class="card"><h3>2. Прогоните сценарий</h3><p>В 1–3 шага получите готовое решение: идея, сводка, план.</p></div>
+      <div class="card"><h3>3. Применяйте</h3><p>Копируйте сводку/инструкцию, запускайте в работу или обсуждайте с командой.</p></div>
+    </section>
+
+    <section aria-label="Преимущества" class="grid benefits">
+      <div class="card"><h3>🧠 Метод‑first</h3><p>Андрагогика, ритм, последовательность; ИИ — ускоритель.</p></div>
+      <div class="card"><h3>⚡ Быстро</h3><p>Пресеты и ясные шаги сокращают время до результата.</p></div>
+      <div class="card"><h3>💬 Репетиция</h3><p>Готовые фразы и вопросы для сложных разговоров.</p></div>
+      <div class="card"><h3>🎛 Единый стиль</h3><p>Созвучно портфолио: mint × violet × sky и строгий slate.</p></div>
+    </section>
+
+    <section aria-label="Мини демо" class="mini">
+      <div class="screen">
+        <img src="https://via.placeholder.com/800x420/0f172a/94a3b8?text=Demo+screen" alt="Скрин прототипа" style="display:block;width:100%;height:auto" />
+      </div>
+      <div class="text">
+        <h3 style="margin:0 0 .5rem 0">Мини‑демо</h3>
+        <p class="sub">Смарт‑подсказки, пресеты, копирование сводок. Перейдите в прототип и попробуйте.</p>
+        <div class="cta"><a class="btn primary" href="./game.html">Открыть прототип</a></div>
+      </div>
+    </section>
+
+    <section aria-label="FAQ" class="grid faq">
+      <details><summary>Как работает AI‑генерация?</summary><p>Ты задаёшь параметры; модель предлагает идею активности в кратком формате фасилитатора. При ошибке — выдадим вариант из базы.</p></details>
+      <details><summary>Можно ли копировать результаты?</summary><p>Да: сводки «Аудита» и «Видения» копируются в один клик; активности — готовы к проведению.</p></details>
+      <details><summary>Это заменяет методику?</summary><p>Нет. Мы используем методику как основу: андрогогика, последовательность, ритм. ИИ ускоряет поиск вариантов.</p></details>
+      <details><summary>Для кого это?</summary><p>Методисты, фасилитаторы, продакты учебных программ и все, кто проектирует обучение.</p></details>
+    </section>
+
+    <footer><small>© Бустер методиста · Внутренний прототип. Визуальный язык созвучен портфолио (mint × violet × sky).</small></footer>
+  </div>
+</body>
+</html>
