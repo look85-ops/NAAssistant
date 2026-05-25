@@ -1,6 +1,10 @@
 {
   "name": "naassistant",
   "version": "1.0.0",
+  "description": "NM.Assistant",
+  "scripts": {
+    "test": "echo \"ok\""
+  },
   "dependencies": {
     "node-fetch": "^3.3.2"
   }
