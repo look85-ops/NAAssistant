@@ -147,6 +147,28 @@
       50% { transform: translateY(-8px); }
     }
 
+    .lever-hint {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+      font-size: 0.85rem;
+      border: 1px dashed var(--accent2);
+      animation: hintBob 1.6s ease-in-out infinite;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .lever-hint.hidden {
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+    }
+    @keyframes hintBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
     .chat-messages {
       flex: 1;
       overflow-y: auto;
@@ -334,6 +356,7 @@
     <div class="lever-area">
       <div class="lever-handle" id="leverHandle">🕹️</div>
       <div style="color:var(--accent); font-size:0.8rem;">дёрни рычаг</div>
+      <div class="lever-hint" id="leverHint">👇 нажми и получи послание</div>
     </div>
 
     <div class="chat-messages" id="chatMessages"></div>
@@ -786,9 +809,19 @@
       vibrate();
     }
 
+    // микро-хинт: скрываем после первого клика, помним между визитами
+    const leverHint = document.getElementById('leverHint');
+    function hideLeverHint() {
+      if (!leverHint) return;
+      leverHint.classList.add('hidden');
+      try { localStorage.setItem('ma_lever_hint_seen', '1'); } catch (_) {}
+    }
+    try { if (localStorage.getItem('ma_lever_hint_seen') === '1') leverHint?.classList.add('hidden'); } catch (_) {}
+
     // рычаг
     leverHandle.addEventListener('click', (e)=>{
       e.preventDefault();
+      hideLeverHint();
       pullLever();
     });
 
