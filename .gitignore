@@ -1,6 +1,8 @@
 dist/
 docs/aos/tools/
 *.pdf
+cucpo_lora_output/
+cucpo_lora_hf/
 # Allow portfolio HTML assets for GitHub Pages
 !portfolio/*.html
 *.exe
