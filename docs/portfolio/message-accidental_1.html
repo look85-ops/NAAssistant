@@ -325,6 +325,69 @@
   <div class="friend-toggle-btn" id="friendToggleBtn">👥</div>
 
   <script>
+    // ---------- AI ПРОКСИ ----------
+    const AI_API = 'https://thrgbbnh-nmbot.hf.space/chat';
+    const AI_MODEL = 'deepseek/deepseek-chat';
+    const AI_FALLBACK_MODEL = 'google/gemini-2.5-flash-lite';
+    let aiBusy = false;
+
+    async function aiGenerate({ friendName = null } = {}) {
+      const banned = 'религия, политика, токсичный позитив, выгорание, финансы/долги, одиночество, внешность/вес, ментальное здоровье, сарказм про неудачи, работа/карьера негатив';
+      const sys = `Ты генерируешь одно короткое (50–180 символов) послание в стиле «бессмысленная нежность»: дружелюбно, с лёгким абсурдом, без банальностей и токсичного позитива. Русский язык. Один эмодзи в начале, максимум 2 эмодзи всего. Без хэштегов, без кавычек, без объяснений — только сам текст послания. Запрещённые темы: ${banned}.`;
+      const user = friendName
+        ? `Сгенерируй короткое тёплое послание про дружбу с человеком по имени «${friendName}». Используй имя в тексте, без штампов.`
+        : `Сгенерируй неожиданное доброе абсурдное послание для случайного человека.`;
+      const ctrl = new AbortController();
+      const tm = setTimeout(() => ctrl.abort(), 20000);
+      try {
+        const res = await fetch(AI_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: AI_MODEL,
+            fallback_model: AI_FALLBACK_MODEL,
+            messages: [
+              { role: 'system', content: sys },
+              { role: 'user', content: user }
+            ]
+          }),
+          signal: ctrl.signal
+        });
+        clearTimeout(tm);
+        if (!res.ok) throw new Error('upstream ' + res.status);
+        const data = await res.json();
+        const raw = (data && (data.output || data?.raw?.choices?.[0]?.message?.content)) || '';
+        const text = String(raw).trim().replace(/^[«"']+|[»"']+$/g, '').trim();
+        if (!text) throw new Error('empty');
+        return text;
+      } finally {
+        clearTimeout(tm);
+      }
+    }
+
+    function pickLocalFallback(friendName) {
+      if (friendName) {
+        const t = friendTemplates[Math.floor(Math.random() * friendTemplates.length)];
+        return t.replace('[имя]', friendName);
+      }
+      return messages[Math.floor(Math.random() * messages.length)];
+    }
+
+    async function pullLever(friendName = null) {
+      if (aiBusy) return;
+      aiBusy = true;
+      chatMessages.innerHTML = '';
+      addMessageToChat('🧃 Включаю автомат… секунду', 'bot');
+      try {
+        const text = await aiGenerate({ friendName });
+        generateMessage(text);
+      } catch (e) {
+        generateMessage(pickLocalFallback(friendName));
+      } finally {
+        aiBusy = false;
+      }
+    }
+
     // ---------- ПАЛИТРЫ ТЕМ ----------
     const themes = {
       pink: { bg: '#FF69B4', accent: '#39FF14', accent2: '#00F0FF', bubbleBot: '#2D1B3D', bubbleUser: '#3D2B5D' },
@@ -605,7 +668,7 @@
     // рычаг
     leverHandle.addEventListener('click', (e)=>{
       e.preventDefault();
-      generateMessage(messages[Math.floor(Math.random()*messages.length)]);
+      pullLever();
     });
 
     // друг
@@ -617,11 +680,9 @@
     friendSubmitBtn.addEventListener('click', ()=>{
       const name = friendNameInput.value.trim();
       if (!name) return;
-      const template = friendTemplates[Math.floor(Math.random()*friendTemplates.length)];
-      const msg = template.replace('[имя]', name);
-      generateMessage(msg);
       friendInputArea.style.display = 'none';
       friendNameInput.value = '';
+      pullLever(name);
     });
 
     // URL параметр
@@ -641,7 +702,7 @@
         const mag = Math.sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
         if (mag>25 && Date.now()-lastShake>1000) {
           lastShake = Date.now();
-          generateMessage(messages[Math.floor(Math.random()*messages.length)]);
+          pullLever();
         }
       });
     }
