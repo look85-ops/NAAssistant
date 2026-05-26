@@ -17,4 +17,5 @@ garden/
 *.tgz
 *.rar
 API_MA.txt
+API.txt
 _hf_push_*/
