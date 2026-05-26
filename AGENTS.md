@@ -320,15 +320,16 @@
 
 ## Critical Assets (main — всегда зелёный)
 
-Три артефакта должны быть всегда в рабочем состоянии на main:
+Четыре артефакта должны быть всегда в рабочем состоянии на main:
 1. **portfolio/** — сайт-визитка (Netlify publish = portfolio, редирект на index2-light.html)
 2. **methodist-booster/** — инструмент методиста (отдельный Netlify сайт)
 3. **portfolio/message-accidental_1.html** — «послание случайно»
+4. **garden/** — Digital Garden (отдельный репозиторий `look85-ops/digital-garden`, GitHub Pages https://look85-ops.github.io/digital-garden/)
 
 Правила:
 - Перед коммитом в main проверь, что эти файлы не сломаны (smoke-тест: открыть в браузере или `webapp-test`)
 - Если фича ломает один из них — фикса до коммита
-- `main` не принимает коммиты, которые нарушают работу этих трёх артефактов
+- `main` не принимает коммиты, которые нарушают работу этих четырёх артефактов
 
 ---
 
