@@ -280,6 +280,16 @@ function buildVerdict(input) {
         <div class="verdict-section"><strong>Репетиция формулировок:</strong>${list(phrases)}</div>
         <div class="verdict-section"><strong>Риски:</strong>${list(risks)}</div>
         <div style="margin-top:var(--s-3)"><button class="action-btn" onclick="copyAudit()">📋 Скопировать сводку</button></div>
+        <div class="tool-links" style="margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px solid var(--border); font-size: var(--fs-small)">
+            <strong style="color: var(--text-muted)">Другие инструменты:</strong>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: var(--s-2)">
+                <a class="action-btn" href="ivanov.html">🎭 Иванов</a>
+                <a class="action-btn" href="activities.html">⚡ Активности</a>
+                <a class="action-btn" href="cards.html">🎴 Карты</a>
+                <a class="action-btn" href="vision.html">🎯 Видение</a>
+                <a class="action-btn" href="index.html" style="border-color: var(--accent-blue); color: var(--accent-blue)">🏠 На главную</a>
+            </div>
+        </div>
     `;
 }
 

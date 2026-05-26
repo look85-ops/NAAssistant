@@ -58,8 +58,52 @@
 }
 .nav-links a:hover { color: var(--accent-blue); }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 60;
+}
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform var(--t) var(--ease), opacity var(--t) var(--ease);
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--bg-elev);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        z-index: 55;
+        padding: var(--s-2) 0;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+        padding: var(--s-2) var(--s-4);
+        font-size: var(--fs-body);
+        border-bottom: 1px solid var(--border);
+    }
+    .nav-links a:last-child { border-bottom: none; }
+    .site-header { position: relative; }
 }
 
 /* ============== HERO ============== */

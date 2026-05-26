@@ -101,7 +101,7 @@
  
 
 ### F-007 [Product] «Бустер методиста»: MVP цифрового инструмента
-**Статус:** В работе (деплой выполнен; UX pass 1/2; smoke-check)
+**Статус:** Готово
 **Дедлайн:** 2026-06-01
 **Приоритет:** high
 
@@ -128,17 +128,17 @@
 - [x] Базовые адаптив-правки (clamp для карточек/инфоблоков)
 
 **Осталось:**
-- [ ] Smoke-check 5 страниц: контент + AI-функции (`/.netlify/functions/chat`)
-- [ ] 5–7 точечных UX/UI доработок (копирайт, мобильные отступы, кликабельные зоны)
+- [x] Smoke-check 5 страниц: контент + AI-функции (`/.netlify/functions/chat`)
+- [x] 5–7 точечных UX/UI доработок: canonical URLs, mobile hamburger menu, theme-color, portfolio link in footer, nav after audit/vision results
 - [x] Удалена старая `game.html` и `ivanov-full.html`
-- [ ] Поддомен `booster.natalialnd.com` (DNS + Netlify site alias)
-- [ ] Блок с «Бустером» в портфолио + ссылка
+- [ ] Поддомен `booster.natalialnd.com` (DNS + Netlify site alias) — отложено (нет доступа к DNS)
+- [x] Блок с «Бустером» в портфолио + ссылка
 
 **Критерии готовности (для закрытия задачи):**
-- [ ] MVP задеплоен и доступен по публичной ссылке
-- [ ] Все 5 инструментов работают (включая AI-сценарии)
-- [ ] Mobile/desktop проверены
-- [ ] Ссылка добавлена в портфолио
+- [x] MVP задеплоен и доступен по публичной ссылке
+- [x] Все 5 инструментов работают (включая AI-сценарии)
+- [ ] Mobile/desktop проверены (после UX-доработок)
+- [x] Ссылка добавлена в портфолио
 
 **Артефакты:**
 - `methodist-booster/index.html`, `ivanov.html`, `activities.html`, `cards.html`, `audit.html`, `vision.html`

@@ -223,6 +223,16 @@ async function finishVision() {
             <button class="wizard-btn" onclick="copyVision()">📋 Скопировать</button>
             <button class="wizard-btn" style="background: var(--text-soft)" onclick="resetVision()">🔄 Начать заново</button>
         </div>
+        <div class="tool-links" style="margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px solid var(--border); font-size: var(--fs-small)">
+            <strong style="color: var(--text-muted)">Другие инструменты:</strong>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: var(--s-2)">
+                <a class="action-btn" href="ivanov.html">🎭 Иванов</a>
+                <a class="action-btn" href="activities.html">⚡ Активности</a>
+                <a class="action-btn" href="cards.html">🎴 Карты</a>
+                <a class="action-btn" href="audit.html">🔍 Аудит</a>
+                <a class="action-btn" href="index.html" style="border-color: var(--accent-blue); color: var(--accent-blue)">🏠 На главную</a>
+            </div>
+        </div>
     `;
     document.getElementById('step7').style.display = 'none';
 

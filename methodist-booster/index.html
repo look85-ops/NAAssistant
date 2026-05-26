@@ -6,12 +6,13 @@
     <title>Бустер методиста — пять инструментов для L&D</title>
     <meta name="description" content="Бустер методиста: симулятор учебного дня, генератор активностей, фасилитационные карты, аудит запроса заказчика, мастер видения продукта.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://look85-ops.github.io/NAAssistant/methodist-booster/">
+    <link rel="canonical" href="https://look85-ops.github.io/metod_buster/">
+    <meta name="theme-color" content="#FAF9F7">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
     <meta property="og:title" content="Бустер методиста — пять инструментов для L&D">
     <meta property="og:description" content="Симулятор учебного дня, генератор активностей, фасилитационные карты, аудит запроса заказчика, мастер видения продукта.">
-    <meta property="og:url" content="https://look85-ops.github.io/NAAssistant/methodist-booster/">
+    <meta property="og:url" content="https://look85-ops.github.io/metod_buster/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Бустер методиста">
     <meta property="og:locale" content="ru_RU">
@@ -26,7 +27,7 @@
       "@type": "WebApplication",
       "name": "Бустер методиста",
       "description": "Пять инструментов для L&D: симулятор учебного дня, генератор активностей, фасилитационные карты, аудит запроса заказчика, мастер видения продукта.",
-      "url": "https://look85-ops.github.io/NAAssistant/methodist-booster/",
+      "url": "https://look85-ops.github.io/metod_buster/",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Any",
       "browserRequirements": "Requires JavaScript"
@@ -45,12 +46,22 @@
 
 <header class="site-header">
     <div class="container nav">
-        <a class="brand" href="/" aria-label="Бустер методиста — на главную">
+        <a class="brand" href="index.html" aria-label="Бустер методиста — на главную">
             <span class="brand-dots" aria-hidden="true">
                 <span></span><span></span><span></span>
             </span>
             <span>Бустер методиста</span>
         </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+            <a href="ivanov.html">Иванов</a>
+            <a href="activities.html">Активности</a>
+            <a href="cards.html">Карты</a>
+            <a href="audit.html">Аудит</a>
+            <a href="vision.html">Видение</a>
+        </nav>
     </div>
 </header>
 
@@ -141,9 +152,18 @@
 <footer class="site-footer">
     <div class="container footer-row">
         <small>© Наталья Марценюк, 2026 · Сделано в сотрудничестве с AI</small>
+        <a href="https://natalialnd.netlify.app/" target="_blank" rel="noopener" class="footer-links">Портфолио →</a>
     </div>
 </footer>
 
+<script>
+document.getElementById('hamburgerBtn')?.addEventListener('click', function() {
+    const nav = document.getElementById('navLinks');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    nav.classList.toggle('open');
+    this.setAttribute('aria-expanded', !expanded);
+});
+</script>
 </body>
 </html>
 </content>

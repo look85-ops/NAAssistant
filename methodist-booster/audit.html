@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аудит — Бустер методиста</title>
     <meta name="description" content="Диагностика запроса заказчика: 5 шагов к честному решению и списку рисков.">
+    <link rel="canonical" href="https://look85-ops.github.io/metod_buster/audit.html">
+    <meta name="theme-color" content="#FAF9F7">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +27,10 @@
             </span>
             <span>Бустер методиста</span>
         </a>
-        <nav class="nav-links" aria-label="Инструменты">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" id="navLinks" aria-label="Инструменты">
             <a href="index.html">Главная</a>
             <a href="ivanov.html">Иванов</a>
             <a href="activities.html">Активности</a>
@@ -157,10 +162,17 @@
 <footer class="site-footer">
     <div class="container footer-row">
         <small>© Наталья Марценюк, 2026 · Сделано в сотрудничестве с AI</small>
+        <a href="https://natalialnd.netlify.app/" target="_blank" rel="noopener" class="footer-links">Портфолио →</a>
     </div>
 </footer>
 
 <script src="js/audit.js"></script>
+<script>
+document.getElementById('hamburgerBtn')?.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+});
+</script>
 </body>
 </html>
 </content>
