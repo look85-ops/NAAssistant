@@ -4,7 +4,7 @@
 
 | Неделя | Задач завершено | Среднее время от идеи до готовности | Успешных постов* |
 |--------|------------------|-------------------------------------|------------------|
-| 21     | 0 (Бустер методиста: MVP задеплоен, smoke-check в процессе) | —              | —                |
+| 21     | 1 (структурная чистка, manifest, critical assets) | ~40 мин (одна сессия) | —                |
 | 20     | 0                | —                                   | —                |
 | 19     | 0                | —                                   | —                |
 | 18     | 0                | —                                   | —                |
@@ -129,7 +129,7 @@
 **Осталось:**
 - [ ] Smoke-check 5 страниц: контент + AI-функции (`/.netlify/functions/chat`)
 - [ ] 5–7 точечных UX/UI доработок (копирайт, мобильные отступы, кликабельные зоны)
-- [ ] Заархивировать/удалить старую `game.html` (после валидации сценариев)
+- [x] Удалена старая `game.html` и `ivanov-full.html`
 - [ ] Поддомен `booster.natalialnd.com` (DNS + Netlify site alias)
 - [ ] Блок с «Бустером» в портфолио + ссылка
 
@@ -144,8 +144,7 @@
 - `methodist-booster/styles/*`, `methodist-booster/js/*`
 - `methodist-booster/netlify/functions/chat.js` — AI-прокси
 - ТЗ дизайна: `methodist-booster/design/TZ_DESIGN.md`
-- Старая монолитная версия: `methodist-booster/game.html` (на удаление/архив)
- - Прод: Netlify — https://method-buster.netlify.app/
+- Прод: Netlify — https://method-buster.netlify.app/
  - Прод: GitHub Pages — https://look85-ops.github.io/metod_buster/
 
 **Решения по дизайну (зафиксированы):**
