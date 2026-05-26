@@ -28,6 +28,8 @@ jobs:
           # Publish portfolio and methodist-booster as-is
           cp -r portfolio dist/portfolio
           cp -r methodist-booster dist/methodist-booster
+          # Publish message-accidental at root for canonical URL
+          cp portfolio/message-accidental_1.html dist/
           # Minimal landing index with links and redirect to portfolio
           cat > dist/index.html <<'EOF'
           <!doctype html>
@@ -56,6 +58,10 @@ jobs:
               <div class="card">
                 <h2>Бустер методиста (MVP)</h2>
                 <p><a href="./methodist-booster/">Открыть Бустер</a></p>
+              </div>
+              <div class="card">
+                <h2>Послание случайно</h2>
+                <p><a href="./message-accidental_1.html">Открыть</a></p>
               </div>
             </div>
           </body>

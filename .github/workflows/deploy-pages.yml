@@ -26,6 +26,8 @@ jobs:
           mkdir -p dist
           cp -r portfolio dist/.
           if [ -d methodist-booster ]; then cp -r methodist-booster dist/methodist-booster; fi
+          # Publish message-accidental at root for canonical URL
+          cp portfolio/message-accidental_1.html dist/
           # Root index with redirect to portfolio
           cat > dist/index.html <<'EOF'
           <!doctype html>
