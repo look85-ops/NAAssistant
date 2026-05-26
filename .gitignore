@@ -3,6 +3,9 @@ docs/aos/tools/
 *.pdf
 cucpo_lora_output/
 cucpo_lora_hf/
+cucpo_app/
+temp_space/
+garden/
 # Allow portfolio HTML assets for GitHub Pages
 !portfolio/*.html
 *.exe
