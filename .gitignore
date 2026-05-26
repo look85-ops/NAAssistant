@@ -13,3 +13,5 @@ cucpo_lora_hf/
 *.tar.gz
 *.tgz
 *.rar
+API_MA.txt
+_hf_push_*/
