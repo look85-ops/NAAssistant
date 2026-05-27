@@ -38,22 +38,31 @@
     .toolbar { display:flex; gap:8px; flex-wrap:wrap }
     .btn.small { padding:8px 12px; font-size:14px }
     .tips-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--s-3);margin-top:var(--s-3)}
-    .tip-card{padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.02)}
+    .tip-card{padding:var(--s-4);border:1px solid var(--border);border-radius:var(--radius);background:color-mix(in srgb, var(--bg-elev) 92%, var(--bg-yellow) 8%);transition:border-color var(--t) var(--ease)}
+    .tip-card:hover{border-color:var(--accent)}
     .tip-card h3{font-size:16px;margin:0 0 var(--s-2)}
     .tip-card dt{font-weight:var(--fw-semi);margin-top:4px;font-size:13px}
     .tip-card dd{margin:0 0 0 var(--s-3);font-size:13px;color:var(--text-muted)}
     .tip-card ul{margin:0;padding-left:16px;font-size:13px}
     .tip-card ul li{margin-bottom:4px;line-height:1.5}
     .prompt-example small{display:block;margin:6px 0 2px;color:var(--text-soft);font-size:11px}
-    .example-bad,.example-good{padding:6px 10px;border-radius:6px;font-size:12px;line-height:1.5;margin-bottom:4px}
-    .example-bad{background:rgba(239,68,68,.08);border-left:3px solid #ef4444}
-    .example-good{background:rgba(34,197,94,.08);border-left:3px solid #22c55e}
-    .temp-scale{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:var(--s-2);font-size:12px}
-    .temp-scale div{padding:8px;border:1px solid var(--border);border-radius:8px}
+    .example-good{padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.5;background:rgba(34,197,94,.10);border-left:3px solid #22c55e}
+    .temp-scale{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:var(--s-2);font-size:12px}
+    .temp-scale div{padding:10px;border:1px solid var(--border);border-radius:8px;background:rgba(255,234,108,.08)}
     .temp-scale div strong{display:block;font-size:13px;margin-bottom:4px}
-    .prompt-tpl details{margin-top:var(--s-2);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s-2);background:rgba(255,255,255,.03)}
+    .prompt-tpl details{margin-top:var(--s-2);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s-3);background:color-mix(in srgb, var(--bg-elev) 94%, var(--bg-yellow) 6%);transition:border-color var(--t) var(--ease)}
+    .prompt-tpl details:hover{border-color:var(--accent)}
     .prompt-tpl details summary{cursor:pointer;font-weight:var(--fw-semi);font-size:14px}
     .prompt-tpl details pre{font-size:12px;line-height:1.5;margin:var(--s-2) 0 0;white-space:pre-wrap;color:var(--text)}
+    .next-steps{margin-top:var(--s-4);padding:var(--s-4);background:var(--bg-yellow);border:1px solid var(--text);border-radius:var(--radius)}
+    .next-steps h3{margin:0 0 var(--s-3);font-size:18px}
+    .next-steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3)}
+    .next-steps a{display:block;padding:var(--s-3);background:#fff;border:1px solid var(--text);border-radius:8px;color:var(--text);text-decoration:none;font-weight:var(--fw-semi);transition:transform var(--t) var(--ease)}
+    .next-steps a:hover{transform:translateY(-2px)}
+    .next-steps a .arrow{display:inline-block;margin-left:6px;transition:margin var(--t) var(--ease)}
+    .next-steps a:hover .arrow{margin-left:10px}
+    .next-steps a small{display:block;margin-top:4px;font-weight:400;color:var(--text-muted);font-size:13px}
+    @media (max-width: 840px){ .next-steps-grid{grid-template-columns:1fr} }
     @media (max-width: 840px){ .grid-2{ grid-template-columns:1fr } .tips-grid{grid-template-columns:1fr} .temp-scale{grid-template-columns:1fr} }
   </style>
 </head>
@@ -85,11 +94,13 @@
     </div>
 
     <h1>Промпты для методиста</h1>
-    <p class="subtitle">Советы по работе с AI, готовые промпты и конструктор под задачу. Каталог AI-сервисов → <a href="ai-tools.html">AI-инструменты</a>.</p>
+    <p class="subtitle">Советы по работе с AI, готовые промпты и конструктор под задачу.</p>
+    <p style="margin-top: var(--s-3)">
+      <a href="ai-tools.html" style="display:inline-block;background:var(--bg-yellow);color:var(--text);padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:var(--fw-semi);border:1px solid var(--text)">Каталог AI-сервисов → AI-инструменты</a>
+    </p>
 
     <section aria-labelledby="tips-title" style="margin-top: var(--s-5)">
       <h2 id="tips-title">Советы по работе с AI</h2>
-      <p class="hint">Четыре правила, которые превращают «сделай обучение» в точный результат.</p>
       <div class="tips-grid">
         <div class="tip-card">
           <h3>Формула RZKF</h3>
@@ -134,7 +145,7 @@
 
     <section class="lib" style="margin-top: var(--s-6)" aria-labelledby="ready-title">
       <h2 id="ready-title">Готовые промпты</h2>
-      <p class="hint">Скопируйте, замените [плейсхолдеры] своим контекстом и вставьте в AI-сервис. Проверены на YandexGPT и GigaChat.</p>
+      <p class="hint">Скопируйте, замените [плейсхолдеры] своим контекстом и вставьте в любой AI-сервис.</p>
 
       <div class="prompt-tpl" style="margin-top: var(--s-3)">
         <details>
@@ -225,7 +236,19 @@
         </details>
       </div>
 
-      <p class="hint" style="margin-top: var(--s-3)">Нужна интерактивная диагностика запроса заказчика — иди в <a href="audit.html">Аудит</a>. Собрать видение продукта по JTBD — в <a href="vision.html">Видение</a>.</p>
+      <div class="next-steps" role="navigation" aria-label="Другие инструменты">
+        <h3>Что ещё может пригодиться</h3>
+        <div class="next-steps-grid">
+          <a href="audit.html">
+            Аудит запроса заказчика <span class="arrow">→</span>
+            <small>Интерактивная диагностика: что на самом деле нужно за запросом</small>
+          </a>
+          <a href="vision.html">
+            Видение продукта <span class="arrow">→</span>
+            <small>Соберите видение по JTBD: от боли пользователя к MVP</small>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section style="margin-top: var(--s-6)" aria-labelledby="builder-title">
@@ -262,12 +285,8 @@
           </label>
         </div>
 
-        <label>Контекст (1–3 строки)
-          <textarea id="ctx" placeholder="Тема, цель, ограничения, дедлайн"></textarea>
-        </label>
-
-        <label>Исходные материалы (список)
-          <textarea id="src" placeholder="Презентации, регламенты, записи вебинаров…"></textarea>
+        <label>Контекст (1–5 строк)
+          <textarea id="ctx" rows="5" placeholder="Тема, цель, ограничения, дедлайн. Имеющиеся материалы: коротко перечислите — презентации, регламенты, записи вебинаров (без названий компаний и ФИО)."></textarea>
         </label>
 
         <div class="toolbar">
@@ -318,14 +337,12 @@
     const format = /** @type {HTMLInputElement} */(document.querySelector('input[name="format"]:checked'))?.value || '';
     const aud = /** @type {HTMLInputElement} */(document.getElementById('aud')).value?.trim();
     const ctx = /** @type {HTMLTextAreaElement} */(document.getElementById('ctx')).value?.trim();
-    const src = /** @type {HTMLTextAreaElement} */(document.getElementById('src')).value?.trim();
 
     let out = ROLE;
     out += TEMPLATES[task] || '';
     if (format) out += `Формат курса: ${format}. Учитывай ограничения и ритм этого формата.\n`;
     if (aud) out += `Аудитория: ${aud}.\n`;
     if (ctx) out += `Контекст: ${ctx}.\n`;
-    if (src) out += `Исходные материалы: ${src}.\n`;
     out += `\nФорматируй выводы таблицами там, где это уместно.`;
 
     document.getElementById('result').value = out;
@@ -333,7 +350,7 @@
 
   document.getElementById('buildBtn')?.addEventListener('click', buildPrompt);
   document.getElementById('clearBtn')?.addEventListener('click', function(){
-    ['aud','ctx','src'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    ['aud','ctx'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
     document.getElementById('result').value = '';
   });
   document.getElementById('copyBtn')?.addEventListener('click', async function(){
