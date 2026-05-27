@@ -321,7 +321,7 @@
 ## Critical Assets (main — всегда зелёный)
 
 Четыре артефакта должны быть всегда в рабочем состоянии на main:
-1. **portfolio/** — сайт-визитка (Netlify publish = portfolio, редирект на index2-light.html)
+1. **portfolio/** — сайт-визитка (Netlify publish = portfolio, главная index.html)
 2. **methodist-booster/** — инструмент методиста (отдельный Netlify сайт)
 3. **portfolio/message-accidental_1.html** — «послание случайно»
 4. **garden/** — Digital Garden (отдельный репозиторий `look85-ops/digital-garden`, GitHub Pages https://look85-ops.github.io/digital-garden/)
@@ -356,4 +356,4 @@
 
 ## Деплой портфолио (Netlify)
 
-Кратко: publish = `portfolio`, редирект по умолчанию на `index2-light.html`. Подробности в `docs/process/NETLIFY_DEPLOY.md`.
+Кратко: publish = `portfolio`, главная — `index.html`. Подробности в `docs/process/NETLIFY_DEPLOY.md`.

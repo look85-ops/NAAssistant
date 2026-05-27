@@ -279,6 +279,14 @@ function buildVerdict(input) {
         <div class="verdict-section"><strong>Вопросы заказчику:</strong>${list(questions)}</div>
         <div class="verdict-section"><strong>Репетиция формулировок:</strong>${list(phrases)}</div>
         <div class="verdict-section"><strong>Риски:</strong>${list(risks)}</div>
+        <div class="verdict-section" style="border: 1px dashed var(--border); border-radius: 12px; padding: var(--s-3); background: rgba(255,255,255,.02)">
+            <button class="action-btn" onclick="toggleAuditPrompt()" style="font-size:14px">🤖 Промпт для AI</button>
+            <div id="auditPromptBox" style="display:none; margin-top: var(--s-2)">
+                <textarea id="auditPromptText" rows="8" style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:rgba(255,255,255,.04); color:var(--text); font-size:13px; white-space:pre-wrap">${(() => { try { return buildAuditPrompt(input); } catch(e) { return ''; } })()}</textarea>
+                <button class="action-btn" style="margin-top:6px; font-size:14px" onclick="copyAuditPrompt()">📋 Скопировать промпт</button>
+                <p class="hint" style="margin-top:6px; font-size:12px; color:var(--text-soft)">Вставьте в YandexGPT, GigaChat или Perplexity — подборка сервисов на странице <a href="ai-tools.html" style="color:var(--accent); text-decoration:underline">AI-инструменты</a></p>
+            </div>
+        </div>
         <div style="margin-top:var(--s-3)"><button class="action-btn" onclick="copyAudit()">📋 Скопировать сводку</button></div>
         <div class="tool-links" style="margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px solid var(--border); font-size: var(--fs-small)">
             <strong style="color: var(--text-muted)">Другие инструменты:</strong>
@@ -287,10 +295,42 @@ function buildVerdict(input) {
                 <a class="action-btn" href="activities.html">⚡ Активности</a>
                 <a class="action-btn" href="cards.html">🎴 Карты</a>
                 <a class="action-btn" href="vision.html">🎯 Видение</a>
+                <a class="action-btn" href="prompts.html" style="border-color: var(--accent-blue); color: var(--accent-blue)">🧩 Промпты</a>
                 <a class="action-btn" href="index.html" style="border-color: var(--accent-blue); color: var(--accent-blue)">🏠 На главную</a>
             </div>
         </div>
     `;
+}
+
+function buildAuditPrompt(input) {
+    const cause = auditCauses.find(c => c.id === input.causeId);
+    if (!cause) return '';
+    return `Действуй как опытный педагогический дизайнер.
+
+Ситуация: ${input.desc}
+Целевая аудитория: ${input.audienceLabel}
+Желаемый результат (${input.goalTypeLabel}): ${input.goal}
+Основная причина разрыва: ${cause.label} — ${cause.hint}
+Ограничения: объём ${input.scopeLabel}, бюджет ${input.budgetLabel}, охват ${input.peopleLabel}, срочность ${input.urgencyLabel}, формат ${input.formatLabel}
+
+На основе этих данных:
+1. Разработай детальный план вмешательства с учётом причины разрыва.
+2. Для каждого шага укажи: формат, время, необходимые материалы, кто ведёт.
+3. Сформулируй 3–5 измеримых критериев успеха.
+4. Какие риски нужно мониторить и как их снимать.
+5. Если не хватает данных — пометь [Недостающий материал: ...]
+
+Форматируй ответ таблицами и чек-листами. Язык — русский, без канцелярита.`;
+}
+
+function toggleAuditPrompt() {
+    const box = document.getElementById('auditPromptBox');
+    if (box) box.style.display = box.style.display === 'none' ? 'block' : 'none';
+}
+
+function copyAuditPrompt() {
+    const el = document.getElementById('auditPromptText');
+    if (el) navigator.clipboard.writeText(el.value);
 }
 
 function renderCauseOptions() {
