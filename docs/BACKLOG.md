@@ -44,8 +44,8 @@
 - [ ] Обновлён заголовок и описание
 
 **Артефакты:**
-- Опубликованный сайт: https://natalialnd.netlify.app/
-- Исходники сайта: папка `portfolio/` (см. draft/index.html для прототипов)
+- Опубликованный сайт (GH Pages): https://look85-ops.github.io/NAAssistant/portfolio/
+- Исходники сайта: папка `portfolio/`
 - Источники медиа/кейсов: Google Drive
 
 ---
@@ -119,20 +119,20 @@
 - [x] Аудит: 5-шаговый мастер по Mager & Pipe, 6 причин с диагностикой, вердикт с адаптацией под аудиторию (эксперты/новые/кросс/тренеры/топы), форматы для «не-обучения» (стратсессия/хакатон/change-mgmt/OD-диагностика)
 - [x] Видение: 7 шагов в логике Lean/JTBD, валидация на минимум символов, методическое зеркало с 8 типами проверок, AI-генератор 3–5 направлений решения
 - [x] Дизайн-система: tokens.css / base.css / components.css / pages.css, единый шаблон tool-intro + tool-canvas, 5 цветов инструментов
-- [x] Главная страница (landing) с hero, блоком «Зачем», 5 плашками инструментов, footer без ссылки на портфолио
+- [x] Главная страница (landing) с hero, блоком «Зачем», 5 плашками инструментов
 - [x] Единая вы-форма по всем страницам (инструкции, подсказки, селекты, алерты)
-- [x] Удалены ссылки «Портфолио» из футеров инструментов
+- [x] Единый футер/шапка на всех страницах; добавлен пункт «AI-инструменты»
 - [x] Подключены и задеплоены общие стили/скрипты (styles/*, js/*) — устранены 404 на проде
-- [x] GitHub Pages деплой: https://look85-ops.github.io/metod_buster/
+- [x] GitHub Pages деплой: https://look85-ops.github.io/NAAssistant/methodist-booster/
 - [x] Netlify деплой: https://method-buster.netlify.app/ (pretty URLs без .html)
 - [x] Базовые адаптив-правки (clamp для карточек/инфоблоков)
 
-**Осталось:**
-- [x] Smoke-check 5 страниц: контент + AI-функции (`/.netlify/functions/chat`)
-- [x] 5–7 точечных UX/UI доработок: canonical URLs, mobile hamburger menu, theme-color, portfolio link in footer, nav after audit/vision results
-- [x] Удалена старая `game.html` и `ivanov-full.html`
-- [ ] Поддомен `booster.natalialnd.com` (DNS + Netlify site alias) — отложено (нет доступа к DNS)
-- [x] Блок с «Бустером» в портфолио + ссылка
+**Осталось / фикса:**
+- [x] Smoke-check 5 страниц
+- [x] Токенизация цветов таймлайна (без хардкода)
+- [x] SEO-теги на всех страницах (OG/Twitter/robots/canonical)
+- [ ] Поддомен `booster.natalialnd.com` (отложено)
+- [x] Раздел «AI-инструменты»: RU-friendly замены заблокированных сервисов, кликабельные строки
 
 **Критерии готовности (для закрытия задачи):**
 - [x] MVP задеплоен и доступен по публичной ссылке
@@ -141,12 +141,10 @@
 - [x] Ссылка добавлена в портфолио
 
 **Артефакты:**
-- `methodist-booster/index.html`, `ivanov.html`, `activities.html`, `cards.html`, `audit.html`, `vision.html`
-- `methodist-booster/styles/*`, `methodist-booster/js/*`
-- `methodist-booster/netlify/functions/chat.js` — AI-прокси
+- `methodist-booster/index.html`, `ivanov.html`, `activities.html`, `cards.html`, `audit.html`, `vision.html`, `ai-tools.html`
+- `methodist-booster/styles/*`
 - ТЗ дизайна: `methodist-booster/design/TZ_DESIGN.md`
-- Прод: Netlify — https://method-buster.netlify.app/
- - Прод: GitHub Pages — https://look85-ops.github.io/metod_buster/
+- Прод: GitHub Pages — https://look85-ops.github.io/NAAssistant/methodist-booster/
 
 **Решения по дизайну (зафиксированы):**
 - Адрес: `booster.natalialnd.com`
