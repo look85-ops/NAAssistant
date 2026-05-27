@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Промпты для методиста — Бустер методиста</title>
+    <meta name="description" content="Готовые промпты, советы по работе с AI (роль, температура, приватность) и конструктор под задачу. Для YandexGPT, GigaChat, ChatGPT.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://look85-ops.github.io/NAAssistant/methodist-booster/prompts.html">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <meta property="og:title" content="Промпты для методиста — Бустер методиста">
+  <meta property="og:description" content="Готовые промпты, советы (RZK, температура, приватность) и конструктор под задачу.">
+  <meta property="og:url" content="https://look85-ops.github.io/NAAssistant/methodist-booster/prompts.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Бустер методиста">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <style>
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); align-items:start }
+    .stack > * + * { margin-top: var(--s-3) }
+    .hint { color: var(--muted); font-size: 13px }
+    .result { white-space: pre-wrap; min-height: 280px }
+    .chips { display:flex; flex-wrap:wrap; gap:8px }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:rgba(255,255,255,.04); font-size:13px; cursor:pointer }
+    .chip input { margin:0 }
+    .lib details { background: rgba(255,255,255,.03); border:1px solid var(--border); border-radius:12px; padding: var(--s-3) }
+    .lib details + details { margin-top: var(--s-3) }
+    textarea, select, input[type="text"] { width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:rgba(255,255,255,.04); color:var(--text) }
+    .toolbar { display:flex; gap:8px; flex-wrap:wrap }
+    .btn.small { padding:8px 12px; font-size:14px }
+    .tips-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--s-3);margin-top:var(--s-3)}
+    .tip-card{padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius);background:rgba(255,255,255,.02)}
+    .tip-card h3{font-size:16px;margin:0 0 var(--s-2)}
+    .tip-card dt{font-weight:var(--fw-semi);margin-top:4px;font-size:13px}
+    .tip-card dd{margin:0 0 0 var(--s-3);font-size:13px;color:var(--text-muted)}
+    .tip-card ul{margin:0;padding-left:16px;font-size:13px}
+    .tip-card ul li{margin-bottom:4px;line-height:1.5}
+    .prompt-example small{display:block;margin:6px 0 2px;color:var(--text-soft);font-size:11px}
+    .example-bad,.example-good{padding:6px 10px;border-radius:6px;font-size:12px;line-height:1.5;margin-bottom:4px}
+    .example-bad{background:rgba(239,68,68,.08);border-left:3px solid #ef4444}
+    .example-good{background:rgba(34,197,94,.08);border-left:3px solid #22c55e}
+    .temp-scale{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:var(--s-2);font-size:12px}
+    .temp-scale div{padding:8px;border:1px solid var(--border);border-radius:8px}
+    .temp-scale div strong{display:block;font-size:13px;margin-bottom:4px}
+    .prompt-tpl details{margin-top:var(--s-2);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s-2);background:rgba(255,255,255,.03)}
+    .prompt-tpl details summary{cursor:pointer;font-weight:var(--fw-semi);font-size:14px}
+    .prompt-tpl details pre{font-size:12px;line-height:1.5;margin:var(--s-2) 0 0;white-space:pre-wrap;color:var(--text)}
+    @media (max-width: 840px){ .grid-2{ grid-template-columns:1fr } .tips-grid{grid-template-columns:1fr} .temp-scale{grid-template-columns:1fr} }
+  </style>
+</head>
+<body class="tool-page">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Бустер методиста — на главную">
+        <span class="brand-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Бустер методиста</span>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+        <a href="index.html">Главная</a>
+        <a href="ivanov.html">Иванов</a>
+        <a href="activities.html">Активности</a>
+        <a href="cards.html">Карты</a>
+        <a href="audit.html">Аудит</a>
+        <a href="vision.html">Видение</a>
+        <a href="ai-tools.html">AI-инструменты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="index.html">← Главная</a>
+      <span class="sep">/</span>
+      <span>Промпты</span>
+    </div>
+
+    <h1>Промпты для методиста</h1>
+    <p class="subtitle">Советы по работе с AI, готовые промпты и конструктор под задачу. Каталог AI-сервисов → <a href="ai-tools.html">AI-инструменты</a>.</p>
+
+    <section aria-labelledby="tips-title" style="margin-top: var(--s-5)">
+      <h2 id="tips-title">Советы по работе с AI</h2>
+      <p class="hint">Четыре правила, которые превращают «сделай обучение» в точный результат.</p>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>Формула RZKF</h3>
+          <p style="font-size:13px;margin:0">Роль + Задача + Контекст + Формат — каркас любого промпта.</p>
+          <dl>
+            <dt>Роль</dt><dd>например: «senior learning analyst и performance consultant» — задаёт уровень рассуждения и словарь</dd>
+            <dt>Задача</dt><dd>один глагол: проанализируй, сформулируй, разработай, перепиши</dd>
+            <dt>Контекст</dt><dd>ЦА, формат курса, ограничения, дедлайн — без личных данных</dd>
+            <dt>Формат</dt><dd>как оформить ответ: таблица, чек-лист, 3 абзаца, JSON</dd>
+          </dl>
+        </div>
+        <div class="tip-card">
+          <h3>Приватность и гигиена</h3>
+          <ul>
+            <li><strong>Не вставляйте ФИО, телефоны, email</strong> — заменяйте на роли: «руководитель отдела», «сотрудник со стажем 2 года»</li>
+            <li><strong>Не указывайте название компании, подразделения, локации</strong></li>
+            <li><strong>Не загружайте файлы</strong> — копируйте фрагменты текста. Текстовый промпт точнее и безопаснее</li>
+            <li><strong>Не вставляйте зарплаты, KPI, внутренние документы</strong> и регламенты</li>
+            <li><strong>Чистите историю чата</strong> после работы — данные хранятся на стороне сервиса</li>
+          </ul>
+        </div>
+        <div class="tip-card">
+          <h3>Слабый → сильный промпт</h3>
+          <div class="prompt-example">
+            <small>Слабый (результат — вода)</small>
+            <div class="example-bad">«Напиши сценарий обучения для руководителей»</div>
+            <small>Сильный (RZKF — точный ответ)</small>
+            <div class="example-good">«Ты — senior learning analyst и performance consultant. Разработай сценарий обучения для линейных руководителей. Тема: проведение встреч 1:1 с сотрудниками. Хронометраж: 45 минут. Формат: таблица — Время → Тема → Активность → Материалы»</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-card" style="margin-top: var(--s-3)">
+        <h3>Температура — насколько креативно отвечает AI</h3>
+        <p style="font-size:13px;margin:0 0 var(--s-2);color:var(--text-muted)">Параметр от 0 до 1 (иногда до 2). Можно задать прямо в промпте: «Температура: 0.3». Чем ниже — тем строже и предсказуемее ответ. Чем выше — тем больше вариативности и риска «галлюцинаций».</p>
+        <div class="temp-scale">
+          <div><strong>0.0–0.3 · строго</strong>Чек-листы, регламенты, формулировки целей, тесты, факты. Когда нужна точность и повторяемость.</div>
+          <div><strong>0.4–0.7 · средне</strong>Сценарии занятий, структура курса, объяснения тем, кейсы. Баланс точности и живости.</div>
+          <div><strong>0.8–1.0 · креативно</strong>Метафоры, нейминг, идеи активностей, истории, провокации. Когда нужна свежесть, а не точность.</div>
+        </div>
+        <p style="font-size:12px;margin-top:var(--s-2);color:var(--text-soft)">YandexGPT, GigaChat и ChatGPT понимают инструкцию «Температура: 0.3» в тексте промпта; для API задают параметром.</p>
+      </div>
+    </section>
+
+    <section class="lib" style="margin-top: var(--s-6)" aria-labelledby="ready-title">
+      <h2 id="ready-title">Готовые промпты</h2>
+      <p class="hint">Скопируйте, замените [плейсхолдеры] своим контекстом и вставьте в AI-сервис. Проверены на YandexGPT и GigaChat.</p>
+
+      <div class="prompt-tpl" style="margin-top: var(--s-3)">
+        <details>
+          <summary>Анализ учебной аудитории</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant.
+Задача: проанализируй целевую аудиторию учебного курса и дай рекомендации по формату и контенту.
+Контекст: [роли, уровень, мотивация, особенности — без ФИО и названий компаний]
+Формат: таблица «Характеристика → Влияние на дизайн → Рекомендация». В конце — резюме на 3–5 строк.
+Если данных мало — явно укажи, что нужно уточнить.
+Температура: 0.3.</pre>
+        </details>
+
+        <details>
+          <summary>Постановка учебных целей (таксономия Блума)</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant.
+Задача: сформулируй учебные цели для курса/модуля по таксономии Блума.
+Контекст: [тема, уровень подготовки, желаемый результат в работе]
+Формат: одна ключевая цель в формате действия (настоящим временем, без «сможет» и «научится»)
++ 2–3 вспомогательные цели по возрастающим уровням (понимание, применение, анализ).
+Без канцелярита.
+Температура: 0.2.</pre>
+        </details>
+
+        <details>
+          <summary>Структура курса или модуля</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant.
+Задача: разработай структуру учебного курса/модуля/дня обучения.
+Контекст: [тема, ЦА, длительность, формат — очно/онлайн/смешанное]
+Формат: модули с целями и блоками. Для каждого — название, цель, формат подачи
+(мини-лекция, кейс, групповая работа), интерактив, хронометраж. В конце — задание на перенос в работу.
+Температура: 0.4.</pre>
+        </details>
+
+        <details>
+          <summary>Декомпозиция модуля на слайды</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant.
+Задача: разбей модуль на слайды.
+Контекст: [тема модуля, длительность, ЦА]
+Формат: для каждого слайда — цель, короткий контент (2–4 предложения), формат подачи, интерактив,
+пометка «Недостающий материал» там, где данных не хватает.
+Заголовки — говорящие («5 шагов, которые спасут сделку»), не «Слайд 3».
+Температура: 0.5.</pre>
+        </details>
+
+        <details>
+          <summary>Чек-лист или памятка для сотрудника</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant.
+Задача: создай чек-лист или памятку для конкретной рабочей задачи.
+Контекст: [задача, должность, шаги, частые ошибки]
+Формат: маркированный список с чекбоксами □. Каждый шаг — глагол в повелительном наклонении:
+«Проверь», «Открой», «Убедись». В начале — цель памятки (1–2 строки).
+В конце — блок «Частые ошибки» (3–5 пунктов).
+Температура: 0.2.</pre>
+        </details>
+
+        <details>
+          <summary>Сценарий видеоурока или вебинара</summary>
+<pre>Роль: ты — сценарист учебного видео и senior learning analyst.
+Задача: напиши сценарий видеоурока длительностью [X] минут.
+Контекст: [тема, ЦА, стиль подачи — формальный/живой]
+Формат: временная шкала — «Время → Видеоряд → Аудио/текст ведущего → Комментарий методиста».
+В начале — крючок (вопрос/факт/метафора). В конце — резюме и призыв к действию.
+Язык — разговорный, без воды.
+Температура: 0.7.</pre>
+        </details>
+
+        <details>
+          <summary>Работа с возражениями слушателей</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant с опытом в поведенческой науке.
+Задача: проработай типичные возражения по теме обучения.
+Контекст: [тема курса, ЦА, формат]
+Формат: выяви возражения, укажи, где в курсе они вспыхнут, и как встроить отработку
+(подсказки, кейсы-ошибки, интерактив «возражение → ответ»). Для каждого — какой механизм используем
+(социальные нормы, личная выгода, снижение когнитивной нагрузки).
+Если данных не хватает — явно фиксируй.
+Температура: 0.5.</pre>
+        </details>
+
+        <details>
+          <summary>Интервью с экспертом (повестка 30/60 мин)</summary>
+<pre>Роль: ты — senior learning analyst и performance consultant.
+Задача: подготовь интервью с экспертом по теме [X].
+Контекст: [тема, что уже известно, какие пробелы, кто эксперт по роли]
+Формат: инвентаризация материалов (таблица источников), Gap map (что не хватает),
+блоки вопросов с follow-ups, две повестки — на 30 и 60 минут,
+короткое письмо-приглашение в конце.
+Температура: 0.3.</pre>
+        </details>
+      </div>
+
+      <p class="hint" style="margin-top: var(--s-3)">Нужна интерактивная диагностика запроса заказчика — иди в <a href="audit.html">Аудит</a>. Собрать видение продукта по JTBD — в <a href="vision.html">Видение</a>.</p>
+    </section>
+
+    <section style="margin-top: var(--s-6)" aria-labelledby="builder-title">
+      <h2 id="builder-title">Конструктор промптов</h2>
+      <p class="hint">Выберите тип задачи, укажите контекст — получите готовый текст. Удобно, когда нужен промпт под конкретный формат и ограничения.</p>
+    </section>
+
+    <section class="grid-2" style="margin-top: var(--s-3)" aria-label="Конструктор промпта">
+      <div class="card stack">
+        <h3>Параметры</h3>
+        <label>Задача
+          <select id="task">
+            <option value="audience">Анализ ЦА</option>
+            <option value="goals">Постановка учебных целей</option>
+            <option value="structure">Структура курса/модуля</option>
+            <option value="slides">Декомпозиция на слайды</option>
+            <option value="objections">Работа с возражениями</option>
+            <option value="interview">Интервью с экспертом</option>
+          </select>
+        </label>
+
+        <div>
+          <div class="chips" aria-label="Формат">
+            <label class="chip"><input type="radio" name="format" value="Очное">Очное</label>
+            <label class="chip"><input type="radio" name="format" value="Онлайн">Онлайн</label>
+            <label class="chip"><input type="radio" name="format" value="Смешанное" checked>Смешанное</label>
+          </div>
+          <p class="hint">Формат учитывается в формулировках и ограничениях.</p>
+        </div>
+
+        <div>
+          <label>Аудитория (свободный ввод)
+            <input id="aud" type="text" placeholder="Например: ПЧ, ПЧЗ, ПЧГ; сотрудники продаж; линейные руководители">
+          </label>
+        </div>
+
+        <div class="chips" aria-label="Ограничения/стиль">
+          <label class="chip"><input type="checkbox" value="materials" checked>Только предоставленные материалы</label>
+          <label class="chip"><input type="checkbox" value="style" checked>Простой язык, без канцелярита</label>
+          <label class="chip"><input type="checkbox" value="adult" checked>Андрагогика, применимость</label>
+          <label class="chip"><input type="checkbox" value="temp03">Температура 0.3</label>
+          <label class="chip"><input type="checkbox" value="russian" checked>Русский язык</label>
+        </div>
+
+        <label>Контекст (1–3 строки)
+          <textarea id="ctx" placeholder="Тема, цель, ограничения, дедлайн"></textarea>
+        </label>
+
+        <label>Исходные материалы (список)
+          <textarea id="src" placeholder="Презентации, регламенты, записи вебинаров…"></textarea>
+        </label>
+
+        <div class="toolbar">
+          <button class="btn primary small" id="buildBtn">Собрать промпт</button>
+          <button class="btn ghost small" id="copyBtn">Скопировать</button>
+          <button class="btn ghost small" id="clearBtn">Очистить</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Готовый промпт</h3>
+        <textarea id="result" class="result" aria-label="Готовый промпт" placeholder="Здесь появится собранный промпт"></textarea>
+        <p class="hint">Подсказка: добавляйте конкретику про ЦА и успех в работе. Чем конкретнее контекст, тем точнее выход.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <small>© Наталья Марценюк, 2026 · Библиотека промптов</small>
+      <a href="https://look85-ops.github.io/NAAssistant/portfolio/" target="_blank" rel="noopener" class="footer-links">Портфолио →</a>
+    </div>
+  </footer>
+
+  <script>
+  // мобильное меню
+  document.getElementById('hamburgerBtn')?.addEventListener('click', function(){
+    const nav = document.getElementById('navLinks');
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', (!expanded).toString());
+    nav.classList.toggle('open');
+  });
+
+  // простейший конструктор промптов: собираем из шаблонов + модификаторов
+  const ROLE = `Ты — senior learning analyst и performance consultant.\n`;
+  const TEMPLATES = {
+    audience: `Задача: собери данные о ЦА уточняющими вопросами, затем оформи таблицу: | Вопрос | Ответ | Интерпретация для проектирования |. В конце — резюме на 3–5 строк.\n`,
+    goals: `Задача: сформулируй учебные цели по таксономии Блума. Дай одну ключевую цель в формате действия (настоящим временем, без «сможет/научится») + 2–3 вспомогательные по возрастающим уровням.\n`,
+    structure: `Задача: собери структуру курса/модуля. Для каждого блока — название, цель, контент, формат подачи, интерактивная практика, хронометраж. Учитывай уровни аудитории.\n`,
+    slides: `Задача: разбей модуль на слайды. Для каждого — цель, короткий контент (2–4 предложения), формат, интерактив, пометка «Недостающий материал». Заголовки говорящие.\n`,
+    objections: `Задача: проработай возражения слушателей. Где вспыхнут, как встроить отработку (подсказки, кейсы, интерактив «возражение → ответ»), какой механизм поведенческой науки используем.\n`,
+    interview: `Задача: подготовь интервью с экспертом. Инвентаризация материалов, Gap map, вопросы по блокам с follow-ups, повестки на 30 и 60 минут, письмо-приглашение.\n`
+  };
+
+  function buildPrompt(){
+    const task = /** @type {HTMLSelectElement} */(document.getElementById('task')).value;
+    const format = /** @type {HTMLInputElement} */(document.querySelector('input[name="format"]:checked'))?.value || '';
+    const aud = /** @type {HTMLInputElement} */(document.getElementById('aud')).value?.trim();
+    const ctx = /** @type {HTMLTextAreaElement} */(document.getElementById('ctx')).value?.trim();
+    const src = /** @type {HTMLTextAreaElement} */(document.getElementById('src')).value?.trim();
+    const checks = Array.from(document.querySelectorAll('.chips input[type="checkbox"]'));
+    const flags = new Set(checks.filter(c => c.checked).map(c => c.value));
+
+    let out = ROLE;
+    out += TEMPLATES[task] || '';
+    if (format) out += `Формат курса: ${format}. Учитывай ограничения и ритм этого формата.\n`;
+    if (aud) out += `Аудитория: ${aud}.\n`;
+    if (ctx) out += `Контекст: ${ctx}.\n`;
+    if (src) out += `Исходные материалы: ${src}.\n`;
+    if (flags.has('materials')) out += `Используй только предоставленные материалы; недостающее помечай как «Недостающий материал: …».\n`;
+    if (flags.has('style')) out += `Пиши простым языком, без канцелярита и общих слов.\n`;
+    if (flags.has('adult')) out += `Делай упор на взрослую аудиторию: применимость в работе, проверяемые действия.\n`;
+    if (flags.has('temp03')) out += `Температура ответа: 0.3 (строгий, повторяемый ответ).\n`;
+    if (flags.has('russian')) out += `Язык: русский.\n`;
+    out += `\nФорматируй выводы таблицами там, где это уместно.`;
+
+    document.getElementById('result').value = out;
+  }
+
+  document.getElementById('buildBtn')?.addEventListener('click', buildPrompt);
+  document.getElementById('clearBtn')?.addEventListener('click', function(){
+    ['aud','ctx','src'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    document.getElementById('result').value = '';
+  });
+  document.getElementById('copyBtn')?.addEventListener('click', async function(){
+    const txt = document.getElementById('result').value;
+    try { await navigator.clipboard.writeText(txt); this.textContent = 'Скопировано'; setTimeout(()=> this.textContent='Скопировать', 1200); } catch { /* ignore */ }
+  });
+  </script>
+</body>
+</html>
