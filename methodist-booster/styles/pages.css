@@ -200,15 +200,15 @@
     border-right: 1px solid rgba(255, 255, 255, 0.4);
     font-weight: var(--fw-medium);
 }
-.timeline .seg.intro      { background: #f59e0b; }
+.timeline .seg.intro      { background: var(--tl-intro); }
 .timeline .seg.theory     { background: var(--tool-vision); }
 .timeline .seg.practice   { background: var(--tool-ivanov); }
-.timeline .seg.debrief    { background: #0ea5e9; }
-.timeline .seg.discussion { background: #a855f7; }
+.timeline .seg.debrief    { background: var(--tl-debrief); }
+.timeline .seg.discussion { background: var(--tl-discuss); }
 .timeline .seg.test       { background: var(--tool-activities); }
-.timeline .seg.break      { background: #94a3b8; }
+.timeline .seg.break      { background: var(--tl-break); }
 .timeline .seg.meal       { background: var(--tool-audit); }
-.timeline .seg.energizer  { background: #facc15; color: #422006; }
+.timeline .seg.energizer  { background: var(--tl-energizer); color: var(--tl-energizer-t); }
 .timeline .seg.reflect    { background: var(--tool-cards); }
 .timeline .ticks {
     display: flex;

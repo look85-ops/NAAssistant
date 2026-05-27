@@ -112,11 +112,13 @@
 
     .artifacts-list{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3)}
     .artifact{
-      display:block;padding:var(--s3) 0;border-top:1px solid var(--border);
+      display:block;padding:var(--s3) 0;border:1px solid var(--border);border-radius:10px;
       color:var(--text) !important;text-decoration:none;font-weight:600;font-size:15px;
-      transition:opacity var(--t);
+      background: color-mix(in srgb, var(--w) 94%, var(--y) 6%);
+      transition: transform var(--t), border-color var(--t);
+      padding: var(--s3);
     }
-    .artifact:hover{opacity:.5}
+    .artifact:hover{transform: translateY(-2px); border-color: #000}
     .artifact .go{margin-top:4px;color:var(--muted);font-weight:400;font-size:13px}
 
     .project{
@@ -145,12 +147,13 @@
     .highlight-card a{color:var(--text)}
 
     a{color:var(--text)}
-    .more{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;text-decoration:none}
+    .more{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;text-decoration:none;transition:transform var(--t)}
+    .more:hover{transform: translateY(-1px)}
 
-    footer{background:#000;color:#ccc;padding:var(--s4) 0;font-size:13px}
+    footer{background:#000;color:#fff;padding:var(--s4) 0;font-size:13px}
     footer .inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s2)}
-    footer a{color:#ccc;text-decoration:none}
-    footer a:hover{color:#fff}
+    footer a{color:#fff;text-decoration:none;opacity:.85}
+    footer a:hover{opacity:1}
 
     @media(max-width:1024px){.grid-3{grid-template-columns:repeat(2,1fr)}.project{grid-template-columns:1fr}}
     @media(max-width:768px){.grid-3,.artifacts-list{grid-template-columns:1fr}}
