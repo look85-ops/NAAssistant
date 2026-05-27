@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-инструменты для методиста — Бустер методиста</title>
+    <meta name="description" content="Подборка AI-инструментов для L&D и образования: доступны в РФ, бесплатные/условно-бесплатные, отобранные по рекомендациям EU и ВШЭ.">
+    <link rel="canonical" href="https://look85-ops.github.io/metod_buster/ai-tools.html">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <style>
+        .page-header{padding:var(--s-5) 0 var(--s-4)}
+        .page-header h1{margin:0 0 var(--s-2);font-size:var(--fs-h1)}
+        .page-header p{margin:0;color:var(--text-muted);max-width:640px}
+        .cat-title{font-size:var(--fs-h3);font-weight:var(--fw-bold);margin:var(--s-6) 0 var(--s-3);padding-top:var(--s-2);border-top:3px solid var(--text)}
+        .tools-list{display:flex;flex-direction:column;gap:var(--s-2)}
+        .tool-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s-3);padding:var(--s-3);border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-elev);transition:border-color var(--t) var(--ease)}
+        .tool-row:hover{border-color:var(--accent)}
+        .tool-row .name{font-weight:var(--fw-semi);color:var(--text);text-decoration:none}
+        .tool-row .name:hover{opacity:.6}
+        .tool-row .desc{font-size:var(--fs-small);color:var(--text-muted);margin-top:2px}
+        .tool-row .tags{display:flex;flex-wrap:wrap;gap:4px;align-content:start}
+        .tool-row .tags .tag{display:inline-flex;font-size:11px;padding:3px 8px;border-radius:999px;background:var(--bg-soft);color:var(--text-muted);border:1px solid var(--border)}
+        .tag.free{background:#E8F5E9;color:#2E7D32;border-color:#A5D6A7}
+        .tag.trial{background:#FFF8E1;color:#F57F17;border-color:#FFE082}
+        .tag.paid{background:#F3E5F5;color:#7B1FA2;border-color:#CE93D8}
+        .tag.ru{background:#E3F2FD;color:#1565C0;border-color:#90CAF9}
+        .tag.eu{background:#F3E5F5;color:#6A1B9A;border-color:#CE93D8}
+        .tag.hse{background:#fff3e0;color:#E65100;border-color:#FFCC80}
+        .source{font-size:11px;color:var(--text-soft);display:flex;gap:4px;flex-wrap:wrap;align-content:start}
+        .source span{display:inline-flex;padding:2px 6px;border-radius:4px;font-weight:500}
+        .source .eu{background:#EDE7F6;color:#4527A0}
+        .source .hse{background:#FFF3E0;color:#BF360C}
+        .source .other{background:var(--bg-soft);color:var(--text-muted)}
+        .note{margin-top:var(--s-6);padding:var(--s-4);background:var(--bg-yellow);border-radius:var(--radius);font-size:var(--fs-small);color:var(--text)}
+        .note strong{display:block;margin-bottom:4px}
+        @media(max-width:768px){.tool-row{grid-template-columns:1fr;gap:var(--s-2)}}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Бустер методиста — на главную">
+                <span class="brand-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
+                <span>Бустер методиста</span>
+            </a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks" aria-label="Инструменты">
+                <a href="ivanov.html">Иванов</a>
+                <a href="activities.html">Активности</a>
+                <a href="cards.html">Карты</a>
+                <a href="audit.html">Аудит</a>
+                <a href="vision.html">Видение</a>
+                <a href="ai-tools.html">AI-инструменты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">← Главная</a>
+            <span class="sep">/</span>
+            <span>AI-инструменты для методиста</span>
+        </div>
+
+        <div class="page-header">
+            <h1>AI-инструменты для методиста</h1>
+            <p>Подборка проверенных AI-инструментов для проектирования обучения. Отобраны по рекомендациям Европейской комиссии, ВШЭ и открытых источников. Бесплатные или с бесплатным триалом, доступные в РФ.</p>
+        </div>
+
+        <h2 class="cat-title">Тексты и генерация контента</h2>
+        <div class="tools-list">
+            <div class="tool-row">
+                <div><a class="name" href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a><div class="desc">Генерация текстов, сценариев, учебных материалов, промптов. Базовый инструмент для методиста.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">условно РФ</span></div>
+                <div class="source"><span class="eu">EU</span><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://yandex.cloud/ru/services/yandexgpt" target="_blank" rel="noopener">YandexGPT</a><div class="desc">Генерация текстов от Яндекса. Работает без VPN, понимает русский контекст. Аналог ChatGPT для РФ.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://developers.sber.ru/gigachat" target="_blank" rel="noopener">GigaChat</a><div class="desc">Генеративная модель от Сбера. Текст, код, изображения. Доступна через API и веб-интерфейс.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://rytr.me" target="_blank" rel="noopener">Rytr</a><div class="desc">AI-писатель для создания учебных текстов, описаний курсов, рассылок. Поддерживает русский.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+        </div>
+
+        <h2 class="cat-title">Исследования и анализ</h2>
+        <div class="tools-list">
+            <div class="tool-row">
+                <div><a class="name" href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a><div class="desc">AI-поисковик с ответами и ссылками на источники. Полезен для быстрого анализа трендов и сбора материалов.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span><span class="other">рекомендован</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://elicit.com" target="_blank" rel="noopener">Elicit</a><div class="desc">AI-ассистент для исследований: поиск статей, извлечение данных, обзор литературы. Незаменим для доказательного подхода.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span><span class="eu">EU</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://www.chatpdf.com" target="_blank" rel="noopener">ChatPDF</a><div class="desc">Чат с PDF-документами. Загрузите учебник или статью — задавайте вопросы по содержанию.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a><div class="desc">AI-исследователь от Google. Загрузите источники — получите конспекты, обзоры, подкасты на их основе.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">требует VPN</span></div>
+                <div class="source"><span class="eu">EU</span></div>
+            </div>
+        </div>
+
+        <h2 class="cat-title">Презентации и визуал</h2>
+        <div class="tools-list">
+            <div class="tool-row">
+                <div><a class="name" href="https://gamma.app" target="_blank" rel="noopener">Gamma</a><div class="desc">AI-конструктор презентаций, документов и веб-страниц. Быстрая генерация визуально качественных материалов.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">условно РФ</span></div>
+                <div class="source"><span class="eu">EU</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://www.chatslide.ai/ru" target="_blank" rel="noopener">ChatSlide</a><div class="desc">ИИ-конструктор презентаций для преподавателей. Загрузите PDF — получите слайды с дизайном.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="other">платформа</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://www.kandinsky-v3.ru" target="_blank" rel="noopener">Kandinsky</a><div class="desc">Генерация изображений по тексту от Сбера. Для иллюстраций к курсам и презентациям.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+        </div>
+
+        <h2 class="cat-title">Образовательные платформы</h2>
+        <div class="tools-list">
+            <div class="tool-row">
+                <div><a class="name" href="https://teachy.ai/ru" target="_blank" rel="noopener">Teachy</a><div class="desc">AI-платформа для учителей: генерация уроков, слайдов, упражнений, игр. Поддержка русского языка.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="other">платформа</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://pedagog.rf" target="_blank" rel="noopener">Педагоги.РФ</a><div class="desc">AI-помощник для российских педагогов. Технологические карты, КТП, тесты по ФГОС. Данные в РФ.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="other">российская</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://tutors.kz/kk-kz/ai/" target="_blank" rel="noopener">Tutors AI</a><div class="desc">Нейросеть для учителей в Telegram. Домашние задания, интерактивы, темы для обсуждения. Без VPN.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="other">платформа</span></div>
+            </div>
+        </div>
+
+        <h2 class="cat-title">Оценка, проверка и опросы</h2>
+        <div class="tools-list">
+            <div class="tool-row">
+                <div><a class="name" href="https://languagetool.org/ru" target="_blank" rel="noopener">LanguageTool</a><div class="desc">Проверка грамматики и стиля текста. Поддерживает русский. Полезен для редактуры учебных материалов.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://www.fillout.com" target="_blank" rel="noopener">Fillout</a><div class="desc">AI-конструктор форм и опросов. Быстрая сборка обратной связи, тестов, регистраций.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+        </div>
+
+        <h2 class="cat-title">Видео и мультимедиа</h2>
+        <div class="tools-list">
+            <div class="tool-row">
+                <div><a class="name" href="https://www.heygen.com" target="_blank" rel="noopener">HeyGen</a><div class="desc">AI-генерация видео с аватарами. Создание видео-лекций и приветствий без камеры и студии.</div></div>
+                <div class="tags"><span class="tag trial">триал</span><span class="tag ru">условно РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://lumen5.com" target="_blank" rel="noopener">Lumen5</a><div class="desc">AI-конструктор видео из текста. Быстрое превращение статей и скриптов в короткие учебные ролики.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+            <div class="tool-row">
+                <div><a class="name" href="https://notta.ai" target="_blank" rel="noopener">Notta.ai</a><div class="desc">AI-транскрибация встреч и лекций. Расшифровка аудио в текст, конспекты, summary.</div></div>
+                <div class="tags"><span class="tag free">бесплатно</span><span class="tag ru">доступно в РФ</span></div>
+                <div class="source"><span class="hse">ВШЭ</span></div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>Источники отбора</strong>
+            <span style="display:inline-flex;gap:4px;margin-right:12px"><span style="background:#EDE7F6;padding:2px 6px;border-radius:4px;font-weight:500">EU</span> — Рекомендации Европейской комиссии (Digital Education Accelerator, Ethical Guidelines on AI in Education)</span>
+            <span style="display:inline-flex;gap:4px"><span style="background:#FFF3E0;padding:2px 6px;border-radius:4px;font-weight:500">ВШЭ</span> — Инструменты, используемые в курсах НИУ ВШЭ («Эффективное применение ИИ в университете»)</span>
+            <p style="margin-top:var(--s-2);color:var(--text-muted)">Доступность в РФ указана на момент публикации и может меняться. Рекомендуется проверять актуальный статус каждого сервиса.</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <small>© Наталья Марценюк, 2026 · Сделано в сотрудничестве с AI</small>
+            <a href="https://natalialnd.netlify.app/" target="_blank" rel="noopener" class="footer-links">Портфолио →</a>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('hamburgerBtn')?.addEventListener('click', function() {
+        const nav = document.getElementById('navLinks');
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        nav.classList.toggle('open');
+        this.setAttribute('aria-expanded', !expanded);
+    });
+    </script>
+</body>
+</html>

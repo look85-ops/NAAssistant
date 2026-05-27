@@ -224,7 +224,7 @@
     flex: 1;
 }
 .tool-card .tool-cta {
-    color: var(--tool-color);
+    color: var(--accent);
     font-weight: var(--fw-semi);
     font-size: clamp(12px, 1.6vw, var(--fs-small));
     display: inline-flex;
