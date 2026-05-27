@@ -39,7 +39,7 @@
     border-radius: 50%;
     background: var(--accent);
 }
-.brand-dots span:nth-child(1) { width: 12px; height: 12px; background: var(--accent); }
+.brand-dots span:nth-child(1) { width: 12px; height: 12px; background: var(--bg-yellow); }
 .brand-dots span:nth-child(2) { width: 7px;  height: 7px; background: var(--accent); opacity: .7; }
 .brand-dots span:nth-child(3) { width: 7px;  height: 7px; background: var(--accent); opacity: .4; }
 
@@ -125,12 +125,6 @@
     line-height: var(--lh-tight);
     letter-spacing: -0.8px;
     margin-bottom: var(--s-3);
-}
-.hero h1 .accent {
-    background: var(--bg-yellow);
-    color: var(--text);
-    padding: 0 4px;
-    display: inline-block;
 }
 .sec-y { background: var(--bg-yellow); }
 .hero-lead {
@@ -218,15 +212,6 @@
     color: var(--text);
 }
 
-.tool-card .tool-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--tool-color);
-    flex-shrink: 0;
-    font-size: 0;
-    line-height: 0;
-}
 .tool-card .tool-name {
     font-size: clamp(18px, 2.2vw, var(--fs-h3));
     font-weight: var(--fw-semi);
