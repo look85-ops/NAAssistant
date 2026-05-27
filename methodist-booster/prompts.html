@@ -112,11 +112,9 @@
           </ul>
         </div>
         <div class="tip-card">
-          <h3>Слабый → сильный промпт</h3>
+          <h3>Пример сильного промпта</h3>
           <div class="prompt-example">
-            <small>Слабый (результат — вода)</small>
-            <div class="example-bad">«Напиши сценарий обучения для руководителей»</div>
-            <small>Сильный (RZKF — точный ответ)</small>
+            <small>RZKF в действии — точный, повторяемый ответ</small>
             <div class="example-good">«Ты — senior learning analyst и performance consultant. Разработай сценарий обучения для линейных руководителей. Тема: проведение встреч 1:1 с сотрудниками. Хронометраж: 45 минут. Формат: таблица — Время → Тема → Активность → Материалы»</div>
           </div>
         </div>
@@ -260,16 +258,8 @@
 
         <div>
           <label>Аудитория (свободный ввод)
-            <input id="aud" type="text" placeholder="Например: ПЧ, ПЧЗ, ПЧГ; сотрудники продаж; линейные руководители">
+            <input id="aud" type="text" placeholder="Например: сотрудники продаж; линейные руководители; новые специалисты">
           </label>
-        </div>
-
-        <div class="chips" aria-label="Ограничения/стиль">
-          <label class="chip"><input type="checkbox" value="materials" checked>Только предоставленные материалы</label>
-          <label class="chip"><input type="checkbox" value="style" checked>Простой язык, без канцелярита</label>
-          <label class="chip"><input type="checkbox" value="adult" checked>Андрагогика, применимость</label>
-          <label class="chip"><input type="checkbox" value="temp03">Температура 0.3</label>
-          <label class="chip"><input type="checkbox" value="russian" checked>Русский язык</label>
         </div>
 
         <label>Контекст (1–3 строки)
@@ -329,8 +319,6 @@
     const aud = /** @type {HTMLInputElement} */(document.getElementById('aud')).value?.trim();
     const ctx = /** @type {HTMLTextAreaElement} */(document.getElementById('ctx')).value?.trim();
     const src = /** @type {HTMLTextAreaElement} */(document.getElementById('src')).value?.trim();
-    const checks = Array.from(document.querySelectorAll('.chips input[type="checkbox"]'));
-    const flags = new Set(checks.filter(c => c.checked).map(c => c.value));
 
     let out = ROLE;
     out += TEMPLATES[task] || '';
@@ -338,11 +326,6 @@
     if (aud) out += `Аудитория: ${aud}.\n`;
     if (ctx) out += `Контекст: ${ctx}.\n`;
     if (src) out += `Исходные материалы: ${src}.\n`;
-    if (flags.has('materials')) out += `Используй только предоставленные материалы; недостающее помечай как «Недостающий материал: …».\n`;
-    if (flags.has('style')) out += `Пиши простым языком, без канцелярита и общих слов.\n`;
-    if (flags.has('adult')) out += `Делай упор на взрослую аудиторию: применимость в работе, проверяемые действия.\n`;
-    if (flags.has('temp03')) out += `Температура ответа: 0.3 (строгий, повторяемый ответ).\n`;
-    if (flags.has('russian')) out += `Язык: русский.\n`;
     out += `\nФорматируй выводы таблицами там, где это уместно.`;
 
     document.getElementById('result').value = out;
