@@ -14,13 +14,7 @@ body {
     font-size: var(--fs-body);
     line-height: var(--lh-normal);
     color: var(--text);
-    background:
-        radial-gradient(900px 900px at 12% -8%, var(--tint-coral) 0%, transparent 60%),
-        radial-gradient(1100px 1100px at 88% -4%, var(--tint-mint) 0%, transparent 60%),
-        radial-gradient(900px 900px at 50% 110%, var(--tint-rose) 0%, transparent 60%),
-        radial-gradient(700px 700px at 0% 60%,  var(--tint-blue) 0%, transparent 60%),
-        var(--bg);
-    background-attachment: fixed;
+    background: var(--bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -40,11 +34,11 @@ p { margin: 0 0 var(--s-3); }
 p:last-child { margin-bottom: 0; }
 
 a {
-    color: var(--accent-blue);
+    color: var(--text);
     text-decoration: none;
-    transition: color var(--t) var(--ease);
+    transition: opacity var(--t) var(--ease);
 }
-a:hover { color: var(--accent-blue-deep); }
+a:hover { opacity: 0.6; }
 
 img, svg { display: block; max-width: 100%; height: auto; }
 
@@ -85,7 +79,7 @@ section { padding: var(--s-6) 0; }
 
 /* ---------- Focus ring (универсальный, доступный) ---------- */
 :focus-visible {
-    outline: 2px solid var(--accent-blue);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
     border-radius: var(--radius-sm);
 }

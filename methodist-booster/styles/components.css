@@ -8,12 +8,10 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: linear-gradient(180deg,
-        rgba(250, 249, 247, 0.96),
-        rgba(250, 249, 247, 0.78) 60%,
-        rgba(250, 249, 247, 0));
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
 }
 .nav {
     display: flex;
@@ -39,11 +37,11 @@
 .brand-dots span {
     display: inline-block;
     border-radius: 50%;
-    background: var(--accent-blue);
+    background: var(--accent);
 }
-.brand-dots span:nth-child(1) { width: 12px; height: 12px; }
-.brand-dots span:nth-child(2) { width: 7px;  height: 7px; background: var(--accent-mint); }
-.brand-dots span:nth-child(3) { width: 7px;  height: 7px; background: var(--accent-coral); }
+.brand-dots span:nth-child(1) { width: 12px; height: 12px; background: var(--accent); }
+.brand-dots span:nth-child(2) { width: 7px;  height: 7px; background: var(--accent); opacity: .7; }
+.brand-dots span:nth-child(3) { width: 7px;  height: 7px; background: var(--accent); opacity: .4; }
 
 .nav-links {
     display: flex;
@@ -54,9 +52,9 @@
     color: var(--text);
     font-weight: var(--fw-medium);
     font-size: var(--fs-small);
-    transition: color var(--t) var(--ease);
+    transition: opacity var(--t) var(--ease);
 }
-.nav-links a:hover { color: var(--accent-blue); }
+.nav-links a:hover { opacity: 0.5; }
 
 .hamburger {
     display: none;
@@ -129,11 +127,12 @@
     margin-bottom: var(--s-3);
 }
 .hero h1 .accent {
-    background: linear-gradient(120deg, var(--accent-blue), var(--accent-mint) 60%, var(--accent-coral));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    background: var(--bg-yellow);
+    color: var(--text);
+    padding: 0 4px;
+    display: inline-block;
 }
+.sec-y { background: var(--bg-yellow); }
 .hero-lead {
     font-size: var(--fs-body-lg);
     color: var(--text-muted);
@@ -175,52 +174,13 @@
 .btn:active { transform: translateY(0) scale(0.98); }
 
 .btn-primary {
-    background: var(--accent-blue);
+    background: var(--accent);
     color: var(--text-inverse);
 }
 .btn-primary:hover {
-    background: var(--accent-blue-deep);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-    color: var(--text-inverse);
-}
-
-.btn-accent {
-    background: var(--accent-coral);
-    color: var(--text-inverse);
-}
-.btn-accent:hover {
-    background: var(--accent-coral-deep);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-    color: var(--text-inverse);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--accent-blue);
-    border-color: var(--accent-blue);
-}
-.btn-secondary:hover {
-    background: var(--accent-blue-soft);
-    color: var(--accent-blue-deep);
+    opacity: 0.85;
     transform: translateY(-1px);
 }
-
-.btn-ghost {
-    background: transparent;
-    color: var(--accent-blue);
-    padding: 8px 4px;
-    border-color: transparent;
-}
-.btn-ghost:hover {
-    color: var(--accent-blue-deep);
-}
-.btn-ghost::after {
-    content: '→';
-    transition: transform var(--t) var(--ease);
-}
-.btn-ghost:hover::after { transform: translateX(3px); }
 
 /* ============== TOOLS GRID ============== */
 .tools-grid {
@@ -237,49 +197,33 @@
 
 /* ============== TOOL CARD ============== */
 .tool-card {
-    --tool-color: var(--accent-blue);
-    --tool-color-soft: var(--accent-blue-soft);
-    position: relative;
+    --tool-color: var(--accent);
+    --tool-color-soft: var(--accent-soft);
     display: flex;
     flex-direction: column;
     gap: var(--s-3);
     padding: clamp(16px, 3.5vw, var(--s-5));
     background: var(--bg-elev);
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     color: var(--text);
     text-decoration: none;
     transition: transform var(--t) var(--ease),
-                border-color var(--t) var(--ease),
-                box-shadow var(--t) var(--ease);
-    overflow: hidden;
+                border-color var(--t) var(--ease);
     min-height: clamp(160px, 28vw, 220px);
 }
-.tool-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(120% 80% at 0% 0%, var(--tool-color-soft) 0%, transparent 50%);
-    opacity: 0.7;
-    transition: opacity var(--t) var(--ease);
-    pointer-events: none;
-}
-.tool-card > * { position: relative; }
 .tool-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: var(--tool-color);
-    box-shadow: var(--shadow-md);
     color: var(--text);
 }
-.tool-card:hover::before { opacity: 1; }
 
 .tool-card .tool-icon {
-    width: clamp(22px, 3vw, 28px);
-    height: clamp(22px, 3vw, 28px);
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: var(--tool-color);
     flex-shrink: 0;
-    /* эмодзи внутри скрываем — оставляем только цвет */
     font-size: 0;
     line-height: 0;
 }
@@ -312,6 +256,9 @@
 .tool-card.audit      { --tool-color: var(--tool-audit);      --tool-color-soft: rgba(179, 94, 58, 0.12); }
 .tool-card.vision     { --tool-color: var(--tool-vision);     --tool-color-soft: rgba(109, 92, 231, 0.12); }
 
+/* ============== SECTION YELLOW ============== */
+.sec-y { background: var(--bg-yellow); }
+
 /* ============== ZACHEM (why-block) ============== */
 .why {
     display: grid;
@@ -335,18 +282,16 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius);
-    background: var(--accent-blue-soft);
-    color: var(--accent-blue);
+    background: var(--accent-soft);
+    color: var(--accent);
     font-weight: var(--fw-bold);
     margin-bottom: var(--s-3);
 }
-.why-item:nth-child(2) .mark { background: var(--accent-mint-soft);  color: var(--accent-mint-deep); }
-.why-item:nth-child(3) .mark { background: var(--accent-coral-soft); color: var(--accent-coral-deep); }
 
 /* ============== FOOTER ============== */
 .site-footer {
-    padding: var(--s-6) 0 var(--s-5);
-    border-top: 1px solid var(--border);
+    background: var(--accent);
+    padding: var(--s-5) 0;
     margin-top: var(--s-8);
 }
 .footer-row {
@@ -356,12 +301,13 @@
     gap: var(--s-3);
     flex-wrap: wrap;
     font-size: var(--fs-small);
-    color: var(--text-muted);
+    color: #CCC;
 }
 .footer-links { display: inline-flex; gap: var(--s-4); }
-.footer-links a {
-    color: var(--text-muted);
-    font-weight: var(--fw-medium);
+.footer-links a,
+.footer-row a {
+    color: #CCC;
     transition: color var(--t) var(--ease);
 }
-.footer-links a:hover { color: var(--accent-blue); }
+.footer-links a:hover,
+.footer-row a:hover { color: #FFF; }

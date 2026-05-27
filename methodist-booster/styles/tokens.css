@@ -5,55 +5,43 @@
 
 :root {
     /* ---------- Фоны и поверхности ---------- */
-    --bg:           #FAF9F7;   /* тёплый светлый фон */
+    --bg:           #FFFFFF;   /* белый */
     --bg-elev:      #FFFFFF;   /* карточки, поверхности */
-    --bg-soft:      #F5F3EF;   /* мягкий фон для блоков */
+    --bg-soft:      #F5F5F5;   /* мягкий серый фон */
+    --bg-yellow:    #FFEA6C;   /* жёлтый секции (семья с портфолио) */
 
     /* ---------- Текст ---------- */
-    --text:         #0F172A;
-    --text-muted:   #475569;
-    --text-soft:    #64748B;
+    --text:         #1A1A1A;
+    --text-muted:   #444444;
+    --text-soft:    #666666;
     --text-inverse: #FFFFFF;
 
     /* ---------- Границы ---------- */
     --border:       #E5E7EB;
-    --border-strong:#CBD5E1;
+    --border-strong:#D0D0D0;
 
-    /* ---------- Базовые акценты (семья с портфолио) ---------- */
-    --accent-blue:        #3A5A78;
-    --accent-blue-deep:   #1F3B54;
-    --accent-blue-soft:   rgba(58, 90, 120, 0.10);
+    /* ---------- Базовые акценты (чёрный — семья с портфолио) ---------- */
+    --accent:             #1A1A1A;
+    --accent-deep:        #000000;
+    --accent-soft:        rgba(26, 26, 26, 0.08);
 
-    --accent-mint:        #22C1A0;
-    --accent-mint-deep:   #178A75;
-    --accent-mint-soft:   rgba(34, 193, 160, 0.12);
-
-    /* ---------- Тёплый акцент для важных CTA ---------- */
-    --accent-coral:       #D49C6C;
-    --accent-coral-deep:  #B35E3A;
-    --accent-coral-soft:  rgba(212, 156, 108, 0.15);
-
-    --accent-rose:        #F6A9C5;
-    --accent-rose-soft:   rgba(246, 169, 197, 0.15);
-
-    /* ---------- Цвета инструментов ---------- */
+    /* ---------- Вторичные акценты (инструменты) ---------- */
     --tool-ivanov:        #22C1A0;   /* Mint */
     --tool-activities:    #D49C6C;   /* Coral */
     --tool-cards:         #3A5A78;   /* Slate */
     --tool-audit:         #B35E3A;   /* Deep Rose */
     --tool-vision:        #6D5CE7;   /* Purple-Blue */
 
-    /* ---------- Семантика ---------- */
-    --success: #15803D;
-    --warning: #B45309;
-    --danger:  #B34E4E;
-
-    /* ---------- Радиальные градиенты фона ---------- */
-    /* Усилены относительно портфолио (там 12–18%, тут 30–40%) */
-    --tint-coral: rgba(212, 156, 108, 0.32);
-    --tint-mint:  rgba(34,  193, 160, 0.28);
-    --tint-rose:  rgba(246, 169, 197, 0.22);
-    --tint-blue:  rgba(58,  90,  120, 0.18);
+    /* ---------- Легаси-акценты (для совместимости со страницами инструментов) ---------- */
+    --accent-blue:        #3A5A78;
+    --accent-blue-deep:   #1F3B54;
+    --accent-blue-soft:   rgba(58, 90, 120, 0.10);
+    --accent-mint:        #22C1A0;
+    --accent-mint-deep:   #178A75;
+    --accent-mint-soft:   rgba(34, 193, 160, 0.12);
+    --accent-coral:       #D49C6C;
+    --accent-coral-deep:  #B35E3A;
+    --accent-coral-soft:  rgba(212, 156, 108, 0.15);
 
     /* ---------- Типографика ---------- */
     --font-sans:  'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
