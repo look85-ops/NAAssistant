@@ -32,6 +32,11 @@
     --tool-audit:         #B35E3A;   /* Deep Rose */
     --tool-vision:        #6D5CE7;   /* Purple-Blue */
 
+    /* ---------- Семантика ---------- */
+    --success: #15803D;
+    --warning: #B45309;
+    --danger:  #B34E4E;
+
     /* ---------- Легаси-акценты (для совместимости со страницами инструментов) ---------- */
     --accent-blue:        #3A5A78;
     --accent-blue-deep:   #1F3B54;
