@@ -52,6 +52,8 @@
     color: var(--text);
     font-weight: var(--fw-medium);
     font-size: var(--fs-small);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: opacity var(--t) var(--ease);
 }
 .nav-links a:hover { opacity: 0.5; }
@@ -197,7 +199,7 @@
     flex-direction: column;
     gap: var(--s-3);
     padding: clamp(16px, 3.5vw, var(--s-5));
-    background: #FFFDF5;
+    background: color-mix(in srgb, var(--bg-elev) 92%, var(--bg-yellow) 8%);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     color: var(--text);
@@ -286,13 +288,13 @@
     gap: var(--s-3);
     flex-wrap: wrap;
     font-size: var(--fs-small);
-    color: #CCC;
+    color: var(--text-inverse);
 }
 .footer-links { display: inline-flex; gap: var(--s-4); }
 .footer-links a,
 .footer-row a {
-    color: #CCC;
-    transition: color var(--t) var(--ease);
+    color: var(--text-inverse);
+    transition: opacity var(--t) var(--ease);
 }
 .footer-links a:hover,
-.footer-row a:hover { color: #FFF; }
+.footer-row a:hover { opacity: 0.75; }
