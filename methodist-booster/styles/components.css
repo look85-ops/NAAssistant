@@ -197,7 +197,7 @@
     flex-direction: column;
     gap: var(--s-3);
     padding: clamp(16px, 3.5vw, var(--s-5));
-    background: var(--bg-elev);
+    background: #FFFDF5;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     color: var(--text);
@@ -208,7 +208,7 @@
 }
 .tool-card:hover {
     transform: translateY(-3px);
-    border-color: var(--tool-color);
+    border-color: var(--accent);
     color: var(--text);
 }
 
