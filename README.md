@@ -13,13 +13,11 @@
 - На Windows: дважды кликните по файлу или перетащите его в окно браузера
 - Если правите стили/текст — обновляйте страницу с Ctrl+F5 (жёсткий сброс кэша)
 
-## Деплой (Netlify)
+## Деплой (GitHub Pages)
 
-- Папка публикации: `portfolio`
-- Редирект по умолчанию: `/ -> /index2-light.html` (см. `portfolio/_redirects`)
-- Переключение на тёмную версию: заменить строку на `/ /index2.html 200`
-
-Резерв: GitHub Pages (workflow есть, не активирован по умолчанию)
+- Все проекты — на GitHub Pages (лимиты Netlify исчерпаны)
+- Портфолио: https://look85-ops.github.io/NAAssistant/portfolio/
+- Бустер методиста: https://look85-ops.github.io/NAAssistant/methodist-booster/
 
 ## Где лежат материалы
 

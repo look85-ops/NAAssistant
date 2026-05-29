@@ -267,7 +267,8 @@ function buildVerdict(input) {
             ${input.desc}<br>
             <em>Цель (${input.goalTypeLabel}):</em> ${input.goal}<br>
             <em>Аудитория:</em> ${input.audienceLabel}<br>
-            <em>Объём · бюджет · людей · срочность · формат:</em> ${input.scopeLabel} · ${input.budgetLabel} · ${input.peopleLabel} · ${input.urgencyLabel} · ${input.formatLabel}
+            <em>Объём · бюджет · людей · срочность · формат:</em> ${input.scopeLabel} · ${input.budgetLabel} · ${input.peopleLabel} · ${input.urgencyLabel} · ${input.formatLabel}<br>
+            <em>Системный эффект:</em> ${input.systemImpactLabel}${input.systemNote ? ' — ' + input.systemNote : ''}
         </div>`;
 
     return `
@@ -312,6 +313,7 @@ function buildAuditPrompt(input) {
 Желаемый результат (${input.goalTypeLabel}): ${input.goal}
 Основная причина разрыва: ${cause.label} — ${cause.hint}
 Ограничения: объём ${input.scopeLabel}, бюджет ${input.budgetLabel}, охват ${input.peopleLabel}, срочность ${input.urgencyLabel}, формат ${input.formatLabel}
+Оценка системного влияния: ${input.systemImpactLabel}${input.systemNote ? '. Пояснение: ' + input.systemNote : ''}
 
 На основе этих данных:
 1. Разработай детальный план вмешательства с учётом причины разрыва.
@@ -381,6 +383,13 @@ function showAuditStep(n) {
         const formatMap = { onsite:'Очно (один офис)', distributed:'Очно в разных городах', hybrid:'Гибрид', online:'Онлайн' };
         const goalTypeMap = { behavior:'поведение', knowledge:'знания/навык', outcome:'бизнес-результат', culture:'культура/отношения' };
 
+        const systemImpactMap = {
+            positive:'Улучшит систему',
+            neutral:'Нейтрально',
+            negative:'Ухудшит систему',
+            unknown:'Нужна диагностика'
+        };
+
         const input = {
             desc: document.getElementById('auditDesc').value.trim(),
             audience: document.getElementById('auditAudience').value,
@@ -398,7 +407,10 @@ function showAuditStep(n) {
             urgency: document.getElementById('auditUrgency').value,
             urgencyLabel: urgencyMap[document.getElementById('auditUrgency').value] || '',
             format: document.getElementById('auditFormat').value,
-            formatLabel: formatMap[document.getElementById('auditFormat').value] || ''
+            formatLabel: formatMap[document.getElementById('auditFormat').value] || '',
+            systemImpact: document.getElementById('auditSystemImpact').value,
+            systemImpactLabel: systemImpactMap[document.getElementById('auditSystemImpact').value] || '',
+            systemNote: document.getElementById('auditSystemNote').value.trim()
         };
 
         document.getElementById('auditVerdict').innerHTML = buildVerdict(input);
@@ -420,6 +432,8 @@ function resetAudit() {
     resetSelect('auditPeople', 'small');
     resetSelect('auditUrgency', 'month');
     resetSelect('auditFormat', 'hybrid');
+    resetSelect('auditSystemImpact', '');
+    document.getElementById('auditSystemNote').value = '';
     const checked = document.querySelector('input[name="cause"]:checked'); if (checked) checked.checked = false;
     document.getElementById('auditVerdict').innerHTML = '';
 }

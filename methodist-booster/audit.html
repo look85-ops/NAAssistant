@@ -150,6 +150,19 @@
                     <option value="online">Онлайн</option>
                 </select>
             </div>
+
+            <h3 style="margin-top: var(--s-4)">Как это повлияет на систему?</h3>
+            <p>Оцените влияние решения на более широкий контекст — команду, отдел, организацию, отрасль.</p>
+            <div class="step-zachem">Зачем: даже правильное решение может создать новые проблемы, если не учесть системные эффекты.</div>
+            <select id="auditSystemImpact">
+                <option value="">— Выберите —</option>
+                <option value="positive">Улучшит — сделает систему эффективнее</option>
+                <option value="neutral">Нейтрально — не изменит систему</option>
+                <option value="negative">Ухудшит — создаст новые проблемы</option>
+                <option value="unknown">Не уверены — нужна диагностика</option>
+            </select>
+            <textarea id="auditSystemNote" rows="2" placeholder="Пояснение: какие могут быть побочные эффекты? На кого ещё повлияет?" style="margin-top:var(--s-2)"></textarea>
+
             <button class="wizard-btn" onclick="showAuditStep(6)" style="margin-top: var(--s-3)">Получить вердикт →</button>
         </div>
 
