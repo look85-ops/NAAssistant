@@ -60,10 +60,10 @@ def load_resume_keywords(path):
     """Извлекает ключевые термины из резюме для оценки соответствия."""
     if not os.path.exists(path):
         print(f"  [warn] Резюме не найдено: {path}", file=sys.stderr)
-        return set()
+        return {"positive": set(), "negative": set()}
     with open(path, "r", encoding="utf-8") as f:
         text = f.read()
-    keywords = set()
+    positive = set()
     in_section = False
     for line in text.split("\n"):
         s = line.strip()
@@ -71,28 +71,50 @@ def load_resume_keywords(path):
             in_section = True
             continue
         if in_section and s.startswith("- "):
-            for t in re.sub(r'[,/;]', ' ', s[2:]).split():
-                t = t.strip().lower()
-                if len(t) > 2:
-                    keywords.add(t)
+            phrase = s[2:].strip().lower()
+            # Keep the full bullet phrase
+            if len(phrase) > 4:
+                positive.add(phrase)
+            # Also add individual meaningful words
+            for t in re.split(r'[,/;\s]+', phrase):
+                t = t.strip()
+                if len(t) > 3:
+                    positive.add(t)
         elif in_section and s and not s.startswith("- "):
             in_section = False
-    role_terms = ["instructional design", "instructional designer", "методист",
-                  "l&d", "learning and development", "enablement",
-                  "edtech", "training", "онбординг"]
-    for t in role_terms:
-        keywords.add(t.lower())
-    print(f"  [info] Загружено ключевых слов из резюме: {len(keywords)}", file=sys.stderr)
-    return keywords
+
+    # Core role terms (точные, не общие)
+    core = ["instructional design", "instructional designer", "методист",
+            "l&d", "learning and development", "learning experience",
+            "enablement", "онбординг", "customer education",
+            "learning analytics", "microlearning",
+            "педагогический дизайн", "role-based треки", "матрица компетенций",
+            "tot", "training of trainers", "skills gap analysis",
+            "корпоративный университет", "университет"]
+    for t in core:
+        positive.add(t.lower())
+
+    # Антипаттерны: роли, которые точно не подходят
+    negative = {"маркетолог", "marketing", "crm", "crm-маркетолог",
+                "продаж", "sales", "account manager",
+                "product marketing", "growth", "smm", "seo"}
+    print(f"  [info] Загружено: {len(positive)} позитивных, {len(negative)} негативных", file=sys.stderr)
+    return {"positive": positive, "negative": negative}
 
 
-def resume_match_score(v, resume_keywords):
-    """Процент совпадения ключевых слов резюме с названием и описанием вакансии."""
-    if not resume_keywords:
+def resume_match_score(v, kw_data):
+    """Процент совпадения: позитивные + штраф за антипаттерны."""
+    if not kw_data or not isinstance(kw_data, dict) or not kw_data.get("positive"):
         return 0.0
     text = (v["title"] + " " + v.get("desc", "")).lower()
-    match_count = sum(1 for kw in resume_keywords if kw in text)
-    return round(match_count / len(resume_keywords) * 100, 1)
+    positive = kw_data["positive"]
+    negative = kw_data["negative"]
+
+    pos = sum(1 for kw in positive if kw in text)
+    neg = sum(1 for kw in negative if kw in text)
+
+    raw = (pos - neg * 2) / len(positive) * 100
+    return round(max(raw, 0), 1)
 
 
 def parse_hh(html, source, schedule_label=""):
@@ -201,7 +223,7 @@ def score(v, resume_keywords=None):
     for b in CRITERIA["boost"]:
         if b in tl:
             s += 3
-    if resume_keywords:
+    if resume_keywords and resume_keywords.get("positive"):
         s += resume_match_score(v, resume_keywords) * 0.3
     return s
 
@@ -232,7 +254,7 @@ def main():
     all_v = dedup(all_v)
 
     for v in all_v:
-        v["match"] = resume_match_score(v, resume_keywords) if resume_keywords else 0.0
+        v["match"] = resume_match_score(v, resume_keywords) if resume_keywords.get("positive") else 0.0
 
     all_v.sort(key=lambda v: score(v, resume_keywords), reverse=True)
 
