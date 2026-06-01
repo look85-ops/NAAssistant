@@ -15,7 +15,9 @@ CRITERIA = {
     "keywords": [
         "instructional design", "instructional designer", "методист",
         "edtech", "L&D", "learning and development",
-        "project manager", "проджект менеджер",
+        "head of learning", "learning manager",
+        "l&d lead", "enablement manager",
+        "learning partner", "business partner l&d",
         "AI обучение", "training manager",
         "learning experience",
     ],
@@ -27,6 +29,10 @@ CRITERIA = {
         "подготовк", "maths", "mathematics",
         "английск", "english", "language",
         "1с", "1с:", "бухгалтер",
+        "рекрутер", "подбор персонала", "executive search",
+        "hr bp", "hr-менеджер", "hr менеджер", "hr -",
+        "менеджер по персоналу", "специалист по подбору",
+        "менеджер по работе с персоналом",
     ],
     "boost": [
         "корпоративн", "adult", "l&d", "learning & development",
@@ -57,7 +63,7 @@ def fetch(url):
 
 
 def load_resume_keywords(path):
-    """Извлекает ключевые термины из резюме для оценки соответствия."""
+    """Извлекает ключевые фразы из резюме для оценки соответствия."""
     if not os.path.exists(path):
         print(f"  [warn] Резюме не найдено: {path}", file=sys.stderr)
         return {"positive": set(), "negative": set()}
@@ -72,14 +78,10 @@ def load_resume_keywords(path):
             continue
         if in_section and s.startswith("- "):
             phrase = s[2:].strip().lower()
-            # Keep the full bullet phrase
-            if len(phrase) > 4:
+            # Keep full bullet phrases (многословные = специфичные)
+            words = phrase.split()
+            if len(words) >= 2:
                 positive.add(phrase)
-            # Also add individual meaningful words
-            for t in re.split(r'[,/;\s]+', phrase):
-                t = t.strip()
-                if len(t) > 3:
-                    positive.add(t)
         elif in_section and s and not s.startswith("- "):
             in_section = False
 
@@ -90,14 +92,19 @@ def load_resume_keywords(path):
             "learning analytics", "microlearning",
             "педагогический дизайн", "role-based треки", "матрица компетенций",
             "tot", "training of trainers", "skills gap analysis",
-            "корпоративный университет", "университет"]
+            "корпоративный университет",
+            "learning & development", "развитие персонала",
+            "обучение сотрудников", "обучение персонала"]
     for t in core:
         positive.add(t.lower())
 
     # Антипаттерны: роли, которые точно не подходят
-    negative = {"маркетолог", "marketing", "crm", "crm-маркетолог",
-                "продаж", "sales", "account manager",
-                "product marketing", "growth", "smm", "seo"}
+    negative = {"crm", "crm-маркетолог",
+                "продаж", "account manager",
+                "product marketing", "smm", "seo",
+                "таргетолог", "контекстная",
+                "рекрутер", "подбор персонала",
+                "executive search", "hr bp"}
     print(f"  [info] Загружено: {len(positive)} позитивных, {len(negative)} негативных", file=sys.stderr)
     return {"positive": positive, "negative": negative}
 
@@ -235,8 +242,8 @@ def dedup(vs):
 
 def main():
     print("=" * 72)
-    print("  Поиск вакансий: Instructional Designer / PM / L&D x AI")
-    print("  Критерии: от 200k, без продаж, удалёнка (РФ) / гибрид (РБ)")
+    print("  Поиск вакансий: L&D / Enablement / Instructional Design x AI")
+    print("  Критерии: от 200k (РФ) / все зарплаты (РБ), удалёнка + гибрид")
     print(f"  {datetime.now().strftime('%d.%m.%Y %H:%M')}")
     print("=" * 72)
 
@@ -246,11 +253,15 @@ def main():
     ru = search_hh(CRITERIA["keywords"], AREA_RU, schedule="remote", salary=CRITERIA["salary_from"])
     print(f"  Найдено: {len(ru)}")
 
-    print("\n→ РБ (гибрид/офис): rabota.by...")
-    by = search_rabotaby(CRITERIA["keywords"], AREA_BY, salary=CRITERIA["salary_from"])
-    print(f"  Найдено: {len(by)}")
+    print("\n→ РБ (гибрид/офис, от 200k): rabota.by...")
+    by_top = search_rabotaby(CRITERIA["keywords"], AREA_BY, salary=CRITERIA["salary_from"])
+    print(f"  Найдено: {len(by_top)}")
 
-    all_v = [v for v in ru + by if not is_excluded(v)]
+    print("\n→ РБ (все зарплаты): rabota.by...")
+    by_all = search_rabotaby(CRITERIA["keywords"], AREA_BY, salary="")
+    print(f"  Найдено: {len(by_all)}")
+
+    all_v = [v for v in ru + by_top + by_all if not is_excluded(v)]
     all_v = dedup(all_v)
 
     for v in all_v:
