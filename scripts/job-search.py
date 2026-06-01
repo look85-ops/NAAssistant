@@ -285,7 +285,7 @@ def render_vacancy_html(v, tag_prefix=""):
 def main():
     print("=" * 72)
     print("  Поиск вакансий: два трека — Методист / L&D Lead")
-    print("  Критерии: от 200k (РФ), удалёнка / гибрид")
+    print("  Критерии: удалёнка (РФ) / гибрид (РБ)")
     print(f"  {datetime.now().strftime('%d.%m.%Y %H:%M')}")
     print("=" * 72)
 
