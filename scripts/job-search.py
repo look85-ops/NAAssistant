@@ -294,8 +294,7 @@ def main():
     html_lines.append("</body></html>")
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    docs_dir = os.path.join(script_dir, "..", "docs")
-    os.makedirs(docs_dir, exist_ok=True)
+    docs_dir = os.path.join(script_dir, "..")
     out_file = os.path.join(docs_dir, "index.html")
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(html_lines))
