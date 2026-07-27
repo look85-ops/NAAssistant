@@ -18,7 +18,7 @@ jobs:
       - run: pip install requests
       - run: python scripts/generate_digest.py
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          BOTHUB_API_KEY: ${{ secrets.BOTHUB_API_KEY }}
       - run: |
           git config user.name "digest-bot"
           git config user.email "digest-bot@users.noreply.github.com"

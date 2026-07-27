@@ -2,12 +2,13 @@ import os, json, sys, re
 from datetime import datetime
 from urllib.request import Request, urlopen
 
-GROQ_KEY = (os.environ.get("GROQ_API_KEY") or "").strip()
-if not GROQ_KEY:
-    print("GROQ_API_KEY not set")
+API_KEY = (os.environ.get("BOTHUB_API_KEY") or "").strip()
+API_URL = os.environ.get("BOTHUB_API_URL", "https://openai.bothub.chat/v1/chat/completions")
+if not API_KEY:
+    print("BOTHUB_API_KEY not set")
     sys.exit(1)
 
-MODELS = ["gemma2-9b-it", "llama-3.3-70b-versatile", "mixtral-8x7b-32768"]
+MODELS = ["gpt-4o-mini", "claude-sonnet-4-20250514", "gemini-2.0-flash"]
 OUTPUT_DIR = "career/posts/digest"
 ISSUE_NUM = 3
 TODAY = datetime.now()
@@ -43,7 +44,7 @@ USER_PROMPT = f"""Напиши выпуск #{ISSUE_NUM} дайджеста L&D 
 Темы: AI-инструменты для L&D, оценочные практики, проектирование обучения, edtech-рынок.
 Ориентируйся на реальные продукты и компании (Workera, Degreed, LinkedIn Learning, Coursera, Docebo, 360Learning, Sana Labs и т.д.)."""
 
-def call_groq():
+def call_api():
     errors = []
     for model in MODELS:
         try:
@@ -56,10 +57,10 @@ def call_groq():
                 "temperature": 0.7,
                 "max_tokens": 3000
             }).encode()
-            req = Request("https://api.groq.com/openai/v1/chat/completions",
+            req = Request(API_URL,
                           data=data,
                           headers={
-                              "Authorization": f"Bearer {GROQ_KEY}",
+                              "Authorization": f"Bearer {API_KEY}",
                               "Content-Type": "application/json"
                           })
             resp = json.loads(urlopen(req).read())
@@ -67,9 +68,7 @@ def call_groq():
         except Exception as e:
             errors.append(f"{model}: {e}")
             continue
-    print("All GROQ models failed — likely geo-blocked from Russia.")
-    print("This script is designed for GitHub Actions (US servers).")
-    print("For local testing, use VPN or change provider.")
+    print("All models failed.")
     for e in errors:
         print(f"  {e}")
     sys.exit(1)
@@ -185,7 +184,7 @@ def update_index(new_file):
             f.write(html)
 
 print(f"Generating digest #{ISSUE_NUM}...")
-md_content = call_groq()
+md_content = call_api()
 html_content = build_html(md_content)
 file_name = f"digest-{DATE_STR}.html"
 file_path = os.path.join(OUTPUT_DIR, file_name)

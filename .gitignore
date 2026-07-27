@@ -28,6 +28,9 @@ _hf_push_*/
 Thumbs.db
 .DS_Store
 
-docs/course/materials/templates/Документы_Академия пути/*.docx
-docs/course/materials/templates/Документы_Академия пути/*.pptx
-docs/course/materials/templates/Заявка_*/**/*.docx
+# Large files > 100 MB (GitHub limit)
+docs/course/materials/templates/**/*.docx
+docs/course/materials/templates/**/*.pptx
+
+# Config template (example)
+.env.example
