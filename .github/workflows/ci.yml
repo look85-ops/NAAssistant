@@ -25,7 +25,12 @@ jobs:
 
       - name: Lint Python with ruff
         run: |
-          ruff check .
+          # Lint only maintained Python code; exclude ad-hoc scripts and content dumps
+          ruff check . \
+            --exclude "scripts" \
+            --exclude "knowledge" \
+            --exclude "career" \
+            --exclude "openwiki"
 
       - name: Check Markdown formatting
         run: |
