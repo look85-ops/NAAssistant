@@ -34,3 +34,6 @@ docs/course/materials/templates/**/*.pptx
 
 # Config template (example)
 .env.example
+
+# Office temp files
+~$*
