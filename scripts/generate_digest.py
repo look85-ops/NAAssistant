@@ -1,4 +1,8 @@
-import os, json, sys, re, ssl
+import json
+import os
+import re
+import ssl
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -49,7 +53,7 @@ def search_ddg(query):
             if len(text) > 40:
                 results.append(text[:300])
         return results[:5]
-    except Exception as e:
+            except Exception as e:
         return []
 
 def research():
@@ -64,7 +68,7 @@ def fmt_date(date_str):
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
         return f"{dt.day} {MONTHS_RU[dt.month-1]} {dt.year}"
-    except:
+    except Exception:
         return date_str
 
 def call_llm(signal_text, research_items, signal_date):
@@ -128,7 +132,7 @@ def call_llm(signal_text, research_items, signal_date):
             })
             resp = json.loads(urlopen(req).read())
             return resp["choices"][0]["message"]["content"]
-        except Exception as e:
+    except Exception:
             errors.append(f"{model}: {e}")
             continue
     print("All models failed.")

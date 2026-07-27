@@ -1,5 +1,6 @@
-import pandas as pd
 import os
+
+import pandas as pd
 
 files = os.listdir(r'C:\Users\marcenuk\Desktop\АП_Модуль 2\Рейтинг_М2')
 for f in files:

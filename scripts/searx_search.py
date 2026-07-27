@@ -1,7 +1,11 @@
 """Web search via public SearXNG instances (no API key, free, works from RF)."""
 
-import requests, json, sys, time
+import json
+import sys
+
 from urllib.parse import quote_plus
+
+import requests
 
 INSTANCES = [
     "https://searx.be",
