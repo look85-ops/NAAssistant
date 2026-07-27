@@ -2,7 +2,7 @@ import os, json, sys, re
 from datetime import datetime
 from urllib.request import Request, urlopen
 
-GROQ_KEY = os.environ.get("GROQ_API_KEY") or os.environ.get("GROQ_API_KEY")
+GROQ_KEY = (os.environ.get("GROQ_API_KEY") or "").strip()
 if not GROQ_KEY:
     print("GROQ_API_KEY not set")
     sys.exit(1)
