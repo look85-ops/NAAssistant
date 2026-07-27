@@ -1,4 +1,5 @@
-import sys, os
+import os
+import sys
 sys.stdout.reconfigure(encoding='utf-8')
 try:
     from docx import Document

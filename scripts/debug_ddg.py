@@ -1,7 +1,8 @@
 """Debug DuckDuckGo HTML structure."""
 
-import requests
 from urllib.parse import quote_plus
+
+import requests
 
 url = f'https://html.duckduckgo.com/html/?q={quote_plus("AI corporate training")}'
 resp = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}, timeout=15)

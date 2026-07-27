@@ -1,7 +1,13 @@
 """DuckDuckGo search via HTML (no API key, no cost)."""
 
-import requests, html, re, sys, json, time
+import html
+import json
+import re
+import sys
+
 from urllib.parse import quote_plus
+
+import requests
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",

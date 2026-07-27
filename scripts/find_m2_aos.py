@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import os
-import pandas as pd
 import json
 from pathlib import Path
+
+import pandas as pd
 
 # Debug: List all directories in Desktop
 desktop = Path('C:\\Users\\marcenuk\\Desktop')

@@ -53,8 +53,8 @@ def search_ddg(query):
             if len(text) > 40:
                 results.append(text[:300])
         return results[:5]
-            except Exception as e:
-        return []
+        except Exception as e:
+            return []
 
 def research():
     all_finds = []
@@ -132,7 +132,7 @@ def call_llm(signal_text, research_items, signal_date):
             })
             resp = json.loads(urlopen(req).read())
             return resp["choices"][0]["message"]["content"]
-    except Exception:
+        except Exception as e:
             errors.append(f"{model}: {e}")
             continue
     print("All models failed.")
