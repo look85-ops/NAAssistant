@@ -1,126 +1,96 @@
-import os, json, sys, re
+import os, re, sys
 from datetime import datetime
-from urllib.request import Request, urlopen
+from pathlib import Path
 
-API_KEY = (os.environ.get("BOTHUB_API_KEY") or "").strip()
-API_URL = os.environ.get("BOTHUB_API_URL", "https://openai.bothub.chat/v1/chat/completions")
-if not API_KEY:
-    print("BOTHUB_API_KEY not set")
-    sys.exit(1)
-
-MODELS = ["gpt-4o-mini", "claude-sonnet-4-20250514", "gemini-2.0-flash"]
+SIGNAL_DIR = "knowledge/signal"
 OUTPUT_DIR = "career/posts/digest"
-ISSUE_NUM = 3
-TODAY = datetime.now()
-DATE_STR = TODAY.strftime("%Y-%m-%d")
-MONTH_STR = TODAY.strftime("%B %Y")
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+def find_latest_signal():
+    md_files = sorted(Path(SIGNAL_DIR).glob("*.md"))
+    if not md_files:
+        print("No signal markdown files found")
+        sys.exit(1)
+    return md_files[-1]
 
-SYSTEM_PROMPT = """Ты — методист и edtech-аналитик, пишешь дайджест L&D × AI для русскоязычных L&D-специалистов.
+def parse_signal(text):
+    lines = text.strip().split("\n")
+    title = ""
+    sections = []  # [(section_title, [items])]
+    sources = ""
+    warnings = ""
+    current_section = None
+    current_items = []
+    in_meta = False
 
-Структура строгая, без отклонений:
+    for line in lines:
+        if line.startswith("# ") and not line.startswith("## "):
+            title = line.lstrip("# ").strip()
+        elif line.startswith("## "):
+            if current_section:
+                sections.append((current_section, current_items))
+            current_section = line.lstrip("## ").strip()
+            current_items = []
+            in_meta = False
+        elif line.startswith("---"):
+            in_meta = True
+        elif in_meta:
+            if line.startswith("_") and line.endswith("_") and "Источники" in line:
+                sources = line.strip("_").strip()
+            elif line.startswith("_") and line.endswith("_"):
+                warnings = line.strip("_").strip()
+        elif line.strip() and current_section:
+            current_items.append(line.strip())
 
-## Кейс недели (120–180 слов, с цифрами)
-Реальная история внедрения AI в L&D: компания, что сделали, как мерили, результат.
+    if current_section:
+        sections.append((current_section, current_items))
 
-## Инструмент под задачу (40–60 слов)
-«Если надо сделать X — попробуй Y». 1 инструмент = 1 задача.
+    return title, sections, sources, warnings
 
-## Метрика/фреймворк (40–60 слов)
-Один показатель или подход к измерению обучения.
+def item_to_html(item):
+    item = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', item)
+    item = re.sub(r'_(.+?)_', r'<em>\1</em>', item)
+    if item.startswith("- "):
+        item = item[2:]
+    return f"    <li>{item}</li>"
 
-## 3 ссылки
-1. Статья/исследование — почему важно (1 строка)
-2. Инструмент/репозиторий — почему важно (1 строка)  
-3. Материал/кейс — почему важно (1 строка)
+MONTHS_RU = ["января","февраля","марта","апреля","мая","июня",
+              "июля","августа","сентября","октября","ноября","декабря"]
 
-## Рекомендация (1 конкретное действие на неделю)
-Закончи рекомендацией в 1-2 предложения, с конкретным действием.
+def build_html(title, sections, sources, warnings, signal_path):
+    date_str = signal_path.stem  # YYYY-MM-DD
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        display_date = f"{dt.day} {MONTHS_RU[dt.month-1]} {dt.year}"
+    except:
+        display_date = date_str
 
-Важно: пиши по-русски, без канцелярита, без эмодзи, без «в эпоху цифровизации»."""
-
-USER_PROMPT = f"""Напиши выпуск #{ISSUE_NUM} дайджеста L&D × AI за {MONTH_STR}.
-Темы: AI-инструменты для L&D, оценочные практики, проектирование обучения, edtech-рынок.
-Ориентируйся на реальные продукты и компании (Workera, Degreed, LinkedIn Learning, Coursera, Docebo, 360Learning, Sana Labs и т.д.)."""
-
-def call_api():
-    errors = []
-    for model in MODELS:
-        try:
-            data = json.dumps({
-                "model": model,
-                "messages": [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": USER_PROMPT}
-                ],
-                "temperature": 0.7,
-                "max_tokens": 3000
-            }).encode()
-            req = Request(API_URL,
-                          data=data,
-                          headers={
-                              "Authorization": f"Bearer {API_KEY}",
-                              "Content-Type": "application/json"
-                          })
-            resp = json.loads(urlopen(req).read())
-            return resp["choices"][0]["message"]["content"]
-        except Exception as e:
-            errors.append(f"{model}: {e}")
-            continue
-    print("All models failed.")
-    for e in errors:
-        print(f"  {e}")
-    sys.exit(1)
-
-def md_to_html(md_text):
-    parts = md_text.split("## ")
-    blocks = []
-    for p in parts[1:]:
-        lines = p.strip().split("\n")
-        title = lines[0].strip()
-        body = "\n".join(lines[1:]).strip()
-        blocks.append((title, body))
-    return blocks
-
-def extract_recommendation(blocks):
-    for title, body in blocks:
-        if "Рекомендация" in title:
-            body_clean = re.sub(r'^\*+|\*+$', '', body).strip()
-            return body_clean
-    return ""
-
-def build_html(content_md):
-    blocks = md_to_html(content_md)
-    rec = extract_recommendation(blocks)
-    
     sections_html = ""
-    for title, body in blocks:
-        if "Рекомендация" in title:
-            continue
-        body_html = body.replace("\n", "<br>")
+    for sec_title, items in sections:
+        items_html = "\n".join(item_to_html(it) for it in items if it)
         sections_html += f"""  <div class="section">
-    <h2>{title}</h2>
-    <p>{body_html}</p>
+    <h2>{sec_title}</h2>
+    <ul>
+{items_html}
+    </ul>
   </div>
 """
-    
-    rec_html = f"""  <div class="section">
-    <h2>Рекомендация</h2>
-    <div class="recommendation">
-      {rec.replace(chr(10), '<br>')}
-    </div>
-  </div>""" if rec else ""
-    
+
+    footer_parts = []
+    if sources:
+        footer_parts.append(f'<p class="sources">{sources}</p>')
+    if warnings:
+        footer_parts.append(f'<p class="warning">{warnings}</p>')
+    footer_html = "\n    ".join(footer_parts)
+
     return f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[Дайджест #{ISSUE_NUM}] {blocks[0][1][:80].split(chr(10))[0] if blocks else ""}</title>
-<meta name="description" content="Дайджест L&D × AI: {blocks[0][1][:120].replace(chr(10), ' ') if blocks else ''}">
+<title>Сигнал #1 — {display_date}</title>
+<meta name="description" content="L&D × AI дайджест: рынок EdTech, AI-инструменты, карьера, переезд в Минск">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/posts/digest/digest-{DATE_STR}.html">
+<link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/posts/digest/digest-{date_str}.html">
 <meta name="theme-color" content="#1A1A1A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,62 +103,50 @@ def build_html(content_md):
     line-height: 1.6; -webkit-font-smoothing: antialiased;
   }}
   .container {{ max-width: 680px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 40px 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }}
-  h1 {{ font-size: 26px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }}
-  .date {{ font-size: 14px; color: #6b7280; margin-bottom: 32px; }}
-  .section {{ margin-top: 32px; }}
-  .section h2 {{ font-size: 18px; font-weight: 600; margin-bottom: 8px; }}
-  .section p {{ font-size: 15px; color: #374151; }}
-  .section ul {{ padding-left: 20px; font-size: 15px; color: #374151; }}
-  .section li {{ margin-bottom: 8px; }}
-  .recommendation {{ background: #f3f4f6; border-left: 3px solid #1A1A1A; padding: 16px; border-radius: 6px; font-size: 15px; line-height: 1.7; }}
-  .footer {{ margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; text-align: center; }}
-  .footer a {{ color: #1A1A1A; }}
+  h1 {{ font-size: 24px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.3px; }}
+  .date {{ font-size: 14px; color: #6b7280; margin-bottom: 24px; }}
+  .section {{ margin-top: 28px; }}
+  .section h2 {{ font-size: 17px; font-weight: 600; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; }}
+  .section ul {{ list-style: none; padding: 0; }}
+  .section li {{
+    font-size: 14.5px; color: #374151; margin-bottom: 10px; padding-left: 16px;
+    position: relative; line-height: 1.65;
+  }}
+  .section li::before {{ content: "\\2022"; position: absolute; left: 0; color: #9ca3af; }}
+  .section li strong {{ color: #1A1A1A; }}
+  .section li em {{ color: #6b7280; font-size: 13px; }}
+  .footer {{ margin-top: 36px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; }}
+  .sources {{ margin-bottom: 6px; }}
+  .warning {{ color: #d97706; font-size: 13px; }}
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>Дайджест L&D × AI #{ISSUE_NUM}</h1>
-  <div class="date">{DATE_STR}</div>
+  <h1>{title}</h1>
+  <div class="date">{display_date}</div>
 {sections_html}
-{rec_html}
   <div class="footer">
-    Дайджест L&D × AI — раз в неделю о том, что реально работает.<br>
-    <a href="https://look85-ops.github.io/NAAssistant/career/posts/digest/">Все выпуски →</a>
+{footer_html}
   </div>
 </div>
 </body>
 </html>"""
 
-def update_index(new_file):
-    idx_path = os.path.join(OUTPUT_DIR, "index.html")
-    link_html = f'<li><a href="{new_file}">#{ISSUE_NUM} — {DATE_STR}</a></li>\n'
-    
-    if os.path.exists(idx_path):
-        with open(idx_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        if "<ul>" in content:
-            content = content.replace("<ul>", "<ul>\n" + link_html, 1)
-        with open(idx_path, "w", encoding="utf-8") as f:
-            f.write(content)
-    else:
-        html = f"""<!DOCTYPE html>
-<html lang="ru">
-<head><meta charset="UTF-8"><title>Дайджест L&D × AI — все выпуски</title></head>
-<body style="font-family:Inter;max-width:640px;margin:40px auto;line-height:1.6">
-<h1>Дайджест L&D × AI</h1>
-<p>Все выпуски:</p>
-<ul>{link_html}</ul>
-</body>
-</html>"""
-        with open(idx_path, "w", encoding="utf-8") as f:
-            f.write(html)
+def main():
+    signal_path = find_latest_signal()
+    print(f"Reading signal: {signal_path}")
 
-print(f"Generating digest #{ISSUE_NUM}...")
-md_content = call_api()
-html_content = build_html(md_content)
-file_name = f"digest-{DATE_STR}.html"
-file_path = os.path.join(OUTPUT_DIR, file_name)
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-update_index(file_name)
-print(f"Saved {file_path}")
+    md_text = signal_path.read_text(encoding="utf-8")
+    title, sections, sources, warnings = parse_signal(md_text)
+
+    html = build_html(title, sections, sources, warnings, signal_path)
+
+    date_str = signal_path.stem
+    out_name = f"digest-{date_str}.html"
+    out_path = Path(OUTPUT_DIR) / out_name
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(html, encoding="utf-8")
+    print(f"Saved {out_path}")
+
+if __name__ == "__main__":
+    main()
