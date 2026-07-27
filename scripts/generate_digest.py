@@ -53,8 +53,8 @@ def search_ddg(query):
             if len(text) > 40:
                 results.append(text[:300])
         return results[:5]
-        except Exception as e:
-            return []
+    except Exception as e:
+        return []
 
 def research():
     all_finds = []
