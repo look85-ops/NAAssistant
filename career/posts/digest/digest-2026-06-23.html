@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Дайджест #2] Skills-Based не работает. Или работает?</title>
+<meta name="description" content="Дайджест L&D × AI: почему навыковый подход буксует — отчёты Deloitte, Upside Learning и BCG. Кейс, промпт, метрика и рекомендация.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://look85-ops.github.io/methodist-booster/digest/digest-2026-06-23.html">
+<meta name="theme-color" content="#1A1A1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f4f2ee;
+    color: #1A1A1A;
+    padding: 40px 20px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .series { display: inline-block; font-size: 11px; font-weight: 700; color: #fff; background: #1A1A1A; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; letter-spacing: 0.3px; }
+  h1 { font-size: 22px; font-weight: 700; line-height: 1.3; margin-bottom: 24px; letter-spacing: -0.3px; }
+  .section { margin-bottom: 28px; }
+  .section h2 { font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #E5E7EB; letter-spacing: -0.2px; }
+  .section p { font-size: 14px; margin-bottom: 10px; }
+  .section ul { list-style: none; padding: 0; }
+  .section ul li { font-size: 14px; margin-bottom: 12px; padding-left: 20px; position: relative; }
+  .section ul li::before { content: "•"; position: absolute; left: 4px; color: #1A1A1A; font-weight: bold; }
+  a { color: #1A1A1A; text-decoration: none; font-weight: 600; border-bottom: 1px solid #FFEA6C; transition: border-color 200ms ease; }
+  a:hover { border-color: #1A1A1A; }
+  .callout { background: #F8F8F8; border-left: 3px solid #1A1A1A; padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14px; margin: 16px 0; }
+  .callout strong { color: #1A1A1A; }
+  .sign { font-size: 14px; margin: 18px 0; padding: 14px 18px; background: #F8F8F8; border-radius: 6px; border-left: 3px solid #FFEA6C; }
+  .sign strong { display: block; margin-bottom: 4px; }
+  .num { display: inline-block; font-weight: 700; font-size: 28px; line-height: 1; margin-right: 4px; }
+  .tool-box { border-top: 3px solid #1A1A1A; padding: 16px 0; margin-bottom: 10px; font-size: 14px; }
+  .tool-box .task { font-weight: 700; margin-bottom: 6px; font-size: 15px; }
+  .tool-box .prompt { background: #F8F8F8; padding: 14px 18px; border-radius: 6px; margin: 8px 0; font-size: 13px; color: #444; border-left: 3px solid #FFEA6C; line-height: 1.5; }
+  .tool-box .prompt strong { color: #1A1A1A; }
+  .recommendation { border-top: 3px solid #1A1A1A; padding: 16px 0; font-size: 14px; margin-bottom: 10px; }
+  .recommendation strong { display: block; margin-bottom: 8px; color: #1A1A1A; font-size: 15px; }
+  .footer { font-size: 13px; color: #888; border-top: 1px solid #E5E7EB; padding-top: 16px; margin-top: 28px; }
+  .footer a { color: #1A1A1A; border-bottom: 1px solid #FFEA6C; }
+  .footer a:hover { border-color: #1A1A1A; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="series">Дайджест #2 · июнь 2026</div>
+  <h1>Skills-Based подход не работает, хотя все о нем говорят</h1>
+
+  <div class="section">
+    <h2>Кейс недели</h2>
+    <p>Skills-Based подход — главный HR-тренд последних лет. Идея простая: строить управление талантами вокруг реальных навыков, а не должностей. Звучит правильно. Но практика расходится с теорией.</p>
+    <p><a href="https://www.deloitte.com/us/en/insights/topics/talent/creating-value-with-skills.html" target="_blank" rel="noopener">Deloitte (апрель 2026)</a> провели исследование 87 компаний — вывод: только <strong>2%</strong> организаций успешно внедрили навыковый подход целиком. Остальные застряли на уровне пилотов или косметических изменений.</p>
+    <p><a href="https://www.hr-brew.com/stories/how-to-make-progress-skills-based-transformation" target="_blank" rel="noopener">BCG (март 2026)</a> объясняют почему: переход на навыки превращают в HR-проект — создают таксономию, запускают пилот — и останавливаются. Без привязки к бизнес-стратегии это просто смена вывесок.</p>
+    <p><a href="https://blog.upsidelearning.com/corporate-training-trends-2026-ld-leaders/" target="_blank" rel="noopener">Upside Learning (июнь 2026)</a> добавляют: компании вкладываются в конвейер курсов, а не в способности. 84% L&D-команд используют AI только для ускорения производства контента вместо того, чтобы перепроектировать операционную модель.</p>
+    <p>Главная ловушка: должности переименовывают в «наборы навыков», но обучение проектируют по-старому — курсами по темам, с процентом завершения как главной метрикой.</p>
+    <p>Три признака, что переход настоящий:</p>
+    <div class="callout">
+      <strong>1. Диагноз до дизайна.</strong> Прежде чем проектировать обучение, выясняют: это проблема мотивации, навыков или системных барьеров? <a href="https://blog.upsidelearning.com/performance-consulting-ld-fix-problems-not-symptoms/" target="_blank" rel="noopener">Upside Learning</a> называют это Performance Consulting — обучение решает только одну из трёх причин.<br><br>
+      <strong>2. Академии компетенций вместо каталогов курсов.</strong> Программы строятся вокруг бизнес-результатов. Ведут их лучшие практики, а не тренеры.<br><br>
+      <strong>3. AI для практики, а не для производства контента.</strong> 84% команд используют AI чтобы делать курсы быстрее. Но главная ценность — масштабируемая практика: ролевые игры, симуляции, адаптивный коучинг. Разрыв между «знаю» и «делаю» закрывается только практикой.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Инструмент под задачу</h2>
+    <div class="tool-box">
+      <p>Промпт для AI, который поможет разложить любую программу на навыки:</p>
+      <div class="prompt">
+        «У меня есть программа обучения для [должность/роль]. Её текущая цель — [вставьте текущую формулировку]. Помоги переформулировать её как набор осваиваемых навыков.<br><br>
+        Для каждого навыка укажи:<br>
+        — что человек должен уметь сделать (конкретное действие)<br>
+        — в какой ситуации (контекст применения)<br>
+        — за какое время (целевой норматив)<br>
+        — как проверить (одна быстрая проверка)<br><br>
+        Пример: вместо «понимать процесс согласования» → «согласовать договор с тремя смежниками за 2 часа, используя чек-лист из CRM».<br><br>
+        Язык — русский. Формат — таблица.»
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Метрика / фреймворк</h2>
+    <p><strong>Время до первого применения вместо Completion Rate.</strong></p>
+    <p>Completion Rate — процент прошедших курс до конца. Самая публичная и самая обманчивая метрика. Высокий COR не значит, что сотрудники чему-то научились. Низкий — не значит, что программа плохая (<a href="https://glabix.com/articles/metriki-obucheniya-personala" target="_blank" rel="noopener">Glabix, май 2026</a>).</p>
+    <p>EdTech-рынок уже переходит к outcome-метрикам (<a href="https://vc.ru/education/2947595-trendy-i-vyzovy-rossijskogo-edtech" target="_blank" rel="noopener">vc.ru, май 2026</a>). Одна из них — <strong>time-to-first-application</strong>: сколько времени прошло от обучения до первого реального действия в рабочем инструменте.</p>
+    <p>Как считать: замерить, через сколько дней после программы сотрудник впервые применяет новый навык без подсказки. Через 2-3 недели проведите пульс-опрос: применили ли навык в работе, что помогло или помешало. Если человек не применяет навык в работе — обучение можно было не проводить.</p>
+  </div>
+
+  <div class="section">
+    <h2>Рекомендация</h2>
+    <div class="recommendation">
+      <strong>Одно действие на эту неделю</strong>
+      <p>Выберите одну программу, которая сейчас считается «курсом по роли», и перепишите её как набор осваиваемых навыков. Не трогайте контент. Просто переформулируйте цель: не «понимать процесс», а «принять решение X в ситуации Y за Z минут». Если это меняет структуру программы — вы на верном пути.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Дайджест L&D × AI — раз в 2 недели о том, что реально работает.<br>
+    Другие инструменты для тех, кто проектирует обучение: <a href="https://look85-ops.github.io/NAAssistant/methodist-booster/" target="_blank" rel="noopener">Бустер методиста →</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Session Log (Episodic Memory)
+
+Формат: каждая сессия — запись с датой, задачами, решениями, файлами.
+
+---
+
+## 2026-07-08 18:00 — Изучение arXiv:2606.24937 и улучшение агента
+
+**Длительность:** ~30 мин
+**Задачи:** Не F-NNN (исследовательская)
+**Контекст:** Наташа попросила изучить статью "The Hitchhiker's Guide to Agentic AI" и применить полезное
+
+**Ключевые решения:**
+- Создан `logs/sessions.log` — episodic memory для cross-session контекста
+- Добавлен Operating Behavior #8 (Agentic RAG Protocol) — формализованный multi-hop retrieval
+- Расширен `/verify` — добавлен Definition of Done checklist и self-evaluation rubric
+- Остальные инсайты из статьи (MCP, design patterns, multi-agent topologies) — в BACKLOG.md
+
+**Файлы:**
+- Создан: `logs/sessions.log`
+- Изменён: `AGENTS.md` (+Agentic RAG protocol + memory policy update)
+- Изменён: `.opencode/command/verify.md` (+eval methodology)
+- Изменён: `docs/BACKLOG.md` (+new items)
+
+**Outcome:** 3 улучшения внедрены, остальное законспектировано в бэклог
+
+**Доработка (конец сессии):**
+- Уточнены триггеры окончания сессии: «спасибо», «всё», «пока», «стоп», «конец», «на сегодня всё»
+- Лог пишу сразу после триггера, без напоминаний

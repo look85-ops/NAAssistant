@@ -1,0 +1,32 @@
+name: Weekly LinkedIn Post
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Generate post draft
+        env:
+          BOTHUB_KEY: ${{ secrets.BOTHUB_KEY }}
+        run: python scripts/weekly_linkedin_post.py
+
+      - name: Commit new post
+        run: |
+          git config user.name "post-bot"
+          git config user.email "post-bot@users.noreply.github.com"
+          git add career/posts/
+          git diff --staged --quiet || git commit -m "$(date -u +'[weekly] LinkedIn post %Y-%m-%d')"
+          git push

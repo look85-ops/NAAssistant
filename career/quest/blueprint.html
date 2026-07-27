@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Blueprint — Карьерный квест | Наталья Марценюк</title>
+<link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/quest/blueprint">
+<meta property="og:title" content="Service Blueprint: Career Launch как сервис">
+<meta property="og:description" content="5-зонный blueprint поиска работы: от стратегии до оффера. L&D × AI → Минск 2026.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #eef4fa;
+  color: #1a2a3a;
+  padding: 20px;
+}
+h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 2px; }
+.sub { font-size: .8rem; color: #5a7a9a; margin-bottom: 20px; }
+
+/* ----- blueprint grid ----- */
+.bp-wrap {
+  overflow-x: auto;
+  border: 1px solid #c8d4e0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+table { border-collapse: collapse; width: 100%; min-width: 900px; table-layout: fixed; }
+
+/* header row = stages */
+thead th {
+  background: #dce6f0;
+  padding: 14px 10px;
+  font-size: .8rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid #b8c8d8;
+  border-right: 1px solid #c8d4e0;
+  white-space: nowrap;
+}
+thead th:first-child { width: 160px; text-align: left; }
+thead th:last-child { border-right: none; }
+
+/* zone rows */
+tbody td {
+  padding: 8px 10px;
+  font-size: .75rem;
+  line-height: 1.5;
+  border-right: 1px solid #e8eef4;
+  vertical-align: top;
+}
+tbody td:first-child {
+  font-weight: 600;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  width: 160px;
+  padding: 14px 10px;
+  border-right: 1px solid #c8d4e0;
+}
+tbody td:last-child { border-right: none; }
+
+/* zone colors */
+.zone-evidence { background: #f8fafc; }
+.zone-evidence td:first-child { background: #e8eef4; }
+.zone-user { background: #eef6fb; }
+.zone-user td:first-child { background: #d8e6f0; }
+.zone-front { background: #f0f4f8; }
+.zone-front td:first-child { background: #e0e8ef; }
+.zone-back { background: #f4f0f8; }
+.zone-back td:first-child { background: #e4dcef; }
+.zone-support { background: #f8f4ec; }
+.zone-support td:first-child { background: #efe4d4; }
+
+/* line rows (separators) */
+.line-row td {
+  height: 28px;
+  padding: 0 10px;
+  border-right: 1px solid #e8eef4;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  vertical-align: middle;
+}
+.line-row td:first-child { border-right: 1px solid #c8d4e0; }
+.line-row td:last-child { border-right: none; }
+
+.line-interaction td { background: #dce6f0; color: #2a5a8a; border-top: 2px solid #5a8aba; }
+.line-visibility td { background: #e8e0ef; color: #5a3a8a; border-top: 2px solid #7a5aba; }
+.line-internal td { background: #efe4d4; color: #8a6a3a; border-top: 2px solid #ba9a5a; }
+
+/* badges */
+.tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 8px;
+  font-size: .65rem;
+  font-weight: 600;
+  margin: 1px 2px 1px 0;
+}
+.tag.green { background: #d4edda; color: #155724; }
+.tag.blue { background: #cce5ff; color: #004085; }
+.tag.purple { background: #e8d4f0; color: #6a1a8a; }
+.tag.amber { background: #fff3cd; color: #856404; }
+
+.cell-label { font-weight: 700; display: block; margin-bottom: 4px; font-size: .77rem; }
+.cell-items { display: flex; flex-direction: column; gap: 3px; }
+
+/* nav link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #1a73e8;
+  font-size: .82rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="index.html">← Карьерный квест</a>
+<h1>🧭 Service Blueprint: Career Launch</h1>
+<p class="sub">Как я и AI-ассистент работаем как единый сервис. 5 зон, 3 линии, 6 этапов.</p>
+
+<div class="bp-wrap">
+<table>
+<thead>
+<tr>
+  <th>Этап →<br>Зона ↓</th>
+  <th>1. Стратегия</th>
+  <th>2. Бренд</th>
+  <th>3. Инфраструктура</th>
+  <th>4. Запуск</th>
+  <th>5. Активная фаза</th>
+  <th>6. Оффер + Переезд</th>
+</tr>
+</thead>
+<tbody>
+
+<!-- PHYSICAL EVIDENCE -->
+<tr class="zone-evidence">
+  <td>📦 Physical Evidence</td>
+  <td>
+    <div class="cell-items">
+      <span>📄 GTM-стратегия</span>
+      <span>🧭 Quest STORY data</span>
+      <span class="tag green">done</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>🎨 Сайт-визитка</span>
+      <span>📎 LinkedIn profile</span>
+      <span>📈 LinkedIn posts</span>
+      <span class="tag green">done</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>🐍 job-search.py</span>
+      <span>📄 2 версии резюме</span>
+      <span>📄 Сопроводительное</span>
+      <span class="tag green">done</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>📊 Страница квеста</span>
+      <span>📬 Первые отклики</span>
+      <span>🔍 search/index.html</span>
+      <span class="tag blue">live</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>📋 Конспекты собес.</span>
+      <span>📇 Контакты нетворкинга</span>
+      <span>📈 A/B-метрики резюме</span>
+      <span class="tag amber">в работе</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>💼 Твёрдый оффер</span>
+      <span>🚂 План переезда</span>
+      <span>🏠 Жильё в Минске</span>
+      <span class="tag amber">в плане</span>
+    </div>
+  </td>
+</tr>
+
+<!-- LINE OF INTERACTION -->
+<tr class="line-row line-interaction">
+  <td>▲ LINE OF INTERACTION</td>
+  <td colspan="6"></td>
+</tr>
+
+<!-- USER ACTIONS -->
+<tr class="zone-user">
+  <td>🧑‍💻 User Actions</td>
+  <td>
+    <div class="cell-label">🎯 Ставит цели</div>
+    <span>Определяет приоритеты, утверждает GTM-стратегию. Выбирает фокус: удалёнка РФ + Минск параллельно.</span>
+  </td>
+  <td>
+    <div class="cell-label">✨ Создаёт контент</div>
+    <span>Обновляет портфолио. Пишет LinkedIn-посты. Утверждает headline, featured, skills.</span>
+  </td>
+  <td>
+    <div class="cell-label">⚙️ Настраивает инструменты</div>
+    <span>Утверждает 2 версии резюме. Настраивает скрипт поиска. Загружает резюме на hh/rabota.by.</span>
+  </td>
+  <td>
+    <div class="cell-label">🚀 Запускает</div>
+    <span>Публикует квест в соцсетях. Отправляет первые отклики. Запускает A/B-тест резюме.</span>
+  </td>
+  <td>
+    <div class="cell-label">🔄 Итерирует</div>
+    <span>Проходит собеседования. Нетворкает в Минске. Корректирует стратегию по данным.</span>
+  </td>
+  <td>
+    <div class="cell-label">🏁 Принимает решение</div>
+    <span>Выбирает лучший оффер. Планирует переезд. Закрывает квест.</span>
+  </td>
+</tr>
+
+<!-- LINE OF VISIBILITY -->
+<tr class="line-row line-visibility">
+  <td>▲ LINE OF VISIBILITY</td>
+  <td colspan="6"></td>
+</tr>
+
+<!-- FRONTSTAGE (user sees) -->
+<tr class="zone-front">
+  <td>🤖 Frontstage<br><span style="font-weight:400;font-size:.7rem;text-transform:none">(видит пользователь)</span></td>
+  <td>
+    <div class="cell-label">Показывает стратегию</div>
+    <span>Формирует OKR, North Star, Opportunity Tree. Показывает roadmap в бэклоге.</span>
+  </td>
+  <td>
+    <div class="cell-label">Генерирует контент</div>
+    <span>Собирает сайт-визитку. Готовит LinkedIn-ключевики. Предлагает темы постов.</span>
+  </td>
+  <td>
+    <div class="cell-label">Парсит + собирает</div>
+    <span>Запускает скрипт поиска. Подбирает ATS-ключи в резюме. Формирует универсальное сопроводительное.</span>
+  </td>
+  <td>
+    <div class="cell-label">Собирает квест</div>
+    <span>Генерирует страницу квеста из STORY. Обновляет статусы чекпоинтов. Показывает прогресс.</span>
+  </td>
+  <td>
+    <div class="cell-label">Анализирует</div>
+    <span>Собирает конверсию откликов. Готовит конспекты под собеседования. Предлагает корректировки.</span>
+  </td>
+  <td>
+    <div class="cell-label">Помогает с выбором</div>
+    <span>Сравнивает офферы с планкой. Даёт чек-лист переезда. Обновляет портфолио BY.</span>
+  </td>
+</tr>
+
+<!-- LINE OF INTERNAL INTERACTION -->
+<tr class="line-row line-internal">
+  <td>▲ LINE OF INTERNAL INTERACTION</td>
+  <td colspan="6"></td>
+</tr>
+
+<!-- BACKSTAGE (user does NOT see) -->
+<tr class="zone-back">
+  <td>⚙️ Backstage<br><span style="font-weight:400;font-size:.7rem;text-transform:none">(не видит пользователь)</span></td>
+  <td>
+    <div class="cell-label">Исследует рынок</div>
+    <span>Читает hh.ru, rabota.by. Анализирует требования. Собирает BY vs РФ отличия.</span>
+  </td>
+  <td>
+    <div class="cell-label">Оптимизирует</div>
+    <span>Подбирает SEO-ключевики. Анализирует охваты постов. Редактирует контент.</span>
+  </td>
+  <td>
+    <div class="cell-label">Разрабатывает</div>
+    <span>Пишет и тестирует скрипт. Настраивает CI ежедневного обновления. Готовит 2 версии резюме.</span>
+  </td>
+  <td>
+    <div class="cell-label">Разворачивает</div>
+    <span>Верстает квест. Ставит done в коде. Настраивает редиректы. Пушит на GitHub.</span>
+  </td>
+  <td>
+    <div class="cell-label">Собирает данные</div>
+    <span>Пишет инсайты в knowledge/. Ведёт logs/decisions.md. Обновляет бэклог. Запускает рефлексию.</span>
+  </td>
+  <td>
+    <div class="cell-label">Закрывает задачи</div>
+    <span>Финализирует F-задачи. Архивирует этапы. Готовит отчёт по найму.</span>
+  </td>
+</tr>
+
+<!-- SUPPORT PROCESSES -->
+<tr class="zone-support">
+  <td>🔧 Support Processes</td>
+  <td>
+    <div class="cell-items">
+      <span>📄 AGENTS.md</span>
+      <span>🧠 knowledge/</span>
+      <span>🤖 8 субагентов</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>🌐 GitHub Pages</span>
+      <span>📝 career/posts/</span>
+      <span>📋 career/linkedin/</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>🐍 job-search.py</span>
+      <span>⚡ hh.ru API</span>
+      <span>⚡ rabota.by API</span>
+      <span>🔄 GitHub Actions CI</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>📊 quest/index.html</span>
+      <span>🔍 search/index.html</span>
+      <span>🤖 OpenRouter AI</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>📓 logs/decisions.md</span>
+      <span>🧠 knowledge/insights</span>
+      <span>📋 docs/BACKLOG.md</span>
+    </div>
+  </td>
+  <td>
+    <div class="cell-items">
+      <span>📄 Чек-листы SOP</span>
+      <span>📋 docs/strategy/</span>
+      <span>⚡ CI remain green</span>
+    </div>
+  </td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<br>
+<div style="font-size:.75rem;color:#5a7a9a;max-width:700px;line-height:1.5">
+<strong>Как читать:</strong> Сверху вниз — от артефактов к инфраструктуре. Слева направо — хронология проекта.
+Три горизонтальные линии разделяют зоны ответственности: Interaction (что пользователь решает сам), Visibility (что видит от ассистента), Internal (что происходит «под капотом»).
+</div>
+
+</body>
+</html>

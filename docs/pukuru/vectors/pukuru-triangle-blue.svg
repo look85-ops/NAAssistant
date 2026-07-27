@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
+  <!-- треугольное тело -->
+  <polygon points="200,80 320,320 80,320" fill="#1E5E8E" />
+  
+  <!-- глаза-точки -->
+  <circle cx="170" cy="220" r="8" fill="#F5F0E8" />
+  <circle cx="230" cy="220" r="8" fill="#F5F0E8" />
+  
+  <!-- рот (линия) -->
+  <line x1="180" y1="255" x2="220" y2="255" stroke="#F5F0E8" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- левая рука -->
+  <line x1="80" y1="280" x2="20" y2="200" stroke="#1E5E8E" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- правая рука (чуть поднята) -->
+  <line x1="320" y1="280" x2="380" y2="180" stroke="#1E5E8E" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- левая нога -->
+  <line x1="140" y1="320" x2="100" y2="470" stroke="#1E5E8E" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- правая нога -->
+  <line x1="260" y1="320" x2="300" y2="470" stroke="#1E5E8E" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- круги-ладони -->
+  <circle cx="20" cy="200" r="10" fill="#1E5E8E" />
+  <circle cx="380" cy="180" r="10" fill="#1E5E8E" />
+  
+  <!-- круги-стопы -->
+  <circle cx="100" cy="470" r="10" fill="#1E5E8E" />
+  <circle cx="300" cy="470" r="10" fill="#1E5E8E" />
+</svg>

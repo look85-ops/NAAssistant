@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карьерный квест — Наталья Марценюк</title>
+<link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/quest/">
+<meta property="og:title" content="Карьерный квест: L&D × AI → Минск 2026">
+<meta property="og:description" content="Дорожка к новой работе: неделя за неделей — от LinkedIn до оффера и переезда.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #eef4fa;
+  color: #1a2a3a;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+/* hero panel (always visible) */
+.hero {
+  width: 300px;
+  min-width: 300px;
+  padding: 40px 28px;
+  background: #dce6f0;
+  border-right: 1px solid #c8d4e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+.hero h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+.hero .sub { font-size: .8rem; color: #5a7a9a; margin-bottom: 20px; }
+.hero p { font-size: .85rem; line-height: 1.6; color: #2a4a6a; margin-bottom: 12px; }
+.hero-tags { display: flex; gap: 6px; margin: 4px 0 16px; flex-wrap: wrap; }
+.hero-clue { font-size: .75rem; color: #5a7a9a; padding-top: 12px; }
+.hero-clue span { color: #1a73e8; font-weight: 600; }
+.hero-bp { display: inline-block; margin-top: 10px; padding: 6px 16px; border-radius: 8px; background: #c8d8e8; color: #1a73e8; font-size: .75rem; font-weight: 600; text-decoration: none; border: 1px solid #b0c4d8; }
+
+.tag {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 10px;
+  font-size: .7rem;
+  font-weight: 600;
+}
+.tag.learn { background: #d4edda; color: #155724; }
+.tag.decision { background: #e8d4f0; color: #6a1a8a; }
+.tag.next { background: #cce5ff; color: #004085; }
+
+/* scrollable track */
+.container {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+.container::-webkit-scrollbar { height: 6px; }
+.container::-webkit-scrollbar-thumb { background: #b0c4d8; border-radius: 3px; }
+
+.track {
+  position: relative;
+  height: 100vh;
+  min-width: max-content;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+}
+.track svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* nodes */
+.nodes { position: relative; z-index: 1; display: flex; align-items: center; gap: 0; }
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform .2s;
+  width: 130px;
+  flex-shrink: 0;
+}
+.node:hover { transform: translateY(-4px); }
+.node-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  border: 2px solid #c8d4e0;
+  background: #ffffff;
+  transition: all .3s;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+.node.past .node-icon { border-color: #28a745; background: #d4edda; }
+.node.current .node-icon {
+  border-color: #1a73e8;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(26,115,232,.15), 0 2px 8px rgba(26,115,232,.2);
+}
+.node.future .node-icon { border-color: #c8d4e0; background: #f5f8fb; opacity: .5; }
+.node-icon .player {
+  position: absolute;
+  top: -10px; right: -10px;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 2px 6px rgba(26,115,232,.5));
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.node-label {
+  margin-top: 8px;
+  font-size: .73rem;
+  text-align: center;
+  color: #5a7a9a;
+  max-width: 110px;
+  line-height: 1.3;
+}
+.node.past .node-label { color: #28a745; }
+.node.current .node-label { color: #1a73e8; font-weight: 600; }
+.node-date { font-size: .62rem; color: #8a9aaa; margin-top: 3px; }
+
+.connector {
+  width: 50px;
+  height: 2px;
+  background: #c8d4e0;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 28px;
+}
+.connector.past { background: #28a745; }
+
+/* modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: #ffffff;
+  border: 1px solid #dce6f0;
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 480px;
+  width: 90%;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,.1);
+}
+.modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none; border: none;
+  color: #8a9aaa; font-size: 1.3rem; cursor: pointer;
+}
+.modal-close:hover { color: #1a2a3a; }
+.modal h2 { font-size: 1.1rem; margin-bottom: 4px; color: #1a2a3a; }
+.modal .mdates { font-size: .8rem; color: #8a9aaa; margin-bottom: 16px; }
+.modal .msection { margin-bottom: 14px; }
+.modal .msection h3 { font-size: .85rem; color: #1a73e8; margin-bottom: 4px; }
+.modal .msection p { font-size: .85rem; line-height: 1.5; color: #2a4a6a; }
+.modal-tasks { margin-top: 12px; }
+
+@media (max-width: 700px) {
+  body { flex-direction: column; }
+  .hero { width: 100%; min-width: 0; padding: 20px; border-right: none; border-bottom: 1px solid #222; max-height: 45vh; }
+  .hero-clue { display: none; }
+  .container { height: 55vh; }
+  .track { height: 55vh; padding: 0 30px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🗺 Карьерный квест</h1>
+  <div class="sub">L&D × AI → Минск 2026</div>
+  <p>Я работаю главным методистом в Корпоративном университете РЖД. Осенью переезжаю в Минск и не смогу сохранить свою работу.</p>
+  <p>Этот таймлайн — мой способ превратить стресс от поиска работы в игру.</p>
+  <p>Все чекпоинты, решения и развороты — открыты.</p>
+  <div class="hero-tags">
+    <span class="tag learn">пройдено</span>
+    <span class="tag decision">разворот</span>
+    <span class="tag next">в планах</span>
+  </div>
+  <div class="hero-clue"><span>Кликни на любой чекпоинт</span> → увидишь историю, выводы и задачи.</div>
+  <a class="hero-bp" href="blueprint.html">🔷 Service Blueprint</a>
+</div>
+
+<div class="container" id="scrollContainer">
+<div class="track" id="track">
+<svg id="pathSvg" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0"></svg>
+<div class="nodes" id="nodesContainer"></div>
+</div>
+</div>
+
+<!-- modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+const STORY = [
+  {
+    done: true, node: "🧭", date: "Май 2026", label: "Стратегия",
+    story: "Разработана GTM-стратегия выхода на рынок: сегменты, OKR, риски. Фокус — удалёнка РФ + Минск как параллельный трек.",
+    tags: { "стратегия": "decision" },
+    learn: "Подходить к поиску работы как к продукту — не просто рассылать резюме, а строить воронку.",
+    tasks: ["GTM-стратегия утверждена", "Резюме: L&D Lead + Методист", "Скрипт поиска вакансий"]
+  },
+  {
+    done: true, node: "🎨", date: "Май 2026", label: "Портфолио",
+    story: "Сайт-визитка на GitHub Pages. <a href='https://look85-ops.github.io/NAAssistant/portfolio/' target='_blank' style='color:#1a73e8'>Открыть</a>",
+    tags: { "готово": "learn" },
+    learn: "Сайт — асинхронное первое впечатление. Работает 24/7, пока ты спишь.",
+    tasks: ["Портфолио обновлено", "Ссылка в LinkedIn"]
+  },
+  {
+    done: true, node: "📎", date: "Май 2026", label: "LinkedIn",
+    story: "Обновлён профиль: headline, about, keywords, featured. Второй круг — A/B тест заголовка.",
+    tags: { "профиль": "learn" },
+    learn: "Низкая видимость специалиста на рынке — нужна площадка для развития базы контактов и обмена экспертизой.",
+    tasks: ["Headline: A/B тест", "Featured: портфолио + квест", "Skills: 30+ ключевых"]
+  },
+  {
+    done: true, node: "🤖", date: "28 мая 2026", label: "Собеседование Яндекс",
+    story: "Поговорили: у них фулл-тайм офис, а я не смогу быть в офисе из-за переезда. Разворот: стратегия скорректирована — ищем только удалёнку.",
+    tags: { "интервью": "learn", "разворот": "decision" },
+    learn: "Переезд закрывает офисные варианты. Фокус на удалёнку — где география не имеет значения.",
+    tasks: ["Собеседование пройдено", "Отказ (офис, несовместимо с переездом)", "Стратегия скорректирована под удалёнку"]
+  },
+  {
+    done: true, node: "🔍", date: "29 мая 2026", label: "Парсинг",
+    story: "Запущен сервис поиска вакансий: скрипт собирает вакансии с hh.ru и rabota.by, отсеивает нерелевантное, выдаёт топ по двум трекам — Методист/ID и L&D Lead.",
+    tags: { "инструмент": "learn" },
+    learn: "Автоматизация поиска экономит часы ручного просмотра. Скрипт обновляется ежедневно по расписанию.",
+    tasks: ["Скрипт поиска вакансий", "Два трека: Методист + Lead", "CI: ежедневное обновление"]
+  },
+  {
+    done: true, node: "📄", date: "1 июн 2026", label: "Резюме",
+    story: "Две версии: L&D Lead (для руководителей) и Методист/Instructional Designer. Добавлены ключи ATS: андрагогика, e-learning, ИПР.",
+    tags: { "готово": "learn" },
+    learn: "85% резюме не доходит до рекрутера — их отсеивают алгоритмы. Адаптация под ключи — не опция, а условие.",
+    tasks: ["BY-резюме: PDF + MD", "Выгружено на hh.ru", "Выгружено на rabota.by"]
+  },
+  {
+    done: true, node: "📊", date: "1 июн 2026", label: "Квест",
+    story: "Запущен карьерный квест — таймлайн на дорожке с 11 чекпоинтами. Кликабельные истории, задачи, выводы.",
+    tags: { "сделано": "learn" },
+    learn: "Геймификация поиска работы снижает тревожность. Видно, сколько пройдено и сколько осталось.",
+    tasks: ["Страница квеста live", "Пост-анонс в LinkedIn"]
+  },
+  {
+    done: false, node: "📬", date: "Июн 2026", label: "Отклики",
+    story: "Первая волна откликов на hh.ru: методист/ID, удалёнка. Тестируем конверсию разных версий резюме.",
+    tags: { "в работе": "next" },
+    learn: "",
+    tasks: ["10 откликов/нед", "A/B резюме: с AI vs без AI", "Анализ конверсии"]
+  },
+  {
+    done: false, node: "📈", date: "Июн 2026", label: "Контент",
+    story: "LinkedIn-посты 1-2 раза в неделю. Кейсы, методология, AI в L&D. Цель — видимость, нетворкинг, входящие от рекрутеров.",
+    tags: { "в работе": "next" },
+    learn: "",
+    tasks: ["4 поста/мес", "Нетворкинг: целевые контакты", "Search Views + входящие"]
+  },
+  {
+    done: false, node: "📋", date: "Июл-Окт", label: "Работа по плану",
+    story: "Отклики, контент, нетворкинг, интервью — параллельные потоки. Корректируем по результатам.",
+    tags: { "в работе": "next" },
+    learn: "",
+    tasks: ["Отклики еженедельно", "Интервью по мере поступления", "LinkedIn: контент + нетворкинг"]
+  },
+  {
+    done: false, node: "💼", date: "Нояб-Дек", label: "Оффер",
+    story: "Твёрдый оффер. Переговоры. Выбор лучшего варианта.",
+    tags: { "в плане": "next" },
+    learn: "",
+    tasks: ["≥1 твёрдый оффер", "Фриланс-проект"]
+  },
+  {
+    done: false, node: "🚂", date: "Нояб-Дек", label: "Переезд",
+    story: "Релокация в Минск. Новый город, новый этап.",
+    tags: { "в плане": "next" },
+    learn: "",
+    tasks: ["План переезда", "Жильё", "Адаптация"]
+  }
+];
+
+function getCharIndex() {
+  for (let i = 0; i < STORY.length; i++) {
+    if (!STORY[i].done) return i;
+  }
+  return STORY.length - 1;
+}
+
+function render() {
+  const container = document.getElementById('nodesContainer');
+  const charIdx = getCharIndex();
+
+  container.innerHTML = STORY.map((s, idx) => {
+    let status = s.done ? 'past' : (idx === charIdx ? 'current' : 'future');
+    const checkHtml = s.done && s.tasks.length > 0 ? ' ✅' : '';
+
+    const connectorBefore = idx > 0 ? `<div class="connector ${idx <= charIdx ? 'past' : ''}"></div>` : '';
+    const playerHtml = status === 'current' ? `<span class="player">🧑‍💻</span>` : '';
+
+    return connectorBefore + `<div class="node ${status}" onclick="openModal(${idx})" title="${s.label}">
+      <div class="node-icon">${s.node}${playerHtml}</div>
+      <div class="node-label">${s.label}${checkHtml}</div>
+      <div class="node-date">${s.date}</div>
+    </div>`;
+  }).join('');
+
+  drawPath();
+
+  setTimeout(() => {
+    const current = document.querySelector('.node.current');
+    if (current) current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+  }, 100);
+}
+
+function drawPath() {
+  const nodes = document.querySelectorAll('.node');
+  if (nodes.length < 2) return;
+  const svg = document.getElementById('pathSvg');
+  const track = document.getElementById('track');
+  const trackRect = track.getBoundingClientRect();
+
+  const nodePositions = [];
+  nodes.forEach((n, i) => {
+    const rect = n.getBoundingClientRect();
+    const cx = rect.left - trackRect.left + rect.width / 2;
+    const cy = rect.top - trackRect.top + rect.height / 2 + 8;
+    nodePositions.push({ x: cx, y: cy, past: n.classList.contains('past') || n.classList.contains('current') });
+  });
+
+  const svgW = track.scrollWidth;
+  let maxY = 0, minY = Infinity;
+  nodePositions.forEach(p => { if (p.y > maxY) maxY = p.y; if (p.y < minY) minY = p.y; });
+  const svgH = Math.max(maxY - minY + 100, 100);
+  svg.setAttribute('viewBox', `0 0 ${svgW} ${svgH}`);
+  svg.style.height = svgH + 'px';
+
+  function buildPath(from, to) {
+    let d = '';
+    for (let i = from; i <= to; i++) {
+      const p = nodePositions[i];
+      if (i === from) d += `M ${p.x},${p.y - 20}`;
+      if (i < to) {
+        const n = nodePositions[i + 1];
+        const mx = (p.x + n.x) / 2;
+        const my = (p.y + n.y) / 2 - 10 + (i % 2 === 0 ? 15 : -15);
+        d += ` Q ${p.x + (n.x - p.x) * 0.2},${p.y - 5 + (i % 2 === 0 ? 10 : -10)} ${mx},${my}`;
+        d += ` Q ${n.x - (n.x - p.x) * 0.2},${n.y + 5 + (i % 2 === 0 ? 10 : -10)} ${n.x},${n.y}`;
+      }
+    }
+    return d;
+  }
+
+  svg.innerHTML = '';
+  const ns = 'http://www.w3.org/2000/svg';
+
+  let splitIdx = 0;
+  for (let i = 0; i < nodePositions.length - 1; i++) {
+    if (nodePositions[i].past && !nodePositions[i+1].past) { splitIdx = i + 1; break; }
+    if (i === nodePositions.length - 2 && nodePositions[nodePositions.length-1].past) splitIdx = nodePositions.length;
+  }
+
+  if (splitIdx > 0 && splitIdx <= nodePositions.length) {
+    const pastPath = document.createElementNS(ns, 'path');
+    const d = buildPath(0, Math.min(splitIdx, nodePositions.length - 1));
+    pastPath.setAttribute('d', d);
+    pastPath.setAttribute('stroke', '#28a745');
+    pastPath.setAttribute('stroke-width', '3');
+    pastPath.setAttribute('fill', 'none');
+    pastPath.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(pastPath);
+
+    nodePositions.filter(n => n.past).forEach(n => {
+      const dot = document.createElementNS(ns, 'circle');
+      dot.setAttribute('cx', n.x);
+      dot.setAttribute('cy', n.y);
+      dot.setAttribute('r', '4');
+      dot.setAttribute('fill', '#28a745');
+      dot.setAttribute('opacity', '0.5');
+      svg.appendChild(dot);
+    });
+  }
+
+  let futureStart = Math.max(0, splitIdx - 1);
+  if (futureStart >= nodePositions.length) futureStart = nodePositions.length - 1;
+  if (futureStart < nodePositions.length - 1) {
+    const futurePath = document.createElementNS(ns, 'path');
+    const d = buildPath(futureStart, nodePositions.length - 1);
+    futurePath.setAttribute('d', d);
+    futurePath.setAttribute('stroke', '#c8d4e0');
+    futurePath.setAttribute('stroke-width', '2');
+    futurePath.setAttribute('fill', 'none');
+    futurePath.setAttribute('stroke-dasharray', '6 4');
+    futurePath.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(futurePath);
+  }
+}
+
+function openModal(idx) {
+  const s = STORY[idx];
+  const tagsHtml = Object.entries(s.tags || {}).map(([t, cls]) => `<span class="tag ${cls}">${t}</span>`).join('');
+  const tasksHtml = (s.tasks || []).map(t => `<div style="padding:3px 0;font-size:.82rem;color:#2a4a6a">• ${t}</div>`).join('');
+
+  document.getElementById('modalContent').innerHTML = `
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>${s.node} ${s.label}</h2>
+    <div class="mdates">${s.date}</div>
+    <div class="msection"><h3>История</h3><p>${s.story}</p></div>
+    ${tagsHtml}
+    ${s.learn ? `<div class="msection"><h3>Вывод</h3><p>${s.learn}</p></div>` : ''}
+    <div class="msection"><h3>Задачи</h3>${tasksHtml}</div>
+    <div style="display:flex;justify-content:space-between;margin-top:12px">
+      ${idx > 0 ? `<span style="cursor:pointer;color:#1a73e8;font-size:.8rem;font-weight:600" onclick="closeModal();setTimeout(()=>openModal(${idx-1}),200)">← назад</span>` : ''}
+      ${idx < STORY.length - 1 ? `<span style="cursor:pointer;color:#1a73e8;font-size:.8rem;font-weight:600" onclick="closeModal();setTimeout(()=>openModal(${idx+1}),200)">вперёд →</span>` : ''}
+    </div>`;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+
+document.getElementById('modalOverlay').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+render();
+</script>
+</body>
+</html>

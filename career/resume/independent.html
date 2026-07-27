@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Марценюк Наталья — Резюме</title>
+<style>
+  @page { margin: 15mm 20mm; size: A4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #222;
+    max-width: 190mm;
+    margin: 0 auto;
+    padding: 15mm 20mm;
+  }
+  h1 { font-size: 16pt; margin-bottom: 2px; letter-spacing: -0.3px; }
+  h2 {
+    font-size: 12pt;
+    color: #1a5a8c;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid #1a5a8c;
+  }
+  h3 { font-size: 10.5pt; font-weight: 600; margin-top: 10px; margin-bottom: 2px; }
+  p { margin: 3px 0; }
+  .contact { font-size: 9.5pt; color: #555; margin-bottom: 12px; }
+  .contact span { margin-right: 12px; }
+  .section { margin-bottom: 4px; }
+  .job { margin: 8px 0 4px 0; }
+  .job-header { font-weight: 600; font-size: 10.5pt; }
+  .job-sub { font-size: 9.5pt; color: #555; margin-bottom: 2px; }
+  ul { padding-left: 16px; margin: 2px 0 4px 0; }
+  li { margin-bottom: 1px; }
+  .results { margin: 2px 0 4px 14px; font-size: 10pt; }
+  .results b { color: #1a5a8c; }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 4px 8px; margin: 4px 0; }
+  .skills-grid .block { width: 48%; }
+  .skills-grid .block b { display: block; font-size: 9.5pt; color: #1a5a8c; }
+  .skills-grid .block span { font-size: 9.5pt; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 14px 0; }
+  .badge {
+    display: inline-block;
+    background: #e8f0f8;
+    color: #1a5a8c;
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-size: 9pt;
+    margin: 1px 2px;
+  }
+  @media print {
+    body { padding: 0; }
+    .badge { background: #e8f0f8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Марценюк Наталья</h1>
+<div class="contact">
+  <span>&#9993; look85@gmail.com</span>
+  <span>&#9990; @mrk_natalia</span>
+  <span>&#9874; Москва &rarr; Минск (релокация осень 2026)</span>
+</div>
+
+<!-- ==================== Достижения ==================== -->
+<h2>Ключевые достижения</h2>
+<ul>
+  <li>Запустила программу развития руководителей для <b>400+ человек</b> в Корпоративном университете РЖД (50+ регионов); <b>NPS 9.7</b>, премия &laquo;Смарт Пирамида &mdash; 2024&raquo;</li>
+  <li>Сократила <b>time-to-productivity на 30%</b> для 9 000+ сотрудников Сбера &mdash; когортный анализ adoption 30/60/90</li>
+  <li>Спроектировала и запустила ДПО-программы с нуля в МГТУ им. Баумана (72+ ак. ч.) с role-based треками</li>
+  <li>Внедрила <b>Learning Analytics</b>: A/B-тесты контента, когортный анализ, Skills Gap Analysis, матрицу компетенций</li>
+  <li>Организовала отбор и подготовку <b>24 преподавателей</b> из 8 регионов</li>
+</ul>
+
+<!-- ==================== Опыт ==================== -->
+<h2>Опыт работы</h2>
+
+<div class="job">
+  <div class="job-header">Корпоративный университет ОАО &laquo;РЖД&raquo; &mdash; Москва</div>
+  <div class="job-sub">Главный методист / Руководитель образовательных проектов &bull; 2024 &mdash; настоящее время</div>
+  <p>Управляла запуском Центра обучения руководителей путевого комплекса. С нуля спроектировала программу развития, сформировала команду методологов и преподавателей, выстроила quality assurance.</p>
+  <div class="results"><b>Результаты:</b></div>
+  <ul>
+    <li>400+ руководителей прошли обучение за 2024&ndash;2025</li>
+    <li><b>NPS 9.7</b> (март 2026) &mdash; выше целевого 9.1</li>
+    <li>Программа масштабирована на новые целевые аудитории</li>
+    <li>Внедрена система сбора и анализа обратной связи (A/B-тесты, когортный анализ)</li>
+    <li>Премия &laquo;Смарт Пирамида &mdash; 2024&raquo;</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">МГТУ им. Н.Э. Баумана &mdash; Москва</div>
+  <div class="job-sub">Менеджер образовательных проектов &bull; 2023&ndash;2024</div>
+  <p>Спроектировала и запустила программы ДПО для внешних заказчиков. Внедрила role-based треки развития, настроила цикл обновления контента по обратной связи.</p>
+  <div class="results"><b>Результаты:</b></div>
+  <ul>
+    <li>Запущены ДПО-программы объёмом от 72 ак. ч.</li>
+    <li>Спроектирована система непрерывного развития сотрудников с привязкой к ролям</li>
+    <li>Методическая поддержка и подготовка преподавателей</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">Сбер (СберБизнес) &mdash; Москва</div>
+  <div class="job-sub">Менеджер образовательных программ &bull; 2021</div>
+  <p>Управляла портфелем обучения для 9 000+ сотрудников коммерческого блока. Отвечала за discovery, архитектуру решений, QA контента.</p>
+  <div class="results"><b>Результаты:</b></div>
+  <ul>
+    <li>Сокращение <b>time-to-productivity</b> в пилотных потоках на <b>~30%</b></li>
+    <li>Adoption ключевых инструментов вырос до <b>85%</b> (когортный анализ 30/60/90)</li>
+    <li>Управление командой 4 человека и внешним подрядчиком</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">ФРИИ / ГБУ &laquo;Малый бизнес Москвы&raquo; / CRMM / MBS</div>
+  <div class="job-sub">Управление образовательными проектами &bull; 2012&ndash;2021</div>
+  <p>Набор проектов: от программ MBA и акселератора стартапов до обучения предпринимателей и онлайн-курсов по маркетингу. Сквозная роль &mdash; дизайн образовательного опыта под бизнес-результат.</p>
+</div>
+
+<!-- ==================== Навыки ==================== -->
+<h2>Навыки и компетенции</h2>
+
+<div class="skills-grid">
+  <div class="block"><b>Learning Product Management</b><span>Образовательные стратегии, Customer Education, онбординг, Sales Enablement, NPS</span></div>
+  <div class="block"><b>Instructional Design</b><span>Mager &amp; Pipe, Kirkpatrick, микрообучение, role-based треки, playbooks, ToT</span></div>
+  <div class="block"><b>Аналитика и метрики</b><span>Learning Analytics, когортный анализ (30/60/90), A/B-тесты, Skills Gap Analysis, матрица компетенций</span></div>
+  <div class="block"><b>AI и инструменты</b><span>GenAI для контента (OpenRouter, промпт-инжиниринг), Notion, Miro, Tilda, Canva, Loom</span></div>
+  <div class="block"><b>Управление</b><span>Stakeholder &amp; Vendor Management, управление командой до 5 чел., 24 преподавателя в 8+ регионах</span></div>
+</div>
+
+<!-- ==================== Образование ==================== -->
+<h2>Образование</h2>
+<p><b>Московский городской педагогический университет</b> &mdash; Психология; Педагогика и психология образования</p>
+
+<div class="job-sub" style="margin-top:6px;">Повышение квалификации:</div>
+<ul>
+  <li>Интенсив по проектированию обучения &mdash; Университет ИТМО (2023)</li>
+  <li>Внутренний маркетинг и коммуникации &mdash; НИУ ВШЭ (2022)</li>
+  <li>Маркетинг (базовый курс) &mdash; БВШД (2026)</li>
+</ul>
+<p style="margin-top:4px;"><b>Языки:</b> Английский &mdash; B2 (продвинутый)</p>
+
+<!-- ==================== Формат ==================== -->
+<h2>Формат работы</h2>
+<p>Офис / гибрид &mdash; Минск. Удалённо &mdash; возможно (EU-friendly timezone).</p>
+<p>Рассматриваю: полная занятость, проектная работа, консультации.</p>
+<p>Выход: Q4 2026 (релокация); раньше &mdash; для удалённых проектов. 1985 г.р.</p>
+
+<hr>
+<p style="font-size:8.5pt;color:#999;text-align:center;">Сгенерировано ассистентом NM.ASSISTANT, июнь 2026</p>
+
+</body>
+</html>

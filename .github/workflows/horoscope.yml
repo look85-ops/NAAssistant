@@ -1,0 +1,26 @@
+name: Daily horoscope
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python horoscope/generate.py
+        env:
+          EITHER_API_KEY: ${{ secrets.EITHER_API_KEY }}
+      - run: |
+          git config user.name "horoscope-bot"
+          git config user.email "horoscope-bot@users.noreply.github.com"
+          git add horoscope/data.json
+          git diff --cached --quiet || (git commit -m "daily horoscope $(date +%Y-%m-%d)" && git push)

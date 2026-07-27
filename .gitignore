@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Environment
+.env
+API.txt
+DGAPIFREE.txt
+
+# Secrets (removed from tracking 2026-07-27)
+tok.txt
+api new bothub.txt
+РўРµРєСЃС‚РѕРІС‹Р№ РґРѕРєСѓРјРµРЅС‚.txt
+
+# Nested repos (active, moved to projects/ 2026-07-27)
+projects/amalgama/
+projects/garden/
+projects/aos-analyzer/
+_hf_push_*/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+docs/course/materials/templates/Документы_Академия пути/*.docx
+docs/course/materials/templates/Документы_Академия пути/*.pptx
+docs/course/materials/templates/Заявка_*/**/*.docx

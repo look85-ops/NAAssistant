@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Утренний гороскоп — зарядись на день!</title>
+<style>
+*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 40%, #24243e 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #f0eae0;
+}
+.container { max-width: 820px; width: 100%; position: relative; }
+.stars {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none; overflow: hidden; z-index: 0;
+}
+.star {
+  position: absolute; width: 2px; height: 2px;
+  background: #fff; border-radius: 50%;
+  animation: twinkle var(--d) ease-in-out infinite alternate;
+}
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+header {
+  text-align: center; margin-bottom: 28px; position: relative; z-index: 1;
+}
+.badge {
+  display: inline-block;
+  background: rgba(240, 165, 0, 0.15);
+  border: 1px solid rgba(240, 165, 0, 0.3);
+  color: #f0a500; padding: 4px 14px; border-radius: 20px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px; font-weight: 400; color: #fff;
+  letter-spacing: -1px; margin-bottom: 8px;
+  text-shadow: 0 2px 20px rgba(240,165,0,0.15);
+}
+.meta {
+  display: flex; justify-content: center; gap: 20px;
+  font-size: 13px; color: rgba(240, 234, 224, 0.6);
+}
+.meta span { display: flex; align-items: center; gap: 6px; }
+.intro-card {
+  position: relative; z-index: 1;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px; padding: 28px; margin-bottom: 24px;
+  text-align: center;
+  transition: opacity 0.6s ease;
+}
+.intro-card.loading { opacity: 0; }
+.intro-card.visible { opacity: 1; }
+.intro-text {
+  font-family: Georgia, serif; font-size: 20px; line-height: 1.6;
+  color: rgba(240, 234, 224, 0.9);
+}
+.intro-text .accent { color: #f0a500; }
+.signs-grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.sign-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px; padding: 16px;
+  transition: all 0.2s ease;
+}
+.sign-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(240, 165, 0, 0.2);
+}
+.sign-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+.sign-emoji { font-size: 26px; line-height: 1; }
+.sign-name {
+  font-weight: 700; font-size: 15px; color: #f0a500;
+}
+.sign-dates {
+  font-size: 11px; color: rgba(240, 234, 224, 0.35); margin-left: auto;
+}
+.sign-prediction {
+  font-size: 14px; line-height: 1.5;
+  color: rgba(240, 234, 224, 0.8);
+}
+.sign-prediction p { margin-bottom: 6px; }
+.sign-prediction p:last-child { margin-bottom: 0; }
+.before-7am {
+  text-align: center; padding: 20px;
+}
+.before-7am .emoji-big { font-size: 56px; margin-bottom: 16px; }
+.before-7am h2 {
+  font-family: Georgia, serif; font-size: 24px; color: #fff; margin-bottom: 8px;
+}
+.before-7am p { color: rgba(240, 234, 224, 0.6); font-size: 15px; }
+footer {
+  position: relative; z-index: 1; text-align: center; padding-top: 8px;
+}
+footer p {
+  font-size: 12px; color: rgba(240, 234, 224, 0.3); line-height: 1.6;
+}
+@media (max-width: 640px) {
+  h1 { font-size: 30px; }
+  .signs-grid { grid-template-columns: 1fr; }
+  .meta { flex-direction: column; gap: 4px; }
+  .intro-card { padding: 20px; }
+  .intro-text { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="container">
+  <header>
+    <div class="badge">☕ Утренний ритуал</div>
+    <h1>Гороскоп дня</h1>
+    <div class="meta">
+      <span id="dateDisplay"></span>
+      <span id="updateTime"></span>
+    </div>
+  </header>
+
+  <div class="intro-card loading" id="introCard">
+    <div class="intro-text" id="introText"></div>
+  </div>
+
+  <div class="signs-grid" id="signsGrid"></div>
+
+  <footer>
+    <p>* Гороскоп не является официальным документом<br>и не может быть использован в суде</p>
+    <p style="margin-top:4px">Сделано с зарядом на весь день</p>
+  </footer>
+</div>
+
+<script>
+(function() {
+  function hashDate(s) {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; }
+    return Math.abs(h) || 1;
+  }
+  function rng(seed) {
+    let s = seed;
+    return function() { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
+  }
+  function pick(arr, r) { return arr[Math.floor(r() * arr.length)]; }
+  function shuffle(arr, r) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(r() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  const now = new Date();
+  const h = now.getHours();
+  const isBefore7 = h < 7;
+  const displayDate = isBefore7 ? new Date(now.getTime() - 86400000) : now;
+  const seedDate = displayDate.toISOString().slice(0, 10);
+  const daySeed = hashDate(seedDate);
+  const rand = rng(daySeed);
+
+  // ---- general content ----
+  const vibes = [
+    "Всё будет хорошо. <span class=accent>Серьёзно.</span> Даже лучше, чем ты планируешь.",
+    "Сегодня планеты в хорошем настроении. И твой внутренний бариста — тоже.",
+    "День обещает быть тёплым. Даже если на улице дождь — внутри будет солнце.",
+    "Звёзды говорят: сегодня можно чуть больше обычного. Чуть больше улыбок, чуть меньше дедлайнов.",
+    "Сегодняшний девиз: спокойствие, только спокойствие и ещё один коммит.",
+    "Вселенная прислала уведомление: сегодня — день лёгких побед и вкусных обедов.",
+    "Если бы у дня был заголовок, он звучал бы как «Всё получится».",
+    "Сегодня твой личный GPS настроен на режим «без пробок». Вперёд.",
+    "Энергия дня — чистое спокойствие. Даже если дедлайн горит — ты горишь красиво.",
+    "Сегодня ты — главный герой. Не второстепенный, а тот, кого показывают в трейлере."
+  ];
+
+  // ---- 12 unique daily predictions (shuffled and assigned to signs) ----
+  const predictions = [
+    {
+      body: "проснёшься с ощущением суперсилы. Сегодня ты способен свернуть горы — ну или хотя бы разобрать завал в мессенджере. Любая задача, за которую возьмёшься, будет щёлкаться как семечки. Главное — не тратить энергию на споры с коллегами из-за ерунды.",
+      twist: "К обеду окажется, что самую сложную задачу ты уже сделал, пока думал, что только раскачиваешься.",
+      advice: "Возьми самую трудную задачу первой. К вечеру будешь пить чай с чувством выполненного долга."
+    },
+    {
+      body: "сегодня твоя главная суперсила — спокойствие. Пока вокруг будут бегать и паниковать, ты останешься тем островком стабильности, к которому все потянутся за советом. Даже если всё пойдёт не по плану — ты найдёшь элегантный выход.",
+      twist: "Именно в момент твоего внутреннего дзена случится что-то, что заставит громко рассмеяться прямо в середине рабочего дня.",
+      advice: "Сделай паузу и посмотри на ситуацию со стороны. Часто ответ лежит на поверхности."
+    },
+    {
+      body: "коммуникации — твой конёк сегодня. Даже самые сложные переговоры пройдут гладко. Если надо кого-то в чём-то убедить — ты сделаешь это легко и с улыбкой. Коллеги будут удивляться твоему дипломатическому таланту.",
+      twist: "Внимание: кто-то из начальства заметит твой вклад. Будь готов к неожиданному комплименту или предложению.",
+      advice: "Не держи идеи в себе — делись. Сегодня твои слова имеют вес."
+    },
+    {
+      body: "внутренний перфекционист берёт выходной, а творческая энергия бьёт ключом. Сегодня ты способен придумать то самое нестандартное решение, которое давно искала вся команда. Не бойся предлагать даже самые безумные идеи.",
+      twist: "Самая дурацкая на первый взгляд мысль окажется гениальной. Кто-то скажет «да это же очевидно!», но придумал-то ты.",
+      advice: "Записывай всё, что приходит в голову. К обеду половина идей покажется гениальной, и это не самообман."
+    },
+    {
+      body: "сегодня ты в центре внимания, и это твой день. Твоя харизма зашкаливает, люди тянутся к тебе, а решения даются легко. Даже утренний кофе сегодня будет вкуснее обычного. Самое время начинать то, что давно откладывал.",
+      twist: "После обеда произойдёт нечто, что заставит тебя улыбнуться и вспомнить, почему ты любишь свою работу.",
+      advice: "Будь щедрым на комплименты. Сегодня твои слова запоминаются и греют долго."
+    },
+    {
+      body: "порядок в делах приведёт к порядку в голове. Сегодня отличный день, чтобы разложить всё по полочкам: от рабочих задач до мыслей. Систематизация даст неожиданный эффект — ты увидишь то, что раньше упускал из виду.",
+      twist: "Пока будешь наводить порядок, найдёшь что-то, что считал потерянным. Возможно, файл на рабочем столе или старую добрую идею.",
+      advice: "Не пытайся объять необъятное. Сделай сегодня одну важную вещь, но сделай её идеально."
+    },
+    {
+      body: "твоя интуиция сегодня работает громче логики. Доверяй первому впечатлению — оно не подведёт. Чувствуешь, что надо пойти на ту встречу? Иди. Чувствуешь, что лучше промолчать? Молчи. Внутренний компас настроен на север.",
+      twist: "Кто-то скажет фразу, которая заставит тебя посмотреть на ситуацию под совершенно новым углом.",
+      advice: "Прислушайся к себе. Первое желание — самое правильное. Анализ оставь на потом."
+    },
+    {
+      body: "энергия бьёт через край, но не распыляйся. Сегодня одно качественное дело ценнее десяти начатых. Выбери главную цель и иди к ней, не отвлекаясь на уведомления и пустые разговоры. Продуктивность будет рекордной.",
+      twist: "В самый неожиданный момент появится помощь оттуда, откуда не ждал. Кто-то предложит сделать часть твоей работы просто так.",
+      advice: "Составь список из трёх задач и вычеркни две. Оставь самую важную — и вперёд."
+    },
+    {
+      body: "день располагает к неожиданным открытиям. Ты можешь наткнуться на интересный сервис, полезную статью или человека, который изменит твоё представление о чём-то важном. Будь открыт к новому — сегодня Вселенная щедра на сюрпризы.",
+      twist: "Случайная встреча или разговор обернутся неожиданным результатом. Возможно, ты найдёшь ответ на вопрос, который давно искал.",
+      advice: "Скажи «да» тому, от чего обычно отказываешься. Новый опыт — это инвестиция."
+    },
+    {
+      body: "твоё чувство юмора сегодня — твоё секретное оружие. Даже в напряжённой ситуации ты сможешь разрядить обстановку удачной шуткой. Коллеги будут благодарны за твою лёгкость, а начальник оценит твой нестандартный подход к решению проблем.",
+      twist: "Ирония судьбы: проблема, над которой ты смеялся утром, окажется самой простой в решении.",
+      advice: "Не забывай смеяться. Особенно над тем, что бесит. Это лечит быстрее любого бальзама."
+    },
+    {
+      body: "сегодня ты — командный игрок года. Твоя способность слушать, слышать и объединять людей вокруг идеи выйдет на первый план. Именно ты станешь тем звеном, которое соединит разрозненные кусочки пазла в общую картину.",
+      twist: "Вечером обнаружится, что ты не только помог всем вокруг, но и продвинулся в своих делах дальше, чем если бы сидел в одиночку.",
+      advice: "Предложи помощь коллеге, даже если не просят. Жест доброй воли вернётся бумерангом."
+    },
+    {
+      body: "сегодня всё получается само собой. Код компилируется с первого раза, письма пишутся легко, а кофе не проливается на клавиатуру. День, когда можно просто наслаждаться процессом и не дёргаться по пустякам.",
+      twist: "Самое приятное случится после 17:00. Возможно, кто-то позовёт на послерабочий чай или случится спонтанный созвон с друзьями.",
+      advice: "Заметь этот день. Запомни это чувство лёгкости. И скажи себе: «Я молодец»."
+    }
+  ];
+
+  const signsData = [
+    { name: "Овен", dates: "21 мар — 19 апр", emoji: "♈" },
+    { name: "Телец", dates: "20 апр — 20 май", emoji: "♉" },
+    { name: "Близнецы", dates: "21 май — 20 июн", emoji: "♊" },
+    { name: "Рак", dates: "21 июн — 22 июл", emoji: "♋" },
+    { name: "Лев", dates: "23 июл — 22 авг", emoji: "♌" },
+    { name: "Дева", dates: "23 авг — 22 сен", emoji: "♍" },
+    { name: "Весы", dates: "23 сен — 22 окт", emoji: "♎" },
+    { name: "Скорпион", dates: "23 окт — 21 ноя", emoji: "♏" },
+    { name: "Стрелец", dates: "22 ноя — 21 дек", emoji: "♐" },
+    { name: "Козерог", dates: "22 дек — 19 янв", emoji: "♑" },
+    { name: "Водолей", dates: "20 янв — 18 фев", emoji: "♒" },
+    { name: "Рыбы", dates: "19 фев — 20 мар", emoji: "♓" }
+  ];
+
+  // ---- shuffle predictions (fallback) ----
+  const shuffled = shuffle([...predictions], rng(daySeed + 42));
+
+  // ---- rendering ----
+  const dayNames = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+  const monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+
+  document.getElementById('dateDisplay').innerHTML =
+    `<span>📅 ${displayDate.getDate()} ${monthNames[displayDate.getMonth()]}, ${dayNames[displayDate.getDay()]}</span>`;
+
+  function renderIntro(vibeText) {
+    document.getElementById('introCard').classList.remove('loading');
+    document.getElementById('introCard').classList.add('visible');
+    document.getElementById('introText').innerHTML = `<p>${vibeText}</p>`;
+  }
+
+  function renderSigns(preds) {
+    let html = '';
+    for (let i = 0; i < signsData.length; i++) {
+      const s = signsData[i];
+      const p = preds[i] || shuffled[i % shuffled.length];
+      html += `
+        <div class="sign-card">
+          <div class="sign-header">
+            <span class="sign-emoji">${s.emoji}</span>
+            <span class="sign-name">${s.name}</span>
+            <span class="sign-dates">${s.dates}</span>
+          </div>
+          <div class="sign-prediction">
+            <p>${s.name} сегодня ${p.body}</p>
+            <p>✨ ${p.twist}</p>
+            <p>💡 ${p.advice}</p>
+          </div>
+        </div>
+      `;
+    }
+    document.getElementById('signsGrid').innerHTML = html;
+  }
+
+  if (isBefore7) {
+    document.getElementById('updateTime').innerHTML =
+      `<span>⏰ Сегодняшний гороскоп выйдет в 07:00</span>`;
+    renderIntro('🌙 <span class=accent>Гороскоп ещё готовится.</span> Загляни после 07:00.');
+    renderSigns(shuffled);
+  } else {
+    document.getElementById('updateTime').innerHTML = `<span>☀️ Обновлено сегодня в 07:00</span>`;
+
+    (async function loadData() {
+      try {
+        const resp = await fetch('data.json?' + seedDate);
+        if (resp.ok) {
+          const data = await resp.json();
+          if (data.date === seedDate && data.predictions && data.predictions.length === 12) {
+            renderIntro(data.vibe || pick(vibes, rand));
+            renderSigns(data.predictions);
+            return;
+          }
+        }
+      } catch(e) {}
+      // fallback
+      renderIntro(pick(vibes, rand));
+      renderSigns(shuffled);
+    })();
+  }
+
+  // ---- stars ----
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.setProperty('--d', (2 + Math.random() * 3) + 's');
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.width = star.style.height = (1 + Math.random() * 2) + 'px';
+    starsEl.appendChild(star);
+  }
+})();
+</script>
+</body>
+</html>

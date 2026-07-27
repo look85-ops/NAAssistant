@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500" width="300" height="500">
+  <!-- голова-коробка на тонкой шее -->
+  <path d="M 100 40 L 200 35 L 210 130 L 90 140 Z" fill="#4A6B5A" />
+  <!-- шея -->
+  <rect x="140" y="140" width="20" height="40" fill="#3D5A4A" />
+  <!-- тело-груша -->
+  <path d="M 120 180 L 180 180 L 210 260 L 220 340 L 190 400 L 160 410 L 130 400 L 80 350 L 90 260 Z" fill="#4A6B5A" />
+  <!-- ноги (одна сильно длиннее, идёт) -->
+  <path d="M 130 400 L 100 480 L 110 490 Z" fill="#4A6B5A" />
+  <path d="M 180 400 L 230 460 L 250 490 Z" fill="#4A6B5A" />
+  <!-- руки -->
+  <path d="M 90 260 L 30 320 L 40 330 Z" fill="#4A6B5A" />
+  <path d="M 210 260 L 280 290 L 290 300 Z" fill="#4A6B5A" />
+  <!-- глаза (смещены, косит) -->
+  <circle cx="130" cy="85" r="6" fill="#E8DCC8" />
+  <circle cx="170" cy="90" r="4" fill="#E8DCC8" />
+  <circle cx="130" cy="85" r="2" fill="#1A1A1A" />
+  <circle cx="170" cy="90" r="2" fill="#1A1A1A" />
+</svg>
