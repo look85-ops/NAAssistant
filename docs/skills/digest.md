@@ -4,7 +4,7 @@
 
 ## Триггер
 
-- `/digest` — ручной запуск в чате
+- `/digest-geo` — ручной запуск в чате
 - GitHub Actions: раз в неделю, ПН в 06:00 UTC (cron: `0 6 * * 1`)
 - `workflow_dispatch` в Actions
 
