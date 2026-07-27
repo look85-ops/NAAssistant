@@ -1,7 +1,8 @@
-import os, json, sys, re
-from datetime import datetime
+import os, json, sys, re, ssl
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.parse import quote
 
 API_KEY = (os.environ.get("BOTHUB_API_KEY") or "").strip()
 API_URL = os.environ.get("BOTHUB_API_URL", "https://openai.bothub.chat/v1/chat/completions")
@@ -12,9 +13,20 @@ if not API_KEY:
 SIGNAL_DIR = "knowledge/signal"
 OUTPUT_DIR = "career/posts/digest"
 MODELS = ["gpt-4o-mini", "claude-sonnet-4-20250514", "gemini-2.0-flash"]
+DDG_URL = "https://lite.duckduckgo.com/lite/?q="
 
 MONTHS_RU = ["января","февраля","марта","апреля","мая","июня",
               "июля","августа","сентября","октября","ноября","декабря"]
+SOURCES = [
+    "L&D AI tools corporate training 2026",
+    "EdTech market trends reskilling 2026",
+    "AI in learning and development news",
+    "методист обучение AI инструменты",
+    "корпоративное обучение тренды 2026",
+]
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
 def find_latest_signal():
     md_files = sorted(Path(SIGNAL_DIR).glob("*.md"))
@@ -23,46 +35,80 @@ def find_latest_signal():
         sys.exit(1)
     return md_files[-1]
 
-def call_llm(signal_text):
-    signal_date = find_latest_signal().stem
+def search_ddg(query):
     try:
-        dt = datetime.strptime(signal_date, "%Y-%m-%d")
-        display_date = f"{dt.day} {MONTHS_RU[dt.month-1]} {dt.year}"
+        req = Request(DDG_URL + quote(query),
+                      headers={"User-Agent": "Mozilla/5.0"})
+        resp = urlopen(req, timeout=10, context=ctx)
+        html = resp.read().decode("utf-8", errors="replace")
+        results = []
+        for m in re.finditer(r'class="result-snippet">(.*?)</', html, re.DOTALL):
+            text = m.group(1).strip()
+            text = re.sub(r'<[^>]+>', '', text)
+            text = re.sub(r'\s+', ' ', text)
+            if len(text) > 40:
+                results.append(text[:300])
+        return results[:5]
+    except Exception as e:
+        return []
+
+def research():
+    all_finds = []
+    for q in SOURCES:
+        results = search_ddg(q)
+        for r in results:
+            all_finds.append(r)
+    return all_finds[:20]
+
+def fmt_date(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        return f"{dt.day} {MONTHS_RU[dt.month-1]} {dt.year}"
     except:
-        display_date = signal_date
+        return date_str
 
-    system_prompt = """Ты — методист и edtech-аналитик, пишешь дайджест L&D × AI для русскоязычных L&D-специалистов.
+def call_llm(signal_text, research_items, signal_date):
+    display_date = fmt_date(signal_date)
+    research_blob = "\n".join(f"- {r}" for r in research_items)
 
-Ниже — сырой дайджест (Signal) с фактами, данными и источниками за неделю. Твоя задача: превратить его в читаемый, структурированный выпуск дайджеста.
+    system = """Ты — методист и edtech-аналитик. Твоя задача — сделать дайджест L&D × AI, используя методологию last30days:
 
-Структура (строго):
+1. **Evidence clustering** — группируй факты по темам, не перечисляй всё подряд
+2. **Signal-weighted ranking** — practitioner > expert > news. Если в Signal есть практический опыт — ставь его выше новости
+3. **Cross-source merging** — одна тема из нескольких источников = один кластер, не дублируй
+4. **Community voice** — если есть реакция сообщества (обсуждения, критика) — вплети
+
+Структура строго:
+
 ## Кейс недели (120-180 слов)
-Один главный сюжет из Signal — самый важный для L&D. Цифры, компания, вывод. ОБЯЗАТЕЛЬНО со ссылкой на источник из Signal.
+Главный сюжет. Цифры, компания, вывод. Со ссылкой на источник.
 
 ## Инструмент под задачу (40-60 слов)
-«Если надо сделать X — попробуй Y». Берёшь инструмент из Signal.
+«Если надо сделать X — попробуй Y». Из Signal или research.
 
 ## Рынок / Карьера (40-60 слов)
-Один ключевой факт из Signal про рынок или карьеру.
+Ключевой факт про рынок, карьеру, тренды.
 
 ## Творчество / Проекты (40-60 слов)
-Один вдохновляющий сюжет из Signal.
+Вдохновляющий сюжет.
 
 ## Рекомендация (1-2 предложения)
-Конкретное действие на неделю, основанное на Signal.
+Конкретное действие на неделю.
 
 Правила:
-- Каждый факт должен быть из Signal — не выдумывай.
-- Источники — только те, что в Signal.
-- Пиши по-русски, без канцелярита, без «в эпоху цифровизации».
-- Без эмодзи."""
+- Каждый факт — из Signal или research (источник обязателен в скобках)
+- Пиши по-русски, без канцелярита, без «в эпоху цифровизации», без эмодзи
+- Если research не дал релевантного — опирайся только на Signal"""
 
-    user_prompt = f"""Ниже — Signal #{signal_date}. Сделай из него выпуск дайджеста L&D × AI.
+    user = f"""Сделай дайджест L&D × AI за {display_date}.
 
-SIGNAL:
+=== SIGNAL (основной источник) ===
 {signal_text}
 
-Дата выпуска: {display_date}"""
+=== RESEARCH (дополнительно) ===
+{'Нет данных' if not research_blob else research_blob}
+
+Дата: {display_date}"""
 
     errors = []
     for model in MODELS:
@@ -70,8 +116,8 @@ SIGNAL:
             data = json.dumps({
                 "model": model,
                 "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user}
                 ],
                 "temperature": 0.7,
                 "max_tokens": 2000
@@ -91,12 +137,7 @@ SIGNAL:
     sys.exit(1)
 
 def build_html(md_text, signal_date):
-    try:
-        dt = datetime.strptime(signal_date, "%Y-%m-%d")
-        display_date = f"{dt.day} {MONTHS_RU[dt.month-1]} {dt.year}"
-    except:
-        display_date = signal_date
-
+    display_date = fmt_date(signal_date)
     parts = md_text.split("## ")
     blocks = []
     for p in parts[1:]:
@@ -117,7 +158,6 @@ def build_html(md_text, signal_date):
     <p>{body_html}</p>
   </div>
 """
-
     rec_html = f"""  <div class="section">
     <h2>Рекомендация</h2>
     <div class="recommendation">
@@ -131,7 +171,7 @@ def build_html(md_text, signal_date):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Дайджест L&D × AI — {display_date}</title>
-<meta name="description" content="L&D × AI дайджест: рынок EdTech, AI-инструменты, карьера, переезд в Минск">
+<meta name="description" content="L&D × AI дайджест: рынок EdTech, AI-инструменты, карьера">
 <link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/posts/digest/digest-{signal_date}.html">
 <meta name="theme-color" content="#1A1A1A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,6 +194,7 @@ def build_html(md_text, signal_date):
   .section li {{ margin-bottom: 6px; }}
   .recommendation {{ background: #f3f4f6; border-left: 3px solid #1A1A1A; padding: 16px; border-radius: 6px; font-size: 14.5px; line-height: 1.7; }}
   .footer {{ margin-top: 36px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; text-align: center; }}
+  .methodology {{ font-size: 12px; color: #9ca3af; margin-top: 8px; }}
 </style>
 </head>
 <body>
@@ -163,7 +204,7 @@ def build_html(md_text, signal_date):
 {sections_html}
 {rec_html}
   <div class="footer">
-    На основе <a href="https://look85-ops.github.io/NAAssistant/knowledge/signal/{signal_date}">Signal</a> — еженедельный брифинг L&D × AI
+    Signal + web research · last30days methodology
   </div>
 </div>
 </body>
@@ -172,14 +213,16 @@ def build_html(md_text, signal_date):
 def main():
     signal_path = find_latest_signal()
     signal_date = signal_path.stem
-    print(f"Reading signal: {signal_path}")
+    print(f"Signal: {signal_path}")
+
+    print("Research phase...")
+    research_items = research()
+    print(f"  found {len(research_items)} items")
 
     md_text = signal_path.read_text(encoding="utf-8")
-    print("Generating digest via LLM...")
-    content = call_llm(md_text)
+    content = call_llm(md_text, research_items, signal_date)
 
     html = build_html(content, signal_date)
-
     out_name = f"digest-{signal_date}.html"
     out_path = Path(OUTPUT_DIR) / out_name
     out_path.parent.mkdir(parents=True, exist_ok=True)
