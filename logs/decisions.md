@@ -82,3 +82,5 @@
 
 
 - 2026-07-27: Три улучшения архитектуры — provenance, coordination, verifiers. Provenance: добавлены поля actor + auth + ref в формат logs/decisions.md и Memory policy AGENTS.md — восстанавливаемая цепочка ответственности. Coordination: правило «git log --oneline -3 <file>» перед правкой в Guardrails — предотвращает конфликт параллельных агентов. Verifier: шаг «какой минимальный тест докажет результат» в /finish-task — проверка качества перед закрытием задачи. (actor: assistant, auth: human, ref: AGENTS.md | logs/decisions.md | .opencode/command/finish-task.md)
+
+- F-024 (закрытие): OpenWiki закрыта — overhead без измеримой пользы. Вся документация уже читается в markdown-файлах репозитория. Удалены openwiki/INSTRUCTIONS.md, .github/workflows/openwiki-update.yml. (actor: assistant, auth: human, ref: F-024)
