@@ -8,6 +8,7 @@ __pycache__/
 .env
 API.txt
 DGAPIFREE.txt
+llm_usage.log
 
 # Secrets (removed from tracking 2026-07-27)
 tok.txt

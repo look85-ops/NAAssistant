@@ -1,37 +1,37 @@
 #!/usr/bin/env python3
-import os, sys, json, re, requests
-from datetime import datetime, date
+"""Дневной гороскоп: LLM → data.json. Использует общий llm_gateway."""
+import json
+import os
+import sys
+from datetime import date, datetime, timezone
+from pathlib import Path
 
-BOTHUB_URL = os.environ.get("BOTHUB_URL", "https://openai.bothub.chat/v1/chat/completions")
-API_KEY_DATA = os.environ.get("EITHER_API_KEY", "")
+BASE = Path(__file__).resolve().parent
+SCRIPTS = BASE.parent.parent / "scripts"
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
 
-if not API_KEY_DATA:
-    api_txt = os.path.join(os.path.dirname(__file__), "API.txt")
-    if os.path.exists(api_txt):
-        with open(api_txt) as f:
-            API_KEY_DATA = f.read().strip()
-
-lines = [l.strip() for l in API_KEY_DATA.strip().split("\n") if l.strip()]
-models = {}
-for line in lines:
-    parts = line.split(":", 1)
-    if len(parts) == 2:
-        models[parts[0]] = parts[1]
+from llm_gateway import LLMGateway  # noqa: E402
 
 MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat-v3-0324")
-API_KEY = models.get(MODEL, models.get("deepseek-chat", ""))
-if not API_KEY:
-    API_KEY = lines[0].split(":", 1)[-1].strip() if lines else ""
 
-if not API_KEY:
-    print("No API key found")
-    sys.exit(1)
+SIGNS = ["Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева",
+         "Весы", "Скорпион", "Стрелец", "Козерог", "Водолей", "Рыбы"]
+MONTHS = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля",
+          "августа", "сентября", "октября", "ноября", "декабря"]
 
-signs = ["Овен","Телец","Близнецы","Рак","Лев","Дева","Весы","Скорпион","Стрелец","Козерог","Водолей","Рыбы"]
-today = date.today()
-months = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"]
+SCHEMA = {"vibe": ("str", True, None), "predictions": ("list", True, None)}
+PREDICTION_SCHEMA = {
+    "sign": ("str", True, None),
+    "body": ("str", True, None),
+    "twist": ("str", True, None),
+    "advice": ("str", True, None),
+}
 
-prompt = f"""Ты — астролог с отличным чувством юмора (офисный/IT юмор с элементами абсурда). Сегодня {today.day} {months[today.month-1]} {today.year}.
+
+def build_prompt():
+    today = date.today()
+    return f"""Ты — астролог с отличным чувством юмора (офисный/IT юмор с элементами абсурда). Сегодня {today.day} {MONTHS[today.month - 1]} {today.year}.
 
 Напиши 12 коротких гороскопов для всех знаков зодиака. Темы: офис, IT, работа, коллеги, дедлайны, кофе. Тон: добрый, заряжающий, с лёгким юмором и долей абсурда. Без сарказма и негатива.
 
@@ -47,44 +47,44 @@ prompt = f"""Ты — астролог с отличным чувством юм
 Ответ дай строго в формате JSON без markdown-обёртки:
 {{"vibe": "...", "predictions": [{{"sign": "Овен", "body": "...", "twist": "...", "advice": "..."}}, ...]}}
 
-Знаки по порядку: {", ".join(signs)}."""
+Знаки по порядку: {", ".join(SIGNS)}."""
 
-headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
-payload = {
-    "model": MODEL,
-    "messages": [{"role": "user", "content": prompt}],
-    "temperature": 0.8,
-    "max_tokens": 2500,
-}
 
-try:
-    resp = requests.post(BOTHUB_URL, headers=headers, json=payload, timeout=120)
-    resp.raise_for_status()
-    content = resp.json()["choices"][0]["message"]["content"]
-except Exception as e:
-    print(f"API error: {e}")
-    sys.exit(1)
+def main():
+    gateway = LLMGateway()
+    gateway.auto_configure(base_dir=BASE)
 
-json_match = re.search(r'\{[\s\S]*\}', content)
-if json_match:
-    content = json_match.group()
+    if not gateway.providers:
+        print("No API keys found (API.txt / env)", file=sys.stderr)
+        sys.exit(1)
 
-try:
-    result = json.loads(content)
-except json.JSONDecodeError as e:
-    print(f"JSON parse error: {e}")
-    print(f"Raw: {content[:500]}")
-    sys.exit(1)
+    result = gateway.call_json(
+        build_prompt(),
+        schema=SCHEMA,
+        item_schema=PREDICTION_SCHEMA,
+        model=MODEL,
+        temperature=0.8,
+        max_tokens=2500,
+    )
 
-if "predictions" not in result or len(result["predictions"]) != 12:
-    print(f"Invalid predictions count: {len(result.get('predictions', []))}")
-    sys.exit(1)
+    if result is None:
+        print("API error: no valid response from any provider", file=sys.stderr)
+        sys.exit(1)
 
-result["date"] = today.isoformat()
-result["generated_at"] = datetime.utcnow().isoformat() + "Z"
+    preds = result.get("predictions", [])
+    signs = {p.get("sign") for p in preds if isinstance(p, dict)}
+    if len(preds) != 12 or signs != set(SIGNS):
+        print(f"Invalid predictions: {len(preds)} signs {sorted(signs)}", file=sys.stderr)
+        sys.exit(1)
 
-out = os.path.join(os.path.dirname(__file__), "data.json")
-with open(out, "w", encoding="utf-8") as f:
-    json.dump(result, f, ensure_ascii=False, indent=2)
+    today = date.today()
+    result["date"] = today.isoformat()
+    result["generated_at"] = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
-print(f"OK — {today.isoformat()} saved to data.json")
+    out = BASE / "data.json"
+    out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"OK — {today.isoformat()} saved to data.json")
+
+
+if __name__ == "__main__":
+    main()
