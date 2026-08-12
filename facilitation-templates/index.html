@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шаблоны для фасилитации</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;color:#1A1A1A;background:#FCFCF9;-webkit-font-smoothing:antialiased}
+
+/* ============ TOKENS ============ */
+:root{
+  --yellow:#FFEA6C;
+  --yellow-soft:#FFF9D6;
+  --yellow-dark:#C4B000;
+  --ink:#1A1A1A;
+  --ink-muted:#555;
+  --ink-soft:#888;
+  --bg:#FCFCF9;
+  --surface:#FFF;
+  --surface-soft:#F8F8F5;
+  --border:#E8E8E4;
+  --shadow:0 2px 12px rgba(0,0,0,0.04);
+  --radius:14px;
+  --radius-sm:8px;
+  --container:1080px;
+  --content:740px;
+  --font-sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+
+/* ============ TYPOGRAPHY ============ */
+h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;text-wrap:balance}
+h2{font-size:clamp(1.35rem,2.5vw,1.75rem);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:0.75rem;text-wrap:balance}
+h3{font-size:1.15rem;font-weight:600;letter-spacing:-0.01em;line-height:1.3;margin-bottom:0.5rem}
+p{color:var(--ink-muted);margin-bottom:1rem;max-width:65ch}
+a{color:var(--ink);text-decoration-color:var(--yellow);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--ink)}
+
+/* ============ LAYOUT ============ */
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:80px 0 60px;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-40%;right:-10%;width:50%;height:80%;background:var(--yellow);border-radius:50% 0 0 50%;opacity:0.35;z-index:0;pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.hero-badge{display:inline-block;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:4px 12px;border-radius:var(--radius-pill);background:var(--yellow);color:var(--ink);margin-bottom:20px}
+.hero h1{margin-bottom:16px;max-width:14ch}
+.hero p{font-size:1.1rem;max-width:55ch;margin-bottom:24px}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:0.85rem;color:var(--ink-soft)}
+.hero-meta span{display:flex;align-items:center;gap:6px}
+.hero-meta span::before{content:'\2713';font-weight:700;color:var(--yellow-dark)}
+
+/* ============ TABLE OF CONTENTS ============ */
+.toc-wrap{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);transition:box-shadow 0.2s}
+.toc-wrap.is-sticky{box-shadow:0 2px 16px rgba(0,0,0,0.06)}
+.toc{display:flex;align-items:center;gap:4px;padding:12px 0;overflow-x:auto;scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc-label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);white-space:nowrap;margin-right:8px}
+.toc a{flex-shrink:0;font-size:0.85rem;font-weight:500;padding:6px 14px;border-radius:var(--radius-pill);color:var(--ink-muted);text-decoration:none;transition:all 0.15s;white-space:nowrap}
+.toc a:hover{background:var(--yellow-soft);color:var(--ink)}
+.toc a.active{background:var(--ink);color:#fff}
+
+/* ============ SECTIONS ============ */
+.section{padding:56px 0}
+.section-alt{background:var(--surface-soft)}
+.section-header{margin-bottom:32px}
+.section-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--yellow);font-weight:700;font-size:0.85rem;margin-bottom:12px}
+.section-header p{font-size:0.95rem;margin-bottom:0}
+
+/* ============ CARDS ============ */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;margin-bottom:20px;transition:box-shadow 0.2s}
+.card:hover{box-shadow:var(--shadow)}
+.card-meta{font-size:0.8rem;color:var(--ink-soft);font-weight:500;margin-bottom:4px;display:flex;gap:12px;flex-wrap:wrap}
+.card-meta strong{color:var(--ink)}
+.card-title{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.card ul,.card ol{padding-left:20px;margin-bottom:1rem;color:var(--ink-muted)}
+.card li{margin-bottom:4px}
+
+/* ============ TABLES ============ */
+.table-wrap{overflow-x:auto;margin-bottom:1rem;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:0.9rem}
+.table-wrap th{background:var(--ink);color:#fff;font-weight:600;text-align:left;padding:10px 14px;white-space:nowrap}
+.table-wrap td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.table-wrap tr:last-child td{border-bottom:none}
+.table-wrap tr:nth-child(even) td{background:var(--surface-soft)}
+
+/* ============ CODE / TEMPLATE BLOCKS ============ */
+.template{background:var(--surface-soft);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:1rem;font-size:0.9rem;line-height:1.7;position:relative;font-family:var(--font-sans);white-space:pre-wrap;overflow-x:auto}
+.template-label{position:absolute;top:0;right:0;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);background:var(--surface);padding:4px 10px;border-radius:0 var(--radius-sm) 0 var(--radius-sm);border:1px solid var(--border);border-top:none;border-right:none}
+
+/* ============ BADGE ============ */
+.badge{display:inline-block;font-size:0.75rem;font-weight:600;padding:2px 10px;border-radius:var(--radius-pill);background:var(--yellow-soft);color:var(--ink)}
+.badge-green{background:#E6F7E6;color:#1A7A1A}
+.badge-orange{background:#FFF0E0;color:#B45309}
+.badge-purple{background:#F0E6FF;color:#6D28D9}
+
+/* ============ RULES LIST ============ */
+.rules{list-style:none;padding:0;display:grid;gap:8px;margin-bottom:1rem}
+.rules li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:var(--ink-muted)}
+.rules li::before{content:'\2192';font-weight:700;color:var(--ink);flex-shrink:0}
+
+/* ============ QUESTION BLOCK ============ */
+.q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:1rem}
+.q-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px}
+.q-card h4{font-size:0.85rem;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.q-card ul{list-style:none;padding:0}
+.q-card li{padding:6px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--ink-muted);line-height:1.4}
+.q-card li:last-child{border-bottom:none}
+.q-card li::before{content:'\275D ';font-size:0.8rem;color:var(--ink-soft)}
+
+/* ============ MAP CARDS ============ */
+.map-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:16px}
+.map-card h4{font-size:0.95rem;font-weight:600;margin-bottom:12px}
+.map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+.map-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-radius:var(--radius-sm);background:var(--surface-soft);font-size:0.85rem;line-height:1.4}
+.map-item .arrow{font-weight:700;color:var(--yellow-dark);flex-shrink:0}
+
+/* ============ LINKEDIN POST ============ */
+.post-preview{background:var(--yellow-soft);border:1px solid var(--yellow);border-radius:var(--radius);padding:28px 32px;margin-bottom:0}
+.post-preview h4{font-size:0.9rem;font-weight:600;margin-bottom:12px;color:var(--yellow-dark)}
+.post-preview ul{padding-left:20px;margin-bottom:12px;color:var(--ink-muted)}
+.post-preview .post-cta{font-size:0.85rem;color:var(--ink-soft);padding-top:12px;border-top:1px solid var(--yellow)}
+
+/* ============ FOOTER ============ */
+.footer{padding:40px 0 56px;text-align:center;font-size:0.85rem;color:var(--ink-soft)}
+.footer strong{color:var(--ink)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:768px){
+  .hero{padding:48px 0 36px}
+  .section{padding:36px 0}
+  .card{padding:20px 20px}
+  .template{padding:16px 16px;font-size:0.85rem}
+  .q-grid{grid-template-columns:1fr}
+  .toc a{font-size:0.8rem;padding:5px 10px}
+}
+
+/* ============ PRINT ============ */
+@media print{
+  body{background:#fff;font-size:12px;color:#000}
+  .hero{padding:40px 0 20px}
+  .hero::after{display:none}
+  .toc-wrap{position:static;border:none;box-shadow:none}
+  .toc{display:flex;flex-wrap:wrap;gap:4px;padding:8px 0}
+  .toc a{font-size:9px;padding:3px 8px;border:0.5px solid #ccc;color:#000}
+  .card,.map-card{box-shadow:none;border:0.5px solid #ddd;break-inside:avoid}
+  .section{padding:24px 0;page-break-inside:avoid}
+  .post-preview{display:none}
+  .footer{padding:16px 0}
+  .table-wrap th{background:#333;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .badge,.section-number,.hero-badge,.map-item{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .toc a.active{background:#333;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ============ UTILITY ============ */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge">Бесплатный ресурс</div>
+    <h1>Шаблоны для&nbsp;фасилитации</h1>
+    <p>Готовые сценарии, карты и структуры — достань и&nbsp;проведи. Без подготовки, без&nbsp;рассылок, без&nbsp;регистрации.</p>
+    <div class="hero-meta">
+      <span>17 лет опыта L&D</span>
+      <span>8 разделов</span>
+      <span>PDF одной кнопкой</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TOC ============ -->
+<nav class="toc-wrap" id="toc">
+  <div class="container">
+    <div class="toc">
+      <span class="toc-label">Разделы:</span>
+      <a href="#scenarios">Сценарии</a>
+      <a href="#questions">Вопросы</a>
+      <a href="#difficult">Трудные разговоры</a>
+      <a href="#feedback">Обратная связь</a>
+      <a href="#maps">Карты</a>
+      <a href="#quick">Шаблоны</a>
+      <a href="#post">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ SECTION 1: SCENARIOS ============ -->
+<section class="section" id="scenarios">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>Сценарии встреч</h2>
+      <p>Полные сценарии с таймингом, ролями и инструкциями. Подготовь за 2 минуты, проведи без суеты.</p>
+    </div>
+
+    <!-- 1.1 -->
+    <div class="card">
+      <div class="card-meta"><span><strong>Длительность:</strong> 4 ч</span><span><strong>Формат:</strong> офлайн</span></div>
+      <h3 class="card-title">Стратегическая сессия для команды</h3>
+      <p>Согласовать приоритеты на квартал или полугодие. 7 этапов, каждый с конкретным результатом.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Этап</th><th>Тайминг</th><th>Фасилитатор</th><th>Участники</th></tr></thead>
+          <tbody>
+            <tr><td>Открытие</td><td>15 мин</td><td>Правила (1 голос, «да, и...»), фрейм «зачем мы здесь»</td><td>Шеринг ожиданий по кругу</td></tr>
+            <tr><td>Контекст</td><td>20 мин</td><td>Доклад 5–7 слайдов: рынок, цифры, вызовы</td><td>Вопросы на понимание</td></tr>
+            <tr><td>Мозговой штурм</td><td>45 мин</td><td>«Какие 3 возможности мы не используем?» — world café, 2 смены столов</td><td>3 раунда по 15 мин</td></tr>
+            <tr><td>Кластеризация</td><td>20 мин</td><td>Группировка по 3 осям: влияние × усилия × срочность</td><td>Голосование стикерами</td></tr>
+            <tr><td>Выбор</td><td>20 мин</td><td>Топ-5 приоритетов; «что мы НЕ будем делать»</td><td>Дискуссия</td></tr>
+            <tr><td>План действий</td><td>40 мин</td><td>Каждый приоритет → ответственный, срок, первый шаг</td><td>Заполнение шаблона</td></tr>
+            <tr><td>Закрытие</td><td>20 мин</td><td>Чек-аут: 1 слово о состоянии, 1 действие завтра</td><td>По кругу</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0"><strong>После:</strong> владелец рассылает протокол за 24 ч. Без протокола сессии не было.</p>
+    </div>
+
+    <!-- 1.2 -->
+    <div class="card">
+      <div class="card-meta"><span><strong>Длительность:</strong> 1,5 ч</span><span><strong>Формат:</strong> онлайн / офлайн</span></div>
+      <h3 class="card-title">Ретроспектива команды</h3>
+      <p>Извлечь уроки из завершённого этапа или проекта. 5 этапов × 15 минут, на каждый — 2 вопроса.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Этап</th><th>Вопрос 1</th><th>Вопрос 2</th></tr></thead>
+          <tbody>
+            <tr><td>Факты</td><td>«Что произошло?» (только факты, без оценок)</td><td>«Что было запланировано vs что получилось?»</td></tr>
+            <tr><td>Чувства</td><td>«Что я чувствовал(а) в ключевые моменты?»</td><td>«Где гордость / где разочарование?»</td></tr>
+            <tr><td>Анализ</td><td>«Что сработало и почему?»</td><td>«Что не сработало и какие коренные причины?»</td></tr>
+            <tr><td>Выводы</td><td>«Что мы узнали о себе как о команде?»</td><td>«Что мы будем делать иначе?»</td></tr>
+            <tr><td>Действия</td><td>«1 действие, которое я начну делать завтра»</td><td>«Кто поможет не забыть через месяц?»</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="rules">
+        <li>Не искать виноватых — не исправлять, а понимать</li>
+        <li>Всё записывать на видное место</li>
+      </ul>
+    </div>
+
+    <!-- 1.3 -->
+    <div class="card">
+      <div class="card-meta"><span><strong>Длительность:</strong> 15 мин</span><span><strong>Подготовка:</strong> не нужна</span></div>
+      <h3 class="card-title">Энерджайзеры</h3>
+      <p>Пять коротких активностей для разогрева группы, снятия напряжения или переключения внимания.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Название</th><th>Как проводить</th><th>Когда</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ассоциации в круг</strong></td><td>Ведущий называет слово, следующий — ассоциацию (быстро, без пауз). 2 круга.</td><td><span class="badge badge-orange">После обеда</span></td></tr>
+            <tr><td><strong>Правда-ложь</strong></td><td>Каждый говорит 2 факта о себе (1 ложь). Группа угадывает ложь.</td><td><span class="badge badge-green">Новая группа</span></td></tr>
+            <tr><td><strong>Линия времени</strong></td><td>Участники встают в линию: слева «ноль в теме», справа «эксперт». Каждый объясняет позицию одним предложением.</td><td><span class="badge badge-purple">Перед штурмом</span></td></tr>
+            <tr><td><strong>Три слова</strong></td><td>Опиши состояние / мысль / отношение тремя словами.</td><td><span class="badge">Чек-ин / аут</span></td></tr>
+            <tr><td><strong>«Да, и...»</strong></td><td>Один начинает историю (1 предложение). Следующий продолжает с «да, и...». Через 5 ходов — финал.</td><td><span class="badge badge-purple">Перед креативом</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: QUESTIONS ============ -->
+<section class="section section-alt" id="questions">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>Фасилитационные вопросы</h2>
+      <p>Проверенные формулировки для каждого этапа встречи — от открытия до закрытия.</p>
+    </div>
+
+    <div class="q-grid">
+      <div class="q-card">
+        <h4>Открытие / Чек-ин</h4>
+        <ul>
+          <li>«С чем ты приходишь сегодня?»</li>
+          <li>«Что должно случиться, чтобы ты ушёл довольным?»</li>
+          <li>«Какая мысль не даёт тебе покоя по теме встречи?»</li>
+          <li>«Что за последнюю неделю повлияло на твой взгляд на тему?»</li>
+        </ul>
+      </div>
+      <div class="q-card">
+        <h4>Мозговой штурм</h4>
+        <ul>
+          <li>«Если бы мы начинали с нуля — что бы мы сделали иначе?»</li>
+          <li>«Что мы упускаем, потому что слишком близко к теме?»</li>
+          <li>«Кто решает эту задачу лучше нас — и чему мы можем научиться?»</li>
+          <li>«Какой самый абсурдный вариант может сработать?»</li>
+        </ul>
+      </div>
+      <div class="q-card">
+        <h4>Анализ / Погружение</h4>
+        <ul>
+          <li>«Что мы видим — и что за этим стоит?»</li>
+          <li>«Какие долгосрочные последствия мы не обсуждаем?»</li>
+          <li>«Что нужно, чтобы это работало в масштабе?»</li>
+          <li>«При каком условии это НЕ сработает?»</li>
+        </ul>
+      </div>
+      <div class="q-card">
+        <h4>Закрытие / Чек-аут</h4>
+        <ul>
+          <li>«Какое одно действие ты сделаешь после встречи?»</li>
+          <li>«Что из сегодняшнего разговора ты запомнишь через месяц?»</li>
+          <li>«Что осталось недоговорённым?»</li>
+          <li>«Кому ещё нужно услышать то, о чём мы говорили?»</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: DIFFICULT CONVERSATIONS ============ -->
+<section class="section" id="difficult">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>Трудные разговоры</h2>
+      <p>Сценарии для ситуаций, где обычная повестка не работает — выгорание, конфликты и напряжение в команде.</p>
+    </div>
+
+    <!-- 3.1 -->
+    <div class="card">
+      <div class="card-meta"><span><strong>Длительность:</strong> 1,5 ч</span><span><strong>Группа:</strong> 3–8 чел</span></div>
+      <h3 class="card-title">Разговор о выгорании</h3>
+      <p>Не про диагностику — про поддержку и следующие шаги. Разговор, а не чек-лист.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Этап</th><th>Тайминг</th><th>Сценарий</th></tr></thead>
+          <tbody>
+            <tr><td>Контейнер</td><td>10 мин</td><td>«Мы здесь не чинить, а услышать. Никто не оценивает. Что сказано — остаётся здесь.»</td></tr>
+            <tr><td>Шеринг</td><td>30 мин</td><td>«Что для тебя сейчас самое трудное в работе?» (можно анонимно). Не комментировать, не давать советов.</td></tr>
+            <tr><td>Паттерны</td><td>15 мин</td><td>«Что повторяется в наших ответах?» — группа ищет общее</td></tr>
+            <tr><td>Ресурсы</td><td>20 мин</td><td>«Что нам помогает / могло бы помочь?» — индивидуально, затем в общий список</td></tr>
+            <tr><td>Действия</td><td>15 мин</td><td>Каждый выбирает 1 микро-шаг (не «отдохнуть», а «завтра выключу ноут в 19:00»)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:0"><strong>Правило:</strong> не ставь диагнозы, не сравнивай, не говори «я понимаю». Твоя задача — держать контейнер.</p>
+    </div>
+
+    <!-- 3.2 -->
+    <div class="card">
+      <div class="card-meta"><span><strong>Длительность:</strong> 2 ч</span><span><strong>Группа:</strong> 2–6 чел</span><span><span class="badge badge-orange">Обе стороны согласны</span></span></div>
+      <h3 class="card-title">Конфликт в команде</h3>
+      <p>Структура для фасилитации, когда стороны готовы разговаривать. Если нет — не проводить.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Этап</th><th>Тайминг</th><th>Сценарий</th></tr></thead>
+          <tbody>
+            <tr><td>Договор</td><td>10 мин</td><td>«Мы не ищем правого. Мы ищем, как работать вместе дальше.» Правила: не перебивать, 1-я позиция восприятия</td></tr>
+            <tr><td>Факты</td><td>20 мин</td><td>Каждый говорит 3 мин без перебивания: «что произошло с моей точки зрения». Только уточнения.</td></tr>
+            <tr><td>Чувства</td><td>15 мин</td><td>«Что я чувствовал(а) в тот момент и что чувствую сейчас»</td></tr>
+            <tr><td>Потребности</td><td>20 мин</td><td>«Что мне было важно и что я не получил(а)» / «Что мне нужно, чтобы двигаться дальше»</td></tr>
+            <tr><td>Решения</td><td>30 мин</td><td>Каждая сторона предлагает 1–2 варианта. Ищете пересечение.</td></tr>
+            <tr><td>Договорённость</td><td>15 мин</td><td>Конкретные действия: кто, что, когда. Записать, подписать, разослать.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: FEEDBACK ============ -->
+<section class="section section-alt" id="feedback">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>Шаблоны обратной связи</h2>
+      <p>Готовые формы для сбора реакций группы. Минимум вопросов — максимум пользы.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-meta"><span><strong>Длительность:</strong> 5 мин</span><span><strong>Формат:</strong> Google Form / карточка</span></div>
+      <h3 class="card-title">Пульс команды</h3>
+      <p>Пять вопросов после встречи или тренинга. Включай в каждую сессию — картина за месяц.</p>
+      <div class="template"><span class="template-label">Шаблон</span>
+1. Насколько сегодняшняя встреча была для тебя полезной? (1–10)
+2. Что было самым ценным? (1 предложение)
+3. Что можно было сделать иначе?
+4. Твоё состояние сейчас (1 слово):
+5. Что ты возьмёшь в работу?</div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Ретро-формулировки для руководителя</h3>
+      <p>Заменить три токсичные фразы, которые блокируют диалог, на конструктивные.</p>
+      <div class="template"><span class="template-label">Фразы</span>
+«Почему вы не сделали?»       → «Что помешало сделать?»
+«Ты должен»                  → «Что тебе нужно, чтобы?»
+«Я считаю, проблема в...»    → «Я вижу такую картину. Что ты думаешь?»</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: MAPS ============ -->
+<section class="section" id="maps">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>Карты фасилитатора</h2>
+      <p>Шпаргалки для быстрых решений: что делать с группой, какой формат выбрать.</p>
+    </div>
+
+    <div class="map-card">
+      <h4>Карта решений для несговорчивой группы</h4>
+      <div class="map-grid">
+        <div class="map-item"><span class="arrow">→</span> Группа не говорит — анонимные стикеры / письменный мозговой штурм</div>
+        <div class="map-item"><span class="arrow">→</span> Группа спорит — верни к фактам: «на каких данных мы основываемся?»</div>
+        <div class="map-item"><span class="arrow">→</span> Группа устала — энерджайзер / 5-минутная пауза</div>
+        <div class="map-item"><span class="arrow">→</span> Группа застряла — «Что нам мешает принять решение?» (письменно)</div>
+        <div class="map-item"><span class="arrow">→</span> Один доминирует — «Послушаем тех, кто ещё не высказался»</div>
+        <div class="map-item"><span class="arrow">→</span> Все согласны — ты пропустил конфликт. «Кто видит риски?»</div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <h4>Карта выбора формата</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ситуация</th><th>Формат</th></tr></thead>
+          <tbody>
+            <tr><td>Нужны новые идеи</td><td>World café, мозговой штурм</td></tr>
+            <tr><td>Нужно решение</td><td>Анализ pro/contra, матрица критериев</td></tr>
+            <tr><td>Нужно согласие</td><td>Обсуждение по кругу, голосование</td></tr>
+            <tr><td>Нужно обучение</td><td>Кейс-разбор, групповая работа</td></tr>
+            <tr><td>Нужна энергия</td><td>Энерджайзер, импровизация</td></tr>
+            <tr><td>Нужна глубина</td><td>Рефлексия, структурированный диалог</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: QUICK TEMPLATES ============ -->
+<section class="section section-alt" id="quick">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>Быстрые шаблоны</h2>
+      <p>Два шаблона, которые нужны в каждой встрече. Скопируй, вставь, заполни.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-meta"><span><strong>Где:</strong> до встречи</span></div>
+      <h3 class="card-title">Повестка встречи (фрейм)</h3>
+      <div class="template"><span class="template-label">Шаблон</span>
+Тема: [название]
+Дата: [дата]
+Длительность: [время]
+Цель: к концу встречи мы [конкретный результат]
+Фасилитатор: [имя]
+
+1. Чек-ин (5 мин) — «с чем пришли»
+2. [Блок 1] (20 мин) — цель блока
+3. [Блок 2] (30 мин) — цель блока
+4. Чек-аут (5 мин) — действия и состояния</div>
+    </div>
+
+    <div class="card">
+      <div class="card-meta"><span><strong>Где:</strong> после встречи</span></div>
+      <h3 class="card-title">Протокол решений</h3>
+      <div class="template"><span class="template-label">Шаблон</span>
+Было принято решение: [формулировка]
+Основание: [почему / какие данные]
+Ответственный: [имя]
+Срок: [дата]
+Кому ещё нужно знать: [имена]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7: LINKEDIN ============ -->
+<section class="section" id="post">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <h2>LinkedIn-пост из этого материала</h2>
+      <p>Черновик, который можно доработать и опубликовать. Собирает вовлечение через ценность — не через хайп.</p>
+    </div>
+
+    <div class="post-preview">
+      <h4>«3 фасилитационных шаблона, которые я использую в каждой сессии»</h4>
+      <ul>
+        <li>Карта решений для несговорчивой группы — когда «все молчат» или «один говорит за всех»</li>
+        <li>Сценарий ретроспективы: 5 этапов, 10 вопросов — без него ретроспектива превращается в жалобы</li>
+        <li>Пульс команды — 5 вопросов за 5 минут вместо «всё понравилось»</li>
+      </ul>
+      <div class="post-cta">Формат: скриншот шаблона + 1 абзац про реальный кейс. Призыв: «Забирайте себе — ссылка в комментариях».</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <p style="margin-bottom:0">Создано на основе <strong>17-летнего опыта</strong> в L&D. Бесплатно, без рассылок, без регистрации.</p>
+  </div>
+</footer>
+
+<!-- ============ JS ============ -->
+<script>
+// Sticky TOC highlight
+(function(){
+  const toc = document.getElementById('toc');
+  const links = toc.querySelectorAll('a');
+  const sections = [];
+  links.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if(el) sections.push({el, link:a});
+  });
+
+  function onScroll(){
+    // sticky class
+    if(window.scrollY > 80) { toc.classList.add('is-sticky'); }
+    else { toc.classList.remove('is-sticky'); }
+
+    // active link
+    let current = sections[0];
+    const offset = 120;
+    sections.forEach(s => {
+      if(s.el.getBoundingClientRect().top <= offset) current = s;
+    });
+    links.forEach(a => a.classList.remove('active'));
+    if(current) current.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>

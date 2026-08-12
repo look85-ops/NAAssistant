@@ -110,10 +110,11 @@ class LLMGateway:
 
         Порядок приоритета (первый в списке — первый в fallback-цепи):
         1. OpenRouter (OPENROUTER_API_KEY)
-        2. DeepSeek (DEEPSEEK_API_KEY)
-        3. Gemini (GEMINI_API_KEY)
-        4. API.txt 'model:key' -> PROXY_URL / BOTHUB_URL / дефолт
-        5. DGAPIFREE.txt / FREE_API_KEYS (deepseek free)
+        2. NVIDIA NIM (NVIDIA_API_KEY, OpenAI-совместимый)
+        3. DeepSeek (DEEPSEEK_API_KEY)
+        4. Gemini (GEMINI_API_KEY)
+        5. API.txt 'model:key' -> PROXY_URL / BOTHUB_URL / дефолт
+        6. DGAPIFREE.txt / FREE_API_KEYS (deepseek free)
         """
         if base_dir:
             self.base_dir = Path(base_dir)
@@ -127,16 +128,23 @@ class LLMGateway:
                                      "https://openrouter.ai/api/v1", [model],
                                      free=":free" in model)
 
-        # 2. DeepSeek
+        # 2. NVIDIA NIM (доступен из РФ; Kimi K2.x)
+        key = os.environ.get("NVIDIA_API_KEY", "")
+        if key:
+            model = os.environ.get("NVIDIA_MODEL", "moonshotai/kimi-k2.6")
+            self.add_openai_provider("nvidia", key,
+                                     "https://integrate.api.nvidia.com/v1", [model])
+
+        # 3. DeepSeek
         key = os.environ.get("DEEPSEEK_API_KEY", "")
         if key:
             self.add_openai_provider("deepseek", key,
                                      "https://api.deepseek.com/v1", ["deepseek-chat"])
 
-        # 3. Gemini
+        # 4. Gemini
         self.add_gemini_provider(os.environ.get("GEMINI_API_KEY", ""))
 
-        # 4. API.txt (model:key) -> OpenAI-совместимый прокси
+        # 5. API.txt (model:key) -> OpenAI-совместимый прокси
         raw = _read_env_or_file("EITHER_API_KEY", self.base_dir / "API.txt")
         base = proxy_url or os.environ.get("PROXY_URL", "") or \
             os.environ.get("BOTHUB_URL", DEFAULT_PROXY_URL)
@@ -146,7 +154,7 @@ class LLMGateway:
                                      base + "/chat/completions", [model],
                                      free=False)
 
-        # 5. DeepSeek free-ключи (DGAPIFREE.txt / FREE_API_KEYS)
+        # 6. DeepSeek free-ключи (DGAPIFREE.txt / FREE_API_KEYS)
         raw_free = _read_env_or_file("FREE_API_KEYS", self.base_dir / "DGAPIFREE.txt")
         for line in raw_free.strip().splitlines():
             line = line.strip()

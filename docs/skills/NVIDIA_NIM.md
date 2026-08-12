@@ -11,6 +11,7 @@
   - Base URL: `https://integrate.api.nvidia.com/v1`
 
 ## Models To Test
+- `moonshotai/kimi-k2.6` (visual agentic, из РФ доступен) — по умолчанию для NVIDIA_MODEL
 - `meta/llama-3.1-8b-instruct` (PR summaries)
 - `deepseek-ai/deepseek-v4` (RU writing)
 - `minimaxai/minimax-m2.7` or `thudm/glm-4.7` (RU analysis)

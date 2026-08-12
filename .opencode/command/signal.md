@@ -24,6 +24,7 @@ https://lite.duckduckgo.com/lite/?q={query}&num=6
 | Творчество | `sculpture+exhibition+2026`, `photography+art+2026` | `webfetch` к HN, arts sites |
 | Инструмент недели | `best+productivity+tools+2026`, `new+developer+tools+2026` | `webfetch` к DEV.to, Product Hunt |
 | Проекты | `open+source+AOS+analytics`, `AI+safety+2026` | `webfetch` к HN, GitHub trending |
+| AI Безопасность / Регулирование | `AI+safety+regulation+2026`, `AI+international+treaty+2026`, `AI+pacing+agreement+2026` | `webfetch` к news sites, gov announcements |
 
 Используем 4-5 параллельных запросов за раз (максимум — DDG начинает капчить).
 
@@ -59,7 +60,7 @@ https://lite.duckduckgo.com/lite/?q={query}&num=6
 - Добавить строку в `logs/decisions.md` (ключевые инсайты выпуска)
 - Обновить F-003 в бэклоге (дата последнего выпуска)
 
-## Сетка блоков (7)
+## Сетка блоков (8)
 
 1. **L&D/EdTech** — новые инструменты, кейсы корпобучения, тренды рынка
 2. **AI приземлённый** — что реально применить, не хайп
@@ -68,6 +69,7 @@ https://lite.duckduckgo.com/lite/?q={query}&num=6
 5. **Творчество** — выставки, техники, референсы
 6. **Инструмент недели** — 1 конкретный инструмент/приём
 7. **Проекты** — сигналы для Амальгаммы, AOS, Бустера, Pin
+8. **AI Безопасность / Регулирование** — международные соглашения, пейсинг, риск-отчёты
 
 ## Когда вызывать
 

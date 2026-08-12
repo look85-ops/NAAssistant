@@ -647,7 +647,7 @@
 
 ### F-020 [Self] Учебный стек L&D × AI — Модуль 1
 
-**Статус:** В работе (неделя 2)
+**Статус:** Готово
 **Дедлайн:** —
 **Приоритет:** medium
 
@@ -658,15 +658,34 @@
 - [x] Урок 1 (терминал) — создан, обезличен (MD + DOCX), в `stack-ld-ai/module-01-technical-minimum/lesson-01-terminal/`
 - [x] Урок 2 (Git) — создан (MD + DOCX), в `stack-ld-ai/module-01-technical-minimum/lesson-02-git/`
 - [x] Урок 3 (API) — создан (MD + DOCX), в `stack-ld-ai/module-01-technical-minimum/lesson-03-api/`
-- [ ] Неделя 1: терминал — шпаргалка в репозитории (у каждого студента)
-- [ ] Неделя 2: Git — log коммитов, PR через CLI
-- [ ] Неделя 3: API + чтение кода — пример запроса
-- [ ] Артефакты модуля приняты, инсайты в `knowledge/`
 
 **Артефакты:**
 - `docs/course/STACK_LD_AI.md` — программа
 - `career/git-demo.md` — артефакт модуля
 - `stack-ld-ai/` — папка курса с уроками
+
+---
+
+### F-038 [Self] Учебный стек L&D × AI — Модуль 2
+
+**Статус:** В работе (неделя 1 из 4)
+**Дедлайн:** —
+**Приоритет:** medium
+
+**Описание:**
+Модуль 2 «AI: от промпта до продукта» — 4 недели по 2–3 ч. Темы: LLM-внутренности → RAG → Fine-tuning → Agentic workflows.
+
+**Критерии готовности:**
+- [x] Урок 1 (LLM: токены, температура, контекст, галлюцинации) — создан (MD + DOCX), в `stack-ld-ai/module-02-ai-from-prompt-to-product/lesson-01-llm-internals/`
+- [ ] Урок 2 (RAG) — создан (MD + DOCX)
+- [ ] Урок 3 (Fine-tuning) — создан (MD + DOCX)
+- [ ] Урок 4 (Agentic workflows) — создан (MD + DOCX)
+- [ ] Артефакты модуля приняты, инсайты в `knowledge/`
+
+**Артефакты:**
+- `docs/course/STACK_LD_AI.md` — программа модуля
+- `stack-ld-ai/module-02-*/` — папка с уроками
+- `ai-experiments/` — артефакты студентов
 
 ---
 
