@@ -65,7 +65,7 @@
 
 | Папка | GitHub источник | Содержимое |
 |---|---|---|
-| `amalgama/` | `look85-ops/amalgamma` | Полная копия: curator, harness, state, artifacts, chronicles |
+| `amalgama/` | `look85-ops/amalgamma` | Полная копия: curator, harness, state, artifacts, chronicles — **заморожена 2026-08-19** (цикл off) |
 | `garden/` | `look85-ops/digital-garden` | Полная копия: src, artifacts, README |
 | `NAAssistant/` | `look85-ops/NAAssistant` | Конфигурация, портфолио, данные, скрипты, боты |
 | `aos-analyzer/` | `look85-ops/aos-analyzer` | Python-инструмент + примеры |
