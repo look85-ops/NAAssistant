@@ -1,7 +1,9 @@
 name: Weekly digest
 on:
-  schedule:
-    - cron: "0 8 * * 1"
+  # Крон отключён 2026-08-20: старый авто-конвейер конфликтовал с ручным каноном «Радар L&D» (knowledge/digest-format.md).
+  # Выпуски собираются вручную через /digest. Workflow оставлен как готовый шаблон для будущей автоматизации.
+  # schedule:
+  #   - cron: "0 8 * * 1"
   workflow_dispatch:
 
 permissions:
