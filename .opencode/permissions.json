@@ -40,12 +40,6 @@
     "aos-analyst":        { "scopes": ["docs/aos","knowledge","logs"], "mode": "write" },
     "learning-designer":  { "scopes": ["docs/course","knowledge"], "mode": "write" },
     "digest":             { "scopes": [],                          "mode": "read" },
-    "ponytail":           { "scopes": [],                          "mode": "read" },
-    "ponytail-review":    { "scopes": [],                          "mode": "read" },
-    "ponytail-audit":     { "scopes": [],                          "mode": "read" },
-    "ponytail-debt":      { "scopes": [],                          "mode": "read" },
-    "ponytail-gain":      { "scopes": [],                          "mode": "read" },
-    "ponytail-help":      { "scopes": [],                          "mode": "read" },
     "looper":             { "scopes": ["docs","opencode"],         "mode": "write" },
     "no-mistakes":        { "scopes": [],                          "mode": "read" },
     "modern-web":         { "scopes": [],                          "mode": "read" }

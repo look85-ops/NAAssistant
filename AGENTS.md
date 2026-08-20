@@ -218,7 +218,7 @@
 |---|---|---|
 | `AGENTS.md` | Главный манифест: правила, workflow, команды, ресурсы | Я не знаю, кто ты, как работать, какие команды вызывать |
 | `.opencode/agent/*.md` | 7 суб-агентов (career-architect, aos-analyst, post-writer, product-analyst, frontend_*, learning-designer) | `/career-architect`, `/post-writer` и другие команды не сработают или дадут пустой ответ |
-| `.opencode/command/*.md` | 22 кастомные команды (new-agent, start-task, finish-task, idea, prd, ralph, digest, grill, handoff, signal и др.) | `/start-task`, `/finish-task`, `/verify` и другие не работают |
+| `.opencode/command/*.md` | 31 кастомная команда (new-agent, start-task, finish-task, idea, prd, ralph, digest, grill, handoff, signal, tdd, code-review и др.) | `/start-task`, `/finish-task`, `/verify` и другие не работают |
 | `docs/BACKLOG.md` | Приоритизированные задачи, статусы, критерии готовности | Нет бэклога — задачи не структурированы |
 | `knowledge/` | Живая база знаний (правила, инсайты, уроки) | Повторяю одни и те же ошибки, не помню твои предпочтения |
 | `logs/decisions.md` | Лог решений по задачам | Нарушаю консистентность, могу выбрать другое решение |
@@ -294,10 +294,19 @@
 | `/skills-audit` | Список установленных skills с подсчётом строк (см. `scripts/skills-audit.ps1`) |
 | `/verify` | Проверка качества кода (lint + typecheck) перед коммитом (см. `docs/skills/CODE_QUALITY.md`) |
 | `/session-reflect` | Рефлексия сессии: анализ диалога и `logs/decisions.md`, извлечение уроков и идей (см. `.opencode/command/session-reflect.md`) |
-| `/digest` | Производство выпуска «L&D × AI Дайджест»: research → синтез → черновик (публикация — только после подтверждения) (см. `.opencode/command/digest.md`) |
+| `/digest` | Производство выпуска «Радар L&D»: research → синтез → черновик (публикация — только после подтверждения) (см. `.opencode/command/digest.md`) |
 | `/grill` | Допрос перед задачей: агент задаёт вопросы, пока не снимет все неопределённости (см. `.opencode/command/grill.md`) |
 | `/handoff` | Упаковать контекст сессии в handoff-документ для другого агента/сессии (см. `.opencode/command/handoff.md`) |
 | `/signal` | Еженедельный брифинг «Сигнал»: research через DuckDuckGo Lite → синтез → файл в `knowledge/signal/` (см. `.opencode/command/signal.md`) |
+| `/tdd` | Test-Driven Development: тест сначала, потом код (см. `.opencode/command/tdd.md`) |
+| `/code-review` | Ревью кода: ошибки и избыточность (см. `.opencode/command/code-review.md`) |
+| `/social` | Подготовка постов для LinkedIn и других соцсетей (см. `.opencode/command/social.md`) |
+| `/copywriting` | Редактура текстов: посты, письма, презентации (см. `.opencode/command/copywriting.md`) |
+| `/content-strategy` | Контент-стратегия: темы, форматы, календарь (см. `.opencode/command/content-strategy.md`) |
+| `/grill-me` | Допрос Наташи: агент задаёт вопросы, пока не снимется неопределённость задачи (см. `.opencode/command/grill-me.md`) |
+| `/looper` | Скаффолд агентного цикла: interview → loop.yaml + LOOP.md + run-loop.py (см. `.opencode/command/looper.md`) |
+| `/modern-web` | Современные веб-стандарты CSS/HTML, производительность, a11y (см. `.opencode/command/modern-web.md`) |
+| `/no-mistakes` | Git-шлюз с AI-валидацией перед push (см. `.opencode/command/no-mistakes.md`) |
 
 
 
@@ -527,6 +536,7 @@
 - Минимально необходимые изменения: правь ровно то, что нужно для цели; избегай «улучшений ради улучшений».
 - Не трогай несвязанный код/файлы без причины: любые побочные правки только при явной связке с задачей.
 - Перед ответом «Готово» — запускай проверки, где это применимо (линтеры, сборка, базовые прогоны, валидация ссылок/форматов).
+- Сначала ищи готовый скрипт: перед написанием нового скрипта проверяй `scripts/` (напр., `read_doc.py` для docx/pdf/pptx/xlsx) и `knowledge/` — если готовый подходит, используй его; новый скрипт — только если готового нет или он не подходит под задачу.
 - При любой неоднозначности — задавай уточняющий вопрос и ставь блокер до прояснения.
 - **Артефакт-координация:** перед правкой любого файла проверяй `git log --oneline -3 <file>` — если файл трогал другой агент в текущей сессии или последний коммит от суб-агента — флагни это. При параллельной работе агентов над смежными артефактами используй явный handoff (`/handoff`) вместо неявного перехвата.
 - Малые диффы и атомарные коммиты: проще ревью, легче откат.
