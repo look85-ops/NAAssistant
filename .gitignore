@@ -9,6 +9,11 @@ __pycache__/
 API.txt
 DGAPIFREE.txt
 llm_usage.log
+Cloudfare.txt
+vercel.txt
+
+# Cloudflare Wrangler cache
+.wrangler/
 
 # Secrets (removed from tracking 2026-07-27)
 tok.txt
