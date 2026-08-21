@@ -149,7 +149,7 @@
 │   ├── strategy/          # Стратегические документы
 │   └── portfolio/         # Материалы портфолио (PDF)
 ├── career/                # Карьерный хаб
-│   ├── linkedin/          # PROFILE.md, KEYWORDS.md
+│   ├── linkedin/          # PROFILE_live.md, KEYWORDS.md
 │   ├── market/            # Аналитика рынка вакансий
 │   ├── resume/            # Версии резюме
 │   └── posts/             # Черновики постов для LinkedIn
