@@ -1,4 +1,0 @@
-[    1312ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    2050ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
-[    2051ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
-[    3560ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0

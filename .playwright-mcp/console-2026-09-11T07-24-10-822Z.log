@@ -1,6 +1,0 @@
-[    1423ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    2128ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
-[    2155ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
-[    3926ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    4771ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    4976ms] [LOG] Undefined event - applicant_main_page_facelift @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0

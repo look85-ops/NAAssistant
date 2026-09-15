@@ -1,7 +1,0 @@
-[     660ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    1119ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    1694ms] [LOG] auto_open_controller_script from Edge @ :0
-[   57929ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[   58607ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[   58676ms] [LOG] auto_open_controller_script from Edge @ :0
-[   58994ms] [LOG] Undefined event - exp_resume_42520 @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0

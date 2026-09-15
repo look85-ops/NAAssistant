@@ -43,5 +43,9 @@ docs/course/materials/templates/**/*.pptx
 # Config template (example)
 .env.example
 
+# Browser state (cookies, login data, cache — never commit)
+scripts/browser-state/
+.playwright-mcp/
+
 # Office temp files
 ~$*

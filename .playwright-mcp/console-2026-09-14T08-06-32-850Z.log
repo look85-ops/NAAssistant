@@ -1,8 +1,0 @@
-[    1402ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    2787ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    4063ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    7205ms] [ERROR] Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID @ https://mdd.yandex.net/:0
-[    7205ms] [ERROR] Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID @ https://hdrc.yandex.net/:0
-[    9286ms] [ERROR] JSHandle@node Adfox transport frame was moved @ https://yastatic.net/partner-code-bundles/1306617/b2957fecc33b8f9f.js:1
-[   12619ms] [LOG] auto_open_controller_script from Edge @ :0
-[   42004ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://ck.silvermob.com/sync?pid=445&uid=44f9cdfc42516ad5564c:0

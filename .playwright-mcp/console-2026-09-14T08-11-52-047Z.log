@@ -1,6 +1,0 @@
-[    1811ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    2669ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    3300ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
-[    5237ms] [ERROR] Failed to load resource: net::ERR_HTTP2_SERVER_REFUSED_STREAM @ https://bobid-ip.hybrid.ai/:0
-[    8039ms] [ERROR] JSHandle@node Adfox transport frame was moved @ https://yastatic.net/partner-code-bundles/1306617/b2957fecc33b8f9f.js:1
-[   10250ms] [LOG] auto_open_controller_script from Edge @ :0
