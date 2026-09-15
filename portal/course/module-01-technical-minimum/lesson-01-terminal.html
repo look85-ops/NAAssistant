@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 1. Терминал и командная строка — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
+.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
+.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
+.hlogo span{color:#474a1a}
+.hnav{display:flex;gap:28px}
+.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
+.hnav a:hover{color:#2b2b1a}
+
+.lesson{padding:140px 0 80px}
+.li{max-width:720px;margin:0 auto;padding:0 48px}
+.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
+.bc a{color:#737366;text-decoration:none}
+.bc a:hover{color:#2b2b1a}
+.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
+.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+
+.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
+.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
+.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
+.content strong{font-weight:550}
+.content ul,.content ol{margin:0 0 20px 24px}
+.content li{margin-bottom:8px;color:#3a3a32}
+.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
+.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
+.content pre code{background:none;padding:0}
+.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
+.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
+.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
+.content td{color:#3a3a32}
+.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
+.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
+.content em{font-style:italic}
+
+.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
+.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:#737366;text-decoration:none}
+.flinks a:hover{color:#2b2b1a}
+.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fupd{font-size:11px;color:#b0b0a8}
+.fnote{font-size:11px;color:#c0beb8}
+
+@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="hi">
+    <a href="/" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="/course/">← Курс</a>
+      <a href="/booster/">Бустер</a>
+      <a href="/blog/">Блог</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson">
+  <div class="li">
+    <p class="bc"><a href="/course/">Курс</a> / Модуль 1. Технический минимум</p>
+    <h1>Урок 1. Терминал и командная строка</h1>
+    <p class="lmeta">**Модуль 1:** · **Время:**</p>
+    <div class="content">
+
+<p><strong>Модуль 1:</strong> Технический минимум: читать, понимать, коммитить
+<strong>Неделя:</strong> 1 из 3
+<strong>Время:</strong> 2–2.5 ч</p>
+
+<h2>1. Цель недели</h2>
+<p><strong>Зачем это L&amp;D-специалисту в работе с AI.</strong></p>
+<p>Почти все мощные AI-инструменты живут не в браузере, а в терминале: запуск AI-агентов, запросы к API моделей (OpenRouter, OpenAI), управление AI-скриптами, работа с ассистентами вроде Claude Code. Терминал — это пульт управления технологиями. Без него вы не сможете ни починить сломавшийся AI-пайплайн, ни объяснить разработчику, что вам нужно, ни тем более запустить AI-агента самостоятельно.</p>
+<p>К концу этого урока вы сможете открыть командную строку, ориентироваться в файловой системе, создавать и удалять файлы и папки, смотреть содержимое — и не бояться чёрного окна. Это база, без которой нельзя работать с Git, API и кодом.</p>
+<hr />
+<h2>2. Теория</h2>
+<h3>Что такое командная строка</h3>
+<p>Командная строка (терминал) — это способ общаться с компьютером через текст. Вместо того чтобы кликать по папкам мышкой, вы пишете команду, и компьютер её выполняет.</p>
+<p>Звучит как шаг назад, но на деле:</p>
+<ul>
+<li><strong>Быстрее.</strong> Одна команда заменяет 5 кликов.</li>
+<li><strong>Точнее.</strong> Вы говорите компьютеру «создай папку X в папке Y», а не ищете нужное меню.</li>
+<li><strong>Автоматизируемо.</strong> Команды можно записать в скрипт и повторять хоть 100 раз.</li>
+</ul>
+<p>Разработчики, админы, аналитики данных — все живут в терминале. Это как стетоскоп для врача: сначала непривычно, потом без него никуда.</p>
+<h3>Файловая система — это дерево</h3>
+<p>Представьте шкаф с папками. Внутри шкафа — полки (диски: <code>C:</code>, <code>D:</code>). На полках — папки. В папках — другие папки и файлы.</p>
+<p>Вы всегда стоите в какой-то точке этого дерева. Команды — это способ сказать:
+- «Покажи, где я стою»
+- «Покажи, что вокруг»
+- «Перейди в соседнюю папку»
+- «Создай здесь новую папку»</p>
+<h3>Пути: абсолютные и относительные</h3>
+<ul>
+<li><strong>Абсолютный путь</strong> — от корня диска: <code>C:\Users\ИмяПользователя\Desktop\проект</code></li>
+<li><strong>Относительный путь</strong> — от текущей папки: <code>.\папка</code> (здесь), <code>..\</code> (на уровень выше)</li>
+</ul>
+<p>Если я скажу «создайте папку в текущей директории» — я использую относительный путь. Если «откройте папку на рабочем столе» — абсолютный.</p>
+<h3>Командная строка в Windows</h3>
+<p>У вас Windows, поэтому ваш терминал — <strong>PowerShell</strong> (не путайте с обычной командной строкой cmd.exe, она старше и слабее). PowerShell стоит на всех современных Windows и умеет больше.</p>
+<p>Как открыть: нажмите <code>Win</code> → напишите <code>PowerShell</code> → Enter.</p>
+<hr />
+<h2>3. Шпаргалка (сохраните себе)</h2>
+<h3>Навигация</h3>
+<table>
+<thead>
+<tr>
+<th>Действие</th>
+<th>Команда PowerShell</th>
+<th>Аналог в проводнике</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Где я?</td>
+<td><code>pwd</code></td>
+<td>Строка адреса</td>
+</tr>
+<tr>
+<td>Что внутри?</td>
+<td><code>ls</code> (или <code>dir</code>, <code>Get-ChildItem</code>)</td>
+<td>Открыть папку</td>
+</tr>
+<tr>
+<td>Перейти в папку</td>
+<td><code>cd \путь</code></td>
+<td>Двойной клик по папке</td>
+</tr>
+<tr>
+<td>На уровень выше</td>
+<td><code>cd ..</code></td>
+<td>Alt + Стрелка вверх</td>
+</tr>
+<tr>
+<td>На корень диска</td>
+<td><code>cd \</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Домой (ваш профиль)</td>
+<td><code>cd ~</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>Работа с папками и файлами</h3>
+<table>
+<thead>
+<tr>
+<th>Действие</th>
+<th>Команда</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Создать папку</td>
+<td><code>mkdir имя</code></td>
+</tr>
+<tr>
+<td>Создать файл</td>
+<td><code>ni имя.txt</code> (<code>ni</code> = <code>New-Item</code>)</td>
+</tr>
+<tr>
+<td>Удалить файл</td>
+<td><code>del имя.txt</code></td>
+</tr>
+<tr>
+<td>Удалить папку с содержимым</td>
+<td><code>rm -r имя</code></td>
+</tr>
+<tr>
+<td>Скопировать</td>
+<td><code>cp откуда куда</code></td>
+</tr>
+<tr>
+<td>Переместить / переименовать</td>
+<td><code>mv откуда куда</code></td>
+</tr>
+<tr>
+<td>Посмотреть файл</td>
+<td><code>cat файл.txt</code></td>
+</tr>
+<tr>
+<td>Посмотреть первые N строк</td>
+<td><code>gc файл.txt -TotalCount 5</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Навигация в терминале</h3>
+<table>
+<thead>
+<tr>
+<th>Действие</th>
+<th>Что даёт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Tab</code></td>
+<td>Автодополнение: начали вводить <code>cd Des</code> → жмёте Tab → <code>cd Desktop</code></td>
+</tr>
+<tr>
+<td>Стрелка вверх</td>
+<td>Поднимает предыдущую команду</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td>Очистить экран</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Записать вывод команды в файл: <code>ls &gt; список.txt</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Дописать в конец файла: <code>"новая строка" &gt;&gt; файл.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Практика</h2>
+<p>Выполняйте последовательно. Если на каком-то шаге ошибка — остановитесь и напишите мне, что пошло не так.</p>
+<h3>Упражнение 1. Первый вход (5 мин)</h3>
+<p>Откройте PowerShell. Вы увидите что-то вроде:</p>
+<pre><code>Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\ИмяПользователя&gt;
+</code></pre>
+<p>Строка с <code>PS C:\Users\ИмяПользователя&gt;</code> — это приглашение (prompt). Оно показывает, где вы сейчас находитесь (в вашей домашней папке).</p>
+<p>Выполните по порядку:</p>
+<pre><code>pwd
+</code></pre>
+<p>Вы увидите свой текущий путь. Теперь:</p>
+<pre><code>ls
+</code></pre>
+<p>Это содержимое вашей домашней папки. Видите Desktop, Documents, Downloads?</p>
+<p>Теперь:</p>
+<pre><code>ls C:\
+</code></pre>
+<p>Это содержимое всего диска C. Чувствуете разницу?</p>
+<h3>Упражнение 2. Навигация (10 мин)</h3>
+<p>Перейдите на рабочий стол:</p>
+<pre><code>cd C:\Users\ИмяПользователя\Desktop
+ls
+</code></pre>
+<p>Вы видите свои папки и файлы. Перейдите в одну из них (например, туда, где будете работать):</p>
+<pre><code>cd &quot;Название папки&quot;
+</code></pre>
+<p>Обратите внимание на кавычки: если в имени папки есть пробелы, без кавычек PowerShell подумает, что слова разделены.</p>
+<p>Проверьте, где вы:</p>
+<pre><code>pwd
+</code></pre>
+<p>Вернитесь на уровень выше:</p>
+<pre><code>cd ..
+pwd
+</code></pre>
+<p>Снова на рабочем столе.</p>
+<h3>Упражнение 3. Создайте структуру (15 мин)</h3>
+<p>Перейдите в папку вашего рабочего проекта (ту, где вы храните файлы для курса). Создайте внутри папку <code>terminal-demo</code>:</p>
+<pre><code>mkdir terminal-demo
+</code></pre>
+<p>Перейдите в неё и создайте три подпапки:</p>
+<pre><code>cd terminal-demo
+mkdir theory, practice, artifacts
+ls
+</code></pre>
+<p>Вы увидите три новых папки. Поздравляю — вы создали структуру из командной строки. Без мышки.</p>
+<h3>Упражнение 4. Работа с файлами (15 мин)</h3>
+<p>Создайте файл шпаргалки:</p>
+<pre><code>ni theory\cheatsheet.md
+</code></pre>
+<p>Проверьте, что он появился:</p>
+<pre><code>ls theory
+</code></pre>
+<p>Теперь откройте файл в любом текстовом редакторе (блокнот, VS Code, Notepad++) и запишите 5 команд, которые запомнили, в формате:</p>
+<pre><code># Моя шпаргалка
+
+pwd — показывает текущую папку
+ls — показывает содержимое папки
+cd .. — перейти на уровень выше
+mkdir — создать папку
+ni — создать файл
+</code></pre>
+<p>Сохраните, закройте редактор. Вернитесь в терминал и проверьте, что записалось:</p>
+<pre><code>cat theory\cheatsheet.md
+</code></pre>
+<h3>Упражнение 5. Дописывайте из терминала (10 мин)</h3>
+<p>Добавьте новую строку прямо из командной строки, без редактора:</p>
+<pre><code>&quot;cls — очистить экран&quot; &gt;&gt; theory\cheatsheet.md
+cat theory\cheatsheet.md
+</code></pre>
+<p>Видите, строка добавилась? <code>&gt;&gt;</code> дописывает в конец, <code>&gt;</code> перезаписывает весь файл.</p>
+<p>Попробуйте перезапись:</p>
+<pre><code>&quot;# Моя новая шпаргалка&quot; &gt; theory\cheatsheet.md
+cat theory\cheatsheet.md
+</code></pre>
+<p>Содержимое заменилось. Верните как было (через редактор или отмените — не бойтесь экспериментировать, вы в изолированной папке).</p>
+<h3>Упражнение 6. Сохраните вывод команды (5 мин)</h3>
+<p>Сделайте список файлов проекта и сохраните в файл:</p>
+<pre><code>cd C:\Users\ИмяПользователя\Desktop\путь\к\проекту
+ls &gt; terminal-demo\artifacts\filelist.txt
+cat terminal-demo\artifacts\filelist.txt
+</code></pre>
+<p>Теперь у вас есть текстовый файл со списком содержимого папки. Это удобно, если нужно сохранить «слепок» папки.</p>
+<h3>Упражнение 7. Копирование и перемещение (10 мин)</h3>
+<p>Скопируйте шпаргалку в папку <code>practice</code>:</p>
+<pre><code>cp terminal-demo\theory\cheatsheet.md terminal-demo\practice\cheatsheet.md
+ls terminal-demo\practice
+</code></pre>
+<p>Теперь переименуйте её (переместите с новым именем):</p>
+<pre><code>mv terminal-demo\practice\cheatsheet.md terminal-demo\practice\cheatsheet-backup.md
+ls terminal-demo\practice
+</code></pre>
+<p>Удалите ненужный файл:</p>
+<pre><code>del terminal-demo\practice\cheatsheet-backup.md
+ls terminal-demo\practice
+</code></pre>
+<p>Папка <code>practice</code> пуста. Удалите и её:</p>
+<pre><code>rm -r terminal-demo\practice
+ls terminal-demo
+</code></pre>
+<p>Папка <code>practice</code> исчезла, <code>theory</code> и <code>artifacts</code> остались.</p>
+<h3>Упражнение 8. Создайте файл рефлексии (10 мин)</h3>
+<p>Создайте файл <code>reflection.md</code> в папке <code>artifacts</code>:</p>
+<pre><code>ni terminal-demo\artifacts\reflection.md
+</code></pre>
+<p>Откройте в редакторе и напишите ответы на три вопроса:</p>
+<ol>
+<li>Чем командная строка удобнее проводника, а чем неудобнее?</li>
+<li>В каком моменте я завис(ла) / было непонятно?</li>
+<li>Что из этого я уже могу применить в своей работе?</li>
+</ol>
+<p>Сохраните и закройте. Проверьте через терминал:</p>
+<pre><code>cat terminal-demo\artifacts\reflection.md
+</code></pre>
+<hr />
+<h2>5. Рефлексия (напишите мне)</h2>
+<ol>
+<li>Сколько времени заняло?</li>
+<li>Что было самым непонятным?</li>
+<li>Что было самым полезным?</li>
+<li>Оценка материала от 1 до 5</li>
+</ol>
+<hr />
+<h2>6. Чек-лист готовности</h2>
+<ul>
+<li>[ ] Открывали PowerShell, выполняли <code>pwd</code>, <code>ls</code>, <code>cd</code></li>
+<li>[ ] Создали папку <code>terminal-demo</code> и структуру внутри</li>
+<li>[ ] Создали файл <code>cheatsheet.md</code> через терминал и заполнили</li>
+<li>[ ] Дописали строку через <code>&gt;&gt;</code> и поняли разницу с <code>&gt;</code></li>
+<li>[ ] Сохранили вывод команды в файл (<code>ls &gt; filelist.txt</code>)</li>
+<li>[ ] Копировали, перемещали, удаляли файлы</li>
+<li>[ ] Написали рефлексию</li>
+</ul>
+<hr />
+<h2>7. Артефакт</h2>
+<p>После урока в вашем проекте должна появиться структура:</p>
+<pre><code>ваш-проект/
+└── terminal-demo/
+    ├── theory/
+    │   └── cheatsheet.md
+    └── artifacts/
+        ├── filelist.txt
+        └── reflection.md
+</code></pre>
+<hr />
+<h2>8. Что дальше</h2>
+<p>На следующей неделе — Git. Вы научитесь сохранять версии файлов, делать коммиты и не бояться слова «репозиторий».</p>
+<p>Но сначала закрепите терминал. Если какой-то шаг был непонятен — вернитесь и повторите. Если всё понятно — отлично, вы прошли базовый курс молодого бойца.</p>
+<h3>Дополнительно (необязательно, но полезно)</h3>
+<ul>
+<li>Введите <code>Get-Help ls</code> — это встроенная справка по команде</li>
+<li>Введите <code>ls *</code> — покажет содержимое всех папок внутри текущей</li>
+<li>Введите <code>Write-Host "Привет, мир!"</code> — терминал напечатает «Привет, мир!»</li>
+</ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fi">
+    <div class="flinks">
+      <a href="/">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
+      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

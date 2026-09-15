@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 1. Как работают LLM — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
+:root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a;--light:#fafaf8}
+
+/* ═══ PROGRESS BAR ═══ */
+.pbar{position:fixed;top:0;left:0;height:4px;background:var(--olive);z-index:300;width:0;transition:width 300ms ease}
+
+/* ═══ HEADER ═══ */
+.header{position:fixed;top:4px;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{font-size:15px;font-weight:550;color:var(--ink);text-decoration:none}
+.hlogo span{color:var(--olive)}
+.hnav{display:flex;gap:28px}
+.hnav a{font-size:14px;font-weight:400;color:var(--muted);text-decoration:none;transition:color 150ms}
+.hnav a:hover{color:var(--ink)}
+
+/* ═══ LESSON HERO ═══ */
+.hero{padding:140px 0 40px;position:relative;overflow:hidden}
+.hero-wm{position:absolute;left:-40px;top:100px;font-size:280px;font-weight:100;color:var(--olive);opacity:.035;line-height:1;pointer-events:none;user-select:none}
+.hi2{max-width:720px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
+.hero .mod-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--terracotta);margin-bottom:16px}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:650;line-height:1.12;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px}
+.hero .meta{font-size:14px;color:var(--muted)}
+
+/* ═══ MINI-TOC ═══ */
+.toc{padding:24px 0 60px;border-bottom:1px solid var(--border)}
+.toc-inner{max-width:720px;margin:0 auto;padding:0 48px;display:flex;gap:24px;flex-wrap:wrap}
+.toc a{font-size:13px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 150ms;white-space:nowrap}
+.toc a:hover{color:var(--olive)}
+.toc .dot{width:6px;height:6px;border-radius:50%;background:var(--border)}
+.toc a:hover .dot{background:var(--olive)}
+
+/* ═══ CONTENT LAYOUT ═══ */
+.content{max-width:720px;margin:0 auto;padding:0 48px}
+
+/* Theory blocks */
+h2{font-size:1.5rem;font-weight:600;color:var(--ink);margin:80px 0 20px;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:600;color:var(--ink);margin:48px 0 14px;letter-spacing:-.01em}
+.content p{font-size:1.05rem;color:#3a3a32;line-height:1.7;margin-bottom:20px}
+.content strong{font-weight:550;color:var(--ink)}
+.content a{color:var(--olive);text-decoration:none;border-bottom:1px solid rgba(71,74,26,.2);transition:border-color 150ms}
+.content a:hover{border-bottom-color:var(--olive)}
+
+/* Lists */
+.content ul,.content ol{margin:4px 0 24px 0;list-style:none}
+.content li{font-size:1.05rem;color:#3a3a32;line-height:1.6;padding:6px 0 6px 24px;position:relative}
+.content li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;background:var(--olive);opacity:.5}
+.content ol{counter-reset:step}
+.content ol li::before{counter-increment:step;content:counter(step);width:auto;height:auto;background:none;top:6px;font-size:13px;font-weight:600;color:var(--olive);opacity:.7}
+
+/* ═══ METAPHOR BLOCK ═══ */
+.metaphor{margin:48px 0;padding:28px 0 28px 24px;border-left:3px solid var(--olive);font-size:1.1rem;color:var(--muted);font-style:italic;line-height:1.6;max-width:600px;margin-left:0}
+.metaphor strong{font-style:normal;color:var(--ink);font-weight:550}
+
+/* ═══ KEY INSIGHT ═══ */
+.insight{margin:40px 0;padding-left:20px;border-left:4px solid var(--olive);font-size:1.05rem;font-weight:450;color:var(--ink);line-height:1.6}
+
+/* ═══ PRACTICE BLOCK ═══ */
+.practice{margin:80px -9999px;padding:64px 9999px;background:var(--surface);position:relative;overflow:hidden}
+.practice-num{position:absolute;right:48px;top:-20px;font-size:160px;font-weight:100;color:var(--olive);opacity:.04;line-height:1;pointer-events:none}
+.practice h2{margin-top:0;color:var(--olive)}
+.practice h3{color:var(--ink)}
+.practice .steps{counter-reset:step;list-style:none;margin:20px 0}
+.practice .steps li{padding:12px 0 12px 36px;position:relative;font-size:1.05rem;counter-increment:step}
+.practice .steps li::before{content:counter(step);position:absolute;left:0;top:12px;width:24px;height:24px;border:1.5px solid var(--olive);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--olive)}
+.practice blockquote{margin:16px 0;padding:12px 0 12px 20px;border-left:2px solid var(--border);font-style:italic;color:var(--muted)}
+
+/* ═══ TABLE ═══ */
+.content table{width:100%;border-collapse:collapse;margin:32px 0;font-size:.95rem}
+.content th{text-align:left;padding:14px 16px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);border-bottom:2px solid var(--olive)}
+.content td{padding:12px 16px;border-bottom:1px solid var(--border);color:#3a3a32;vertical-align:top}
+.content tr:nth-child(even) td{background:rgba(244,244,239,.5)}
+
+/* ═══ CODE ═══ */
+.content pre{margin:32px 0;padding:0 0 0 24px;border-left:2px solid var(--olive);font-family:'Geist Mono','SF Mono',monospace;font-size:.9rem;line-height:1.6;color:var(--ink);overflow-x:auto}
+.content code{font-family:'Geist Mono','SF Mono',monospace;font-size:.9em}
+.content pre code{font-size:inherit}
+.content p code{background:var(--surface);padding:1px 6px;font-size:.9em}
+
+/* ═══ CHEAT SHEET ═══ */
+.cheatsheet{margin:80px 0;padding:36px;border:1px solid var(--olive);position:relative}
+.cheatsheet::before{content:'Шпаргалка';position:absolute;top:-10px;left:20px;background:#fff;padding:0 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--olive)}
+
+/* ═══ GEOMETRIC DIVIDER ═══ */
+.geo-div{display:flex;align-items:center;gap:16px;margin:64px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+/* ═══ REFLECTION ═══ */
+.reflect{margin:60px 0;padding:36px;background:var(--light)}
+.reflect h2{color:var(--olive);margin-top:0}
+.reflect ol li{font-size:1.05rem;padding:8px 0 8px 32px}
+.reflect ol li::before{top:8px}
+
+/* ═══ NAVIGATION ═══ */
+.nav-bottom{border-top:1px solid var(--border);margin:80px 0 0;padding:48px 0}
+.nav-inner{max-width:720px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start}
+.nav-prev,.nav-next{display:flex;flex-direction:column;gap:6px;text-decoration:none}
+.nav-label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.nav-title{font-size:15px;font-weight:500;color:var(--ink)}
+.nav-prev:hover .nav-title,.nav-next:hover .nav-title{color:var(--olive)}
+.nav-toc{text-align:center;margin-top:40px}
+.nav-toc a{font-size:13px;color:var(--muted);text-decoration:none}
+.nav-toc a:hover{color:var(--olive)}
+
+/* ═══ FOOTER ═══ */
+.footer{border-top:1px solid var(--border);padding:48px 0 36px}
+.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:var(--muted);text-decoration:none}
+.flinks a:hover{color:var(--ink)}
+.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fupd{font-size:11px;color:#b0b0a8}
+.fnote{font-size:11px;color:#c0beb8}
+
+@media(max-width:768px){
+  .hi,.hi2,.content,.nav-inner,.fi{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;left:-20px;top:120px}
+  .practice{margin:60px -24px;padding:48px 24px}
+  .practice-num{right:12px;font-size:100px}
+  .metaphor{margin-left:0;max-width:100%}
+  .content table{display:block;overflow-x:auto}
+  .cheatsheet{margin:60px 0}
+  .toc-inner{gap:16px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .pbar{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="pbar"></div>
+
+<header class="header">
+  <div class="hi">
+    <a href="/" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="/course/">← Курс</a>
+      <a href="/booster/">Бустер</a>
+      <a href="/blog/">Блог</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-wm">02.1</div>
+  <div class="hi2">
+    <p class="mod-tag">Модуль 2 &middot; AI: от промпта до продукта</p>
+    <h1>Как работают LLM: токены, контекст, температура, галлюцинации</h1>
+    <p class="meta">Неделя 1 из 4 &middot; 2–3 часа</p>
+  </div>
+</section>
+
+<!-- ═══ MINI-TOC ═══ -->
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#goal"><span class="dot"></span>Цель</a>
+    <a href="#what-is"><span class="dot"></span>LLM</a>
+    <a href="#tokens"><span class="dot"></span>Токены</a>
+    <a href="#context"><span class="dot"></span>Контекст</a>
+    <a href="#temperature"><span class="dot"></span>Температура</a>
+    <a href="#hallucinations"><span class="dot"></span>Галлюцинации</a>
+    <a href="#practice"><span class="dot"></span>Практика</a>
+    <a href="#cheatsheet"><span class="dot"></span>Шпаргалка</a>
+  </div>
+</nav>
+
+<div class="content">
+
+<!-- ═══ GOAL ═══ -->
+<h2 id="goal">Цель</h2>
+<p><strong>Зачем это L&D-специалисту.</strong></p>
+<p>Вы пользуетесь ChatGPT и Claude каждый день. Но если спросить: «Почему модель иногда тупит, а иногда выдаёт гениальный ответ? Почему она придумывает несуществующие исследования? Как заставить её отвечать строже или креативнее?» — ответы лежат внутри самой модели.</p>
+<p>На этой неделе вы заглянете под капот. Не для того, чтобы стать программистом. А чтобы перестать гадать и начать управлять. Вы узнаете, что такое токены, как работает контекстное окно, зачем нужна температура и почему модель галлюцинирует. К концу урока вы проведёте серию экспериментов и сможете осознанно настраивать поведение модели под задачу — хоть строгий отчёт, хоть креативный сценарий курса.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ═══ WHAT IS LLM ═══ -->
+<h2 id="what-is">Что такое LLM на самом деле</h2>
+<p>LLM (Large Language Model, большая языковая модель) — это программа, которая предсказывает следующее слово. Буквально. Вы даёте ей начало фразы, она угадывает, какое слово должно быть дальше. Потом ещё одно. И ещё. Так рождается ответ.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Представьте автодополнение в&nbsp;телефоне. Вы&nbsp;пишете «Доброе...», и&nbsp;телефон предлагает «...утро». LLM&nbsp;— это&nbsp;то&nbsp;же самое, только обученное на&nbsp;миллиардах текстов и&nbsp;способное дописывать не&nbsp;одно слово, а&nbsp;целые абзацы, сохраняя смысл и&nbsp;стиль.
+</div>
+
+<p>Важный момент: модель не «думает» и не «понимает» в человеческом смысле. Она статистически вычисляет наиболее вероятное продолжение. Но результат настолько хорош, что кажется осмысленным.</p>
+
+<!-- ═══ TOKENS ═══ -->
+<h2 id="tokens">Токены: единицы, на которых говорит модель</h2>
+<p>Модель не читает текст по буквам или по словам. Она разбивает его на <strong>токены</strong> — кусочки, которые могут быть целым словом, частью слова, знаком препинания или пробелом.</p>
+
+<table>
+  <tr><th>Текст</th><th>Токены (примерно)</th><th>Сколько токенов</th></tr>
+  <tr><td><code>Привет</code></td><td><code>При</code> <code>вет</code></td><td>2</td></tr>
+  <tr><td><code>L&amp;D-методист</code></td><td><code>L</code> <code>&amp;</code> <code>D</code> <code>-</code> <code>мет</code> <code>одист</code></td><td>6</td></tr>
+  <tr><td><code>temperature</code></td><td><code>tem</code> <code>pera</code> <code>ture</code></td><td>3</td></tr>
+</table>
+
+<p>Почему это важно знать:</p>
+<ul>
+  <li><strong>Вы платите за токены.</strong> Большинство AI-провайдеров тарифицируют входные и выходные токены.</li>
+  <li><strong>Контекстное окно измеряется в токенах.</strong> Модель «видит» не символы, а токены.</li>
+  <li><strong>Английский текст — короче в токенах.</strong> Одно английское слово ≈ 1.3 токена, одно русское слово ≈ 2–3 токена.</li>
+</ul>
+
+<div class="metaphor">
+  <strong>Бытовой аналог.</strong> Токены — как кусочки пазла. Картинка одна, но&nbsp;у&nbsp;разных производителей пазлы нарезаны по-разному. Разные модели используют разные токенизаторы, поэтому один и&nbsp;тот&nbsp;же текст может занимать разное количество токенов в&nbsp;GPT, Claude и&nbsp;Gemini.
+</div>
+
+<!-- ═══ CONTEXT ═══ -->
+<h2 id="context">Контекстное окно: кратковременная память модели</h2>
+<p><strong>Контекстное окно</strong> (context window) — это сколько токенов модель может «видеть» одновременно. Всё, что вы написали, и всё, что модель ответила — это контекст. Когда он заполняется, модель «забывает» начало разговора.</p>
+
+<table>
+  <tr><th>Модель</th><th>Контекстное окно</th><th>Что помещается</th></tr>
+  <tr><td>GPT-4o mini</td><td>128 000 токенов</td><td>~300 страниц текста</td></tr>
+  <tr><td>Claude 3.5 Sonnet</td><td>200 000 токенов</td><td>~500 страниц</td></tr>
+  <tr><td>Gemini 2.0 Flash</td><td>1 000 000 токенов</td><td>~2500 страниц</td></tr>
+</table>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Контекстное окно — это&nbsp;оперативная память. Как&nbsp;у&nbsp;вас на&nbsp;столе: пока документ лежит перед глазами — вы&nbsp;с&nbsp;ним работаете. Убрали в&nbsp;ящик — забыли. Модель «помнит» только&nbsp;то, что&nbsp;помещается в&nbsp;её контекстное окно.
+</div>
+
+<div class="insight">
+  Если вы загрузили в чат большой документ и через час диалога модель «забыла», что было в начале — она не тупая. Вы просто вышли за границы контекстного окна.
+</div>
+
+<p><strong>Контекст против памяти.</strong> Не путайте с memory (памятью), которую добавляют разработчики — это внешний костыль, который подшивает краткую выжимку из прошлого диалога в новый. Сама модель ничего не помнит между сессиями.</p>
+
+<!-- ═══ TEMPERATURE ═══ -->
+<h2 id="temperature">Температура: ручка креативности</h2>
+<p><strong>Температура</strong> — это число от 0 до 2, которое управляет тем, насколько «уверенно» модель выбирает следующее слово.</p>
+
+<table>
+  <tr><th>Температура</th><th>Поведение модели</th><th>Когда использовать</th></tr>
+  <tr><td>0</td><td>Всегда выбирает самое вероятное слово. Ответы предсказуемы.</td><td>Факты, расчёты, переводы</td></tr>
+  <tr><td>0.3–0.5</td><td>Почти строго, но с лёгкой свободой</td><td>Отчёты, резюме, деловые письма</td></tr>
+  <tr><td>0.7–1.0</td><td>Сбалансированно — стандартный режим</td><td>Большинство рабочих задач</td></tr>
+  <tr><td>1.2–1.5</td><td>Творчески, с неожиданными ходами</td><td>Сценарии курсов, сторителлинг</td></tr>
+  <tr><td>1.8–2.0</td><td>Хаотично, почти случайно</td><td>Полёт фантазии без ограничений</td></tr>
+</table>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Температура — это&nbsp;как&nbsp;готовить суп. При&nbsp;температуре&nbsp;0 вы&nbsp;строго следуете рецепту: ровно 2&nbsp;морковки. При&nbsp;температуре&nbsp;1 вы&nbsp;импровизируете: добавили специй по&nbsp;настроению. При&nbsp;температуре&nbsp;2 вы&nbsp;кидаете в&nbsp;кастрюлю всё, что&nbsp;есть в&nbsp;холодильнике.
+</div>
+
+<p><strong>Top-p (nucleus sampling)</strong> — родственный параметр. Вместо «размазывания» вероятностей он отсекает маловероятные варианты и выбирает из оставшихся. На практике достаточно настраивать что-то одно: температуру или top-p.</p>
+
+<!-- ═══ HALLUCINATIONS ═══ -->
+<h2 id="hallucinations">Галлюцинации: когда модель врёт</h2>
+<p><strong>Галлюцинация</strong> — это когда модель выдаёт уверенный, связный, но полностью вымышленный ответ. Несуществующее исследование, выдуманный автор, придуманная дата.</p>
+<p><strong>Почему это происходит.</strong> Модель не знает, что такое «правда». Она знает, какие слова статистически идут после каких. Если в обучающих данных часто встречалось «Исследование показало, что...» — модель воспроизведёт эту структуру, подставив правдоподобные, но вымышленные детали.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Галлюцинация — как уверенный стажёр, который никогда не&nbsp;скажет «я&nbsp;не&nbsp;знаю». Вместо этого он&nbsp;придумает ответ на&nbsp;ходу, и&nbsp;сделает это&nbsp;настолько убедительно, что&nbsp;вы&nbsp;поверите.
+</div>
+
+<div class="insight">
+  Типичные ситуации: вы спрашиваете о том, чего нет в обучающих данных; просите точные цифры, даты, имена; контекстное окно переполнено; вы задали противоречивый вопрос, а модель пытается быть полезной.
+</div>
+
+<p><strong>Как снизить риск:</strong></p>
+<ol>
+  <li><strong>Дайте источник.</strong> Не «Расскажи про...», а «Вот текст статьи. На его основе ответь...»</li>
+  <li><strong>Поставьте температуру 0.</strong> Чем строже модель, тем меньше пространства для выдумки.</li>
+  <li><strong>Попросите признаваться в незнании.</strong> «Если не знаешь точного ответа — так и скажи. Не придумывай.»</li>
+  <li><strong>Проверяйте факты.</strong> Ответ модели — черновик, который нужно вычитать.</li>
+  <li><strong>Используйте RAG.</strong> Перед ответом модель ищет релевантные документы и опирается на них.</li>
+</ol>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ═══ CHEAT SHEET ═══ -->
+<div class="cheatsheet" id="cheatsheet">
+  <h3 style="margin-top:0">Параметры запроса к AI-модели</h3>
+  <table style="margin-bottom:40px">
+    <tr><th>Параметр</th><th>Что делает</th><th>Типичные значения</th></tr>
+    <tr><td><code>model</code></td><td>Какую модель использовать</td><td><code>google/gemini-2.0-flash-001</code></td></tr>
+    <tr><td><code>temperature</code></td><td>Креативность ответа</td><td>0 — строго, 0.7 — стандарт, 1.5 — творчески</td></tr>
+    <tr><td><code>top_p</code></td><td>Альтернатива температуре</td><td>0.9 — стандарт</td></tr>
+    <tr><td><code>max_tokens</code></td><td>Максимальная длина ответа</td><td>100 — коротко, 2000 — развёрнуто</td></tr>
+    <tr><td><code>system</code></td><td>Инструкция, задающая личность</td><td>«Ты — L&D-методист. Отвечай коротко.»</td></tr>
+  </table>
+
+  <h3>Роли сообщений</h3>
+  <table>
+    <tr><th>Роль</th><th>Значение</th><th>Пример</th></tr>
+    <tr><td><code>system</code></td><td>Задаёт личность модели</td><td>«Ты — строгий научный редактор»</td></tr>
+    <tr><td><code>user</code></td><td>Сообщение от человека</td><td>«Напиши определение RAG»</td></tr>
+    <tr><td><code>assistant</code></td><td>Ответ модели</td><td>«RAG — это метод, при котором...»</td></tr>
+  </table>
+</div>
+
+</div><!-- /content -->
+
+<!-- ═══ PRACTICE ═══ -->
+<div class="practice" id="practice">
+  <div class="practice-num">01</div>
+  <div class="content">
+
+  <h2>Практика</h2>
+  <p>Все упражнения выполняйте в браузере — через OpenRouter Playground, Google AI Studio или другой веб-интерфейс.</p>
+
+  <h3>1. Посчитайте токены (10 мин)</h3>
+  <ol class="steps">
+    <li>Зайдите на <a href="https://platform.openai.com/tokenizer">platform.openai.com/tokenizer</a></li>
+    <li>Вставьте текст: «Методист разрабатывает программу обучения для начальников дистанций пути. Программа включает кейсы, симуляции и проектную работу.»</li>
+    <li>Переведите на английский и сравните. Русский текст занимает в 1.5–2 раза больше токенов.</li>
+  </ol>
+
+  <h3>2. Эксперимент с температурой (20 мин)</h3>
+  <ol class="steps">
+    <li>Откройте <a href="https://openrouter.ai/playground">OpenRouter Playground</a></li>
+    <li>Выберите модель <strong>Gemini 2.0 Flash</strong> (бесплатная)</li>
+    <li>Вопрос: «Объясни, что такое педагогический дизайн, одной фразой.»</li>
+    <li>Проведите 4 эксперимента с температурой 0 / 0.5 / 1.0 / 1.5 — сравните ответы.</li>
+  </ol>
+
+  <h3>3. Системный промпт: личность модели (20 мин)</h3>
+  <ol class="steps">
+    <li>Верните температуру на 0.7. Вопрос: «Что самое важное в обучении взрослых?»</li>
+    <li>Проведите 3 эксперимента, меняя системный промпт: «строгий профессор» / «стендап-комик» / «L&D-методист».</li>
+    <li>Сравните: один вопрос, одна модель — три разных ответа.</li>
+  </ol>
+
+  <h3>4. Контекстное окно: что модель помнит (15 мин)</h3>
+  <ol class="steps">
+    <li>Отправьте: «Запомни: мой любимый цвет — изумрудный. Число — 42. Город — Минск.»</li>
+    <li>Скопируйте 2–3 абзаца из новостей и попросите пересказать.</li>
+    <li>Спросите: «Какой у меня был любимый цвет, число и город?»</li>
+    <li>Вывод: контекст — это оперативная память. Закроете вкладку — забудется.</li>
+  </ol>
+
+  <h3>5. Спровоцируйте галлюцинацию (15 мин)</h3>
+  <ol class="steps">
+    <li>Новый чат, температура 0.7.</li>
+    <li>Спросите: «Приведи 3 примера внедрения AI в программу РЖД в 2024–2025 с цифрами.»</li>
+    <li>Модель придумает «факты» — этих данных нет в открытом доступе.</li>
+    <li>Теперь добавьте системный промпт «Ты — строгий исследователь. Не придумывай цифры.» и температуру 0. Сравните.</li>
+  </ol>
+
+  <h3>6. Артефакт: дневник экспериментов (15 мин)</h3>
+  <p>Создайте файл <code>ai-experiments/experiment-01-temperature.md</code>:</p>
+  <pre><code># Эксперимент 1: Температура и системный промпт
+**Дата:** [сегодня]
+**Модель:** google/gemini-2.0-flash-001
+
+## Токены
+- Русский: [число] токенов
+- Английский: [число] токенов
+
+## Температура
+| T   | Характер ответа |
+| 0   | |
+| 0.5 | |
+| 1.0 | |
+| 1.5 | |
+
+## Системный промпт
+| Роль      | Характер ответа |
+| Профессор | |
+| Комик     | |
+| Методист  | |
+
+## Выводы (2-3 предложения)
+Что я понял(а) про управление моделью:</code></pre>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ═══ REFLECTION ═══ -->
+<div class="reflect">
+  <h2>Рефлексия</h2>
+  <ol>
+    <li>Сколько времени заняло?</li>
+    <li>Что было самым непонятным?</li>
+    <li>Что было самым полезным?</li>
+    <li>Какой параметр (температура / системный промпт / контекст) вы теперь будете осознанно настраивать?</li>
+    <li>Оценка материала от 1 до 5</li>
+  </ol>
+</div>
+
+<h2>Что дальше</h2>
+<p>Вы заглянули под капот LLM. Теперь вы понимаете, что модель — не магия и не «чёрный ящик», а инструмент с конкретными настройками, которыми вы управляете.</p>
+<p><strong>Следующая неделя: RAG</strong> — технология, которая решает проблему галлюцинаций. Вы узнаете, что такое эмбеддинги, как работает поиск по смыслу, и соберёте RAG-агента.</p>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav-bottom">
+  <div class="nav-inner">
+    <span class="nav-prev" style="visibility:hidden"><span class="nav-label">← Назад</span></span>
+    <a href="../lesson-02-rag.html" class="nav-next">
+      <span class="nav-label">Вперёд →</span>
+      <span class="nav-title">RAG: поиск смысла по вашим документам</span>
+    </a>
+  </div>
+  <div class="nav-toc">
+    <a href="/course/">← К оглавлению курса</a>
+  </div>
+</nav>
+
+</div><!-- /content -->
+
+<footer class="footer">
+  <div class="fi">
+    <div class="flinks">
+      <a href="/">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span class="fupd">15 сентября 2026</span>
+      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

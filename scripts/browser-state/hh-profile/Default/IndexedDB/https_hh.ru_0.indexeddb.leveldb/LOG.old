@@ -1,0 +1,13 @@
+2026/09/11-11:25:33.849 2740 Reusing MANIFEST C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile\Default\IndexedDB\https_hh.ru_0.indexeddb.leveldb/MANIFEST-000001
+2026/09/11-11:25:33.851 2740 Recovering log #310
+2026/09/11-11:25:33.851 2740 Reusing old log C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile\Default\IndexedDB\https_hh.ru_0.indexeddb.leveldb/000310.log 
+2026/09/11-11:25:33.931 40a8 Level-0 table #315: started
+2026/09/11-11:25:33.950 40a8 Level-0 table #315: 2374 bytes OK
+2026/09/11-11:25:33.952 40a8 Delete type=0 #310
+2026/09/11-11:25:33.953 2740 Manual compaction at level-0 from '\x00`\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00a\x00\x00\x00' @ 0 : 0; will stop at '\x00`\x01\x03\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 8565 : 1
+2026/09/11-11:25:33.953 2740 Compacting 1@0 + 1@1 files
+2026/09/11-11:25:33.970 2740 Generated table #316@0: 38 keys, 972 bytes
+2026/09/11-11:25:33.970 2740 Compacted 1@0 + 1@1 files => 972 bytes
+2026/09/11-11:25:33.971 2740 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/09/11-11:25:33.972 2740 Delete type=2 #315
+2026/09/11-11:25:33.972 2740 Manual compaction at level-0 from '\x00`\x01\x03\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 8565 : 1 .. '\x00a\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,5 +1,20 @@
 // ============ Activities — генератор активных форм обучения ============
 
+async function postChat(messages) {
+    const endpoints = ['/functions/chat', '/api/chat'];
+    for (const ep of endpoints) {
+        try {
+            const response = await fetch(ep, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages })
+            });
+            if (response.ok) return await response.json();
+        } catch (e) { /* try next */ }
+    }
+    throw new Error('No AI');
+}
+
 const staticActivities = [
     { title: "Одна задача — три решения", goal: "осмысление",
       run: "В парах: каждый предлагает 3 варианта решения по теме дня (3 мин), затем обмен (2 мин). В круге — какие варианты повторились, какие оказались неожиданными.",
@@ -135,17 +150,10 @@ async function generateActivityAI() {
     const { system, user } = buildActivityPrompt();
 
     try {
-        const response = await fetch('/.netlify/functions/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                messages: [
-                    { role: 'system', content: system },
-                    { role: 'user', content: user }
-                ]
-            })
-        });
-        const data = await response.json();
+        const data = await postChat([
+            { role: 'system', content: system },
+            { role: 'user', content: user }
+        ]);
         const activity = data.choices?.[0]?.message?.content;
         if (!activity) throw new Error('No AI');
 

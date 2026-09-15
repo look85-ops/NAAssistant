@@ -1,0 +1,192 @@
+- generic [ref=f25e3]:
+  - generic [ref=f25e8]:
+    - generic [ref=f25e9]:
+      - text: Для обеспечения удобства пользователей сайта используются cookies.
+      - link "Узнайте подробнее" [ref=f25e10] [cursor=pointer]:
+        - /url: /article/cookie_policy?hhtmFrom=resume_partial_edit
+    - generic [ref=f25e11]:
+      - button "Принять" [ref=f25e12] [cursor=pointer]
+      - button "Отказаться" [ref=f25e13] [cursor=pointer]
+  - banner [ref=f25e15]:
+    - generic [ref=f25e17]:
+      - link "Главная страница сайта" [ref=f25e18] [cursor=pointer]:
+        - /url: /
+      - link [ref=f25e23] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=f25e35] [cursor=pointer]:
+        - generic [ref=f25e36]: Минск
+      - button "Чаты" [ref=f25e50] [cursor=pointer]
+      - link "Избранное" [ref=f25e62] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f25e74] [cursor=pointer]
+      - button "Создать резюме" [ref=f25e84] [cursor=pointer]
+      - button [ref=f25e91] [cursor=pointer]
+  - generic [ref=f25e103]:
+    - main [ref=f25e104]:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - menu:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button
+          - menu [ref=f25e501]:
+            - button [ref=f25e506] [cursor=pointer]
+            - generic [ref=f25e511]: Желаемая профессия и условия
+          - generic: Желаемая профессия и условия
+          - generic:
+            - separator
+      - generic [ref=f25e118]:
+        - generic [ref=f25e124]:
+          - generic [ref=f25e129]:
+            - generic: Профессия
+            - combobox "Профессия" [ref=f25e131]: Менеджер по обучению и развитию персонала
+          - generic [ref=f25e135]:
+            - generic [ref=f25e139]:
+              - generic: Уровень дохода в месяц
+              - generic [ref=f25e140]:
+                - textbox "Уровень дохода в месяц" [ref=f25e141]: 4 500
+                - generic [ref=f25e142]: Br
+            - region [ref=f25e144]:
+              - list [ref=f25e145]:
+                - generic [ref=f25e147]:
+                  - listitem [ref=f25e148]:
+                    - generic [ref=f25e149]:
+                      - radio "Бел. рубли" [checked] [ref=f25e150]
+                      - generic [ref=f25e151] [cursor=pointer]: Бел. рубли
+                  - listitem [ref=f25e154]:
+                    - generic [ref=f25e155]:
+                      - radio "Евро" [ref=f25e156]
+                      - generic [ref=f25e157] [cursor=pointer]: Евро
+                  - listitem [ref=f25e160]:
+                    - generic [ref=f25e161]:
+                      - radio "Рубли" [ref=f25e162]
+                      - generic [ref=f25e163] [cursor=pointer]: Рубли
+                  - listitem [ref=f25e166]:
+                    - generic [ref=f25e167]:
+                      - radio "Доллары" [ref=f25e168]
+                      - generic [ref=f25e169] [cursor=pointer]: Доллары
+          - generic [ref=f25e173]:
+            - generic [ref=f25e174]:
+              - generic [ref=f25e175]: Специализации
+              - button "Добавить" [ref=f25e178] [cursor=pointer]
+            - generic [ref=f25e192]:
+              - generic [ref=f25e193]: Менеджер по персоналу
+              - button [ref=f25e205] [cursor=pointer]
+          - generic [ref=f25e214]: Пожелания по условиям
+          - combobox "Тип занятости" [ref=f25e220] [cursor=pointer]:
+            - generic [ref=f25e221]:
+              - generic [ref=f25e222]: Тип занятости
+              - generic [ref=f25e223]: Постоянная работа
+          - combobox "Формат работы" [ref=f25e232] [cursor=pointer]:
+            - generic [ref=f25e233]:
+              - generic [ref=f25e234]: Формат работы
+              - generic [ref=f25e235]: На месте работодателя
+          - combobox "Желательное время в пути до работы" [ref=f25e244] [cursor=pointer]:
+            - generic [ref=f25e245]:
+              - generic [ref=f25e246]: Желательное время в пути до работы
+              - generic [ref=f25e247]: Не имеет значения
+          - combobox "Командировки" [ref=f25e256] [cursor=pointer]:
+            - generic [ref=f25e257]:
+              - generic [ref=f25e258]: Командировки
+              - generic [ref=f25e259]: Не могу
+        - button "Сохранить" [active] [ref=f25e273] [cursor=pointer]
+    - contentinfo [ref=f25e278]:
+      - generic [ref=f25e282]:
+        - navigation "Навигация в подвале" [ref=f25e283]:
+          - generic [ref=f25e284]:
+            - generic [ref=f25e286]:
+              - generic [ref=f25e287]: rabota.by
+              - list [ref=f25e289]:
+                - listitem [ref=f25e290]:
+                  - link "Помощь" [ref=f25e292]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e295]:
+                  - link "Наши вакансии" [ref=f25e297]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e300]:
+                  - link "Реклама на сайте" [ref=f25e302]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit#region/belarus
+                - listitem [ref=f25e305]:
+                  - link "Требования к ПО" [ref=f25e307]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e310]:
+                  - link "Политика обработки cookie" [ref=f25e312]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e315]:
+                  - link "Настройки cookie" [ref=f25e317]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e320]:
+                  - link "Напишите нам" [ref=f25e322]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=f25e325]:
+                  - link "Каталог компаний" [ref=f25e327]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e330]:
+                  - link "Поиск по вакансиям в Минске" [ref=f25e332]:
+                    - /url: /vacancies
+                - listitem [ref=f25e335]:
+                  - link "Работа рядом с метро" [ref=f25e337]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - generic [ref=f25e342]:
+              - generic [ref=f25e343]: Соискателям
+              - list [ref=f25e345]:
+                - listitem [ref=f25e346]:
+                  - link "Все сервисы" [ref=f25e348]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e351]:
+                  - link "Кадровые агентства Беларуси" [ref=f25e353]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f25e356]:
+                  - link "Производственный календарь" [ref=f25e358]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - generic [ref=f25e363]:
+              - list [ref=f25e364]:
+                - listitem [ref=f25e365]:
+                  - generic [ref=f25e366]: Боты для уведомлений
+                  - generic [ref=f25e368]:
+                    - button "Подключить telegram бот" [ref=f25e369] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f25e376] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f25e384] [cursor=pointer]
+              - generic [ref=f25e393]:
+                - generic [ref=f25e394]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f25e396]
+        - navigation "Правовая информация" [ref=f25e404]:
+          - list [ref=f25e405]:
+            - listitem [ref=f25e406]:
+              - link "Этика и комплаенс" [ref=f25e408]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f25e411]:
+              - link "Оказание услуг" [ref=f25e413]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f25e416]:
+              - link "Использование сайтов" [ref=f25e418]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f25e421]:
+              - link "Политика обработки данных" [ref=f25e423]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f25e426]:
+              - link "Пользовательское соглашение" [ref=f25e428]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+        - generic [ref=f25e435]:
+          - paragraph [ref=f25e436]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=f25e438]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=f25e440]:
+            - img "mastercard" [ref=f25e441]
+            - img "visa" [ref=f25e442]
+            - img "belcart" [ref=f25e443]
+            - img "belcart-internetparol" [ref=f25e444]
+        - generic [ref=f25e449]:
+          - generic [ref=f25e450]:
+            - button "Перейти в ВК" [ref=f25e451] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=f25e459] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=f25e467] [cursor=pointer]
+            - button "Перейти в Viber" [ref=f25e475] [cursor=pointer]
+          - generic [ref=f25e484]:
+            - list [ref=f25e485]:
+              - listitem [ref=f25e486]:
+                - combobox "Выбор языка сайта" [ref=f25e489]:
+                  - generic [ref=f25e490]: Русский
+            - generic [ref=f25e497]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

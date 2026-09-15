@@ -1,0 +1,145 @@
+- generic [ref=f9e3]:
+  - generic [ref=f9e2324]:
+    - generic [ref=f9e2325]:
+      - text: Для обеспечения удобства пользователей сайта используются cookies.
+      - link "Узнайте подробнее" [ref=f9e2326] [cursor=pointer]:
+        - /url: /article/cookie_policy?hhtmFrom=resume_partial_edit
+    - generic [ref=f9e2327]:
+      - button "Принять" [ref=f9e2328] [cursor=pointer]
+      - button "Отказаться" [ref=f9e2329] [cursor=pointer]
+  - banner [ref=f9e2331]:
+    - generic [ref=f9e2333]:
+      - link "Главная страница сайта" [ref=f9e2334] [cursor=pointer]:
+        - /url: /
+      - link [ref=f9e2339] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=f9e2351] [cursor=pointer]:
+        - generic [ref=f9e2352]: Минск
+      - button "Чаты" [ref=f9e2366] [cursor=pointer]
+      - link "Избранное" [ref=f9e2378] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f9e2390] [cursor=pointer]
+      - button "Создать резюме" [ref=f9e2400] [cursor=pointer]
+      - button [ref=f9e2407] [cursor=pointer]
+  - generic [ref=f9e2419]:
+    - main [ref=f9e2420]:
+      - generic:
+        - generic:
+          - menu [ref=f9e2421]:
+            - button [ref=f9e2426] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic:
+                - menu:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - button
+                  - generic: О себе
+          - generic [ref=f9e2432]: О себе
+          - generic:
+            - separator
+      - generic [ref=f9e2434]:
+        - generic [ref=f9e2446]:
+          - textbox "Любая дополнительная информация" [ref=f9e2447]
+          - generic: Любая дополнительная информация
+        - generic [ref=f9e2448]:
+          - separator [ref=f9e2450]
+          - button "Сохранить" [ref=f9e2455] [cursor=pointer]
+    - contentinfo [ref=f9e2460]:
+      - generic [ref=f9e2464]:
+        - navigation "Навигация в подвале" [ref=f9e2465]:
+          - generic [ref=f9e2466]:
+            - generic [ref=f9e2468]:
+              - generic [ref=f9e2469]: rabota.by
+              - list [ref=f9e2471]:
+                - listitem [ref=f9e2472]:
+                  - link "Помощь" [ref=f9e2474]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2477]:
+                  - link "Наши вакансии" [ref=f9e2479]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2482]:
+                  - link "Реклама на сайте" [ref=f9e2484]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit#region/belarus
+                - listitem [ref=f9e2487]:
+                  - link "Требования к ПО" [ref=f9e2489]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2492]:
+                  - link "Политика обработки cookie" [ref=f9e2494]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2497]:
+                  - link "Настройки cookie" [ref=f9e2499]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2502]:
+                  - link "Напишите нам" [ref=f9e2504]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=f9e2507]:
+                  - link "Каталог компаний" [ref=f9e2509]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2512]:
+                  - link "Поиск по вакансиям в Минске" [ref=f9e2514]:
+                    - /url: /vacancies
+                - listitem [ref=f9e2517]:
+                  - link "Работа рядом с метро" [ref=f9e2519]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - generic [ref=f9e2524]:
+              - generic [ref=f9e2525]: Соискателям
+              - list [ref=f9e2527]:
+                - listitem [ref=f9e2528]:
+                  - link "Все сервисы" [ref=f9e2530]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2533]:
+                  - link "Кадровые агентства Беларуси" [ref=f9e2535]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f9e2538]:
+                  - link "Производственный календарь" [ref=f9e2540]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - generic [ref=f9e2545]:
+              - list [ref=f9e2546]:
+                - listitem [ref=f9e2547]:
+                  - generic [ref=f9e2548]: Боты для уведомлений
+                  - generic [ref=f9e2550]:
+                    - button "Подключить telegram бот" [ref=f9e2551] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f9e2558] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f9e2566] [cursor=pointer]
+              - generic [ref=f9e2575]:
+                - generic [ref=f9e2576]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f9e2578]
+        - navigation "Правовая информация" [ref=f9e2586]:
+          - list [ref=f9e2587]:
+            - listitem [ref=f9e2588]:
+              - link "Этика и комплаенс" [ref=f9e2590]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f9e2593]:
+              - link "Оказание услуг" [ref=f9e2595]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f9e2598]:
+              - link "Использование сайтов" [ref=f9e2600]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f9e2603]:
+              - link "Политика обработки данных" [ref=f9e2605]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f9e2608]:
+              - link "Пользовательское соглашение" [ref=f9e2610]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+        - generic [ref=f9e2617]:
+          - paragraph [ref=f9e2618]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=f9e2620]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=f9e2622]:
+            - img "mastercard" [ref=f9e2623]
+            - img "visa" [ref=f9e2624]
+            - img "belcart" [ref=f9e2625]
+            - img "belcart-internetparol" [ref=f9e2626]
+        - generic [ref=f9e2631]:
+          - generic [ref=f9e2632]:
+            - button "Перейти в ВК" [ref=f9e2633] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=f9e2641] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=f9e2649] [cursor=pointer]
+            - button "Перейти в Viber" [ref=f9e2657] [cursor=pointer]
+          - generic [ref=f9e2666]:
+            - list [ref=f9e2667]:
+              - listitem [ref=f9e2668]:
+                - combobox "Выбор языка сайта" [ref=f9e2671]:
+                  - generic [ref=f9e2672]: Русский
+            - generic [ref=f9e2679]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

@@ -1,0 +1,46 @@
+- generic [ref=f166e7]:
+  - generic [ref=f166e16]:
+    - banner [ref=f166e17]:
+      - button "go-back-button" [ref=f166e19] [cursor=pointer]
+      - link [ref=f166e28] [cursor=pointer]:
+        - /url: /?hhtmFrom=account_login
+    - generic [ref=f166e110]:
+      - heading "Регистрация для поиска работы" [level=2] [ref=f166e112]
+      - generic [ref=f166e114]:
+        - generic [ref=f166e115]:
+          - generic [ref=f166e116]:
+            - radio "Телефон" [checked] [ref=f166e117]
+            - generic [ref=f166e118] [cursor=pointer]: Телефон
+          - generic [ref=f166e120]:
+            - radio "Почта" [ref=f166e121]
+            - generic [ref=f166e122] [cursor=pointer]: Почта
+        - generic [aria-hidden]:
+          - generic:
+            - generic:
+              - generic:
+                - generic [aria-hidden]:
+                  - generic: Телефон
+              - generic:
+                - generic [aria-hidden]:
+                  - generic: Почта
+      - generic [ref=f166e124]:
+        - generic [ref=f166e125]:
+          - generic [ref=f166e127]:
+            - generic [ref=f166e128]: 🇧🇾
+            - generic [ref=f166e130]: "+375"
+          - textbox [ref=f166e136]
+        - generic:
+          - alert:
+            - generic [aria-hidden]:
+              - generic: Обязательное поле
+      - button "Дальше" [ref=f166e139] [cursor=pointer]
+      - button "Войти с помощью + 2" [ref=f166e144] [cursor=pointer]:
+        - generic [ref=f166e145]:
+          - generic [ref=f166e146]: Войти с помощью
+          - generic [ref=f166e147]: + 2
+      - generic [ref=f166e158]:
+        - text: Продолжая, вы принимаете
+        - link "правила сервиса" [ref=f166e159]:
+          - /url: /account/agreement?backurl=%2Faccount%2Fsignup%3Fbackurl%3D%252F%26role%3Dapplicant&role=applicant&hhtmFrom=account_login
+  - contentinfo [ref=f166e106]:
+    - generic [ref=f166e107]: © ООО «ВСЯ РАБОТА», 2026

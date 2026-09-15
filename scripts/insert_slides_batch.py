@@ -16,7 +16,7 @@ W, H = 8.8, 5.5
 ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 wp = 'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing'
 bl = 'http://schemas.openxmlformats.org/drawingml/2006/main'
-MRK = re.compile(r'^Слайд(\s*№\s*\d+)?\s*$')
+MRK = re.compile(r'^Слайд(\s*№\s*\d*)?\s*$')
 
 # === Export missing slides ===
 ex = set(os.listdir(TDIR))

@@ -1,0 +1,3 @@
+[     676ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ https://rabota.by/vacancy/137097152:147
+[   58159ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ https://rabota.by/applicant/vacancy_response?vacancyId=137097152&startedWithQuestion=false&hhtmFrom=vacancy:121
+[   59035ms] [WARNING] You navigate from the same website @ https://i.rabota.by/js/External/smart-script.js:0

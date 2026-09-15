@@ -99,7 +99,7 @@ class LLMGateway:
 
     def add_gemini_provider(self, api_key, model=None):
         if api_key:
-            model = model or os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+            model = model or os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
             self.providers.append(Provider(
                 "gemini", api_key, "", [model], kind="gemini"))
             return True

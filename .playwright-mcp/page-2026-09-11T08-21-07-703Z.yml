@@ -1,0 +1,627 @@
+- generic [active] [ref=f106e1]:
+  - generic [ref=f106e3]:
+    - generic [ref=f106e7]:
+      - generic [ref=f106e8]:
+        - text: Мы используем файлы cookie, чтобы обеспечивать правильную работу нашего веб-сайта и анализировать сетевой трафик.
+        - link "Правила использования файлов cookie" [ref=f106e9]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy_search_list
+      - button "Понятно" [ref=f106e13] [cursor=pointer]
+    - banner [ref=f106e15]:
+      - generic [ref=f106e17]:
+        - link "Главная страница сайта" [ref=f106e18] [cursor=pointer]:
+          - /url: /
+        - link "Резюме и профиль" [ref=f106e22] [cursor=pointer]:
+          - /url: /applicant/profile/me
+        - link "Отклики" [ref=f106e32] [cursor=pointer]:
+          - /url: /applicant/negotiations
+        - link "Сервисы" [ref=f106e42] [cursor=pointer]:
+          - /url: /services
+        - link "Карьера" [ref=f106e52] [cursor=pointer]:
+          - /url: https://career.hh.ru/?hhtmFrom=vacancy_search_list&hhtmFromLabel=header
+        - button "Помощь" [ref=f106e62] [cursor=pointer]
+        - link "Поиск" [ref=f106e73] [cursor=pointer]
+        - button "Выбор региона,Москва" [ref=f106e86] [cursor=pointer]:
+          - generic [ref=f106e87]: Москва
+        - button "Чаты" [ref=f106e101] [cursor=pointer]
+        - link "Избранное" [ref=f106e113] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f106e125] [cursor=pointer]
+        - button "Создать резюме" [ref=f106e135] [cursor=pointer]
+        - button "Дополнительное меню" [ref=f106e142] [cursor=pointer]:
+          - generic "Дополнительное меню" [ref=f106e152]: НМ
+    - generic [ref=f106e154]:
+      - main [ref=f106e155]:
+        - generic [ref=f106e159]:
+          - list [ref=f106e164]:
+            - tablist [ref=f106e166]:
+              - tab "Вакансии" [selected] [ref=f106e168]
+              - tab "Резюме" [ref=f106e172] [cursor=pointer]
+              - tab "Компании" [ref=f106e176] [cursor=pointer]
+          - generic [ref=f106e181]:
+            - generic [ref=f106e182]:
+              - generic [ref=f106e185]:
+                - combobox "Поиск по вакансиям" [ref=f106e189]: L&D менеджер обучение
+                - button "Очистить" [ref=f106e195] [cursor=pointer]
+              - group
+            - button "Сохранить поиск" [ref=f106e203] [cursor=pointer]
+            - button "Найти" [ref=f106e214] [cursor=pointer]
+        - generic [ref=f106e225]:
+          - generic [ref=f106e227]:
+            - generic [ref=f106e230]:
+              - button "Россия" [ref=f106e231] [cursor=pointer]
+              - button [ref=f106e238] [cursor=pointer]
+            - generic [ref=f106e244]:
+              - button "Удалённо" [ref=f106e245] [cursor=pointer]
+              - button [ref=f106e252] [cursor=pointer]
+          - button "Фильтры" [ref=f106e259] [cursor=pointer]
+        - generic [ref=f106e272]:
+          - generic [ref=f106e278]:
+            - generic [ref=f106e279]:
+              - generic [ref=f106e280]:
+                - heading "Найдено 8 вакансий «L&D менеджер обучение»" [level=1] [ref=f106e285]
+                - generic [ref=f106e287]:
+                  - combobox [ref=f106e290] [cursor=pointer]:
+                    - generic [ref=f106e291]: По соответствию
+                  - generic [ref=f106e298]: За всё время
+                  - combobox [ref=f106e309] [cursor=pointer]:
+                    - generic [ref=f106e310]: 100 вакансий
+              - generic [ref=f106e320]:
+                - generic [ref=f106e321]:
+                  - radio "краткое описания вакансий" [ref=f106e322]
+                  - generic [ref=f106e323] [cursor=pointer]
+                - generic [ref=f106e330]:
+                  - radio "полное описание вакансий" [checked] [ref=f106e331]
+                  - generic [ref=f106e332] [cursor=pointer]
+            - link "Вакансии на карте" [ref=f106e343] [cursor=pointer]:
+              - /url: /search/vacancy/map?area=113&enable_snippets=true&items_on_page=100&label=with_address&ored_clusters=true&schedule=remote&text=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&work_format=REMOTE&hhtmFrom=vacancy_search_list
+          - generic [ref=f106e349]:
+            - generic [ref=f106e350]:
+              - generic [ref=f106e357]:
+                - generic [ref=f106e358]: Удаленно можно работать на компанию из любого региона.
+                - button "Искать везде" [ref=f106e364] [cursor=pointer]
+              - region "Вакансии" [ref=f106e369]:
+                - list [ref=f106e371]:
+                  - listitem [ref=f106e372]:
+                    - article [ref=f106e375] [cursor=pointer]:
+                      - generic [ref=f106e379]:
+                        - generic [ref=f106e380]:
+                          - generic [ref=f106e381]:
+                            - button "Добавить в избранное" [ref=f106e382]
+                            - button "Скрыть" [ref=f106e386]
+                          - link "Менеджер по продажам B2B-обучающих решений" [ref=f106e391]:
+                            - /url: https://hh.ru/vacancy/137090901?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e395]:
+                            - generic [ref=f106e396]: 90 000 – 150 000 ₽ за месяц, до вычета налогов
+                            - generic [ref=f106e397]: Опыт 1-3 года
+                            - generic [ref=f106e399]: Можно удалённо
+                            - generic [ref=f106e401]: "Выплаты: Два раза в месяц"
+                          - generic [ref=f106e404]:
+                            - generic [ref=f106e406]:
+                              - link "ИП Высоцкая Анастасия Борисовна" [ref=f106e407]:
+                                - /url: /employer/9314161?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e411]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e417]: Видное
+                          - generic [ref=f106e420]: Откликнитесь среди первых
+                          - generic [ref=f106e426]:
+                            - generic [ref=f106e427]: "Продажа коротких и флагманских обучающих продуктов по базе клиентов: - Работа с входящими заявками (квалификация лида, уточнение запроса, закрытие на встречу..."
+                            - generic [ref=f106e429]: Грамотная устная и письменная речь (обязательное требование). Понимание рынка обучения, HR или T&D — как плюс. Ответственность и работа на...
+                        - button "Откликнуться" [ref=f106e435]
+                  - listitem [ref=f106e441]:
+                    - article [ref=f106e444] [cursor=pointer]:
+                      - generic [ref=f106e448]:
+                        - generic [ref=f106e449]:
+                          - generic [ref=f106e450]:
+                            - button "Добавить в избранное" [ref=f106e451]
+                            - button "Скрыть" [ref=f106e455]
+                          - link "Специалист по корпоративной культуре и развитию персонала/HR (iGaming)" [ref=f106e460]:
+                            - /url: https://hh.ru/vacancy/136851989?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e464]:
+                            - generic [ref=f106e465]: Опыт 3-6 лет
+                            - generic [ref=f106e467]: Можно удалённо
+                          - generic [ref=f106e470]:
+                            - generic [ref=f106e472]:
+                              - link "ИП Штергер Евгений Владимирович" [ref=f106e473]:
+                                - /url: /employer/10775451?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e477]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e483]: Москва
+                          - generic [ref=f106e486]: Можно без резюме
+                          - generic [ref=f106e492]:
+                            - generic [ref=f106e493]: Поддерживать цикл performance review (подготовка, коммуникации, дедлайны). Помогать команде L&D в процессе оценки и развития. Формировать и предлагать релевантные...
+                            - generic [ref=f106e495]: Опыт в HR от 3+ лет (желательно с фокусом на culture / L&D / performance). Опыт в IT / iGaming / digital...
+                        - button "Откликнуться" [ref=f106e501]
+                    - generic [ref=f106e513]:
+                      - generic [ref=f106e514]:
+                        - generic [ref=f106e515]: По вашему запросу ещё будут появляться новые вакансии. Присылать вам?
+                        - generic [ref=f106e518]: L&D менеджер обучение • Удалённо • Россия • Ключевые слова в названии вакансии, в названии компании и в описании вакансии
+                      - generic [ref=f106e522]:
+                        - button "В мессенджер" [ref=f106e524] [cursor=pointer]
+                        - button "На почту" [ref=f106e530] [cursor=pointer]
+                  - listitem [ref=f106e536]:
+                    - article [ref=f106e539] [cursor=pointer]:
+                      - generic [ref=f106e543]:
+                        - generic [ref=f106e544]:
+                          - generic [ref=f106e545]:
+                            - button "Добавить в избранное" [ref=f106e546]
+                            - button "Скрыть" [ref=f106e550]
+                          - link "Product Manager по продажам и развитию образовательных продуктов" [ref=f106e555]:
+                            - /url: https://hh.ru/vacancy/136906362?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e559]:
+                            - generic [ref=f106e560]: 50 000 – 100 000 ₽ за месяц, на руки
+                            - generic [ref=f106e561]: Опыт 1-3 года
+                            - generic [ref=f106e563]: Можно удалённо
+                          - generic [ref=f106e566]:
+                            - generic [ref=f106e568]:
+                              - link "ООО Академия Научно-Исследовательского Нейроинжиниринга и Образовательных Технологий" [ref=f106e569]:
+                                - /url: /employer/10718309?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e573]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e579]: Москва
+                          - generic [ref=f106e583]:
+                            - generic [ref=f106e584]: Организовывать работу команды под коммерческий результат. Ставить понятные коммерческие задачи менеджерам по продажам, менеджеру по развитию образовательных продуктов и другим...
+                            - generic [ref=f106e586]: Будет преимуществом опыт в корпоративном обучении, EdTech, консалтинге, executive education, HR/L&D, premium-сегменте, интеллектуальных продуктах и длинных B...
+                        - generic [ref=f106e591]:
+                          - button "Откликнуться" [ref=f106e592]
+                          - button "Связаться" [ref=f106e598]
+                  - listitem [ref=f106e604]:
+                    - article [ref=f106e607] [cursor=pointer]:
+                      - generic [ref=f106e611]:
+                        - generic [ref=f106e612]:
+                          - generic [ref=f106e613]:
+                            - button "Добавить в избранное" [ref=f106e614]
+                            - button "Скрыть" [ref=f106e618]
+                          - link "Практикант PR и Marketing Manager" [ref=f106e623]:
+                            - /url: https://hh.ru/vacancy/136270414?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e627]:
+                            - generic [ref=f106e628]: Без опыта
+                            - generic [ref=f106e630]: Можно удалённо
+                          - generic [ref=f106e633]:
+                            - generic [ref=f106e635]:
+                              - link "Changellenge" [ref=f106e636]:
+                                - /url: /employer/1304253?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e640]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e648]:
+                              - generic [ref=f106e653]: "3.9"
+                              - generic [ref=f106e654]: •
+                              - generic [ref=f106e655]: 67 отзывов
+                            - generic [ref=f106e658]: Москва
+                          - generic [ref=f106e662]:
+                            - generic [ref=f106e663]: "Контент и развитие бренда Changellenge >>. Участвовать в ведении Telegram-канала «Бессмертный HR»: помогать собирать контент-план, писать экспертные посты и..."
+                            - generic [ref=f106e665]: Создавать простые визуалы для Telegram, презентаций и маркетинговых материалов в Figma или Canva — самостоятельно после обучения либо вместе с дизайнерами.
+                        - generic [ref=f106e670]:
+                          - button "Откликнуться" [ref=f106e671]
+                          - button "Связаться" [ref=f106e677]
+                    - generic [ref=f106e686]:
+                      - generic [ref=f106e688]:
+                        - heading "Курсы по профессии «Менеджер по обучению и развитию персонала»" [level=3] [ref=f106e691]
+                        - link "Все" [ref=f106e695]:
+                          - /url: https://career.hh.ru/courses?category=COURSES&purpose=PROFESSION&professionIds=182&hhtmFrom=vacancy_search_list
+                      - region [ref=f106e705]:
+                        - generic [ref=f106e706]:
+                          - list [ref=f106e708]:
+                            - generic [ref=f106e710]:
+                              - listitem [ref=f106e711]:
+                                - button "Московская Бизнес Академия Специалист по обучению и развитию персонала 5 месяцев Ещё −10% по промокоду HH10 119 200 ₽ -60%" [ref=f106e712] [cursor=pointer]:
+                                  - generic [ref=f106e716]:
+                                    - img "Московская Бизнес Академия" [ref=f106e717]
+                                    - generic [ref=f106e719]: Специалист по обучению и развитию персонала
+                                    - generic [ref=f106e721]: 5 месяцев
+                                    - generic [ref=f106e724]:
+                                      - generic [ref=f106e725]: Ещё −10% по промокоду HH10
+                                      - generic [ref=f106e729]:
+                                        - generic [ref=f106e730]: 119 200 ₽
+                                        - generic [aria-hidden] [ref=f106e732]:
+                                          - generic [ref=f106e733]: 298 000
+                                          - text: ₽
+                                        - generic [ref=f106e734]: "-60%"
+                              - listitem [ref=f106e735]:
+                                - button "Нетология HR менеджер 6 месяцев Ещё −13% по промокоду HH13 76 400 ₽ -45%" [ref=f106e736] [cursor=pointer]:
+                                  - generic [ref=f106e740]:
+                                    - img "Нетология" [ref=f106e741]
+                                    - generic [ref=f106e743]: HR менеджер
+                                    - generic [ref=f106e745]: 6 месяцев
+                                    - generic [ref=f106e748]:
+                                      - generic [ref=f106e749]: Ещё −13% по промокоду HH13
+                                      - generic [ref=f106e753]:
+                                        - generic [ref=f106e754]: 76 400 ₽
+                                        - generic [aria-hidden] [ref=f106e756]:
+                                          - generic [ref=f106e757]: 154 400
+                                          - text: ₽
+                                        - generic [ref=f106e758]: "-45%"
+                              - listitem [ref=f106e759]:
+                                - button "Образовательный центр РУНО Кадровое делопроизводство и подбор + 1С ЗУП 180 часов Ещё −5% по промокоду HH5 42 570 ₽ -40%" [ref=f106e760] [cursor=pointer]:
+                                  - generic [ref=f106e764]:
+                                    - img "Образовательный центр РУНО" [ref=f106e765]
+                                    - generic [ref=f106e767]: Кадровое делопроизводство и подбор + 1С ЗУП
+                                    - generic [ref=f106e769]: 180 часов
+                                    - generic [ref=f106e772]:
+                                      - generic [ref=f106e773]: Ещё −5% по промокоду HH5
+                                      - generic [ref=f106e777]:
+                                        - generic [ref=f106e778]: 42 570 ₽
+                                        - generic [aria-hidden] [ref=f106e780]:
+                                          - generic [ref=f106e781]: 70 950
+                                          - text: ₽
+                                        - generic [ref=f106e782]: "-40%"
+                              - listitem [ref=f106e783]:
+                                - button "НАДПО Специалист по управлению персоналом. Московский диплом 4 месяца Ещё −5% по промокоду HH5 45 800 ₽ -31%" [ref=f106e784] [cursor=pointer]:
+                                  - generic [ref=f106e788]:
+                                    - img "НАДПО" [ref=f106e789]
+                                    - generic [ref=f106e791]: Специалист по управлению персоналом. Московский диплом
+                                    - generic [ref=f106e793]: 4 месяца
+                                    - generic [ref=f106e796]:
+                                      - generic [ref=f106e797]: Ещё −5% по промокоду HH5
+                                      - generic [ref=f106e801]:
+                                        - generic [ref=f106e802]: 45 800 ₽
+                                        - generic [aria-hidden] [ref=f106e804]:
+                                          - generic [ref=f106e805]: 66 500
+                                          - text: ₽
+                                        - generic [ref=f106e806]: "-31%"
+                              - listitem [ref=f106e807]:
+                                - button "МИПО Управление персоналом 2.0 6 месяцев 42 500 ₽ -35%" [ref=f106e808] [cursor=pointer]:
+                                  - generic [ref=f106e812]:
+                                    - img "МИПО" [ref=f106e813]
+                                    - generic [ref=f106e815]: Управление персоналом 2.0
+                                    - generic [ref=f106e817]: 6 месяцев
+                                    - generic [ref=f106e821]:
+                                      - generic [ref=f106e822]: 42 500 ₽
+                                      - generic [aria-hidden] [ref=f106e824]:
+                                        - generic [ref=f106e825]: 65 400
+                                        - text: ₽
+                                      - generic [ref=f106e826]: "-35%"
+                              - listitem [ref=f106e827]:
+                                - button "iSpring Руководитель отдела обучения и развития персонала 3 месяца −10% по промокоду HH10 149 970 ₽" [ref=f106e828] [cursor=pointer]:
+                                  - generic [ref=f106e832]:
+                                    - img "iSpring" [ref=f106e833]
+                                    - generic [ref=f106e835]: Руководитель отдела обучения и развития персонала
+                                    - generic [ref=f106e837]: 3 месяца
+                                    - generic [ref=f106e840]:
+                                      - generic [ref=f106e841]: −10% по промокоду HH10
+                                      - generic [ref=f106e845]: 149 970 ₽
+                              - listitem [ref=f106e848]:
+                                - button "МИПО Менеджер по управлению персоналом с нуля 6 месяцев 57 100 ₽ -35%" [ref=f106e849] [cursor=pointer]:
+                                  - generic [ref=f106e853]:
+                                    - img "МИПО" [ref=f106e854]
+                                    - generic [ref=f106e856]: Менеджер по управлению персоналом с нуля
+                                    - generic [ref=f106e858]: 6 месяцев
+                                    - generic [ref=f106e862]:
+                                      - generic [ref=f106e863]: 57 100 ₽
+                                      - generic [aria-hidden] [ref=f106e865]:
+                                        - generic [ref=f106e866]: 87 800
+                                        - text: ₽
+                                      - generic [ref=f106e867]: "-35%"
+                          - button [ref=f106e871] [cursor=pointer]
+                  - listitem [ref=f106e877]:
+                    - article [ref=f106e880] [cursor=pointer]:
+                      - generic [ref=f106e884]:
+                        - generic [ref=f106e885]:
+                          - generic [ref=f106e886]:
+                            - button "Добавить в избранное" [ref=f106e887]
+                            - button "Скрыть" [ref=f106e891]
+                          - link "Практикант PR и Marketing Manager" [ref=f106e896]:
+                            - /url: https://hh.ru/vacancy/136270415?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e900]:
+                            - generic [ref=f106e901]: Без опыта
+                            - generic [ref=f106e903]: Можно удалённо
+                          - generic [ref=f106e906]:
+                            - generic [ref=f106e908]:
+                              - link "Changellenge" [ref=f106e909]:
+                                - /url: /employer/1304253?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e913]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e921]:
+                              - generic [ref=f106e926]: "3.9"
+                              - generic [ref=f106e927]: •
+                              - generic [ref=f106e928]: 67 отзывов
+                            - generic [ref=f106e931]: Санкт-Петербург
+                          - generic [ref=f106e935]:
+                            - generic [ref=f106e936]: "Контент и развитие бренда Changellenge >>. Участвовать в ведении Telegram-канала «Бессмертный HR»: помогать собирать контент-план, писать экспертные посты и..."
+                            - generic [ref=f106e938]: Создавать простые визуалы для Telegram, презентаций и маркетинговых материалов в Figma или Canva — самостоятельно после обучения либо вместе с дизайнерами.
+                        - generic [ref=f106e943]:
+                          - button "Откликнуться" [ref=f106e944]
+                          - button "Связаться" [ref=f106e950]
+                  - listitem [ref=f106e956]:
+                    - article [ref=f106e959] [cursor=pointer]:
+                      - generic [ref=f106e963]:
+                        - generic [ref=f106e964]:
+                          - generic [ref=f106e965]:
+                            - button "Добавить в избранное" [ref=f106e966]
+                            - button "Скрыть" [ref=f106e970]
+                          - link "Практикант PR и Marketing Manager" [ref=f106e975]:
+                            - /url: https://hh.ru/vacancy/136270416?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e979]:
+                            - generic [ref=f106e980]: Без опыта
+                            - generic [ref=f106e982]: Можно удалённо
+                          - generic [ref=f106e985]:
+                            - generic [ref=f106e987]:
+                              - link "Changellenge" [ref=f106e988]:
+                                - /url: /employer/1304253?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e992]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e1000]:
+                              - generic [ref=f106e1005]: "3.9"
+                              - generic [ref=f106e1006]: •
+                              - generic [ref=f106e1007]: 67 отзывов
+                            - generic [ref=f106e1010]: Нижний Новгород
+                          - generic [ref=f106e1014]:
+                            - generic [ref=f106e1015]: "Контент и развитие бренда Changellenge >>. Участвовать в ведении Telegram-канала «Бессмертный HR»: помогать собирать контент-план, писать экспертные посты и..."
+                            - generic [ref=f106e1017]: Создавать простые визуалы для Telegram, презентаций и маркетинговых материалов в Figma или Canva — самостоятельно после обучения либо вместе с дизайнерами.
+                        - generic [ref=f106e1022]:
+                          - button "Откликнуться" [ref=f106e1023]
+                          - button "Связаться" [ref=f106e1029]
+                  - listitem [ref=f106e1035]:
+                    - article [ref=f106e1039] [cursor=pointer]:
+                      - generic [ref=f106e1043]:
+                        - generic [ref=f106e1044]:
+                          - generic [ref=f106e1045]:
+                            - button "Добавить в избранное" [ref=f106e1046]
+                            - button "Скрыть" [ref=f106e1050]
+                          - link "Практикант PR и Marketing Manager" [ref=f106e1055]:
+                            - /url: https://hh.ru/vacancy/136270417?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e1059]:
+                            - generic [ref=f106e1060]: Без опыта
+                            - generic [ref=f106e1062]: Можно удалённо
+                          - generic [ref=f106e1065]:
+                            - generic [ref=f106e1067]:
+                              - link "Changellenge" [ref=f106e1068]:
+                                - /url: /employer/1304253?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e1072]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e1080]:
+                              - generic [ref=f106e1085]: "3.9"
+                              - generic [ref=f106e1086]: •
+                              - generic [ref=f106e1087]: 67 отзывов
+                            - generic [ref=f106e1090]: Казань
+                          - generic [ref=f106e1094]:
+                            - generic [ref=f106e1095]: "Контент и развитие бренда Changellenge >>. Участвовать в ведении Telegram-канала «Бессмертный HR»: помогать собирать контент-план, писать экспертные посты и..."
+                            - generic [ref=f106e1097]: Создавать простые визуалы для Telegram, презентаций и маркетинговых материалов в Figma или Canva — самостоятельно после обучения либо вместе с дизайнерами.
+                        - generic [ref=f106e1102]:
+                          - button "Откликнуться" [ref=f106e1103]
+                          - button "Связаться" [ref=f106e1109]
+                  - listitem [ref=f106e1115]:
+                    - article [ref=f106e1118] [cursor=pointer]:
+                      - generic [ref=f106e1122]:
+                        - generic [ref=f106e1123]:
+                          - generic [ref=f106e1124]:
+                            - button "Добавить в избранное" [ref=f106e1125]
+                            - button "Скрыть" [ref=f106e1129]
+                          - link "Практикант PR и Marketing Manager" [ref=f106e1134]:
+                            - /url: https://hh.ru/vacancy/136270418?query=L%26D+%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                          - generic [ref=f106e1138]:
+                            - generic [ref=f106e1139]: Без опыта
+                            - generic [ref=f106e1141]: Можно удалённо
+                          - generic [ref=f106e1144]:
+                            - generic [ref=f106e1146]:
+                              - link "Changellenge" [ref=f106e1147]:
+                                - /url: /employer/1304253?hhtmFrom=vacancy_search_list
+                              - link [ref=f106e1151]:
+                                - /url: https://feedback.hh.ru/article/details/id/5951
+                            - generic [ref=f106e1159]:
+                              - generic [ref=f106e1164]: "3.9"
+                              - generic [ref=f106e1165]: •
+                              - generic [ref=f106e1166]: 67 отзывов
+                            - generic [ref=f106e1169]: Екатеринбург
+                          - generic [ref=f106e1173]:
+                            - generic [ref=f106e1174]: "Контент и развитие бренда Changellenge >>. Участвовать в ведении Telegram-канала «Бессмертный HR»: помогать собирать контент-план, писать экспертные посты и..."
+                            - generic [ref=f106e1176]: Создавать простые визуалы для Telegram, презентаций и маркетинговых материалов в Figma или Canva — самостоятельно после обучения либо вместе с дизайнерами.
+                        - generic [ref=f106e1181]:
+                          - button "Откликнуться" [ref=f106e1182]
+                          - button "Связаться" [ref=f106e1188]
+                    - generic [ref=f106e1199]:
+                      - generic [ref=f106e1200]: Как вам результаты поиска?
+                      - group [ref=f106e1201]:
+                        - radio "1"
+                        - generic [ref=f106e1202] [cursor=pointer]
+                        - radio "2"
+                        - generic [ref=f106e1206] [cursor=pointer]
+                        - radio "3"
+                        - generic [ref=f106e1210] [cursor=pointer]
+                        - radio "4"
+                        - generic [ref=f106e1214] [cursor=pointer]
+                        - radio "5"
+                        - generic [ref=f106e1218] [cursor=pointer]
+            - generic [ref=f106e1224]:
+              - heading "Быстрые фильтры подбора вакансий" [level=2] [ref=f106e1225]
+              - list [ref=f106e1227]:
+                - listitem [ref=f106e1228]:
+                  - link "Без опыта работы" [ref=f106e1230]:
+                    - /url: /vacancies/bez_opyta_raboty
+                - listitem [ref=f106e1233]:
+                  - link "Вечерняя и ночная" [ref=f106e1235]:
+                    - /url: /vacancies/vechernyaya_i_nochnaya
+                - listitem [ref=f106e1238]:
+                  - link "Вахтовый метод" [ref=f106e1240]:
+                    - /url: /vacancies/vakhtoviy_metod
+                - listitem [ref=f106e1243]:
+                  - link "График 5/2" [ref=f106e1245]:
+                    - /url: /vacancies/5-2
+                - listitem [ref=f106e1248]:
+                  - link "Гибкий график" [ref=f106e1250]:
+                    - /url: /vacancies/gibkiy_grafik
+                - listitem [ref=f106e1253]:
+                  - link "Два через два" [ref=f106e1255]:
+                    - /url: /vacancies/2-2
+                - listitem [ref=f106e1258]:
+                  - link "За последние три дня" [ref=f106e1260]:
+                    - /url: /vacancies/za_poslednie_tri_dnya
+                - listitem [ref=f106e1263]:
+                  - link "За сутки" [ref=f106e1265]:
+                    - /url: /vacancies/za_sutki
+                - listitem [ref=f106e1268]:
+                  - link "От прямых работодателей" [ref=f106e1270]:
+                    - /url: /vacancies/ot_pryamih_rabotodateley
+                - listitem [ref=f106e1273]:
+                  - link "Полный день" [ref=f106e1275]:
+                    - /url: /vacancies/polniy_den
+                - listitem [ref=f106e1278]:
+                  - link "По совместительству" [ref=f106e1280]:
+                    - /url: /vacancies/po_sovmestitelstvu
+                - listitem [ref=f106e1283]:
+                  - link "Подработка" [ref=f106e1285]:
+                    - /url: /vacancies/podrabotka
+                - listitem [ref=f106e1288]:
+                  - link "Полная занятость" [ref=f106e1290]:
+                    - /url: /vacancies/polnaya_zanyatost
+                - listitem [ref=f106e1293]:
+                  - link "Для людей с инвалидностью" [ref=f106e1295]:
+                    - /url: /vacancies/rabota_dlya_invalidov
+                - listitem [ref=f106e1298]:
+                  - link "Сменный график" [ref=f106e1300]:
+                    - /url: /vacancies/smenniy_grafik
+                - listitem [ref=f106e1303]:
+                  - link "Сутки через двое" [ref=f106e1305]:
+                    - /url: /vacancies/1-2
+                - listitem [ref=f106e1308]:
+                  - link "Сутки через трое" [ref=f106e1310]:
+                    - /url: /vacancies/1-3
+                - listitem [ref=f106e1313]:
+                  - link "Три через три" [ref=f106e1315]:
+                    - /url: /vacancies/3-3
+                - listitem [ref=f106e1318]:
+                  - link "Удаленная работа" [ref=f106e1320]:
+                    - /url: /vacancies/udalennaya_rabota
+                - listitem [ref=f106e1323]:
+                  - link "Частичная занятость" [ref=f106e1325]:
+                    - /url: /vacancies/chastichnaya_zanyatost
+      - contentinfo [ref=f106e1330]:
+        - generic [ref=f106e1334]:
+          - navigation "Навигация в подвале" [ref=f106e1335]:
+            - generic [ref=f106e1336]:
+              - generic [ref=f106e1338]:
+                - generic [ref=f106e1339]: HeadHunter
+                - list [ref=f106e1341]:
+                  - listitem [ref=f106e1342]:
+                    - link "О компании" [ref=f106e1344]:
+                      - /url: /article/28?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1347]:
+                    - link "Наши вакансии" [ref=f106e1349]:
+                      - /url: /employer/1455?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1352]:
+                    - link "Реклама на сайте" [ref=f106e1354]:
+                      - /url: /article/promoproducts?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1357]:
+                    - link "Требования к ПО" [ref=f106e1359]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1362]:
+                    - link "Безопасный HeadHunter" [ref=f106e1364]:
+                      - /url: /safety?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1367]:
+                    - link "HeadHunter API" [ref=f106e1369]:
+                      - /url: https://dev.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - listitem [ref=f106e1372]:
+                    - link "Партнерам" [ref=f106e1374]:
+                      - /url: /partners?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1377]:
+                    - link "Инвесторам" [ref=f106e1379]:
+                      - /url: https://investor.hh.ru/
+                  - listitem [ref=f106e1382]:
+                    - link "Каталог компаний" [ref=f106e1384]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1387]:
+                    - link "Поиск по вакансиям в Москве" [ref=f106e1389]:
+                      - /url: /vacancies
+                  - listitem [ref=f106e1392]:
+                    - link "Работа рядом с метро" [ref=f106e1394]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1397]:
+                    - 'link "Сетка: соцсеть для нетворкинга" [ref=f106e1399]':
+                      - /url: https://setka.ru/
+              - generic [ref=f106e1403]:
+                - generic [ref=f106e1404]: Соискателям
+                - list [ref=f106e1406]:
+                  - listitem [ref=f106e1407]:
+                    - link "hh PRO" [ref=f106e1409]:
+                      - /url: /applicant-services/hhpro?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1412]:
+                    - link "Готовое резюме" [ref=f106e1414]:
+                      - /url: /article/expert_resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1417]:
+                    - link "Все сервисы" [ref=f106e1419]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1422]:
+                    - link "Хочу у вас работать" [ref=f106e1424]:
+                      - /url: /applicant-services/hhpro?rte=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1427]:
+                    - link "Производственный календарь" [ref=f106e1429]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1432]:
+                    - link "Экспертная рекомендация" [ref=f106e1434]:
+                      - /url: /article/resume_audit?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                - generic [ref=f106e1438]: Новости и статьи
+                - list [ref=f106e1440]:
+                  - listitem [ref=f106e1441]:
+                    - link "Блог" [ref=f106e1443]:
+                      - /url: /blog?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1446]:
+                    - link "О компаниях в игровой форме" [ref=f106e1448]:
+                      - /url: /articles/guide-to-companies/special-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1451]:
+                    - link "Жизнь в компании" [ref=f106e1453]:
+                      - /url: /articles/guide-to-companies/insider?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1456]:
+                    - link "ИТ-проекты" [ref=f106e1458]:
+                      - /url: /articles/guide-to-companies/it-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1461]:
+                    - link "Рейтинг работодателей России" [ref=f106e1463]:
+                      - /url: https://rating.hh.ru/poll?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+              - generic [ref=f106e1467]:
+                - generic [ref=f106e1468]: Молодым специалистам
+                - list [ref=f106e1470]:
+                  - listitem [ref=f106e1471]:
+                    - link "Карьера для молодых специалистов" [ref=f106e1473]:
+                      - /url: /youth_vacancies?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f106e1476]:
+                    - link "Школа программистов" [ref=f106e1478]:
+                      - /url: http://school.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - listitem [ref=f106e1481]:
+                    - link "Карьера в некоммерческих организациях" [ref=f106e1483]:
+                      - /url: https://nko.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                - list [ref=f106e1487]:
+                  - listitem [ref=f106e1488]:
+                    - generic [ref=f106e1489]: Боты для уведомлений
+                    - generic [ref=f106e1491]:
+                      - button "Подключить telegram бот" [ref=f106e1492] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f106e1499] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f106e1507] [cursor=pointer]
+                - generic [ref=f106e1516]:
+                  - generic [ref=f106e1517]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f106e1519]
+          - navigation "Правовая информация" [ref=f106e1527]:
+            - list [ref=f106e1528]:
+              - listitem [ref=f106e1529]:
+                - link "Этика и комплаенс" [ref=f106e1531]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f106e1534]:
+                - link "Оказание услуг" [ref=f106e1536]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f106e1539]:
+                - link "Использование сайтов" [ref=f106e1541]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f106e1544]:
+                - link "Защита персональных данных" [ref=f106e1546]:
+                  - /url: /article/personal_data?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f106e1549]:
+                - link "Пользовательское соглашение" [ref=f106e1551]:
+                  - /url: /account/agreement?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f106e1554]:
+                - link "ИТ аккредитация" [ref=f106e1556]:
+                  - /url: /article/it-accreditation?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+          - generic [ref=f106e1564]:
+            - text: На информационном ресурсе hh.ru
+            - link "применяются рекомендательные технологии" [ref=f106e1565] [cursor=pointer]:
+              - /url: /article/recommendation_technologies?hhtmFrom=vacancy_search_list
+            - text: (информационные технологии предоставления информации на основе сбора, систематизации и анализа сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации)
+          - generic [ref=f106e1570]:
+            - generic [ref=f106e1571]:
+              - button "Перейти в Сетку" [ref=f106e1572] [cursor=pointer]
+              - button "Перейти в ВК" [ref=f106e1579] [cursor=pointer]
+              - button "Перейти в Дзен" [ref=f106e1587] [cursor=pointer]
+              - button "Перейти в Telegram" [ref=f106e1595] [cursor=pointer]
+            - generic [ref=f106e1603]:
+              - list [ref=f106e1604]:
+                - listitem [ref=f106e1605]:
+                  - combobox "Выбор языка сайта" [ref=f106e1608]:
+                    - generic [ref=f106e1609]: Русский
+              - generic [ref=f106e1616]: © 2026 ООО «Хэдхантер»
+  - button [ref=f106e1620] [cursor=pointer]

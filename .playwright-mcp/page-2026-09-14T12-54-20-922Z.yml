@@ -1,0 +1,312 @@
+- generic [ref=f39e3]:
+  - generic [ref=f39e8]:
+    - generic [ref=f39e9]:
+      - text: Для обеспечения удобства пользователей сайта используются cookies.
+      - link "Узнайте подробнее" [ref=f39e10] [cursor=pointer]:
+        - /url: /article/cookie_policy?hhtmFrom=vacancy
+    - generic [ref=f39e11]:
+      - button "Принять" [ref=f39e12] [cursor=pointer]
+      - button "Отказаться" [ref=f39e13] [cursor=pointer]
+  - banner [ref=f39e15]:
+    - generic [ref=f39e17]:
+      - link "Главная страница сайта" [ref=f39e18] [cursor=pointer]:
+        - /url: /
+      - link [ref=f39e23] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=f39e35] [cursor=pointer]:
+        - generic [ref=f39e36]: Минск
+      - button "Чаты" [ref=f39e50] [cursor=pointer]
+      - link "Избранное" [ref=f39e62] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f39e74] [cursor=pointer]
+      - button "Создать резюме" [ref=f39e84] [cursor=pointer]
+      - button [ref=f39e91] [cursor=pointer]
+  - generic [ref=f39e103]:
+    - main [ref=f39e104]:
+      - generic [ref=f39e110]:
+        - generic [ref=f39e117]:
+          - generic [ref=f39e122]:
+            - generic [ref=f39e123]:
+              - heading "Внутренний тренер" [level=1] [ref=f39e124]
+              - generic [ref=f39e128]:
+                - text: от 3 000 Br за месяц
+                - generic [ref=f39e129]: до вычета налогов
+            - generic [ref=f39e130]:
+              - paragraph [ref=f39e131]: "Опыт работы: 1–3 года"
+              - generic [ref=f39e132]: Полная занятость
+              - generic [ref=f39e135]:
+                - generic [ref=f39e136]: "Оформление:"
+                - generic [ref=f39e137]: Трудовой договор
+              - paragraph [ref=f39e138]: "График: 5/2"
+              - generic [ref=f39e139]: "Рабочие часы: 8"
+              - paragraph [ref=f39e142]: "Формат работы: на месте работодателя"
+              - paragraph [ref=f39e144]:
+                - text: Сейчас эту вакансию смотрят
+                - generic [ref=f39e145]: 8 человек
+          - generic [ref=f39e149]:
+            - button "Откликнуться" [ref=f39e151] [cursor=pointer]
+            - button "Связаться" [ref=f39e157] [cursor=pointer]
+            - button "Добавить в избранное" [ref=f39e163] [cursor=pointer]
+            - button "Ещё" [ref=f39e172] [cursor=pointer]
+        - generic [ref=f39e190]:
+          - link "ЗАО Вариа-Сервис" [ref=f39e192] [cursor=pointer]:
+            - /url: /employer/892643?hhtmFrom=vacancy
+            - generic [ref=f39e193]:
+              - text: ЗАО
+              - generic [ref=f39e194]: Вариа-Сервис
+          - link [ref=f39e197] [cursor=pointer]:
+            - /url: /article/19873?hhtmFrom=vacancy
+        - generic [ref=f39e206]:
+          - generic [ref=f39e208]:
+            - paragraph [ref=f39e209]:
+              - strong [ref=f39e210]:
+                - generic [ref=f39e211]: Компания "Шеф Кухни"
+              - generic [ref=f39e212]: была образована в Минске в 2003 году. Сегодня компания включает в себя 10 салонов в Беларуси, России и Казахстане. Мы специализируемся на продаже кухонной мебели лучших беларуских фабрик, а так же обеденных групп, встраиваемой бытовой техники самых известных европейских брендов.
+            - paragraph [ref=f39e213]:
+              - strong [ref=f39e214]:
+                - generic [ref=f39e215]: Компания "Шеф Кухни"
+              - generic [ref=f39e216]: уделяет огромное внимание своим сотрудникам и системно занимается их обучением и развитием. Для этого мы открываем вакансию
+              - strong [ref=f39e217]:
+                - generic [ref=f39e218]: внутреннего
+              - strong [ref=f39e219]:
+                - generic [ref=f39e220]: тренера
+              - generic [ref=f39e221]: .
+            - paragraph [ref=f39e222]:
+              - strong [ref=f39e223]:
+                - generic [ref=f39e224]: "Функционал:"
+            - list [ref=f39e225]:
+              - listitem [ref=f39e226]:
+                - text: —
+                - generic [ref=f39e227]: Проведение корпоративных тренингов по продаже кухонь и работе с клиентами
+              - listitem [ref=f39e228]:
+                - text: —
+                - generic [ref=f39e229]: Проведение классных и полевых тренингов в салонах компании в РБ и РФ
+              - listitem [ref=f39e230]:
+                - text: —
+                - generic [ref=f39e231]: Разработка / актуализация обучения и тренингов
+              - listitem [ref=f39e232]:
+                - text: —
+                - generic [ref=f39e233]: Контроль знаний (зачеты, экзамены, аттестация)
+              - listitem [ref=f39e234]:
+                - text: —
+                - generic [ref=f39e235]: Информационная поддержка работников - обзор новинок, разбор типичных ошибок, вопрос-ответ
+              - listitem [ref=f39e236]:
+                - text: —
+                - generic [ref=f39e237]: Участие в проектах развития компании - аттестация, открытие новых салонов.
+              - listitem [ref=f39e238]:
+                - text: —
+                - generic [ref=f39e239]: поиск новых сотрудников в компанию
+            - paragraph
+            - paragraph [ref=f39e240]:
+              - strong [ref=f39e241]:
+                - generic [ref=f39e242]: "Профиль кандидата:"
+            - list [ref=f39e243]:
+              - listitem [ref=f39e244]:
+                - text: —
+                - generic [ref=f39e245]: Опыт в обучении сотрудников (обязателен) - от 1 года
+              - listitem [ref=f39e246]:
+                - text: —
+                - generic [ref=f39e247]: Опыт работы в продажах (обязателен) - от 1 года
+              - listitem [ref=f39e248]:
+                - text: —
+                - generic [ref=f39e249]: Высшее образование
+              - listitem [ref=f39e250]:
+                - text: —
+                - generic [ref=f39e251]: Высокий общий уровень развития, грамотная устная и письменная речь
+              - listitem [ref=f39e252]:
+                - text: —
+                - generic [ref=f39e253]: Технический склад ума, опыт работы в сфере мебельных продаж будет являться большим преимуществом, но не обязателен.
+              - listitem [ref=f39e254]:
+                - text: —
+                - generic [ref=f39e255]: Желание и умение работать с людьми
+              - listitem [ref=f39e256]:
+                - text: —
+                - generic [ref=f39e257]: Готовность к командировкам по РБ (ежемесячно) и РФ (ежеквартально).
+            - paragraph [ref=f39e258]:
+              - strong [ref=f39e259]:
+                - generic [ref=f39e260]: "Мы предлагаем:"
+            - list [ref=f39e261]:
+              - listitem [ref=f39e262]:
+                - text: —
+                - generic [ref=f39e263]: Интересную и интенсивную работу в молодом коллективе единомышленников
+              - listitem [ref=f39e264]:
+                - text: —
+                - generic [ref=f39e265]: Высокий оклад
+              - listitem [ref=f39e266]:
+                - text: —
+                - generic [ref=f39e267]: Конкурентную систему премий за выполнение целей и задач
+              - listitem [ref=f39e268]:
+                - text: —
+                - generic [ref=f39e269]: Серьезное профессиональное развитие и обучение.
+              - listitem [ref=f39e270]:
+                - text: —
+                - generic [ref=f39e271]: трудоустройство по ТК РБ
+            - paragraph
+          - generic [ref=f39e272]:
+            - heading "Ключевые навыки" [level=2] [ref=f39e274]
+            - list [ref=f39e277]:
+              - listitem [ref=f39e278]:
+                - generic [ref=f39e279]: B2C продажи
+              - listitem [ref=f39e281]:
+                - generic [ref=f39e282]: Обучение команды продаж
+              - listitem [ref=f39e284]:
+                - generic [ref=f39e285]: Проведение тренингов для отдела продаж
+              - listitem [ref=f39e287]:
+                - generic [ref=f39e288]: Консультативные продажи
+              - listitem [ref=f39e290]:
+                - generic [ref=f39e291]: HR Business Strategy
+              - listitem [ref=f39e293]:
+                - generic [ref=f39e294]: Мотивация персонала
+              - listitem [ref=f39e296]:
+                - generic [ref=f39e297]: Умение работать в коллективе
+              - listitem [ref=f39e299]:
+                - generic [ref=f39e300]: Развитие продаж
+              - listitem [ref=f39e302]:
+                - generic [ref=f39e303]: Обучение и развитие
+              - listitem [ref=f39e305]:
+                - generic [ref=f39e306]: Подбор персонала
+              - listitem [ref=f39e308]:
+                - generic [ref=f39e309]: Тренинги
+              - listitem [ref=f39e311]:
+                - generic [ref=f39e312]: Обучение персонала
+              - listitem [ref=f39e314]:
+                - generic [ref=f39e315]: Групповое обучение
+              - listitem [ref=f39e317]:
+                - generic [ref=f39e318]: Спортивные мероприятия
+              - listitem [ref=f39e320]:
+                - generic [ref=f39e321]: Организация мероприятий
+          - generic [ref=f39e328]:
+            - generic [ref=f39e333]:
+              - paragraph [ref=f39e334]: Струкель Антон Антонович
+              - paragraph [ref=f39e335]: Контактное лицо
+            - button "Связаться" [ref=f39e336] [cursor=pointer]
+          - generic [ref=f39e342]:
+            - heading "Задайте вопрос работодателю" [level=2] [ref=f39e344]
+            - generic [ref=f39e346]: Он получит его с откликом на вакансию
+            - generic [ref=f39e348]:
+              - generic [ref=f39e349] [cursor=pointer]:
+                - checkbox "Где располагается место работы?" [ref=f39e350]
+                - generic [ref=f39e351]: Где располагается место работы?
+              - generic [ref=f39e356] [cursor=pointer]:
+                - checkbox "Какой график работы?" [ref=f39e357]
+                - generic [ref=f39e358]: Какой график работы?
+              - generic [ref=f39e363] [cursor=pointer]:
+                - checkbox "Вакансия открыта?" [ref=f39e364]
+                - generic [ref=f39e365]: Вакансия открыта?
+              - generic [ref=f39e370] [cursor=pointer]:
+                - checkbox "Какая оплата труда?" [ref=f39e371]
+                - generic [ref=f39e372]: Какая оплата труда?
+              - generic [ref=f39e377] [cursor=pointer]:
+                - checkbox "Как с вами связаться?" [ref=f39e378]
+                - generic [ref=f39e379]: Как с вами связаться?
+              - generic [ref=f39e384] [cursor=pointer]:
+                - checkbox "Другой вопрос" [ref=f39e385]
+                - generic [ref=f39e386]: Другой вопрос
+          - generic [ref=f39e393]:
+            - heading "Где предстоит работать" [level=2] [ref=f39e395]
+            - generic [ref=f39e397]:
+              - text: Минск,
+              - link "Площадь Якуба Коласа" [ref=f39e400]:
+                - /url: /metro/moskovskaya/ploshad_ya_kolasa?hhtmFrom=vacancy
+              - text: ", улица Веры Хоружей, 29"
+            - link "Показать на большой карте" [ref=f39e407]:
+              - /url: /search/vacancy/map?vacancy_id=137260655&hhtmFrom=vacancy
+        - generic [ref=f39e410]:
+          - generic [ref=f39e411]: Вакансия опубликована 11 сентября 2026 в Минске
+          - button "Откликнуться" [ref=f39e425] [cursor=pointer]
+    - contentinfo [ref=f39e434]:
+      - generic [ref=f39e438]:
+        - navigation "Навигация в подвале" [ref=f39e439]:
+          - generic [ref=f39e440]:
+            - generic [ref=f39e442]:
+              - generic [ref=f39e443]: rabota.by
+              - list [ref=f39e445]:
+                - listitem [ref=f39e446]:
+                  - link "Помощь" [ref=f39e448]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e451]:
+                  - link "Наши вакансии" [ref=f39e453]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e456]:
+                  - link "Реклама на сайте" [ref=f39e458]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy#region/belarus
+                - listitem [ref=f39e461]:
+                  - link "Требования к ПО" [ref=f39e463]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e466]:
+                  - link "Политика обработки cookie" [ref=f39e468]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e471]:
+                  - link "Настройки cookie" [ref=f39e473]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e476]:
+                  - link "Напишите нам" [ref=f39e478]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=f39e481]:
+                  - link "Каталог компаний" [ref=f39e483]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e486]:
+                  - link "Поиск по вакансиям в Минске" [ref=f39e488]:
+                    - /url: /vacancies
+                - listitem [ref=f39e491]:
+                  - link "Работа рядом с метро" [ref=f39e493]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - generic [ref=f39e498]:
+              - generic [ref=f39e499]: Соискателям
+              - list [ref=f39e501]:
+                - listitem [ref=f39e502]:
+                  - link "Все сервисы" [ref=f39e504]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e507]:
+                  - link "Кадровые агентства Беларуси" [ref=f39e509]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f39e512]:
+                  - link "Производственный календарь" [ref=f39e514]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - generic [ref=f39e519]:
+              - list [ref=f39e520]:
+                - listitem [ref=f39e521]:
+                  - generic [ref=f39e522]: Боты для уведомлений
+                  - generic [ref=f39e524]:
+                    - button "Подключить telegram бот" [ref=f39e525] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f39e532] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f39e540] [cursor=pointer]
+              - generic [ref=f39e549]:
+                - generic [ref=f39e550]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f39e552]
+        - navigation "Правовая информация" [ref=f39e560]:
+          - list [ref=f39e561]:
+            - listitem [ref=f39e562]:
+              - link "Этика и комплаенс" [ref=f39e564]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f39e567]:
+              - link "Оказание услуг" [ref=f39e569]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f39e572]:
+              - link "Использование сайтов" [ref=f39e574]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f39e577]:
+              - link "Политика обработки данных" [ref=f39e579]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f39e582]:
+              - link "Пользовательское соглашение" [ref=f39e584]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+        - generic [ref=f39e591]:
+          - paragraph [ref=f39e592]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=f39e594]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=f39e596]:
+            - img "mastercard" [ref=f39e597]
+            - img "visa" [ref=f39e598]
+            - img "belcart" [ref=f39e599]
+            - img "belcart-internetparol" [ref=f39e600]
+        - generic [ref=f39e605]:
+          - generic [ref=f39e606]:
+            - button "Перейти в ВК" [ref=f39e607] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=f39e615] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=f39e623] [cursor=pointer]
+            - button "Перейти в Viber" [ref=f39e631] [cursor=pointer]
+          - generic [ref=f39e640]:
+            - list [ref=f39e641]:
+              - listitem [ref=f39e642]:
+                - combobox "Выбор языка сайта" [ref=f39e645]:
+                  - generic [ref=f39e646]: Русский
+            - generic [ref=f39e653]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 4. Fine-tuning: справочный урок — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
+.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
+.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
+.hlogo span{color:#474a1a}
+.hnav{display:flex;gap:28px}
+.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
+.hnav a:hover{color:#2b2b1a}
+
+.lesson{padding:140px 0 80px}
+.li{max-width:720px;margin:0 auto;padding:0 48px}
+.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
+.bc a{color:#737366;text-decoration:none}
+.bc a:hover{color:#2b2b1a}
+.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
+.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+
+.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
+.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
+.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
+.content strong{font-weight:550}
+.content ul,.content ol{margin:0 0 20px 24px}
+.content li{margin-bottom:8px;color:#3a3a32}
+.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
+.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
+.content pre code{background:none;padding:0}
+.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
+.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
+.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
+.content td{color:#3a3a32}
+.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
+.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
+.content em{font-style:italic}
+
+.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
+.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:#737366;text-decoration:none}
+.flinks a:hover{color:#2b2b1a}
+.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fupd{font-size:11px;color:#b0b0a8}
+.fnote{font-size:11px;color:#c0beb8}
+
+@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="hi">
+    <a href="/" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="/course/">← Курс</a>
+      <a href="/booster/">Бустер</a>
+      <a href="/blog/">Блог</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson">
+  <div class="li">
+    <p class="bc"><a href="/course/">Курс</a> / Модуль 2. AI: от промпта до продукта</p>
+    <h1>Урок 4. Fine-tuning: справочный урок</h1>
+    <p class="lmeta">**Модуль 2:** · **Время:**</p>
+    <div class="content">
+
+<p><strong>Модуль 2:</strong> AI: от промпта до продукта
+<strong>Неделя:</strong> 4 из 4
+<strong>Тип:</strong> справочный — читать и понимать, практика по желанию
+<strong>Время:</strong> 1–1.5 ч</p>
+
+<h2>1. Зачем этот урок</h2>
+<p><strong>Это справочный урок, не боевой.</strong> Уроки 1–3 (параметры модели, RAG, агенты) — то, что вы будете использовать каждый день. Fine-tuning — редкий инструмент: его осмысленно применяют, когда нужен особый стиль ответов в больших объёмах. Большинству из нас это не понадобится.</p>
+<p>Прочитайте урок один раз, чтобы:
+- понимать, что такое дообучение и чем оно отличается от RAG;
+- уметь отговорить себя от fine-tuning, когда достаточно промпта или RAG (так вы сэкономите деньги и время);
+- знать, что если задача созреет — с чего начать и куда смотреть.</p>
+<p>Ничего обучать здесь не обязательно. Это «шпаргалка с лифтом до сути».</p>
+<hr />
+<h2>2. Теория</h2>
+<h3>Что такое fine-tuning</h3>
+<p><strong>Fine-tuning (дообучение, тонкая настройка)</strong> — процесс, при котором готовую модель дополнительно дообучают на ваших примерах, чтобы она подстроилась под ваш стиль, формат и правила. База знаний не меняется — меняется поведение.</p>
+<p><strong>Метафора:</strong> опытный врач знает медицину (база). Дать ему папку с внутренними инструкциями — RAG (читает перед ответом). Отправить на курсы по фирменному протоколу клиники — fine-tuning (усваивает правила раз и навсегда).</p>
+<h3>Чем отличается от RAG</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>RAG</th>
+<th>Fine-tuning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Когда подключается</td>
+<td>В момент ответа</td>
+<td>Заранее, при обучении</td>
+</tr>
+<tr>
+<td>Что даёт модели</td>
+<td>Нужный документ</td>
+<td>Привычку отвечать в стиле</td>
+</tr>
+<tr>
+<td>Когда менять данные</td>
+<td>Перезагрузил документ</td>
+<td>Переобучать заново</td>
+</tr>
+<tr>
+<td>Стоимость</td>
+<td>Почти нулевая</td>
+<td>Есть, заметная</td>
+</tr>
+<tr>
+<td>Ваш труд</td>
+<td>Подготовить документы</td>
+<td>Собрать примеры и оценить</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Главное правило:</strong> сначала промпт, потом RAG, и только в крайнем случае fine-tuning. Пирамида:</p>
+<ol>
+<li><strong>Промпт</strong> — 5 минут, бесплатно. Всегда начинайте здесь.</li>
+<li><strong>RAG</strong> — загрузили документы — ответ по материалам.</li>
+<li><strong>Fine-tuning</strong> — дообучили на примерах — свой стиль.</li>
+</ol>
+<h3>Когда fine-tuning реально нужен</h3>
+<ul>
+<li>Модель должна <strong>постоянно</strong> писать в вашем стиле: тон, формат, терминология, глубина.</li>
+<li>Модель должна <strong>оценивать по вашей шкале</strong>: «отлично/соответствует/доработать».</li>
+<li>Задача большая и повторяющаяся: тысячи ответов, а не десять раз.</li>
+<li>Промпт уже выжал максимум, RAG не применим (речь не про факты).</li>
+</ul>
+<p>Если задача разовая или маленькая — fine-tuning вам не нужен.</p>
+<h3>Как это устроено (для общего понимания)</h3>
+<p>Три этапа:
+1. <strong>Данные.</strong> 50–200 пар «запрос → правильный ответ» из вашей практики. Качество важнее количества.
+2. <strong>Обучение.</strong> Загрузка примеров в сервис дообучения, создание вашей копии модели (занимает от 30 минут).
+3. <strong>Оценка.</strong> Сравнение базовой и дообученной модели на новых запросах.</p>
+<p>Стоимость: платите за подготовку данных, за сам запуск обучения и за использование дообученной модели (обычно в 2–6 раз дороже, чем базовая). Поэтому дообучают компактные модели (mini/flash/tiny), а не самые мощные.</p>
+<hr />
+<h2>3. Шпаргалка (сохраните себе)</h2>
+<table>
+<thead>
+<tr>
+<th>Термин</th>
+<th>Определение одним предложением</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fine-tuning</td>
+<td>Дообучение модели на ваших примерах, чтобы она отвечала в вашем стиле</td>
+</tr>
+<tr>
+<td>Датасет</td>
+<td>Набор пар «запрос → правильный ответ» для обучения</td>
+</tr>
+<tr>
+<td>Базовая модель</td>
+<td>Исходная модель до дообучения</td>
+</tr>
+<tr>
+<td>Дообученная модель</td>
+<td>Ваша копия с учётом ваших примеров</td>
+</tr>
+<tr>
+<td>Токены (вспомнить урок 1)</td>
+<td>Единицы, которыми модель считает текст — вместе с ними считается и цена</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Карта выбора:</strong>
+- Факты из документов → RAG (урок 2)
+- Стиль и формат, массово и навсегда → fine-tuning
+- Всё остальное → промпт (урок 1)
+- Автономные задачи с инструментами → агенты (урок 3)</p>
+<p><strong>Куда смотреть, если понадобится:</strong>
+- Google AI Studio Tuning — https://aistudio.google.com/prompts/tuning — бесплатно попробовать, доступен из РФ
+- OpenAI fine-tuning — https://platform.openai.com/docs/guides/fine-tuning — удобнее, но оплата из РФ сложнее
+- Локальный вариант — Llama + LoRA через Ollama — для тех, кто хочет полностью офлайн</p>
+<hr />
+<h2>4. Практика (по желанию, лёгкая)</h2>
+<p>Ничего из этого не обязательно делать. Это три маленьких упражнения, чтобы закрепить понимание, если захочется.</p>
+<h3>Упражнение 1. Разведи три случая (10 мин)</h3>
+<p>Про себя или на бумаге решите, к какому уровню относятся задачи:</p>
+<table>
+<thead>
+<tr>
+<th>Задача</th>
+<th>Уровень</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«Сколько хранится договор по нашему регламенту?»</td>
+<td>RAG</td>
+</tr>
+<tr>
+<td>«Пиши поздравления ученикам в нашем дружеском тоне»</td>
+<td>Fine-tuning (большой объём)</td>
+</tr>
+<tr>
+<td>«Сделай краткий конспект лекции»</td>
+<td>Промпт</td>
+</tr>
+<tr>
+<td>«Собери отчёт по моим документам за меня»</td>
+<td>Агент (урок 3)</td>
+</tr>
+</tbody>
+</table>
+<p>Придумайте 2–3 свои задачи и назовите их уровень. Если у вас ни одна не вышла на fine-tuning — вы в норме.</p>
+<h3>Упражнение 2. Чёрновик датасета на заготовку (15 мин)</h3>
+<p>Если хотите просто посмотреть, как выглядит процесс: попросите OpenCode сгенерировать 5 примеров «запрос → ответ» для любой вымышленной задачи (например, «оценка ответа стажёра по шкале отлично/соответствует/доработать»). Посмотрите на пары глазом. Ничего не обучайте.</p>
+<h3>Упражнение 3. Решите: а надо ли было? (10 мин)</h3>
+<p>Прочитайте вслух «Главное правило» из теории. Придумайте ситуацию, где вы бы поставили промпт, RAG, агента — и попробуйте объяснить, какой уровень тут лишний. Цель — натренировать рефлекс «не дообучать, пока не упёрся».</p>
+<hr />
+<h2>5. Рефлексия (напишите мне)</h2>
+<ol>
+<li>Сколько заняло?</li>
+<li>Что из урока запомнилось сильнее всего?</li>
+<li>Согласны ли вы, что fine-tuning редко нужен? Аргумент за или против.</li>
+<li>Оценка материала от 1 до 5</li>
+</ol>
+<hr />
+<h2>6. Чек-лист готовности</h2>
+<ul>
+<li>[ ] Могу объяснить разницу между RAG и fine-tuning</li>
+<li>[ ] Понимаю пирамиду «промпт → RAG → fine-tuning»</li>
+<li>[ ] Знаю, когда fine-tuning оправдан, а когда нет</li>
+<li>[ ] Знаю, куда смотреть, если задача созреет (Google AI Studio, OpenAI, локально)</li>
+</ul>
+<hr />
+<h2>7. Итог модуля 2</h2>
+<p>Вы прошли все 4 недели:</p>
+<ol>
+<li><strong>Параметры модели</strong> (урок 1) — токены, температура, контекст, промпты. Вы управляете поведением модели.</li>
+<li><strong>RAG</strong> (урок 2) — модель отвечает по вашим документам. Вы закрыли галлюцинации.</li>
+<li><strong>Агенты</strong> (урок 3) — модель делает задачи сама, с инструментами. Вы перешли от «спросить» к «поставить задачу».</li>
+<li><strong>Fine-tuning</strong> (этот урок) — справочник на будущее. Обычно не нужен, но вы знаете, что это.</li>
+</ol>
+<p><strong>Что это даёт вам как L&amp;D-специалисту:</strong> вы не «пользуетесь чатом», а строите рабочую систему из модели, промптов, документов и агентов. Это уровень, который выделяет вас на рынке: вы решаете задачу человека (сделать курс, оценить, собрать отчёт) с помощью AI, а не просто «просите написать текст».</p>
+<p><strong>Куда двигаться дальше:</strong>
+- Практикуйтесь: выбирайте одну рабочую задачу в неделю и собирайте под неё агента.
+- Углубляйте модуль 3, если продолжим: интеграция агентов в рабочие процессы, собственные пайплайны, MCP.
+- Самое ценное сейчас — стабильность: делайте это каждую неделю, по чуть-чуть.</p>
+<h3>Вопросы для итоговой проверки модуля (устно, без подсказок)</h3>
+<ol>
+<li>Зачем нужна температура? При 0 и при 1.5?</li>
+<li>Что такое RAG и как он борется с галлюцинациями?</li>
+<li>Чем агент отличается от чата?</li>
+<li>Когда стоит задуматься о fine-tuning?</li>
+<li>Какой инструмент для вас главный: OpenCode или веб-чат? Почему?</li>
+</ol>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fi">
+    <div class="flinks">
+      <a href="/">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
+      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

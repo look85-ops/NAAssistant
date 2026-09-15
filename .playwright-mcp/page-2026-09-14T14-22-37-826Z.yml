@@ -1,0 +1,287 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy
+      - generic [ref=e11]:
+        - button "Принять" [ref=e12] [cursor=pointer]
+        - button "Отказаться" [ref=e13] [cursor=pointer]
+    - banner [ref=e15]:
+      - generic [ref=e17]:
+        - link "Главная страница сайта" [ref=e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=e35] [cursor=pointer]:
+          - generic [ref=e36]: Минск
+        - button "Чаты" [ref=e50] [cursor=pointer]
+        - link "Избранное" [ref=e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=e74] [cursor=pointer]
+        - button "Создать резюме" [ref=e84] [cursor=pointer]
+        - button [ref=e91] [cursor=pointer]
+    - generic [ref=e103]:
+      - main [ref=e104]:
+        - generic [ref=e109]:
+          - generic [ref=e116]:
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - heading "AI Video Creator / Специалист по созданию AI-контента" [level=1] [ref=e123]
+                - text: Уровень дохода не указан
+              - generic [ref=e126]:
+                - paragraph [ref=e127]: "Опыт работы: 1–3 года"
+                - generic [ref=e128]: Полная занятость
+                - paragraph [ref=e131]: "График: 5/2"
+                - generic [ref=e132]: "Рабочие часы: 8"
+                - paragraph [ref=e135]: "Формат работы: на месте работодателя"
+            - generic [ref=e137]:
+              - generic [ref=e809]: Вы откликнулись
+              - generic [ref=e139]:
+                - button "Отклик другим резюме" [ref=e822] [cursor=pointer]
+                - button "Чат" [ref=e827] [cursor=pointer]
+                - button "Добавить в избранное" [ref=e147] [cursor=pointer]
+                - button "Ещё" [ref=e156] [cursor=pointer]
+          - generic [ref=e172]:
+            - link [ref=e173] [cursor=pointer]:
+              - /url: /employer/753017?hhtmFrom=vacancy
+              - generic "Евроторг" [ref=e177]:
+                - img "Евроторг" [ref=e178]
+            - generic [ref=e180]:
+              - link "ООО Евроторг" [ref=e182] [cursor=pointer]:
+                - /url: /employer/753017?hhtmFrom=vacancy
+                - generic [ref=e183]:
+                  - text: ООО
+                  - generic [ref=e184]: Евроторг
+              - link [ref=e187] [cursor=pointer]:
+                - /url: /article/19873?hhtmFrom=vacancy
+          - generic [ref=e194]:
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - generic [ref=e217]:
+                  - button "Go to slide 1" [ref=e218] [cursor=pointer]
+                  - button "Go to slide 2" [ref=e219] [cursor=pointer]
+                  - button "Go to slide 3" [ref=e220] [cursor=pointer]
+                  - button "Go to slide 4" [ref=e221] [cursor=pointer]
+                  - button "Go to slide 5" [ref=e222] [cursor=pointer]
+                  - button "Go to slide 6" [ref=e223] [cursor=pointer]
+                - button "Previous slide" [ref=e224] [cursor=pointer]
+                - button "Next slide" [ref=e225] [cursor=pointer]
+              - generic [ref=e226]:
+                - paragraph [ref=e227]: Вы хотите построить карьеру в крупной компании почти с 30‑летней историей успеха?
+                - paragraph [ref=e228]: "Мы знаем, что вам предложить, ведь наши сотрудники — основная ценность для нашей компании:"
+              - generic [ref=e229]:
+                - generic [ref=e231]:
+                  - paragraph [ref=e235]: Удобную доставку служебным транспортом до работы от ст. м. Каменная Горка и ст. м. Малиновка
+                  - paragraph [ref=e239]: Бонусную карту «Е-плюс. Сотрудник», с повышенным размером бонусов за покупки в магазинах «Евроопт»
+                  - paragraph [ref=e243]: Возможность оздоровления сотрудников и их детей в санаториях и детских лагерях
+                  - paragraph [ref=e247]:
+                    - generic [ref=e248]: Бесплатные занятия спортом
+                    - text: для сотрудников
+                  - paragraph [ref=e252]: Работу в одной из крупнейших торговых компаний Беларуси
+                  - paragraph [ref=e256]: Гарантированную оплату труда (2 раза в месяц на банковскую карту)
+                  - paragraph [ref=e260]: Комфортный офис и крутую атмосферу в нем
+                  - paragraph [ref=e264]: Официальное трудоустройство
+                  - paragraph [ref=e268]: Социальные гарантии (оплата больничных и отпускных )
+                  - paragraph [ref=e272]: Вкусные обеды в корпоративной столовой
+                  - paragraph [ref=e276]: Реальную возможность карьерного роста
+                  - paragraph [ref=e280]: Зажигательные корпоративные мероприятия (спартакиады, турслеты, конкурсы)
+                  - paragraph [ref=e284]: Профессиональное и личностное развитие
+                  - paragraph [ref=e288]: Удобную доставку служебным транспортом до работы от ст. м. Каменная Горка и ст. м. Малиновка
+                  - paragraph [ref=e292]: Бонусную карту «Е-плюс. Сотрудник», с повышенным размером бонусов за покупки в магазинах «Евроопт»
+                  - paragraph [ref=e296]: Возможность оздоровления сотрудников и их детей в санаториях и детских лагерях
+                  - paragraph [ref=e300]:
+                    - generic [ref=e301]: Бесплатные занятия спортом
+                    - text: для сотрудников
+                  - paragraph [ref=e305]: Работу в одной из крупнейших торговых компаний Беларуси
+                  - paragraph [ref=e309]: Гарантированную оплату труда (2 раза в месяц на банковскую карту)
+                  - paragraph [ref=e313]: Комфортный офис и крутую атмосферу в нем
+                  - paragraph [ref=e317]: Официальное трудоустройство
+                - generic [ref=e318]:
+                  - button "Go to slide 1" [ref=e319] [cursor=pointer]
+                  - button "Go to slide 2" [ref=e320] [cursor=pointer]
+                  - button "Go to slide 3" [ref=e321] [cursor=pointer]
+                  - button "Go to slide 4" [ref=e322] [cursor=pointer]
+                - button "Previous slide" [ref=e323] [cursor=pointer]
+                - button "Next slide" [ref=e324] [cursor=pointer]
+              - generic [ref=e327]:
+                - paragraph [ref=e328]:
+                  - emphasis [ref=e329]:
+                    - strong [ref=e330]: Время новых возможностей
+                - paragraph [ref=e331]:
+                  - strong [ref=e332]: ООО «Евроторг» приглашает на работу
+                  - text: креативного и технически подкованного специалиста, который усилит нашу команду с помощью нейросетей. Если ты следишь за обновлениями Midjourney, знаешь, чем Kling лучше Runway, и можешь собрать стильный ролик в CapCut «на лету» — мы ждем тебя!
+                - paragraph [ref=e333]:
+                  - strong [ref=e334]: "Чем предстоит заниматься:"
+                - list [ref=e335]:
+                  - listitem [ref=e336]: • уверенное владение AI-инструментами для генерации контента;
+                  - listitem [ref=e337]: "• промпт-инженерия: умение формулировать точные запросы для генерации контента;"
+                  - listitem [ref=e338]: "• видеомонтаж: CapCut, DaVinci Resolve, Adobe Premiere Pro или аналоги;"
+                  - listitem [ref=e339]: • базовое понимание композиции, цвета, типографики;
+                  - listitem [ref=e340]: • знания по созданию цепляющего и вовлекающих контента для социальных сетей;
+                  - listitem [ref=e341]: • умение работать с консистентностью персонажей (face consistency, style consistency).
+                - strong [ref=e342]: "Мы ищем кандидата, который:"
+                - list [ref=e343]:
+                  - listitem [ref=e344]: "• уверенный пользователь: нейросети для генерации изображений и видео, видеоредакторы (CapCut, DaVinci Resolve, Premiere Pro), графические редакторы (Photoshop, Canva), облачные сервисы;"
+                  - listitem [ref=e345]: "• самостоятельность: способность взять тему, разложить её на сценарий и выдать готовый результат в срок;"
+                  - listitem [ref=e346]: "• портфолио: наличие примеров работ, созданных с помощью нейросетей (обязательно)."
+                - paragraph [ref=e347]:
+                  - strong [ref=e348]: "Мы предлагаем:"
+                - list [ref=e349]:
+                  - listitem [ref=e350]: • участвовать в наших корпоративных активностях (спортивные и интеллектуальные игры и мероприятия);
+                - paragraph [ref=e351]:
+                  - strong [ref=e352]: "а также:"
+                - list [ref=e353]:
+                  - listitem [ref=e354]: • официальное трудоустройство согласно Трудовому Кодексу Республики Беларусь;
+                  - listitem [ref=e355]: • социальные гарантии (отпускные, больничные);
+                  - listitem [ref=e356]: • достойную и своевременную оплату труда (2 раза в месяц на банковскую карту);
+                  - listitem [ref=e357]: • работникам холдинга предоставляется бонусная карта "Е-плюс. Сотрудник" с повышенным размером бонусов;
+                  - listitem [ref=e358]: • возможность участия в акции «Приведи друга» с выплатой 220 рублей;
+                  - listitem [ref=e359]: • для сотрудников организации и их детей организовано санаторно-курортное лечение и оздоровление;
+                  - listitem [ref=e360]: • комфортное рабочее место по адресу г. Минск, ул. Гурского, 56;
+                  - listitem [ref=e361]: "• удобный график работы: пн-чт, 9.00-18.00, пт.- 09:00-16:45;"
+                - text: Вакансия является планируемой к созданию и замещению (перспективной)
+              - generic [ref=e362]:
+                - paragraph [ref=e363]:
+                  - generic [ref=e364]: Заинтересовали?Тогда не стоит терять времени!
+                  - text: Работа в ООО «Евроторг» — это хорошая возможность проявить себя, получить опыт работы и начать свой карьерный путь.
+                - paragraph [ref=e365]:
+                  - text: Присылай отклик, заполняй онлайн-анкету на сайте evroopt.by или пройди
+                  - link "собеседование онлайн в нашем чат-боте!" [ref=e366] [cursor=pointer]:
+                    - /url: https://telegram.me/recruit_euroopt_bot
+                - generic [ref=e367]:
+                  - generic [ref=e369]: Присоединяйся к команде «Евроопт»
+                  - generic [ref=e370]: ООО «Евроторг», УНП 101168731
+            - generic [ref=e425]:
+              - heading "Где предстоит работать" [level=2] [ref=e427]
+              - generic [ref=e833]:
+                - text: Минск,
+                - link "Грушевка" [ref=e836]:
+                  - /url: /metro/moskovskaya/grushevka?hhtmFrom=vacancy
+                - text: ","
+                - link "Институт Культуры" [ref=e841]:
+                  - /url: /metro/moskovskaya/institut_kulturi?hhtmFrom=vacancy
+                - text: ","
+                - link "Петровщина" [ref=e846]:
+                  - /url: /metro/moskovskaya/petrovshchina?hhtmFrom=vacancy
+                - text: ", улица Гурского, 56"
+              - link "Показать на большой карте" [ref=e449]:
+                - /url: /search/vacancy/map?vacancy_id=137111966&hhtmFrom=vacancy
+          - generic [ref=e453]:
+            - generic [ref=e454]: Вакансия опубликована 8 сентября 2026 в Минске
+            - generic [ref=e461]:
+              - generic [ref=e466]:
+                - button "Чат" [ref=e849] [cursor=pointer]
+                - button "Пожаловаться на вакансию" [ref=e478] [cursor=pointer]
+              - generic [ref=e859]:
+                - generic [ref=e867]:
+                  - generic [ref=e868]: Резюме доставлено
+                  - generic [ref=e870]: Связаться с работодателем можно в чате
+                  - button "Чат" [ref=e874] [cursor=pointer]
+                - generic [ref=e878]:
+                  - generic [ref=e883]:
+                    - generic [ref=e884]: Откликнитесь ещё 9 раз
+                    - generic [ref=e886]: По статистике для одного приглашения требуется около десяти откликов
+                  - progressbar [ref=e888]
+      - contentinfo [ref=e485]:
+        - generic [ref=e489]:
+          - navigation "Навигация в подвале" [ref=e490]:
+            - generic [ref=e491]:
+              - generic [ref=e493]:
+                - generic [ref=e494]: rabota.by
+                - list [ref=e496]:
+                  - listitem [ref=e497]:
+                    - link "Помощь" [ref=e499]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e502]:
+                    - link "Наши вакансии" [ref=e504]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e507]:
+                    - link "Реклама на сайте" [ref=e509]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy#region/belarus
+                  - listitem [ref=e512]:
+                    - link "Требования к ПО" [ref=e514]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e517]:
+                    - link "Политика обработки cookie" [ref=e519]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e522]:
+                    - link "Настройки cookie" [ref=e524]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e527]:
+                    - link "Напишите нам" [ref=e529]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=e532]:
+                    - link "Каталог компаний" [ref=e534]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e537]:
+                    - link "Поиск по вакансиям в Минске" [ref=e539]:
+                      - /url: /vacancies
+                  - listitem [ref=e542]:
+                    - link "Работа рядом с метро" [ref=e544]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - generic [ref=e549]:
+                - generic [ref=e550]: Соискателям
+                - list [ref=e552]:
+                  - listitem [ref=e553]:
+                    - link "Все сервисы" [ref=e555]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e558]:
+                    - link "Кадровые агентства Беларуси" [ref=e560]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=e563]:
+                    - link "Производственный календарь" [ref=e565]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - generic [ref=e570]:
+                - list [ref=e571]:
+                  - listitem [ref=e572]:
+                    - generic [ref=e573]: Боты для уведомлений
+                    - generic [ref=e575]:
+                      - button "Подключить telegram бот" [ref=e576] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=e583] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=e591] [cursor=pointer]
+                - generic [ref=e600]:
+                  - generic [ref=e601]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=e603]
+          - navigation "Правовая информация" [ref=e611]:
+            - list [ref=e612]:
+              - listitem [ref=e613]:
+                - link "Этика и комплаенс" [ref=e615]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=e618]:
+                - link "Оказание услуг" [ref=e620]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=e623]:
+                - link "Использование сайтов" [ref=e625]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=e628]:
+                - link "Политика обработки данных" [ref=e630]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=e633]:
+                - link "Пользовательское соглашение" [ref=e635]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+          - generic [ref=e642]:
+            - paragraph [ref=e643]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=e645]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=e647]:
+              - img "mastercard" [ref=e648]
+              - img "visa" [ref=e649]
+              - img "belcart" [ref=e650]
+              - img "belcart-internetparol" [ref=e651]
+          - generic [ref=e656]:
+            - generic [ref=e657]:
+              - button "Перейти в ВК" [ref=e658] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=e666] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=e674] [cursor=pointer]
+              - button "Перейти в Viber" [ref=e682] [cursor=pointer]
+            - generic [ref=e691]:
+              - list [ref=e692]:
+                - listitem [ref=e693]:
+                  - combobox "Выбор языка сайта" [ref=e696]:
+                    - generic [ref=e697]: Русский
+              - generic [ref=e704]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - status [ref=e890]:
+    - generic [ref=e891]:
+      - generic [ref=e896]: Отклик отправлен
+      - separator [ref=e901]
+      - button [ref=e905] [cursor=pointer]

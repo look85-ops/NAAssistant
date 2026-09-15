@@ -1,0 +1,249 @@
+- generic [active] [ref=f32e1]:
+  - generic [ref=f32e3]:
+    - generic [ref=f32e8]:
+      - generic [ref=f32e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=f32e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy_search_list
+      - generic [ref=f32e11]:
+        - button "Принять" [ref=f32e12] [cursor=pointer]
+        - button "Отказаться" [ref=f32e13] [cursor=pointer]
+    - banner [ref=f32e15]:
+      - generic [ref=f32e17]:
+        - link "Главная страница сайта" [ref=f32e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=f32e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=f32e35] [cursor=pointer]:
+          - generic [ref=f32e36]: Минск
+        - button "Чаты" [ref=f32e50] [cursor=pointer]
+        - link "Избранное" [ref=f32e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f32e74] [cursor=pointer]
+        - button "Создать резюме" [ref=f32e84] [cursor=pointer]
+        - button [ref=f32e91] [cursor=pointer]
+    - generic [ref=f32e103]:
+      - main [ref=f32e104]:
+        - generic [ref=f32e112]:
+          - generic [ref=f32e115]:
+            - combobox "Поиск по вакансиям" [ref=f32e119]: обучение развитие курсы онлайн AI проекты организационное развитие
+            - button "Очистить" [ref=f32e125] [cursor=pointer]
+          - group
+        - generic [ref=f32e135]:
+          - generic [ref=f32e136]:
+            - checkbox "Фильтры" [ref=f32e137]
+            - img "Фильтры" [ref=f32e140] [cursor=pointer]
+          - generic [ref=f32e146]:
+            - button "Минск" [ref=f32e147] [cursor=pointer]
+            - button [ref=f32e154] [cursor=pointer]
+          - button "График" [ref=f32e161] [cursor=pointer]
+          - button "Рабочие часы" [ref=f32e172] [cursor=pointer]
+          - button "Опыт" [ref=f32e183] [cursor=pointer]
+          - button "Тип занятости" [ref=f32e194] [cursor=pointer]
+          - button "Уровень дохода" [ref=f32e204] [cursor=pointer]
+          - generic [ref=f32e212]:
+            - checkbox "Ещё фильтры" [ref=f32e213]
+            - generic [ref=f32e214] [cursor=pointer]: Ещё фильтры
+        - generic [ref=f32e219]:
+          - generic [ref=f32e227]:
+            - generic [ref=f32e231]:
+              - heading "Найдена 1 подходящая вакансия для резюме" [level=1] [ref=f32e233]
+              - generic [ref=f32e237]:
+                - button "Менеджер по обучению и развитию персонала" [ref=f32e238] [cursor=pointer]
+                - button [ref=f32e245] [cursor=pointer]
+            - generic [ref=f32e252]:
+              - generic [ref=f32e253]:
+                - radio "краткое описания вакансий" [ref=f32e254]
+                - generic [ref=f32e255] [cursor=pointer]
+              - generic [ref=f32e262]:
+                - radio "полное описание вакансий" [checked] [ref=f32e263]
+                - generic [ref=f32e264] [cursor=pointer]
+          - generic [ref=f32e276]:
+            - region "Вакансии" [ref=f32e278]:
+              - list [ref=f32e280]:
+                - listitem [ref=f32e281]:
+                  - article [ref=f32e284] [cursor=pointer]:
+                    - generic [ref=f32e288]:
+                      - generic [ref=f32e289]:
+                        - generic [ref=f32e290]:
+                          - button "Добавить в избранное" [ref=f32e291]
+                          - button "Скрыть" [ref=f32e295]
+                        - generic [ref=f32e299]: Сейчас смотрят 2 человека
+                        - link "Директор по организационному развитию" [ref=f32e302]:
+                          - /url: https://rabota.by/vacancy/132654446?query=%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+%D0%BA%D1%83%D1%80%D1%81%D1%8B+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+AI+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B+%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f32e306]: Опыт 3-6 лет
+                        - generic [ref=f32e311]:
+                          - link [ref=f32e314]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Вакансии Группа Компаний Армтек. Офис" [ref=f32e324]:
+                            - /url: /employer/59285?dpt=59285-59285-office&hhtmFrom=vacancy_search_list
+                            - img "Группа Компаний Армтек. Офис" [ref=f32e326]
+                          - link "Группа Компаний Армтек. Офис" [ref=f32e327]:
+                            - /url: /employer/59285?dpt=59285-59285-office&hhtmFrom=vacancy_search_list
+                          - generic [ref=f32e330]: Минский район
+                        - generic [ref=f32e334]:
+                          - generic [ref=f32e335]: ...инициирование и реализация проектов с использованием возможностей AI, а также обеспечение реализации ключевых организационных и операционных проектов. Управление организационной структурой...
+                          - generic [ref=f32e337]: Опыт работы на руководящей должности от 5 лет. Аналитическое и системное мышление. Отличные коммуникативные навыки. Навыки управления проектами.
+                      - generic [ref=f32e342]:
+                        - button "Откликнуться" [ref=f32e343]
+                        - button "Связаться" [ref=f32e349]
+            - generic [ref=f32e356]:
+              - heading "Быстрые фильтры подбора вакансий" [level=2] [ref=f32e357]
+              - list [ref=f32e359]:
+                - listitem [ref=f32e360]:
+                  - link "Без опыта работы" [ref=f32e362]:
+                    - /url: /vacancies/bez_opyta_raboty
+                - listitem [ref=f32e365]:
+                  - link "Вечерняя и ночная" [ref=f32e367]:
+                    - /url: /vacancies/vechernyaya_i_nochnaya
+                - listitem [ref=f32e370]:
+                  - link "Вахтовый метод" [ref=f32e372]:
+                    - /url: /vacancies/vakhtoviy_metod
+                - listitem [ref=f32e375]:
+                  - link "График 5/2" [ref=f32e377]:
+                    - /url: /vacancies/5-2
+                - listitem [ref=f32e380]:
+                  - link "Гибкий график" [ref=f32e382]:
+                    - /url: /vacancies/gibkiy_grafik
+                - listitem [ref=f32e385]:
+                  - link "Два через два" [ref=f32e387]:
+                    - /url: /vacancies/2-2
+                - listitem [ref=f32e390]:
+                  - link "За последние три дня" [ref=f32e392]:
+                    - /url: /vacancies/za_poslednie_tri_dnya
+                - listitem [ref=f32e395]:
+                  - link "За сутки" [ref=f32e397]:
+                    - /url: /vacancies/za_sutki
+                - listitem [ref=f32e400]:
+                  - link "От прямых работодателей" [ref=f32e402]:
+                    - /url: /vacancies/ot_pryamih_rabotodateley
+                - listitem [ref=f32e405]:
+                  - link "Полный день" [ref=f32e407]:
+                    - /url: /vacancies/polniy_den
+                - listitem [ref=f32e410]:
+                  - link "По совместительству" [ref=f32e412]:
+                    - /url: /vacancies/po_sovmestitelstvu
+                - listitem [ref=f32e415]:
+                  - link "Подработка" [ref=f32e417]:
+                    - /url: /vacancies/podrabotka
+                - listitem [ref=f32e420]:
+                  - link "Полная занятость" [ref=f32e422]:
+                    - /url: /vacancies/polnaya_zanyatost
+                - listitem [ref=f32e425]:
+                  - link "Для людей с инвалидностью" [ref=f32e427]:
+                    - /url: /vacancies/rabota_dlya_invalidov
+                - listitem [ref=f32e430]:
+                  - link "Сменный график" [ref=f32e432]:
+                    - /url: /vacancies/smenniy_grafik
+                - listitem [ref=f32e435]:
+                  - link "Сутки через двое" [ref=f32e437]:
+                    - /url: /vacancies/1-2
+                - listitem [ref=f32e440]:
+                  - link "Сутки через трое" [ref=f32e442]:
+                    - /url: /vacancies/1-3
+                - listitem [ref=f32e445]:
+                  - link "Три через три" [ref=f32e447]:
+                    - /url: /vacancies/3-3
+                - listitem [ref=f32e450]:
+                  - link "Удаленная работа" [ref=f32e452]:
+                    - /url: /vacancies/udalennaya_rabota
+                - listitem [ref=f32e455]:
+                  - link "Частичная занятость" [ref=f32e457]:
+                    - /url: /vacancies/chastichnaya_zanyatost
+      - contentinfo [ref=f32e461]:
+        - generic [ref=f32e465]:
+          - navigation "Навигация в подвале" [ref=f32e466]:
+            - generic [ref=f32e467]:
+              - generic [ref=f32e469]:
+                - generic [ref=f32e470]: rabota.by
+                - list [ref=f32e472]:
+                  - listitem [ref=f32e473]:
+                    - link "Помощь" [ref=f32e475]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e478]:
+                    - link "Наши вакансии" [ref=f32e480]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e483]:
+                    - link "Реклама на сайте" [ref=f32e485]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list#region/belarus
+                  - listitem [ref=f32e488]:
+                    - link "Требования к ПО" [ref=f32e490]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e493]:
+                    - link "Политика обработки cookie" [ref=f32e495]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e498]:
+                    - link "Настройки cookie" [ref=f32e500]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e503]:
+                    - link "Напишите нам" [ref=f32e505]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=f32e508]:
+                    - link "Каталог компаний" [ref=f32e510]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e513]:
+                    - link "Поиск по вакансиям в Минске" [ref=f32e515]:
+                      - /url: /vacancies
+                  - listitem [ref=f32e518]:
+                    - link "Работа рядом с метро" [ref=f32e520]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f32e525]:
+                - generic [ref=f32e526]: Соискателям
+                - list [ref=f32e528]:
+                  - listitem [ref=f32e529]:
+                    - link "Все сервисы" [ref=f32e531]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e534]:
+                    - link "Кадровые агентства Беларуси" [ref=f32e536]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f32e539]:
+                    - link "Производственный календарь" [ref=f32e541]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f32e546]:
+                - list [ref=f32e547]:
+                  - listitem [ref=f32e548]:
+                    - generic [ref=f32e549]: Боты для уведомлений
+                    - generic [ref=f32e551]:
+                      - button "Подключить telegram бот" [ref=f32e552] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f32e559] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f32e567] [cursor=pointer]
+                - generic [ref=f32e576]:
+                  - generic [ref=f32e577]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f32e579]
+          - navigation "Правовая информация" [ref=f32e587]:
+            - list [ref=f32e588]:
+              - listitem [ref=f32e589]:
+                - link "Этика и комплаенс" [ref=f32e591]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f32e594]:
+                - link "Оказание услуг" [ref=f32e596]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f32e599]:
+                - link "Использование сайтов" [ref=f32e601]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f32e604]:
+                - link "Политика обработки данных" [ref=f32e606]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f32e609]:
+                - link "Пользовательское соглашение" [ref=f32e611]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+          - generic [ref=f32e618]:
+            - paragraph [ref=f32e619]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=f32e621]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=f32e623]:
+              - img "mastercard" [ref=f32e624]
+              - img "visa" [ref=f32e625]
+              - img "belcart" [ref=f32e626]
+              - img "belcart-internetparol" [ref=f32e627]
+          - generic [ref=f32e632]:
+            - generic [ref=f32e633]:
+              - button "Перейти в ВК" [ref=f32e634] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=f32e642] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=f32e650] [cursor=pointer]
+              - button "Перейти в Viber" [ref=f32e658] [cursor=pointer]
+            - generic [ref=f32e667]:
+              - list [ref=f32e668]:
+                - listitem [ref=f32e669]:
+                  - combobox "Выбор языка сайта" [ref=f32e672]:
+                    - generic [ref=f32e673]: Русский
+              - generic [ref=f32e680]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - button "Карта" [ref=f32e682] [cursor=pointer]

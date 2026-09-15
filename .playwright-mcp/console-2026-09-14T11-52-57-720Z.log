@@ -1,0 +1,4 @@
+[    1286ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ https://rabota.by/applicant/profile/me:115
+[  111428ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ https://rabota.by/profile/resume/professional_role?hhtmFrom=applicant_profile&hhtmFromLabel=:115
+[  112607ms] [WARNING] You navigate from the same website @ https://i.rabota.by/js/External/smart-script.js:0
+[  666069ms] [WARNING] You navigate from the same website @ https://i.rabota.by/js/External/smart-script.js:0

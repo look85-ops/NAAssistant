@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наш первый год в Минске — 27 мест</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root{
+    --paper:#f6f2ea;
+    --card:#fbf9f4;
+    --ink:#191613;
+    --muted:#7a746c;
+    --line:#26221c;
+    --hl:#2d5568;
+    --hl-bg:#e7edf0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Helvetica Neue",-apple-system,"Segoe UI",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .serif{font-family:Georgia,"Times New Roman",serif}
+
+  header{padding:32px 0 0}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 2px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+  .hero{position:relative;padding:56px 0 40px;overflow:hidden}
+  .hero #map{position:absolute;inset:0;z-index:0;opacity:.22;filter:grayscale(1);pointer-events:none}
+  .hero h1,.hero .sub{position:relative;z-index:1}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,7.5vw,84px);font-weight:700;line-height:.98;letter-spacing:-.01em;max-width:26ch}
+  .sub{margin-top:22px;font-size:15px;color:var(--muted);max-width:74ch;font-style:italic}
+
+  .ticker{
+    margin-top:36px;border:1.5px solid var(--ink);padding:14px 20px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    background:var(--card);
+  }
+  .ticker .big{font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;letter-spacing:.02em}
+  .ticker .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+  main{padding:12px 0 80px}
+  section{padding:36px 0 8px}
+  .cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+  .cat-head h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:700}
+  .cat-head span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:20px;
+    cursor:pointer;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-height:170px;
+    transition:border-color .15s ease;
+  }
+  .card:hover{border-color:var(--hl)}
+  .card .name{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;line-height:1.1}
+  .card .why{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.5}
+  .card .addr{margin-top:12px;font-size:12px;letter-spacing:.03em;color:var(--muted);font-style:italic}
+  .card .map{margin-top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+  .card .ok{
+    position:absolute;top:14px;right:14px;
+    font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--hl);
+    opacity:0;transition:opacity .2s ease;
+  }
+  .card.done{background:var(--hl-bg);border-color:var(--hl)}
+  .card.done .name{text-decoration:line-through;text-decoration-color:var(--hl)}
+  .card.done .why,.card.done .addr{color:var(--muted)}
+  .card.done .ok{opacity:1}
+  .card.done .ok::before{content:"✓ "}
+
+  footer{padding:30px 0 70px;border-top:1px solid var(--ink);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <span>Места, которые мы откроем вместе.</span>
+    <span>2026 — 2027</span>
+  </div>
+  <div class="hero">
+    <div id="map"></div>
+    <h1>Наш первый год<br>в Минске</h1>
+    <p class="sub">Отмечаем, где побывали, — и смотрим, как город становится нашим.</p>
+  </div>
+  <div class="ticker">
+    <span class="lbl">Посетили</span>
+    <span class="big serif" id="count">0 из 27</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="sections"></div>
+</main>
+
+<footer class="wrap">Места, которые мы откроем вместе. · карта © OpenStreetMap</footer>
+
+<script>
+  const PLACES = [
+    {cat:"Театры", name:"Новый драматический театр", addr:"ул. Лизы Чайкиной, 16", why:"Камерный, актёрский, честный."},
+    {cat:"Театры", name:"Театр им. Янки Купалы", addr:"ул. Энгельса, 7", why:"Национальная классика в живом звуке."},
+    {cat:"Театры", name:"Белорусский ТЮЗ", addr:"ул. Энгельса, 26", why:"Спектакли, на которые идёшь и в сорок."},
+    {cat:"Театры", name:"РТБД — Республиканский театр белорусской драматургии", addr:"ул. Кропоткина, 44", why:"Смелая современная драматургия."},
+    {cat:"Театры", name:"Белорусский театр кукол", addr:"ул. Энгельса, 20", why:"Куклы для взрослых — неожиданно глубоко."},
+
+    {cat:"Совриск и кластеры", name:"Креативный кластер «Горизонт» (KORPUS, ЦЕХ)", addr:"пр. Машерова, 9", why:"Красный кирпич, кофейни, бары до утра — здесь же Дом экспериментального искусства."},
+    {cat:"Совриск и кластеры", name:"ОК16", addr:"ул. Октябрьская, 16", why:"Арт-пространство в старом здании."},
+    {cat:"Совриск и кластеры", name:"Арт-фабрика", addr:"ул. Свердлова, 2", why:"Креативное пространство в бывших цехах."},
+    {cat:"Совриск и кластеры", name:"Галерея «Ў»", addr:"ул. Октябрьская, 19", why:"Бар-галерея, где искусство и тусовка вместе."},
+    {cat:"Совриск и кластеры", name:"DK Gallery", addr:"ул. Герцена, 2А", why:"Частная галерея, камерные выставки."},
+
+    {cat:"Музеи и галереи", name:"Музей-мастерская Заира Азгура", addr:"ул. Азгура, 8", why:"Мастерская скульптора — как была при жизни."},
+    {cat:"Музеи и галереи", name:"Музей валунов", addr:"м-н Уручье", why:"Каменная карта Беларуси под открытым небом."},
+    {cat:"Музеи и галереи", name:"Художественная галерея Михаила Савицкого", addr:"пл. Свободы, 15", why:"Живопись народного художника в здании бывшей ратуши."},
+
+    {cat:"Городские места", name:"Осмоловка", addr:"ул. Богдановича / Киселёва", why:"Сталинский ампир, тихие дворы, кофейни."},
+    {cat:"Городские места", name:"Красный дворик на Романовской Слободе", addr:"ул. Революционная, 7 / 11", why:"Портал в богему за аркой."},
+    {cat:"Городские места", name:"Верхний город: внутренние дворики", addr:"от пл. Свободы до Музыкального переулка", why:"Подвалы XV века и старые балконы."},
+    {cat:"Городские места", name:"Водонапорная башня", addr:"Автодоровская ул., 3А", why:"Индустриальный маяк города."},
+    {cat:"Городские места", name:"Раковское предместье", addr:"между ул. Освобождения, Опанского и Раковской", why:"Один из старейших кварталов города."},
+    {cat:"Городские места", name:"Скульптура «Ухо желаний»", addr:"ул. Революционная, напротив дома №14", why:"Скульптура, у которой загадывают желания."},
+    {cat:"Городские места", name:"Lake Side Park", coords:"53.962869,27.571426", why:"Урбанистика у воды и дикие берега."},
+
+    {cat:"Окрестности", name:"Усадьба-замок «Стары Менск»", addr:"Минская обл., д. Городище, ул. Пионерская, 5а", why:"Реконструкция древнего Минска под открытым небом."},
+    {cat:"Окрестности", name:"Усадьба Ададуровых «Белая дача»", addr:"ул. Казинца, 54", why:"Старинная усадьба с парком."},
+    {cat:"Окрестности", name:"Усадьба Чапского в Прилуках", addr:"Минская обл., д. Прилуки", why:"Усадьба графа Чапского с дворцом и парком."},
+
+    {cat:"Кафе и рестораны", name:"Grand Cafe", addr:"ул. Ленина, 2", why:"Утренний кофе и газеты в центре."},
+    {cat:"Кафе и рестораны", name:"News Cafe", addr:"ул. Карла Маркса, 34", why:"Завтраки и десерты."},
+    {cat:"Кафе и рестораны", name:"Гастробар «Лампа»", addr:"ул. Октябрьская, 23", why:"Ужин в красном кирпиче, на месте старого ENZO."},
+    {cat:"Кафе и рестораны", name:"Кафе Mon Nom", addr:"ул. Клумова, 11 / Стахановская, 2", why:"Кофейня с круассанами и тихими завтраками."}
+  ];
+
+  const KEY = "minsk-map-done";
+  const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+  const TOTAL = PLACES.length;
+
+  function mapLink(p){
+    const q = p.coords ? p.coords : encodeURIComponent((p.addr || p.name) + " Минск");
+    return "https://yandex.by/maps/?text=" + q;
+  }
+
+  function plural(n){
+    const m10 = n % 10, m100 = n % 100;
+    if(m10 === 1 && m100 !== 11) return "место";
+    if(m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return "места";
+    return "мест";
+  }
+
+  const sections = document.getElementById("sections");
+  const byCat = {};
+  PLACES.forEach((p,i)=>(byCat[p.cat] ||= []).push({...p, i}));
+
+  Object.entries(byCat).forEach(([cat, items])=>{
+    const sec = document.createElement("section");
+    const head = document.createElement("div");
+    head.className = "cat-head";
+    head.innerHTML = `<h2>${cat}</h2><span>${items.length} ${plural(items.length)}</span>`;
+    sec.appendChild(head);
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    items.forEach(({name, why, addr, coords, i})=>{
+      const el = document.createElement("div");
+      el.className = "card" + (done.has(i) ? " done" : "");
+      el.innerHTML = `
+        <span class="ok">посетили</span>
+        <span class="name">${name}</span>
+        <span class="why">${why}</span>
+        <span class="addr">${addr || ""}</span>
+        <span class="maps"><a class="map" href="${mapLink({name, addr, coords})}" target="_blank" rel="noopener">место на карте</a></span>`;
+      el.addEventListener("click",(e)=>{
+        if(e.target.closest("a")) return;
+        done.has(i) ? done.delete(i) : done.add(i);
+        localStorage.setItem(KEY, JSON.stringify([...done]));
+        render();
+      });
+      grid.appendChild(el);
+    });
+    sec.appendChild(grid);
+    sections.appendChild(sec);
+  });
+
+  function render(){
+    const n = done.size;
+    document.getElementById("count").textContent = n + " из " + TOTAL;
+    document.querySelectorAll(".card").forEach((c,i)=>{
+      c.classList.toggle("done", done.has(i));
+    });
+  }
+  render();
+
+  const map = L.map("map", {
+    center:[53.9023, 27.5618],
+    zoom:12,
+    zoomControl:false,
+    attributionControl:false,
+    dragging:false, scrollWheelZoom:false, touchZoom:false,
+    doubleClickZoom:false, boxZoom:false, keyboard:false
+  });
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom:18 }).addTo(map);
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+[     369ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://rabota.by/applicant/resumes/7a370fbdff111ade720039ed1f42706e59526b:0
+[     478ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ https://rabota.by/applicant/resumes/7a370fbdff111ade720039ed1f42706e59526b:119

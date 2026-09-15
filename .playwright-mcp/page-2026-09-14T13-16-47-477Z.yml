@@ -1,0 +1,267 @@
+- generic [ref=e3]:
+  - generic [ref=e598]:
+    - generic [ref=e599]:
+      - text: Для обеспечения удобства пользователей сайта используются cookies.
+      - link "Узнайте подробнее" [ref=e600] [cursor=pointer]:
+        - /url: /article/cookie_policy?hhtmFrom=resume
+    - generic [ref=e601]:
+      - button "Принять" [ref=e602] [cursor=pointer]
+      - button "Отказаться" [ref=e603] [cursor=pointer]
+  - banner [ref=e605]:
+    - generic [ref=e607]:
+      - link "Главная страница сайта" [ref=e608] [cursor=pointer]:
+        - /url: /
+      - link [ref=e613] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=e625] [cursor=pointer]:
+        - generic [ref=e626]: Минск
+      - button "Чаты" [ref=e640] [cursor=pointer]
+      - link "Избранное" [ref=e652] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=e664] [cursor=pointer]
+      - button "Создать резюме" [ref=e674] [cursor=pointer]
+      - button [ref=e681] [cursor=pointer]
+  - generic [ref=e693]:
+    - main [ref=e694]:
+      - generic:
+        - generic:
+          - menu [ref=e698]:
+            - button [ref=e703] [cursor=pointer]
+            - generic [ref=e710]:
+              - button [ref=e714] [cursor=pointer]
+              - button [ref=e723] [cursor=pointer]
+          - generic:
+            - separator
+      - generic [ref=e735]:
+        - generic [ref=e740]:
+          - generic "profile-avatar" [ref=e745] [cursor=pointer]
+          - generic [ref=e755]:
+            - heading "Менеджер по обучению и развитию персонала" [level=1] [ref=e756]
+            - generic [ref=e757]: 3 500 Br на руки · Постоянная работа · На месте работодателя · Могу приезжать в командировки
+          - button "Редактировать" [ref=e760] [cursor=pointer]
+        - generic [ref=e768]:
+          - heading "Завершённость резюме" [level=3] [ref=e770]
+          - progressbar [ref=e772]
+          - generic [ref=e774]:
+            - generic [ref=e776]: Ещё вы можете добавить
+            - generic [ref=e778]:
+              - button "Дополнительное образование" [ref=e779] [cursor=pointer]
+              - button "Пройденные тесты и экзамены" [ref=e784] [cursor=pointer]
+              - button "Электронные сертификаты" [ref=e789] [cursor=pointer]
+              - button "Категория прав" [ref=e794] [cursor=pointer]
+              - button "Отчество" [ref=e799] [cursor=pointer]
+              - button "Фотографию" [ref=e804] [cursor=pointer]
+              - button "Портфолио" [ref=e809] [cursor=pointer]
+              - button "Рекомендации" [ref=e814] [cursor=pointer]
+        - generic [ref=e819]:
+          - generic [ref=e835]:
+            - generic [ref=e836]: Поднятие резюме
+            - generic [ref=e843]: Можно сегодня в 20:16
+          - button "Видимость резюме Видно всем работодателям, зарегистрированным на rabota.by" [ref=e850] [cursor=pointer]:
+            - generic [ref=e861]:
+              - generic [ref=e862]: Видимость резюме
+              - generic [ref=e869]: Видно всем работодателям, зарегистрированным на rabota.by
+          - button "Подобрали для вас 501 подходящую вакансию" [ref=e881] [cursor=pointer]
+        - generic [ref=e906]:
+          - heading "Контакты" [level=4] [ref=e908]
+          - generic [ref=e913]:
+            - generic [ref=e914]:
+              - generic [ref=e917]:
+                - generic [ref=e918]: Мобильный телефон — предпочитаемый способ связи
+                - link "+7 903 973-98-30" [ref=e920]:
+                  - /url: tel:+79039739830
+              - generic [ref=e924]:
+                - generic [ref=e925]: Электронная почта
+                - link "look85@gmail.com" [ref=e927]:
+                  - /url: mailto:look85@gmail.com
+            - button "Посмотреть всё" [ref=e930] [cursor=pointer]
+        - generic [ref=e935]:
+          - 'heading "Опыт работы: 12 лет 5 месяцев" [level=4] [ref=e938]':
+            - generic [ref=e939]:
+              - text: "Опыт работы:"
+              - generic [ref=e940]: 12 лет
+              - generic [ref=e941]: 5 месяцев
+          - generic [ref=e945]:
+            - generic [ref=e946]:
+              - generic [ref=e951]:
+                - generic [ref=e953]:
+                  - generic "Корпоративный университет ОАО «РЖД», АНО" [ref=e958]:
+                    - img "Корпоративный университет ОАО «РЖД», АНО" [ref=e959]
+                  - generic [ref=e960]:
+                    - generic [ref=e961]: Корпоративный университет ОАО «РЖД», АНО
+                    - generic [ref=e975]:
+                      - generic [ref=e976]: 2 года
+                      - text: и
+                      - generic [ref=e977]: 8 месяцев
+                - list [ref=e979]:
+                  - listitem [ref=e980]:
+                    - generic [ref=e993]:
+                      - generic [ref=e996]:
+                        - generic [ref=e997]: Главный методист / Менеджер образовательных проектов
+                        - generic [ref=e1004]: Февраль 2024 — сейчас
+                      - generic [ref=e1013]:
+                        - generic [ref=e1014]: "Участие в создании и развитии Центра профессионального обучения руководителей (основан в 2024 г.).Разработка и запуск флагманской программы развития профессиональных компетенций «Профессионал +» (190 ак.ч., смешанное обучение) для руководителей путевого комплекса — полный цикл:– определение целей и анализ потребностей обучения совместно с бизнес-заказчиком– разработка методологии, структуры и форматов оценки программы – проектирование контента (очные модули, e-learning, выездные стажировки)– управление LMS-операциями (ТЗ, контроль качества, приёмка)– работа с видеопродакшеном (ТЗ, съемка, монтаж, контроль качества)– координация команды (2 чел.)– отбор и подготовка 24 преподавателей из 8 регионов РФ– супервизия преподавателей, аудит качества, работа с обратной связью– подготовка отчётов, пресс-релизов, справочной информации– внедрение AI-аналитики анкет обратной связи: автоматическая обработка 100+ анкет за цикл, генерация отчётов, сокращение ручной обработки Результаты:– NPS 9.7 на март 2026– Премия «Смарт Пирамида — 2024» в номинации «Лучшая программа корпоративного обучения»– Разработала инструмент детекции социальной желательности в обратной связи (NPS, аномалии, сравнение волн) -"
+                        - link "https://github.com/look85-ops/aos-analyzer" [ref=e1017] [cursor=pointer]:
+                          - /url: https://github.com/look85-ops/aos-analyzer
+              - generic [ref=e1022]:
+                - separator [ref=e1023]
+                - generic [ref=e1024]:
+                  - generic [ref=e1026]:
+                    - generic "Московский государственный технический университет им. Н.Э. Баумана" [ref=e1031]
+                    - generic [ref=e1033]:
+                      - generic [ref=e1034]: Московский государственный технический университет им. Н.Э. Баумана
+                      - generic [ref=e1041]: 10 месяцев
+                  - list [ref=e1051]:
+                    - listitem [ref=e1052]:
+                      - generic [ref=e1065]:
+                        - generic [ref=e1068]:
+                          - generic [ref=e1069]: Менеджер образовательных проектов
+                          - generic [ref=e1076]: Май 2023 — Февраль 2024
+                        - generic [ref=e1084]: "Разработка программ ДПО для внешних заказчиков с нуля. Полный цикл: от исследования потребности до запуска (от 72 ак. ч.) Проектирование внутренней системы непрерывного развития сотрудников Кластера «Инженерия в науках о жизни»: общие треки обучения, индивидуальные планы развития.Методическая поддержка преподавателей, контроль качества образовательных программ."
+              - generic [ref=e1093]:
+                - separator [ref=e1094]
+                - generic [ref=e1095]:
+                  - generic [ref=e1097]:
+                    - generic "МойОфис" [ref=e1102]:
+                      - img "МойОфис" [ref=e1103]
+                    - generic [ref=e1104]:
+                      - generic [ref=e1105]: МойОфис
+                      - generic [ref=e1112]: 2 месяца
+                  - list [ref=e1122]:
+                    - listitem [ref=e1123]:
+                      - generic [ref=e1136]:
+                        - generic [ref=e1139]:
+                          - generic [ref=e1140]: Методист по оценке продуктовых знаний (проектная работа)
+                          - generic [ref=e1147]: Май 2022 — Июнь 2022
+                        - generic [ref=e1155]: Проектирование системы адаптации и оценки продуктовых знаний новых сотрудников коммерческого блока — с нуля.Создание базы 500+ кейсов и тестов для формирования и оценки знаний на этапе онбординга.
+            - button "Редактировать" [ref=e1165] [cursor=pointer]
+        - generic [ref=e1171]:
+          - heading "Навыки" [level=4] [ref=e1173]
+          - generic [ref=e1177]:
+            - generic [ref=e1181]:
+              - generic [ref=e1182]: Обучение и развитие
+              - generic [ref=e1184]: Обучение персонала
+              - generic [ref=e1186]: Тренинги
+              - generic [ref=e1188]: Деловая коммуникация
+              - generic [ref=e1190]: Выявление потребностей в обучении
+              - generic [ref=e1192]: ...
+            - generic [ref=e1195]:
+              - button "Указать уровни" [ref=e1196] [cursor=pointer]
+              - button "Редактировать" [ref=e1201] [cursor=pointer]
+        - generic [ref=e1206]:
+          - heading "Образование" [level=4] [ref=e1209]
+          - generic [ref=e1214]:
+            - generic [ref=e1215]:
+              - generic [ref=e1218]:
+                - generic [ref=e1219]: Московский городской педагогический университет, Москва
+                - generic [ref=e1226]: 2008 · Высшее
+              - generic [ref=e1235]:
+                - generic [ref=e1236]: Московский городской педагогический университет, Москва
+                - generic [ref=e1243]: 2007 · Высшее
+            - button "Посмотреть всё" [ref=e1251] [cursor=pointer]
+        - generic [ref=e1256]:
+          - heading "О себе" [level=4] [ref=e1258]
+          - generic [ref=e1263]:
+            - paragraph [ref=e1269]: "17 лет в L&D. Проектирую и запускаю корпоративное обучение от диагностики бизнес-задачи до оценки результата. Выстроила систему развития для 490+ руководителей производственных вертикалей (Корпоративный университет РЖД, 2024-2025); NPS 9,7/10; премия «Смарт Пирамида — 2024». Сократила срок выхода новых сотрудников на эффективность на ~30% (Сбер, 2021); освоение инструментов — 85% по когортному анализу 30/60/90. Автоматизировала аналитику обратной связи через ИИ: 100+ анкет за цикл — не за 3 дня, а за 2 часа. Разработала и опубликовала открытые AI-инструменты для L&D (AOS Analyzer, Бустер методиста). Работаю в логике образовательного продукта: потребность бизнеса → архитектура → смешанное обучение → подготовка преподавателей → LMS → аналитика → улучшение. Соединяю методологию, данные и AI."
+            - button "Посмотреть всё" [ref=e1270] [cursor=pointer]
+    - contentinfo [ref=e1276]:
+      - generic [ref=e1285]:
+        - img "App QR Code" [ref=e1290]
+        - generic [ref=e1291]:
+          - generic [ref=e1292]: Сканируйте QR-код, чтобы скачать приложение
+          - generic [ref=e1293]: И чаты с работодателями всегда будут под рукой
+      - generic [ref=e1301]:
+        - navigation "Навигация в подвале" [ref=e1302]:
+          - generic [ref=e1303]:
+            - generic [ref=e1305]:
+              - generic [ref=e1306]: rabota.by
+              - list [ref=e1308]:
+                - listitem [ref=e1309]:
+                  - link "Помощь" [ref=e1311]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1314]:
+                  - link "Наши вакансии" [ref=e1316]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1319]:
+                  - link "Реклама на сайте" [ref=e1321]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume#region/belarus
+                - listitem [ref=e1324]:
+                  - link "Требования к ПО" [ref=e1326]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1329]:
+                  - link "Политика обработки cookie" [ref=e1331]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1334]:
+                  - link "Настройки cookie" [ref=e1336]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1339]:
+                  - link "Напишите нам" [ref=e1341]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=e1344]:
+                  - link "Каталог компаний" [ref=e1346]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1349]:
+                  - link "Поиск по вакансиям в Минске" [ref=e1351]:
+                    - /url: /vacancies
+                - listitem [ref=e1354]:
+                  - link "Работа рядом с метро" [ref=e1356]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=resume
+            - generic [ref=e1361]:
+              - generic [ref=e1362]: Соискателям
+              - list [ref=e1364]:
+                - listitem [ref=e1365]:
+                  - link "Все сервисы" [ref=e1367]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1370]:
+                  - link "Кадровые агентства Беларуси" [ref=e1372]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - listitem [ref=e1375]:
+                  - link "Производственный календарь" [ref=e1377]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+            - generic [ref=e1382]:
+              - list [ref=e1383]:
+                - listitem [ref=e1384]:
+                  - generic [ref=e1385]: Боты для уведомлений
+                  - generic [ref=e1387]:
+                    - button "Подключить telegram бот" [ref=e1388] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=e1395] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=e1403] [cursor=pointer]
+              - generic [ref=e1412]:
+                - generic [ref=e1413]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=e1415]
+        - navigation "Правовая информация" [ref=e1423]:
+          - list [ref=e1424]:
+            - listitem [ref=e1425]:
+              - link "Этика и комплаенс" [ref=e1427]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+            - listitem [ref=e1430]:
+              - link "Оказание услуг" [ref=e1432]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+            - listitem [ref=e1435]:
+              - link "Использование сайтов" [ref=e1437]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+            - listitem [ref=e1440]:
+              - link "Политика обработки данных" [ref=e1442]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+            - listitem [ref=e1445]:
+              - link "Пользовательское соглашение" [ref=e1447]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+        - generic [ref=e1454]:
+          - paragraph [ref=e1455]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=e1457]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=e1459]:
+            - img "mastercard" [ref=e1460]
+            - img "visa" [ref=e1461]
+            - img "belcart" [ref=e1462]
+            - img "belcart-internetparol" [ref=e1463]
+        - generic [ref=e1468]:
+          - generic [ref=e1469]:
+            - button "Перейти в ВК" [ref=e1470] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=e1478] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=e1486] [cursor=pointer]
+            - button "Перейти в Viber" [ref=e1494] [cursor=pointer]
+          - generic [ref=e1503]:
+            - list [ref=e1504]:
+              - listitem [ref=e1505]:
+                - combobox "Выбор языка сайта" [ref=e1508]:
+                  - generic [ref=e1509]: Русский
+            - generic [ref=e1516]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

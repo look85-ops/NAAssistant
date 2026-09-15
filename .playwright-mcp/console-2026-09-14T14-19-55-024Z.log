@@ -1,0 +1,3 @@
+[     363ms] [LOG] JQMIGRATE: Migrate is installed with logging active, version 3.2.0 @ https://legacy-template-renderer.hh.ru/static/js/jquery-migrate.c786f0a49c86ed0b.js:0
+[    2127ms] [WARNING] You navigate from the same website @ https://i.rabota.by/js/External/smart-script.js:0
+[  165058ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ https://i.rabota.by/build/vendors.824f635811889e32.js:57

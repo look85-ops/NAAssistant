@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Методист в эпоху AI — L&D без суеты</title>
+<meta name="description" content="Три модуля практики: от технического минимума до AI-стратегии.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Geist', sans-serif;
+    font-weight: 350; font-size: 1rem; line-height: 1.6;
+    color: #2b2b1a; background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+  .header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e0ded8;
+  }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .header-logo { font-size: 15px; font-weight: 550; color: #2b2b1a; text-decoration: none; }
+  .header-logo span { color: #474a1a; }
+  .header-nav { display: flex; gap: 28px; }
+  .header-nav a { font-size: 14px; font-weight: 400; color: #737366; text-decoration: none; transition: color 150ms; }
+  .header-nav a:hover { color: #2b2b1a; }
+
+  .hero { padding: 160px 0 100px; }
+  .hero-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+  .hero-tag { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #b05a2e; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 650; line-height: 1.08; letter-spacing: -0.03em; color: #2b2b1a; }
+  .hero-lead { font-size: clamp(1.1rem, 2vw, 1.35rem); color: #737366; max-width: 560px; margin-top: 24px; line-height: 1.5; }
+
+  .program { padding: 80px 0; background: #fafaf8; }
+  .program-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+  .program h2 { font-size: 1.5rem; font-weight: 550; color: #2b2b1a; margin-bottom: 32px; letter-spacing: -0.01em; }
+  .modules { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .mod { display: grid; grid-template-columns: 120px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid #e8e6e0; align-items: baseline; }
+  .mod:first-child { border-top: 1px solid #e8e6e0; }
+  .mod-num { font-size: 13px; font-weight: 500; color: #b0b0a8; letter-spacing: 0.04em; padding-top: 4px; }
+  .mod-info h3 { font-size: 1.15rem; font-weight: 550; color: #2b2b1a; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .mod-info p { font-size: 0.95rem; color: #737366; line-height: 1.5; }
+  .mod-meta { font-size: 12px; color: #b0b0a8; margin-top: 6px; }
+  .mod-meta a { color: #737366; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 150ms, color 150ms; }
+  .mod-meta a:hover { color: #474a1a; border-bottom-color: #474a1a; }
+  .mod-paid { display: inline-block; font-size: 11px; font-weight: 500; color: #474a1a; background: rgba(71,74,26,0.08); padding: 2px 8px; margin-top: 6px; }
+
+  .cta-section { padding: 80px 0 120px; }
+  .cta-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+  .cta-block { background: #474a1a; padding: 56px 48px; }
+  .cta-block h2 { font-size: 1.8rem; font-weight: 550; color: #ffffff; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .cta-block p { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 480px; line-height: 1.5; margin-bottom: 28px; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: #474a1a; border: none; padding: 14px 28px; font: 500 15px 'Geist', sans-serif; cursor: pointer; transition: background 200ms; text-decoration: none; }
+  .cta-btn:hover { background: #f4f4ef; }
+
+  .footer { border-top: 1px solid #e0ded8; padding: 48px 0 36px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px; }
+  .footer-links { display: flex; gap: 18px; }
+  .footer-links a { font-size: 13px; color: #737366; text-decoration: none; transition: color 150ms; }
+  .footer-links a:hover { color: #2b2b1a; }
+  .footer-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .footer-updated { font-size: 11px; color: #b0b0a8; }
+  .footer-note { font-size: 11px; color: #c0beb8; }
+
+  @media (max-width: 768px) {
+    .header-inner, .hero-inner, .program-inner, .cta-inner { padding: 0 24px; }
+    .header-nav { gap: 16px; }
+    .hero { padding: 140px 0 80px; }
+    .mod { grid-template-columns: 1fr; gap: 6px; }
+    .footer-inner { padding: 0 24px; flex-direction: column; align-items: flex-start; }
+    .footer-meta { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">L&D <span>без суеты</span></a>
+    <nav class="header-nav">
+      <a href="/">← Главная</a>
+      <a href="/booster/">Бустер</a>
+      <a href="/blog/">Блог</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-tag">Курс</p>
+    <h1>Методист в эпоху AI</h1>
+    <p class="hero-lead">Три модуля практики: от&nbsp;технического минимума до&nbsp;AI-стратегии. Материалы прошли фокус-группу — хорошие отзывы.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-inner">
+    <h2>Программа</h2>
+    <div class="modules">
+      <div class="mod">
+        <p class="mod-num">Модуль 1</p>
+        <div class="mod-info">
+          <h3>Технический минимум</h3>
+          <p>Терминал, Git, API. Базовые инструменты — без&nbsp;них разговор об&nbsp;AI остаётся абстрактным.</p>
+          <p class="mod-meta"><a href="module-01-technical-minimum/lesson-01-terminal.html">Терминал</a> &middot; <a href="module-01-technical-minimum/lesson-02-git.html">Git</a> &middot; <a href="module-01-technical-minimum/lesson-03-api.html">API</a></p>
+        </div>
+      </div>
+      <div class="mod">
+        <p class="mod-num">Модуль 2</p>
+        <div class="mod-info">
+          <h3>AI: от промпта до продукта</h3>
+          <p>Как устроены LLM, что такое RAG, зачем fine-tuning и&nbsp;как работают агенты.</p>
+          <p class="mod-meta"><a href="module-02-ai-from-prompt-to-product/lesson-01-llm-internals.html">LLM</a> &middot; <a href="module-02-ai-from-prompt-to-product/lesson-02-rag.html">RAG</a> &middot; <a href="module-02-ai-from-prompt-to-product/lesson-03-agents.html">Агенты</a> &middot; <a href="module-02-ai-from-prompt-to-product/lesson-04-fine-tuning.html">Fine-tuning</a></p>
+        </div>
+      </div>
+      <div class="mod">
+        <p class="mod-num">Модуль 3</p>
+        <div class="mod-info">
+          <h3>AI-стратегия и ROI</h3>
+          <p>Оценка готовности команды, дорожная карта внедрения, расчёт эффекта.</p>
+          <p class="mod-meta"><a href="module-03-ai-strategy-and-roi/lesson-01-ai-readiness.html">AI-readiness</a> &middot; <a href="module-03-ai-strategy-and-roi/lesson-02-roi-roadmap.html">ROI и дорожная карта</a></p>
+        </div>
+      </div>
+      <div class="mod">
+        <p class="mod-num">Модуль 4</p>
+        <div class="mod-info">
+          <h3>Позиционирование и портфолио</h3>
+          <p>Упаковка AI-кейсов в&nbsp;историю, которая продаёт вас как&nbsp;специалиста. Elevator pitch, портфолио, LinkedIn.</p>
+          <span class="mod-paid">Бонусный модуль &middot; оплачивается отдельно</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-block">
+      <h2>Старт — ноябрь 2026</h2>
+      <p>Первые 10 мест — по&nbsp;специальной цене. Напишите мне лично, расскажу детали.</p>
+      <a href="https://t.me/mrk_natalia" class="cta-btn">Написать в Telegram →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="footer-meta">
+      <span class="footer-updated"><time datetime="2026-09-15">15 сентября 2026</time></span>
+      <span class="footer-note">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

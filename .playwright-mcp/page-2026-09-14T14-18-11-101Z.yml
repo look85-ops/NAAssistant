@@ -1,0 +1,326 @@
+- generic [active] [ref=f90e1]:
+  - generic [ref=f90e3]:
+    - generic [ref=f90e8]:
+      - generic [ref=f90e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=f90e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy
+      - generic [ref=f90e11]:
+        - button "Принять" [ref=f90e12] [cursor=pointer]
+        - button "Отказаться" [ref=f90e13] [cursor=pointer]
+    - banner [ref=f90e15]:
+      - generic [ref=f90e17]:
+        - link "Главная страница сайта" [ref=f90e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=f90e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=f90e35] [cursor=pointer]:
+          - generic [ref=f90e36]: Минск
+        - button "Чаты" [ref=f90e50] [cursor=pointer]
+        - link "Избранное" [ref=f90e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f90e74] [cursor=pointer]
+        - button "Создать резюме" [ref=f90e84] [cursor=pointer]
+        - button [ref=f90e91] [cursor=pointer]
+    - generic [ref=f90e103]:
+      - main [ref=f90e104]:
+        - generic [ref=f90e109]:
+          - generic [ref=f90e116]:
+            - generic [ref=f90e121]:
+              - generic [ref=f90e122]:
+                - heading "Специалист по развитию персонала" [level=1] [ref=f90e123]
+                - text: Уровень дохода не указан
+              - generic [ref=f90e126]:
+                - paragraph [ref=f90e127]: "Опыт работы: 1–3 года"
+                - generic [ref=f90e128]: Полная занятость
+                - paragraph [ref=f90e131]: "График: 5/2"
+                - generic [ref=f90e132]: "Рабочие часы: 8"
+                - paragraph [ref=f90e135]: "Формат работы: на месте работодателя"
+                - paragraph [ref=f90e137]:
+                  - text: Сейчас эту вакансию смотрят
+                  - generic [ref=f90e138]: 2 человека
+            - generic [ref=f90e142]:
+              - button "Откликнуться" [ref=f90e144] [cursor=pointer]
+              - button "Добавить в избранное" [ref=f90e150] [cursor=pointer]
+              - button "Ещё" [ref=f90e159] [cursor=pointer]
+          - generic [ref=f90e175]:
+            - link [ref=f90e176] [cursor=pointer]:
+              - /url: /employer/753017?hhtmFrom=vacancy
+              - generic "Евроторг" [ref=f90e180]:
+                - img "Евроторг" [ref=f90e182]
+            - generic [ref=f90e184]:
+              - link "ООО Евроторг" [ref=f90e186] [cursor=pointer]:
+                - /url: /employer/753017?hhtmFrom=vacancy
+                - generic [ref=f90e187]:
+                  - text: ООО
+                  - generic [ref=f90e188]: Евроторг
+              - link [ref=f90e191] [cursor=pointer]:
+                - /url: /article/19873?hhtmFrom=vacancy
+          - generic [ref=f90e198]:
+            - generic [ref=f90e209]:
+              - generic [ref=f90e210]:
+                - generic [ref=f90e221]:
+                  - button "Go to slide 1" [ref=f90e222] [cursor=pointer]
+                  - button "Go to slide 2" [ref=f90e223] [cursor=pointer]
+                  - button "Go to slide 3" [ref=f90e224] [cursor=pointer]
+                  - button "Go to slide 4" [ref=f90e225] [cursor=pointer]
+                  - button "Go to slide 5" [ref=f90e226] [cursor=pointer]
+                  - button "Go to slide 6" [ref=f90e227] [cursor=pointer]
+                - button "Previous slide" [ref=f90e228] [cursor=pointer]
+                - button "Next slide" [ref=f90e229] [cursor=pointer]
+              - generic [ref=f90e230]:
+                - paragraph [ref=f90e231]: Вы хотите построить карьеру в крупной компании почти с 30‑летней историей успеха?
+                - paragraph [ref=f90e232]: "Мы знаем, что вам предложить, ведь наши сотрудники — основная ценность для нашей компании:"
+              - generic [ref=f90e233]:
+                - generic [ref=f90e235]:
+                  - paragraph [ref=f90e239]: Удобную доставку служебным транспортом до работы от ст. м. Каменная Горка и ст. м. Малиновка
+                  - paragraph [ref=f90e243]: Бонусную карту «Е-плюс. Сотрудник», с повышенным размером бонусов за покупки в магазинах «Евроопт»
+                  - paragraph [ref=f90e247]: Возможность оздоровления сотрудников и их детей в санаториях и детских лагерях
+                  - paragraph [ref=f90e251]:
+                    - generic [ref=f90e252]: Бесплатные занятия спортом
+                    - text: для сотрудников
+                  - paragraph [ref=f90e256]: Работу в одной из крупнейших торговых компаний Беларуси
+                  - paragraph [ref=f90e260]: Гарантированную оплату труда (2 раза в месяц на банковскую карту)
+                  - paragraph [ref=f90e264]: Комфортный офис и крутую атмосферу в нем
+                  - paragraph [ref=f90e268]: Официальное трудоустройство
+                  - paragraph [ref=f90e272]: Социальные гарантии (оплата больничных и отпускных )
+                  - paragraph [ref=f90e276]: Вкусные обеды в корпоративной столовой
+                  - paragraph [ref=f90e280]: Реальную возможность карьерного роста
+                  - paragraph [ref=f90e284]: Зажигательные корпоративные мероприятия (спартакиады, турслеты, конкурсы)
+                  - paragraph [ref=f90e288]: Профессиональное и личностное развитие
+                  - paragraph [ref=f90e292]: Удобную доставку служебным транспортом до работы от ст. м. Каменная Горка и ст. м. Малиновка
+                  - paragraph [ref=f90e296]: Бонусную карту «Е-плюс. Сотрудник», с повышенным размером бонусов за покупки в магазинах «Евроопт»
+                  - paragraph [ref=f90e300]: Возможность оздоровления сотрудников и их детей в санаториях и детских лагерях
+                  - paragraph [ref=f90e304]:
+                    - generic [ref=f90e305]: Бесплатные занятия спортом
+                    - text: для сотрудников
+                  - paragraph [ref=f90e309]: Работу в одной из крупнейших торговых компаний Беларуси
+                  - paragraph [ref=f90e313]: Гарантированную оплату труда (2 раза в месяц на банковскую карту)
+                  - paragraph [ref=f90e317]: Комфортный офис и крутую атмосферу в нем
+                  - paragraph [ref=f90e321]: Официальное трудоустройство
+                - generic [ref=f90e322]:
+                  - button "Go to slide 1" [ref=f90e323] [cursor=pointer]
+                  - button "Go to slide 2" [ref=f90e324] [cursor=pointer]
+                  - button "Go to slide 3" [ref=f90e325] [cursor=pointer]
+                  - button "Go to slide 4" [ref=f90e326] [cursor=pointer]
+                - button "Previous slide" [ref=f90e327] [cursor=pointer]
+                - button "Next slide" [ref=f90e328] [cursor=pointer]
+              - generic [ref=f90e332]:
+                - paragraph [ref=f90e333]:
+                  - strong [ref=f90e334]: Время новых возможностей
+                - paragraph [ref=f90e335]:
+                  - strong [ref=f90e336]: ООО «Евроторг» приглашает на работу Специалиста по развитию персонала
+                - paragraph [ref=f90e337]:
+                  - strong [ref=f90e338]: "Чем предстоит заниматься:"
+                - list [ref=f90e339]:
+                  - listitem [ref=f90e340]: • организация и проведение обучающих мероприятий и тренингов;
+                  - listitem [ref=f90e341]: • разработка и сопровождение программ развития сотрудников и руководителей;
+                  - listitem [ref=f90e342]: • участие в проектах кадрового резерва и управление талантами;
+                  - listitem [ref=f90e343]: • проведение оценки персонала (метод Assessment Center и 180\360 градусов).;
+                  - listitem [ref=f90e344]: • разработка обучающего контента для LMS/СДО;
+                  - listitem [ref=f90e345]: • взаимодействие с руководителями подразделений по вопросам обучения и развития;
+                  - listitem [ref=f90e346]: • координация внутренних HR-проектов;
+                  - listitem [ref=f90e347]: • участие в развитии внутренних образовательных программ и LMS-продукта компании;
+                  - listitem [ref=f90e348]: • аналитика эффективности обучения и подготовка отчетности.
+                - paragraph [ref=f90e349]:
+                  - strong [ref=f90e350]: "Мы ищем кандидата, который:"
+                - list [ref=f90e351]:
+                  - listitem [ref=f90e352]: • опыт в обучении и развитии персонала от 2- 3 лет;
+                  - listitem [ref=f90e353]: • опыт организации и проведения тренингов;
+                  - listitem [ref=f90e354]: • опыт участия в HR-проектах;
+                  - listitem [ref=f90e355]: • навыки разработки обучающих программ;
+                  - listitem [ref=f90e356]: • знание методов оценки персонала и управления талантами;
+                  - listitem [ref=f90e357]: • опыт работы с LMS/СДО будет преимуществом;
+                  - listitem [ref=f90e358]: • навыки проектного управления;
+                  - listitem [ref=f90e359]: • опыт создания электронных курсов.
+                - paragraph [ref=f90e360]:
+                  - strong [ref=f90e361]: "Что вы получите, работая с нами:"
+                - list [ref=f90e362]:
+                  - listitem [ref=f90e363]: "• бонусы каждый день: Повышенный процент кешбэка по карте Е-плюс - приятное дополнение к доходу на регулярные покупки;"
+                  - listitem [ref=f90e364]: "• максимум удобства рядом с офисом: Офис расположен рядом с ТЦ «Сухарево» и гипермаркетом Евроопт - все нужное буквально в шаговой доступности;"
+                  - listitem [ref=f90e365]: "• забота о комфорте и бюджете: Скидка 30% при посещении столовой Евроопта - вкусные обеды по очень приятной цене;"
+                  - listitem [ref=f90e366]: • комфортная доставка служебным транспортом от ст.м. Каменная Горка и ст. м. Малиновка;
+                  - listitem [ref=f90e367]: • возможность участия в акции «Приведи друга» с выплатой 220 рублей;
+                  - listitem [ref=f90e368]: • до офиса и обратно - без лишних пересадок и спешки;
+                  - listitem [ref=f90e369]: "• инвестиции в ваше развитие: Возможность участия в профильных конференциях, семинарах и обучающих программах - мы поддерживаем профессиональный рост и расширение экспертизы."
+                - paragraph [ref=f90e370]: Вакансия является планируемой к созданию и замещению (перспективной)
+              - generic [ref=f90e371]:
+                - paragraph [ref=f90e372]:
+                  - generic [ref=f90e373]: Заинтересовали?Тогда не стоит терять времени!
+                  - text: Работа в ООО «Евроторг» — это хорошая возможность проявить себя, получить опыт работы и начать свой карьерный путь.
+                - paragraph [ref=f90e374]:
+                  - text: Присылай отклик, заполняй онлайн-анкету на сайте evroopt.by или пройди
+                  - link "собеседование онлайн в нашем чат-боте!" [ref=f90e375] [cursor=pointer]:
+                    - /url: https://telegram.me/recruit_euroopt_bot
+                - generic [ref=f90e376]:
+                  - generic [ref=f90e378]: Присоединяйся к команде «Евроопт»
+                  - generic [ref=f90e379]: ООО «Евроторг», УНП 101168731
+            - generic [ref=f90e381]:
+              - generic [ref=f90e383]:
+                - heading "Задайте вопрос работодателю" [level=2] [ref=f90e385]
+                - generic [ref=f90e387]: Он получит его с откликом на вакансию
+                - generic [ref=f90e389]:
+                  - generic [ref=f90e390] [cursor=pointer]:
+                    - checkbox "Где располагается место работы?" [ref=f90e391]
+                    - generic [ref=f90e392]: Где располагается место работы?
+                  - generic [ref=f90e397] [cursor=pointer]:
+                    - checkbox "Какой график работы?" [ref=f90e398]
+                    - generic [ref=f90e399]: Какой график работы?
+                  - generic [ref=f90e404] [cursor=pointer]:
+                    - checkbox "Вакансия открыта?" [ref=f90e405]
+                    - generic [ref=f90e406]: Вакансия открыта?
+                  - generic [ref=f90e411] [cursor=pointer]:
+                    - checkbox "Какая оплата труда?" [ref=f90e412]
+                    - generic [ref=f90e413]: Какая оплата труда?
+                  - generic [ref=f90e418] [cursor=pointer]:
+                    - checkbox "Как с вами связаться?" [ref=f90e419]
+                    - generic [ref=f90e420]: Как с вами связаться?
+                  - generic [ref=f90e425] [cursor=pointer]:
+                    - checkbox "Другой вопрос" [ref=f90e426]
+                    - generic [ref=f90e427]: Другой вопрос
+              - generic [ref=f90e434]:
+                - heading "Где предстоит работать" [level=2] [ref=f90e436]
+                - generic [ref=f90e721]:
+                  - text: Минск,
+                  - link "Каменная Горка" [ref=f90e724]:
+                    - /url: /metro/avtozavodskaya/kamennaya_gorka?hhtmFrom=vacancy
+                  - text: ","
+                  - link "Кунцевщина" [ref=f90e729]:
+                    - /url: /metro/avtozavodskaya/kuntsevschina?hhtmFrom=vacancy
+                  - text: ","
+                  - link "Малиновка" [ref=f90e734]:
+                    - /url: /metro/moskovskaya/malinovka?hhtmFrom=vacancy
+                  - text: ","
+                  - link "Петровщина" [ref=f90e739]:
+                    - /url: /metro/moskovskaya/petrovshchina?hhtmFrom=vacancy
+                  - text: ", улица Монтажников, 2"
+                - link "Показать на большой карте" [ref=f90e463]:
+                  - /url: /search/vacancy/map?vacancy_id=136929648&hhtmFrom=vacancy
+          - generic [ref=f90e467]:
+            - generic [ref=f90e468]: Вакансия опубликована 3 сентября 2026 в Минске
+            - generic [ref=f90e480]:
+              - button "Откликнуться" [ref=f90e482] [cursor=pointer]
+              - button "Пожаловаться на вакансию" [ref=f90e715] [cursor=pointer]
+      - contentinfo [ref=f90e491]:
+        - generic [ref=f90e495]:
+          - navigation "Навигация в подвале" [ref=f90e496]:
+            - generic [ref=f90e497]:
+              - generic [ref=f90e499]:
+                - generic [ref=f90e500]: rabota.by
+                - list [ref=f90e502]:
+                  - listitem [ref=f90e503]:
+                    - link "Помощь" [ref=f90e505]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e508]:
+                    - link "Наши вакансии" [ref=f90e510]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e513]:
+                    - link "Реклама на сайте" [ref=f90e515]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy#region/belarus
+                  - listitem [ref=f90e518]:
+                    - link "Требования к ПО" [ref=f90e520]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e523]:
+                    - link "Политика обработки cookie" [ref=f90e525]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e528]:
+                    - link "Настройки cookie" [ref=f90e530]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e533]:
+                    - link "Напишите нам" [ref=f90e535]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=f90e538]:
+                    - link "Каталог компаний" [ref=f90e540]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e543]:
+                    - link "Поиск по вакансиям в Минске" [ref=f90e545]:
+                      - /url: /vacancies
+                  - listitem [ref=f90e548]:
+                    - link "Работа рядом с метро" [ref=f90e550]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - generic [ref=f90e555]:
+                - generic [ref=f90e556]: Соискателям
+                - list [ref=f90e558]:
+                  - listitem [ref=f90e559]:
+                    - link "Все сервисы" [ref=f90e561]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e564]:
+                    - link "Кадровые агентства Беларуси" [ref=f90e566]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f90e569]:
+                    - link "Производственный календарь" [ref=f90e571]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - generic [ref=f90e576]:
+                - list [ref=f90e577]:
+                  - listitem [ref=f90e578]:
+                    - generic [ref=f90e579]: Боты для уведомлений
+                    - generic [ref=f90e581]:
+                      - button "Подключить telegram бот" [ref=f90e582] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f90e589] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f90e597] [cursor=pointer]
+                - generic [ref=f90e606]:
+                  - generic [ref=f90e607]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f90e609]
+          - navigation "Правовая информация" [ref=f90e617]:
+            - list [ref=f90e618]:
+              - listitem [ref=f90e619]:
+                - link "Этика и комплаенс" [ref=f90e621]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f90e624]:
+                - link "Оказание услуг" [ref=f90e626]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f90e629]:
+                - link "Использование сайтов" [ref=f90e631]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f90e634]:
+                - link "Политика обработки данных" [ref=f90e636]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f90e639]:
+                - link "Пользовательское соглашение" [ref=f90e641]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+          - generic [ref=f90e648]:
+            - paragraph [ref=f90e649]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=f90e651]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=f90e653]:
+              - img "mastercard" [ref=f90e654]
+              - img "visa" [ref=f90e655]
+              - img "belcart" [ref=f90e656]
+              - img "belcart-internetparol" [ref=f90e657]
+          - generic [ref=f90e662]:
+            - generic [ref=f90e663]:
+              - button "Перейти в ВК" [ref=f90e664] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=f90e672] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=f90e680] [cursor=pointer]
+              - button "Перейти в Viber" [ref=f90e688] [cursor=pointer]
+            - generic [ref=f90e697]:
+              - list [ref=f90e698]:
+                - listitem [ref=f90e699]:
+                  - combobox "Выбор языка сайта" [ref=f90e702]:
+                    - generic [ref=f90e703]: Русский
+              - generic [ref=f90e710]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - dialog [ref=f90e743]:
+    - generic [ref=f90e745]:
+      - generic [ref=f90e746]:
+        - generic:
+          - generic:
+            - menu [ref=f90e750]:
+              - generic [ref=f90e752]:
+                - generic [ref=f90e753]:
+                  - generic [ref=f90e754]:
+                    - generic [ref=f90e755]: Отклик на вакансию
+                    - generic [ref=f90e756]: Специалист по развитию персонала
+                  - generic [ref=f90e757]:
+                    - generic [ref=f90e758]: Отклик на вакансию
+                    - generic [ref=f90e759]: Специалист по развитию персонала
+                - button [ref=f90e764] [cursor=pointer]
+            - generic:
+              - separator
+      - generic [ref=f90e769]:
+        - generic: Чтобы откликнуться на эту вакансию, поменяйте видимость резюме на «Видно всем работодателям, зарегистрированным на rabota.by»
+        - button "Менеджер по обучению и развитию персонала 3 500 Br" [ref=f90e771] [cursor=pointer]:
+          - generic [ref=f90e783]:
+            - generic [ref=f90e784]: Менеджер по обучению и развитию персонала
+            - generic [ref=f90e793]: 3 500 Br
+        - generic [ref=f90e826]:
+          - textbox "Сопроводительное письмо" [ref=f90e827]
+          - generic: Сопроводительное письмо
+    - button "Откликнуться" [ref=f90e810] [cursor=pointer]

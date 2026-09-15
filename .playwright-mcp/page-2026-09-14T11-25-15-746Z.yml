@@ -1,0 +1,42 @@
+- generic [ref=e7]:
+  - generic [ref=e16]:
+    - banner [ref=e17]:
+      - button "go-back-button" [ref=e19] [cursor=pointer]
+      - link [ref=e28] [cursor=pointer]:
+        - /url: /?hhtmFrom=account_login
+    - generic [ref=e116]:
+      - heading "Регистрация для поиска работы" [level=2] [ref=e118]
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - generic [ref=e122]:
+            - radio "Телефон" [ref=e123]
+            - generic [ref=e124] [cursor=pointer]: Телефон
+          - generic [ref=e126]:
+            - radio "Почта" [checked] [active] [ref=e127]
+            - generic [ref=e128] [cursor=pointer]: Почта
+        - generic [aria-hidden]:
+          - generic:
+            - generic:
+              - generic:
+                - generic [aria-hidden]:
+                  - generic: Телефон
+              - generic:
+                - generic [aria-hidden]:
+                  - generic: Почта
+      - generic [ref=e168]:
+        - textbox [ref=e173]
+        - generic:
+          - alert:
+            - generic [aria-hidden]:
+              - generic: Обязательное поле
+      - button "Дальше" [ref=e145] [cursor=pointer]
+      - button "Войти с помощью + 2" [ref=e150] [cursor=pointer]:
+        - generic [ref=e151]:
+          - generic [ref=e152]: Войти с помощью
+          - generic [ref=e153]: + 2
+      - generic [ref=e164]:
+        - text: Продолжая, вы принимаете
+        - link "правила сервиса" [ref=e165]:
+          - /url: /account/agreement?backurl=%2Faccount%2Fsignup%3Fbackurl%3D%252F%26role%3Dapplicant&role=applicant&hhtmFrom=account_login
+  - contentinfo [ref=e112]:
+    - generic [ref=e113]: © ООО «ВСЯ РАБОТА», 2026

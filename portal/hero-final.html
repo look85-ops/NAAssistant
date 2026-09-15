@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>L&D без суеты — Hero</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Geist', sans-serif; background: #ffffff; color: #2b2b1a; font-weight: 350; }
+
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 80px 0; overflow: hidden; }
+  .hero-grid { max-width: 1200px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: 1fr 0.9fr; gap: 80px; align-items: center; width: 100%; }
+
+  .hero-text { position: relative; z-index: 2; }
+  .brand-name {
+    font-size: clamp(3.6rem, 8vw, 7rem);
+    font-weight: 650;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: #2b2b1a;
+  }
+  .brand-name em {
+    font-style: normal;
+    color: #474a1a;
+    display: block;
+  }
+  .tagline {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-weight: 380;
+    color: #737366;
+    max-width: 440px;
+    margin-top: 24px;
+    line-height: 1.5;
+  }
+  .actions { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #474a1a; color: #fff; border: none; padding: 14px 28px; border-radius: 8px; font: 500 15px 'Geist', sans-serif; cursor: pointer; transition: background 200ms ease; }
+  .btn-primary:hover { background: #3a3d15; }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: none; color: #474a1a; border: 1.5px solid #e0ded8; padding: 14px 28px; border-radius: 8px; font: 500 15px 'Geist', sans-serif; cursor: pointer; transition: all 200ms ease; }
+  .btn-ghost:hover { border-color: #474a1a; background: #f4f4ef; }
+
+  /* Abstract composition */
+  .art-wrapper { display: flex; justify-content: center; align-items: center; }
+  .art { position: relative; width: 480px; height: 480px; }
+  .art .s { position: absolute; border-radius: 50%; }
+  .s1 { width: 340px; height: 340px; background: #474a1a; top: 40px; left: 20px; opacity: 0.85; }
+  .s2 { width: 210px; height: 210px; background: #b05a2e; top: 190px; right: 0; opacity: 0.90; }
+  .s3 { width: 140px; height: 140px; background: #5a5d2e; top: 0; right: 70px; opacity: 0.60; }
+  .s4 { width: 105px; height: 105px; background: #d48050; bottom: 20px; left: 140px; opacity: 0.70; }
+  .s5 { width: 68px; height: 68px; background: #3a3c15; top: 140px; left: 120px; opacity: 0.50; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  .l1 { position: absolute; width: 2px; height: 190px; top: 90px; left: 240px; background: #474a1a; opacity: 0.20; transform: rotate(15deg); }
+  .l2 { position: absolute; width: 380px; height: 1.5px; top: 260px; left: 50px; background: #474a1a; opacity: 0.18; transform: rotate(-5deg); }
+
+  @media (max-width: 768px) {
+    .hero-grid { padding: 0 28px; grid-template-columns: 1fr; gap: 48px; }
+    .art { width: 300px; height: 300px; }
+    .s1 { width: 210px; height: 210px; top: 26px; left: 14px; }
+    .s2 { width: 135px; height: 135px; top: 120px; right: 0; }
+    .s3 { width: 90px; height: 90px; top: 0; right: 45px; }
+    .s4 { width: 66px; height: 66px; bottom: 14px; left: 88px; }
+    .s5 { width: 42px; height: 42px; top: 88px; left: 74px; }
+    .l1 { height: 120px; top: 58px; left: 150px; }
+    .l2 { width: 240px; top: 164px; left: 30px; }
+    .art-wrapper { order: -1; }
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <h1 class="brand-name">L&D<br><em>без суеты</em></h1>
+      <p class="tagline">Порядок, глубина, нестандартные решения для&nbsp;методиста. AI&nbsp;берёт рутину — вы&nbsp;берёте смысл.</p>
+      <div class="actions">
+        <button class="btn-primary">Начать с Бустера →</button>
+        <button class="btn-ghost">Программа курса</button>
+      </div>
+    </div>
+    <div class="art-wrapper">
+      <div class="art">
+        <div class="s s1"></div>
+        <div class="s s2"></div>
+        <div class="s s3"></div>
+        <div class="s s4"></div>
+        <div class="s s5"></div>
+        <div class="l1"></div>
+        <div class="l2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

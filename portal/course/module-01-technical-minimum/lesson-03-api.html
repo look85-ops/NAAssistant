@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 3. API и чтение кода — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
+.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
+.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
+.hlogo span{color:#474a1a}
+.hnav{display:flex;gap:28px}
+.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
+.hnav a:hover{color:#2b2b1a}
+
+.lesson{padding:140px 0 80px}
+.li{max-width:720px;margin:0 auto;padding:0 48px}
+.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
+.bc a{color:#737366;text-decoration:none}
+.bc a:hover{color:#2b2b1a}
+.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
+.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+
+.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
+.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
+.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
+.content strong{font-weight:550}
+.content ul,.content ol{margin:0 0 20px 24px}
+.content li{margin-bottom:8px;color:#3a3a32}
+.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
+.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
+.content pre code{background:none;padding:0}
+.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
+.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
+.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
+.content td{color:#3a3a32}
+.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
+.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
+.content em{font-style:italic}
+
+.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
+.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:#737366;text-decoration:none}
+.flinks a:hover{color:#2b2b1a}
+.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fupd{font-size:11px;color:#b0b0a8}
+.fnote{font-size:11px;color:#c0beb8}
+
+@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="hi">
+    <a href="/" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="/course/">← Курс</a>
+      <a href="/booster/">Бустер</a>
+      <a href="/blog/">Блог</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson">
+  <div class="li">
+    <p class="bc"><a href="/course/">Курс</a> / Модуль 1. Технический минимум</p>
+    <h1>Урок 3. API и чтение кода</h1>
+    <p class="lmeta">**Модуль 1:** · **Время:**</p>
+    <div class="content">
+
+<p><strong>Модуль 1:</strong> Технический минимум: читать, понимать, коммитить
+<strong>Неделя:</strong> 3 из 3
+<strong>Время:</strong> 2–2.5 ч</p>
+
+<h2>1. Цель недели</h2>
+<p><strong>Зачем это L&amp;D-специалисту в работе с AI.</strong></p>
+<p>Все AI-модели, с которыми вы работаете (Claude, ChatGPT, OpenRouter), живут не в интерфейсе чата, а за API. API — это дверь, через которую одна программа общается с другой. AI-агент, которого вы запускаете, не «думает» сам — он отправляет запрос к модели через API и получает ответ. Если вы понимаете, как устроен такой запрос, вы можете: прочитать документацию любой AI-модели, понять, что делает чужой код, объяснить разработчику задачу на его языке и — при желании — собрать простого AI-агента без конструктора.</p>
+<p>К концу этого урока вы отправите свой первый API-запрос из терминала, прочитаете ответ в формате JSON, разберёте структуру чужого кода и сможете объяснить, чем GET отличается от POST.</p>
+<hr />
+<h2>2. Теория</h2>
+<h3>Что такое API</h3>
+<p>API (Application Programming Interface) — это способ, которым одна программа просит что-то у другой программы. Проще всего представить официанта в ресторане:</p>
+<ul>
+<li>Вы (клиент) говорите официанту: «Принесите кофе» (запрос).</li>
+<li>Официант идёт на кухню, находит кофе и приносит вам (ответ).</li>
+<li>Вы не идёте на кухню сами, не знаете, как устроена кофемашина. Вам нужно только знать меню (документацию API).</li>
+</ul>
+<p>API работает так же. Вы отправляете запрос по адресу (URL), сервер отвечает. Вы не знаете, что внутри сервера. Вы знаете только то, что описано в документации.</p>
+<p><strong>Пример из жизни AI:</strong> когда вы пишете вопрос в ChatGPT, браузер отправляет API-запрос к серверу OpenAI. Текст вопроса улетает туда, модель обрабатывает его и возвращает ответ. Всё, что вы видите в интерфейсе — это красивая обёртка над API-запросами.</p>
+<h3>HTTP-методы: GET и POST</h3>
+<p>API-запросы бывают разных типов. Два основных:</p>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Что делает</th>
+<th>Бытовая аналогия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GET</strong></td>
+<td>Запросить данные. «Дай мне вот это»</td>
+<td>Посмотреть меню на сайте ресторана</td>
+</tr>
+<tr>
+<td><strong>POST</strong></td>
+<td>Отправить данные. «Вот тебе информация, обработай»</td>
+<td>Оформить заказ с доставкой — вы отправляете адрес и состав</td>
+</tr>
+</tbody>
+</table>
+<p>GET-запрос просто читает. Вы открываете страницу в браузере — это GET. POST-запрос отправляет данные на сервер: форма на сайте, запрос к AI-модели, загрузка файла.</p>
+<p>Есть и другие методы (PUT, DELETE, PATCH), но в 80 % случаев вы встретите GET и POST.</p>
+<h3>JSON: язык, на котором говорят API</h3>
+<p>API отвечают в формате JSON (JavaScript Object Notation). Это способ записать данные так, чтобы их легко читал и человек, и машина.</p>
+<p>Вот как выглядит JSON:</p>
+<pre><code class="language-json">{
+  &quot;имя&quot;: &quot;Анна&quot;,
+  &quot;возраст&quot;: 34,
+  &quot;должность&quot;: &quot;методист&quot;,
+  &quot;навыки&quot;: [&quot;L&amp;D&quot;, &quot;AI&quot;, &quot;презентации&quot;],
+  &quot;проект&quot;: {
+    &quot;название&quot;: &quot;Бустер методиста&quot;,
+    &quot;статус&quot;: &quot;активен&quot;
+  }
+}
+</code></pre>
+<p>Правила простые:
+- <code>{ }</code> — объект (как анкета)
+- <code>[ ]</code> — список (массив)
+- <code>"ключ": значение</code> — пара (ключ всегда в кавычках, значение может быть строкой, числом, true/false, объектом или списком)</p>
+<p>Почти каждый API-ответ выглядит как JSON. Научиться его читать — как научиться читать квитанцию: сначала кажется китайской грамотой, через неделю — привычно.</p>
+<h3>Статус-коды: что ответил сервер</h3>
+<p>Сервер на каждый запрос возвращает не только данные, но и код — три цифры, которые говорят, всё ли в порядке:</p>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Значение</th>
+<th>Когда видите</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td>OK. Всё хорошо, данные пришли</td>
+<td>Успешный запрос</td>
+</tr>
+<tr>
+<td><strong>201</strong></td>
+<td>Created. Что-то создано (после POST)</td>
+<td>Успешно отправили данные</td>
+</tr>
+<tr>
+<td><strong>400</strong></td>
+<td>Bad Request. Вы отправили что-то не то</td>
+<td>Ошибка в запросе</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Unauthorized. Нужен ключ доступа</td>
+<td>Забыли API-ключ</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Not Found. Такого адреса нет</td>
+<td>Ошиблись в URL</td>
+</tr>
+<tr>
+<td><strong>429</strong></td>
+<td>Too Many Requests. Слишком частые запросы</td>
+<td>Превысили лимит</td>
+</tr>
+<tr>
+<td><strong>500</strong></td>
+<td>Internal Server Error. Сервер сломался</td>
+<td>Проблема не у вас</td>
+</tr>
+</tbody>
+</table>
+<p>Мнемоника: 2xx = успех, 4xx = ваша ошибка, 5xx = ошибка сервера.</p>
+<h3>API-ключ: ваш пропуск</h3>
+<p>Большинство AI-API требуют ключ (API key) — длинную строку, которую вы передаёте вместе с запросом. Это как билет на концерт: без него вас не пустят, и он именной. Ключ нельзя публиковать в открытом доступе (попадёт в Git — считайте, что его украли).</p>
+<h3>Как читать чужой код</h3>
+<p>Вы не будете писать код с нуля. Но вы будете его <strong>читать</strong>: скрипт коллеги, пример из документации, AI-сгенерированный файл. Чтение кода — это навык отличать лес от деревьев.</p>
+<p>При встрече с незнакомым файлом задайте себе три вопроса:
+1. <strong>Что на входе?</strong> — какие данные получает программа (файл, API-ответ, ввод пользователя)?
+2. <strong>Что внутри?</strong> — какие шаги выполняются (прочитать → обработать → отправить)?
+3. <strong>Что на выходе?</strong> — что программа отдаёт (файл, ответ в терминал, запрос к API)?</p>
+<p>Для чтения кода не нужно знать язык досконально. Нужно видеть структуру: импорты (что подключаем), функции (блоки действий), вызовы (где что запускается). Остальное — детали.</p>
+<p><strong>Метафора:</strong> чтение кода — как чтение рецепта на незнакомом языке. Вы не знаете всех слов, но понимаете: «взять X, смешать с Y, поставить в духовку на Z минут». Импорты — список ингредиентов, функции — шаги рецепта, вызов — «духовку включить».</p>
+<hr />
+<h2>3. Шпаргалка (сохраните себе)</h2>
+<h3>API-запросы в PowerShell</h3>
+<p>PowerShell умеет отправлять API-запросы через встроенную команду <code>Invoke-RestMethod</code>. Она автоматически превращает JSON-ответ в читаемые объекты.</p>
+<table>
+<thead>
+<tr>
+<th>Действие</th>
+<th>Команда</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET-запрос (получить данные)</td>
+<td><code>Invoke-RestMethod -Uri "https://адрес"</code></td>
+</tr>
+<tr>
+<td>GET с параметрами</td>
+<td><code>Invoke-RestMethod -Uri "https://адрес?параметр=значение"</code></td>
+</tr>
+<tr>
+<td>POST-запрос (отправить JSON)</td>
+<td><code>Invoke-RestMethod -Uri "https://адрес" -Method Post -Body '{"ключ":"значение"}' -ContentType "application/json"</code></td>
+</tr>
+<tr>
+<td>POST с заголовками (API-ключ)</td>
+<td><code>Invoke-RestMethod -Uri "https://адрес" -Method Post -Headers @{"Authorization"="Bearer ключ"} -Body '...'</code></td>
+</tr>
+<tr>
+<td>Сохранить ответ в переменную</td>
+<td><code>$ответ = Invoke-RestMethod -Uri "..."</code></td>
+</tr>
+<tr>
+<td>Посмотреть поле ответа</td>
+<td><code>$ответ.поле</code> или <code>$ответ[0].поле</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Важно:</strong> В PowerShell есть команда <code>curl</code>, но это не настоящий curl, а алиас для <code>Invoke-WebRequest</code>. Для API-запросов лучше использовать <code>Invoke-RestMethod</code> — он умнее обрабатывает JSON.</p>
+<h3>JSON навигация</h3>
+<table>
+<thead>
+<tr>
+<th>Что видите</th>
+<th>Как читать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{"total": 42, "items": [...]}</code></td>
+<td>Объект с полями <code>total</code> (число) и <code>items</code> (список)</td>
+</tr>
+<tr>
+<td><code>$ответ.total</code></td>
+<td>42 — доступ к полю через точку</td>
+</tr>
+<tr>
+<td><code>$ответ.items[0]</code></td>
+<td>Первый элемент списка</td>
+</tr>
+<tr>
+<td><code>$ответ.items[0].name</code></td>
+<td>Поле <code>name</code> первого элемента</td>
+</tr>
+</tbody>
+</table>
+<h3>Статус-коды — коротко</h3>
+<table>
+<thead>
+<tr>
+<th>Диапазон</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2xx</td>
+<td>Успех</td>
+</tr>
+<tr>
+<td>3xx</td>
+<td>Перенаправление</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>Ошибка на вашей стороне</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>Ошибка на стороне сервера</td>
+</tr>
+</tbody>
+</table>
+<h3>API-документация: где читать</h3>
+<p>Документация любого API обычно лежит по адресу вроде <code>https://платформа.com/docs</code> или <code>https://docs.платформа.com</code>. Что там искать в первую очередь:</p>
+<ul>
+<li><strong>Quickstart / Get Started</strong> — как сделать первый запрос за 5 минут</li>
+<li><strong>Authentication</strong> — как получить и передать API-ключ</li>
+<li><strong>Endpoints</strong> — список всех доступных запросов (URL + метод)</li>
+<li><strong>Example request / response</strong> — пример запроса и ответа (копируете и пробуете)</li>
+</ul>
+<h3>Структура кода: что искать глазами</h3>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Как выглядит в Python</th>
+<th>Как выглядит в JavaScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Импорт (подключение библиотек)</td>
+<td><code>import json</code>, <code>from openai import OpenAI</code></td>
+<td><code>const axios = require('axios')</code>, <code>import { OpenAI } from 'openai'</code></td>
+</tr>
+<tr>
+<td>Функция (блок действий)</td>
+<td><code>def имя():</code> с отступом</td>
+<td><code>function имя() { }</code> или <code>const имя = () =&gt; { }</code></td>
+</tr>
+<tr>
+<td>Вызов API</td>
+<td><code>requests.get(url, headers=...)</code></td>
+<td><code>fetch(url, { method: 'POST', ... })</code></td>
+</tr>
+<tr>
+<td>Переменная</td>
+<td><code>x = 5</code>, <code>data = {...}</code></td>
+<td><code>let x = 5</code>, <code>const data = {...}</code></td>
+</tr>
+<tr>
+<td>Условие</td>
+<td><code>if x &gt; 0:</code></td>
+<td><code>if (x &gt; 0) { }</code></td>
+</tr>
+<tr>
+<td>Цикл</td>
+<td><code>for item in list:</code></td>
+<td><code>for (let item of list) { }</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Практика</h2>
+<p>Все упражнения выполняйте в <strong>PowerShell</strong>. Если на каком-то шаге ошибка — остановитесь и напишите мне.</p>
+<h3>Упражнение 1. Первый GET-запрос (10 мин)</h3>
+<p>Самый простой API-запрос — получить данные по адресу. Используем бесплатный тестовый API, который не требует ключа.</p>
+<p>Откройте PowerShell и выполните:</p>
+<pre><code class="language-powershell">Invoke-RestMethod -Uri &quot;https://jsonplaceholder.typicode.com/todos/1&quot;
+</code></pre>
+<p>Вы увидите что-то вроде:</p>
+<pre><code>userId  id  title                     completed
+------  --  -----                     ---------
+     1   1  delectus aut autem        False
+</code></pre>
+<p>PowerShell распознал JSON и показал его таблицей. Это объект с полями <code>userId</code>, <code>id</code>, <code>title</code>, <code>completed</code>.</p>
+<p>Теперь запросите список задач:</p>
+<pre><code class="language-powershell">$todos = Invoke-RestMethod -Uri &quot;https://jsonplaceholder.typicode.com/todos&quot;
+$todos.Count
+</code></pre>
+<p>Вы увидите общее количество — 200 задач. Теперь посмотрите первую и последнюю:</p>
+<pre><code class="language-powershell">$todos[0]
+$todos[-1]
+</code></pre>
+<p>Поздравляю — вы только что сделали свой первый API-запрос и разобрали ответ.</p>
+<h3>Упражнение 2. API с параметрами (10 мин)</h3>
+<p>Многие API позволяют фильтровать данные через параметры в URL. Параметры идут после знака <code>?</code>:</p>
+<pre><code class="language-powershell">Invoke-RestMethod -Uri &quot;https://jsonplaceholder.typicode.com/todos?userId=1&quot;
+</code></pre>
+<p>Вы получили задачи только пользователя с ID=1. Попробуйте <code>userId=2</code>, <code>userId=3</code>.</p>
+<p>Теперь попробуйте другой публичный API — поиск книг:</p>
+<pre><code class="language-powershell">$books = Invoke-RestMethod -Uri &quot;https://openlibrary.org/search.json?q=learning+design&quot;
+$books.docs.Count
+$books.docs[0].title
+</code></pre>
+<p>Вы получили список книг по запросу "learning design" и посмотрели название первой.</p>
+<h3>Упражнение 3. Чтение API-документации OpenRouter (20 мин)</h3>
+<p>OpenRouter — это сервис, через который вы обращаетесь к десяткам AI-моделей (Claude, GPT, Gemini и др.) через единый API-ключ. Сейчас вы прочитаете документацию — не для выполнения запроса, а чтобы понять, как устроена документация настоящего AI-API.</p>
+<ol>
+<li>Откройте в браузере: https://openrouter.ai/docs/quick-start</li>
+<li>Найдите раздел <strong>Quick Start</strong> и прочитайте, из чего состоит запрос.</li>
+<li>Найдите раздел <strong>Authentication</strong> — как передаётся API-ключ.</li>
+<li>Найдите поле <strong>model</strong> в примере запроса — какие значения можно подставить.</li>
+<li>Найдите поле <strong>messages</strong> — как устроен массив сообщений (роль + содержание).</li>
+</ol>
+<p>Теперь откройте раздел <strong>Models</strong>: https://openrouter.ai/models</p>
+<p>Найдите одну бесплатную модель (с пометкой "Free") и запишите её полное название (например, <code>google/gemini-2.0-flash-001</code>).</p>
+<p>После этого откройте страницу документации модели (клик по названию) и найдите:
+- Контекстное окно (context length) — сколько текста модель «помнит»
+- Цену за токен (pricing) — для бесплатных будет "$0"</p>
+<p>Ответьте себе на вопросы (устно):
+- Как выглядит минимальный запрос к модели?
+- Где в запросе указывается модель?
+- Чем отличается роль "system" от "user"?</p>
+<h3>Упражнение 4. POST-запрос: отправляем данные (15 мин)</h3>
+<p>GET-запросы просто читают. POST — отправляют данные на сервер. Попробуем на тестовом API:</p>
+<pre><code class="language-powershell">$body = @{
+    title  = &quot;Моя тестовая задача&quot;
+    body   = &quot;Учусь отправлять POST-запросы&quot;
+    userId = 1
+} | ConvertTo-Json
+
+$response = Invoke-RestMethod -Uri &quot;https://jsonplaceholder.typicode.com/posts&quot; -Method Post -Body $body -ContentType &quot;application/json&quot;
+$response
+</code></pre>
+<p>Вы увидите созданный объект с полем <code>id: 101</code> — сервер подтвердил создание. Обратите внимание: <code>ConvertTo-Json</code> превращает объект PowerShell в JSON-строку.</p>
+<p>Теперь разберите команду по частям:
+- <code>@{}</code> — создали объект PowerShell (хэш-таблицу)
+- <code>| ConvertTo-Json</code> — превратили в JSON
+- <code>-Method Post</code> — указали метод
+- <code>-Body $body</code> — передали данные
+- <code>-ContentType "application/json"</code> — сказали серверу, что это JSON</p>
+<h3>Упражнение 5. Статус-коды на практике (10 мин)</h3>
+<p>Запросите несуществующий адрес:</p>
+<pre><code class="language-powershell">try {
+    Invoke-RestMethod -Uri &quot;https://jsonplaceholder.typicode.com/todos/9999&quot;
+} catch {
+    Write-Host &quot;Статус: $($_.Exception.Response.StatusCode.value__)&quot;
+}
+</code></pre>
+<p>Сервер вернул 404 — такого объекта нет.</p>
+<p>Теперь отправьте некорректный запрос (забудьте закрыть скобку в JSON):</p>
+<pre><code class="language-powershell">try {
+    Invoke-RestMethod -Uri &quot;https://jsonplaceholder.typicode.com/posts&quot; -Method Post -Body '{&quot;title&quot;: &quot;oops' -ContentType &quot;application/json&quot;
+} catch {
+    Write-Host &quot;Статус: $($_.Exception.Response.StatusCode.value__)&quot;
+}
+</code></pre>
+<p>Сервер вернул 400 (Bad Request) — вы отправили битый JSON.</p>
+<p>Теперь вы умеете читать ответы сервера и понимать, на чьей стороне проблема.</p>
+<h3>Упражнение 6. Чтение чужого кода (25 мин)</h3>
+<p>Ниже — скрипт на Python, который обращается к AI-модели через OpenRouter API. Ваша задача — не написать такой же, а <strong>прочитать и объяснить</strong>, что он делает.</p>
+<pre><code class="language-python">import os
+import requests
+import json
+
+# --- 1. Настройки ---
+API_KEY = os.environ.get(&quot;OPENROUTER_API_KEY&quot;)
+MODEL = &quot;google/gemini-2.0-flash-001&quot;
+API_URL = &quot;https://openrouter.ai/api/v1/chat/completions&quot;
+
+# --- 2. Запрос ---
+system_prompt = &quot;Ты — L&amp;D-методист. Отвечай коротко, по делу.&quot;
+user_question = &quot;Объясни разницу между RAG и fine-tuning одной фразой.&quot;
+
+headers = {
+    &quot;Authorization&quot;: f&quot;Bearer {API_KEY}&quot;,
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+}
+
+payload = {
+    &quot;model&quot;: MODEL,
+    &quot;messages&quot;: [
+        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: system_prompt},
+        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_question}
+    ],
+    &quot;temperature&quot;: 0.3,
+    &quot;max_tokens&quot;: 100
+}
+
+# --- 3. Отправка ---
+response = requests.post(API_URL, headers=headers, json=payload)
+
+# --- 4. Обработка ответа ---
+if response.status_code == 200:
+    answer = response.json()
+    print(answer[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;])
+else:
+    print(f&quot;Ошибка {response.status_code}: {response.text}&quot;)
+</code></pre>
+<p><strong>Задание:</strong> откройте Блокнот (или любой редактор) и напишите ответы на вопросы в свободной форме:</p>
+<ol>
+<li><strong>Что на входе?</strong> — какие данные получает скрипт перед запуском?</li>
+<li><strong>Что внутри?</strong> — перечислите основные блоки (1–4), которые вы видите. Опишите назначение каждого блока своими словами (одно предложение на блок).</li>
+<li><strong>Что на выходе?</strong> — что произойдёт, если скрипт выполнится успешно? Что — если ключ не указан?</li>
+<li><strong>Какие строчки вам непонятны?</strong> — выпишите 1–3 строки, значение которых вы не понимаете. Попробуйте догадаться из контекста.</li>
+<li><strong>Что такое <code>temperature</code> в payload?</strong> — догадайтесь из контекста или посмотрите в документации OpenRouter.</li>
+</ol>
+<p><strong>Не подсматривайте ответы, пока не напишете свои.</strong> Дальше — разбор.</p>
+<details>
+<summary>Разбор (откройте после того, как ответили сами)</summary>
+
+**1. Что на входе:**
+- API-ключ из переменной окружения `OPENROUTER_API_KEY`
+- Название модели, URL для запроса
+- Системный промпт, вопрос пользователя
+
+**2. Блоки:**
+- Блок 1 (строки 1–3): Импорт. Подключаем библиотеки для работы с переменными окружения, HTTP-запросами и JSON.
+- Блок 2 (строки 5–7): Конфигурация. Задаём ключ, модель и адрес. Ключ берётся не из кода (опасно), а из переменной окружения.
+- Блок 3 (строки 9–12): Формируем текст запроса — системный промпт (личность модели) и вопрос пользователя.
+- Блок 4 (строки 14–17): Заголовки. Передаём API-ключ и говорим серверу, что шлём JSON.
+- Блок 5 (строки 19–27): Тело запроса (payload). Указываем модель, сообщения, температуру (насколько креативно отвечать) и лимит токенов.
+- Блок 6 (строка 29): Отправка. POST-запрос с заголовками и телом.
+- Блок 7 (строки 32–35): Обработка ответа. Если код 200 — печатаем текст ответа модели. Если нет — печатаем ошибку.
+
+**3. Что на выходе:**
+- Успех: в терминале появится ответ модели (одна фраза про RAG vs fine-tuning).
+- Нет ключа: ошибка 401 (Unauthorized).
+
+**4. Непонятные строки (если были):**
+- `API_KEY = os.environ.get("OPENROUTER_API_KEY")` — берёт значение из переменной окружения, чтобы не хранить ключ в коде.
+- `f"Bearer {API_KEY}"` — f-строка подставляет значение переменной внутрь текста.
+- `response.json()` — превращает JSON-ответ сервера в объект Python для удобной навигации.
+
+**5. Temperature:**
+Число от 0 до 2. 0 = модель отвечает строго, как по учебнику. 1 = творчески, с вариациями. 0.3 = почти строго, но с лёгкой свободой.
+</details>
+
+<h3>Упражнение 7. Создание артефакта: задокументируйте запрос (15 мин)</h3>
+<p>Теперь оформите результат своей работы в артефакт. Создайте папку и файл:</p>
+<pre><code class="language-powershell">cd C:\Users\ИмяПользователя\Desktop\путь\к\вашему-проекту
+mkdir api-demo\requests
+ni api-demo\requests\openrouter-test.md
+</code></pre>
+<p>Откройте <code>api-demo/requests/openrouter-test.md</code> в редакторе и напишите:</p>
+<pre><code class="language-markdown"># API-демо: мой первый разбор API-запроса
+
+**Дата:** [сегодня]
+**Что делал(а):** отправил(а) GET- и POST-запросы к публичным API, изучил(а) документацию OpenRouter, разобрал(а) структуру чужого кода.
+
+## Как выглядит запрос к OpenRouter (из документации)
+
+Метод: POST
+URL: https://openrouter.ai/api/v1/chat/completions
+
+Обязательные поля:
+- model — название модели
+- messages — список сообщений (роль + текст)
+
+Заголовки:
+- Authorization: Bearer [ключ]
+- Content-Type: application/json
+
+## Разбор чужого кода
+
+[Вставьте сюда 5 ответов из Упражнения 6]
+
+## Что я понял(а) про API
+
+[2-3 предложения своими словами]
+</code></pre>
+<p>Сохраните файл.</p>
+<h3>Упражнение 8. Бонус: открытый API-ключ OpenRouter (15 мин, опционально)</h3>
+<p>Если у вас есть аккаунт на OpenRouter (openrouter.ai), вы можете сделать реальный запрос:</p>
+<ol>
+<li>Зайдите на https://openrouter.ai/keys</li>
+<li>Нажмите <strong>Create Key</strong>, скопируйте ключ.</li>
+<li>НЕ вставляйте ключ в код. В PowerShell выполните:</li>
+</ol>
+<pre><code class="language-powershell">$env:OPENROUTER_API_KEY = &quot;ваш-ключ-сюда&quot;
+</code></pre>
+<ol>
+<li>Теперь отправьте запрос к бесплатной модели:</li>
+</ol>
+<pre><code class="language-powershell">$headers = @{
+    &quot;Authorization&quot; = &quot;Bearer $env:OPENROUTER_API_KEY&quot;
+    &quot;Content-Type&quot;  = &quot;application/json&quot;
+}
+
+$body = @{
+    model    = &quot;google/gemini-2.0-flash-001&quot;
+    messages = @(
+        @{ role = &quot;user&quot;; content = &quot;Привет! Кто ты и что умеешь?&quot; }
+    )
+} | ConvertTo-Json -Depth 3
+
+$response = Invoke-RestMethod -Uri &quot;https://openrouter.ai/api/v1/chat/completions&quot; -Method Post -Headers $headers -Body $body
+$response.choices[0].message.content
+</code></pre>
+<p>Вы получили ответ от AI-модели через API. Поздравляю — вы на шаг ближе к тому, чтобы собрать своего AI-агента.</p>
+<p><strong>Важно:</strong> после эксперимента удалите ключ из переменной окружения (закройте PowerShell) и никогда не публикуйте ключ в Git.</p>
+<hr />
+<h2>5. Рефлексия (напишите мне)</h2>
+<ol>
+<li>Сколько времени заняло?</li>
+<li>Что было самым непонятным?</li>
+<li>Что было самым полезным?</li>
+<li>Оценка материала от 1 до 5</li>
+</ol>
+<hr />
+<h2>6. Чек-лист готовности</h2>
+<ul>
+<li>[ ] Сделал(а) GET-запрос к публичному API и получил(а) данные</li>
+<li>[ ] Понял(а) разницу между GET и POST</li>
+<li>[ ] Отправил(а) POST-запрос с JSON-телом</li>
+<li>[ ] Умею читать статус-коды (200, 400, 401, 404, 500)</li>
+<li>[ ] Изучил(а) документацию OpenRouter: вижу, из чего состоит запрос к AI-модели</li>
+<li>[ ] Разобрал(а) чужой код: ответил(а) на 5 вопросов из Упражнения 6</li>
+<li>[ ] Создал(а) артефакт <code>api-demo/requests/openrouter-test.md</code></li>
+</ul>
+<hr />
+<h2>7. Артефакт</h2>
+<p>После урока в вашем проекте должна появиться структура:</p>
+<pre><code>ваш-проект/
+└── api-demo/
+    └── requests/
+        └── openrouter-test.md    # Описание запроса к OpenRouter + разбор кода
+</code></pre>
+<p>Если вы выполнили бонусное упражнение — также останется лог ответа модели в истории терминала.</p>
+<hr />
+<h2>8. Что дальше</h2>
+<p>Вы завершили Модуль 1. Теперь вы:
+- Ориентируетесь в терминале (PowerShell)
+- Делаете коммиты в Git и пушите на GitHub
+- Понимаете, как устроен API-запрос, читаете JSON и статус-коды
+- Можете прочитать чужой код и объяснить, что он делает</p>
+<p>Это база, на которой строятся все остальные модули. Вы больше не «немузыкант» в разговоре с ИТ-отделом.</p>
+<p><strong>Следующий модуль: AI — от промпта до продукта.</strong> Вы узнаете, как работают LLM на самом деле, что такое RAG и эмбеддинги, и соберёте своего первого AI-агента.</p>
+<h3>Итоговая проверка Модуля 1 (ответьте себе, можно устно)</h3>
+<ol>
+<li>Как создать папку и файл из терминала?</li>
+<li>Как сделать коммит и отправить его на GitHub?</li>
+<li>Чем GET отличается от POST?</li>
+<li>Что означает статус-код 401?</li>
+<li>Из чего состоит API-запрос к AI-модели? (метод, URL, заголовки, тело)</li>
+</ol>
+<p>Если на все 5 вопросов отвечаете без подсказок — Модуль 1 пройден.</p>
+<h3>Дополнительно (необязательно, но полезно)</h3>
+<ul>
+<li>Откройте DevTools в браузере (F12) → вкладка Network → обновите страницу. Вы увидите все API-запросы, которые делает сайт. Ваш браузер — это клиент, который постоянно общается с серверами через API.</li>
+<li>Установите Postman (postman.com) — графический инструмент для тестирования API. Многие считают его удобнее терминала для первых экспериментов.</li>
+<li>Прочитайте раздел "Making requests" в документации OpenRouter: https://openrouter.ai/docs/quick-start</li>
+<li>Посмотрите, что возвращает API случайных фактов о котах: <code>Invoke-RestMethod -Uri "https://catfact.ninja/fact"</code></li>
+</ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fi">
+    <div class="flinks">
+      <a href="/">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
+      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

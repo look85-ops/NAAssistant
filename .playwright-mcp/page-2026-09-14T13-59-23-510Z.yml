@@ -1,0 +1,301 @@
+- generic [ref=f56e3]:
+  - generic [ref=f56e8]:
+    - generic [ref=f56e9]:
+      - text: Для обеспечения удобства пользователей сайта используются cookies.
+      - link "Узнайте подробнее" [ref=f56e10] [cursor=pointer]:
+        - /url: /article/cookie_policy?hhtmFrom=vacancy
+    - generic [ref=f56e11]:
+      - button "Принять" [ref=f56e12] [cursor=pointer]
+      - button "Отказаться" [ref=f56e13] [cursor=pointer]
+  - banner [ref=f56e15]:
+    - generic [ref=f56e17]:
+      - link "Главная страница сайта" [ref=f56e18] [cursor=pointer]:
+        - /url: /
+      - link [ref=f56e23] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=f56e35] [cursor=pointer]:
+        - generic [ref=f56e36]: Минск
+      - button "Чаты" [ref=f56e50] [cursor=pointer]
+      - link "Избранное" [ref=f56e62] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f56e74] [cursor=pointer]
+      - button "Создать резюме" [ref=f56e84] [cursor=pointer]
+      - button [ref=f56e91] [cursor=pointer]
+  - generic [ref=f56e103]:
+    - main [ref=f56e104]:
+      - generic [ref=f56e110]:
+        - generic [ref=f56e117]:
+          - generic [ref=f56e122]:
+            - generic [ref=f56e123]:
+              - heading "Менеджер AI-проектов" [level=1] [ref=f56e124]
+              - text: Уровень дохода не указан
+            - generic [ref=f56e127]:
+              - paragraph [ref=f56e128]: "Опыт работы: 1–3 года"
+              - generic [ref=f56e129]: Полная занятость
+              - generic [ref=f56e132]:
+                - generic [ref=f56e133]: "Оформление:"
+                - generic [ref=f56e134]: Трудовой договор
+                - text: ·
+                - generic [ref=f56e135]: Договор ГПХ с ИП
+              - paragraph [ref=f56e136]: "График: 5/2 и другие варианты"
+              - generic [ref=f56e137]: "Рабочие часы: 8 или по договорённости"
+              - paragraph [ref=f56e140]: "Формат работы: на месте работодателя, удалённо или гибрид"
+              - paragraph [ref=f56e142]:
+                - text: Сейчас эту вакансию смотрят
+                - generic [ref=f56e143]: 23 человека
+          - generic [ref=f56e147]:
+            - button "Откликнуться" [ref=f56e149] [cursor=pointer]
+            - button "Добавить в избранное" [ref=f56e155] [cursor=pointer]
+            - button "Ещё" [ref=f56e164] [cursor=pointer]
+        - generic [ref=f56e182]:
+          - link "ООО ТД Комплект" [ref=f56e184] [cursor=pointer]:
+            - /url: /employer/782190?hhtmFrom=vacancy
+            - generic [ref=f56e185]:
+              - text: ООО
+              - generic [ref=f56e186]: ТД Комплект
+          - link [ref=f56e189] [cursor=pointer]:
+            - /url: /article/19873?hhtmFrom=vacancy
+        - generic [ref=f56e198]:
+          - generic [ref=f56e200]:
+            - paragraph [ref=f56e201]:
+              - strong [ref=f56e202]:
+                - generic [ref=f56e203]: ООО «ТД Комплект»
+              - generic [ref=f56e204]: "- надежный поставщик и официальный импортер товаров для строительства, ремонта, сада и дома."
+            - paragraph [ref=f56e205]:
+              - emphasis [ref=f56e206]:
+                - generic [ref=f56e207]: ООО «ТД Комплект»
+            - list [ref=f56e208]:
+              - listitem [ref=f56e209]:
+                - text: —
+                - emphasis [ref=f56e210]:
+                  - generic [ref=f56e211]: На рынке РБ с 1996 года;
+              - listitem [ref=f56e212]:
+                - text: —
+                - emphasis [ref=f56e213]:
+                  - generic [ref=f56e214]: "Прямой поставщик брендов: Bull, Wortex, Makita, Startul, ECO, Fiskars, Solaris, Normann, Perfecto Linea, Arizone и др.;"
+              - listitem [ref=f56e215]:
+                - text: —
+                - emphasis [ref=f56e216]:
+                  - generic [ref=f56e217]: Площадь складов сопоставима с четырьмя футбольными полями;
+              - listitem [ref=f56e218]:
+                - text: —
+                - emphasis [ref=f56e219]:
+                  - generic [ref=f56e220]: Наша команда - более 1000 профессионалов своего дела;
+              - listitem [ref=f56e221]:
+                - text: —
+                - emphasis [ref=f56e222]:
+                  - generic [ref=f56e223]: Разветвлённая сервисная сеть по всей стране.
+            - paragraph [ref=f56e224]:
+              - generic [ref=f56e225]: "Мы ищем специалиста, который возьмет на себя координацию и развитие портфеля AI-инициатив в компании: от отбора и приоритизации идей до запуска пилотов, внедрения решений в рабочие процессы и подтверждения бизнес-эффекта. В этой роли важно не только управлять проектами, но и выстраивать взаимодействие между бизнесом, ИТ, безопасностью и владельцами процессов."
+            - paragraph [ref=f56e226]:
+              - strong [ref=f56e227]:
+                - generic [ref=f56e228]: "Мы предлагаем:"
+            - list [ref=f56e229]:
+              - listitem [ref=f56e230]:
+                - text: —
+                - generic [ref=f56e231]: конкурентные условия оплаты вашего труда, сумму компенсации будем рады обсудить на встрече с руководителем;
+              - listitem [ref=f56e232]:
+                - text: —
+                - generic [ref=f56e233]: "гибкий формат работы: готовы рассмотреть удаленку или гибрид;"
+              - listitem [ref=f56e234]:
+                - text: —
+                - generic [ref=f56e235]: "график работы: пятидневка, 9:00–17:00."
+              - listitem [ref=f56e236]:
+                - text: —
+                - generic [ref=f56e237]: корпоративную скидку на ассортимент компании, ДМС, расширенный отпуск 28 дней и sick day
+            - strong [ref=f56e238]:
+              - generic [ref=f56e239]: "Что Вы будете делать:"
+            - list [ref=f56e240]:
+              - listitem [ref=f56e241]:
+                - text: —
+                - generic [ref=f56e242]: "управлять единым портфелем ИИ-инициатив: квалификация, приоритизация, этапы принятия решений, зависимости, риски и эскалации;"
+              - listitem [ref=f56e243]:
+                - text: —
+                - generic [ref=f56e244]: доводить приоритетные инициативы до пилота, приемки, обучения пользователей, передачи в регулярную эксплуатацию и подтверждения эффекта "было → стало";
+              - listitem [ref=f56e245]:
+                - text: —
+                - generic [ref=f56e246]: координировать взаимодействие между бизнесом, ИТ, информационной безопасностью и владельцами процессов;
+              - listitem [ref=f56e247]:
+                - text: —
+                - generic [ref=f56e248]: обеспечивать повторное использование решений и подходов внутри компании;
+              - listitem [ref=f56e249]:
+                - text: —
+                - generic [ref=f56e250]: "развивать проект AI-лидеров внутри компании: проводить проектные разборы, наставничество, demo day, onboarding и обучающие активности;"
+            - paragraph [ref=f56e251]:
+              - strong [ref=f56e252]:
+                - generic [ref=f56e253]: "Требования:"
+            - list [ref=f56e254]:
+              - listitem [ref=f56e255]:
+                - text: —
+                - generic [ref=f56e256]: опыт внедрения AI в бизнес-процессы;
+              - listitem [ref=f56e257]:
+                - text: —
+                - generic [ref=f56e258]: опыт управления проектами или портфелем проектов;
+              - listitem [ref=f56e259]:
+                - text: —
+                - generic [ref=f56e260]: понимание прикладного использования AI для бизнес-задач;
+              - listitem [ref=f56e261]:
+                - text: —
+                - generic [ref=f56e262]: сильные коммуникативные и организационные навыки;
+              - listitem [ref=f56e263]:
+                - text: —
+                - generic [ref=f56e264]: опыт работы в кросс-функциональной среде.
+            - paragraph [ref=f56e265]:
+              - strong [ref=f56e266]:
+                - generic [ref=f56e267]: "Плюсом будет:"
+            - list [ref=f56e268]:
+              - listitem [ref=f56e269]:
+                - text: —
+                - generic [ref=f56e270]: опыт агентской разработки с AI;
+              - listitem [ref=f56e271]:
+                - text: —
+                - generic [ref=f56e272]: опыт обучения и развития внутренних сообществ.
+          - generic [ref=f56e273]:
+            - heading "Ключевые навыки" [level=2] [ref=f56e275]
+            - list [ref=f56e278]:
+              - listitem [ref=f56e279]:
+                - generic [ref=f56e280]: Проектный менеджмент
+              - listitem [ref=f56e282]:
+                - generic [ref=f56e283]: Оптимизация бизнес процессов
+              - listitem [ref=f56e285]:
+                - generic [ref=f56e286]: Наставничество
+          - generic [ref=f56e289]:
+            - heading [level=2] [ref=f56e291]:
+              - generic [ref=f56e292]:
+                - text: Соискателям с особенностями
+                - generic [ref=f56e293]:
+                  - text: здоровья
+                  - button "Работодатель рассматривает всех соискателей на равных основаниях с учётом их деловых качеств. Соискатель оценивает самостоятельно, насколько требования вакансии сопоставимы с его индивидуальными особенностями." [ref=f56e297] [cursor=pointer]
+            - list [ref=f56e306]:
+              - listitem [ref=f56e307]:
+                - generic [ref=f56e308]: Нарушения зрения
+              - listitem [ref=f56e310]:
+                - generic [ref=f56e311]: Нарушения мобильности
+              - listitem [ref=f56e313]:
+                - generic [ref=f56e314]: Хронические заболевания
+          - generic [ref=f56e317]:
+            - heading "Задайте вопрос работодателю" [level=2] [ref=f56e319]
+            - generic [ref=f56e321]: Он получит его с откликом на вакансию
+            - generic [ref=f56e323]:
+              - generic [ref=f56e324] [cursor=pointer]:
+                - checkbox "Где располагается место работы?" [ref=f56e325]
+                - generic [ref=f56e326]: Где располагается место работы?
+              - generic [ref=f56e331] [cursor=pointer]:
+                - checkbox "Какой график работы?" [ref=f56e332]
+                - generic [ref=f56e333]: Какой график работы?
+              - generic [ref=f56e338] [cursor=pointer]:
+                - checkbox "Вакансия открыта?" [ref=f56e339]
+                - generic [ref=f56e340]: Вакансия открыта?
+              - generic [ref=f56e345] [cursor=pointer]:
+                - checkbox "Какая оплата труда?" [ref=f56e346]
+                - generic [ref=f56e347]: Какая оплата труда?
+              - generic [ref=f56e352] [cursor=pointer]:
+                - checkbox "Как с вами связаться?" [ref=f56e353]
+                - generic [ref=f56e354]: Как с вами связаться?
+              - generic [ref=f56e359] [cursor=pointer]:
+                - checkbox "Другой вопрос" [ref=f56e360]
+                - generic [ref=f56e361]: Другой вопрос
+          - generic [ref=f56e368]:
+            - heading "Где предстоит работать" [level=2] [ref=f56e370]
+            - generic [ref=f56e371]: Минск, поселок Кунцевщина, улица Брикета, 31
+            - link "Показать на большой карте" [ref=f56e377]:
+              - /url: /search/vacancy/map?vacancy_id=137097152&hhtmFrom=vacancy
+        - generic [ref=f56e380]:
+          - generic [ref=f56e381]: Вакансия опубликована 14 сентября 2026 в Минске
+          - button "Откликнуться" [ref=f56e395] [cursor=pointer]
+    - contentinfo [ref=f56e404]:
+      - generic [ref=f56e408]:
+        - navigation "Навигация в подвале" [ref=f56e409]:
+          - generic [ref=f56e410]:
+            - generic [ref=f56e412]:
+              - generic [ref=f56e413]: rabota.by
+              - list [ref=f56e415]:
+                - listitem [ref=f56e416]:
+                  - link "Помощь" [ref=f56e418]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e421]:
+                  - link "Наши вакансии" [ref=f56e423]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e426]:
+                  - link "Реклама на сайте" [ref=f56e428]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy#region/belarus
+                - listitem [ref=f56e431]:
+                  - link "Требования к ПО" [ref=f56e433]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e436]:
+                  - link "Политика обработки cookie" [ref=f56e438]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e441]:
+                  - link "Настройки cookie" [ref=f56e443]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e446]:
+                  - link "Напишите нам" [ref=f56e448]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=f56e451]:
+                  - link "Каталог компаний" [ref=f56e453]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e456]:
+                  - link "Поиск по вакансиям в Минске" [ref=f56e458]:
+                    - /url: /vacancies
+                - listitem [ref=f56e461]:
+                  - link "Работа рядом с метро" [ref=f56e463]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - generic [ref=f56e468]:
+              - generic [ref=f56e469]: Соискателям
+              - list [ref=f56e471]:
+                - listitem [ref=f56e472]:
+                  - link "Все сервисы" [ref=f56e474]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e477]:
+                  - link "Кадровые агентства Беларуси" [ref=f56e479]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                - listitem [ref=f56e482]:
+                  - link "Производственный календарь" [ref=f56e484]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - generic [ref=f56e489]:
+              - list [ref=f56e490]:
+                - listitem [ref=f56e491]:
+                  - generic [ref=f56e492]: Боты для уведомлений
+                  - generic [ref=f56e494]:
+                    - button "Подключить telegram бот" [ref=f56e495] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f56e502] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f56e510] [cursor=pointer]
+              - generic [ref=f56e519]:
+                - generic [ref=f56e520]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f56e522]
+        - navigation "Правовая информация" [ref=f56e530]:
+          - list [ref=f56e531]:
+            - listitem [ref=f56e532]:
+              - link "Этика и комплаенс" [ref=f56e534]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f56e537]:
+              - link "Оказание услуг" [ref=f56e539]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f56e542]:
+              - link "Использование сайтов" [ref=f56e544]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f56e547]:
+              - link "Политика обработки данных" [ref=f56e549]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+            - listitem [ref=f56e552]:
+              - link "Пользовательское соглашение" [ref=f56e554]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+        - generic [ref=f56e561]:
+          - paragraph [ref=f56e562]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=f56e564]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=f56e566]:
+            - img "mastercard" [ref=f56e567]
+            - img "visa" [ref=f56e568]
+            - img "belcart" [ref=f56e569]
+            - img "belcart-internetparol" [ref=f56e570]
+        - generic [ref=f56e575]:
+          - generic [ref=f56e576]:
+            - button "Перейти в ВК" [ref=f56e577] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=f56e585] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=f56e593] [cursor=pointer]
+            - button "Перейти в Viber" [ref=f56e601] [cursor=pointer]
+          - generic [ref=f56e610]:
+            - list [ref=f56e611]:
+              - listitem [ref=f56e612]:
+                - combobox "Выбор языка сайта" [ref=f56e615]:
+                  - generic [ref=f56e616]: Русский
+            - generic [ref=f56e623]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

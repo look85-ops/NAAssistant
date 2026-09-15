@@ -1,0 +1,823 @@
+- generic [active] [ref=f85e1]:
+  - generic [ref=f85e3]:
+    - generic [ref=f85e8]:
+      - generic [ref=f85e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=f85e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy_search_list
+      - generic [ref=f85e11]:
+        - button "Принять" [ref=f85e12] [cursor=pointer]
+        - button "Отказаться" [ref=f85e13] [cursor=pointer]
+    - banner [ref=f85e15]:
+      - generic [ref=f85e17]:
+        - link "Главная страница сайта" [ref=f85e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=f85e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=f85e35] [cursor=pointer]:
+          - generic [ref=f85e36]: Минск
+        - button "Чаты" [ref=f85e50] [cursor=pointer]
+        - link "Избранное" [ref=f85e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f85e74] [cursor=pointer]
+        - button "Создать резюме" [ref=f85e84] [cursor=pointer]
+        - button [ref=f85e91] [cursor=pointer]
+    - generic [ref=f85e103]:
+      - main [ref=f85e104]:
+        - generic [ref=f85e111]:
+          - generic [ref=f85e112]:
+            - generic [ref=f85e115]:
+              - combobox "Поиск по вакансиям" [ref=f85e119]: Product Manager онлайн образование
+              - button "Очистить" [ref=f85e125] [cursor=pointer]
+            - group
+          - button "Сохранить поиск" [ref=f85e133] [cursor=pointer]
+        - generic [ref=f85e148]:
+          - generic [ref=f85e149]:
+            - checkbox "Фильтры" [ref=f85e150]
+            - img "Фильтры" [ref=f85e153] [cursor=pointer]
+          - generic [ref=f85e159]:
+            - button "Минск" [ref=f85e160] [cursor=pointer]
+            - button [ref=f85e167] [cursor=pointer]
+          - button "Метро" [ref=f85e173] [cursor=pointer]
+          - button "График" [ref=f85e184] [cursor=pointer]
+          - button "Рабочие часы" [ref=f85e195] [cursor=pointer]
+          - button "Опыт" [ref=f85e206] [cursor=pointer]
+          - button "Тип занятости" [ref=f85e217] [cursor=pointer]
+          - button "Уровень дохода" [ref=f85e227] [cursor=pointer]
+          - generic [ref=f85e235]:
+            - checkbox "Ещё фильтры" [ref=f85e236]
+            - generic [ref=f85e237] [cursor=pointer]: Ещё фильтры
+        - generic [ref=f85e242]:
+          - generic [ref=f85e250]:
+            - heading "Найдено 23 вакансии «Product Manager онлайн образование»" [level=1] [ref=f85e256]
+            - generic [ref=f85e260]:
+              - generic [ref=f85e261]:
+                - radio "краткое описания вакансий" [ref=f85e262]
+                - generic [ref=f85e263] [cursor=pointer]
+              - generic [ref=f85e270]:
+                - radio "полное описание вакансий" [checked] [ref=f85e271]
+                - generic [ref=f85e272] [cursor=pointer]
+          - generic [ref=f85e284]:
+            - region "Вакансии" [ref=f85e286]:
+              - list [ref=f85e288]:
+                - listitem [ref=f85e289]:
+                  - article [ref=f85e292] [cursor=pointer]:
+                    - generic [ref=f85e296]:
+                      - generic [ref=f85e297]:
+                        - generic [ref=f85e298]:
+                          - button "Добавить в избранное" [ref=f85e299]
+                          - button "Скрыть" [ref=f85e303]
+                        - generic [ref=f85e307]: Сейчас смотрят 9 человек
+                        - link "Product Manager (Онлайн-образование, рынок Германии)" [ref=f85e310]:
+                          - /url: https://hh.ru/vacancy/136959273?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
+                        - generic [ref=f85e315]:
+                          - generic [ref=f85e316]: Опыт 1-3 года
+                          - generic [ref=f85e318]: Можно удалённо
+                        - generic [ref=f85e321]:
+                          - link [ref=f85e324]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Гринком" [ref=f85e331]:
+                            - /url: /employer/11677910?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e335]: Минск
+                        - generic [ref=f85e339]:
+                          - generic [ref=f85e340]: Развитие и масштабирование существующего продукта в нише эссе. Анализ пользовательского опыта, выявление точек роста и узких мест. Формирование и приоритизация...
+                          - generic [ref=f85e342]: Опыт работы Product Manager от 2 лет (EdTech, онлайн-сервисы, digital-продукты). Опыт развития существующих продуктов (growth, оптимизация, масштабирование).
+                      - button "Откликнуться" [ref=f85e348]
+                - listitem [ref=f85e354]:
+                  - article [ref=f85e357] [cursor=pointer]:
+                    - generic [ref=f85e361]:
+                      - generic [ref=f85e362]:
+                        - generic [ref=f85e363]:
+                          - button "Добавить в избранное" [ref=f85e364]
+                          - button "Скрыть" [ref=f85e368]
+                        - generic [ref=f85e372]: Сейчас смотрят 8 человек
+                        - link "Junior Growth Product Manager" [ref=f85e375]:
+                          - /url: https://rabota.by/vacancy/136321809?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e380]:
+                          - generic [ref=f85e381]: Опыт 1-3 года
+                          - generic [ref=f85e383]: Можно удалённо
+                        - generic [ref=f85e386]:
+                          - link [ref=f85e389]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО АльпариГрупп" [ref=f85e396]:
+                            - /url: /employer/645117?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e400]:
+                            - text: Минск
+                            - generic [ref=f85e403]:
+                              - generic [ref=f85e404]: ●
+                              - generic [ref=f85e405]: Немига
+                            - generic [ref=f85e406]: и еще 2
+                            - generic [ref=f85e407]: ●
+                            - generic [ref=f85e409]: ●
+                        - generic [ref=f85e413]:
+                          - generic [ref=f85e414]: Cooperate closely with analytics teams and product managers. Experience with payment systems (Stripe, Solid, etc.), including chargeback/refund management and...
+                          - generic [ref=f85e416]: A solid understanding of unit economics and key business metrics. A data-driven mindset with the ability to identify user...
+                      - generic [ref=f85e421]:
+                        - button "Откликнуться" [ref=f85e422]
+                        - button "Связаться" [ref=f85e428]
+                  - generic [ref=f85e434]:
+                    - generic [ref=f85e435]:
+                      - heading "Компании для вас" [level=2] [ref=f85e436]
+                      - button [ref=f85e439] [cursor=pointer]
+                    - region [ref=f85e449]:
+                      - list [ref=f85e452]:
+                        - generic [ref=f85e454]:
+                          - listitem [ref=f85e455]:
+                            - button "АЛЬФА-БАНК АЛЬФА-БАНК 49 активных вакансий Посмотреть" [ref=f85e458] [cursor=pointer]:
+                              - generic [ref=f85e462]:
+                                - generic "АЛЬФА-БАНК" [ref=f85e468]:
+                                  - img "АЛЬФА-БАНК" [ref=f85e470]
+                                - generic [ref=f85e472]: АЛЬФА-БАНК
+                                - generic [ref=f85e476]: 49 активных вакансий
+                                - button "Посмотреть" [ref=f85e480]
+                          - listitem [ref=f85e485]:
+                            - button "МТбанк МТбанк 57 активных вакансий Посмотреть" [ref=f85e488] [cursor=pointer]:
+                              - generic [ref=f85e492]:
+                                - generic "МТбанк" [ref=f85e498]:
+                                  - img "МТбанк" [ref=f85e500]
+                                - generic [ref=f85e502]: МТбанк
+                                - generic [ref=f85e506]: 57 активных вакансий
+                                - button "Посмотреть" [ref=f85e510]
+                          - listitem [ref=f85e515]:
+                            - button "Паритетбанк Паритетбанк 33 активные вакансии Посмотреть" [ref=f85e518] [cursor=pointer]:
+                              - generic [ref=f85e522]:
+                                - generic "Паритетбанк" [ref=f85e528]
+                                - generic [ref=f85e531]: Паритетбанк
+                                - generic [ref=f85e535]: 33 активные вакансии
+                                - button "Посмотреть" [ref=f85e539]
+                  - generic [ref=f85e559]:
+                    - generic [ref=f85e560]:
+                      - generic [ref=f85e561]: По вашему запросу ещё будут появляться новые вакансии. Присылать вам?
+                      - generic [ref=f85e564]:
+                        - generic [ref=f85e565]: Product Manager онлайн образование • Минск • Ключевые слова в названии вакансии, в названии компании и в описании вакансии
+                        - generic [ref=f85e566]:
+                          - text: Даю согласие на обработку персональных данных на получение ссылки на автоматически подобранные вакансии в соответствии с
+                          - link "Условиями обработки" [ref=f85e567]:
+                            - /url: /article/31466?hhtmFrom=vacancy_search_list
+                          - text: . Ознакомлен с
+                          - link "Правами, связанными с обработкой, механизмом их реализации и последствиями согласия и отказа" [ref=f85e570]:
+                            - /url: /article/31466?hhtmFrom=vacancy_search_list#clause1
+                          - text: .
+                    - generic [ref=f85e575]:
+                      - button "В мессенджер" [ref=f85e577] [cursor=pointer]
+                      - button "На почту" [ref=f85e583] [cursor=pointer]
+                - listitem [ref=f85e589]:
+                  - article [ref=f85e592] [cursor=pointer]:
+                    - generic [ref=f85e596]:
+                      - generic [ref=f85e597]:
+                        - generic [ref=f85e598]:
+                          - button "Добавить в избранное" [ref=f85e599]
+                          - button "Скрыть" [ref=f85e603]
+                        - generic [ref=f85e607]: Сейчас смотрят 7 человек
+                        - link "Growth Product Manager (Monetization)" [ref=f85e610]:
+                          - /url: https://rabota.by/vacancy/136841876?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e615]:
+                          - generic [ref=f85e616]: Опыт 3-6 лет
+                          - generic [ref=f85e618]: Можно удалённо
+                        - generic [ref=f85e621]:
+                          - link [ref=f85e624]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ЭППИФАЙ" [ref=f85e631]:
+                            - /url: /employer/3313464?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e635]:
+                            - text: Минск
+                            - generic [ref=f85e638]:
+                              - generic [ref=f85e639]: ●
+                              - generic [ref=f85e640]: Молодежная
+                        - generic [ref=f85e643]:
+                          - generic [ref=f85e644]: Отвечать за рост конверсии в платящих на всём пути пользователя- от первого экрана после тапа по рекламе до оплаты и...
+                          - generic [ref=f85e646]: 2+ года в growth, монетизационной или product marketing роли в B2C-продуктах с подписочной моделью. -
+                      - button "Откликнуться" [ref=f85e652]
+                - listitem [ref=f85e658]:
+                  - article [ref=f85e661] [cursor=pointer]:
+                    - generic [ref=f85e665]:
+                      - generic [ref=f85e666]:
+                        - generic [ref=f85e667]:
+                          - button "Добавить в избранное" [ref=f85e668]
+                          - button "Скрыть" [ref=f85e672]
+                        - generic [ref=f85e676]: Сейчас смотрят 2 человека
+                        - link "Digital Product Owner" [ref=f85e679]:
+                          - /url: https://rabota.by/vacancy/136449187?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e683]: Опыт 3-6 лет
+                        - generic [ref=f85e688]:
+                          - generic [ref=f85e690]:
+                            - link [ref=f85e691]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f85e697]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - 'link "Вакансии Альфа-Банк: IT-направление и цифровой бизнес" [ref=f85e711]':
+                            - /url: /employer/534346?dpt=534346-534346-it&hhtmFrom=vacancy_search_list
+                            - 'img "Альфа-Банк: IT-направление и цифровой бизнес" [ref=f85e713]'
+                          - 'link "Альфа-Банк: IT-направление и цифровой бизнес" [ref=f85e714]':
+                            - /url: /employer/534346?dpt=534346-534346-it&hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e717]:
+                            - text: Минск
+                            - generic [ref=f85e720]:
+                              - generic [ref=f85e721]: ●
+                              - generic [ref=f85e722]: Академия наук
+                            - generic [ref=f85e723]: и еще 3
+                            - generic [ref=f85e724]: ●
+                            - generic [ref=f85e726]: ●
+                            - generic [ref=f85e728]: ●
+                        - generic [ref=f85e732]:
+                          - generic [ref=f85e733]: "Планирование: разработка плана, определение задач, сроков и ресурсов. Управление командой: назначение задач членам команды, распределение ресурсов. Управление рисками: идентификация, оценка..."
+                          - generic [ref=f85e735]: Опыт в digital product management от 3–5 лет. Понимание performance-маркетинга и digital-воронок. Опыт работы с веб-продуктами...
+                      - button "Откликнуться" [ref=f85e741]
+                - listitem [ref=f85e747]:
+                  - article [ref=f85e750] [cursor=pointer]:
+                    - generic [ref=f85e754]:
+                      - generic [ref=f85e755]:
+                        - generic [ref=f85e756]:
+                          - button "Добавить в избранное" [ref=f85e757]
+                          - button "Скрыть" [ref=f85e761]
+                        - generic [ref=f85e765]: Сейчас смотрят 3 человека
+                        - link "Product Manager (Web)" [ref=f85e768]:
+                          - /url: https://rabota.by/vacancy/133007676?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e772]: Опыт 1-3 года
+                        - generic [ref=f85e777]:
+                          - link [ref=f85e780]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e787]:
+                            - generic:
+                              - link "Вакансии Тогл Софт / Toggle":
+                                - /url: /employer/12099673?hhtmFrom=vacancy_search_list
+                                - generic:
+                                  - img "Тогл Софт / Toggle"
+                          - link "ООО Тогл Софт / Toggle" [ref=f85e788]:
+                            - /url: /employer/12099673?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e792]:
+                            - text: Минск
+                            - generic [ref=f85e795]:
+                              - generic [ref=f85e796]: ●
+                              - generic [ref=f85e797]: Борисовский тракт
+                        - generic [ref=f85e800]:
+                          - generic [ref=f85e801]: Site structure and positioning. Plan purchase pages — pricing, checkout flow. CMS for content, articles, and SEO pages. Personal cabinet — parity...
+                          - generic [ref=f85e803]: 2+ years as PM or analyst on a web product. Strong understanding of conversion funnels and web analytics.
+                      - button "Откликнуться" [ref=f85e809]
+                - listitem [ref=f85e815]:
+                  - article [ref=f85e818] [cursor=pointer]:
+                    - generic [ref=f85e822]:
+                      - generic [ref=f85e823]:
+                        - generic [ref=f85e824]:
+                          - button "Добавить в избранное" [ref=f85e825]
+                          - button "Скрыть" [ref=f85e829]
+                        - generic [ref=f85e833]: Сейчас смотрят 2 человека
+                        - link "Product Manager (Senior)" [ref=f85e836]:
+                          - /url: https://rabota.by/vacancy/137067021?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e840]: Опыт более 6 лет
+                        - generic [ref=f85e845]:
+                          - link [ref=f85e848]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО GRYMALA / ГРЫМАЛА" [ref=f85e856]:
+                            - /url: /employer/2616064?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e860]:
+                            - text: Минск
+                            - generic [ref=f85e863]:
+                              - generic [ref=f85e864]: ●
+                              - generic [ref=f85e865]: Молодежная
+                            - generic [ref=f85e866]: и еще 1
+                            - generic [ref=f85e867]: ●
+                        - generic [ref=f85e871]:
+                          - generic [ref=f85e872]: Работать в тесной связке с разработкой, дизайном, аналитикой и маркетингом. Менторить Junior Product Manager, помогать с приоритизацией и принятием продуктовых...
+                          - generic [ref=f85e874]: Опыт в небольшой или средней продуктовой компании, где Product Manager действительно отвечает за результат, а не за отдельный участок процесса.
+                      - button "Откликнуться" [ref=f85e880]
+                - listitem [ref=f85e886]:
+                  - article [ref=f85e889] [cursor=pointer]:
+                    - generic [ref=f85e893]:
+                      - generic [ref=f85e894]:
+                        - generic [ref=f85e895]:
+                          - button "Добавить в избранное" [ref=f85e896]
+                          - button "Скрыть" [ref=f85e900]
+                        - link "Product manager" [ref=f85e905]:
+                          - /url: https://rabota.by/vacancy/136321925?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e909]: Опыт 3-6 лет
+                        - generic [ref=f85e914]:
+                          - link [ref=f85e917]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Цифровая Интеграция" [ref=f85e924]:
+                            - /url: /employer/12965740?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e928]:
+                            - text: Минск
+                            - generic [ref=f85e931]:
+                              - generic [ref=f85e932]: ●
+                              - generic [ref=f85e933]: Купаловская
+                            - generic [ref=f85e934]: и еще 3
+                            - generic [ref=f85e935]: ●
+                            - generic [ref=f85e937]: ●
+                            - generic [ref=f85e939]: ●
+                        - generic [ref=f85e943]:
+                          - generic [ref=f85e944]: Планирование и реализация roadmap-а продукта. Проведение исследований рынка. Генерирование гипотез по увеличению прибыли на основе пользовательских исследований, аналитики, конкурентного...
+                          - generic [ref=f85e946]: Нам нужен человек, который умеет находить возможности для роста, выстраивать приоритеты, работать с командами разработки и дизайна и не боится...
+                      - button "Откликнуться" [ref=f85e952]
+                - listitem [ref=f85e958]:
+                  - article [ref=f85e961] [cursor=pointer]:
+                    - generic [ref=f85e965]:
+                      - generic [ref=f85e966]:
+                        - generic [ref=f85e967]:
+                          - button "Добавить в избранное" [ref=f85e968]
+                          - button "Скрыть" [ref=f85e972]
+                        - link "Product manager" [ref=f85e977]:
+                          - /url: https://rabota.by/vacancy/136675752?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e981]: Опыт 3-6 лет
+                        - generic [ref=f85e986]:
+                          - link [ref=f85e989]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО СолвИтБай" [ref=f85e996]:
+                            - /url: /employer/5225084?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1000]:
+                            - text: Минск
+                            - generic [ref=f85e1003]:
+                              - generic [ref=f85e1004]: ●
+                              - generic [ref=f85e1005]: Молодежная
+                            - generic [ref=f85e1006]: и еще 3
+                            - generic [ref=f85e1007]: ●
+                            - generic [ref=f85e1009]: ●
+                            - generic [ref=f85e1011]: ●
+                        - generic [ref=f85e1015]:
+                          - generic [ref=f85e1016]: Проведение продуктовых тестов, направленных на улучшение ключевых метрик приложений. Оптимизация онбординга и пользовательского пути внутри приложения. Тестирование экранов и элементов...
+                          - generic [ref=f85e1018]: Опыт работы в роли Product Manager 3+ года. Практический опыт проведения A/B-тестов и работы с продуктовыми метриками.
+                      - button "Откликнуться" [ref=f85e1024]
+                - listitem [ref=f85e1030]:
+                  - article [ref=f85e1033] [cursor=pointer]:
+                    - generic [ref=f85e1037]:
+                      - generic [ref=f85e1038]:
+                        - generic [ref=f85e1039]:
+                          - button "Добавить в избранное" [ref=f85e1040]
+                          - button "Скрыть" [ref=f85e1044]
+                        - generic [ref=f85e1048]: Сейчас смотрят 4 человека
+                        - link "Growth Product Manager" [ref=f85e1051]:
+                          - /url: https://hh.ru/vacancy/136448727?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
+                        - generic [ref=f85e1056]:
+                          - generic [ref=f85e1057]: Опыт 3-6 лет
+                          - generic [ref=f85e1059]: Можно удалённо
+                        - generic [ref=f85e1062]:
+                          - link [ref=f85e1065]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "POFKARIO HOLDINGS LIMITED" [ref=f85e1073]:
+                            - /url: /employer/11788079?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1076]: Минск
+                        - generic [ref=f85e1080]:
+                          - generic [ref=f85e1081]: Полностью отвечать за Growth-направление продукта. Анализировать продуктовую воронку и находить точки роста. Самостоятельно формировать, проверять и приоритизировать growth-гипотезы.
+                          - generic [ref=f85e1083]: 3–5+ лет опыта в Product Management / Growth Product / Product Growth. Обязательный опыт работы с B2C-продуктами.
+                      - button "Откликнуться" [ref=f85e1089]
+                - listitem [ref=f85e1095]:
+                  - article [ref=f85e1098] [cursor=pointer]:
+                    - generic [ref=f85e1102]:
+                      - generic [ref=f85e1103]:
+                        - generic [ref=f85e1104]:
+                          - button "Добавить в избранное" [ref=f85e1105]
+                          - button "Скрыть" [ref=f85e1109]
+                        - link "Growth Product Manager (web2web) (МИНСК)" [ref=f85e1114]:
+                          - /url: https://rabota.by/vacancy/136494768?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1118]: Опыт 3-6 лет
+                        - generic [ref=f85e1123]:
+                          - link [ref=f85e1126]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Ай Ди Эй Технолоджис" [ref=f85e1133]:
+                            - /url: /employer/4048323?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1137]:
+                            - text: Минск
+                            - generic [ref=f85e1140]:
+                              - generic [ref=f85e1141]: ●
+                              - generic [ref=f85e1142]: Молодежная
+                            - generic [ref=f85e1143]: и еще 3
+                            - generic [ref=f85e1144]: ●
+                            - generic [ref=f85e1146]: ●
+                            - generic [ref=f85e1148]: ●
+                        - generic [ref=f85e1151]: Можно без резюме
+                        - generic [ref=f85e1157]:
+                          - generic [ref=f85e1158]: Создавать и развивать Web2Web-воронки с помощью специализированных сервисов (Web2Wave, FunnelFox и т.п.).
+                          - generic [ref=f85e1160]: "Сильные коммуникативные навыки и навыки работы в кросс-функциональной команде: Product Managers, UA Managers, Development, UX/UI Design, Content, QA."
+                      - generic [ref=f85e1165]:
+                        - button "Откликнуться" [ref=f85e1166]
+                        - button "Связаться" [ref=f85e1172]
+                - listitem [ref=f85e1178]:
+                  - article [ref=f85e1181] [cursor=pointer]:
+                    - generic [ref=f85e1185]:
+                      - generic [ref=f85e1186]:
+                        - generic [ref=f85e1187]:
+                          - button "Добавить в избранное" [ref=f85e1188]
+                          - button "Скрыть" [ref=f85e1192]
+                        - link "Lead Product Manager/Lead Producer" [ref=f85e1197]:
+                          - /url: https://rabota.by/vacancy/136404683?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1202]:
+                          - generic [ref=f85e1203]: Опыт более 6 лет
+                          - generic [ref=f85e1205]: Можно удалённо
+                        - generic [ref=f85e1208]:
+                          - link [ref=f85e1211]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Северекс Бай" [ref=f85e1219]:
+                            - /url: /employer/2561236?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1223]:
+                            - text: Минск
+                            - generic [ref=f85e1226]:
+                              - generic [ref=f85e1227]: ●
+                              - generic [ref=f85e1228]: Площадь Якуба Коласа
+                        - generic [ref=f85e1231]:
+                          - generic [ref=f85e1232]: Анализ результатов продуктов и определение дальнейшей стратегии развития. 2. Развитие Product Managers. Управление командой Product Managers. Проведение регулярных 1-on...
+                          - generic [ref=f85e1234]: "Опыт работы Product Manager/Producer в мобильных играх от 5 лет. Опыт управления командой Product Managers: постановка целей, развитие, оценка..."
+                      - button "Откликнуться" [ref=f85e1240]
+                - listitem [ref=f85e1246]:
+                  - article [ref=f85e1249] [cursor=pointer]:
+                    - generic [ref=f85e1253]:
+                      - generic [ref=f85e1254]:
+                        - generic [ref=f85e1255]:
+                          - button "Добавить в избранное" [ref=f85e1256]
+                          - button "Скрыть" [ref=f85e1260]
+                        - generic [ref=f85e1264]: Сейчас смотрят 4 человека
+                        - link "Менеджер продукта" [ref=f85e1267]:
+                          - /url: https://hh.ru/vacancy/137103109?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
+                        - generic [ref=f85e1272]:
+                          - generic [ref=f85e1273]: Опыт 1-3 года
+                          - generic [ref=f85e1275]: Можно удалённо
+                        - generic [ref=f85e1278]:
+                          - link [ref=f85e1281]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "TutorOnline (Форстад, ООО)" [ref=f85e1299]:
+                            - /url: /employer/2238184?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1302]:
+                            - text: Минск
+                            - generic [ref=f85e1305]:
+                              - generic [ref=f85e1306]: ●
+                              - generic [ref=f85e1307]: Парк Челюскинцев
+                        - generic [ref=f85e1310]:
+                          - generic [ref=f85e1311]: Автоматизировать рутинные задачи преподавателей и методистов с помощью генеративного ИИ (создание и проверка домашних заданий, генерация контента). Внедрить ИИ-помощников...
+                          - generic [ref=f85e1313]: Практический опыт запуска AI-фичей или продуктов на базе OpenAI / Claude / отечественных LLM. Понимание специфики школьного образования, подготовки к экзаменам...
+                      - button "Откликнуться" [ref=f85e1319]
+                - listitem [ref=f85e1325]:
+                  - article [ref=f85e1328] [cursor=pointer]:
+                    - generic [ref=f85e1332]:
+                      - generic [ref=f85e1333]:
+                        - generic [ref=f85e1334]:
+                          - button "Добавить в избранное" [ref=f85e1335]
+                          - button "Скрыть" [ref=f85e1339]
+                        - link "Product Owner / Project Manager (SaaS)" [ref=f85e1344]:
+                          - /url: https://hh.ru/vacancy/137070931?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
+                        - generic [ref=f85e1349]:
+                          - generic [ref=f85e1350]: Опыт 1-3 года
+                          - generic [ref=f85e1352]: Можно удалённо
+                        - generic [ref=f85e1355]:
+                          - link [ref=f85e1358]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ITACWT" [ref=f85e1365]:
+                            - /url: /employer/5201237?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1368]: село Богородка, улица Казахстан
+                        - generic [ref=f85e1372]:
+                          - generic [ref=f85e1373]: "Ревью спецификаций: Проводить ревью бизнес-спецификаций, подготовленных Product Manager, обеспечивая их полноту, ясность и готовность к оценке и разработке совместно..."
+                          - generic [ref=f85e1375]: Product Owner тесно работает с командой разработки и поддерживает коммуникацию с другими командами в компании ). - Высшее образование или курсы ( желательно...
+                      - button "Откликнуться" [ref=f85e1381]
+                - listitem [ref=f85e1387]:
+                  - article [ref=f85e1390] [cursor=pointer]:
+                    - generic [ref=f85e1394]:
+                      - generic [ref=f85e1395]:
+                        - generic [ref=f85e1396]:
+                          - button "Добавить в избранное" [ref=f85e1397]
+                          - button "Скрыть" [ref=f85e1401]
+                        - generic [ref=f85e1405]: Сейчас смотрит 1 человек
+                        - link "Product Owner (приложение для инвестиций)" [ref=f85e1408]:
+                          - /url: https://rabota.by/vacancy/133294549?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1412]: Опыт 3-6 лет
+                        - generic [ref=f85e1417]:
+                          - generic [ref=f85e1419]:
+                            - link [ref=f85e1420]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f85e1426]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - 'link "Вакансии Альфа-Банк: финансовый блок" [ref=f85e1440]':
+                            - /url: /employer/534346?dpt=534346-534346-finance&hhtmFrom=vacancy_search_list
+                            - 'img "Альфа-Банк: финансовый блок" [ref=f85e1442]'
+                          - 'link "Альфа-Банк: финансовый блок" [ref=f85e1443]':
+                            - /url: /employer/534346?dpt=534346-534346-finance&hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1446]:
+                            - text: Минск
+                            - generic [ref=f85e1449]:
+                              - generic [ref=f85e1450]: ●
+                              - generic [ref=f85e1451]: Академия наук
+                        - generic [ref=f85e1454]:
+                          - generic [ref=f85e1455]: "Развитие мобильного приложения для брокерского обслуживания клиентов на рынке белорусских и иностранных ценных бумаг: определение видения и стратегии."
+                          - generic [ref=f85e1457]: Высшее образование в области экономики, финансов, управления или смежных дисциплин. Опыт работы в банковской сфере или финансовых услугах, предпочтительно на...
+                      - generic [ref=f85e1462]:
+                        - button "Откликнуться" [ref=f85e1463]
+                        - button "Связаться" [ref=f85e1469]
+                - listitem [ref=f85e1475]:
+                  - article [ref=f85e1478] [cursor=pointer]:
+                    - generic [ref=f85e1482]:
+                      - generic [ref=f85e1483]:
+                        - generic [ref=f85e1484]:
+                          - button "Добавить в избранное" [ref=f85e1485]
+                          - button "Скрыть" [ref=f85e1489]
+                        - generic [ref=f85e1493]: Сейчас смотрят 9 человек
+                        - link "CRM Manager / CRM Маркетолог" [ref=f85e1496]:
+                          - /url: https://hh.ru/vacancy/137058019?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5
+                        - generic [ref=f85e1500]:
+                          - generic [ref=f85e1501]: от 1 400 $ за месяц, на руки
+                          - generic [ref=f85e1503]:
+                            - generic [ref=f85e1504]: Опыт 1-3 года
+                            - generic [ref=f85e1506]: Можно удалённо
+                        - generic [ref=f85e1509]:
+                          - link [ref=f85e1512]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Novakid Inc" [ref=f85e1519]:
+                            - /url: /employer/851716?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1522]: Минск
+                        - generic [ref=f85e1526]:
+                          - generic [ref=f85e1527]: "Customer Insights and Analysis: Apply various frameworks (such as Jobs To Be Done, Persona Development, Empathy Mapping) to gain a..."
+                          - generic [ref=f85e1529]: Высокая адаптивность, стремление учиться и применять новые методологии в сфере клиентских инсайтов и CRM. Высшее образование (бакалавриат) или прохождение профильных...
+                      - button "Откликнуться" [ref=f85e1535]
+                - listitem [ref=f85e1541]:
+                  - article [ref=f85e1544] [cursor=pointer]:
+                    - generic [ref=f85e1548]:
+                      - generic [ref=f85e1549]:
+                        - generic [ref=f85e1550]:
+                          - button "Добавить в избранное" [ref=f85e1551]
+                          - button "Скрыть" [ref=f85e1555]
+                        - generic [ref=f85e1559]: Сейчас смотрят 6 человек
+                        - link "Monetization Specialist" [ref=f85e1562]:
+                          - /url: https://rabota.by/vacancy/136650796?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1566]: Опыт 1-3 года
+                        - generic [ref=f85e1571]:
+                          - link [ref=f85e1574]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Wowmaking" [ref=f85e1582]:
+                            - /url: /employer/3113286?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1585]: Минск, Кальварийская улица, 21к3
+                        - generic [ref=f85e1588]: Можно без резюме
+                        - generic [ref=f85e1594]:
+                          - generic [ref=f85e1595]: "Анализ поведения пользователей и поиск точек роста: находить в аналитике этапы, на которых пользователи сомневаются перед покупкой, и придумывать, как..."
+                          - generic [ref=f85e1597]: "Уже работаете в IT: имеете опыт в аналитике, маркетинге, управлении продуктами/проектами или других ролях, где нужно общаться с командой..."
+                      - button "Откликнуться" [ref=f85e1603]
+                - listitem [ref=f85e1609]:
+                  - article [ref=f85e1612] [cursor=pointer]:
+                    - generic [ref=f85e1616]:
+                      - generic [ref=f85e1617]:
+                        - generic [ref=f85e1618]:
+                          - button "Добавить в избранное" [ref=f85e1619]
+                          - button "Скрыть" [ref=f85e1623]
+                        - generic [ref=f85e1627]: Сейчас смотрит 1 человек
+                        - link "Business Analyst with Fintech and Banking experience" [ref=f85e1630]:
+                          - /url: https://rabota.by/vacancy/125440730?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1634]: Опыт 3-6 лет
+                        - generic [ref=f85e1639]:
+                          - link [ref=f85e1642]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Team.Inno / Фабрика инноваций и решений" [ref=f85e1649]:
+                            - /url: /employer/1858119?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1652]: Минск
+                        - generic [ref=f85e1656]:
+                          - generic [ref=f85e1657]: Lead the Discovery Phase to define product vision, strategy, and roadmap. Collaborate with multiple stakeholders, including business owners and development...
+                          - generic [ref=f85e1659]: Proven experience as a Business Analyst or Product Owner/Product Manager with a focus on web and mobile projects in...
+                      - button "Откликнуться" [ref=f85e1665]
+                - listitem [ref=f85e1671]:
+                  - article [ref=f85e1674] [cursor=pointer]:
+                    - generic [ref=f85e1678]:
+                      - generic [ref=f85e1679]:
+                        - generic [ref=f85e1680]:
+                          - button "Добавить в избранное" [ref=f85e1681]
+                          - button "Скрыть" [ref=f85e1685]
+                        - generic [ref=f85e1689]: Сейчас смотрят 10 человек
+                        - link "Mobile QA Engineer (Middle+)" [ref=f85e1692]:
+                          - /url: https://rabota.by/vacancy/137302605?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1696]: Опыт 3-6 лет
+                        - generic [ref=f85e1701]:
+                          - link [ref=f85e1704]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ЗАО Уайт Бёрд" [ref=f85e1711]:
+                            - /url: /employer/9258740?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1715]: Минск, улица Свердлова, 11
+                        - generic [ref=f85e1719]:
+                          - generic [ref=f85e1720]: Участие в ревью требований, декомпозиции задач. Взаимодействие с разработчиками, дизайнерами и менеджерами продукта. Тестовое задание. Онлайн-собеседование с HR.
+                          - generic [ref=f85e1722]: Базовое понимание CI/CD, опыт работы с Firebase App Distribution и TestFlight. Знание SQL. Техническое образование. Понимание криптовалют и блокчейн...
+                      - button "Откликнуться" [ref=f85e1728]
+                - listitem [ref=f85e1734]:
+                  - article [ref=f85e1737] [cursor=pointer]:
+                    - generic [ref=f85e1741]:
+                      - generic [ref=f85e1742]:
+                        - generic [ref=f85e1743]:
+                          - button "Добавить в избранное" [ref=f85e1744]
+                          - button "Скрыть" [ref=f85e1748]
+                        - generic [ref=f85e1752]: Сейчас смотрят 67 человек
+                        - link "Junior Data Analyst / Аналитик данных" [ref=f85e1755]:
+                          - /url: https://rabota.by/vacancy/137327680?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1759]: Без опыта
+                        - generic [ref=f85e1764]:
+                          - link [ref=f85e1767]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ДЕВХЭД" [ref=f85e1775]:
+                            - /url: /employer/3228402?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1779]:
+                            - text: Минск
+                            - generic [ref=f85e1782]:
+                              - generic [ref=f85e1783]: ●
+                              - generic [ref=f85e1784]: Академия наук
+                        - generic [ref=f85e1787]:
+                          - generic [ref=f85e1788]: Research and preparation of reports. Monitoring of the system operation. Processing of data arrays, preparation of data samples.
+                          - generic [ref=f85e1790]: Higher education (Tech, Math, Physics) / graduate student of the university. Basic knowledge of Python, MySQL, Excel. Analytical mindset, diligence, good...
+                      - button "Откликнуться" [ref=f85e1796]
+                - listitem [ref=f85e1802]:
+                  - article [ref=f85e1805] [cursor=pointer]:
+                    - generic [ref=f85e1809]:
+                      - generic [ref=f85e1810]:
+                        - generic [ref=f85e1811]:
+                          - button "Добавить в избранное" [ref=f85e1812]
+                          - button "Скрыть" [ref=f85e1816]
+                        - generic [ref=f85e1820]: Сейчас смотрит 1 человек
+                        - link "Product Manager B2B-экосистемы и инвестиционных продуктов" [ref=f85e1823]:
+                          - /url: https://rabota.by/vacancy/135969596?query=Product+Manager+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&hhtmFrom=vacancy_search_list
+                        - generic [ref=f85e1827]:
+                          - generic [ref=f85e1828]: от 2 500 Br за месяц, до вычета налогов
+                          - generic [ref=f85e1830]: Опыт 1-3 года
+                        - generic [ref=f85e1834]:
+                          - generic [ref=f85e1836]:
+                            - link [ref=f85e1837]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f85e1843]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - link "Вакансии МТбанк" [ref=f85e1857]:
+                            - /url: /employer/777735?hhtmFrom=vacancy_search_list
+                            - img "МТбанк" [ref=f85e1859]
+                          - link "ЗАО МТбанк" [ref=f85e1860]:
+                            - /url: /employer/777735?hhtmFrom=vacancy_search_list
+                          - generic [ref=f85e1864]:
+                            - text: Минск
+                            - generic [ref=f85e1867]:
+                              - generic [ref=f85e1868]: ●
+                              - generic [ref=f85e1869]: Площадь Победы
+                        - generic [ref=f85e1872]:
+                          - generic [ref=f85e1873]: Сопровождение действующих партнерских договоров в рамках экосистемы банка (сервисы регистрации бизнеса, проверки контрагентов, онлайн-бухгалтерии, E-pos, сдачи выручки через...
+                          - generic [ref=f85e1875]: Имеете профильное высшее образование (экономическое, финансовое или юридическое). Обладаете релевантным опытом работы в банковской сфере, финансовых организациях (в том числе...
+                      - generic [ref=f85e1880]:
+                        - button "Откликнуться" [ref=f85e1881]
+                        - button "Связаться" [ref=f85e1887]
+                  - generic [ref=f85e1898]:
+                    - generic [ref=f85e1899]: Как вам результаты поиска?
+                    - group [ref=f85e1900]:
+                      - radio "1"
+                      - generic [ref=f85e1901] [cursor=pointer]
+                      - radio "2"
+                      - generic [ref=f85e1905] [cursor=pointer]
+                      - radio "3"
+                      - generic [ref=f85e1909] [cursor=pointer]
+                      - radio "4"
+                      - generic [ref=f85e1913] [cursor=pointer]
+                      - radio "5"
+                      - generic [ref=f85e1917] [cursor=pointer]
+            - generic [ref=f85e1923]:
+              - heading "Быстрые фильтры подбора вакансий" [level=2] [ref=f85e1924]
+              - list [ref=f85e1926]:
+                - listitem [ref=f85e1927]:
+                  - link "Без опыта работы" [ref=f85e1929]:
+                    - /url: /vacancies/bez_opyta_raboty
+                - listitem [ref=f85e1932]:
+                  - link "Вечерняя и ночная" [ref=f85e1934]:
+                    - /url: /vacancies/vechernyaya_i_nochnaya
+                - listitem [ref=f85e1937]:
+                  - link "Вахтовый метод" [ref=f85e1939]:
+                    - /url: /vacancies/vakhtoviy_metod
+                - listitem [ref=f85e1942]:
+                  - link "График 5/2" [ref=f85e1944]:
+                    - /url: /vacancies/5-2
+                - listitem [ref=f85e1947]:
+                  - link "Гибкий график" [ref=f85e1949]:
+                    - /url: /vacancies/gibkiy_grafik
+                - listitem [ref=f85e1952]:
+                  - link "Два через два" [ref=f85e1954]:
+                    - /url: /vacancies/2-2
+                - listitem [ref=f85e1957]:
+                  - link "За последние три дня" [ref=f85e1959]:
+                    - /url: /vacancies/za_poslednie_tri_dnya
+                - listitem [ref=f85e1962]:
+                  - link "За сутки" [ref=f85e1964]:
+                    - /url: /vacancies/za_sutki
+                - listitem [ref=f85e1967]:
+                  - link "От прямых работодателей" [ref=f85e1969]:
+                    - /url: /vacancies/ot_pryamih_rabotodateley
+                - listitem [ref=f85e1972]:
+                  - link "Полный день" [ref=f85e1974]:
+                    - /url: /vacancies/polniy_den
+                - listitem [ref=f85e1977]:
+                  - link "По совместительству" [ref=f85e1979]:
+                    - /url: /vacancies/po_sovmestitelstvu
+                - listitem [ref=f85e1982]:
+                  - link "Подработка" [ref=f85e1984]:
+                    - /url: /vacancies/podrabotka
+                - listitem [ref=f85e1987]:
+                  - link "Полная занятость" [ref=f85e1989]:
+                    - /url: /vacancies/polnaya_zanyatost
+                - listitem [ref=f85e1992]:
+                  - link "Для людей с инвалидностью" [ref=f85e1994]:
+                    - /url: /vacancies/rabota_dlya_invalidov
+                - listitem [ref=f85e1997]:
+                  - link "Сменный график" [ref=f85e1999]:
+                    - /url: /vacancies/smenniy_grafik
+                - listitem [ref=f85e2002]:
+                  - link "Сутки через двое" [ref=f85e2004]:
+                    - /url: /vacancies/1-2
+                - listitem [ref=f85e2007]:
+                  - link "Сутки через трое" [ref=f85e2009]:
+                    - /url: /vacancies/1-3
+                - listitem [ref=f85e2012]:
+                  - link "Три через три" [ref=f85e2014]:
+                    - /url: /vacancies/3-3
+                - listitem [ref=f85e2017]:
+                  - link "Удаленная работа" [ref=f85e2019]:
+                    - /url: /vacancies/udalennaya_rabota
+                - listitem [ref=f85e2022]:
+                  - link "Частичная занятость" [ref=f85e2024]:
+                    - /url: /vacancies/chastichnaya_zanyatost
+      - contentinfo [ref=f85e2028]:
+        - generic [ref=f85e2032]:
+          - navigation "Навигация в подвале" [ref=f85e2033]:
+            - generic [ref=f85e2034]:
+              - generic [ref=f85e2036]:
+                - generic [ref=f85e2037]: rabota.by
+                - list [ref=f85e2039]:
+                  - listitem [ref=f85e2040]:
+                    - link "Помощь" [ref=f85e2042]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2045]:
+                    - link "Наши вакансии" [ref=f85e2047]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2050]:
+                    - link "Реклама на сайте" [ref=f85e2052]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list#region/belarus
+                  - listitem [ref=f85e2055]:
+                    - link "Требования к ПО" [ref=f85e2057]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2060]:
+                    - link "Политика обработки cookie" [ref=f85e2062]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2065]:
+                    - link "Настройки cookie" [ref=f85e2067]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2070]:
+                    - link "Напишите нам" [ref=f85e2072]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=f85e2075]:
+                    - link "Каталог компаний" [ref=f85e2077]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2080]:
+                    - link "Поиск по вакансиям в Минске" [ref=f85e2082]:
+                      - /url: /vacancies
+                  - listitem [ref=f85e2085]:
+                    - link "Работа рядом с метро" [ref=f85e2087]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f85e2092]:
+                - generic [ref=f85e2093]: Соискателям
+                - list [ref=f85e2095]:
+                  - listitem [ref=f85e2096]:
+                    - link "Все сервисы" [ref=f85e2098]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2101]:
+                    - link "Кадровые агентства Беларуси" [ref=f85e2103]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f85e2106]:
+                    - link "Производственный календарь" [ref=f85e2108]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f85e2113]:
+                - list [ref=f85e2114]:
+                  - listitem [ref=f85e2115]:
+                    - generic [ref=f85e2116]: Боты для уведомлений
+                    - generic [ref=f85e2118]:
+                      - button "Подключить telegram бот" [ref=f85e2119] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f85e2126] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f85e2134] [cursor=pointer]
+                - generic [ref=f85e2143]:
+                  - generic [ref=f85e2144]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f85e2146]
+          - navigation "Правовая информация" [ref=f85e2154]:
+            - list [ref=f85e2155]:
+              - listitem [ref=f85e2156]:
+                - link "Этика и комплаенс" [ref=f85e2158]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f85e2161]:
+                - link "Оказание услуг" [ref=f85e2163]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f85e2166]:
+                - link "Использование сайтов" [ref=f85e2168]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f85e2171]:
+                - link "Политика обработки данных" [ref=f85e2173]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f85e2176]:
+                - link "Пользовательское соглашение" [ref=f85e2178]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+          - generic [ref=f85e2185]:
+            - paragraph [ref=f85e2186]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=f85e2188]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=f85e2190]:
+              - img "mastercard" [ref=f85e2191]
+              - img "visa" [ref=f85e2192]
+              - img "belcart" [ref=f85e2193]
+              - img "belcart-internetparol" [ref=f85e2194]
+          - generic [ref=f85e2199]:
+            - generic [ref=f85e2200]:
+              - button "Перейти в ВК" [ref=f85e2201] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=f85e2209] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=f85e2217] [cursor=pointer]
+              - button "Перейти в Viber" [ref=f85e2225] [cursor=pointer]
+            - generic [ref=f85e2234]:
+              - list [ref=f85e2235]:
+                - listitem [ref=f85e2236]:
+                  - combobox "Выбор языка сайта" [ref=f85e2239]:
+                    - generic [ref=f85e2240]: Русский
+              - generic [ref=f85e2247]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - button "Карта" [ref=f85e2249] [cursor=pointer]

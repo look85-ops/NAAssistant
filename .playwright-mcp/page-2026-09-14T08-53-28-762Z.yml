@@ -1,0 +1,343 @@
+- generic [active] [ref=f130e1]:
+  - generic [ref=f130e3]:
+    - banner [ref=f130e584]:
+      - generic [ref=f130e586]:
+        - link "Главная страница сайта" [ref=f130e587] [cursor=pointer]:
+          - /url: /
+        - link [ref=f130e592] [cursor=pointer]
+        - button "Выбор региона,Москва" [ref=f130e604] [cursor=pointer]:
+          - generic [ref=f130e605]: Москва
+        - button "Чаты" [ref=f130e619] [cursor=pointer]
+        - link "Избранное" [ref=f130e631] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f130e643] [cursor=pointer]
+        - button "Создать резюме" [ref=f130e653] [cursor=pointer]
+        - button [ref=f130e660] [cursor=pointer]
+    - generic [ref=f130e672]:
+      - main [ref=f130e673]:
+        - generic:
+          - generic:
+            - menu [ref=f130e677]:
+              - button [ref=f130e682] [cursor=pointer]
+              - generic [ref=f130e689]:
+                - button [ref=f130e693] [cursor=pointer]
+                - button [ref=f130e702] [cursor=pointer]
+            - generic:
+              - separator
+        - generic [ref=f130e714]:
+          - generic [ref=f130e719]:
+            - generic "profile-avatar" [ref=f130e724] [cursor=pointer]
+            - generic [ref=f130e734]:
+              - heading "Менеджер образовательных проектов" [level=1] [ref=f130e735]
+              - generic [ref=f130e736]: 180 000 ₽ на руки · Постоянная работа · Удалённо, Гибрид · Не дольше 1 часа · Могу приезжать в командировки
+            - button "Редактировать" [ref=f130e739] [cursor=pointer]
+          - generic [ref=f130e747]:
+            - heading "Завершённость резюме" [level=3] [ref=f130e749]
+            - progressbar [ref=f130e751]
+            - generic [ref=f130e753]:
+              - generic [ref=f130e755]: Ещё вы можете добавить
+              - generic [ref=f130e757]:
+                - button "Пройденные тесты и экзамены" [ref=f130e758] [cursor=pointer]
+                - button "Электронные сертификаты" [ref=f130e763] [cursor=pointer]
+                - button "Категория прав" [ref=f130e768] [cursor=pointer]
+                - button "Отчество" [ref=f130e773] [cursor=pointer]
+                - button "Фотографию" [ref=f130e778] [cursor=pointer]
+                - button "Портфолио" [ref=f130e783] [cursor=pointer]
+                - button "Рекомендации" [ref=f130e788] [cursor=pointer]
+          - generic [ref=f130e793]:
+            - button "Видимость резюме Не видно никому" [ref=f130e794] [cursor=pointer]:
+              - generic [ref=f130e805]:
+                - generic [ref=f130e806]: Видимость резюме
+                - generic [ref=f130e813]: Не видно никому
+            - button "Подобрали для вас 1548 подходящих вакансий" [ref=f130e825] [cursor=pointer]
+          - generic [ref=f130e850]:
+            - heading "Контакты" [level=4] [ref=f130e852]
+            - generic [ref=f130e857]:
+              - generic [ref=f130e858]:
+                - generic [ref=f130e861]:
+                  - generic [ref=f130e862]: Мобильный телефон — предпочитаемый способ связи
+                  - link "+7 903 973-98-30" [ref=f130e864]:
+                    - /url: tel:+79039739830
+                - generic [ref=f130e868]:
+                  - generic [ref=f130e869]: Электронная почта
+                  - link "look85@gmail.com" [ref=f130e871]:
+                    - /url: mailto:look85@gmail.com
+              - button "Посмотреть всё" [ref=f130e874] [cursor=pointer]
+          - generic [ref=f130e879]:
+            - 'heading "Опыт работы: 11 лет 7 месяцев" [level=4] [ref=f130e882]':
+              - generic [ref=f130e883]:
+                - text: "Опыт работы:"
+                - generic [ref=f130e884]: 11 лет
+                - generic [ref=f130e885]: 7 месяцев
+            - generic [ref=f130e889]:
+              - generic [ref=f130e890]:
+                - generic [ref=f130e895]:
+                  - generic [ref=f130e897]:
+                    - generic "Корпоративный университет ОАО «РЖД», АНО" [ref=f130e902]:
+                      - img "Корпоративный университет ОАО «РЖД», АНО" [ref=f130e903]
+                    - generic [ref=f130e904]:
+                      - generic [ref=f130e905]: Корпоративный университет ОАО «РЖД», АНО
+                      - generic [ref=f130e919]:
+                        - generic [ref=f130e920]: 2 года
+                        - text: и
+                        - generic [ref=f130e921]: 8 месяцев
+                  - list [ref=f130e923]:
+                    - listitem [ref=f130e924]:
+                      - generic [ref=f130e937]:
+                        - generic [ref=f130e940]:
+                          - generic [ref=f130e941]: Главный методист / Менеджер образовательных проектов
+                          - generic [ref=f130e948]: Февраль 2024 — сейчас
+                        - generic [ref=f130e957]:
+                          - generic [ref=f130e958]: "Участие в создании и развитии Центра профессионального обучения руководителей (основан в 2024 г.).Разработка и запуск флагманской программы развития профессиональных компетенций «Профессионал +» (190 ак.ч., смешанное обучение) для руководителей путевого комплекса — полный цикл:– определение целей и анализ потребностей обучения совместно с бизнес-заказчиком– разработка методологии, структуры и форматов оценки программы – проектирование контента (очные модули, e-learning, выездные стажировки)– управление LMS-операциями (ТЗ, контроль качества, приёмка)– работа с видеопродакшеном (ТЗ, съемка, монтаж, контроль качества)– координация команды (2 чел.)– отбор и подготовка 24 преподавателей из 8 регионов РФ– супервизия преподавателей, аудит качества, работа с обратной связью– подготовка отчётов, пресс-релизов, справочной информации– внедрение AI-аналитики анкет обратной связи: автоматическая обработка 100+ анкет за цикл, генерация отчётов, сокращение ручной обработки Результаты:– NPS 9.7 на март 2026– Премия «Смарт Пирамида — 2024» в номинации «Лучшая программа корпоративного обучения»– Разработала инструмент детекции социальной желательности в обратной связи (NPS, аномалии, сравнение волн) -"
+                          - link "https://github.com/look85-ops/aos-analyzer" [ref=f130e961] [cursor=pointer]:
+                            - /url: https://github.com/look85-ops/aos-analyzer
+                - generic [ref=f130e966]:
+                  - separator [ref=f130e967]
+                  - generic [ref=f130e968]:
+                    - generic [ref=f130e970]:
+                      - generic "Московский государственный технический университет им. Н.Э. Баумана" [ref=f130e975]
+                      - generic [ref=f130e977]:
+                        - generic [ref=f130e978]: Московский государственный технический университет им. Н.Э. Баумана
+                        - generic [ref=f130e985]: 10 месяцев
+                    - list [ref=f130e995]:
+                      - listitem [ref=f130e996]:
+                        - generic [ref=f130e1009]:
+                          - generic [ref=f130e1012]:
+                            - generic [ref=f130e1013]: Менеджер образовательных проектов
+                            - generic [ref=f130e1020]: Май 2023 — Февраль 2024
+                          - generic [ref=f130e1028]: "Разработка программ ДПО для внешних заказчиков с нуля. Полный цикл: от исследования потребности до запуска (от 72 ак. ч.) Проектирование внутренней системы непрерывного развития сотрудников Кластера «Инженерия в науках о жизни»: общие треки обучения, индивидуальные планы развития.Методическая поддержка преподавателей, контроль качества образовательных программ."
+                - generic [ref=f130e1037]:
+                  - separator [ref=f130e1038]
+                  - generic [ref=f130e1039]:
+                    - generic [ref=f130e1041]:
+                      - generic "МойОфис" [ref=f130e1046]:
+                        - img "МойОфис" [ref=f130e1047]
+                      - generic [ref=f130e1048]:
+                        - generic [ref=f130e1049]: МойОфис
+                        - generic [ref=f130e1056]: 2 месяца
+                    - list [ref=f130e1066]:
+                      - listitem [ref=f130e1067]:
+                        - generic [ref=f130e1080]:
+                          - generic [ref=f130e1083]:
+                            - generic [ref=f130e1084]: Методист по оценке продуктовых знаний (проектная работа)
+                            - generic [ref=f130e1091]: Май 2022 — Июнь 2022
+                          - generic [ref=f130e1099]: Проектирование системы адаптации и оценки продуктовых знаний новых сотрудников коммерческого блока — с нуля.Создание базы 500+ кейсов и тестов для формирования и оценки знаний на этапе онбординга.
+              - button "Редактировать" [ref=f130e1109] [cursor=pointer]
+          - generic [ref=f130e1115]:
+            - heading "Навыки" [level=4] [ref=f130e1117]
+            - generic [ref=f130e1121]:
+              - generic [ref=f130e1125]:
+                - generic [ref=f130e1126]: Управление образовательными проектами
+                - generic [ref=f130e1128]: Проектирование образовательных программ
+                - generic [ref=f130e1130]: Педагогический дизайн
+                - generic [ref=f130e1132]: Андрагогика
+                - generic [ref=f130e1134]: Blended Learning
+                - generic [ref=f130e1136]: ...
+              - generic [ref=f130e1139]:
+                - button "Указать уровни" [ref=f130e1140] [cursor=pointer]
+                - button "Редактировать" [ref=f130e1145] [cursor=pointer]
+          - generic [ref=f130e1150]:
+            - heading "Образование" [level=4] [ref=f130e1153]
+            - generic [ref=f130e1158]:
+              - generic [ref=f130e1159]:
+                - generic [ref=f130e1162]:
+                  - generic [ref=f130e1163]: Московский городской педагогический университет, Москва
+                  - generic [ref=f130e1170]: 2008 · Высшее
+                - generic [ref=f130e1179]:
+                  - generic [ref=f130e1180]: Московский городской педагогический университет, Москва
+                  - generic [ref=f130e1187]: 2007 · Высшее
+              - button "Посмотреть всё" [ref=f130e1195] [cursor=pointer]
+          - generic [ref=f130e1209]:
+            - generic [ref=f130e1210]:
+              - heading "Если не хватает уверенности на рынке труда" [level=6] [ref=f130e1213]
+              - paragraph [ref=f130e1214]: Освойте недостающие навыки, чтобы легче проходить отбор
+            - button "Посмотреть курсы" [ref=f130e1219] [cursor=pointer]
+          - generic [ref=f130e1224]:
+            - heading "О себе" [level=4] [ref=f130e1226]
+            - generic [ref=f130e1231]:
+              - paragraph [ref=f130e1237]:
+                - text: "Портфолио:"
+                - link "https://look85-ops.github.io/NAAssistant/portfolio/" [ref=f130e1238] [cursor=pointer]:
+                  - /url: https://look85-ops.github.io/NAAssistant/portfolio/
+                - text: "10+ лет в создании и развитии образовательных систем: от отдельных курсов до программ федерального масштаба. Проектирую и запускаю программы обучения с нуля, выстраиваю онбординг, внедряю AI-инструменты в L&D.Открыта к проектам и консультациям."
+              - button "Посмотреть всё" [ref=f130e1240] [cursor=pointer]
+          - generic [ref=f130e1245]:
+            - heading "Повышение квалификации, курсы" [level=4] [ref=f130e1248]
+            - generic [ref=f130e1253]:
+              - generic [ref=f130e1254]:
+                - generic [ref=f130e1257]:
+                  - generic [ref=f130e1258]: "Маркетинг. Базовый курс: теории, тренды, технологии"
+                  - generic [ref=f130e1265]: Британская высшая школа дизайна
+                  - generic [ref=f130e1272]: "2026"
+                - generic [ref=f130e1281]:
+                  - generic [ref=f130e1282]: "Фабрика вайб-кодинга: создание IT-продуктов с помощью AI-агентов"
+                  - generic [ref=f130e1289]: ScrumTrek
+                  - generic [ref=f130e1296]: "2026"
+              - button "Посмотреть всё" [ref=f130e1304] [cursor=pointer]
+      - contentinfo [ref=f130e1310]:
+        - generic [ref=f130e1319]:
+          - img "App QR Code" [ref=f130e1324]
+          - generic [ref=f130e1325]:
+            - generic [ref=f130e1326]: Сканируйте QR-код, чтобы скачать приложение
+            - generic [ref=f130e1327]: И чаты с работодателями всегда будут под рукой
+        - generic [ref=f130e1335]:
+          - navigation "Навигация в подвале" [ref=f130e1336]:
+            - generic [ref=f130e1337]:
+              - generic [ref=f130e1339]:
+                - generic [ref=f130e1340]: HeadHunter
+                - list [ref=f130e1342]:
+                  - listitem [ref=f130e1343]:
+                    - link "О компании" [ref=f130e1345]:
+                      - /url: /article/28?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1348]:
+                    - link "Наши вакансии" [ref=f130e1350]:
+                      - /url: /employer/1455?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1353]:
+                    - link "Реклама на сайте" [ref=f130e1355]:
+                      - /url: /article/promoproducts?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1358]:
+                    - link "Требования к ПО" [ref=f130e1360]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1363]:
+                    - link "Безопасный HeadHunter" [ref=f130e1365]:
+                      - /url: /safety?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1368]:
+                    - link "HeadHunter API" [ref=f130e1370]:
+                      - /url: https://dev.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - listitem [ref=f130e1373]:
+                    - link "Партнерам" [ref=f130e1375]:
+                      - /url: /partners?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1378]:
+                    - link "Инвесторам" [ref=f130e1380]:
+                      - /url: https://investor.hh.ru/
+                  - listitem [ref=f130e1383]:
+                    - link "Каталог компаний" [ref=f130e1385]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1388]:
+                    - link "Поиск по вакансиям в Москве" [ref=f130e1390]:
+                      - /url: /vacancies
+                  - listitem [ref=f130e1393]:
+                    - link "Работа рядом с метро" [ref=f130e1395]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1398]:
+                    - 'link "Сетка: соцсеть для нетворкинга" [ref=f130e1400]':
+                      - /url: https://setka.ru/
+              - generic [ref=f130e1405]:
+                - generic [ref=f130e1406]: Соискателям
+                - list [ref=f130e1408]:
+                  - listitem [ref=f130e1409]:
+                    - link "hh PRO" [ref=f130e1411]:
+                      - /url: /applicant-services/hhpro?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1414]:
+                    - link "Готовое резюме" [ref=f130e1416]:
+                      - /url: /article/expert_resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1419]:
+                    - link "Все сервисы" [ref=f130e1421]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1424]:
+                    - link "Хочу у вас работать" [ref=f130e1426]:
+                      - /url: /applicant-services/hhpro?rte=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1429]:
+                    - link "Производственный календарь" [ref=f130e1431]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1434]:
+                    - link "Экспертная рекомендация" [ref=f130e1436]:
+                      - /url: /article/resume_audit?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                - generic [ref=f130e1440]: Новости и статьи
+                - list [ref=f130e1442]:
+                  - listitem [ref=f130e1443]:
+                    - link "Блог" [ref=f130e1445]:
+                      - /url: /blog?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1448]:
+                    - link "О компаниях в игровой форме" [ref=f130e1450]:
+                      - /url: /articles/guide-to-companies/special-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1453]:
+                    - link "Жизнь в компании" [ref=f130e1455]:
+                      - /url: /articles/guide-to-companies/insider?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1458]:
+                    - link "ИТ-проекты" [ref=f130e1460]:
+                      - /url: /articles/guide-to-companies/it-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1463]:
+                    - link "Рейтинг работодателей России" [ref=f130e1465]:
+                      - /url: https://rating.hh.ru/poll?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+              - generic [ref=f130e1470]:
+                - generic [ref=f130e1471]: Молодым специалистам
+                - list [ref=f130e1473]:
+                  - listitem [ref=f130e1474]:
+                    - link "Карьера для молодых специалистов" [ref=f130e1476]:
+                      - /url: /youth_vacancies?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+                  - listitem [ref=f130e1479]:
+                    - link "Школа программистов" [ref=f130e1481]:
+                      - /url: http://school.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - listitem [ref=f130e1484]:
+                    - link "Карьера в некоммерческих организациях" [ref=f130e1486]:
+                      - /url: https://nko.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                - list [ref=f130e1490]:
+                  - listitem [ref=f130e1491]:
+                    - generic [ref=f130e1492]: Боты для уведомлений
+                    - generic [ref=f130e1494]:
+                      - button "Подключить telegram бот" [ref=f130e1495] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f130e1502] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f130e1510] [cursor=pointer]
+                - generic [ref=f130e1519]:
+                  - generic [ref=f130e1520]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f130e1522]
+          - navigation "Правовая информация" [ref=f130e1530]:
+            - list [ref=f130e1531]:
+              - listitem [ref=f130e1532]:
+                - link "Этика и комплаенс" [ref=f130e1534]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+              - listitem [ref=f130e1537]:
+                - link "Оказание услуг" [ref=f130e1539]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+              - listitem [ref=f130e1542]:
+                - link "Использование сайтов" [ref=f130e1544]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+              - listitem [ref=f130e1547]:
+                - link "Защита персональных данных" [ref=f130e1549]:
+                  - /url: /article/personal_data?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+              - listitem [ref=f130e1552]:
+                - link "Пользовательское соглашение" [ref=f130e1554]:
+                  - /url: /account/agreement?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+              - listitem [ref=f130e1557]:
+                - link "ИТ аккредитация" [ref=f130e1559]:
+                  - /url: /article/it-accreditation?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume
+          - generic [ref=f130e1567]:
+            - text: На информационном ресурсе hh.ru
+            - link "применяются рекомендательные технологии" [ref=f130e1568] [cursor=pointer]:
+              - /url: /article/recommendation_technologies?hhtmFrom=resume
+            - text: (информационные технологии предоставления информации на основе сбора, систематизации и анализа сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации)
+          - generic [ref=f130e1573]:
+            - generic [ref=f130e1574]:
+              - button "Перейти в Сетку" [ref=f130e1575] [cursor=pointer]
+              - button "Перейти в ВК" [ref=f130e1582] [cursor=pointer]
+              - button "Перейти в Дзен" [ref=f130e1590] [cursor=pointer]
+              - button "Перейти в Telegram" [ref=f130e1598] [cursor=pointer]
+            - generic [ref=f130e1606]:
+              - list [ref=f130e1607]:
+                - listitem [ref=f130e1608]:
+                  - combobox "Выбор языка сайта" [ref=f130e1611]:
+                    - generic [ref=f130e1612]: Русский
+              - generic [ref=f130e1619]: © 2026 ООО «Хэдхантер»
+  - generic [ref=f130e1622]:
+    - generic [ref=f130e1625]:
+      - generic [ref=f130e1626]: Укажите ваш статус поиска
+      - generic [ref=f130e1630]:
+        - generic [ref=f130e1632] [cursor=pointer]:
+          - radio "Активно ищу работу" [ref=f130e1635]
+          - generic [ref=f130e1640]: Активно ищу работу
+        - generic [ref=f130e1649] [cursor=pointer]:
+          - radio "Рассматриваю предложения" [ref=f130e1652]
+          - generic [ref=f130e1657]: Рассматриваю предложения
+        - generic [ref=f130e1666] [cursor=pointer]:
+          - radio "Предложили работу, пока думаю" [ref=f130e1669]
+          - generic [ref=f130e1674]: Предложили работу, пока думаю
+        - generic [ref=f130e1683] [cursor=pointer]:
+          - radio "Уже выхожу на новое место" [ref=f130e1686]
+          - generic [ref=f130e1691]: Уже выхожу на новое место
+        - generic [ref=f130e1700] [cursor=pointer]:
+          - radio "Не ищу работу" [ref=f130e1703]
+          - generic [ref=f130e1708]: Не ищу работу
+      - generic [ref=f130e1717]:
+        - button "Сохранить" [disabled]
+    - generic [ref=f130e1718] [cursor=pointer]

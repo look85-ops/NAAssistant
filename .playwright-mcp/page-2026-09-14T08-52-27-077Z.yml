@@ -1,0 +1,216 @@
+- generic [ref=f130e3]:
+  - banner [ref=f130e5]:
+    - generic [ref=f130e7]:
+      - link "Главная страница сайта" [ref=f130e8] [cursor=pointer]:
+        - /url: /
+      - link [ref=f130e13] [cursor=pointer]
+      - button "Выбор региона,Москва" [ref=f130e25] [cursor=pointer]:
+        - generic [ref=f130e26]: Москва
+      - button "Чаты" [ref=f130e40] [cursor=pointer]
+      - link "Избранное" [ref=f130e52] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f130e64] [cursor=pointer]
+      - button "Создать резюме" [ref=f130e74] [cursor=pointer]
+      - button [ref=f130e81] [cursor=pointer]
+  - generic [ref=f130e93]:
+    - main [ref=f130e94]:
+      - generic:
+        - generic:
+          - menu [ref=f130e95]:
+            - button [ref=f130e100] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic:
+                - menu:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - button
+                  - generic: Видимость резюме
+          - generic [ref=f130e106]: Видимость резюме
+          - generic:
+            - separator
+      - generic [ref=f130e108]:
+        - generic [ref=f130e114]:
+          - generic [ref=f130e115]: Видимость в hh.ru
+          - generic [ref=f130e117]:
+            - generic [ref=f130e118] [cursor=pointer]:
+              - radio "Видно всем работодателям, зарегистрированным на hh.ru" [checked] [ref=f130e119]
+              - generic [ref=f130e123]:
+                - generic [ref=f130e124]: Видно всем работодателям, зарегистрированным на hh.ru
+                - radio "Видно всем работодателям, зарегистрированным на hh.ru" [checked] [ref=f130e135]
+            - generic [ref=f130e140] [cursor=pointer]:
+              - radio "Видно выбранным работодателям" [ref=f130e141]
+              - generic [ref=f130e145]:
+                - generic [ref=f130e146]: Видно выбранным работодателям
+                - radio "Видно выбранным работодателям" [ref=f130e157]
+            - generic [ref=f130e162] [cursor=pointer]:
+              - radio "Скрыто от выбранных работодателей" [ref=f130e163]
+              - generic [ref=f130e167]:
+                - generic [ref=f130e168]: Скрыто от выбранных работодателей
+                - radio "Скрыто от выбранных работодателей" [ref=f130e179]
+            - generic [ref=f130e184] [cursor=pointer]:
+              - radio "Доступно только по прямой ссылке" [ref=f130e185]
+              - generic [ref=f130e189]:
+                - generic [ref=f130e190]: Доступно только по прямой ссылке
+                - radio "Доступно только по прямой ссылке" [ref=f130e201]
+            - generic [ref=f130e206] [cursor=pointer]:
+              - radio "Не видно никому" [ref=f130e207]
+              - generic [ref=f130e211]:
+                - generic [ref=f130e212]: Не видно никому
+                - radio "Не видно никому" [ref=f130e223]
+          - generic [ref=f130e233]:
+            - generic [ref=f130e235]:
+              - generic [ref=f130e236]: Анонимное резюме
+              - generic [ref=f130e243]: Можно скрыть персональные данные, фото, контакты, места работ. История откликов и чаты с работодателями, где уже было ваше имя, сохранятся
+            - switch [ref=f130e251] [cursor=pointer]
+          - generic [ref=f130e255]: Видимость в Сетке
+          - generic [ref=f130e261]:
+            - generic [ref=f130e263]:
+              - generic [ref=f130e264]: Доступно авторизованным пользователям Сетки
+              - generic [ref=f130e271]: Если опубликуете резюме в Сетке
+            - switch [ref=f130e279] [cursor=pointer]
+        - generic [ref=f130e281]:
+          - separator [ref=f130e283]
+          - button "Сохранить" [ref=f130e288] [cursor=pointer]
+    - contentinfo [ref=f130e293]:
+      - generic [ref=f130e297]:
+        - navigation "Навигация в подвале" [ref=f130e298]:
+          - generic [ref=f130e299]:
+            - generic [ref=f130e301]:
+              - generic [ref=f130e302]: HeadHunter
+              - list [ref=f130e304]:
+                - listitem [ref=f130e305]:
+                  - link "О компании" [ref=f130e307]:
+                    - /url: /article/28?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e310]:
+                  - link "Наши вакансии" [ref=f130e312]:
+                    - /url: /employer/1455?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e315]:
+                  - link "Реклама на сайте" [ref=f130e317]:
+                    - /url: /article/promoproducts?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e320]:
+                  - link "Требования к ПО" [ref=f130e322]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e325]:
+                  - link "Безопасный HeadHunter" [ref=f130e327]:
+                    - /url: /safety?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e330]:
+                  - link "HeadHunter API" [ref=f130e332]:
+                    - /url: https://dev.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                - listitem [ref=f130e335]:
+                  - link "Партнерам" [ref=f130e337]:
+                    - /url: /partners?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e340]:
+                  - link "Инвесторам" [ref=f130e342]:
+                    - /url: https://investor.hh.ru/
+                - listitem [ref=f130e345]:
+                  - link "Каталог компаний" [ref=f130e347]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e350]:
+                  - link "Поиск по вакансиям в Москве" [ref=f130e352]:
+                    - /url: /vacancies
+                - listitem [ref=f130e355]:
+                  - link "Работа рядом с метро" [ref=f130e357]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e360]:
+                  - 'link "Сетка: соцсеть для нетворкинга" [ref=f130e362]':
+                    - /url: https://setka.ru/
+            - generic [ref=f130e367]:
+              - generic [ref=f130e368]: Соискателям
+              - list [ref=f130e370]:
+                - listitem [ref=f130e371]:
+                  - link "hh PRO" [ref=f130e373]:
+                    - /url: /applicant-services/hhpro?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e376]:
+                  - link "Готовое резюме" [ref=f130e378]:
+                    - /url: /article/expert_resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e381]:
+                  - link "Все сервисы" [ref=f130e383]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e386]:
+                  - link "Хочу у вас работать" [ref=f130e388]:
+                    - /url: /applicant-services/hhpro?rte=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e391]:
+                  - link "Производственный календарь" [ref=f130e393]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e396]:
+                  - link "Экспертная рекомендация" [ref=f130e398]:
+                    - /url: /article/resume_audit?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+              - generic [ref=f130e402]: Новости и статьи
+              - list [ref=f130e404]:
+                - listitem [ref=f130e405]:
+                  - link "Блог" [ref=f130e407]:
+                    - /url: /blog?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e410]:
+                  - link "О компаниях в игровой форме" [ref=f130e412]:
+                    - /url: /articles/guide-to-companies/special-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e415]:
+                  - link "Жизнь в компании" [ref=f130e417]:
+                    - /url: /articles/guide-to-companies/insider?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e420]:
+                  - link "ИТ-проекты" [ref=f130e422]:
+                    - /url: /articles/guide-to-companies/it-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e425]:
+                  - link "Рейтинг работодателей России" [ref=f130e427]:
+                    - /url: https://rating.hh.ru/poll?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+            - generic [ref=f130e432]:
+              - generic [ref=f130e433]: Молодым специалистам
+              - list [ref=f130e435]:
+                - listitem [ref=f130e436]:
+                  - link "Карьера для молодых специалистов" [ref=f130e438]:
+                    - /url: /youth_vacancies?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+                - listitem [ref=f130e441]:
+                  - link "Школа программистов" [ref=f130e443]:
+                    - /url: http://school.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                - listitem [ref=f130e446]:
+                  - link "Карьера в некоммерческих организациях" [ref=f130e448]:
+                    - /url: https://nko.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+              - list [ref=f130e452]:
+                - listitem [ref=f130e453]:
+                  - generic [ref=f130e454]: Боты для уведомлений
+                  - generic [ref=f130e456]:
+                    - button "Подключить telegram бот" [ref=f130e457] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f130e464] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f130e472] [cursor=pointer]
+              - generic [ref=f130e481]:
+                - generic [ref=f130e482]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f130e484]
+        - navigation "Правовая информация" [ref=f130e492]:
+          - list [ref=f130e493]:
+            - listitem [ref=f130e494]:
+              - link "Этика и комплаенс" [ref=f130e496]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f130e499]:
+              - link "Оказание услуг" [ref=f130e501]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f130e504]:
+              - link "Использование сайтов" [ref=f130e506]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f130e509]:
+              - link "Защита персональных данных" [ref=f130e511]:
+                - /url: /article/personal_data?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f130e514]:
+              - link "Пользовательское соглашение" [ref=f130e516]:
+                - /url: /account/agreement?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+            - listitem [ref=f130e519]:
+              - link "ИТ аккредитация" [ref=f130e521]:
+                - /url: /article/it-accreditation?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_partial_edit
+        - generic [ref=f130e529]:
+          - text: На информационном ресурсе hh.ru
+          - link "применяются рекомендательные технологии" [ref=f130e530] [cursor=pointer]:
+            - /url: /article/recommendation_technologies?hhtmFrom=resume_partial_edit
+          - text: (информационные технологии предоставления информации на основе сбора, систематизации и анализа сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации)
+        - generic [ref=f130e535]:
+          - generic [ref=f130e536]:
+            - button "Перейти в Сетку" [ref=f130e537] [cursor=pointer]
+            - button "Перейти в ВК" [ref=f130e544] [cursor=pointer]
+            - button "Перейти в Дзен" [ref=f130e552] [cursor=pointer]
+            - button "Перейти в Telegram" [ref=f130e560] [cursor=pointer]
+          - generic [ref=f130e568]:
+            - list [ref=f130e569]:
+              - listitem [ref=f130e570]:
+                - combobox "Выбор языка сайта" [ref=f130e573]:
+                  - generic [ref=f130e574]: Русский
+            - generic [ref=f130e581]: © 2026 ООО «Хэдхантер»

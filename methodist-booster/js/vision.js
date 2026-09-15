@@ -1,5 +1,20 @@
 // ============ Vision Wizard — Lean / JTBD ============
 
+async function postChat(messages) {
+    const endpoints = ['/functions/chat', '/api/chat'];
+    for (const ep of endpoints) {
+        try {
+            const response = await fetch(ep, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages })
+            });
+            if (response.ok) return await response.json();
+        } catch (e) { /* try next */ }
+    }
+    throw new Error('No AI');
+}
+
 const VISION_MIN_CHARS = 20;
 const visionLabels = [
     'Боль',
@@ -151,17 +166,10 @@ Job-to-be-done: ${answers[2]}
 MVP: ${answers[5]}
 Критерий успеха: ${answers[6]}`;
     try {
-        const response = await fetch('/.netlify/functions/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                messages: [
-                    { role: 'system', content: system },
-                    { role: 'user', content: user }
-                ]
-            })
-        });
-        const data = await response.json();
+        const data = await postChat([
+            { role: 'system', content: system },
+            { role: 'user', content: user }
+        ]);
         const text = data.choices?.[0]?.message?.content;
         if (!text) throw new Error('No AI');
         return { source: 'ai', text };

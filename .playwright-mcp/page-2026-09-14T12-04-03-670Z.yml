@@ -1,0 +1,135 @@
+- generic [ref=f44e3]:
+  - banner [ref=f44e5]:
+    - generic [ref=f44e7]:
+      - link "Главная страница сайта" [ref=f44e8] [cursor=pointer]:
+        - /url: /
+      - link [ref=f44e13] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=f44e25] [cursor=pointer]:
+        - generic [ref=f44e26]: Минск
+      - button "Чаты" [ref=f44e40] [cursor=pointer]
+      - link "Избранное" [ref=f44e52] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f44e64] [cursor=pointer]
+      - button "Создать резюме" [ref=f44e74] [cursor=pointer]
+      - button [ref=f44e81] [cursor=pointer]
+  - generic [ref=f44e93]:
+    - main [ref=f44e94]:
+      - generic [ref=f44e98]:
+        - generic [ref=f44e103]:
+          - generic "success" [ref=f44e107]
+          - generic [ref=f44e111]: Резюме опубликовано
+          - generic [ref=f44e112]: Сейчас оно видно всем компаниям, зарегистрированным на rabota.by
+          - button "Перейти в профиль" [ref=f44e113] [cursor=pointer]
+        - generic [ref=f44e122]:
+          - heading "Завершённость резюме" [level=3] [ref=f44e124]
+          - progressbar [ref=f44e126]
+          - generic [ref=f44e128]:
+            - generic [ref=f44e130]: Ещё вы можете добавить
+            - generic [ref=f44e132]:
+              - button "Дополнительное образование" [ref=f44e133] [cursor=pointer]
+              - button "Пройденные тесты и экзамены" [ref=f44e138] [cursor=pointer]
+              - button "Электронные сертификаты" [ref=f44e143] [cursor=pointer]
+              - button "Категория прав" [ref=f44e148] [cursor=pointer]
+              - button "Отчество" [ref=f44e153] [cursor=pointer]
+              - button "Фотографию" [ref=f44e158] [cursor=pointer]
+              - button "Портфолио" [ref=f44e163] [cursor=pointer]
+              - button "Рекомендации" [ref=f44e168] [cursor=pointer]
+              - button "Желаемую зарплату" [ref=f44e173] [cursor=pointer]
+              - button "Обо мне" [ref=f44e178] [cursor=pointer]
+    - contentinfo [ref=f44e183]:
+      - generic [ref=f44e187]:
+        - navigation "Навигация в подвале" [ref=f44e188]:
+          - generic [ref=f44e189]:
+            - generic [ref=f44e191]:
+              - generic [ref=f44e192]: rabota.by
+              - list [ref=f44e194]:
+                - listitem [ref=f44e195]:
+                  - link "Помощь" [ref=f44e197]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e200]:
+                  - link "Наши вакансии" [ref=f44e202]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e205]:
+                  - link "Реклама на сайте" [ref=f44e207]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies#region/belarus
+                - listitem [ref=f44e210]:
+                  - link "Требования к ПО" [ref=f44e212]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e215]:
+                  - link "Политика обработки cookie" [ref=f44e217]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e220]:
+                  - link "Настройки cookie" [ref=f44e222]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e225]:
+                  - link "Напишите нам" [ref=f44e227]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=f44e230]:
+                  - link "Каталог компаний" [ref=f44e232]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e235]:
+                  - link "Поиск по вакансиям в Минске" [ref=f44e237]:
+                    - /url: /vacancies
+                - listitem [ref=f44e240]:
+                  - link "Работа рядом с метро" [ref=f44e242]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+            - generic [ref=f44e247]:
+              - generic [ref=f44e248]: Соискателям
+              - list [ref=f44e250]:
+                - listitem [ref=f44e251]:
+                  - link "Все сервисы" [ref=f44e253]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e256]:
+                  - link "Кадровые агентства Беларуси" [ref=f44e258]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+                - listitem [ref=f44e261]:
+                  - link "Производственный календарь" [ref=f44e263]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+            - generic [ref=f44e268]:
+              - list [ref=f44e269]:
+                - listitem [ref=f44e270]:
+                  - generic [ref=f44e271]: Боты для уведомлений
+                  - generic [ref=f44e273]:
+                    - button "Подключить telegram бот" [ref=f44e274] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f44e281] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f44e289] [cursor=pointer]
+              - generic [ref=f44e298]:
+                - generic [ref=f44e299]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f44e301]
+        - navigation "Правовая информация" [ref=f44e309]:
+          - list [ref=f44e310]:
+            - listitem [ref=f44e311]:
+              - link "Этика и комплаенс" [ref=f44e313]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+            - listitem [ref=f44e316]:
+              - link "Оказание услуг" [ref=f44e318]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+            - listitem [ref=f44e321]:
+              - link "Использование сайтов" [ref=f44e323]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+            - listitem [ref=f44e326]:
+              - link "Политика обработки данных" [ref=f44e328]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+            - listitem [ref=f44e331]:
+              - link "Пользовательское соглашение" [ref=f44e333]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=suitable_vacancies
+        - generic [ref=f44e340]:
+          - paragraph [ref=f44e341]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=f44e343]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=f44e345]:
+            - img "mastercard" [ref=f44e346]
+            - img "visa" [ref=f44e347]
+            - img "belcart" [ref=f44e348]
+            - img "belcart-internetparol" [ref=f44e349]
+        - generic [ref=f44e354]:
+          - generic [ref=f44e355]:
+            - button "Перейти в ВК" [ref=f44e356] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=f44e364] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=f44e372] [cursor=pointer]
+            - button "Перейти в Viber" [ref=f44e380] [cursor=pointer]
+          - generic [ref=f44e389]:
+            - list [ref=f44e390]:
+              - listitem [ref=f44e391]:
+                - combobox "Выбор языка сайта" [ref=f44e394]:
+                  - generic [ref=f44e395]: Русский
+            - generic [ref=f44e402]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

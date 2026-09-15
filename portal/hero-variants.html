@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero Variants — L&D без суеты</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Geist', sans-serif;
+    background: #e8e5e0;
+    color: #2b2b1a;
+    font-weight: 350;
+    line-height: 1.6;
+  }
+
+  .label {
+    text-align: center;
+    padding: 32px 24px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #737366;
+  }
+  .cap {
+    text-align: center;
+    font-size: 12px;
+    color: #9e9e92;
+    padding-bottom: 24px;
+  }
+
+  /* ═══ VARIANT A — Pure Typography ═══ */
+  .hero-a {
+    background: #ffffff;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    position: relative;
+  }
+  .hero-a-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+    width: 100%;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #737366;
+    margin-bottom: 24px;
+  }
+  .hero-a h1 {
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #2b2b1a;
+    max-width: 10em;
+  }
+  .hero-a h1 em {
+    font-style: normal;
+    color: #474a1a;
+  }
+  .hero-a .sub {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 350;
+    color: #737366;
+    max-width: 520px;
+    margin-top: 28px;
+    line-height: 1.55;
+  }
+  .actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #474a1a;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 200ms ease;
+  }
+  .btn-primary:hover { background: #3a3d15; }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    color: #474a1a;
+    border: 1.5px solid #e0ded8;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+  .btn-ghost:hover { border-color: #474a1a; background: #f4f4ef; }
+  .hero-a .date-note {
+    font-size: 12px;
+    color: #8a8a7a;
+    font-weight: 350;
+    margin-top: 48px;
+  }
+
+  /* ═══ VARIANT B — Abstract Graphics ═══ */
+  .hero-b {
+    background: #ffffff;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-b-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-b-text {
+    /* left column */
+  }
+  .hero-b h1 {
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #2b2b1a;
+  }
+  .hero-b h1 em {
+    font-style: normal;
+    color: #474a1a;
+  }
+  .hero-b .sub {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-weight: 350;
+    color: #737366;
+    max-width: 460px;
+    margin-top: 24px;
+    line-height: 1.55;
+  }
+
+  /* Abstract shapes */
+  .art-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .art {
+    position: relative;
+    width: 440px;
+    height: 440px;
+  }
+  .art .s {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .s1 { width: 310px; height: 310px; background: #474a1a; top: 42px; left: 22px; opacity: 0.85; }
+  .s2 { width: 198px; height: 198px; background: #b05a2e; top: 176px; right: 0; opacity: 0.90; }
+  .s3 { width: 132px; height: 132px; background: #5a5d2e; top: 0; right: 66px; opacity: 0.60; }
+  .s4 { width: 97px; height: 97px; background: #d48050; bottom: 22px; left: 132px; opacity: 0.70; }
+  .s5 { width: 62px; height: 62px; background: #3a3c15; top: 132px; left: 110px; opacity: 0.50; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  .l1 { position: absolute; width: 2px; height: 176px; top: 88px; left: 220px; background: #474a1a; opacity: 0.25; transform: rotate(15deg); }
+  .l2 { position: absolute; width: 352px; height: 1.5px; top: 242px; left: 44px; background: #474a1a; opacity: 0.20; transform: rotate(-5deg); }
+
+  .divider {
+    height: 1px;
+    background: #e0ded8;
+    margin: 0 48px;
+  }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 768px) {
+    .hero-a-inner, .hero-b-grid { padding: 0 28px; }
+    .hero-b-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .art { width: 280px; height: 280px; }
+    .s1 { width: 196px; height: 196px; top: 28px; left: 14px; }
+    .s2 { width: 126px; height: 126px; top: 112px; right: 0; }
+    .s3 { width: 84px; height: 84px; top: 0; right: 42px; }
+    .s4 { width: 62px; height: 62px; bottom: 14px; left: 84px; }
+    .s5 { width: 39px; height: 39px; top: 84px; left: 70px; }
+    .l1 { height: 112px; top: 56px; left: 140px; }
+    .l2 { width: 224px; top: 154px; left: 28px; }
+    .art-wrapper { order: -1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">Вариант A — Чистая типографика</div>
+<div class="cap">Geist solo · оливковый акцент · щедрый воздух</div>
+
+<section class="hero-a">
+  <div class="hero-a-inner">
+    <p class="tag">L&D без суеты</p>
+    <h1>Порядок, глубина,<br><em>нестандартные решения</em></h1>
+    <p class="sub">Инструменты, курс и блог для методиста, который не хочет гонки. AI берёт рутину — вы берёте смысл.</p>
+    <div class="actions">
+      <button class="btn-primary">Начать с Бустера →</button>
+      <button class="btn-ghost">Программа курса</button>
+    </div>
+    <p class="date-note">Обновлено: 15 сентября 2026</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="label">Вариант B — Абстрактная композиция</div>
+<div class="cap">Оливковые + терракотовые формы · две колонки</div>
+
+<section class="hero-b">
+  <div class="hero-b-grid">
+    <div class="hero-b-text">
+      <p class="tag">L&D без суеты</p>
+      <h1>Порядок, глубина,<br><em>нестандартные решения</em></h1>
+      <p class="sub">Инструменты, курс и блог для методиста, который не хочет гонки. AI берёт рутину — вы берёте смысл.</p>
+      <div class="actions">
+        <button class="btn-primary">Начать с Бустера →</button>
+        <button class="btn-ghost">Программа курса</button>
+      </div>
+    </div>
+    <div class="art-wrapper">
+      <div class="art">
+        <div class="s s1"></div>
+        <div class="s s2"></div>
+        <div class="s s3"></div>
+        <div class="s s4"></div>
+        <div class="s s5"></div>
+        <div class="l1"></div>
+        <div class="l2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+- generic [active] [ref=f42e1]:
+  - generic [ref=f42e3]:
+    - generic [ref=f42e8]:
+      - generic [ref=f42e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=f42e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy
+      - generic [ref=f42e11]:
+        - button "Принять" [ref=f42e12] [cursor=pointer]
+        - button "Отказаться" [ref=f42e13] [cursor=pointer]
+    - banner [ref=f42e15]:
+      - generic [ref=f42e17]:
+        - link "Главная страница сайта" [ref=f42e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=f42e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=f42e35] [cursor=pointer]:
+          - generic [ref=f42e36]: Минск
+        - button "Чаты" [ref=f42e50] [cursor=pointer]
+        - link "Избранное" [ref=f42e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f42e74] [cursor=pointer]
+        - button "Создать резюме" [ref=f42e84] [cursor=pointer]
+        - button [ref=f42e91] [cursor=pointer]
+    - generic [ref=f42e103]:
+      - main [ref=f42e104]:
+        - generic [ref=f42e109]:
+          - generic [ref=f42e116]:
+            - generic [ref=f42e121]:
+              - generic [ref=f42e122]:
+                - heading "Менеджер по обучению AI" [level=1] [ref=f42e123]
+                - text: Уровень дохода не указан
+              - generic [ref=f42e126]:
+                - paragraph [ref=f42e127]: "Опыт работы: 3–6 лет"
+                - generic [ref=f42e128]: Полная занятость
+                - paragraph [ref=f42e131]: "График: 5/2"
+                - generic [ref=f42e132]: "Рабочие часы: 8"
+                - paragraph [ref=f42e135]: "Формат работы: на месте работодателя"
+                - paragraph [ref=f42e137]:
+                  - text: Сейчас эту вакансию смотрят
+                  - generic [ref=f42e138]: 6 человек
+            - generic [ref=f42e140]:
+              - generic [ref=f42e970]: Вы откликнулись
+              - generic [ref=f42e142]:
+                - button "Отклик другим резюме" [ref=f42e983] [cursor=pointer]
+                - button "Чат" [ref=f42e988] [cursor=pointer]
+                - button "Связаться" [ref=f42e150] [cursor=pointer]
+                - button "Добавить в избранное" [ref=f42e156] [cursor=pointer]
+                - button "Ещё" [ref=f42e165] [cursor=pointer]
+          - generic [ref=f42e181]:
+            - link [ref=f42e182] [cursor=pointer]:
+              - /url: /employer/829010?hhtmFrom=vacancy
+              - generic "Сбер Банк" [ref=f42e186]:
+                - img "Сбер Банк" [ref=f42e188]
+            - generic [ref=f42e190]:
+              - link "ОАО Сбер Банк" [ref=f42e192] [cursor=pointer]:
+                - /url: /employer/829010?hhtmFrom=vacancy
+                - generic [ref=f42e193]:
+                  - text: ОАО
+                  - generic [ref=f42e194]: Сбер Банк
+              - link [ref=f42e197] [cursor=pointer]:
+                - /url: /article/19873?hhtmFrom=vacancy
+          - generic [ref=f42e204]:
+            - generic [ref=f42e216]:
+              - generic [ref=f42e224]:
+                - generic [ref=f42e225]: Привет! Каждый день в нашем банке рождаются идеи, становятся реальностью новые решения и технологии — и мы ищем среди профессионалов того, кто сможет рассказать о возможностях AI простым, доступным языком, а главное — научить им пользоваться!
+                - heading [level=2]
+                - heading "Чем предстоит заниматься" [level=2] [ref=f42e226]
+                - list [ref=f42e227]:
+                  - listitem [ref=f42e228]:
+                    - text: •
+                    - generic [ref=f42e229]:
+                      - text: Заниматься настройкой и развитием AI-инструментов, понимая внутреннюю логику агентных систем (
+                      - emphasis [ref=f42e230]: LangChain
+                      - text: ","
+                      - emphasis [ref=f42e231]: LangGraph
+                      - text: и другие)
+                  - listitem [ref=f42e232]:
+                    - text: •
+                    - generic [ref=f42e233]: Разрабатывать и применять цепочки промптов, уметь превращать сложные технические задания в понятные и работающие решения
+                  - listitem [ref=f42e234]:
+                    - text: •
+                    - generic [ref=f42e235]: Осваивать и применять RAG-технологии и эффективно интегрировать AI с существующими корпоративными источниками знаний
+                  - listitem [ref=f42e236]:
+                    - text: •
+                    - generic [ref=f42e237]: Собирать и анализировать обратную связь, оценивать эффективность обучения работников и формулировать рекомендации для улучшения программ
+                  - listitem [ref=f42e238]:
+                    - text: •
+                    - generic [ref=f42e239]: Брать на себя роль тренера-эксперта, разрабатывать образовательные траектории и контент, проводить вебинары и тренинги для групп разной численности (от 20 до 100+ человек)
+                  - listitem [ref=f42e240]:
+                    - text: •
+                    - generic [ref=f42e241]: Уметь интересно рассказывать сложные вещи простыми словами и вовлекать аудиторию в интерактивную работу прямо во время занятий
+                  - listitem [ref=f42e242]:
+                    - text: •
+                    - generic [ref=f42e243]: Писать качественный контент и визуализировать информацию (используя Canva, Figma или нейросети); вести профессиональный Telegram-канал для сотрудников на тему AI
+                  - listitem [ref=f42e244]:
+                    - text: •
+                    - generic [ref=f42e245]: Предлагать собственные идеи и проекты внедрения AI для повышения эффективности бизнес-процессов, выступая инициатором изменений
+                - heading "Наши ожидания" [level=2] [ref=f42e246]
+                - generic [ref=f42e247]: Ищем открытого к общению и обучению человека, который хорошо владеет практиками в сфере AI, бизнес-обучения и тренировок, и при этом проявляет желание делиться своими знаниями с широкой аудиторией и развивать культуру разумного использования AI-инструментов в банке.
+                - generic [ref=f42e248]: "Ты идеально подойдёшь, если у тебя уже есть:"
+                - list [ref=f42e249]:
+                  - listitem [ref=f42e250]:
+                    - text: •
+                    - generic [ref=f42e251]: Образование в сфере экономики, технологий или педагогики
+                  - listitem [ref=f42e252]:
+                    - text: •
+                    - generic [ref=f42e253]: Опыт руководства образовательными проектами в области искусственного интеллекта
+                  - listitem [ref=f42e254]:
+                    - text: •
+                    - generic [ref=f42e255]: Как минимум один завершённый проект, связанный с внедрением AI-образования или применением AI в бизнесе
+                  - listitem [ref=f42e256]:
+                    - text: •
+                    - generic [ref=f42e257]: Навыки уверенной коммуникации и адаптивности к изменениям, готовность непрерывно повышать свою квалификацию
+                - heading "Что мы предлагаем" [level=2] [ref=f42e258]
+                - list [ref=f42e259]:
+                  - listitem [ref=f42e260]:
+                    - text: •
+                    - generic [ref=f42e261]: Работу в группе профессионалов, где идеи мгновенно получают воплощение и видимый бизнес-результат
+                  - listitem [ref=f42e262]:
+                    - text: •
+                    - generic [ref=f42e263]: Условия, где твоя инициатива воспринимается всерьёз, поддержку в обучении и росте
+                  - listitem [ref=f42e264]:
+                    - text: •
+                    - generic [ref=f42e265]: А главное — редкую возможность увлечь и научить тысячи людей вокруг тому, как AI меняет банки сегодня и завтра
+                - strong [ref=f42e267]: "Ссылка на вакансию в банке вакансий на gsz.gov.⁣by:"
+                - generic [ref=f42e268]:
+                  - strong [ref=f42e269]: "*"
+                  - text: Вакансия, планируемая
+                  - strong
+                  - text: к открытию (перспективная)
+              - generic [ref=f42e270]:
+                - generic [ref=f42e271]:
+                  - generic [ref=f42e272]: Работай в крутой команде
+                  - generic [ref=f42e273]:
+                    - generic [ref=f42e274]:
+                      - paragraph [ref=f42e277]: акселераторы стартапов, хакатоны и регулярные митапы от лидеров направлений
+                      - paragraph [ref=f42e280]: возможность найти союзников по любым интересам
+                    - generic [ref=f42e281]:
+                      - paragraph [ref=f42e284]: участие в развитии инноваций на базе ИИ
+                      - paragraph [ref=f42e287]: креативные пространства для работы, спортзалы и зоны для отдыха
+                - generic [ref=f42e289]: ОАО «Сбер Банк»УНП 100219673
+            - generic [ref=f42e291]:
+              - generic [ref=f42e297]:
+                - generic [ref=f42e302]:
+                  - paragraph [ref=f42e303]: Войтехович Ольга Георгиевна
+                  - paragraph [ref=f42e304]: Контактное лицо
+                - button "Связаться" [ref=f42e305] [cursor=pointer]
+              - generic [ref=f42e362]:
+                - heading "Где предстоит работать" [level=2] [ref=f42e364]
+                - generic [ref=f42e994]:
+                  - text: Минск,
+                  - link "Купаловская" [ref=f42e997]:
+                    - /url: /metro/avtozavodskaya/kupalovskaya?hhtmFrom=vacancy
+                  - text: ","
+                  - link "Немига" [ref=f42e1002]:
+                    - /url: /metro/avtozavodskaya/nemiga?hhtmFrom=vacancy
+                  - text: ","
+                  - link "Октябрьская" [ref=f42e1007]:
+                    - /url: /metro/moskovskaya/oktyabrskaya?hhtmFrom=vacancy
+                  - text: ","
+                  - link "Площадь Победы" [ref=f42e1012]:
+                    - /url: /metro/moskovskaya/ploshad_pobedy?hhtmFrom=vacancy
+                  - text: ", проспект Независимости, 32Ас1"
+                - link "Показать на большой карте" [ref=f42e391]:
+                  - /url: /search/vacancy/map?vacancy_id=137307752&hhtmFrom=vacancy
+          - generic [ref=f42e395]:
+            - generic [ref=f42e396]: Вакансия опубликована 14 сентября 2026 в Минске
+            - generic [ref=f42e403]:
+              - generic [ref=f42e408]:
+                - button "Чат" [ref=f42e1015] [cursor=pointer]
+                - button "Пожаловаться на вакансию" [ref=f42e643] [cursor=pointer]
+              - generic [ref=f42e1025]:
+                - generic [ref=f42e1033]:
+                  - generic [ref=f42e1034]: Резюме доставлено
+                  - generic [ref=f42e1036]: Связаться с работодателем можно в чате
+                  - button "Чат" [ref=f42e1040] [cursor=pointer]
+                - generic [ref=f42e1044]:
+                  - heading "Не пропустите ответ работодателя" [level=3] [ref=f42e1046]
+                  - generic [ref=f42e1048]: Подключите чат-бота в своем любимом мессенджере
+                  - generic [ref=f42e1051]:
+                    - button "vk" [ref=f42e1053] [cursor=pointer]
+                    - button "telegram" [ref=f42e1062] [cursor=pointer]
+                    - button "viber" [ref=f42e1070] [cursor=pointer]
+                - generic [ref=f42e1081]:
+                  - generic [ref=f42e1086]:
+                    - generic [ref=f42e1087]: Откликнитесь ещё 3 раза
+                    - generic [ref=f42e1089]: По статистике для одного приглашения требуется около десяти откликов
+                  - progressbar [ref=f42e1091]
+      - contentinfo [ref=f42e419]:
+        - generic [ref=f42e423]:
+          - navigation "Навигация в подвале" [ref=f42e424]:
+            - generic [ref=f42e425]:
+              - generic [ref=f42e427]:
+                - generic [ref=f42e428]: rabota.by
+                - list [ref=f42e430]:
+                  - listitem [ref=f42e431]:
+                    - link "Помощь" [ref=f42e433]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e436]:
+                    - link "Наши вакансии" [ref=f42e438]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e441]:
+                    - link "Реклама на сайте" [ref=f42e443]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy#region/belarus
+                  - listitem [ref=f42e446]:
+                    - link "Требования к ПО" [ref=f42e448]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e451]:
+                    - link "Политика обработки cookie" [ref=f42e453]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e456]:
+                    - link "Настройки cookie" [ref=f42e458]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e461]:
+                    - link "Напишите нам" [ref=f42e463]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=f42e466]:
+                    - link "Каталог компаний" [ref=f42e468]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e471]:
+                    - link "Поиск по вакансиям в Минске" [ref=f42e473]:
+                      - /url: /vacancies
+                  - listitem [ref=f42e476]:
+                    - link "Работа рядом с метро" [ref=f42e478]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - generic [ref=f42e483]:
+                - generic [ref=f42e484]: Соискателям
+                - list [ref=f42e486]:
+                  - listitem [ref=f42e487]:
+                    - link "Все сервисы" [ref=f42e489]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e492]:
+                    - link "Кадровые агентства Беларуси" [ref=f42e494]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+                  - listitem [ref=f42e497]:
+                    - link "Производственный календарь" [ref=f42e499]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - generic [ref=f42e504]:
+                - list [ref=f42e505]:
+                  - listitem [ref=f42e506]:
+                    - generic [ref=f42e507]: Боты для уведомлений
+                    - generic [ref=f42e509]:
+                      - button "Подключить telegram бот" [ref=f42e510] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f42e517] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f42e525] [cursor=pointer]
+                - generic [ref=f42e534]:
+                  - generic [ref=f42e535]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f42e537]
+          - navigation "Правовая информация" [ref=f42e545]:
+            - list [ref=f42e546]:
+              - listitem [ref=f42e547]:
+                - link "Этика и комплаенс" [ref=f42e549]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f42e552]:
+                - link "Оказание услуг" [ref=f42e554]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f42e557]:
+                - link "Использование сайтов" [ref=f42e559]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f42e562]:
+                - link "Политика обработки данных" [ref=f42e564]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+              - listitem [ref=f42e567]:
+                - link "Пользовательское соглашение" [ref=f42e569]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy
+          - generic [ref=f42e576]:
+            - paragraph [ref=f42e577]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=f42e579]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=f42e581]:
+              - img "mastercard" [ref=f42e582]
+              - img "visa" [ref=f42e583]
+              - img "belcart" [ref=f42e584]
+              - img "belcart-internetparol" [ref=f42e585]
+          - generic [ref=f42e590]:
+            - generic [ref=f42e591]:
+              - button "Перейти в ВК" [ref=f42e592] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=f42e600] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=f42e608] [cursor=pointer]
+              - button "Перейти в Viber" [ref=f42e616] [cursor=pointer]
+            - generic [ref=f42e625]:
+              - list [ref=f42e626]:
+                - listitem [ref=f42e627]:
+                  - combobox "Выбор языка сайта" [ref=f42e630]:
+                    - generic [ref=f42e631]: Русский
+              - generic [ref=f42e638]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - dialog [ref=f42e1094]:
+    - generic [ref=f42e1096]:
+      - generic [ref=f42e1097]:
+        - generic:
+          - generic:
+            - menu [ref=f42e1098]:
+              - button [ref=f42e1103] [cursor=pointer]
+            - generic:
+              - generic:
+                - generic:
+                  - menu:
+                    - generic:
+                      - generic: Какой формат удобнее?
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button
+            - generic [ref=f42e1107]: Какой формат удобнее?
+            - generic:
+              - separator
+      - generic [ref=f42e1111]:
+        - generic [ref=f42e1112]:
+          - checkbox "На месте работодателя" [disabled] [ref=f42e1113]
+          - generic [ref=f42e1117] [cursor=pointer]:
+            - generic [ref=f42e1118]: На месте работодателя
+            - checkbox "На месте работодателя" [disabled] [ref=f42e1129]
+        - generic [ref=f42e1138]:
+          - checkbox "Удалённо" [disabled] [ref=f42e1139]
+          - generic [ref=f42e1143] [cursor=pointer]:
+            - generic [ref=f42e1144]: Удалённо
+            - checkbox "Удалённо" [disabled] [ref=f42e1155]
+        - generic [ref=f42e1164]:
+          - checkbox "Гибрид" [disabled] [ref=f42e1165]
+          - generic [ref=f42e1169] [cursor=pointer]:
+            - generic [ref=f42e1170]: Гибрид
+            - checkbox "Гибрид" [disabled] [ref=f42e1181]
+        - generic [ref=f42e1190]:
+          - checkbox "Разъездной" [disabled] [ref=f42e1191]
+          - generic [ref=f42e1195] [cursor=pointer]:
+            - generic [ref=f42e1196]: Разъездной
+            - checkbox "Разъездной" [disabled] [ref=f42e1207]
+        - generic [ref=f42e1216]:
+          - checkbox "Вахта" [disabled] [ref=f42e1217]
+          - generic [ref=f42e1221] [cursor=pointer]:
+            - generic [ref=f42e1222]: Вахта
+            - checkbox "Вахта" [disabled] [ref=f42e1233]
+    - button "Сохранить и продолжить" [ref=f42e1248] [cursor=pointer]

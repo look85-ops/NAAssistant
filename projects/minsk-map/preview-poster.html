@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наш Минск — постер</title>
+<style>
+  :root{
+    --ink:#12120f;
+    --paper:#f2ede2;
+    --red:#d92b1f;
+    --muted:#6b665c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:"Helvetica Neue",-apple-system,"Segoe UI",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* hero — poster block */
+  header{padding:40px 0 0}
+  .topbar{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .hero{padding:56px 0 48px}
+  h1{
+    font-size:clamp(44px,9vw,104px);
+    font-weight:900;
+    letter-spacing:-.02em;
+    line-height:.9;
+    text-transform:uppercase;
+  }
+  h1 .block{display:block}
+  h1 .red{color:var(--red)}
+  .sub{margin-top:28px;font-size:16px;color:var(--muted);max-width:40ch;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+
+  /* progress — stamp */
+  .progress{margin-top:44px;display:flex;align-items:stretch;gap:16px;flex-wrap:wrap}
+  .stamp{
+    border:3px solid var(--paper);
+    padding:18px 26px;
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:center;
+    text-transform:uppercase;
+  }
+  .stamp .big{font-size:56px;font-weight:900;line-height:.9;letter-spacing:-.02em}
+  .stamp .lbl{font-size:12px;letter-spacing:.2em;color:var(--muted);margin-top:8px}
+  .stamp.red{background:var(--red);border-color:var(--red);color:var(--ink)}
+  .stamp.red .lbl{color:var(--ink)}
+
+  /* grid */
+  main{padding:48px 0 120px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .card{
+    border:2px solid var(--paper);
+    padding:20px;
+    cursor:pointer;
+    position:relative;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    transition:transform .15s ease;
+  }
+  .card:hover{transform:translateY(-3px)}
+  .card .num{font-size:44px;font-weight:900;line-height:.9;color:var(--paper)}
+  .card .name{margin-top:auto;font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
+  .card .meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .card .mark{
+    position:absolute;top:14px;right:14px;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;
+    padding:4px 10px;border:2px solid var(--paper);color:var(--paper);
+  }
+  .card.done{background:var(--red);border-color:var(--red)}
+  .card.done .num,.card.done .name,.card.done .meta{color:var(--ink)}
+  .card.done .mark{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+  .hint{margin-top:44px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="topbar">
+    <span>Наш год в Минске</span>
+    <span>2026 — 2027</span>
+  </div>
+  <div class="hero">
+    <h1>
+      <span class="block">24 места</span>
+      <span class="block"><span class="red">куда мы</span> пойдём</span>
+      <span class="block">вместе</span>
+    </h1>
+    <p class="sub">Два похода в месяц. Отмечаем, что уже видели, и смотрим, как город становится нашим.</p>
+  </div>
+  <div class="progress">
+    <div class="stamp"><span class="big" id="count">2 / 24</span><span class="lbl">посетили</span></div>
+    <div class="stamp red"><span class="big" id="pct">8%</span><span class="lbl">года прожито</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+  <p class="hint">Черновик — 6 мест для примера. В финале будет 24, с картой и фото.</p>
+</main>
+
+<script>
+  const PLACES = [
+    {name:"Национальный художественный музей", tag:"Музей · Центр"},
+    {name:"Большой театр оперы и балета", tag:"Театр · Центр"},
+    {name:"Верхний город", tag:"Прогулка · Центр"},
+    {name:"Октябрьская улица", tag:"Галереи и стрит-арт · Центр"},
+    {name:"Васильки", tag:"Белорусская кухня · Центр"},
+    {name:"Несвижский замок", tag:"Пригород · 2 часа езды"}
+  ];
+  const KEY = "minsk-poster-done";
+  const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+
+  const grid = document.getElementById("grid");
+  PLACES.forEach((p,i)=>{
+    const el = document.createElement("div");
+    el.className = "card" + (done.has(i) ? " done" : "");
+    el.innerHTML = `
+      <span class="mark">Были</span>
+      <span class="num">${String(i+1).padStart(2,"0")}</span>
+      <span class="name">${p.name}</span>
+      <span class="meta">${p.tag}</span>`;
+    el.addEventListener("click",()=>{
+      done.has(i) ? done.delete(i) : done.add(i);
+      localStorage.setItem(KEY, JSON.stringify([...done]));
+      render();
+    });
+    grid.appendChild(el);
+  });
+
+  function render(){
+    const total = PLACES.length;
+    const n = done.size;
+    document.getElementById("count").textContent = n + " / " + total;
+    document.getElementById("pct").textContent = Math.round(n/total*100) + "%";
+    [...grid.children].forEach((c,i)=>c.classList.toggle("done", done.has(i)));
+  }
+  render();
+</script>
+</body>
+</html>

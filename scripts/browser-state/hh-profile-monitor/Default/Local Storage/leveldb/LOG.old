@@ -1,0 +1,5 @@
+2026/09/11-13:20:54.851 18d0 Creating DB C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile-monitor\Default\Local Storage\leveldb since it was missing.
+2026/09/11-13:20:55.057 18d0 Reusing MANIFEST C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile-monitor\Default\Local Storage\leveldb/MANIFEST-000001
+2026/09/11-13:21:55.114 18d0 Level-0 table #5: started
+2026/09/11-13:21:55.134 18d0 Level-0 table #5: 642144 bytes OK
+2026/09/11-13:21:55.138 18d0 Delete type=0 #3

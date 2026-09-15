@@ -1,0 +1,1819 @@
+- generic [active] [ref=f53e1]:
+  - generic [ref=f53e3]:
+    - generic [ref=f53e8]:
+      - generic [ref=f53e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=f53e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy_search_list
+      - generic [ref=f53e11]:
+        - button "Принять" [ref=f53e12] [cursor=pointer]
+        - button "Отказаться" [ref=f53e13] [cursor=pointer]
+    - banner [ref=f53e15]:
+      - generic [ref=f53e17]:
+        - link "Главная страница сайта" [ref=f53e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=f53e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=f53e35] [cursor=pointer]:
+          - generic [ref=f53e36]: Минск
+        - button "Чаты" [ref=f53e50] [cursor=pointer]
+        - link "Избранное" [ref=f53e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f53e74] [cursor=pointer]
+        - button "Создать резюме" [ref=f53e84] [cursor=pointer]
+        - button [ref=f53e91] [cursor=pointer]
+    - generic [ref=f53e103]:
+      - main [ref=f53e104]:
+        - navigation "Хлебные крошки" [ref=f53e107]:
+          - list [ref=f53e108]:
+            - listitem [ref=f53e109]:
+              - link "Главная" [ref=f53e111]:
+                - /url: /
+              - generic [aria-hidden] [ref=f53e118]: /
+            - listitem [ref=f53e119]:
+              - link "вакансии в Минске" [ref=f53e120]:
+                - /url: /vacancies
+              - generic [aria-hidden] [ref=f53e125]: /
+            - listitem [ref=f53e126]:
+              - generic [ref=f53e127]: менеджер по обучению и развитию персонала
+        - generic [ref=f53e134]:
+          - generic [ref=f53e135]:
+            - generic [ref=f53e138]:
+              - combobox "Поиск по вакансиям" [ref=f53e142]: менеджер по обучению и развитию персонала
+              - button "Очистить" [ref=f53e148] [cursor=pointer]
+            - group
+          - button "Сохранить поиск" [ref=f53e156] [cursor=pointer]
+        - generic [ref=f53e171]:
+          - generic [ref=f53e172]:
+            - checkbox "Фильтры" [ref=f53e173]
+            - img "Фильтры" [ref=f53e176] [cursor=pointer]
+          - generic [ref=f53e182]:
+            - button "Минск" [ref=f53e183] [cursor=pointer]
+            - button [ref=f53e190] [cursor=pointer]
+          - button "Метро" [ref=f53e196] [cursor=pointer]
+          - button "График" [ref=f53e207] [cursor=pointer]
+          - button "Рабочие часы" [ref=f53e218] [cursor=pointer]
+          - button "Опыт" [ref=f53e229] [cursor=pointer]
+          - button "Тип занятости" [ref=f53e240] [cursor=pointer]
+          - button "Уровень дохода" [ref=f53e250] [cursor=pointer]
+          - generic [ref=f53e258]:
+            - checkbox "Ещё фильтры" [ref=f53e259]
+            - generic [ref=f53e260] [cursor=pointer]: Ещё фильтры
+        - generic [ref=f53e265]:
+          - generic [ref=f53e271]:
+            - generic [ref=f53e276]:
+              - heading "Работа менеджером по обучению и развитию персонала в Минске" [level=1] [ref=f53e277]
+              - generic [ref=f53e278]: ", 105 вакансий"
+            - generic [ref=f53e282]:
+              - generic [ref=f53e283]:
+                - radio "краткое описания вакансий" [ref=f53e284]
+                - generic [ref=f53e285] [cursor=pointer]
+              - generic [ref=f53e292]:
+                - radio "полное описание вакансий" [checked] [ref=f53e293]
+                - generic [ref=f53e294] [cursor=pointer]
+          - generic [ref=f53e306]:
+            - region "Вакансии" [ref=f53e308]:
+              - list [ref=f53e310]:
+                - listitem [ref=f53e311]:
+                  - article [ref=f53e314] [cursor=pointer]:
+                    - generic [ref=f53e318]:
+                      - generic [ref=f53e319]:
+                        - generic [ref=f53e320]:
+                          - button "Добавить в избранное" [ref=f53e321]
+                          - button "Скрыть" [ref=f53e325]
+                        - generic [ref=f53e329]: Сейчас смотрят 6 человек
+                        - link "Бизнес-тренер" [ref=f53e332]:
+                          - /url: https://rabota.by/vacancy/136343793?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e336]: Без опыта
+                        - generic [ref=f53e341]:
+                          - link [ref=f53e344]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Вакансии Сбер Банк" [ref=f53e354]:
+                            - /url: /employer/829010?hhtmFrom=vacancy_search_list
+                            - img "Сбер Банк" [ref=f53e356]
+                          - link "ОАО Сбер Банк" [ref=f53e357]:
+                            - /url: /employer/829010?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e361]:
+                            - text: Минск
+                            - generic [ref=f53e364]:
+                              - generic [ref=f53e365]: ●
+                              - generic [ref=f53e366]: Купаловская
+                            - generic [ref=f53e367]: и еще 3
+                            - generic [ref=f53e368]: ●
+                            - generic [ref=f53e370]: ●
+                            - generic [ref=f53e372]: ●
+                        - generic [ref=f53e376]:
+                          - generic [ref=f53e377]: Разрабатывать методологию и проводить обучающие мероприятия (тренинги, воркшопы, вебинары) для аудиторий от 15 до 100+ человек. Обучать сотрудников продажам...
+                          - generic [ref=f53e379]: Высшее образование. Опыт работы бизнес-тренером или специалистом по обучению (опыт в банковской сфере или B2B-продажах будет...
+                      - button "Откликнуться" [ref=f53e385]
+                - listitem [ref=f53e391]:
+                  - article [ref=f53e394] [cursor=pointer]:
+                    - generic [ref=f53e398]:
+                      - generic [ref=f53e399]:
+                        - generic [ref=f53e400]:
+                          - button "Добавить в избранное" [ref=f53e401]
+                          - button "Скрыть" [ref=f53e405]
+                        - generic [ref=f53e409]: Сейчас смотрит 1 человек
+                        - link "Бизнес-тренер" [ref=f53e412]:
+                          - /url: https://rabota.by/vacancy/136984281?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e416]: Опыт 1-3 года
+                        - generic [ref=f53e421]:
+                          - link [ref=f53e424]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "RocketData" [ref=f53e431]:
+                            - /url: /employer/3591220?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e434]:
+                            - text: Минск
+                            - generic [ref=f53e437]:
+                              - generic [ref=f53e438]: ●
+                              - generic [ref=f53e439]: Немига
+                            - generic [ref=f53e440]: и еще 1
+                            - generic [ref=f53e441]: ●
+                        - generic [ref=f53e445]:
+                          - generic [ref=f53e446]: Разрабатывать учебные программы по продукту, холодным продажам, этапам скрипта и техникам преодоления возражений. Проводить тренинги, воркшопы, разборы звонков.
+                          - generic [ref=f53e448]: "Глубокое понимание процессов холодных продаж: от первичного контакта с клиентом до его \"дожима\"; практический опыт в сфере холодных продаж."
+                      - button "Откликнуться" [ref=f53e454]
+                  - generic [ref=f53e460]:
+                    - generic [ref=f53e461]:
+                      - heading "Компании для вас" [level=2] [ref=f53e462]
+                      - button [ref=f53e465] [cursor=pointer]
+                    - region [ref=f53e475]:
+                      - list [ref=f53e478]:
+                        - generic [ref=f53e480]:
+                          - listitem [ref=f53e481]:
+                            - button "Сбер Банк Сбер Банк 51 активная вакансия Посмотреть" [ref=f53e484] [cursor=pointer]:
+                              - generic [ref=f53e488]:
+                                - generic "Сбер Банк" [ref=f53e494]:
+                                  - img "Сбер Банк" [ref=f53e496]
+                                - generic [ref=f53e498]: Сбер Банк
+                                - generic [ref=f53e502]: 51 активная вакансия
+                                - button "Посмотреть" [ref=f53e506]
+                          - listitem [ref=f53e511]:
+                            - button "Евроторг Евроторг 809 активных вакансий Посмотреть" [ref=f53e514] [cursor=pointer]:
+                              - generic [ref=f53e518]:
+                                - generic "Евроторг" [ref=f53e524]:
+                                  - img "Евроторг" [ref=f53e526]
+                                - generic [ref=f53e528]: Евроторг
+                                - generic [ref=f53e532]: 809 активных вакансий
+                                - button "Посмотреть" [ref=f53e536]
+                          - listitem [ref=f53e541]:
+                            - button "RWB (Wildberries & Russ) RWB (Wildberries & Russ) 3233 активные вакансии Посмотреть" [ref=f53e544] [cursor=pointer]:
+                              - generic [ref=f53e548]:
+                                - generic "RWB (Wildberries & Russ)" [ref=f53e554]:
+                                  - img "RWB (Wildberries & Russ)" [ref=f53e556]
+                                - generic [ref=f53e558]: RWB (Wildberries & Russ)
+                                - generic [ref=f53e562]: 3233 активные вакансии
+                                - button "Посмотреть" [ref=f53e566]
+                          - listitem [ref=f53e571]:
+                            - button "Банк БелВЭБ Банк БелВЭБ 38 активных вакансий Посмотреть" [ref=f53e574] [cursor=pointer]:
+                              - generic [ref=f53e578]:
+                                - generic "Банк БелВЭБ" [ref=f53e584]:
+                                  - img "Банк БелВЭБ" [ref=f53e586]
+                                - generic [ref=f53e588]: Банк БелВЭБ
+                                - generic [ref=f53e592]: 38 активных вакансий
+                                - button "Посмотреть" [ref=f53e596]
+                          - listitem [ref=f53e601]:
+                            - button "АЛИДИ-Вест, ИООО АЛИДИ-Вест, ИООО 56 активных вакансий Посмотреть" [ref=f53e604] [cursor=pointer]:
+                              - generic [ref=f53e608]:
+                                - generic "АЛИДИ-Вест, ИООО" [ref=f53e614]:
+                                  - img "АЛИДИ-Вест, ИООО" [ref=f53e616]
+                                - generic [ref=f53e618]: АЛИДИ-Вест, ИООО
+                                - generic [ref=f53e622]: 56 активных вакансий
+                                - button "Посмотреть" [ref=f53e626]
+                          - listitem [ref=f53e631]:
+                            - button "Банк ВТБ (Беларусь) Банк ВТБ (Беларусь) 61 активная вакансия Посмотреть" [ref=f53e634] [cursor=pointer]:
+                              - generic [ref=f53e638]:
+                                - generic "Банк ВТБ (Беларусь)" [ref=f53e644]:
+                                  - img "Банк ВТБ (Беларусь)" [ref=f53e646]
+                                - generic [ref=f53e648]: Банк ВТБ (Беларусь)
+                                - generic [ref=f53e652]: 61 активная вакансия
+                                - button "Посмотреть" [ref=f53e656]
+                  - generic [ref=f53e679]:
+                    - generic [ref=f53e680]:
+                      - generic [ref=f53e681]: По вашему запросу ещё будут появляться новые вакансии. Присылать вам?
+                      - generic [ref=f53e684]:
+                        - generic [ref=f53e685]: менеджер по обучению и развитию персонала • Минск • Ключевые слова в названии вакансии, в названии компании и в описании вакансии
+                        - generic [ref=f53e686]:
+                          - text: Даю согласие на обработку персональных данных на получение ссылки на автоматически подобранные вакансии в соответствии с
+                          - link "Условиями обработки" [ref=f53e687]:
+                            - /url: /article/31466?hhtmFrom=vacancy_search_list
+                          - text: . Ознакомлен с
+                          - link "Правами, связанными с обработкой, механизмом их реализации и последствиями согласия и отказа" [ref=f53e690]:
+                            - /url: /article/31466?hhtmFrom=vacancy_search_list#clause1
+                          - text: .
+                    - generic [ref=f53e695]:
+                      - button "В мессенджер" [ref=f53e697] [cursor=pointer]
+                      - button "На почту" [ref=f53e703] [cursor=pointer]
+                - listitem [ref=f53e709]:
+                  - article [ref=f53e712] [cursor=pointer]:
+                    - generic [ref=f53e716]:
+                      - generic [ref=f53e717]:
+                        - generic [ref=f53e718]:
+                          - button "Добавить в избранное" [ref=f53e719]
+                          - button "Скрыть" [ref=f53e723]
+                        - generic [ref=f53e727]: Сейчас смотрят 4 человека
+                        - link "HR-менеджер" [ref=f53e730]:
+                          - /url: https://rabota.by/vacancy/136433687?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e734]:
+                          - generic [ref=f53e735]: от 3 500 Br за месяц, на руки
+                          - generic [ref=f53e737]: Опыт 1-3 года
+                        - generic [ref=f53e741]:
+                          - link [ref=f53e744]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО А-Конкрит" [ref=f53e751]:
+                            - /url: /employer/2469244?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e755]: деревня Синило
+                        - generic [ref=f53e757]: Противовесы для газовых плит Gefest, MIDEA. Грузы для лифтов METEOR, MEL, BTL, ALEXLIFT, Щербинский лифтостроительный завод. Можете составить план в...
+                      - generic [ref=f53e765]:
+                        - button "Откликнуться" [ref=f53e766]
+                        - button "Связаться" [ref=f53e772]
+                - listitem [ref=f53e778]:
+                  - article [ref=f53e781] [cursor=pointer]:
+                    - generic [ref=f53e785]:
+                      - generic [ref=f53e786]:
+                        - generic [ref=f53e787]:
+                          - button "Добавить в избранное" [ref=f53e788]
+                          - button "Скрыть" [ref=f53e792]
+                        - generic [ref=f53e796]: Сейчас смотрят 2 человека
+                        - link "Бизнес-тренер" [ref=f53e799]:
+                          - /url: https://rabota.by/vacancy/136963616?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e803]: Опыт 1-3 года
+                        - generic [ref=f53e808]:
+                          - generic [ref=f53e810]:
+                            - link [ref=f53e811]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f53e817]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - link "ООО ТД Комплект" [ref=f53e828]:
+                            - /url: /employer/782190?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e832]:
+                            - text: Минск
+                            - generic [ref=f53e835]:
+                              - generic [ref=f53e836]: ●
+                              - generic [ref=f53e837]: Каменная Горка
+                            - generic [ref=f53e838]: и еще 2
+                            - generic [ref=f53e839]: ●
+                            - generic [ref=f53e841]: ●
+                        - generic [ref=f53e845]:
+                          - generic [ref=f53e846]: Выявлять потребности сотрудников и подразделений в обучении. Проводить обучение для новых и действующих сотрудников. Разрабатывать и актуализировать программы очных и...
+                          - generic [ref=f53e848]: Имеет опыт работы бизнес- тренером от 1 года. Проводил тренинги, вебинары по продажам, переговорам и т.д.. Создавал и актуализировал...
+                      - generic [ref=f53e853]:
+                        - button "Откликнуться" [ref=f53e854]
+                        - button "Связаться" [ref=f53e860]
+                - listitem [ref=f53e866]:
+                  - article [ref=f53e869] [cursor=pointer]:
+                    - generic [ref=f53e873]:
+                      - generic [ref=f53e874]:
+                        - generic [ref=f53e875]:
+                          - button "Добавить в избранное" [ref=f53e876]
+                          - button "Скрыть" [ref=f53e880]
+                        - generic [ref=f53e884]: Сейчас смотрят 12 человек
+                        - link "Менеджер по подбору персонала" [ref=f53e887]:
+                          - /url: https://rabota.by/vacancy/136529107?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e891]:
+                          - generic [ref=f53e892]: до 4 000 Br за месяц, на руки
+                          - generic [ref=f53e894]:
+                            - generic [ref=f53e895]: Без опыта
+                            - generic [ref=f53e897]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e900]:
+                          - link [ref=f53e903]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Губанова и Партнеры" [ref=f53e911]:
+                            - /url: /employer/1942989?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e915]:
+                            - text: Минск
+                            - generic [ref=f53e918]:
+                              - generic [ref=f53e919]: ●
+                              - generic [ref=f53e920]: Аэродромная
+                            - generic [ref=f53e921]: и еще 3
+                            - generic [ref=f53e922]: ●
+                            - generic [ref=f53e924]: ●
+                            - generic [ref=f53e926]: ●
+                        - generic [ref=f53e930]:
+                          - generic [ref=f53e931]: "Взаимодействовать с заказчиками: обсуждать профиль кандидата, согласовывать этапы подбора. Искать кандидатов на позиции от специалистов до топ-менеджеров через работные..."
+                          - generic [ref=f53e933]: "Знание основ рекрутинга: источники поиска, этапы подбора, базовая терминология - ОБЯЗАТЕЛЬНО! Умение самостоятельно вести подбор без необходимости обучения. Грамотная устная и..."
+                      - button "Откликнуться" [ref=f53e939]
+                - listitem [ref=f53e945]:
+                  - article [ref=f53e948] [cursor=pointer]:
+                    - generic [ref=f53e952]:
+                      - generic [ref=f53e953]:
+                        - generic [ref=f53e954]:
+                          - button "Добавить в избранное" [ref=f53e955]
+                          - button "Скрыть" [ref=f53e959]
+                        - generic [ref=f53e963]: Сейчас смотрят 4 человека
+                        - link "Менеджер по подбору персонала/HR менеджер (Head of HR)" [ref=f53e966]:
+                          - /url: https://rabota.by/vacancy/137068021?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e970]:
+                          - generic [ref=f53e971]: от 3 500 Br за месяц, на руки
+                          - generic [ref=f53e973]:
+                            - generic [ref=f53e974]: Опыт 3-6 лет
+                            - generic [ref=f53e976]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e979]:
+                          - link [ref=f53e982]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО АквилонАвто" [ref=f53e990]:
+                            - /url: /employer/773908?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e994]:
+                            - text: Минский район
+                            - generic [ref=f53e997]:
+                              - generic [ref=f53e998]: ●
+                              - generic [ref=f53e999]: Автозаводская
+                            - generic [ref=f53e1000]: и еще 1
+                            - generic [ref=f53e1001]: ●
+                        - generic [ref=f53e1005]:
+                          - generic [ref=f53e1006]: Поиск, привлечение, отбор и найм персонала. Онбординг / офбординг. Обеспечение компании квалифицированными кадрами для достижения бизнес-целей. Взаимодействие и коммуникации с...
+                          - generic [ref=f53e1008]: Высшее образование. Опыт работы специалистом по подбору персонала, менеджером по персоналу не менее двух лет, приветствуется опыт работы руководителем кадрового...
+                      - button "Откликнуться" [ref=f53e1014]
+                - listitem [ref=f53e1020]:
+                  - article [ref=f53e1023] [cursor=pointer]:
+                    - generic [ref=f53e1027]:
+                      - generic [ref=f53e1028]:
+                        - generic [ref=f53e1029]:
+                          - button "Добавить в избранное" [ref=f53e1030]
+                          - button "Скрыть" [ref=f53e1034]
+                        - generic [ref=f53e1038]: Сейчас смотрят 4 человека
+                        - link "Менеджер по персоналу" [ref=f53e1041]:
+                          - /url: https://rabota.by/vacancy/137098999?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1045]:
+                          - generic [ref=f53e1046]: от 2 500 Br за месяц, на руки
+                          - generic [ref=f53e1048]:
+                            - generic [ref=f53e1049]: Опыт 1-3 года
+                            - generic [ref=f53e1051]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e1054]:
+                          - link [ref=f53e1057]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Метрополь-Авто" [ref=f53e1064]:
+                            - /url: /employer/11774060?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1068]:
+                            - text: Минск
+                            - generic [ref=f53e1071]:
+                              - generic [ref=f53e1072]: ●
+                              - generic [ref=f53e1073]: Каменная Горка
+                            - generic [ref=f53e1074]: и еще 3
+                            - generic [ref=f53e1075]: ●
+                            - generic [ref=f53e1077]: ●
+                            - generic [ref=f53e1079]: ●
+                        - generic [ref=f53e1082]: Можно без резюме
+                        - generic [ref=f53e1088]:
+                          - generic [ref=f53e1089]: Представлять руководителям подходящих кандидатов с кратким обоснованием. Организовывать следующие этапы собеседований и сопровождать кандидата до выхода на работу.
+                          - generic [ref=f53e1091]: Проводить первичные собеседования, оценивать опыт, навыки и мотивацию. Есть опыт самостоятельного подбора персонала от двух лет. Умеете проверять реальные навыки...
+                      - button "Откликнуться" [ref=f53e1097]
+                - listitem [ref=f53e1103]:
+                  - article [ref=f53e1106] [cursor=pointer]:
+                    - generic [ref=f53e1110]:
+                      - generic [ref=f53e1111]:
+                        - generic [ref=f53e1112]:
+                          - button "Добавить в избранное" [ref=f53e1113]
+                          - button "Скрыть" [ref=f53e1117]
+                        - generic [ref=f53e1121]: Сейчас смотрят 6 человек
+                        - link "Рекрутер /Менеджер по персоналу (HRM)" [ref=f53e1124]:
+                          - /url: https://rabota.by/vacancy/136850801?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1128]:
+                          - generic [ref=f53e1129]: от 2 100 Br за месяц, до вычета налогов
+                          - generic [ref=f53e1131]: Опыт 3-6 лет
+                        - generic [ref=f53e1135]:
+                          - link [ref=f53e1138]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ВларсБел" [ref=f53e1146]:
+                            - /url: /employer/9322562?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1150]:
+                            - text: Минск
+                            - generic [ref=f53e1153]:
+                              - generic [ref=f53e1154]: ●
+                              - generic [ref=f53e1155]: Молодежная
+                            - generic [ref=f53e1156]: и еще 3
+                            - generic [ref=f53e1157]: ●
+                            - generic [ref=f53e1159]: ●
+                            - generic [ref=f53e1161]: ●
+                        - generic [ref=f53e1165]:
+                          - generic [ref=f53e1166]: Внедрять и поддерживать ценности компании на всех уровнях. Повышать вовлеченность сотрудников и уровень ответственности внутри команды. Развивать внутренние коммуникации между...
+                          - generic [ref=f53e1168]: Имеет опыт работы HRM, Head of HR, HRBP. Имеет опыт построения HR-системы с нуля. Умеет формировать сильную корпоративную культуру.
+                      - button "Откликнуться" [ref=f53e1174]
+                - listitem [ref=f53e1180]:
+                  - article [ref=f53e1183] [cursor=pointer]:
+                    - generic [ref=f53e1187]:
+                      - generic [ref=f53e1188]:
+                        - generic [ref=f53e1189]:
+                          - button "Добавить в избранное" [ref=f53e1190]
+                          - button "Скрыть" [ref=f53e1194]
+                        - link "Менеджер по подбору персонала" [ref=f53e1199]:
+                          - /url: https://rabota.by/vacancy/136626883?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1203]:
+                          - generic [ref=f53e1204]: от 2 300 Br за месяц, до вычета налогов
+                          - generic [ref=f53e1206]:
+                            - generic [ref=f53e1207]: Опыт 1-3 года
+                            - generic [ref=f53e1209]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e1212]:
+                          - link [ref=f53e1215]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ТрэвэлХаус" [ref=f53e1222]:
+                            - /url: /employer/1264972?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1225]:
+                            - text: Минск
+                            - generic [ref=f53e1228]:
+                              - generic [ref=f53e1229]: ●
+                              - generic [ref=f53e1230]: Московская
+                        - generic [ref=f53e1232]: Можно без резюме
+                        - generic [ref=f53e1238]:
+                          - generic [ref=f53e1239]: Нужно будет много общаться с кандидатами, проводить стажировки, обучать и раскрывать кандидатов. Наполнять базу знаний обучающими материалами. Организовывать обучение, мероприятия...
+                          - generic [ref=f53e1241]: Опыт работы в сфере HR/подбора персонала от 1 года. - Уверенный пользователь ПК (MS Office, мессенджеры). - Грамотная устная и письменная...
+                      - generic [ref=f53e1246]:
+                        - button "Откликнуться" [ref=f53e1247]
+                        - button "Связаться" [ref=f53e1253]
+                - listitem [ref=f53e1259]:
+                  - article [ref=f53e1262] [cursor=pointer]:
+                    - generic [ref=f53e1266]:
+                      - generic [ref=f53e1267]:
+                        - generic [ref=f53e1268]:
+                          - button "Добавить в избранное" [ref=f53e1269]
+                          - button "Скрыть" [ref=f53e1273]
+                        - generic [ref=f53e1277]: Сейчас смотрят 7 человек
+                        - link "Менеджер по развитию коммерческих компетенций" [ref=f53e1280]:
+                          - /url: https://rabota.by/vacancy/135828656?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1284]: Опыт 3-6 лет
+                        - generic [ref=f53e1289]:
+                          - link [ref=f53e1292]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1300]:
+                            - generic:
+                              - link "Вакансии Унитарное предприятие «Кока-Кола Бевриджиз Белоруссия»":
+                                - /url: /employer/754369?hhtmFrom=vacancy_search_list
+                                - generic:
+                                  - img "Унитарное предприятие «Кока-Кола Бевриджиз Белоруссия»"
+                          - link "УП Унитарное предприятие «Кока-Кола Бевриджиз Белоруссия»" [ref=f53e1301]:
+                            - /url: /employer/754369?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1305]:
+                            - text: Колядичи
+                            - generic [ref=f53e1308]:
+                              - generic [ref=f53e1309]: ●
+                              - generic [ref=f53e1310]: Слуцкий Гостинец
+                        - generic [ref=f53e1313]:
+                          - generic [ref=f53e1314]: Организация и проведение обучений в рамках Академии продаж для работников коммерческого отдела (торговые представители, супервайзеры, менеджеры по работе с ключевой...
+                          - generic [ref=f53e1316]: Законченное высшее образование. Опыт работы в сфере продаж не менее 3-х лет обязателен. Знание английского языка на уровне от...
+                      - button "Откликнуться" [ref=f53e1322]
+                - listitem [ref=f53e1328]:
+                  - article [ref=f53e1331] [cursor=pointer]:
+                    - generic [ref=f53e1335]:
+                      - generic [ref=f53e1336]:
+                        - generic [ref=f53e1337]:
+                          - button "Добавить в избранное" [ref=f53e1338]
+                          - button "Скрыть" [ref=f53e1342]
+                        - generic [ref=f53e1346]: Сейчас смотрят 5 человек
+                        - link "HR менеджер" [ref=f53e1349]:
+                          - /url: https://rabota.by/vacancy/136415618?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1353]: Опыт 1-3 года
+                        - generic [ref=f53e1358]:
+                          - link [ref=f53e1361]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "JENTY" [ref=f53e1369]:
+                            - /url: /employer/685735?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1372]: Минский район
+                        - generic [ref=f53e1376]:
+                          - generic [ref=f53e1377]: "Подбор водителей-международников — приоритетное направление работы. Ведение полного цикла подбора: от сбора заявок на найм, планирования найма до выхода кандидата..."
+                          - generic [ref=f53e1379]: "Высшее образование (предпочтительно: управление персоналом, психология, экономика, менеджмент). Опыт работы в подборе персонала от 2 лет. Опыт подбора в логистике..."
+                      - button "Откликнуться" [ref=f53e1385]
+                - listitem [ref=f53e1391]:
+                  - generic [ref=f53e1394]:
+                    - img "branded picture" [ref=f53e1395]
+                    - article [ref=f53e1397] [cursor=pointer]:
+                      - generic [ref=f53e1401]:
+                        - generic [ref=f53e1402]:
+                          - generic [ref=f53e1403]:
+                            - button "Добавить в избранное" [ref=f53e1404]
+                            - button "Скрыть" [ref=f53e1408]
+                          - generic [ref=f53e1412]: Сейчас смотрят 2 человека
+                          - link "Менеджер по персоналу" [ref=f53e1415]:
+                            - /url: https://rabota.by/vacancy/136330734?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1419]:
+                            - generic [ref=f53e1420]: от 2 500 Br за месяц, до вычета налогов
+                            - generic [ref=f53e1422]:
+                              - generic [ref=f53e1423]: Опыт 1-3 года
+                              - generic [ref=f53e1425]: "Выплаты: Два раза в месяц"
+                          - generic [ref=f53e1428]:
+                            - link [ref=f53e1431]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link "ООО Эрнис" [ref=f53e1439]:
+                              - /url: /employer/749588?hhtmFrom=vacancy_search_list
+                            - generic [ref=f53e1443]:
+                              - text: Минск
+                              - generic [ref=f53e1446]:
+                                - generic [ref=f53e1447]: ●
+                                - generic [ref=f53e1448]: Борисовский тракт
+                              - generic [ref=f53e1449]: и еще 3
+                              - generic [ref=f53e1450]: ●
+                              - generic [ref=f53e1452]: ●
+                              - generic [ref=f53e1454]: ●
+                          - generic [ref=f53e1457]: Можно без резюме
+                          - generic [ref=f53e1463]:
+                            - generic [ref=f53e1464]: Сопровождать адаптацию. Проводить оценочные и аттестационные мероприятия. Организовывать обучение персонала. Организовывать и проводить мотивационные активности и корпоративные мероприятия.
+                            - generic [ref=f53e1466]: Пополнять наши ряды сотрудников, подбирая и оценивая кандидатов (Ваш опыт в подборе от 1 года обязателен).
+                        - button "Откликнуться" [ref=f53e1472]
+                    - link "Вакансии Эрнис" [ref=f53e1477] [cursor=pointer]:
+                      - /url: /employer/749588?hhtmFrom=vacancy_search_list
+                      - img "branded logo" [ref=f53e1480]
+                - listitem [ref=f53e1482]:
+                  - article [ref=f53e1485] [cursor=pointer]:
+                    - generic [ref=f53e1489]:
+                      - generic [ref=f53e1490]:
+                        - generic [ref=f53e1491]:
+                          - button "Добавить в избранное" [ref=f53e1492]
+                          - button "Скрыть" [ref=f53e1496]
+                        - generic [ref=f53e1500]: Сейчас смотрят 6 человек
+                        - link "HR менеджер" [ref=f53e1503]:
+                          - /url: https://rabota.by/vacancy/137162991?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1507]: Опыт 1-3 года
+                        - generic [ref=f53e1512]:
+                          - link [ref=f53e1515]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Транспортный полюс" [ref=f53e1523]:
+                            - /url: /employer/5448257?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1527]:
+                            - text: Минск
+                            - generic [ref=f53e1530]:
+                              - generic [ref=f53e1531]: ●
+                              - generic [ref=f53e1532]: Молодежная
+                            - generic [ref=f53e1533]: и еще 3
+                            - generic [ref=f53e1534]: ●
+                            - generic [ref=f53e1536]: ●
+                            - generic [ref=f53e1538]: ●
+                        - generic [ref=f53e1541]: Можно без резюме
+                        - generic [ref=f53e1547]:
+                          - generic [ref=f53e1548]: "Закрытие вакансий: Полный цикл подбора — от брифа с руководителем до выхода сотрудника на испытательный срок. Поиск, скрининг, проведение собеседований, оформление..."
+                          - generic [ref=f53e1550]: Опыт в подборе персонала (полный цикл). Умение составлять KPI и понимание, как их «приземлить» на реальные задачи сотрудников.
+                      - generic [ref=f53e1555]:
+                        - button "Откликнуться" [ref=f53e1556]
+                        - button "Связаться" [ref=f53e1562]
+                - listitem [ref=f53e1568]:
+                  - article [ref=f53e1571] [cursor=pointer]:
+                    - generic [ref=f53e1575]:
+                      - generic [ref=f53e1576]:
+                        - generic [ref=f53e1577]:
+                          - button "Добавить в избранное" [ref=f53e1578]
+                          - button "Скрыть" [ref=f53e1582]
+                        - generic [ref=f53e1586]: Сейчас смотрят 3 человека
+                        - link "Менеджер по персоналу" [ref=f53e1589]:
+                          - /url: https://rabota.by/vacancy/137086191?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1593]: Опыт 1-3 года
+                        - generic [ref=f53e1598]:
+                          - link [ref=f53e1601]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Озоника Групп" [ref=f53e1608]:
+                            - /url: /employer/12615899?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1612]:
+                            - text: Минск
+                            - generic [ref=f53e1615]:
+                              - generic [ref=f53e1616]: ●
+                              - generic [ref=f53e1617]: Купаловская
+                            - generic [ref=f53e1618]: и еще 3
+                            - generic [ref=f53e1619]: ●
+                            - generic [ref=f53e1621]: ●
+                            - generic [ref=f53e1623]: ●
+                        - generic [ref=f53e1626]: Можно без резюме
+                        - generic [ref=f53e1632]:
+                          - generic [ref=f53e1633]: Подбор персонала на разные позиции. - Адаптация. -Полный цикл КДП. -Сопровождение обучения и развития персонала. -Управление конфликтами. -Развитие корпоративной культуры. -
+                          - generic [ref=f53e1635]: "Адекватное руководство: Мы ценим инициативу, честность и самостоятельность, проведём плавное обучение и адаптацию. Не занимаемся микроменеджментом, если на точках порядок. ️"
+                      - generic [ref=f53e1640]:
+                        - button "Откликнуться" [ref=f53e1641]
+                        - button "Связаться" [ref=f53e1647]
+                - listitem [ref=f53e1653]:
+                  - article [ref=f53e1656] [cursor=pointer]:
+                    - generic [ref=f53e1660]:
+                      - generic [ref=f53e1661]:
+                        - generic [ref=f53e1662]:
+                          - button "Добавить в избранное" [ref=f53e1663]
+                          - button "Скрыть" [ref=f53e1667]
+                        - generic [ref=f53e1671]: Сейчас смотрят 2 человека
+                        - link "Специалист по развитию персонала" [ref=f53e1674]:
+                          - /url: https://rabota.by/vacancy/136929648?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1678]: Опыт 1-3 года
+                        - generic [ref=f53e1683]:
+                          - link [ref=f53e1686]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Вакансии Евроторг" [ref=f53e1696]:
+                            - /url: /employer/753017?hhtmFrom=vacancy_search_list
+                            - img "Евроторг" [ref=f53e1698]
+                          - link "ООО Евроторг" [ref=f53e1699]:
+                            - /url: /employer/753017?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1703]:
+                            - text: Минск
+                            - generic [ref=f53e1706]:
+                              - generic [ref=f53e1707]: ●
+                              - generic [ref=f53e1708]: Каменная Горка
+                            - generic [ref=f53e1709]: и еще 3
+                            - generic [ref=f53e1710]: ●
+                            - generic [ref=f53e1712]: ●
+                            - generic [ref=f53e1714]: ●
+                        - generic [ref=f53e1718]:
+                          - generic [ref=f53e1719]: Организация и проведение обучающих мероприятий и тренингов. Разработка и сопровождение программ развития сотрудников и руководителей. Участие в проектах кадрового резерва...
+                          - generic [ref=f53e1721]: Опыт в обучении и развитии персонала от 2- 3 лет. Опыт организации и проведения тренингов. Опыт участия в HR-проектах.
+                      - button "Откликнуться" [ref=f53e1727]
+                - listitem [ref=f53e1733]:
+                  - article [ref=f53e1736] [cursor=pointer]:
+                    - generic [ref=f53e1740]:
+                      - generic [ref=f53e1741]:
+                        - generic [ref=f53e1742]:
+                          - button "Добавить в избранное" [ref=f53e1743]
+                          - button "Скрыть" [ref=f53e1747]
+                        - generic [ref=f53e1751]: Сейчас смотрит 1 человек
+                        - link "Бизнес-тренер" [ref=f53e1754]:
+                          - /url: https://hh.ru/vacancy/136856951?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0
+                        - generic [ref=f53e1758]: Опыт 1-3 года
+                        - generic [ref=f53e1763]:
+                          - generic [ref=f53e1765]:
+                            - link [ref=f53e1766]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f53e1772]:
+                              - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                            - link [ref=f53e1782]:
+                              - /url: https://rating.hh.ru/history/rating2025?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - link "Вакансии RWB (Wildberries & Russ)" [ref=f53e1802]:
+                            - /url: /employer/87021?hhtmFrom=vacancy_search_list
+                            - img "RWB (Wildberries & Russ)" [ref=f53e1804]
+                          - link "RWB (Wildberries & Russ)" [ref=f53e1805]:
+                            - /url: /employer/87021?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1808]:
+                            - text: Минск
+                            - generic [ref=f53e1811]:
+                              - generic [ref=f53e1812]: ●
+                              - generic [ref=f53e1813]: Академия наук
+                            - generic [ref=f53e1814]: и еще 3
+                            - generic [ref=f53e1815]: ●
+                            - generic [ref=f53e1817]: ●
+                            - generic [ref=f53e1819]: ●
+                        - generic [ref=f53e1823]:
+                          - generic [ref=f53e1824]: Мы в поиске Бизнес тренера в направление клиентского сервиса. Самостоятельная адаптация существующих программ под потребности поддержки в РБ.
+                          - generic [ref=f53e1826]: Проводить обучение по хардам (продукт/ПО), навыкам работы с клиентами, обучение руководителей. Есть опыт в проведении обучений для сотрудников.
+                      - button "Откликнуться" [ref=f53e1832]
+                - listitem [ref=f53e1838]:
+                  - article [ref=f53e1841] [cursor=pointer]:
+                    - generic [ref=f53e1845]:
+                      - generic [ref=f53e1846]:
+                        - generic [ref=f53e1847]:
+                          - button "Добавить в избранное" [ref=f53e1848]
+                          - button "Скрыть" [ref=f53e1852]
+                        - generic [ref=f53e1856]: Сейчас смотрят 4 человека
+                        - link "Менеджер по персоналу (HR-manager)" [ref=f53e1859]:
+                          - /url: https://rabota.by/vacancy/137009731?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1863]:
+                          - generic [ref=f53e1864]: 3 000 – 3 400 Br за месяц, до вычета налогов
+                          - generic [ref=f53e1866]:
+                            - generic [ref=f53e1867]: Опыт 1-3 года
+                            - generic [ref=f53e1869]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e1872]:
+                          - link [ref=f53e1875]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "КреативФудС-Восток/Рестораны KFC" [ref=f53e1882]:
+                            - /url: /employer/1991458?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1885]:
+                            - text: Минск
+                            - generic [ref=f53e1888]:
+                              - generic [ref=f53e1889]: ●
+                              - generic [ref=f53e1890]: Купаловская
+                            - generic [ref=f53e1891]: и еще 3
+                            - generic [ref=f53e1892]: ●
+                            - generic [ref=f53e1894]: ●
+                            - generic [ref=f53e1896]: ●
+                        - generic [ref=f53e1900]:
+                          - generic [ref=f53e1901]: Партнерство с операционным департаментом, руководителями ресторанов для повышения операционной эффективности, повышения продуктивности команд. Обучение менеджерского состава ресторанов инструментам управления (подбор...
+                          - generic [ref=f53e1903]: Опыт работы в HR от 2 лет в компаниях с численностью от 500 человек (опыт в ресторанной сфере / HoReCa — огромный...
+                      - button "Откликнуться" [ref=f53e1909]
+                - listitem [ref=f53e1915]:
+                  - article [ref=f53e1918] [cursor=pointer]:
+                    - generic [ref=f53e1922]:
+                      - generic [ref=f53e1923]:
+                        - generic [ref=f53e1924]:
+                          - button "Добавить в избранное" [ref=f53e1925]
+                          - button "Скрыть" [ref=f53e1929]
+                        - generic [ref=f53e1933]: Сейчас смотрят 5 человек
+                        - link "Менеджер по подбору персонала" [ref=f53e1936]:
+                          - /url: https://rabota.by/vacancy/136863765?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e1941]:
+                          - generic [ref=f53e1942]: Опыт 1-3 года
+                          - generic [ref=f53e1944]: Можно удалённо
+                          - generic [ref=f53e1946]: Подработка
+                        - generic [ref=f53e1949]:
+                          - link [ref=f53e1952]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Космоскил" [ref=f53e1959]:
+                            - /url: /employer/11847045?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e1963]:
+                            - text: Минск
+                            - generic [ref=f53e1966]:
+                              - generic [ref=f53e1967]: ●
+                              - generic [ref=f53e1968]: Немига
+                            - generic [ref=f53e1969]: и еще 3
+                            - generic [ref=f53e1970]: ●
+                            - generic [ref=f53e1972]: ●
+                            - generic [ref=f53e1974]: ●
+                        - generic [ref=f53e1978]:
+                          - generic [ref=f53e1979]: "Формат работы: Искать кандидатов. Проводить первичный отбор. Организовывать собеседования. Доводить кандидата до выхода на работу. 3. Сколько времени в среднем..."
+                          - generic [ref=f53e1981]: Опыт в подборе персонала обязателен. Ответственность и самостоятельность. Понимание, что оплата — за результат, а не за процесс. 1.
+                      - generic [ref=f53e1986]:
+                        - button "Откликнуться" [ref=f53e1987]
+                        - button "Связаться" [ref=f53e1993]
+                - listitem [ref=f53e1999]:
+                  - article [ref=f53e2002] [cursor=pointer]:
+                    - generic [ref=f53e2006]:
+                      - generic [ref=f53e2007]:
+                        - generic [ref=f53e2008]:
+                          - button "Добавить в избранное" [ref=f53e2009]
+                          - button "Скрыть" [ref=f53e2013]
+                        - generic [ref=f53e2017]: Сейчас смотрит 1 человек
+                        - link "HR-менеджер" [ref=f53e2020]:
+                          - /url: https://rabota.by/vacancy/136791174?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2024]: Опыт 3-6 лет
+                        - generic [ref=f53e2029]:
+                          - link [ref=f53e2032]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ЗАО Нео Банк Азия" [ref=f53e2040]:
+                            - /url: /employer/780115?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2044]:
+                            - text: Минск
+                            - generic [ref=f53e2047]:
+                              - generic [ref=f53e2048]: ●
+                              - generic [ref=f53e2049]: Площадь Якуба Коласа
+                        - generic [ref=f53e2052]:
+                          - generic [ref=f53e2053]: Реализация мероприятий политики управления персоналом, выстраивание процессов взаимодействия между бизнесом и HR-подразделением. Поиск и подбор персонала, проведение интервью, собеседований...
+                          - generic [ref=f53e2055]: Успешный и подтвержденный опыт работы в подборе персонала не менее 3-ех лет, желательно в банковской сфере. Знания инструментов поиска...
+                      - button "Откликнуться" [ref=f53e2061]
+                - listitem [ref=f53e2067]:
+                  - article [ref=f53e2070] [cursor=pointer]:
+                    - generic [ref=f53e2074]:
+                      - generic [ref=f53e2075]:
+                        - generic [ref=f53e2076]:
+                          - button "Добавить в избранное" [ref=f53e2077]
+                          - button "Скрыть" [ref=f53e2081]
+                        - generic [ref=f53e2085]: Сейчас смотрит 1 человек
+                        - link "HR-бизнес-партнер (HR BP/HR Business Partner)" [ref=f53e2088]:
+                          - /url: https://rabota.by/vacancy/136606273?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2092]: Опыт 1-3 года
+                        - generic [ref=f53e2097]:
+                          - link [ref=f53e2100]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ЗАО АКЦЕНТ-ИНВЕСТ / Сеть магазинов WINE&SPIRITS" [ref=f53e2107]:
+                            - /url: /employer/11605261?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2111]: Минск, проспект Дзержинского, 5
+                        - generic [ref=f53e2115]:
+                          - generic [ref=f53e2116]: "Рекрутинг: организация и контроль процесса подбора, закрытие вакансий, согласование заявок, участие в подборе ТОП-менеджеров, работа с внешними ресурсами и..."
+                          - generic [ref=f53e2118]: "Работали HR BP от 1 года и умеете закрывать задачи самостоятельно. Вам присуще такие качества как: инициативность, ответственность, гибкость, внимательность..."
+                      - button "Откликнуться" [ref=f53e2124]
+                - listitem [ref=f53e2130]:
+                  - article [ref=f53e2133] [cursor=pointer]:
+                    - generic [ref=f53e2137]:
+                      - generic [ref=f53e2138]:
+                        - generic [ref=f53e2139]:
+                          - button "Добавить в избранное" [ref=f53e2140]
+                          - button "Скрыть" [ref=f53e2144]
+                        - generic [ref=f53e2148]: Сейчас смотрит 1 человек
+                        - link "Тренер по обучению владельцев бизнеса" [ref=f53e2151]:
+                          - /url: https://hh.ru/vacancy/136455388?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0
+                        - generic [ref=f53e2155]: Без опыта
+                        - generic [ref=f53e2160]:
+                          - link [ref=f53e2163]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Альтеза" [ref=f53e2171]:
+                            - /url: /employer/1702778?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2174]:
+                            - text: Минск
+                            - generic [ref=f53e2177]:
+                              - generic [ref=f53e2178]: ●
+                              - generic [ref=f53e2179]: Академия наук
+                            - generic [ref=f53e2180]: и еще 3
+                            - generic [ref=f53e2181]: ●
+                            - generic [ref=f53e2183]: ●
+                            - generic [ref=f53e2185]: ●
+                        - generic [ref=f53e2189]:
+                          - generic [ref=f53e2190]: Тренер у нас — не лектор ради лекций. Его задача — помочь участнику разобраться в управленческой проблеме, понять готовый инструмент, применить его...
+                          - generic [ref=f53e2192]: Педагогическое образование или опыт обучения людей будут преимуществом, но не являются обязательными. Опыт работы бизнес-тренером не требуется.
+                      - generic [ref=f53e2197]:
+                        - button "Откликнуться" [ref=f53e2198]
+                        - button "Связаться" [ref=f53e2204]
+                - listitem [ref=f53e2210]:
+                  - article [ref=f53e2213] [cursor=pointer]:
+                    - generic [ref=f53e2217]:
+                      - generic [ref=f53e2218]:
+                        - generic [ref=f53e2219]:
+                          - button "Добавить в избранное" [ref=f53e2220]
+                          - button "Скрыть" [ref=f53e2224]
+                        - link "Менеджер по персоналу" [ref=f53e2229]:
+                          - /url: https://rabota.by/vacancy/136586951?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2233]:
+                          - generic [ref=f53e2234]: от 2 400 Br за месяц, на руки
+                          - generic [ref=f53e2236]:
+                            - generic [ref=f53e2237]: Опыт 1-3 года
+                            - generic [ref=f53e2239]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e2242]:
+                          - link [ref=f53e2245]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ВИГ Транс Лог" [ref=f53e2252]:
+                            - /url: /employer/4527376?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2256]: Минск, улица Тимирязева, 72
+                        - generic [ref=f53e2260]:
+                          - generic [ref=f53e2261]: Организация процесса подбора персонала разных уровней в разных странах (точечный подбор). Ведение полного цикла подбора персонала. Формирование кадрового резерва.
+                          - generic [ref=f53e2263]: Опыт работы в сфере подбора персонала от 2 лет (опыт в логистике будет преимуществом). Понимание современных систем подбора персонала.
+                      - button "Откликнуться" [ref=f53e2269]
+                - listitem [ref=f53e2275]:
+                  - article [ref=f53e2278] [cursor=pointer]:
+                    - generic [ref=f53e2282]:
+                      - generic [ref=f53e2283]:
+                        - generic [ref=f53e2284]:
+                          - button "Добавить в избранное" [ref=f53e2285]
+                          - button "Скрыть" [ref=f53e2289]
+                        - link "Менеджер по подбору персонала" [ref=f53e2294]:
+                          - /url: https://rabota.by/vacancy/136421303?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2298]: Опыт 3-6 лет
+                        - generic [ref=f53e2303]:
+                          - link [ref=f53e2306]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Друк Сервис" [ref=f53e2314]:
+                            - /url: /employer/1314753?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2317]: деревня Малиновка
+                        - generic [ref=f53e2321]:
+                          - generic [ref=f53e2322]: "Подбор и найм персонала: поиск, отбор, собеседования с кандидатами. Адаптация новых сотрудников и сопровождение испытательного срока. Оценка персонала и участие..."
+                          - generic [ref=f53e2324]: Высшее образование (управление персоналом, психология, экономика или смежное). Опыт работы в сфере HR/подбора персонала от 1 года.
+                      - generic [ref=f53e2329]:
+                        - button "Откликнуться" [ref=f53e2330]
+                        - button "Связаться" [ref=f53e2336]
+                - listitem [ref=f53e2342]:
+                  - article [ref=f53e2345] [cursor=pointer]:
+                    - generic [ref=f53e2349]:
+                      - generic [ref=f53e2350]:
+                        - generic [ref=f53e2351]:
+                          - button "Добавить в избранное" [ref=f53e2352]
+                          - button "Скрыть" [ref=f53e2356]
+                        - link "Су-шеф" [ref=f53e2361]:
+                          - /url: https://rabota.by/vacancy/137194426?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2370]:
+                          - generic [ref=f53e2371]: от 3 200 Br за месяц, до вычета налогов
+                          - generic [ref=f53e2373]:
+                            - generic [ref=f53e2374]: Опыт 1-3 года
+                            - generic [ref=f53e2376]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e2379]:
+                          - link [ref=f53e2382]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2390]:
+                            - generic:
+                              - link "Вакансии Глобалпрогрупп":
+                                - /url: /employer/2270019?hhtmFrom=vacancy_search_list
+                                - generic:
+                                  - img "Глобалпрогрупп"
+                          - link "ООО Глобалпрогрупп" [ref=f53e2391]:
+                            - /url: /employer/2270019?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2395]:
+                            - text: Минск
+                            - generic [ref=f53e2398]:
+                              - generic [ref=f53e2399]: ●
+                              - generic [ref=f53e2400]: Михалово
+                        - generic [ref=f53e2403]:
+                          - generic [ref=f53e2404]: Можно без резюме
+                          - generic [ref=f53e2406]: Откликнитесь среди первых
+                        - generic [ref=f53e2410]:
+                          - generic [ref=f53e2411]: Руководство процессом работы предприятия. Составление заявок на продукцию. Открытие и закрытие смены. Контроль качества и оформления блюд. Проведение инвентаризации согласно...
+                          - generic [ref=f53e2413]: Опыт работы обязателен от 1 года на данной должности. Умение работать в режиме многозадачности. Способность к личному развитию и профессиональному...
+                      - generic [ref=f53e2418]:
+                        - button "Откликнуться" [ref=f53e2419]
+                        - button "Связаться" [ref=f53e2425]
+                - listitem [ref=f53e2431]:
+                  - article [ref=f53e2434] [cursor=pointer]:
+                    - generic [ref=f53e2438]:
+                      - generic [ref=f53e2439]:
+                        - generic [ref=f53e2440]:
+                          - button "Добавить в избранное" [ref=f53e2441]
+                          - button "Скрыть" [ref=f53e2445]
+                        - generic [ref=f53e2449]: Сейчас смотрят 3 человека
+                        - link "Специалист по персоналу/HR Generalist" [ref=f53e2452]:
+                          - /url: https://rabota.by/vacancy/136794446?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2456]: Опыт 1-3 года
+                        - generic [ref=f53e2461]:
+                          - link [ref=f53e2464]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Микро Лизинг, ИООО" [ref=f53e2471]:
+                            - /url: /employer/811351?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2474]: Минск, проспект Победителей, 57
+                        - generic [ref=f53e2478]:
+                          - generic [ref=f53e2479]: Организация и ведение процесса рекрутинга (фронт- и бэк-офис). Проведение собеседований с кандидатами (онлайн, офлайн). Сопровождение и контроль процесса адаптации...
+                          - generic [ref=f53e2481]: Опыт подбора персонала и навыки проведения собеседований. Предпочтителен опыт работы в финансовой сфере. Проактивность и креативность. Желание развиваться в сфере...
+                      - generic [ref=f53e2486]:
+                        - button "Откликнуться" [ref=f53e2487]
+                        - button "Связаться" [ref=f53e2493]
+                - listitem [ref=f53e2499]:
+                  - article [ref=f53e2502] [cursor=pointer]:
+                    - generic [ref=f53e2506]:
+                      - generic [ref=f53e2507]:
+                        - generic [ref=f53e2508]:
+                          - button "Добавить в избранное" [ref=f53e2509]
+                          - button "Скрыть" [ref=f53e2513]
+                        - generic [ref=f53e2517]: Сейчас смотрят 2 человека
+                        - link "Бизнес-тренер по продажам" [ref=f53e2520]:
+                          - /url: https://rabota.by/vacancy/137117645?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2524]:
+                          - generic [ref=f53e2525]: от 2 300 Br за месяц, на руки
+                          - generic [ref=f53e2527]:
+                            - generic [ref=f53e2528]: Опыт 3-6 лет
+                            - generic [ref=f53e2530]: Можно удалённо
+                        - generic [ref=f53e2533]:
+                          - link [ref=f53e2536]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ИП Кабисова Анна Викторовна" [ref=f53e2544]:
+                            - /url: /employer/11836864?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2548]: Минск
+                        - generic [ref=f53e2551]: Можно без резюме
+                        - generic [ref=f53e2557]:
+                          - generic [ref=f53e2558]: "Мы работаем с отделами продаж компаний из разных ниш: строим и перестраиваем системы продаж, обучаем РОПов и менеджеров, внедряем новые..."
+                          - generic [ref=f53e2560]: опыт в продажах и/или обучении отделов продаж. — умение работать с группой и индивидуально. — способность быстро находить слабое место менеджера. —
+                      - button "Откликнуться" [ref=f53e2566]
+                - listitem [ref=f53e2572]:
+                  - article [ref=f53e2575] [cursor=pointer]:
+                    - generic [ref=f53e2579]:
+                      - generic [ref=f53e2580]:
+                        - generic [ref=f53e2581]:
+                          - button "Добавить в избранное" [ref=f53e2582]
+                          - button "Скрыть" [ref=f53e2586]
+                        - generic [ref=f53e2590]: Сейчас смотрят 3 человека
+                        - link "HR manager" [ref=f53e2593]:
+                          - /url: https://rabota.by/vacancy/137122304?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2597]: Опыт 3-6 лет
+                        - generic [ref=f53e2602]:
+                          - link [ref=f53e2605]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ОАО Агентство цифровой трансформации" [ref=f53e2613]:
+                            - /url: /employer/6107283?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2617]: Минск, улица Клары Цеткин, 24
+                        - generic [ref=f53e2621]:
+                          - generic [ref=f53e2622]: "Полный цикл подбора персонала. Сопровождение соискателей на всех этапах подбора: от первого контакта до согласования оффера и трудоустройства в штат..."
+                          - generic [ref=f53e2624]: "Высшее образование или проф. переподготовка в сфере Управления персоналом. - Опыт работы в IT-рекрутменте от 3 лет: уверенное понимание стек..."
+                      - button "Откликнуться" [ref=f53e2630]
+                - listitem [ref=f53e2636]:
+                  - article [ref=f53e2639] [cursor=pointer]:
+                    - generic [ref=f53e2643]:
+                      - generic [ref=f53e2644]:
+                        - generic [ref=f53e2645]:
+                          - button "Добавить в избранное" [ref=f53e2646]
+                          - button "Скрыть" [ref=f53e2650]
+                        - generic [ref=f53e2654]: Сейчас смотрят 2 человека
+                        - link "Менеджер по персоналу" [ref=f53e2657]:
+                          - /url: https://rabota.by/vacancy/136751668?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2661]:
+                          - generic [ref=f53e2662]: 1 000 – 1 500 Br за месяц, на руки
+                          - generic [ref=f53e2664]:
+                            - generic [ref=f53e2665]: Опыт 1-3 года
+                            - generic [ref=f53e2667]: Можно удалённо
+                            - generic [ref=f53e2669]: "Выплаты: Раз в месяц"
+                        - generic [ref=f53e2672]:
+                          - link [ref=f53e2675]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "АБСОЛЮТДИЛЕР" [ref=f53e2682]:
+                            - /url: /employer/5108755?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2685]: Минск, Чижовка, улица Уборевича, 95А
+                        - generic [ref=f53e2688]: Можно без резюме
+                        - generic [ref=f53e2694]:
+                          - generic [ref=f53e2695]: Поиск персонала. Контроль посещаемости.
+                          - generic [ref=f53e2697]: Опыт на схожих должностях от 1 года.
+                      - generic [ref=f53e2702]:
+                        - button "Откликнуться" [ref=f53e2703]
+                        - button "Связаться" [ref=f53e2709]
+                - listitem [ref=f53e2715]:
+                  - article [ref=f53e2718] [cursor=pointer]:
+                    - generic [ref=f53e2722]:
+                      - generic [ref=f53e2723]:
+                        - generic [ref=f53e2724]:
+                          - button "Добавить в избранное" [ref=f53e2725]
+                          - button "Скрыть" [ref=f53e2729]
+                        - generic [ref=f53e2733]: Сейчас смотрят 6 человек
+                        - link "HR-менеджер / Заместитель директора по персоналу" [ref=f53e2736]:
+                          - /url: https://rabota.by/vacancy/136601793?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2740]: Опыт 3-6 лет
+                        - generic [ref=f53e2745]:
+                          - link [ref=f53e2748]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ЗАО МиСофт НВП" [ref=f53e2755]:
+                            - /url: /employer/1134052?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2759]:
+                            - text: Минск
+                            - generic [ref=f53e2762]:
+                              - generic [ref=f53e2763]: ●
+                              - generic [ref=f53e2764]: Уручье
+                        - generic [ref=f53e2767]:
+                          - generic [ref=f53e2768]: Управление и развитие HR-процессов компании (онбординг, адаптация, 1-on-1, Exit-интервью, обучение и мотивация персонала, оценка и развитие...
+                          - generic [ref=f53e2770]: Высшее образование, дополнительное образование в сфере HR. Опыт работы в HR от 3 лет с различными участками функционала.
+                      - button "Откликнуться" [ref=f53e2776]
+                - listitem [ref=f53e2782]:
+                  - article [ref=f53e2785] [cursor=pointer]:
+                    - generic [ref=f53e2789]:
+                      - generic [ref=f53e2790]:
+                        - generic [ref=f53e2791]:
+                          - button "Добавить в избранное" [ref=f53e2792]
+                          - button "Скрыть" [ref=f53e2796]
+                        - generic [ref=f53e2800]: Сейчас смотрит 1 человек
+                        - link "Рекрутер / HR-менеджер на входящий поток (Без холодного поиска)" [ref=f53e2803]:
+                          - /url: https://hh.ru/vacancy/136482437?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0
+                        - generic [ref=f53e2807]:
+                          - generic [ref=f53e2808]: 60 000 – 80 000 ₽ за месяц, на руки
+                          - generic [ref=f53e2810]:
+                            - generic [ref=f53e2811]: Опыт 1-3 года
+                            - generic [ref=f53e2813]: Можно удалённо
+                            - generic [ref=f53e2815]: "Выплаты: Раз в месяц"
+                        - generic [ref=f53e2818]:
+                          - link [ref=f53e2821]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "xHuman Sales" [ref=f53e2829]:
+                            - /url: /employer/5320930?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2832]: Минск
+                      - button "Откликнуться" [ref=f53e2838]
+                - listitem [ref=f53e2844]:
+                  - article [ref=f53e2847] [cursor=pointer]:
+                    - generic [ref=f53e2851]:
+                      - generic [ref=f53e2852]:
+                        - generic [ref=f53e2853]:
+                          - button "Добавить в избранное" [ref=f53e2854]
+                          - button "Скрыть" [ref=f53e2858]
+                        - generic [ref=f53e2862]: Сейчас смотрит 1 человек
+                        - link "Менеджер по организационному развитию" [ref=f53e2865]:
+                          - /url: https://rabota.by/vacancy/136597866?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2869]: Опыт 1-3 года
+                        - generic [ref=f53e2874]:
+                          - link [ref=f53e2877]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "АВком Экспресс" [ref=f53e2884]:
+                            - /url: /employer/1406536?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2887]:
+                            - text: Минск
+                            - generic [ref=f53e2890]:
+                              - generic [ref=f53e2891]: ●
+                              - generic [ref=f53e2892]: Уручье
+                        - generic [ref=f53e2894]: Можно без резюме
+                        - generic [ref=f53e2900]:
+                          - generic [ref=f53e2901]: Моделирование и регламентация бизнес-процессов. Оптимизация и автоматизация процессов (постановка ТЗ на разработку/внедрение, интеграция с 1С/ERP).
+                          - generic [ref=f53e2903]: Опыт работы от 1 года. Приветствуется опыт работы с ERP-системами и 1С. Целеустремленность, грамотная и уверенная речь, коммуникабельность...
+                      - button "Откликнуться" [ref=f53e2909]
+                - listitem [ref=f53e2915]:
+                  - article [ref=f53e2918] [cursor=pointer]:
+                    - generic [ref=f53e2922]:
+                      - generic [ref=f53e2923]:
+                        - generic [ref=f53e2924]:
+                          - button "Добавить в избранное" [ref=f53e2925]
+                          - button "Скрыть" [ref=f53e2929]
+                        - generic [ref=f53e2933]: Сейчас смотрят 2 человека
+                        - link "Координатор отдела продаж/супервайзер" [ref=f53e2936]:
+                          - /url: https://rabota.by/vacancy/137099434?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e2940]:
+                          - generic [ref=f53e2941]: 3 000 – 4 000 Br за месяц, до вычета налогов
+                          - generic [ref=f53e2943]:
+                            - generic [ref=f53e2944]: Опыт 1-3 года
+                            - generic [ref=f53e2946]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e2949]:
+                          - link [ref=f53e2952]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО БелРосГруз" [ref=f53e2959]:
+                            - /url: /employer/12271175?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e2963]: Минск, улица Платонова, 1Б
+                        - generic [ref=f53e2967]:
+                          - generic [ref=f53e2968]: Координировать работу команды менеджеров по продажам (8–15 сотрудников). Контролировать качество обработки входящих и исходящих лидов. Анализировать и улучшать ключевые...
+                          - generic [ref=f53e2970]: Опыт работы в продажах от 2 лет. Опыт управления командой продаж или наставничества сотрудников будет преимуществом. Понимание показателей эффективности отдела...
+                      - button "Откликнуться" [ref=f53e2976]
+                - listitem [ref=f53e2982]:
+                  - article [ref=f53e2985] [cursor=pointer]:
+                    - generic [ref=f53e2989]:
+                      - generic [ref=f53e2990]:
+                        - generic [ref=f53e2991]:
+                          - button "Добавить в избранное" [ref=f53e2992]
+                          - button "Скрыть" [ref=f53e2996]
+                        - generic [ref=f53e3000]: Сейчас смотрят 15 человек
+                        - link "Руководитель отдела продаж через диагностику" [ref=f53e3003]:
+                          - /url: https://hh.ru/vacancy/137277425?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0
+                        - generic [ref=f53e3008]:
+                          - generic [ref=f53e3009]: Опыт 1-3 года
+                          - generic [ref=f53e3011]: Можно удалённо
+                        - generic [ref=f53e3014]:
+                          - link [ref=f53e3017]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "TutorOnline (Форстад, ООО)" [ref=f53e3035]:
+                            - /url: /employer/2238184?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3038]:
+                            - text: Минск
+                            - generic [ref=f53e3041]:
+                              - generic [ref=f53e3042]: ●
+                              - generic [ref=f53e3043]: Парк Челюскинцев
+                        - generic [ref=f53e3046]:
+                          - generic [ref=f53e3047]: "Главная задача — создать и масштабировать эффективную систему продаж TutorOnline через качественную диагностику учеников. Задачи: Разработать методику диагностики, презентацию и сценарии..."
+                          - generic [ref=f53e3049]: "Обязательное требование: хорошее знание хотя бы одного школьного предмета. Нужен руководитель-практик, способный не только управлять, но и самостоятельно показать..."
+                      - button "Откликнуться" [ref=f53e3055]
+                - listitem [ref=f53e3061]:
+                  - article [ref=f53e3064] [cursor=pointer]:
+                    - generic [ref=f53e3068]:
+                      - generic [ref=f53e3069]:
+                        - generic [ref=f53e3070]:
+                          - button "Добавить в избранное" [ref=f53e3071]
+                          - button "Скрыть" [ref=f53e3075]
+                        - generic [ref=f53e3079]: Сейчас смотрит 1 человек
+                        - link "Региональный менеджер (корпоративный бизнес)" [ref=f53e3082]:
+                          - /url: https://rabota.by/vacancy/132423925?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3086]: Опыт 3-6 лет
+                        - generic [ref=f53e3091]:
+                          - generic [ref=f53e3093]:
+                            - link [ref=f53e3094]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f53e3100]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - link "Вакансии Банк БелВЭБ" [ref=f53e3114]:
+                            - /url: /employer/820003?hhtmFrom=vacancy_search_list
+                            - img "Банк БелВЭБ" [ref=f53e3116]
+                          - link "ОАО Банк БелВЭБ" [ref=f53e3117]:
+                            - /url: /employer/820003?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3121]:
+                            - text: Минск
+                            - generic [ref=f53e3124]:
+                              - generic [ref=f53e3125]: ●
+                              - generic [ref=f53e3126]: Фрунзенская
+                        - generic [ref=f53e3129]:
+                          - generic [ref=f53e3130]: Организация и координация системы продаж. Анализ отклонений по доведенным до клиентских менеджеров плановым показателям, инициирование предложений по работе с отклонениями.
+                          - generic [ref=f53e3132]: Высшее экономическое образование. Стаж работы в финансово-банковских организациях от 3 лет. Опыт продаж банковских продуктов и услуг клиентам сегмента...
+                      - button "Откликнуться" [ref=f53e3138]
+                - listitem [ref=f53e3144]:
+                  - article [ref=f53e3147] [cursor=pointer]:
+                    - generic [ref=f53e3151]:
+                      - generic [ref=f53e3152]:
+                        - generic [ref=f53e3153]:
+                          - button "Добавить в избранное" [ref=f53e3154]
+                          - button "Скрыть" [ref=f53e3158]
+                        - generic [ref=f53e3162]: Сейчас смотрят 7 человек
+                        - link "Руководитель отдела продаж в онлайн-школу (вводные уроки/диагностики)" [ref=f53e3165]:
+                          - /url: https://hh.ru/vacancy/136722384?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0
+                        - generic [ref=f53e3169]:
+                          - generic [ref=f53e3170]: от 300 000 ₽ за месяц, на руки
+                          - generic [ref=f53e3172]:
+                            - generic [ref=f53e3173]: Опыт 1-3 года
+                            - generic [ref=f53e3175]: Можно удалённо
+                        - generic [ref=f53e3178]:
+                          - link [ref=f53e3181]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Квантастика" [ref=f53e3189]:
+                            - /url: /employer/11757106?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3192]: Минск
+                        - generic [ref=f53e3196]:
+                          - generic [ref=f53e3197]: Управлять руководителями групп и менеджерами, которые проводят вводные уроки и продают обучение. Выполнять план продаж и ключевые показатели отдела.
+                          - generic [ref=f53e3199]: Имеет опыт работы РОПом. Имеет опыт управления продажами через вводные / диагностические / пробные встречи с клиентами. Понимает специфику продаж на встрече...
+                      - button "Откликнуться" [ref=f53e3205]
+                - listitem [ref=f53e3211]:
+                  - article [ref=f53e3214] [cursor=pointer]:
+                    - generic [ref=f53e3218]:
+                      - generic [ref=f53e3219]:
+                        - generic [ref=f53e3220]:
+                          - button "Добавить в избранное" [ref=f53e3221]
+                          - button "Скрыть" [ref=f53e3225]
+                        - generic [ref=f53e3229]: Сейчас смотрят 2 человека
+                        - link "Региональный менеджер сети ПВЗ Ozon | Минск" [ref=f53e3232]:
+                          - /url: https://rabota.by/vacancy/136987793?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3236]:
+                          - generic [ref=f53e3237]: 1 500 – 3 000 Br за месяц, на руки
+                          - generic [ref=f53e3239]:
+                            - generic [ref=f53e3240]: Опыт 1-3 года
+                            - generic [ref=f53e3242]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e3245]:
+                          - link [ref=f53e3248]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Покупки рядом" [ref=f53e3256]:
+                            - /url: /employer/5849119?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3260]:
+                            - text: Минск
+                            - generic [ref=f53e3263]:
+                              - generic [ref=f53e3264]: ●
+                              - generic [ref=f53e3265]: Академия наук
+                            - generic [ref=f53e3266]: и еще 3
+                            - generic [ref=f53e3267]: ●
+                            - generic [ref=f53e3269]: ●
+                            - generic [ref=f53e3271]: ●
+                        - generic [ref=f53e3274]: Можно без резюме
+                        - generic [ref=f53e3280]:
+                          - generic [ref=f53e3281]: Управлять работой 10-15 пунктов выдачи заказов на закрепленной территории в г. Минске. Обеспечивать стабильную работу ПВЗ и соблюдение стандартов...
+                          - generic [ref=f53e3283]: Имеет опыт управления несколькими объектами или подразделениями от 1 года — розница, сервис, логистика, ПВЗ, филиальная сеть и другие направления.
+                      - button "Откликнуться" [ref=f53e3289]
+                - listitem [ref=f53e3295]:
+                  - article [ref=f53e3298] [cursor=pointer]:
+                    - generic [ref=f53e3302]:
+                      - generic [ref=f53e3303]:
+                        - generic [ref=f53e3304]:
+                          - button "Добавить в избранное" [ref=f53e3305]
+                          - button "Скрыть" [ref=f53e3309]
+                        - generic [ref=f53e3313]: Сейчас смотрят 3 человека
+                        - link "Менеджер отдела продаж/Супервайзер (непродовольственная группа)" [ref=f53e3316]:
+                          - /url: https://rabota.by/vacancy/137302051?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3320]:
+                          - generic [ref=f53e3321]: до 3 750 Br за месяц, на руки
+                          - generic [ref=f53e3323]:
+                            - generic [ref=f53e3324]: Опыт 1-3 года
+                            - generic [ref=f53e3326]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e3329]:
+                          - link [ref=f53e3332]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Вакансии АЛИДИ-Вест, ИООО" [ref=f53e3341]:
+                            - /url: /employer/1112281?hhtmFrom=vacancy_search_list
+                            - img "АЛИДИ-Вест, ИООО" [ref=f53e3343]
+                          - link "АЛИДИ-Вест, ИООО" [ref=f53e3344]:
+                            - /url: /employer/1112281?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3347]: Минск
+                        - generic [ref=f53e3350]: Откликнитесь среди первых
+                        - generic [ref=f53e3356]:
+                          - generic [ref=f53e3357]: Ежедневная работа с командой торговых представителей и мерчендайзеров, мотивация команды на результат. Постановка целей, планов продаж и задач, аудит торговых...
+                          - generic [ref=f53e3359]: Лидерские качества. Опыт обучения/коучинга персонала (Мерчендайзеры, Торговые представители, Специалисты по продаже в FMCG). Развитые презентационные и переговорные навыки.
+                      - button "Откликнуться" [ref=f53e3365]
+                - listitem [ref=f53e3371]:
+                  - article [ref=f53e3374] [cursor=pointer]:
+                    - generic [ref=f53e3378]:
+                      - generic [ref=f53e3379]:
+                        - generic [ref=f53e3380]:
+                          - button "Добавить в избранное" [ref=f53e3381]
+                          - button "Скрыть" [ref=f53e3385]
+                        - generic [ref=f53e3389]: Сейчас смотрят 4 человека
+                        - link "Менеджер ресторана" [ref=f53e3392]:
+                          - /url: https://rabota.by/vacancy/136790893?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3396]:
+                          - generic [ref=f53e3397]: 4 000 – 5 000 Br за месяц, на руки
+                          - generic [ref=f53e3399]:
+                            - generic [ref=f53e3400]: Опыт 3-6 лет
+                            - generic [ref=f53e3402]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e3405]:
+                          - link [ref=f53e3408]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Скандинавия инвест" [ref=f53e3415]:
+                            - /url: /employer/12358926?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3419]:
+                            - text: Минск
+                            - generic [ref=f53e3422]:
+                              - generic [ref=f53e3423]: ●
+                              - generic [ref=f53e3424]: Немига
+                            - generic [ref=f53e3425]: и еще 2
+                            - generic [ref=f53e3426]: ●
+                            - generic [ref=f53e3428]: ●
+                        - generic [ref=f53e3431]: Можно без резюме
+                        - generic [ref=f53e3437]:
+                          - generic [ref=f53e3438]: "Организовывать работу зала и обеспечивать высокий уровень сервиса. Работать с командой: адаптация, обучение, контроль стандартов и атмосферы внутри смены."
+                          - generic [ref=f53e3440]: Опыт работы менеджером ресторана от 2 лет. Умение формировать сильные команды. Знание стандартов сервиса и умение внедрять их в работу.
+                      - generic [ref=f53e3445]:
+                        - button "Откликнуться" [ref=f53e3446]
+                        - button "Связаться" [ref=f53e3452]
+                - listitem [ref=f53e3458]:
+                  - article [ref=f53e3461] [cursor=pointer]:
+                    - generic [ref=f53e3465]:
+                      - generic [ref=f53e3466]:
+                        - generic [ref=f53e3467]:
+                          - button "Добавить в избранное" [ref=f53e3468]
+                          - button "Скрыть" [ref=f53e3472]
+                        - generic [ref=f53e3476]: Сейчас смотрят 3 человека
+                        - link "Начинающий специалист на производство (проектный отдел)" [ref=f53e3479]:
+                          - /url: https://rabota.by/vacancy/135900677?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3483]:
+                          - generic [ref=f53e3484]: от 2 000 Br за месяц, на руки
+                          - generic [ref=f53e3486]: Без опыта
+                        - generic [ref=f53e3490]:
+                          - link [ref=f53e3493]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3501]:
+                            - generic:
+                              - link "Вакансии Унитарное предприятие «Кока-Кола Бевриджиз Белоруссия»":
+                                - /url: /employer/754369?hhtmFrom=vacancy_search_list
+                                - generic:
+                                  - img "Унитарное предприятие «Кока-Кола Бевриджиз Белоруссия»"
+                          - link "УП Унитарное предприятие «Кока-Кола Бевриджиз Белоруссия»" [ref=f53e3502]:
+                            - /url: /employer/754369?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3506]:
+                            - text: Колядичи
+                            - generic [ref=f53e3509]:
+                              - generic [ref=f53e3510]: ●
+                              - generic [ref=f53e3511]: Слуцкий Гостинец
+                        - generic [ref=f53e3513]: Можно без резюме
+                        - generic [ref=f53e3519]:
+                          - generic [ref=f53e3520]: Пройти тестирование и телефонное интервью. Проявить себя на собеседовании со специалистом по подбору персонала.
+                          - generic [ref=f53e3522]: "Быть выпускником ВУЗа по специальностям: производство, машиностроение, инженерия. Знать английский на уровне Intermediate. Иметь сильные аналитические и коммуникативные способности."
+                      - generic [ref=f53e3527]:
+                        - button "Откликнуться" [ref=f53e3528]
+                        - button "Связаться" [ref=f53e3534]
+                - listitem [ref=f53e3540]:
+                  - article [ref=f53e3543] [cursor=pointer]:
+                    - generic [ref=f53e3547]:
+                      - generic [ref=f53e3548]:
+                        - generic [ref=f53e3549]:
+                          - button "Добавить в избранное" [ref=f53e3550]
+                          - button "Скрыть" [ref=f53e3554]
+                        - generic [ref=f53e3558]: Сейчас смотрят 3 человека
+                        - link "Руководитель розничной сети (ортопедические салоны ORTOS)" [ref=f53e3561]:
+                          - /url: https://rabota.by/vacancy/136675955?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3565]: Опыт 3-6 лет
+                        - generic [ref=f53e3570]:
+                          - link [ref=f53e3573]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ORTOS" [ref=f53e3580]:
+                            - /url: /employer/762399?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3583]: Минск, Нарочанская улица, 11
+                        - generic [ref=f53e3587]:
+                          - generic [ref=f53e3588]: Обеспечение бесперебойной работы розничной сети (16 салонов и интернет-магазин). Участие в разработке и совершенствовании бизнес-процессов, внедрение изменений.
+                          - generic [ref=f53e3590]: "Высшее образование (торговое, экономическое). Успешный опыт управления розничной сетью от 3-ех лет обязателен. Опытный пользователь ПК: знание офисных программ..."
+                      - button "Откликнуться" [ref=f53e3596]
+                - listitem [ref=f53e3602]:
+                  - article [ref=f53e3605] [cursor=pointer]:
+                    - generic [ref=f53e3609]:
+                      - generic [ref=f53e3610]:
+                        - generic [ref=f53e3611]:
+                          - button "Добавить в избранное" [ref=f53e3612]
+                          - button "Скрыть" [ref=f53e3616]
+                        - generic [ref=f53e3620]: Сейчас смотрят 3 человека
+                        - link "Старший администратор академии красоты" [ref=f53e3623]:
+                          - /url: https://rabota.by/vacancy/136960678?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3627]:
+                          - generic [ref=f53e3628]: от 1 900 Br за месяц, на руки
+                          - generic [ref=f53e3630]: Опыт 1-3 года
+                        - generic [ref=f53e3634]:
+                          - link [ref=f53e3637]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Космоскил" [ref=f53e3644]:
+                            - /url: /employer/11847045?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3648]:
+                            - text: Минск
+                            - generic [ref=f53e3651]:
+                              - generic [ref=f53e3652]: ●
+                              - generic [ref=f53e3653]: Немига
+                            - generic [ref=f53e3654]: и еще 3
+                            - generic [ref=f53e3655]: ●
+                            - generic [ref=f53e3657]: ●
+                            - generic [ref=f53e3659]: ●
+                        - generic [ref=f53e3663]:
+                          - generic [ref=f53e3664]: Участие в подборе и адаптации администраторов. Составление графиков работы. Обучение стандартам сервиса и скриптам. Контроль работы, развитие и мотивация команды.
+                          - generic [ref=f53e3666]: "Того, кто имеет опыт в сфере услуг от 1 года (администратор, старший администратор). Кто умеет руководить: наставлять, обучать и развивать..."
+                      - button "Откликнуться" [ref=f53e3672]
+                - listitem [ref=f53e3678]:
+                  - article [ref=f53e3681] [cursor=pointer]:
+                    - generic [ref=f53e3685]:
+                      - generic [ref=f53e3686]:
+                        - generic [ref=f53e3687]:
+                          - button "Добавить в избранное" [ref=f53e3688]
+                          - button "Скрыть" [ref=f53e3692]
+                        - generic [ref=f53e3696]: Сейчас смотрят 8 человек
+                        - link "Руководитель розничных продаж" [ref=f53e3699]:
+                          - /url: https://rabota.by/vacancy/137236139?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3703]:
+                          - generic [ref=f53e3704]: 3 000 – 6 000 Br за месяц, на руки
+                          - generic [ref=f53e3706]:
+                            - generic [ref=f53e3707]: Опыт 1-3 года
+                            - generic [ref=f53e3709]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e3712]:
+                          - link [ref=f53e3715]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Сантехфорум" [ref=f53e3723]:
+                            - /url: /employer/3298817?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3727]:
+                            - text: Минск
+                            - generic [ref=f53e3730]:
+                              - generic [ref=f53e3731]: ●
+                              - generic [ref=f53e3732]: Неморшанский сад
+                            - generic [ref=f53e3733]: и еще 1
+                            - generic [ref=f53e3734]: ●
+                        - generic [ref=f53e3738]:
+                          - generic [ref=f53e3739]: "Управление розничными продажами: контроль выполнения планов продаж шоу-румов, анализ показателей (конверсия из посетителя в покупателя, средний чек)."
+                          - generic [ref=f53e3741]: Имеете успешный опыт работы руководителем магазина, администратором шоу-рума или РОПом в рознице от 1-2 лет. Преимуществом будет опыт...
+                      - generic [ref=f53e3746]:
+                        - button "Откликнуться" [ref=f53e3747]
+                        - button "Связаться" [ref=f53e3753]
+                - listitem [ref=f53e3759]:
+                  - article [ref=f53e3762] [cursor=pointer]:
+                    - generic [ref=f53e3766]:
+                      - generic [ref=f53e3767]:
+                        - generic [ref=f53e3768]:
+                          - button "Добавить в избранное" [ref=f53e3769]
+                          - button "Скрыть" [ref=f53e3773]
+                        - generic [ref=f53e3777]: Сейчас смотрят 19 человек
+                        - link "Руководитель отдела продаж" [ref=f53e3780]:
+                          - /url: https://rabota.by/vacancy/137299005?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3784]:
+                          - generic [ref=f53e3785]: от 6 000 Br за месяц, на руки
+                          - generic [ref=f53e3787]:
+                            - generic [ref=f53e3788]: Опыт 3-6 лет
+                            - generic [ref=f53e3790]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e3793]:
+                          - link [ref=f53e3796]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ИмпортРитейл" [ref=f53e3803]:
+                            - /url: /employer/9929182?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3807]:
+                            - text: Минск
+                            - generic [ref=f53e3810]:
+                              - generic [ref=f53e3811]: ●
+                              - generic [ref=f53e3812]: Академия наук
+                            - generic [ref=f53e3813]: и еще 3
+                            - generic [ref=f53e3814]: ●
+                            - generic [ref=f53e3816]: ●
+                            - generic [ref=f53e3818]: ●
+                        - generic [ref=f53e3822]:
+                          - generic [ref=f53e3823]: Полностью взять на себя управление отделом продаж. Составлять, утверждать и контролировать плановые показатели в общем по отделу и отдельно по...
+                          - generic [ref=f53e3825]: Высшее образование. Практический успешный опыт управления В2С продажами от 3х лет. Успешный опыт собственных активных продаж.
+                      - button "Откликнуться" [ref=f53e3831]
+                - listitem [ref=f53e3837]:
+                  - article [ref=f53e3840] [cursor=pointer]:
+                    - generic [ref=f53e3844]:
+                      - generic [ref=f53e3845]:
+                        - generic [ref=f53e3846]:
+                          - button "Добавить в избранное" [ref=f53e3847]
+                          - button "Скрыть" [ref=f53e3851]
+                        - generic [ref=f53e3855]: Сейчас смотрят 12 человек
+                        - link "Менеджер по продажам" [ref=f53e3858]:
+                          - /url: https://rabota.by/vacancy/136670938?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3862]:
+                          - generic [ref=f53e3863]: от 3 000 Br за месяц, на руки
+                          - generic [ref=f53e3865]:
+                            - generic [ref=f53e3866]: Опыт 1-3 года
+                            - generic [ref=f53e3868]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e3871]:
+                          - link [ref=f53e3874]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "RocketData" [ref=f53e3882]:
+                            - /url: /employer/3591220?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3885]:
+                            - text: Минск
+                            - generic [ref=f53e3888]:
+                              - generic [ref=f53e3889]: ●
+                              - generic [ref=f53e3890]: Немига
+                            - generic [ref=f53e3891]: и еще 1
+                            - generic [ref=f53e3892]: ●
+                        - generic [ref=f53e3896]:
+                          - generic [ref=f53e3897]: "Работа с существующей клиентской базой компаний в странах СНГ. Общение с потенциальными клиентами: выявление потребностей, презентация продукта, обработка возражений и..."
+                          - generic [ref=f53e3899]: Имеете опыт работы в продажах (B2B либо B2C). Умеете выстраивать контакт с клиентами через звонки.
+                      - button "Откликнуться" [ref=f53e3905]
+                - listitem [ref=f53e3911]:
+                  - article [ref=f53e3914] [cursor=pointer]:
+                    - generic [ref=f53e3918]:
+                      - generic [ref=f53e3919]:
+                        - generic [ref=f53e3920]:
+                          - button "Добавить в избранное" [ref=f53e3921]
+                          - button "Скрыть" [ref=f53e3925]
+                        - link "Региональный менеджер (малый бизнес)" [ref=f53e3930]:
+                          - /url: https://rabota.by/vacancy/136768525?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e3934]: Опыт 3-6 лет
+                        - generic [ref=f53e3939]:
+                          - generic [ref=f53e3941]:
+                            - link [ref=f53e3942]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f53e3948]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - link "Вакансии Банк ВТБ (Беларусь). Корпоративный бизнес" [ref=f53e3962]:
+                            - /url: /employer/749858?dpt=749858-749858-3&hhtmFrom=vacancy_search_list
+                            - img "Банк ВТБ (Беларусь). Корпоративный бизнес" [ref=f53e3964]
+                          - link "ЗАО Банк ВТБ (Беларусь). Корпоративный бизнес" [ref=f53e3965]:
+                            - /url: /employer/749858?dpt=749858-749858-3&hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e3969]:
+                            - text: Минск
+                            - generic [ref=f53e3972]:
+                              - generic [ref=f53e3973]: ●
+                              - generic [ref=f53e3974]: Вокзальная
+                            - generic [ref=f53e3975]: и еще 1
+                            - generic [ref=f53e3976]: ●
+                        - generic [ref=f53e3980]:
+                          - generic [ref=f53e3981]: Разработка и реализация стратегии развития бизнеса в закрепленном регионе. Координация и развитие региональной команды продаж, обеспечение эффективности ее работы.
+                          - generic [ref=f53e3983]: Высшее экономическое образование. Банковский опыт по направлению деятельности, а так же опыт успешных продаж и обучения обязателен. Желание и умение...
+                      - button "Откликнуться" [ref=f53e3989]
+                - listitem [ref=f53e3995]:
+                  - article [ref=f53e3998] [cursor=pointer]:
+                    - generic [ref=f53e4002]:
+                      - generic [ref=f53e4003]:
+                        - generic [ref=f53e4004]:
+                          - button "Добавить в избранное" [ref=f53e4005]
+                          - button "Скрыть" [ref=f53e4009]
+                        - generic [ref=f53e4013]: Сейчас смотрят 6 человек
+                        - link "Руководитель отдела продаж" [ref=f53e4016]:
+                          - /url: https://rabota.by/vacancy/137098004?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e4020]:
+                          - generic [ref=f53e4021]: от 3 000 Br за месяц, на руки
+                          - generic [ref=f53e4023]:
+                            - generic [ref=f53e4024]: Опыт 3-6 лет
+                            - generic [ref=f53e4026]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e4029]:
+                          - link [ref=f53e4032]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ТехноПоликром Бел" [ref=f53e4040]:
+                            - /url: /employer/4045487?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e4044]:
+                            - text: Минск
+                            - generic [ref=f53e4047]:
+                              - generic [ref=f53e4048]: ●
+                              - generic [ref=f53e4049]: Аэродромная
+                            - generic [ref=f53e4050]: и еще 1
+                            - generic [ref=f53e4051]: ●
+                        - generic [ref=f53e4055]:
+                          - generic [ref=f53e4056]: "ТехноПоликром Бел»: -Формирование отдела продаж. -Обучение, адаптация и развитие менеджеров. -Разработка скриптов и планов продаж. -Личное участие в переговорах и..."
+                          - generic [ref=f53e4058]: Опыт работы руководителем отдела продаж. -Умение выстраивать команду. -Опыт работы в продаже строительных материалов будет преимуществом. -Опыт работы с CRM...
+                      - generic [ref=f53e4063]:
+                        - button "Откликнуться" [ref=f53e4064]
+                        - button "Связаться" [ref=f53e4070]
+                - listitem [ref=f53e4076]:
+                  - article [ref=f53e4079] [cursor=pointer]:
+                    - generic [ref=f53e4083]:
+                      - generic [ref=f53e4084]:
+                        - generic [ref=f53e4085]:
+                          - button "Добавить в избранное" [ref=f53e4086]
+                          - button "Скрыть" [ref=f53e4090]
+                        - generic [ref=f53e4094]: Сейчас смотрит 1 человек
+                        - link "Администратор магазина в бренд MINISO (ТЦ Дана Молл)" [ref=f53e4097]:
+                          - /url: https://rabota.by/vacancy/136835078?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e4101]:
+                          - generic [ref=f53e4102]: 1 600 – 2 200 Br за месяц, до вычета налогов
+                          - generic [ref=f53e4104]: Опыт 1-3 года
+                        - generic [ref=f53e4108]:
+                          - link [ref=f53e4111]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Минисо Бел" [ref=f53e4118]:
+                            - /url: /employer/3685056?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e4122]:
+                            - text: Минский район
+                            - generic [ref=f53e4125]:
+                              - generic [ref=f53e4126]: ●
+                              - generic [ref=f53e4127]: Борисовский тракт
+                            - generic [ref=f53e4128]: и еще 3
+                            - generic [ref=f53e4129]: ●
+                            - generic [ref=f53e4131]: ●
+                            - generic [ref=f53e4133]: ●
+                        - generic [ref=f53e4135]: Распределять задачи между продавцами. Контролировать своевременное пополнение зала. Поддерживать дружелюбную культуру общения с покупателями и сотрудниками. Приемка товара.
+                      - button "Откликнуться" [ref=f53e4144]
+                - listitem [ref=f53e4150]:
+                  - article [ref=f53e4153] [cursor=pointer]:
+                    - generic [ref=f53e4157]:
+                      - generic [ref=f53e4158]:
+                        - generic [ref=f53e4159]:
+                          - button "Добавить в избранное" [ref=f53e4160]
+                          - button "Скрыть" [ref=f53e4164]
+                        - generic [ref=f53e4168]: Сейчас смотрят 13 человек
+                        - link "Руководитель отдела продаж" [ref=f53e4171]:
+                          - /url: https://rabota.by/vacancy/137308682?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e4175]:
+                          - generic [ref=f53e4176]: 4 000 – 10 000 Br за месяц, на руки
+                          - generic [ref=f53e4178]:
+                            - generic [ref=f53e4179]: Опыт 1-3 года
+                            - generic [ref=f53e4181]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f53e4184]:
+                          - link [ref=f53e4187]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО ЛЮДИ И РЕШЕНИЯ" [ref=f53e4195]:
+                            - /url: /employer/12472025?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e4199]: деревня Боровляны, улица 40 лет Победы
+                        - generic [ref=f53e4202]: Откликнитесь среди первых
+                        - generic [ref=f53e4208]:
+                          - generic [ref=f53e4209]: "Управление отделом продаж: от постановки целей до выполнения планов. Формирование и контроль портфеля заказов (кратко- и долгосрочных). Анализ маржинальности, работа..."
+                          - generic [ref=f53e4211]: "Условия: Гибкий подход к мотивации сильных кандидатов. Лидера, умеющего вдохновлять команду и выстраивать долгосрочные отношения с клиентами. Стратега, способного видеть..."
+                      - generic [ref=f53e4216]:
+                        - button "Откликнуться" [ref=f53e4217]
+                        - button "Связаться" [ref=f53e4223]
+                - listitem [ref=f53e4229]:
+                  - article [ref=f53e4232] [cursor=pointer]:
+                    - generic [ref=f53e4236]:
+                      - generic [ref=f53e4237]:
+                        - generic [ref=f53e4238]:
+                          - button "Добавить в избранное" [ref=f53e4239]
+                          - button "Скрыть" [ref=f53e4243]
+                        - link "Руководитель отдела продаж (по продаже материалов для благоустройства)" [ref=f53e4248]:
+                          - /url: https://rabota.by/vacancy/136294123?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e4252]: Опыт 1-3 года
+                        - generic [ref=f53e4257]:
+                          - link [ref=f53e4260]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Компания Кронекс" [ref=f53e4267]:
+                            - /url: /employer/763797?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e4271]:
+                            - text: Минск
+                            - generic [ref=f53e4274]:
+                              - generic [ref=f53e4275]: ●
+                              - generic [ref=f53e4276]: Восток
+                            - generic [ref=f53e4277]: и еще 1
+                            - generic [ref=f53e4278]: ●
+                        - generic [ref=f53e4282]:
+                          - generic [ref=f53e4283]: Планирование и координация работы отдела продаж. Анализ и контроль финансовых показателей работы отдела. Понимание сегментации клиентов, развитие всех каналов продаж.
+                          - generic [ref=f53e4285]: Опыт управления отделом (департаментом) продаж от 3-х лет. Огромным преимуществом является опыт работы с премиальным продуктом. Опыт работы с...
+                      - generic [ref=f53e4290]:
+                        - button "Откликнуться" [ref=f53e4291]
+                        - button "Связаться" [ref=f53e4297]
+                - listitem [ref=f53e4303]:
+                  - article [ref=f53e4306] [cursor=pointer]:
+                    - generic [ref=f53e4310]:
+                      - generic [ref=f53e4311]:
+                        - generic [ref=f53e4312]:
+                          - button "Добавить в избранное" [ref=f53e4313]
+                          - button "Скрыть" [ref=f53e4317]
+                        - link "Менеджер по продажам" [ref=f53e4322]:
+                          - /url: https://rabota.by/vacancy/135663581?query=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80+%D0%BF%D0%BE+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8E+%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0&hhtmFrom=vacancy_search_list
+                        - generic [ref=f53e4326]: Опыт 3-6 лет
+                        - generic [ref=f53e4331]:
+                          - link [ref=f53e4334]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ОНДУЛИН СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ, ИООО" [ref=f53e4341]:
+                            - /url: /employer/3313580?hhtmFrom=vacancy_search_list
+                          - generic [ref=f53e4344]:
+                            - text: Минск
+                            - generic [ref=f53e4347]:
+                              - generic [ref=f53e4348]: ●
+                              - generic [ref=f53e4349]: Московская
+                            - generic [ref=f53e4350]: и еще 3
+                            - generic [ref=f53e4351]: ●
+                            - generic [ref=f53e4353]: ●
+                            - generic [ref=f53e4355]: ●
+                        - generic [ref=f53e4359]:
+                          - generic [ref=f53e4360]: Реализация продукции компании ОНДУЛИН на закрепленной территории. Выполнение плана продаж. Ведение переговоров с первыми лицами компаний-партнеров. Поддержание и расширение...
+                          - generic [ref=f53e4362]: Высшее образование. Опыт работы в B2B продажах от 3-х лет (знание рынка строительных материалов, как преимущество).
+                      - generic [ref=f53e4367]:
+                        - button "Откликнуться" [ref=f53e4368]
+                        - button "Связаться" [ref=f53e4374]
+            - navigation "Пагинация" [ref=f53e4382]:
+              - list [ref=f53e4383]:
+                - listitem [ref=f53e4384]:
+                  - generic [ref=f53e4385]:
+                    - link "1":
+                      - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala?page=0&search_session_id=b44867c1-7ce4-41d4-a625-b590e2502464&hhtmFrom=vacancy_search_list
+                - listitem [ref=f53e4386]:
+                  - link "2" [ref=f53e4388] [cursor=pointer]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala?page=1&search_session_id=b44867c1-7ce4-41d4-a625-b590e2502464&hhtmFrom=vacancy_search_list
+                - listitem [ref=f53e4389]:
+                  - link "3" [ref=f53e4391] [cursor=pointer]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala?page=2&search_session_id=b44867c1-7ce4-41d4-a625-b590e2502464&hhtmFrom=vacancy_search_list
+            - generic [ref=f53e4393]:
+              - heading "Другие пользователи ищут" [level=2] [ref=f53e4394]
+              - list [ref=f53e4396]:
+                - listitem [ref=f53e4397]:
+                  - link "ассистент тренинг менеджера" [ref=f53e4399]:
+                    - /url: /vacancies/assistent-trening-menedzhera
+                - listitem [ref=f53e4402]:
+                  - link "корпоративный тренер" [ref=f53e4404]:
+                    - /url: /vacancies/korporativnyj-trener
+                - listitem [ref=f53e4407]:
+                  - link "коуч" [ref=f53e4409]:
+                    - /url: /vacancies/kouch
+                - listitem [ref=f53e4412]:
+                  - link "менеджер по оценке персонала" [ref=f53e4414]:
+                    - /url: /vacancies/menedzher_po_ocenke_personala
+                - listitem [ref=f53e4417]:
+                  - link "руководитель отдела персонала" [ref=f53e4419]:
+                    - /url: /vacancies/rukovoditel_otdela_personala
+                - listitem [ref=f53e4422]:
+                  - link "специалист по обучению" [ref=f53e4424]:
+                    - /url: /vacancies/specialist_po_obucheniyu
+                - listitem [ref=f53e4427]:
+                  - link "специалист по обучению и развитию персонала" [ref=f53e4429]:
+                    - /url: /vacancies/spetsialist-po-obucheniyu-i-razvitiyu-personala
+                - listitem [ref=f53e4432]:
+                  - link "специалист по обучению персонала" [ref=f53e4434]:
+                    - /url: /vacancies/spetsialist-po-obucheniyu-personala
+                - listitem [ref=f53e4437]:
+                  - link "специалист по оценке персонала" [ref=f53e4439]:
+                    - /url: /vacancies/spetsialist-po-otsenke-personala
+                - listitem [ref=f53e4442]:
+                  - link "специалист по развитию персонала" [ref=f53e4444]:
+                    - /url: /vacancies/spetsialist-po-razvitiyu-personala
+                - listitem [ref=f53e4447]:
+                  - link "тренер по обучению" [ref=f53e4449]:
+                    - /url: /vacancies/trener_po_obucheniyu
+                - listitem [ref=f53e4452]:
+                  - link "тренинг-менеджер" [ref=f53e4454]:
+                    - /url: /vacancies/trening_menedzher
+                - listitem [ref=f53e4457]:
+                  - link "популярные для женщин" [ref=f53e4459]:
+                    - /url: /vacancies/populyarnaya_dlya_zhenschin
+                - listitem [ref=f53e4462]:
+                  - link "популярные для женщин после 50" [ref=f53e4464]:
+                    - /url: /vacancies/populyarnaya_dlya_zhenschin_posle_50
+                - listitem [ref=f53e4467]:
+                  - link "популярные для мужчин" [ref=f53e4469]:
+                    - /url: /vacancies/populyarnaya_dlya_muzhchin
+                - listitem [ref=f53e4472]:
+                  - link "техник по оборудованию" [ref=f53e4474]:
+                    - /url: /vacancies/tehnik-po-oborudovaniyu
+            - button "Показать ещё" [ref=f53e4478]
+            - generic [ref=f53e4486]:
+              - heading "Быстрые фильтры подбора вакансий" [level=2] [ref=f53e4487]
+              - list [ref=f53e4489]:
+                - listitem [ref=f53e4490]:
+                  - link "Полный день" [ref=f53e4492]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/polniy_den
+                - listitem [ref=f53e4495]:
+                  - link "От прямых работодателей" [ref=f53e4497]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/ot_pryamih_rabotodateley
+                - listitem [ref=f53e4500]:
+                  - link "Удаленная работа" [ref=f53e4502]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/udalennaya_rabota
+                - listitem [ref=f53e4505]:
+                  - link "Сменный график" [ref=f53e4507]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/smenniy_grafik
+                - listitem [ref=f53e4510]:
+                  - link "Частичная занятость" [ref=f53e4512]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/chastichnaya_zanyatost
+                - listitem [ref=f53e4515]:
+                  - link "Полная занятость" [ref=f53e4517]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/polnaya_zanyatost
+                - listitem [ref=f53e4520]:
+                  - link "Для людей с инвалидностью" [ref=f53e4522]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/rabota_dlya_invalidov
+                - listitem [ref=f53e4525]:
+                  - link "Гибкий график" [ref=f53e4527]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/gibkiy_grafik
+                - listitem [ref=f53e4530]:
+                  - link "За сутки" [ref=f53e4532]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/za_sutki
+                - listitem [ref=f53e4535]:
+                  - link "Подработка" [ref=f53e4537]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/podrabotka
+                - listitem [ref=f53e4540]:
+                  - link "Без опыта работы" [ref=f53e4542]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/bez_opyta_raboty
+                - listitem [ref=f53e4545]:
+                  - link "За последние три дня" [ref=f53e4547]:
+                    - /url: /vacancies/menedzher_po_obucheniyu_i_razvitiyu_personala/za_poslednie_tri_dnya
+      - contentinfo [ref=f53e4551]:
+        - generic [ref=f53e4555]:
+          - navigation "Навигация в подвале" [ref=f53e4556]:
+            - generic [ref=f53e4557]:
+              - generic [ref=f53e4559]:
+                - generic [ref=f53e4560]: rabota.by
+                - list [ref=f53e4562]:
+                  - listitem [ref=f53e4563]:
+                    - link "Помощь" [ref=f53e4565]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4568]:
+                    - link "Наши вакансии" [ref=f53e4570]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4573]:
+                    - link "Реклама на сайте" [ref=f53e4575]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list#region/belarus
+                  - listitem [ref=f53e4578]:
+                    - link "Требования к ПО" [ref=f53e4580]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4583]:
+                    - link "Политика обработки cookie" [ref=f53e4585]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4588]:
+                    - link "Настройки cookie" [ref=f53e4590]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4593]:
+                    - link "Напишите нам" [ref=f53e4595]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=f53e4598]:
+                    - link "Каталог компаний" [ref=f53e4600]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4603]:
+                    - link "Поиск по вакансиям в Минске" [ref=f53e4605]:
+                      - /url: /vacancies
+                  - listitem [ref=f53e4608]:
+                    - link "Работа рядом с метро" [ref=f53e4610]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f53e4615]:
+                - generic [ref=f53e4616]: Соискателям
+                - list [ref=f53e4618]:
+                  - listitem [ref=f53e4619]:
+                    - link "Все сервисы" [ref=f53e4621]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4624]:
+                    - link "Кадровые агентства Беларуси" [ref=f53e4626]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f53e4629]:
+                    - link "Производственный календарь" [ref=f53e4631]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f53e4636]:
+                - list [ref=f53e4637]:
+                  - listitem [ref=f53e4638]:
+                    - generic [ref=f53e4639]: Боты для уведомлений
+                    - generic [ref=f53e4641]:
+                      - button "Подключить telegram бот" [ref=f53e4642] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f53e4649] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f53e4657] [cursor=pointer]
+                - generic [ref=f53e4666]:
+                  - generic [ref=f53e4667]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f53e4669]
+          - navigation "Правовая информация" [ref=f53e4677]:
+            - list [ref=f53e4678]:
+              - listitem [ref=f53e4679]:
+                - link "Этика и комплаенс" [ref=f53e4681]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f53e4684]:
+                - link "Оказание услуг" [ref=f53e4686]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f53e4689]:
+                - link "Использование сайтов" [ref=f53e4691]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f53e4694]:
+                - link "Политика обработки данных" [ref=f53e4696]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f53e4699]:
+                - link "Пользовательское соглашение" [ref=f53e4701]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+          - generic [ref=f53e4708]:
+            - paragraph [ref=f53e4709]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=f53e4711]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=f53e4713]:
+              - img "mastercard" [ref=f53e4714]
+              - img "visa" [ref=f53e4715]
+              - img "belcart" [ref=f53e4716]
+              - img "belcart-internetparol" [ref=f53e4717]
+          - generic [ref=f53e4722]:
+            - generic [ref=f53e4723]:
+              - button "Перейти в ВК" [ref=f53e4724] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=f53e4732] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=f53e4740] [cursor=pointer]
+              - button "Перейти в Viber" [ref=f53e4748] [cursor=pointer]
+            - generic [ref=f53e4757]:
+              - list [ref=f53e4758]:
+                - listitem [ref=f53e4759]:
+                  - combobox "Выбор языка сайта" [ref=f53e4762]:
+                    - generic [ref=f53e4763]: Русский
+              - generic [ref=f53e4770]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - button "Карта" [ref=f53e4772] [cursor=pointer]

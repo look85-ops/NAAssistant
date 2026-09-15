@@ -1,0 +1,66 @@
+[    1116ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[    1766ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    1767ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    4206ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[   70343ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[   71075ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   71075ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[   74752ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[   74754ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  103560ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  103874ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  104404ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  108393ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  108393ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  110036ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  110658ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  110659ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  111986ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  111987ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  113771ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  114539ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  114539ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  117036ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  119699ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  120300ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  120300ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  122118ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  122118ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  124184ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  124830ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  124830ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  127161ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  130088ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  130705ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  130705ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  133134ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  133134ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  135581ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  136452ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  136452ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  138013ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  139729ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  140413ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  140413ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  142234ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  146079ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  146302ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  146736ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  149165ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  149166ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  151755ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  152442ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  152442ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  154780ms] [LOG] Undefined event - vac_search_similar_extension_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  154780ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  154780ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  157151ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  157887ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  157887ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  158643ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  158643ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  163610ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2.2:0
+[  164263ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  164263ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[  167466ms] [LOG] Undefined event - vacancy_search_quality_applicant @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0
+[  167468ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.13.0/1.f83863947bcc13da6f93.js:0

@@ -1,0 +1,851 @@
+- generic [active] [ref=f14e1]:
+  - generic [ref=f14e3]:
+    - generic [ref=f14e8]:
+      - generic [ref=f14e9]:
+        - text: Для обеспечения удобства пользователей сайта используются cookies.
+        - link "Узнайте подробнее" [ref=f14e10] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy_search_list
+      - generic [ref=f14e11]:
+        - button "Принять" [ref=f14e12] [cursor=pointer]
+        - button "Отказаться" [ref=f14e13] [cursor=pointer]
+    - banner [ref=f14e15]:
+      - generic [ref=f14e17]:
+        - link "Главная страница сайта" [ref=f14e18] [cursor=pointer]:
+          - /url: /
+        - link [ref=f14e23] [cursor=pointer]
+        - button "Выбор региона,Минск" [ref=f14e35] [cursor=pointer]:
+          - generic [ref=f14e36]: Минск
+        - button "Чаты" [ref=f14e50] [cursor=pointer]
+        - link "Избранное" [ref=f14e62] [cursor=pointer]:
+          - /url: /applicant/favorite_vacancies
+        - button "Уведомления" [ref=f14e74] [cursor=pointer]
+        - button "Создать резюме" [ref=f14e84] [cursor=pointer]
+        - button [ref=f14e91] [cursor=pointer]
+    - generic [ref=f14e103]:
+      - main [ref=f14e104]:
+        - generic [ref=f14e111]:
+          - generic [ref=f14e112]:
+            - generic [ref=f14e115]:
+              - combobox "Поиск по вакансиям" [ref=f14e119]: Руководитель On-line курсов
+              - button "Очистить" [ref=f14e125] [cursor=pointer]
+            - group
+          - button "Сохранить поиск" [ref=f14e133] [cursor=pointer]
+        - generic [ref=f14e148]:
+          - generic [ref=f14e149]:
+            - checkbox "Фильтры" [ref=f14e150]
+            - img "Фильтры" [ref=f14e153] [cursor=pointer]
+          - generic [ref=f14e159]:
+            - button "Минск" [ref=f14e160] [cursor=pointer]
+            - button [ref=f14e167] [cursor=pointer]
+          - button "Метро" [ref=f14e173] [cursor=pointer]
+          - button "График" [ref=f14e184] [cursor=pointer]
+          - button "Рабочие часы" [ref=f14e195] [cursor=pointer]
+          - button "Опыт" [ref=f14e206] [cursor=pointer]
+          - button "Тип занятости" [ref=f14e217] [cursor=pointer]
+          - button "Уровень дохода" [ref=f14e227] [cursor=pointer]
+          - generic [ref=f14e235]:
+            - checkbox "Ещё фильтры" [ref=f14e236]
+            - generic [ref=f14e237] [cursor=pointer]: Ещё фильтры
+        - generic [ref=f14e242]:
+          - generic [ref=f14e250]:
+            - heading "Найдена 161 вакансия «Руководитель On-line курсов»" [level=1] [ref=f14e256]
+            - generic [ref=f14e260]:
+              - generic [ref=f14e261]:
+                - radio "краткое описания вакансий" [ref=f14e262]
+                - generic [ref=f14e263] [cursor=pointer]
+              - generic [ref=f14e270]:
+                - radio "полное описание вакансий" [checked] [ref=f14e271]
+                - generic [ref=f14e272] [cursor=pointer]
+          - generic [ref=f14e284]:
+            - region "Вакансии" [ref=f14e286]:
+              - list [ref=f14e288]:
+                - listitem [ref=f14e289]:
+                  - article [ref=f14e292] [cursor=pointer]:
+                    - generic [ref=f14e296]:
+                      - generic [ref=f14e297]:
+                        - generic [ref=f14e298]:
+                          - button "Добавить в избранное" [ref=f14e299]
+                          - button "Скрыть" [ref=f14e303]
+                        - generic [ref=f14e307]: Сейчас смотрят 36 человек
+                        - link "Руководитель On-line курсов / Head of Courses" [ref=f14e310]:
+                          - /url: https://hh.ru/vacancy/137296528?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e315]:
+                          - generic [ref=f14e316]: Опыт 1-3 года
+                          - generic [ref=f14e318]: Можно удалённо
+                        - generic [ref=f14e321]:
+                          - link [ref=f14e324]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "TutorOnline (Форстад, ООО)" [ref=f14e342]:
+                            - /url: /employer/2238184?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e345]:
+                            - text: Минск
+                            - generic [ref=f14e348]:
+                              - generic [ref=f14e349]: ●
+                              - generic [ref=f14e350]: Парк Челюскинцев
+                        - generic [ref=f14e353]:
+                          - generic [ref=f14e354]: Формировать стратегию направления курсов. Улучшать текущие курсы и запускать новые. Делать курсы более сильными по структуре, логике, методике и результату.
+                          - generic [ref=f14e356]: Опыт управления образовательными продуктами / курсами / онлайн-школой. Опыт в роли руководителя продукта, продюсера курсов, руководителя направления или операционного лидера в...
+                      - button "Откликнуться" [ref=f14e362]
+                - listitem [ref=f14e368]:
+                  - article [ref=f14e371] [cursor=pointer]:
+                    - generic [ref=f14e375]:
+                      - generic [ref=f14e376]:
+                        - generic [ref=f14e377]:
+                          - button "Добавить в избранное" [ref=f14e378]
+                          - button "Скрыть" [ref=f14e382]
+                        - generic [ref=f14e386]: Сейчас смотрят 2 человека
+                        - link "Бизнес-тренер" [ref=f14e389]:
+                          - /url: https://rabota.by/vacancy/136343793?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e393]: Без опыта
+                        - generic [ref=f14e398]:
+                          - link [ref=f14e401]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Вакансии Сбер Банк" [ref=f14e410]:
+                            - /url: /employer/829010?hhtmFrom=vacancy_search_list
+                            - img "Сбер Банк" [ref=f14e412]
+                          - link "ОАО Сбер Банк" [ref=f14e413]:
+                            - /url: /employer/829010?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e417]:
+                            - text: Минск
+                            - generic [ref=f14e420]:
+                              - generic [ref=f14e421]: ●
+                              - generic [ref=f14e422]: Купаловская
+                            - generic [ref=f14e423]: и еще 3
+                            - generic [ref=f14e424]: ●
+                            - generic [ref=f14e426]: ●
+                            - generic [ref=f14e428]: ●
+                        - generic [ref=f14e432]:
+                          - generic [ref=f14e433]: "...курсы и программы. Проводить «полевое» обучение в региональных офисах: наблюдать за продажами и давать развивающую обратную связь сотрудникам и руководителям."
+                          - generic [ref=f14e435]: ...очных и онлайн-тренингов по продажам, переговорам и soft skills. Опыт проведения фасилитаций и управленческих программ для руководителей.
+                      - button "Откликнуться" [ref=f14e441]
+                  - generic [ref=f14e447]:
+                    - generic [ref=f14e448]:
+                      - heading "Компании для вас" [level=2] [ref=f14e449]
+                      - button [ref=f14e452] [cursor=pointer]
+                    - region [ref=f14e462]:
+                      - list [ref=f14e465]:
+                        - generic [ref=f14e467]:
+                          - listitem [ref=f14e468]:
+                            - button "Сбер Банк Сбер Банк 51 активная вакансия Посмотреть" [ref=f14e471] [cursor=pointer]:
+                              - generic [ref=f14e475]:
+                                - generic "Сбер Банк" [ref=f14e481]:
+                                  - img "Сбер Банк" [ref=f14e483]
+                                - generic [ref=f14e485]: Сбер Банк
+                                - generic [ref=f14e489]: 51 активная вакансия
+                                - button "Посмотреть" [ref=f14e493]
+                          - listitem [ref=f14e498]:
+                            - button "АРМТЕК АРМТЕК 37 активных вакансий Посмотреть" [ref=f14e501] [cursor=pointer]:
+                              - generic [ref=f14e505]:
+                                - generic "АРМТЕК" [ref=f14e511]:
+                                  - img "АРМТЕК" [ref=f14e513]
+                                - generic [ref=f14e515]: АРМТЕК
+                                - generic [ref=f14e519]: 37 активных вакансий
+                                - button "Посмотреть" [ref=f14e523]
+                          - listitem [ref=f14e528]:
+                            - button "АЛЬФА-БАНК АЛЬФА-БАНК 50 активных вакансий Посмотреть" [ref=f14e531] [cursor=pointer]:
+                              - generic [ref=f14e535]:
+                                - generic "АЛЬФА-БАНК" [ref=f14e541]:
+                                  - img "АЛЬФА-БАНК" [ref=f14e543]
+                                - generic [ref=f14e545]: АЛЬФА-БАНК
+                                - generic [ref=f14e549]: 50 активных вакансий
+                                - button "Посмотреть" [ref=f14e553]
+                          - listitem [ref=f14e558]:
+                            - button "МТбанк МТбанк 56 активных вакансий Посмотреть" [ref=f14e561] [cursor=pointer]:
+                              - generic [ref=f14e565]:
+                                - generic "МТбанк" [ref=f14e571]:
+                                  - img "МТбанк" [ref=f14e573]
+                                - generic [ref=f14e575]: МТбанк
+                                - generic [ref=f14e579]: 56 активных вакансий
+                                - button "Посмотреть" [ref=f14e583]
+                  - generic [ref=f14e604]:
+                    - generic [ref=f14e605]:
+                      - generic [ref=f14e606]: По вашему запросу ещё будут появляться новые вакансии. Присылать вам?
+                      - generic [ref=f14e609]:
+                        - generic [ref=f14e610]: Руководитель On-line курсов • Минск • Ключевые слова в названии вакансии, в названии компании и в описании вакансии
+                        - generic [ref=f14e611]:
+                          - text: Даю согласие на обработку персональных данных на получение ссылки на автоматически подобранные вакансии в соответствии с
+                          - link "Условиями обработки" [ref=f14e612]:
+                            - /url: /article/31466?hhtmFrom=vacancy_search_list
+                          - text: . Ознакомлен с
+                          - link "Правами, связанными с обработкой, механизмом их реализации и последствиями согласия и отказа" [ref=f14e615]:
+                            - /url: /article/31466?hhtmFrom=vacancy_search_list#clause1
+                          - text: .
+                    - generic [ref=f14e620]:
+                      - button "В мессенджер" [ref=f14e622] [cursor=pointer]
+                      - button "На почту" [ref=f14e628] [cursor=pointer]
+                - listitem [ref=f14e634]:
+                  - article [ref=f14e637] [cursor=pointer]:
+                    - generic [ref=f14e641]:
+                      - generic [ref=f14e642]:
+                        - generic [ref=f14e643]:
+                          - button "Добавить в избранное" [ref=f14e644]
+                          - button "Скрыть" [ref=f14e648]
+                        - link "Бизнес-тренер" [ref=f14e653]:
+                          - /url: https://rabota.by/vacancy/136984281?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e657]: Опыт 1-3 года
+                        - generic [ref=f14e662]:
+                          - link [ref=f14e665]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "RocketData" [ref=f14e672]:
+                            - /url: /employer/3591220?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e675]:
+                            - text: Минск
+                            - generic [ref=f14e678]:
+                              - generic [ref=f14e679]: ●
+                              - generic [ref=f14e680]: Немига
+                            - generic [ref=f14e681]: и еще 1
+                            - generic [ref=f14e682]: ●
+                        - generic [ref=f14e686]:
+                          - generic [ref=f14e687]: Актуализировать обучающие материалы отдела и существующую базу знаний. Предоставлять отчетность руководителю отдела обучения и head of Sales Dev.
+                          - generic [ref=f14e689]: Наличие опыта публичных выступлений, желание его обогащать. Уверенное владение Excel, Power Point. Наличие управленческого опыта и опыта разработки курсов на...
+                      - button "Откликнуться" [ref=f14e695]
+                - listitem [ref=f14e701]:
+                  - article [ref=f14e704] [cursor=pointer]:
+                    - generic [ref=f14e708]:
+                      - generic [ref=f14e709]:
+                        - generic [ref=f14e710]:
+                          - button "Добавить в избранное" [ref=f14e711]
+                          - button "Скрыть" [ref=f14e715]
+                        - generic [ref=f14e719]: Сейчас смотрят 7 человек
+                        - link "Руководитель отдела продаж в онлайн-школу (вводные уроки/диагностики)" [ref=f14e722]:
+                          - /url: https://hh.ru/vacancy/136722384?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e726]:
+                          - generic [ref=f14e727]: от 300 000 ₽ за месяц, на руки
+                          - generic [ref=f14e729]:
+                            - generic [ref=f14e730]: Опыт 1-3 года
+                            - generic [ref=f14e732]: Можно удалённо
+                        - generic [ref=f14e735]:
+                          - link [ref=f14e738]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Квантастика" [ref=f14e746]:
+                            - /url: /employer/11757106?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e749]: Минск
+                        - generic [ref=f14e753]:
+                          - generic [ref=f14e754]: Управлять руководителями групп и менеджерами, которые проводят вводные уроки и продают обучение. Выполнять план продаж и ключевые показатели отдела. Управлять...
+                          - generic [ref=f14e756]: Умеет анализировать конверсию и находить причины просадок в результатах. Умеет развивать руководителей и повышать эффективность их команд. Сам имеет сильную...
+                      - button "Откликнуться" [ref=f14e762]
+                - listitem [ref=f14e768]:
+                  - article [ref=f14e771] [cursor=pointer]:
+                    - generic [ref=f14e775]:
+                      - generic [ref=f14e776]:
+                        - generic [ref=f14e777]:
+                          - button "Добавить в избранное" [ref=f14e778]
+                          - button "Скрыть" [ref=f14e782]
+                        - generic [ref=f14e786]: Сейчас смотрят 7 человек
+                        - link "Куратор на онлайн-платформе" [ref=f14e789]:
+                          - /url: https://hh.ru/vacancy/136654280?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e793]:
+                          - generic [ref=f14e794]: 500 – 700 $ за месяц, на руки
+                          - generic [ref=f14e796]:
+                            - generic [ref=f14e797]: Опыт 1-3 года
+                            - generic [ref=f14e799]: Можно удалённо
+                            - generic [ref=f14e801]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f14e804]:
+                          - link [ref=f14e807]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "FINANCIAL MANAGEMENT SYSTEM LLC" [ref=f14e814]:
+                            - /url: /employer/9282608?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e817]: Минск
+                        - generic [ref=f14e820]: Подходит по навыкам на 66%
+                        - generic [ref=f14e824]: ...курс и постоянное взаимодействие с ними на онлайн-платформе. Проверять задания и упражнения клиентов. Помощь клиенту в обучении на курсе.
+                      - generic [ref=f14e832]:
+                        - button "Откликнуться" [ref=f14e833]
+                        - button "Связаться" [ref=f14e839]
+                - listitem [ref=f14e845]:
+                  - article [ref=f14e848] [cursor=pointer]:
+                    - generic [ref=f14e852]:
+                      - generic [ref=f14e853]:
+                        - generic [ref=f14e854]:
+                          - button "Добавить в избранное" [ref=f14e855]
+                          - button "Скрыть" [ref=f14e859]
+                        - generic [ref=f14e863]: Сейчас смотрят 7 человек
+                        - link "Менеджер по продажам (Входящие заявки) / Специалист отдела продаж" [ref=f14e866]:
+                          - /url: https://rabota.by/vacancy/136657978?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e875]:
+                          - generic [ref=f14e876]: 3 000 – 10 000 Br за месяц, на руки
+                          - generic [ref=f14e878]:
+                            - generic [ref=f14e879]: Опыт 1-3 года
+                            - generic [ref=f14e881]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f14e884]:
+                          - link [ref=f14e887]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e894]:
+                            - generic:
+                              - link "Вакансии Реальный маркетинг":
+                                - /url: /employer/5478866?hhtmFrom=vacancy_search_list
+                                - generic:
+                                  - img "Реальный маркетинг"
+                          - link "ООО Реальный маркетинг" [ref=f14e895]:
+                            - /url: /employer/5478866?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e899]:
+                            - text: Минск
+                            - generic [ref=f14e902]:
+                              - generic [ref=f14e903]: ●
+                              - generic [ref=f14e904]: Каменная Горка
+                            - generic [ref=f14e905]: и еще 1
+                            - generic [ref=f14e906]: ●
+                        - generic [ref=f14e909]: Можно без резюме
+                        - generic [ref=f14e915]:
+                          - generic [ref=f14e916]: "Консультировать по технике и ценам: подбирать подходящий товар по диапазону цен и характеристикам. Помогать клиентам оформлять товар в рассрочку: делать..."
+                          - generic [ref=f14e918]: Если у Вас есть опыт работы в онлайн-продажах - это позволит быстрее выйти на высокий уровень дохода. Знаете техники продаж...
+                      - generic [ref=f14e923]:
+                        - button "Откликнуться" [ref=f14e924]
+                        - button "Связаться" [ref=f14e930]
+                - listitem [ref=f14e936]:
+                  - article [ref=f14e939] [cursor=pointer]:
+                    - generic [ref=f14e943]:
+                      - generic [ref=f14e944]:
+                        - generic [ref=f14e945]:
+                          - button "Добавить в избранное" [ref=f14e946]
+                          - button "Скрыть" [ref=f14e950]
+                        - generic [ref=f14e954]: Сейчас смотрят 4 человека
+                        - link "Бизнес-тренер по продажам" [ref=f14e957]:
+                          - /url: https://rabota.by/vacancy/137117645?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e961]:
+                          - generic [ref=f14e962]: от 2 300 Br за месяц, на руки
+                          - generic [ref=f14e964]:
+                            - generic [ref=f14e965]: Опыт 3-6 лет
+                            - generic [ref=f14e967]: Можно удалённо
+                        - generic [ref=f14e970]:
+                          - link [ref=f14e973]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ИП Кабисова Анна Викторовна" [ref=f14e980]:
+                            - /url: /employer/11836864?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e984]: Минск
+                        - generic [ref=f14e987]: Можно без резюме
+                        - generic [ref=f14e993]:
+                          - generic [ref=f14e994]: дорабатывать скрипты и обучающие материалы под конкретный бизнес. — оценивать прогресс сотрудников и давать руководителям обратную связь. — работа с командами и...
+                          - generic [ref=f14e996]: опыт в продажах и/или обучении отделов продаж. — умение работать с группой и индивидуально. — способность быстро находить слабое место менеджера. —
+                      - button "Откликнуться" [ref=f14e1002]
+                - listitem [ref=f14e1008]:
+                  - article [ref=f14e1011] [cursor=pointer]:
+                    - generic [ref=f14e1015]:
+                      - generic [ref=f14e1016]:
+                        - generic [ref=f14e1017]:
+                          - button "Добавить в избранное" [ref=f14e1018]
+                          - button "Скрыть" [ref=f14e1022]
+                        - generic [ref=f14e1026]: Сейчас смотрят 3 человека
+                        - link "Менеджер-консультант в онлайн-школу (реанимация базы)" [ref=f14e1029]:
+                          - /url: https://hh.ru/vacancy/136477249?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1033]:
+                          - generic [ref=f14e1034]: до 100 000 ₽ за месяц, до вычета налогов
+                          - generic [ref=f14e1036]:
+                            - generic [ref=f14e1037]: Опыт 1-3 года
+                            - generic [ref=f14e1039]: Можно удалённо
+                            - generic [ref=f14e1041]: "Выплаты: Раз в месяц"
+                        - generic [ref=f14e1044]:
+                          - link [ref=f14e1047]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ИП Картавенко Виктор Владиленович" [ref=f14e1054]:
+                            - /url: /employer/10774606?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1058]: Минск
+                        - generic [ref=f14e1062]:
+                          - generic [ref=f14e1063]: "Контроль показателей: количество контактов, реактиваций, продаж, конверсия, средний чек. Предоставление руководителю отчетности по результатам работы. Передача обратной связи руководителю отдела..."
+                          - generic [ref=f14e1065]: Опыт работы менеджером по продажам от 1 года (работа в онлайн школе будет преимуществом). Опыт работы с задачами по реанимации...
+                      - generic [ref=f14e1070]:
+                        - button "Откликнуться" [ref=f14e1071]
+                        - button "Связаться" [ref=f14e1077]
+                - listitem [ref=f14e1083]:
+                  - article [ref=f14e1086] [cursor=pointer]:
+                    - generic [ref=f14e1090]:
+                      - generic [ref=f14e1091]:
+                        - generic [ref=f14e1092]:
+                          - button "Добавить в избранное" [ref=f14e1093]
+                          - button "Скрыть" [ref=f14e1097]
+                        - generic [ref=f14e1101]: Сейчас смотрит 1 человек
+                        - link "Руководитель отдела продаж (International)" [ref=f14e1104]:
+                          - /url: https://hh.ru/vacancy/136901464?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1108]:
+                          - generic [ref=f14e1109]: 2 000 – 3 000 $ за месяц, до вычета налогов
+                          - generic [ref=f14e1111]:
+                            - generic [ref=f14e1112]: Опыт 3-6 лет
+                            - generic [ref=f14e1114]: Можно удалённо
+                        - generic [ref=f14e1117]:
+                          - link [ref=f14e1120]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Траст" [ref=f14e1128]:
+                            - /url: /employer/4822783?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1132]: Минск
+                        - generic [ref=f14e1136]:
+                          - generic [ref=f14e1137]: "Внедрять регламенты, стандарты и KPI. Управлять командой: найм, онбординг, обучение, развитие. Работать с гипотезами и тестами для улучшения конверсий."
+                          - generic [ref=f14e1139]: Опыт работы на позиции РОПа в EdTech — от 3–5 лет. Опыт построения отдела продаж и работы с B2...
+                      - generic [ref=f14e1144]:
+                        - button "Откликнуться" [ref=f14e1145]
+                        - button "Связаться" [ref=f14e1151]
+                - listitem [ref=f14e1157]:
+                  - article [ref=f14e1160] [cursor=pointer]:
+                    - generic [ref=f14e1164]:
+                      - generic [ref=f14e1165]:
+                        - generic [ref=f14e1166]:
+                          - button "Добавить в избранное" [ref=f14e1167]
+                          - button "Скрыть" [ref=f14e1171]
+                        - generic [ref=f14e1175]: Сейчас смотрят 5 человек
+                        - link "Руководитель клиентского сервиса (B2C)" [ref=f14e1178]:
+                          - /url: https://hh.ru/vacancy/137121531?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1182]:
+                          - generic [ref=f14e1183]: до 1 200 $ за месяц, на руки
+                          - generic [ref=f14e1185]:
+                            - generic [ref=f14e1186]: Опыт 1-3 года
+                            - generic [ref=f14e1188]: Можно удалённо
+                            - generic [ref=f14e1190]: "Выплаты: Раз в месяц"
+                        - generic [ref=f14e1193]:
+                          - link [ref=f14e1196]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Palme School inc" [ref=f14e1203]:
+                            - /url: /employer/11278498?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1206]: Минск
+                        - generic [ref=f14e1210]:
+                          - generic [ref=f14e1211]: "Повысить метрики клиентского сервиса. Улучшить скорость ответа на запросы клиентов. Отвечать за следующие метрики метрик: FRT, ART, SL и т..."
+                          - generic [ref=f14e1213]: Готовность и умение работать online и не нормированному рабочему графику. У вас есть успешный опыт работы руководителем службы заботы о...
+                      - button "Откликнуться" [ref=f14e1219]
+                - listitem [ref=f14e1225]:
+                  - article [ref=f14e1228] [cursor=pointer]:
+                    - generic [ref=f14e1232]:
+                      - generic [ref=f14e1233]:
+                        - generic [ref=f14e1234]:
+                          - button "Добавить в избранное" [ref=f14e1235]
+                          - button "Скрыть" [ref=f14e1239]
+                        - generic [ref=f14e1243]: Сейчас смотрит 1 человек
+                        - link "Руководитель отдела продаж" [ref=f14e1246]:
+                          - /url: https://hh.ru/vacancy/136519208?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1250]:
+                          - generic [ref=f14e1251]: 110 000 – 160 000 ₽ за месяц, на руки
+                          - generic [ref=f14e1253]:
+                            - generic [ref=f14e1254]: Опыт 1-3 года
+                            - generic [ref=f14e1256]: Можно удалённо
+                        - generic [ref=f14e1259]:
+                          - link [ref=f14e1262]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Кадровое агентство ‎Другие Руки" [ref=f14e1269]:
+                            - /url: /employer/11933080?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1272]: Минск
+                        - generic [ref=f14e1276]:
+                          - generic [ref=f14e1277]: Контролировать и координировать работу менеджеров по продажам на ежедневной основе. Мотивировать свою команду и помогать держать темп работы (от 100...
+                          - generic [ref=f14e1279]: "Что мы хотим видеть от вас: Опыт удаленной работы и управления удаленными сотрудниками (от 5 человек). Классный опыт личных продаж..."
+                      - button "Откликнуться" [ref=f14e1285]
+                - listitem [ref=f14e1291]:
+                  - article [ref=f14e1294] [cursor=pointer]:
+                    - generic [ref=f14e1298]:
+                      - generic [ref=f14e1299]:
+                        - generic [ref=f14e1300]:
+                          - button "Добавить в избранное" [ref=f14e1301]
+                          - button "Скрыть" [ref=f14e1305]
+                        - generic [ref=f14e1309]: Сейчас смотрит 1 человек
+                        - link "Head of Teachers" [ref=f14e1312]:
+                          - /url: https://hh.ru/vacancy/136495563?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1316]:
+                          - generic [ref=f14e1317]: от 1 500 € за месяц, до вычета налогов
+                          - generic [ref=f14e1319]:
+                            - generic [ref=f14e1320]: Опыт 3-6 лет
+                            - generic [ref=f14e1322]: Можно удалённо
+                            - generic [ref=f14e1324]: "Выплаты: Раз в месяц"
+                        - generic [ref=f14e1327]:
+                          - link [ref=f14e1330]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Траст" [ref=f14e1338]:
+                            - /url: /employer/4822783?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1342]: Минск
+                        - generic [ref=f14e1346]:
+                          - generic [ref=f14e1347]: "Формирование и развитие команды: найм, адаптация, обучение и развитие кураторов, а также обновление состава команды при необходимости. Управление ресурсами отдела..."
+                          - generic [ref=f14e1349]: Опыт управления преподавательским составом (100+ кадров) и/или кураторами (10+ кадров) в EdTech от 2 лет.
+                      - button "Откликнуться" [ref=f14e1355]
+                - listitem [ref=f14e1361]:
+                  - article [ref=f14e1364] [cursor=pointer]:
+                    - generic [ref=f14e1368]:
+                      - generic [ref=f14e1369]:
+                        - generic [ref=f14e1370]:
+                          - button "Добавить в избранное" [ref=f14e1371]
+                          - button "Скрыть" [ref=f14e1375]
+                        - link "Бизнес-тренер" [ref=f14e1380]:
+                          - /url: https://rabota.by/vacancy/136963616?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e1384]: Опыт 1-3 года
+                        - generic [ref=f14e1389]:
+                          - generic [ref=f14e1391]:
+                            - link [ref=f14e1392]:
+                              - /url: /article/19873?hhtmFrom=vacancy_search_list
+                            - link [ref=f14e1398]:
+                              - /url: https://hrpremia.by/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=applicant
+                          - link "ООО ТД Комплект" [ref=f14e1410]:
+                            - /url: /employer/782190?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1414]:
+                            - text: Минск
+                            - generic [ref=f14e1417]:
+                              - generic [ref=f14e1418]: ●
+                              - generic [ref=f14e1419]: Каменная Горка
+                            - generic [ref=f14e1420]: и еще 2
+                            - generic [ref=f14e1421]: ●
+                            - generic [ref=f14e1423]: ●
+                        - generic [ref=f14e1427]:
+                          - generic [ref=f14e1428]: Проводить обучение для новых и действующих сотрудников. Разрабатывать и актуализировать программы очных и онлайн-тренингов (продажи, клиентский сервис, переговоры).
+                          - generic [ref=f14e1430]: Имеет опыт работы бизнес- тренером от 1 года. Проводил тренинги, вебинары по продажам, переговорам и т.д.. Создавал и актуализировал...
+                      - generic [ref=f14e1435]:
+                        - button "Откликнуться" [ref=f14e1436]
+                        - button "Связаться" [ref=f14e1442]
+                - listitem [ref=f14e1448]:
+                  - article [ref=f14e1451] [cursor=pointer]:
+                    - generic [ref=f14e1455]:
+                      - generic [ref=f14e1456]:
+                        - generic [ref=f14e1457]:
+                          - button "Добавить в избранное" [ref=f14e1458]
+                          - button "Скрыть" [ref=f14e1462]
+                        - generic [ref=f14e1466]: Сейчас смотрят 5 человек
+                        - link "Менеджер по продажам (входящие заявки)" [ref=f14e1469]:
+                          - /url: https://hh.ru/vacancy/136477865?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1473]:
+                          - generic [ref=f14e1474]: 120 000 – 150 000 ₽ за месяц, до вычета налогов
+                          - generic [ref=f14e1476]:
+                            - generic [ref=f14e1477]: Опыт 1-3 года
+                            - generic [ref=f14e1479]: Можно удалённо
+                            - generic [ref=f14e1481]: "Выплаты: Раз в месяц"
+                        - generic [ref=f14e1484]:
+                          - link [ref=f14e1487]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "xHuman Sales" [ref=f14e1495]:
+                            - /url: /employer/5320930?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1498]: Минск
+                        - generic [ref=f14e1502]:
+                          - generic [ref=f14e1503]: Ваша задача — не перечислить состав курса, не ставить диагнозы, а через ситуацию конкретного человека показать, как программа решит именно его...
+                          - generic [ref=f14e1505]: Опыт B2C-продаж (продажи онлайн-курсов и работа на запусках — плюс). Знание GetCourse — обязательно . Уверенные телефонные продажи, работа...
+                      - generic [ref=f14e1510]:
+                        - button "Откликнуться" [ref=f14e1511]
+                        - button "Связаться" [ref=f14e1517]
+                - listitem [ref=f14e1523]:
+                  - article [ref=f14e1526] [cursor=pointer]:
+                    - generic [ref=f14e1530]:
+                      - generic [ref=f14e1531]:
+                        - generic [ref=f14e1532]:
+                          - button "Добавить в избранное" [ref=f14e1533]
+                          - button "Скрыть" [ref=f14e1537]
+                        - generic [ref=f14e1541]: Сейчас смотрят 2 человека
+                        - link "CPO / Руководитель отдела продукта" [ref=f14e1544]:
+                          - /url: https://rabota.by/vacancy/137089201?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e1548]: Опыт 3-6 лет
+                        - generic [ref=f14e1553]:
+                          - link [ref=f14e1556]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Онлайн Маршрутки" [ref=f14e1563]:
+                            - /url: /employer/4024413?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1567]: Минск
+                        - generic [ref=f14e1571]:
+                          - generic [ref=f14e1572]: Проверять гипотезы через данные, customer development, эксперименты и MVP. Управлять продуктовым портфелем и roadmap. Управлять приоритетами между B2C...
+                          - generic [ref=f14e1574]: Определить систему ключевых продуктовых метрик и связать её с экономикой бизнеса. Развивать клиентский опыт. Уметь обсуждать архитектуру и технические ограничения...
+                      - generic [ref=f14e1579]:
+                        - button "Откликнуться" [ref=f14e1580]
+                        - button "Связаться" [ref=f14e1586]
+                - listitem [ref=f14e1592]:
+                  - article [ref=f14e1595] [cursor=pointer]:
+                    - generic [ref=f14e1599]:
+                      - generic [ref=f14e1600]:
+                        - generic [ref=f14e1601]:
+                          - button "Добавить в избранное" [ref=f14e1602]
+                          - button "Скрыть" [ref=f14e1606]
+                        - generic [ref=f14e1610]: Сейчас смотрят 2 человека
+                        - link "Руководитель по росту маркетинга (Edtech; удаленно)" [ref=f14e1613]:
+                          - /url: https://hh.ru/vacancy/136446618?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2
+                        - generic [ref=f14e1618]:
+                          - generic [ref=f14e1619]: Опыт 3-6 лет
+                          - generic [ref=f14e1621]: Можно удалённо
+                        - generic [ref=f14e1624]:
+                          - link [ref=f14e1627]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Sirius Future" [ref=f14e1634]:
+                            - /url: /employer/4234930?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1637]: Минск
+                        - generic [ref=f14e1641]:
+                          - generic [ref=f14e1642]: провести аудит текущих каналов привлечения, воронки и аналитики. - определить основные точки роста и сформировать growth-стратегию. - масштабировать эффективные платные каналы...
+                          - generic [ref=f14e1644]: умение не только управлять процессами и ставить задачи, но и глубоко погружаться в реализацию. - опыт работы с большими объёмами трафика...
+                      - button "Откликнуться" [ref=f14e1650]
+                - listitem [ref=f14e1656]:
+                  - article [ref=f14e1659] [cursor=pointer]:
+                    - generic [ref=f14e1663]:
+                      - generic [ref=f14e1664]:
+                        - generic [ref=f14e1665]:
+                          - button "Добавить в избранное" [ref=f14e1666]
+                          - button "Скрыть" [ref=f14e1670]
+                        - generic [ref=f14e1674]: Сейчас смотрит 1 человек
+                        - link "Ведущий менеджер по продажам франшизы" [ref=f14e1677]:
+                          - /url: https://rabota.by/vacancy/137073875?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e1681]:
+                          - generic [ref=f14e1682]: 3 200 – 4 500 Br за месяц, на руки
+                          - generic [ref=f14e1684]:
+                            - generic [ref=f14e1685]: Опыт 3-6 лет
+                            - generic [ref=f14e1687]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f14e1690]:
+                          - link [ref=f14e1693]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "VARKA" [ref=f14e1700]:
+                            - /url: /employer/4240435?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1703]:
+                            - text: Минск
+                            - generic [ref=f14e1706]:
+                              - generic [ref=f14e1707]: ●
+                              - generic [ref=f14e1708]: Купаловская
+                            - generic [ref=f14e1709]: и еще 2
+                            - generic [ref=f14e1710]: ●
+                            - generic [ref=f14e1712]: ●
+                        - generic [ref=f14e1716]:
+                          - generic [ref=f14e1717]: Проводить переговоры offline и online с потенциальными партнерами компании (без поиска). Помогать клиенту разобраться в продукте. Продать продукт компании и...
+                          - generic [ref=f14e1719]: Имеете успешный опыт в активных продажах от 3 лет. Умеете слышать клиента и завершать сделки. Душевный, честный, добрый, внимательный, энергичный...
+                      - button "Откликнуться" [ref=f14e1725]
+                - listitem [ref=f14e1731]:
+                  - article [ref=f14e1734] [cursor=pointer]:
+                    - generic [ref=f14e1738]:
+                      - generic [ref=f14e1739]:
+                        - generic [ref=f14e1740]:
+                          - button "Добавить в избранное" [ref=f14e1741]
+                          - button "Скрыть" [ref=f14e1745]
+                        - generic [ref=f14e1749]: Сейчас смотрит 1 человек
+                        - link "Руководитель отдела подбора персонала" [ref=f14e1752]:
+                          - /url: https://rabota.by/vacancy/137095211?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e1756]: Опыт 1-3 года
+                        - generic [ref=f14e1761]:
+                          - link [ref=f14e1764]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "Вакансии Группа Компаний Армтек. Офис" [ref=f14e1773]:
+                            - /url: /employer/59285?dpt=59285-59285-office&hhtmFrom=vacancy_search_list
+                            - img "Группа Компаний Армтек. Офис" [ref=f14e1775]
+                          - link "Группа Компаний Армтек. Офис" [ref=f14e1776]:
+                            - /url: /employer/59285?dpt=59285-59285-office&hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1779]: Минский район
+                        - generic [ref=f14e1783]:
+                          - generic [ref=f14e1784]: Построение партнерских отношений с внутренними заказчиками. Участие в закрытии вакансий руководителей, топ-менеджмента. Развитие внешнего HR-бренда Компании, участие в...
+                          - generic [ref=f14e1786]: Опыт работы в HR направлении на руководящей должности. Знание процессов подбора, успешный опыт их разработки и внедрения. Опыт внедрения новых...
+                      - button "Откликнуться" [ref=f14e1792]
+                - listitem [ref=f14e1798]:
+                  - article [ref=f14e1801] [cursor=pointer]:
+                    - generic [ref=f14e1805]:
+                      - generic [ref=f14e1806]:
+                        - generic [ref=f14e1807]:
+                          - button "Добавить в избранное" [ref=f14e1808]
+                          - button "Скрыть" [ref=f14e1812]
+                        - generic [ref=f14e1816]: Сейчас смотрят 12 человек
+                        - link "Руководитель розничных продаж" [ref=f14e1819]:
+                          - /url: https://rabota.by/vacancy/137236139?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e1823]:
+                          - generic [ref=f14e1824]: 3 000 – 6 000 Br за месяц, на руки
+                          - generic [ref=f14e1826]:
+                            - generic [ref=f14e1827]: Опыт 1-3 года
+                            - generic [ref=f14e1829]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f14e1832]:
+                          - link [ref=f14e1835]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Сантехфорум" [ref=f14e1842]:
+                            - /url: /employer/3298817?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1846]:
+                            - text: Минск
+                            - generic [ref=f14e1849]:
+                              - generic [ref=f14e1850]: ●
+                              - generic [ref=f14e1851]: Неморшанский сад
+                            - generic [ref=f14e1852]: и еще 1
+                            - generic [ref=f14e1853]: ●
+                        - generic [ref=f14e1857]:
+                          - generic [ref=f14e1858]: "Управление интернет-магазином (osta.by): контроль качества обработки входящих онлайн-заказов и распределения лидов между менеджерами. Управление командой продавцов-консультантов: адаптация..."
+                          - generic [ref=f14e1860]: Имеете успешный опыт работы руководителем магазина, администратором шоу-рума или РОПом в рознице от 1-2 лет. Преимуществом будет опыт...
+                      - generic [ref=f14e1865]:
+                        - button "Откликнуться" [ref=f14e1866]
+                        - button "Связаться" [ref=f14e1872]
+                - listitem [ref=f14e1878]:
+                  - article [ref=f14e1881] [cursor=pointer]:
+                    - generic [ref=f14e1885]:
+                      - generic [ref=f14e1886]:
+                        - generic [ref=f14e1887]:
+                          - button "Добавить в избранное" [ref=f14e1888]
+                          - button "Скрыть" [ref=f14e1892]
+                        - generic [ref=f14e1896]: Сейчас смотрят 11 человек
+                        - link "Менеджер по продажам" [ref=f14e1899]:
+                          - /url: https://rabota.by/vacancy/136796046?query=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&hhtmFrom=vacancy_search_list
+                        - generic [ref=f14e1903]:
+                          - generic [ref=f14e1904]: 2 770 – 4 880 Br за месяц, на руки
+                          - generic [ref=f14e1906]:
+                            - generic [ref=f14e1907]: Опыт 1-3 года
+                            - generic [ref=f14e1909]: Можно удалённо
+                            - generic [ref=f14e1911]: "Выплаты: Два раза в месяц"
+                        - generic [ref=f14e1914]:
+                          - link [ref=f14e1917]:
+                            - /url: /article/19873?hhtmFrom=vacancy_search_list
+                          - link "ООО Мерс Академ" [ref=f14e1925]:
+                            - /url: /employer/12172658?hhtmFrom=vacancy_search_list
+                          - generic [ref=f14e1929]: Минск
+                        - generic [ref=f14e1932]: Можно без резюме
+                        - generic [ref=f14e1938]:
+                          - generic [ref=f14e1939]: Продавать наше обучение и выполнять план по продажам. Вести СРМ систему. Вести отчетность каждый день. Изучать техники продаж, проходить курсы...
+                          - generic [ref=f14e1941]: Уверенность появляется тогда - когда есть знания, а знания мы вам дадим!
+                      - generic [ref=f14e1946]:
+                        - button "Откликнуться" [ref=f14e1947]
+                        - button "Связаться" [ref=f14e1953]
+            - navigation "Пагинация" [ref=f14e1961]:
+              - list [ref=f14e1962]:
+                - listitem [ref=f14e1963]:
+                  - generic [ref=f14e1964]:
+                    - link "1":
+                      - /url: /search/vacancy?text=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&area=1002&page=0&search_session_id=c956a62d-d5cd-4f13-9d21-52b01de44115&hhtmFrom=vacancy_search_list
+                - listitem [ref=f14e1965]:
+                  - link "2" [ref=f14e1967] [cursor=pointer]:
+                    - /url: /search/vacancy?text=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&area=1002&page=1&search_session_id=c956a62d-d5cd-4f13-9d21-52b01de44115&hhtmFrom=vacancy_search_list
+                - listitem [ref=f14e1968]:
+                  - link "3" [ref=f14e1970] [cursor=pointer]:
+                    - /url: /search/vacancy?text=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&area=1002&page=2&search_session_id=c956a62d-d5cd-4f13-9d21-52b01de44115&hhtmFrom=vacancy_search_list
+                - listitem [ref=f14e1971]:
+                  - link "4" [ref=f14e1973] [cursor=pointer]:
+                    - /url: /search/vacancy?text=%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C+On-line+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2&area=1002&page=3&search_session_id=c956a62d-d5cd-4f13-9d21-52b01de44115&hhtmFrom=vacancy_search_list
+            - generic [ref=f14e1975]:
+              - heading "Быстрые фильтры подбора вакансий" [level=2] [ref=f14e1976]
+              - list [ref=f14e1978]:
+                - listitem [ref=f14e1979]:
+                  - link "Без опыта работы" [ref=f14e1981]:
+                    - /url: /vacancies/bez_opyta_raboty
+                - listitem [ref=f14e1984]:
+                  - link "Вечерняя и ночная" [ref=f14e1986]:
+                    - /url: /vacancies/vechernyaya_i_nochnaya
+                - listitem [ref=f14e1989]:
+                  - link "Вахтовый метод" [ref=f14e1991]:
+                    - /url: /vacancies/vakhtoviy_metod
+                - listitem [ref=f14e1994]:
+                  - link "График 5/2" [ref=f14e1996]:
+                    - /url: /vacancies/5-2
+                - listitem [ref=f14e1999]:
+                  - link "Гибкий график" [ref=f14e2001]:
+                    - /url: /vacancies/gibkiy_grafik
+                - listitem [ref=f14e2004]:
+                  - link "Два через два" [ref=f14e2006]:
+                    - /url: /vacancies/2-2
+                - listitem [ref=f14e2009]:
+                  - link "За последние три дня" [ref=f14e2011]:
+                    - /url: /vacancies/za_poslednie_tri_dnya
+                - listitem [ref=f14e2014]:
+                  - link "За сутки" [ref=f14e2016]:
+                    - /url: /vacancies/za_sutki
+                - listitem [ref=f14e2019]:
+                  - link "От прямых работодателей" [ref=f14e2021]:
+                    - /url: /vacancies/ot_pryamih_rabotodateley
+                - listitem [ref=f14e2024]:
+                  - link "Полный день" [ref=f14e2026]:
+                    - /url: /vacancies/polniy_den
+                - listitem [ref=f14e2029]:
+                  - link "По совместительству" [ref=f14e2031]:
+                    - /url: /vacancies/po_sovmestitelstvu
+                - listitem [ref=f14e2034]:
+                  - link "Подработка" [ref=f14e2036]:
+                    - /url: /vacancies/podrabotka
+                - listitem [ref=f14e2039]:
+                  - link "Полная занятость" [ref=f14e2041]:
+                    - /url: /vacancies/polnaya_zanyatost
+                - listitem [ref=f14e2044]:
+                  - link "Для людей с инвалидностью" [ref=f14e2046]:
+                    - /url: /vacancies/rabota_dlya_invalidov
+                - listitem [ref=f14e2049]:
+                  - link "Сменный график" [ref=f14e2051]:
+                    - /url: /vacancies/smenniy_grafik
+                - listitem [ref=f14e2054]:
+                  - link "Сутки через двое" [ref=f14e2056]:
+                    - /url: /vacancies/1-2
+                - listitem [ref=f14e2059]:
+                  - link "Сутки через трое" [ref=f14e2061]:
+                    - /url: /vacancies/1-3
+                - listitem [ref=f14e2064]:
+                  - link "Три через три" [ref=f14e2066]:
+                    - /url: /vacancies/3-3
+                - listitem [ref=f14e2069]:
+                  - link "Удаленная работа" [ref=f14e2071]:
+                    - /url: /vacancies/udalennaya_rabota
+                - listitem [ref=f14e2074]:
+                  - link "Частичная занятость" [ref=f14e2076]:
+                    - /url: /vacancies/chastichnaya_zanyatost
+      - contentinfo [ref=f14e2080]:
+        - generic [ref=f14e2084]:
+          - navigation "Навигация в подвале" [ref=f14e2085]:
+            - generic [ref=f14e2086]:
+              - generic [ref=f14e2088]:
+                - generic [ref=f14e2089]: rabota.by
+                - list [ref=f14e2091]:
+                  - listitem [ref=f14e2092]:
+                    - link "Помощь" [ref=f14e2094]:
+                      - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2097]:
+                    - link "Наши вакансии" [ref=f14e2099]:
+                      - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2102]:
+                    - link "Реклама на сайте" [ref=f14e2104]:
+                      - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list#region/belarus
+                  - listitem [ref=f14e2107]:
+                    - link "Требования к ПО" [ref=f14e2109]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2112]:
+                    - link "Политика обработки cookie" [ref=f14e2114]:
+                      - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2117]:
+                    - link "Настройки cookie" [ref=f14e2119]:
+                      - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2122]:
+                    - link "Напишите нам" [ref=f14e2124]:
+                      - /url: mailto:feedback@hh.by
+                  - listitem [ref=f14e2127]:
+                    - link "Каталог компаний" [ref=f14e2129]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2132]:
+                    - link "Поиск по вакансиям в Минске" [ref=f14e2134]:
+                      - /url: /vacancies
+                  - listitem [ref=f14e2137]:
+                    - link "Работа рядом с метро" [ref=f14e2139]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f14e2144]:
+                - generic [ref=f14e2145]: Соискателям
+                - list [ref=f14e2147]:
+                  - listitem [ref=f14e2148]:
+                    - link "Все сервисы" [ref=f14e2150]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2153]:
+                    - link "Кадровые агентства Беларуси" [ref=f14e2155]:
+                      - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - listitem [ref=f14e2158]:
+                    - link "Производственный календарь" [ref=f14e2160]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=f14e2165]:
+                - list [ref=f14e2166]:
+                  - listitem [ref=f14e2167]:
+                    - generic [ref=f14e2168]: Боты для уведомлений
+                    - generic [ref=f14e2170]:
+                      - button "Подключить telegram бот" [ref=f14e2171] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f14e2178] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f14e2186] [cursor=pointer]
+                - generic [ref=f14e2195]:
+                  - generic [ref=f14e2196]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f14e2198]
+          - navigation "Правовая информация" [ref=f14e2206]:
+            - list [ref=f14e2207]:
+              - listitem [ref=f14e2208]:
+                - link "Этика и комплаенс" [ref=f14e2210]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f14e2213]:
+                - link "Оказание услуг" [ref=f14e2215]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f14e2218]:
+                - link "Использование сайтов" [ref=f14e2220]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f14e2223]:
+                - link "Политика обработки данных" [ref=f14e2225]:
+                  - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - listitem [ref=f14e2228]:
+                - link "Пользовательское соглашение" [ref=f14e2230]:
+                  - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+          - generic [ref=f14e2237]:
+            - paragraph [ref=f14e2238]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+            - paragraph [ref=f14e2240]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+            - paragraph [ref=f14e2242]:
+              - img "mastercard" [ref=f14e2243]
+              - img "visa" [ref=f14e2244]
+              - img "belcart" [ref=f14e2245]
+              - img "belcart-internetparol" [ref=f14e2246]
+          - generic [ref=f14e2251]:
+            - generic [ref=f14e2252]:
+              - button "Перейти в ВК" [ref=f14e2253] [cursor=pointer]
+              - button "Перейти в FaceBook" [ref=f14e2261] [cursor=pointer]
+              - button "Перейти в Instagram" [ref=f14e2269] [cursor=pointer]
+              - button "Перейти в Viber" [ref=f14e2277] [cursor=pointer]
+            - generic [ref=f14e2286]:
+              - list [ref=f14e2287]:
+                - listitem [ref=f14e2288]:
+                  - combobox "Выбор языка сайта" [ref=f14e2291]:
+                    - generic [ref=f14e2292]: Русский
+              - generic [ref=f14e2299]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893
+  - button "Карта" [ref=f14e2301] [cursor=pointer]

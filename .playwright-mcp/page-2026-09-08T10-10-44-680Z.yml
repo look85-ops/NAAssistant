@@ -1,0 +1,896 @@
+- generic [ref=f1e1]:
+  - generic [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - text: Чтобы сайт был удобнее, используем
+        - link "cookies" [ref=f1e6]:
+          - /url: /article/cookie_policy?hhtmFrom=main
+      - button "Понятно" [ref=f1e9] [cursor=pointer]
+    - banner [ref=f1e15]:
+      - generic [ref=f1e17]:
+        - link "Главная страница сайта" [ref=f1e18] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f1e22]:
+          - generic [ref=f1e23]:
+            - generic [ref=f1e24]:
+              - radio "Ищу работу" [checked] [ref=f1e25]
+              - generic [ref=f1e26] [cursor=pointer]: Ищу работу
+            - generic [ref=f1e28]:
+              - radio "Ищу сотрудника" [ref=f1e29]
+              - generic [ref=f1e30] [cursor=pointer]: Ищу сотрудника
+          - generic [aria-hidden]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic [aria-hidden]:
+                    - generic: Ищу работу
+                - generic:
+                  - generic [aria-hidden]:
+                    - generic: Ищу сотрудника
+        - link "Сервисы" [ref=f1e34] [cursor=pointer]:
+          - /url: /services
+        - button "Помощь" [ref=f1e44] [cursor=pointer]
+        - button "Выбор региона,Москва" [ref=f1e54] [cursor=pointer]:
+          - generic [ref=f1e55]: Москва
+        - button "Войти" [ref=f1e69] [cursor=pointer]
+        - button "Создать резюме" [ref=f1e75] [cursor=pointer]
+    - generic [ref=f1e80]:
+      - main [ref=f1e81]:
+        - generic [ref=f1e82]:
+          - generic [ref=f1e87]:
+            - generic [ref=f1e95]:
+              - generic [ref=f1e96]: Напишите телефон, чтобы работодатели могли предложить вам работу
+              - generic [ref=f1e98]:
+                - generic [ref=f1e99]:
+                  - generic [ref=f1e102]:
+                    - generic: Номер телефона
+                    - textbox "Номер телефона" [ref=f1e104]
+                  - generic:
+                    - alert:
+                      - generic [aria-hidden]:
+                        - generic: Обязательное поле
+                - button "Продолжить" [ref=f1e106] [cursor=pointer]
+              - generic [ref=f1e111]:
+                - text: Продолжая, вы принимаете
+                - link "соглашение" [ref=f1e112]:
+                  - /url: /account/agreement?backurl=%2Faccount%2Fsignup%3Fbackurl%3D%252F&hhtmFrom=main
+                - text: и
+                - link "политику конфиденциальности" [ref=f1e115]:
+                  - /url: /article/personal_data?backurl=%2F&hhtmFrom=main
+            - generic [ref=f1e122]:
+              - generic [ref=f1e123]: Найди подработку и узнай себя в деле.
+              - link "Смотреть вакансии" [ref=f1e125] [cursor=pointer]:
+                - /url: https://adsrv.hh.ru/click?b=2196270&meta=Rocy_w08TY7BU0ZAMGe6MURTkhNTYATohBiXzDuQGJsifEJ5FLFCujbTpR6wA48b4lfwvlpFA_1r1RxOoepk66eYJ-J5ebOc9NMU7fLzmlBwS6htIX7rUQwdjkzLrY7y79ICeiezZFp_E-coIaS3GqKhv31xI1l4dyH30S9kZ1xmEIkISAEnC_bP8D-cLz9AHxFguokyLxCL_E86xXoR1CmCBDqNVQEtdCBbRFW44z9zVdrv_vI8gfYaZtxoniU7m03v1GK0AQQm8kEeInEWUIpbyGoV2alS5vTafFHRlackMPa_oPfp5FDnCHzjwGXm1btX-t9KrwJJo7UNzXhrr0NwqGNcyobFjlPuug05z5kQaHWqx37IOp3wzkMCsmbrmsltLi-r6lbkAfqxhTFFLCd06782l1DfcTCt4IyoIGHOGfyFL-Iiae8zaJvTdKHA3WNuRyx0CdKsboO0njeHyCrIqlyTINOMFl05jlLLDJOpLHA9-YCkYJSI1-68aut7th5bVAni1no3V4ssPWVA8tkH4LkPO4bN-Il-E0QQD_4bSYdOh8LW5b1hxYumB-HpyhqR_VsUltweFgliXND-qNmvOV2hw5kqMTrjVepBUO6iX4QedaNktkyuLn9GtahE6goqdvtZlSHRZtdt7G506vcDcddV6Dg5YQMDQgt3KkSZgEeBORIuto0qg6VOyeWi&domainAreaId=1&place=508&viewRequestId=1788862235455fdb0b1ab3b3c482a008
+          - generic [ref=f1e128]:
+            - generic [ref=f1e129]:
+              - heading "Поиск работы в Москве" [level=1] [ref=f1e131]
+              - generic [ref=f1e134]:
+                - generic [ref=f1e135]:
+                  - generic [ref=f1e140]:
+                    - generic: Профессия, должность или компания
+                    - combobox "Профессия, должность или компания" [ref=f1e142]
+                  - group
+                - button [ref=f1e145] [cursor=pointer]
+                - button "Найти" [ref=f1e154] [cursor=pointer]
+              - link "Я ищу сотрудника" [ref=f1e161]:
+                - /url: /employer?hhtmFrom=main
+            - generic [ref=f1e166]:
+              - heading "Популярное" [level=2] [ref=f1e168]
+              - generic [ref=f1e175]:
+                - button "Вакансии дня до 250 000 ₽ 14 вакансий" [ref=f1e180] [cursor=pointer]:
+                  - generic [ref=f1e184]:
+                    - generic [ref=f1e185]:
+                      - generic [ref=f1e186]: Вакансии дня
+                      - generic [ref=f1e188]: до 250 000 ₽
+                    - generic [ref=f1e190]: 14 вакансий
+                - button "Компании дня 9136 вакансий" [ref=f1e196] [cursor=pointer]:
+                  - generic [ref=f1e200]:
+                    - generic [ref=f1e201]: Компании дня
+                    - generic [ref=f1e205]: 9136 вакансий
+                - link [ref=f1e211] [cursor=pointer]:
+                  - /url: /search/vacancy?schedule=remote&L_profession_id=0&area=113&hhtmFrom=main
+                  - button "Работа из дома 37751 вакансия" [ref=f1e212]:
+                    - generic [ref=f1e216]:
+                      - generic [ref=f1e217]: Работа из дома
+                      - generic [ref=f1e224]: 37751 вакансия
+                - generic [ref=f1e234]:
+                  - link "Оператор текстовой поддержки маркетплейса от 65 000 до 85 000 ₽" [ref=f1e235] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136059916?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e236]: Оператор текстовой поддержки маркетплейса
+                    - generic [ref=f1e243]: от 65 000 до 85 000 ₽
+                  - link "Свидлова Ирина Сергеевна, Москва" [ref=f1e244] [cursor=pointer]:
+                    - /url: /employer/9592332?hhtmFrom=main
+                - generic [ref=f1e255]:
+                  - link "Специалист по работе с документами от 80 000 до 85 000 ₽" [ref=f1e256] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136762849?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e257]: Специалист по работе с документами
+                    - generic [ref=f1e264]: от 80 000 до 85 000 ₽
+                  - link "Гроус рф, Москва" [ref=f1e265] [cursor=pointer]:
+                    - /url: /employer/12817313?hhtmFrom=main
+                - generic [ref=f1e276]:
+                  - link "Администратор в больницу до 87 000 ₽" [ref=f1e277] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/134234217?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e278]: Администратор в больницу
+                    - generic [ref=f1e285]: до 87 000 ₽
+                  - link "Правительство Москвы, Москва" [ref=f1e286] [cursor=pointer]:
+                    - /url: /employer/895945?hhtmFrom=main
+                - generic [ref=f1e297]:
+                  - link "Няня для девочки 5 лет от 460 000 ₽" [ref=f1e298] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136678002?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e299]: Няня для девочки 5 лет
+                    - generic [ref=f1e306]: от 460 000 ₽
+                  - link "Дружкова Кристина Минасовна, Москва" [ref=f1e307] [cursor=pointer]:
+                    - /url: /employer/5840462?hhtmFrom=main
+                - generic [ref=f1e318]:
+                  - link "Специалист чат поддержки до 85 000 ₽" [ref=f1e319] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/135476342?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e320]: Специалист чат поддержки
+                    - generic [ref=f1e327]: до 85 000 ₽
+                  - link "Савалюк Александр Андреевич, Санкт-Петербург" [ref=f1e328] [cursor=pointer]:
+                    - /url: /employer/12571612?hhtmFrom=main
+                - generic [ref=f1e339]:
+                  - link "Копирайтер (реклама, перформанс) з/п не указана" [ref=f1e340] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136583483?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e341]: Копирайтер (реклама, перформанс)
+                    - generic [ref=f1e348]: з/п не указана
+                  - link "СберМаркетинг, Москва" [ref=f1e349] [cursor=pointer]:
+                    - /url: /employer/3982116?hhtmFrom=main
+                - generic [ref=f1e360]:
+                  - link "Руководитель проектов/ Senior Account Manager з/п не указана" [ref=f1e361] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/123251391?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e362]: Руководитель проектов/ Senior Account Manager
+                    - generic [ref=f1e369]: з/п не указана
+                  - link "СберМаркетинг, Москва" [ref=f1e370] [cursor=pointer]:
+                    - /url: /employer/3982116?hhtmFrom=main
+                - generic [ref=f1e381]:
+                  - link "Управляющий работами участка (служба заказчика) от 350 000 до 450 000 ₽" [ref=f1e382] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136730469?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e383]: Управляющий работами участка (служба заказчика)
+                    - generic [ref=f1e390]: от 350 000 до 450 000 ₽
+                  - link "ORLOV.RED, Москва" [ref=f1e391] [cursor=pointer]:
+                    - /url: /employer/11257583?hhtmFrom=main
+                - generic [ref=f1e402]:
+                  - link "Начальник штаба - заместитель командира батальона з/п не указана" [ref=f1e403] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136743408?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e404]: Начальник штаба - заместитель командира батальона
+                    - generic [ref=f1e411]: з/п не указана
+                  - link "Правительство Москвы, Москва" [ref=f1e412] [cursor=pointer]:
+                    - /url: /employer/895945?hhtmFrom=main
+              - generic [ref=f1e416]:
+                - generic [ref=f1e425]:
+                  - link "Директор строительного департамента от 400 000 ₽" [ref=f1e426] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/136795613?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e427]: Директор строительного департамента
+                    - generic [ref=f1e434]: от 400 000 ₽
+                  - link "Уварова Елена Леонидовна, Москва" [ref=f1e435] [cursor=pointer]:
+                    - /url: /employer/4604195?hhtmFrom=main
+                - generic [ref=f1e446]:
+                  - link "Сборщик-пайщик БПЛА от 110 000 ₽" [ref=f1e447] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/135932869?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e448]: Сборщик-пайщик БПЛА
+                    - generic [ref=f1e455]: от 110 000 ₽
+                  - link "Служба занятости населения города Москвы, Москва" [ref=f1e456] [cursor=pointer]:
+                    - /url: /employer/3028727?hhtmFrom=main
+                - generic [ref=f1e467]:
+                  - link "Начинающий специалист в сфере социальной работы до 116 500 ₽" [ref=f1e468] [cursor=pointer]:
+                    - /url: https://hh.ru/vacancy/135834623?from=anonymous_recommended&hhtmFrom=main
+                    - generic [ref=f1e469]: Начинающий специалист в сфере социальной работы
+                    - generic [ref=f1e476]: до 116 500 ₽
+                  - link "Правительство Москвы, Москва" [ref=f1e477] [cursor=pointer]:
+                    - /url: /employer/895945?hhtmFrom=main
+                - button "Подработка до 505 000 ₽ 44420 вакансий" [ref=f1e484] [cursor=pointer]:
+                  - generic [ref=f1e488]:
+                    - generic [ref=f1e489]:
+                      - generic [ref=f1e490]: Подработка
+                      - generic [ref=f1e492]: до 505 000 ₽
+                    - generic [ref=f1e494]: 44420 вакансий
+                - button "Курьер 10 000 – 485 000 ₽ 5735 вакансий" [ref=f1e500] [cursor=pointer]:
+                  - generic [ref=f1e504]:
+                    - generic [ref=f1e505]:
+                      - generic [ref=f1e506]: Курьер
+                      - generic [ref=f1e508]: 10 000 – 485 000 ₽
+                    - generic [ref=f1e510]: 5735 вакансий
+                - button "Водитель 25 000 – 505 000 ₽ 6841 вакансия" [ref=f1e516] [cursor=pointer]:
+                  - generic [ref=f1e520]:
+                    - generic [ref=f1e521]:
+                      - generic [ref=f1e522]: Водитель
+                      - generic [ref=f1e524]: 25 000 – 505 000 ₽
+                    - generic [ref=f1e526]: 6841 вакансия
+                - button "Продавец 15 000 – 250 000 ₽ 14767 вакансий" [ref=f1e532] [cursor=pointer]:
+                  - generic [ref=f1e536]:
+                    - generic [ref=f1e537]:
+                      - generic [ref=f1e538]: Продавец
+                      - generic [ref=f1e540]: 15 000 – 250 000 ₽
+                    - generic [ref=f1e542]: 14767 вакансий
+                - button "Кассир 20 000 – 155 000 ₽ 10599 вакансий" [ref=f1e548] [cursor=pointer]:
+                  - generic [ref=f1e552]:
+                    - generic [ref=f1e553]:
+                      - generic [ref=f1e554]: Кассир
+                      - generic [ref=f1e556]: 20 000 – 155 000 ₽
+                    - generic [ref=f1e558]: 10599 вакансий
+                - button "Администратор 10 000 – 250 000 ₽ 11268 вакансий" [ref=f1e564] [cursor=pointer]:
+                  - generic [ref=f1e568]:
+                    - generic [ref=f1e569]:
+                      - generic [ref=f1e570]: Администратор
+                      - generic [ref=f1e572]: 10 000 – 250 000 ₽
+                    - generic [ref=f1e574]: 11268 вакансий
+                - button "Оператор 15 000 – 500 000 ₽ 7477 вакансий" [ref=f1e580] [cursor=pointer]:
+                  - generic [ref=f1e584]:
+                    - generic [ref=f1e585]:
+                      - generic [ref=f1e586]: Оператор
+                      - generic [ref=f1e588]: 15 000 – 500 000 ₽
+                    - generic [ref=f1e590]: 7477 вакансий
+                - button "Программист до 505 000 ₽ 9068 вакансий" [ref=f1e596] [cursor=pointer]:
+                  - generic [ref=f1e600]:
+                    - generic [ref=f1e601]:
+                      - generic [ref=f1e602]: Программист
+                      - generic [ref=f1e604]: до 505 000 ₽
+                    - generic [ref=f1e606]: 9068 вакансий
+                - button "Менеджер до 500 000 ₽ 37292 вакансии" [ref=f1e612] [cursor=pointer]:
+                  - generic [ref=f1e616]:
+                    - generic [ref=f1e617]:
+                      - generic [ref=f1e618]: Менеджер
+                      - generic [ref=f1e620]: до 500 000 ₽
+                    - generic [ref=f1e622]: 37292 вакансии
+                - button "Помощник до 395 000 ₽ 13697 вакансий" [ref=f1e628] [cursor=pointer]:
+                  - generic [ref=f1e632]:
+                    - generic [ref=f1e633]:
+                      - generic [ref=f1e634]: Помощник
+                      - generic [ref=f1e636]: до 395 000 ₽
+                    - generic [ref=f1e638]: 13697 вакансий
+                - button "Строитель 20 000 – 330 000 ₽ 2139 вакансий" [ref=f1e644] [cursor=pointer]:
+                  - generic [ref=f1e648]:
+                    - generic [ref=f1e649]:
+                      - generic [ref=f1e650]: Строитель
+                      - generic [ref=f1e652]: 20 000 – 330 000 ₽
+                    - generic [ref=f1e654]: 2139 вакансий
+                - button "Помощник руководителя 15 000 – 480 000 ₽ 1067 вакансий" [ref=f1e660] [cursor=pointer]:
+                  - generic [ref=f1e664]:
+                    - generic [ref=f1e665]:
+                      - generic [ref=f1e666]: Помощник руководителя
+                      - generic [ref=f1e668]: 15 000 – 480 000 ₽
+                    - generic [ref=f1e670]: 1067 вакансий
+                - button "Сварщик 30 000 – 390 000 ₽ 643 вакансии" [ref=f1e676] [cursor=pointer]:
+                  - generic [ref=f1e680]:
+                    - generic [ref=f1e681]:
+                      - generic [ref=f1e682]: Сварщик
+                      - generic [ref=f1e684]: 30 000 – 390 000 ₽
+                    - generic [ref=f1e686]: 643 вакансии
+                - button "Охранник до 250 000 ₽ 1105 вакансий" [ref=f1e692] [cursor=pointer]:
+                  - generic [ref=f1e696]:
+                    - generic [ref=f1e697]:
+                      - generic [ref=f1e698]: Охранник
+                      - generic [ref=f1e700]: до 250 000 ₽
+                    - generic [ref=f1e702]: 1105 вакансий
+                - button "Специалист до 435 000 ₽ 43802 вакансии" [ref=f1e708] [cursor=pointer]:
+                  - generic [ref=f1e712]:
+                    - generic [ref=f1e713]:
+                      - generic [ref=f1e714]: Специалист
+                      - generic [ref=f1e716]: до 435 000 ₽
+                    - generic [ref=f1e718]: 43802 вакансии
+                - button "Руководитель до 500 000 ₽ 44368 вакансий" [ref=f1e724] [cursor=pointer]:
+                  - generic [ref=f1e728]:
+                    - generic [ref=f1e729]:
+                      - generic [ref=f1e730]: Руководитель
+                      - generic [ref=f1e732]: до 500 000 ₽
+                    - generic [ref=f1e734]: 44368 вакансий
+                - button "Бухгалтер 20 000 – 335 000 ₽ 6397 вакансий" [ref=f1e740] [cursor=pointer]:
+                  - generic [ref=f1e744]:
+                    - generic [ref=f1e745]:
+                      - generic [ref=f1e746]: Бухгалтер
+                      - generic [ref=f1e748]: 20 000 – 335 000 ₽
+                    - generic [ref=f1e750]: 6397 вакансий
+                - button "Инженер 35 000 – 400 000 ₽ 14672 вакансии" [ref=f1e756] [cursor=pointer]:
+                  - generic [ref=f1e760]:
+                    - generic [ref=f1e761]:
+                      - generic [ref=f1e762]: Инженер
+                      - generic [ref=f1e764]: 35 000 – 400 000 ₽
+                    - generic [ref=f1e766]: 14672 вакансии
+                - button "Директор до 500 000 ₽ 44405 вакансий" [ref=f1e772] [cursor=pointer]:
+                  - generic [ref=f1e776]:
+                    - generic [ref=f1e777]:
+                      - generic [ref=f1e778]: Директор
+                      - generic [ref=f1e780]: до 500 000 ₽
+                    - generic [ref=f1e782]: 44405 вакансий
+                - button "Кладовщик 25 000 – 240 000 ₽ 6738 вакансий" [ref=f1e788] [cursor=pointer]:
+                  - generic [ref=f1e792]:
+                    - generic [ref=f1e793]:
+                      - generic [ref=f1e794]: Кладовщик
+                      - generic [ref=f1e796]: 25 000 – 240 000 ₽
+                    - generic [ref=f1e798]: 6738 вакансий
+                - button "Секретарь 20 000 – 385 000 ₽ 1568 вакансий" [ref=f1e804] [cursor=pointer]:
+                  - generic [ref=f1e808]:
+                    - generic [ref=f1e809]:
+                      - generic [ref=f1e810]: Секретарь
+                      - generic [ref=f1e812]: 20 000 – 385 000 ₽
+                    - generic [ref=f1e814]: 1568 вакансий
+                - button "Юрист 20 000 – 655 000 ₽ 4097 вакансий" [ref=f1e820] [cursor=pointer]:
+                  - generic [ref=f1e824]:
+                    - generic [ref=f1e825]:
+                      - generic [ref=f1e826]: Юрист
+                      - generic [ref=f1e828]: 20 000 – 655 000 ₽
+                    - generic [ref=f1e830]: 4097 вакансий
+                - button "Грузчик 20 000 – 575 000 ₽ 3420 вакансий" [ref=f1e836] [cursor=pointer]:
+                  - generic [ref=f1e840]:
+                    - generic [ref=f1e841]:
+                      - generic [ref=f1e842]: Грузчик
+                      - generic [ref=f1e844]: 20 000 – 575 000 ₽
+                    - generic [ref=f1e846]: 3420 вакансий
+                - button "Уборщик 15 000 – 225 000 ₽ 2556 вакансий" [ref=f1e852] [cursor=pointer]:
+                  - generic [ref=f1e856]:
+                    - generic [ref=f1e857]:
+                      - generic [ref=f1e858]: Уборщик
+                      - generic [ref=f1e860]: 15 000 – 225 000 ₽
+                    - generic [ref=f1e862]: 2556 вакансий
+                - button "Дизайнер до 455 000 ₽ 4272 вакансии" [ref=f1e868] [cursor=pointer]:
+                  - generic [ref=f1e872]:
+                    - generic [ref=f1e873]:
+                      - generic [ref=f1e874]: Дизайнер
+                      - generic [ref=f1e876]: до 455 000 ₽
+                    - generic [ref=f1e878]: 4272 вакансии
+                - button "Электрик 40 000 – 340 000 ₽ 2271 вакансия" [ref=f1e884] [cursor=pointer]:
+                  - generic [ref=f1e888]:
+                    - generic [ref=f1e889]:
+                      - generic [ref=f1e890]: Электрик
+                      - generic [ref=f1e892]: 40 000 – 340 000 ₽
+                    - generic [ref=f1e894]: 2271 вакансия
+                - button "Повар до 250 000 ₽ 5695 вакансий" [ref=f1e900] [cursor=pointer]:
+                  - generic [ref=f1e904]:
+                    - generic [ref=f1e905]:
+                      - generic [ref=f1e906]: Повар
+                      - generic [ref=f1e908]: до 250 000 ₽
+                    - generic [ref=f1e910]: 5695 вакансий
+                - button "Экономист 30 000 – 255 000 ₽ 907 вакансий" [ref=f1e916] [cursor=pointer]:
+                  - generic [ref=f1e920]:
+                    - generic [ref=f1e921]:
+                      - generic [ref=f1e922]: Экономист
+                      - generic [ref=f1e924]: 30 000 – 255 000 ₽
+                    - generic [ref=f1e926]: 907 вакансий
+                - button "Мерчендайзер до 140 000 ₽ 2987 вакансий" [ref=f1e932] [cursor=pointer]:
+                  - generic [ref=f1e936]:
+                    - generic [ref=f1e937]:
+                      - generic [ref=f1e938]: Мерчендайзер
+                      - generic [ref=f1e940]: до 140 000 ₽
+                    - generic [ref=f1e942]: 2987 вакансий
+                - button "Системный администратор 35 000 – 295 000 ₽ 887 вакансий" [ref=f1e948] [cursor=pointer]:
+                  - generic [ref=f1e952]:
+                    - generic [ref=f1e953]:
+                      - generic [ref=f1e954]: Системный администратор
+                      - generic [ref=f1e956]: 35 000 – 295 000 ₽
+                    - generic [ref=f1e958]: 887 вакансий
+                - button "Официант 25 000 – 255 000 ₽ 2254 вакансии" [ref=f1e964] [cursor=pointer]:
+                  - generic [ref=f1e968]:
+                    - generic [ref=f1e969]:
+                      - generic [ref=f1e970]: Официант
+                      - generic [ref=f1e972]: 25 000 – 255 000 ₽
+                    - generic [ref=f1e974]: 2254 вакансии
+                - button "Супервайзер 10 000 – 380 000 ₽ 649 вакансий" [ref=f1e980] [cursor=pointer]:
+                  - generic [ref=f1e984]:
+                    - generic [ref=f1e985]:
+                      - generic [ref=f1e986]: Супервайзер
+                      - generic [ref=f1e988]: 10 000 – 380 000 ₽
+                    - generic [ref=f1e990]: 649 вакансий
+              - button "Развернуть" [ref=f1e994]
+            - generic [ref=f1e1003]:
+              - heading "Вакансии дня" [level=2] [ref=f1e1005]
+              - generic [ref=f1e1008]:
+                - generic [ref=f1e1013]:
+                  - generic [ref=f1e1014]:
+                    - link "Управляющий магазином" [ref=f1e1016]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=136581760&contentId=21653&contentPlaceId=0&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=true&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1022]: до 168 205 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1026]:
+                    - generic "company-logo" [ref=f1e1031]:
+                      - img "company-logo" [ref=f1e1033]
+                    - link "ДИКСИ, группа компаний" [ref=f1e1035] [cursor=pointer]:
+                      - /url: /employer/2746?dpt=2746-2746-shop&hhtmFrom=main
+                - generic [ref=f1e1042]:
+                  - generic [ref=f1e1043]:
+                    - link "Ведущий специалист по охране труда" [ref=f1e1045]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=135901825&contentId=21621&contentPlaceId=1&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=true&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1051]: з/п не указана
+                  - generic [ref=f1e1054]:
+                    - generic "company-logo" [ref=f1e1059]:
+                      - img "company-logo" [ref=f1e1061]
+                    - link "МТС" [ref=f1e1063] [cursor=pointer]:
+                      - /url: /employer/3776?dpt=mts-3776-admin&hhtmFrom=main
+                - generic [ref=f1e1070]:
+                  - generic [ref=f1e1071]:
+                    - link "Стюард - официант (Высокоскоростной поезд \"Сапсан\" Москва- Санкт-Петербург)" [ref=f1e1073]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=119395103&contentId=21688&contentPlaceId=2&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=true&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1079]: от 93 300 до 140 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1083]:
+                    - generic "company-logo" [ref=f1e1088]:
+                      - img "company-logo" [ref=f1e1090]
+                    - link "Группа компаний РБЕ (RBE Group)" [ref=f1e1092] [cursor=pointer]:
+                      - /url: /employer/834226?hhtmFrom=main
+                - generic [ref=f1e1104]:
+                  - generic [ref=f1e1105]:
+                    - link "Продавец-кассир в Дом Моды HENDERSON" [ref=f1e1107]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=79455466&contentId=20474&contentPlaceId=3&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=true&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1113]: от 90 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1117]:
+                    - generic "company-logo" [ref=f1e1122]:
+                      - img "company-logo" [ref=f1e1124]
+                    - link "Henderson" [ref=f1e1126] [cursor=pointer]:
+                      - /url: /employer/53417?dpt=53417-53417-roznica&hhtmFrom=main
+                - generic [ref=f1e1133]:
+                  - generic [ref=f1e1134]:
+                    - link "Водитель-курьер в Ozon Fresh" [ref=f1e1136]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=135845364&contentId=21591&contentPlaceId=4&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=true&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1142]: от 175 000 до 250 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1146]:
+                    - generic "company-logo" [ref=f1e1151]:
+                      - img "company-logo" [ref=f1e1153]
+                    - link "Ozon" [ref=f1e1155] [cursor=pointer]:
+                      - /url: /employer/2180?dpt=ozonru-2180-express&hhtmFrom=main
+                - generic [ref=f1e1162]:
+                  - generic [ref=f1e1163]:
+                    - link "Продавец консультант в ТЦ Галерея Аэропорт (м. Аэропорт)" [ref=f1e1165]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=136351819&contentId=0&contentPlaceId=5&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1171]: от 85 000 до 100 000 ₽ за месяц на руки
+                  - generic [ref=f1e1175]:
+                    - generic "company-logo" [ref=f1e1180]:
+                      - img "company-logo" [ref=f1e1182]
+                    - link "МегаФон" [ref=f1e1184] [cursor=pointer]:
+                      - /url: /employer/3127?dpt=mgfn-3127-salon&hhtmFrom=main
+                - generic [ref=f1e1196]:
+                  - generic [ref=f1e1197]:
+                    - link "Кладовщик ДЦ INFINITI (м. ВДНХ)" [ref=f1e1199]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=135507964&contentId=0&contentPlaceId=6&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1205]: 85 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1209]:
+                    - generic "company-logo" [ref=f1e1214]:
+                      - img "company-logo" [ref=f1e1216]
+                    - link "У Сервис+" [ref=f1e1218] [cursor=pointer]:
+                      - /url: /employer/6011?hhtmFrom=main
+                - generic [ref=f1e1225]:
+                  - generic [ref=f1e1226]:
+                    - link "Корпоративный водитель (м. Котельники)" [ref=f1e1228]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=134220853&contentId=0&contentPlaceId=7&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1234]: 83 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1238]:
+                    - generic "company-logo" [ref=f1e1243]:
+                      - img "company-logo" [ref=f1e1245]
+                    - link "Авилон Автомобильная Группа" [ref=f1e1247] [cursor=pointer]:
+                      - /url: /employer/4131?hhtmFrom=main
+                - generic [ref=f1e1254]:
+                  - generic [ref=f1e1255]:
+                    - link "Оператор по работе с клиентами" [ref=f1e1257]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=136167093&contentId=0&contentPlaceId=8&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1263]: от 73 000 до 83 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1267]:
+                    - generic "company-logo" [ref=f1e1272]:
+                      - img "company-logo" [ref=f1e1274]
+                    - link "Почта России" [ref=f1e1276] [cursor=pointer]:
+                      - /url: /employer/4352?dpt=pochta-4352-depart&hhtmFrom=main
+                - generic [ref=f1e1283]:
+                  - generic [ref=f1e1284]:
+                    - link "Продавец-консультант в магазин чая и кофе Кантата (метро Тимирязевская)" [ref=f1e1286]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=136485299&contentId=0&contentPlaceId=9&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1292]: от 65 000 до 85 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1296]:
+                    - generic "company-logo" [ref=f1e1301]:
+                      - img "company-logo" [ref=f1e1303]
+                    - link "КАНТАТА" [ref=f1e1305] [cursor=pointer]:
+                      - /url: /employer/5709?hhtmFrom=main
+              - generic [ref=f1e1309]:
+                - generic [ref=f1e1314]:
+                  - generic [ref=f1e1315]:
+                    - link "Главный специалист-эксперт в Департамент внедрения сервисов ИИ и цифровых платформ" [ref=f1e1317]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=137102843&contentId=0&contentPlaceId=10&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1323]: 65 000 ₽ за месяц на руки
+                  - generic [ref=f1e1327]:
+                    - generic "company-logo" [ref=f1e1332]:
+                      - img "company-logo" [ref=f1e1334]
+                    - link "Министерство цифрового развития, связи и массовых коммуникаций Российской Федерации" [ref=f1e1336] [cursor=pointer]:
+                      - /url: /employer/4509?hhtmFrom=main
+                - generic [ref=f1e1343]:
+                  - generic [ref=f1e1344]:
+                    - link "Администратор (Бажова ул., д. 8)" [ref=f1e1346]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=136351493&contentId=0&contentPlaceId=11&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1352]: от 57 000 до 62 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1356]:
+                    - generic "company-logo" [ref=f1e1361]:
+                      - img "company-logo" [ref=f1e1363]
+                    - link "Подружка, сеть магазинов" [ref=f1e1365] [cursor=pointer]:
+                      - /url: /employer/3743?hhtmFrom=main
+                - generic [ref=f1e1372]:
+                  - generic [ref=f1e1373]:
+                    - link "Бариста в \"Шоколадницу\" (м. Прокшино)" [ref=f1e1375]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=136116038&contentId=0&contentPlaceId=12&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1381]: от 60 000 до 90 000 ₽ за месяц до вычета налогов
+                  - generic [ref=f1e1385]:
+                    - generic "company-logo" [ref=f1e1390]:
+                      - img "company-logo" [ref=f1e1392]
+                    - link "Сеть кофеен Шоколадница" [ref=f1e1394] [cursor=pointer]:
+                      - /url: /employer/21743?hhtmFrom=main
+                - generic [ref=f1e1401]:
+                  - generic [ref=f1e1402]:
+                    - link "Гардеробщик" [ref=f1e1404]:
+                      - /url: https://content.hh.ru/api/v1/vacancy_of_the_day/click?vacancyId=137101758&contentId=0&contentPlaceId=13&domainAreaId=1&host=https%3A%2F%2Fhh.ru&turbo=false&location=MAIN_PAGE_BOTTOM&source=vacancies_of_the_day&from=main
+                    - generic [ref=f1e1410]: от 50 000 до 75 000 ₽ за месяц на руки
+                  - generic [ref=f1e1414]:
+                    - generic "company-logo" [ref=f1e1419]
+                    - link "Ресторан Премиум Класса" [ref=f1e1422] [cursor=pointer]:
+                      - /url: /employer/null?hhtmFrom=main
+              - button "Развернуть" [ref=f1e1427]
+            - generic [ref=f1e1436]:
+              - link [ref=f1e1437] [cursor=pointer]:
+                - /url: /employers_company?hhtmFrom=main
+                - heading "Работа в компаниях" [level=2] [ref=f1e1439]
+              - generic [ref=f1e1442]:
+                - button "ДИКСИ, группа компаний 3 643 вакансии" [ref=f1e1445] [cursor=pointer]:
+                  - generic [ref=f1e1456]:
+                    - generic [ref=f1e1457]: ДИКСИ, группа компаний
+                    - generic [ref=f1e1467]: 3 643 вакансии
+                - generic [ref=f1e1475]:
+                  - button "РУСАЛ 683 вакансии" [ref=f1e1477] [cursor=pointer]:
+                    - generic [ref=f1e1488]:
+                      - generic [ref=f1e1489]: РУСАЛ
+                      - generic [ref=f1e1499]: 683 вакансии
+                  - button "Россельхозбанк 1 242 вакансии" [ref=f1e1508] [cursor=pointer]:
+                    - generic [ref=f1e1519]:
+                      - generic [ref=f1e1520]: Россельхозбанк
+                      - generic [ref=f1e1530]: 1 242 вакансии
+                  - button "Банк ВТБ (ПАО) 3 407 вакансий" [ref=f1e1539] [cursor=pointer]:
+                    - generic [ref=f1e1550]:
+                      - generic [ref=f1e1551]: Банк ВТБ (ПАО)
+                      - generic [ref=f1e1561]: 3 407 вакансий
+                  - button "NVI Solutions LLC 7 вакансий" [ref=f1e1570] [cursor=pointer]:
+                    - generic [ref=f1e1581]:
+                      - generic [ref=f1e1582]: NVI Solutions LLC
+                      - generic [ref=f1e1592]: 7 вакансий
+                  - button "Sasha AI 8 вакансий" [ref=f1e1601] [cursor=pointer]:
+                    - generic [ref=f1e1612]:
+                      - generic [ref=f1e1613]: Sasha AI
+                      - generic [ref=f1e1623]: 8 вакансий
+                  - button "Эйти Групп 7 вакансий" [ref=f1e1632] [cursor=pointer]:
+                    - generic [ref=f1e1643]:
+                      - generic [ref=f1e1644]: Эйти Групп
+                      - generic [ref=f1e1654]: 7 вакансий
+                  - button "Промышленная Медицина 45 вакансий" [ref=f1e1663] [cursor=pointer]:
+                    - generic [ref=f1e1674]:
+                      - generic [ref=f1e1675]: Промышленная Медицина
+                      - generic [ref=f1e1685]: 45 вакансий
+                  - button "Дв Ресторантс 3 вакансии" [ref=f1e1694] [cursor=pointer]:
+                    - generic [ref=f1e1705]:
+                      - generic [ref=f1e1706]: Дв Ресторантс
+                      - generic [ref=f1e1716]: 3 вакансии
+                  - button "Велта Ойл 55 вакансий" [ref=f1e1725] [cursor=pointer]:
+                    - generic [ref=f1e1736]:
+                      - generic [ref=f1e1737]: Велта Ойл
+                      - generic [ref=f1e1747]: 55 вакансий
+              - generic [ref=f1e1756]:
+                - button "Перспектива 28 вакансий" [ref=f1e1758] [cursor=pointer]:
+                  - generic [ref=f1e1769]:
+                    - generic [ref=f1e1770]: Перспектива
+                    - generic [ref=f1e1780]: 28 вакансий
+                - button "Банки.ру 8 вакансий" [ref=f1e1789] [cursor=pointer]:
+                  - generic [ref=f1e1800]:
+                    - generic [ref=f1e1801]: Банки.ру
+                    - generic [ref=f1e1811]: 8 вакансий
+              - button "Развернуть" [ref=f1e1821]
+            - link [ref=f1e1833] [cursor=pointer]:
+              - /url: /catalog/vacancies
+              - heading "Работа по профессиям в Москве" [level=2] [ref=f1e1835]
+            - generic [ref=f1e1839]:
+              - link "Автомобильный бизнес" [ref=f1e1852]:
+                - /url: /search/vacancy?area=1&professional_role=4&professional_role=5&professional_role=62&professional_role=70&withTopFilterCatalog=true
+              - link "Административный персонал" [ref=f1e1867]:
+                - /url: /search/vacancy?area=1&professional_role=8&professional_role=33&professional_role=58&professional_role=76&professional_role=84&professional_role=187&professional_role=88&professional_role=93&professional_role=110&professional_role=190&withTopFilterCatalog=true
+              - link "Безопасность" [ref=f1e1882]:
+                - /url: /search/vacancy?area=1&professional_role=22&professional_role=90&professional_role=95&professional_role=116&professional_role=120&withTopFilterCatalog=true
+              - link "Высший и средний менеджмент" [ref=f1e1897]:
+                - /url: /search/vacancy?area=1&professional_role=26&professional_role=36&professional_role=37&professional_role=38&professional_role=166&professional_role=53&professional_role=80&professional_role=87&professional_role=157&professional_role=172&professional_role=170&professional_role=171&professional_role=188&professional_role=189&professional_role=161&professional_role=125&professional_role=135&withTopFilterCatalog=true
+              - link "Добыча сырья" [ref=f1e1912]:
+                - /url: /search/vacancy?area=1&professional_role=27&professional_role=28&professional_role=168&professional_role=63&professional_role=79&professional_role=82&professional_role=49&withTopFilterCatalog=true
+              - link "Домашний, обслуживающий персонал" [ref=f1e1927]:
+                - /url: /search/vacancy?area=1&professional_role=8&professional_role=21&professional_role=23&professional_role=32&professional_role=58&professional_role=184&professional_role=89&professional_role=90&professional_role=194&professional_role=130&withTopFilterCatalog=true
+              - link "Закупки" [ref=f1e1942]:
+                - /url: /search/vacancy?area=1&professional_role=66&professional_role=119&withTopFilterCatalog=true
+              - link "Информационные технологии" [ref=f1e1957]:
+                - /url: /search/vacancy?area=1&professional_role=156&professional_role=160&professional_role=10&professional_role=12&professional_role=150&professional_role=25&professional_role=165&professional_role=34&professional_role=36&professional_role=73&professional_role=155&professional_role=96&professional_role=164&professional_role=104&professional_role=157&professional_role=107&professional_role=112&professional_role=113&professional_role=148&professional_role=114&professional_role=116&professional_role=121&professional_role=124&professional_role=125&professional_role=126&withTopFilterCatalog=true
+              - link "Искусство, развлечения, массмедиа" [ref=f1e1972]:
+                - /url: /search/vacancy?area=1&professional_role=12&professional_role=13&professional_role=20&professional_role=25&professional_role=34&professional_role=41&professional_role=55&professional_role=98&professional_role=103&professional_role=139&withTopFilterCatalog=true
+              - link "Маркетинг, реклама, PR" [ref=f1e1987]:
+                - /url: /search/vacancy?area=1&professional_role=1&professional_role=2&professional_role=3&professional_role=10&professional_role=12&professional_role=176&professional_role=34&professional_role=37&professional_role=55&professional_role=163&professional_role=182&professional_role=68&professional_role=70&professional_role=71&professional_role=99&professional_role=170&withTopFilterCatalog=true
+              - link "Медицина, фармацевтика" [ref=f1e2002]:
+                - /url: /search/vacancy?area=1&professional_role=8&professional_role=15&professional_role=19&professional_role=24&professional_role=29&professional_role=42&professional_role=168&professional_role=64&professional_role=65&professional_role=183&professional_role=79&professional_role=194&professional_role=151&professional_role=133&withTopFilterCatalog=true
+              - link "Наука, образование" [ref=f1e2017]:
+                - /url: /search/vacancy?area=1&professional_role=17&professional_role=23&professional_role=181&professional_role=168&professional_role=167&professional_role=79&professional_role=101&professional_role=132&withTopFilterCatalog=true
+              - link "Продажи, обслуживание клиентов" [ref=f1e2032]:
+                - /url: /search/vacancy?area=1&professional_role=6&professional_role=10&professional_role=154&professional_role=51&professional_role=53&professional_role=54&professional_role=57&professional_role=70&professional_role=71&professional_role=83&professional_role=187&professional_role=97&professional_role=105&professional_role=106&professional_role=188&professional_role=161&professional_role=190&professional_role=151&professional_role=121&professional_role=122&professional_role=129&withTopFilterCatalog=true
+              - link "Производство, сервисное обслуживание" [ref=f1e2047]:
+                - /url: /search/vacancy?area=1&professional_role=177&professional_role=174&professional_role=44&professional_role=45&professional_role=46&professional_role=178&professional_role=48&professional_role=169&professional_role=144&professional_role=149&professional_role=168&professional_role=162&professional_role=63&professional_role=183&professional_role=152&professional_role=173&professional_role=79&professional_role=80&professional_role=82&professional_role=85&professional_role=86&professional_role=189&professional_role=109&professional_role=111&professional_role=115&professional_role=151&professional_role=193&professional_role=192&professional_role=49&professional_role=128&professional_role=141&professional_role=143&withTopFilterCatalog=true
+              - link "Рабочий персонал" [ref=f1e2062]:
+                - /url: /search/vacancy?area=1&professional_role=5&professional_role=175&professional_role=21&professional_role=31&professional_role=52&professional_role=59&professional_role=63&professional_role=173&professional_role=184&professional_role=78&professional_role=185&professional_role=85&professional_role=86&professional_role=102&professional_role=109&professional_role=111&professional_role=115&professional_role=191&professional_role=193&professional_role=192&professional_role=128&professional_role=131&professional_role=143&withTopFilterCatalog=true
+              - link "Розничная торговля" [ref=f1e2077]:
+                - /url: /search/vacancy?area=1&professional_role=9&professional_role=35&professional_role=180&professional_role=77&professional_role=97&professional_role=99&professional_role=123&professional_role=127&withTopFilterCatalog=true
+              - link "Сельское хозяйство" [ref=f1e2092]:
+                - /url: /search/vacancy?area=1&professional_role=7&professional_role=19&professional_role=43&professional_role=63&professional_role=111&professional_role=49&withTopFilterCatalog=true
+              - link "Спортивные клубы, фитнес, салоны красоты" [ref=f1e2107]:
+                - /url: /search/vacancy?area=1&professional_role=8&professional_role=56&professional_role=60&professional_role=61&professional_role=70&professional_role=92&professional_role=138&withTopFilterCatalog=true
+              - link "Стратегия, инвестиции, консалтинг" [ref=f1e2122]:
+                - /url: /search/vacancy?area=1&professional_role=10&professional_role=150&professional_role=75&professional_role=107&professional_role=134&withTopFilterCatalog=true
+              - link "Страхование" [ref=f1e2137]:
+                - /url: /search/vacancy?area=1&professional_role=11&professional_role=91&professional_role=122&withTopFilterCatalog=true
+              - link "Строительство, недвижимость" [ref=f1e2152]:
+                - /url: /search/vacancy?area=1&professional_role=6&professional_role=14&professional_role=175&professional_role=154&professional_role=27&professional_role=30&professional_role=34&professional_role=47&professional_role=45&professional_role=46&professional_role=179&professional_role=48&professional_role=59&professional_role=63&professional_role=78&professional_role=100&professional_role=102&professional_role=107&professional_role=108&professional_role=109&professional_role=115&professional_role=192&professional_role=143&withTopFilterCatalog=true
+              - link "Транспорт, логистика, перевозки" [ref=f1e2167]:
+                - /url: /search/vacancy?area=1&professional_role=159&professional_role=21&professional_role=31&professional_role=39&professional_role=52&professional_role=58&professional_role=63&professional_role=67&professional_role=81&professional_role=172&professional_role=131&withTopFilterCatalog=true
+              - link "Туризм, гостиницы, рестораны" [ref=f1e2182]:
+                - /url: /search/vacancy?area=1&professional_role=8&professional_role=72&professional_role=74&professional_role=76&professional_role=184&professional_role=186&professional_role=89&professional_role=94&professional_role=191&professional_role=130&professional_role=140&withTopFilterCatalog=true
+              - link "Управление персоналом, тренинги" [ref=f1e2197]:
+                - /url: /search/vacancy?area=1&professional_role=17&professional_role=38&professional_role=181&professional_role=153&professional_role=69&professional_role=171&professional_role=117&professional_role=118&withTopFilterCatalog=true
+              - link "Финансы, бухгалтерия" [ref=f1e2212]:
+                - /url: /search/vacancy?area=1&professional_role=16&professional_role=154&professional_role=18&professional_role=50&professional_role=158&professional_role=57&professional_role=155&professional_role=147&professional_role=134&professional_role=135&professional_role=136&professional_role=137&professional_role=142&withTopFilterCatalog=true
+              - link "Юристы" [ref=f1e2227]:
+                - /url: /search/vacancy?area=1&professional_role=166&professional_role=158&professional_role=145&professional_role=146&withTopFilterCatalog=true
+              - link "Другое" [ref=f1e2242]:
+                - /url: /search/vacancy?area=1&professional_role=40&withTopFilterCatalog=true
+            - generic [ref=f1e2246]:
+              - generic [ref=f1e2252]:
+                - generic [ref=f1e2253]:
+                  - generic [ref=f1e2254]: Новости
+                  - generic [ref=f1e2257]:
+                    - generic [ref=f1e2263]:
+                      - generic "25 предложений для тех, кто ищет ночную или вечернюю подработку" [ref=f1e2268]:
+                        - img "25 предложений для тех, кто ищет ночную или вечернюю подработку" [ref=f1e2269]
+                      - link "25 предложений для тех, кто ищет ночную или вечернюю подработку" [ref=f1e2281]:
+                        - /url: /blog/podrabotka?hhtmFrom=main
+                    - generic [ref=f1e2289]:
+                      - generic "25 предложений с доходом 120 000 ₽ и выше" [ref=f1e2294]:
+                        - img "25 предложений с доходом 120 000 ₽ и выше" [ref=f1e2295]
+                      - link "25 предложений с доходом 120 000 ₽ и выше" [ref=f1e2307]:
+                        - /url: /blog/25-predlozhenij-s-dohodom-120-000-i-vyshe?hhtmFrom=main
+                    - generic [ref=f1e2315]:
+                      - generic "5 выводов о найме в 2026-м после «Карьерной прожарки»" [ref=f1e2320]:
+                        - img "5 выводов о найме в 2026-м после «Карьерной прожарки»" [ref=f1e2321]
+                      - link "5 выводов о найме в 2026-м после «Карьерной прожарки»" [ref=f1e2333]:
+                        - /url: /blog/5-vyvodov-posle-karernoj-prozharki?hhtmFrom=main
+                    - generic [ref=f1e2341]:
+                      - generic "25 вакансий со сменным графиком" [ref=f1e2346]:
+                        - img "25 вакансий со сменным графиком" [ref=f1e2347]
+                      - link "25 вакансий со сменным графиком" [ref=f1e2359]:
+                        - /url: /blog/rabota-so-smennym-grafikom?hhtmFrom=main
+                - button "Посмотреть все" [ref=f1e2363] [cursor=pointer]
+              - generic [ref=f1e2374]:
+                - generic [ref=f1e2375]:
+                  - generic [ref=f1e2376]: Статьи
+                  - generic [ref=f1e2379]:
+                    - generic [ref=f1e2385]:
+                      - generic "Как найти работу руководителям и топ-менеджерам" [ref=f1e2390]:
+                        - img "Как найти работу руководителям и топ-менеджерам" [ref=f1e2391]
+                      - link "Как найти работу руководителям и топ-менеджерам" [ref=f1e2403]:
+                        - /url: /blog/kak-rukovoditelyu-najti-rabotu?hhtmFrom=article_anonymous
+                    - generic [ref=f1e2411]:
+                      - generic "Узнайте, как можно построить карьеру в Совкомбанке" [ref=f1e2416]:
+                        - img "Узнайте, как можно построить карьеру в Совкомбанке" [ref=f1e2417]
+                      - link "Узнайте, как можно построить карьеру в Совкомбанке" [ref=f1e2429]:
+                        - /url: https://my.hh.ru/1yD
+                    - generic [ref=f1e2437]:
+                      - 'generic "Четыре Лапы: карьера в мире счастливых питомцев" [ref=f1e2442]':
+                        - 'img "Четыре Лапы: карьера в мире счастливых питомцев" [ref=f1e2443]'
+                      - 'link "Четыре Лапы: карьера в мире счастливых питомцев" [ref=f1e2455]':
+                        - /url: https://my.hh.ru/2Z
+                    - generic [ref=f1e2463]:
+                      - generic "«ВсеИнструменты.ру» для построения карьеры" [ref=f1e2468]:
+                        - img "«ВсеИнструменты.ру» для построения карьеры" [ref=f1e2469]
+                      - link "«ВсеИнструменты.ру» для построения карьеры" [ref=f1e2481]:
+                        - /url: https://my.hh.ru/1R5
+                - button "Посмотреть все" [ref=f1e2485] [cursor=pointer]
+              - generic [ref=f1e2496]:
+                - generic [ref=f1e2497]:
+                  - img "qr-code-telegram" [ref=f1e2503]
+                  - generic [ref=f1e2505]:
+                    - link [ref=f1e2506] [cursor=pointer]:
+                      - /url: https://chatbot.hh.ru/hh-bot/vk?utm_source=hhru&utm_medium=referral&utm_campaign=index_page_bot_anonymous
+                      - button [ref=f1e2507]
+                    - link [ref=f1e2511] [cursor=pointer]:
+                      - /url: https://chatbot.hh.ru/hh-bot/telegram?utm_source=hhru&utm_medium=referral&utm_campaign=index_page_bot_anonymous
+                      - button [ref=f1e2512]
+                    - link [ref=f1e2515] [cursor=pointer]:
+                      - /url: https://chatbot.hh.ru/hh-bot/viber?utm_source=hhru&utm_medium=referral&utm_campaign=index_page_bot_anonymous
+                      - button [ref=f1e2516]
+                - generic [ref=f1e2521]:
+                  - generic [ref=f1e2522]: Вакансии в мессенджере
+                  - generic [ref=f1e2523]: Сканируйте QR-код и выбирайте, куда вам их присылать
+              - generic [ref=f1e2531]:
+                - heading "Работа в других городах" [level=3] [ref=f1e2533]
+                - generic [ref=f1e2535]:
+                  - link "Работа в Москве" [ref=f1e2538]:
+                    - /url: https://hh.ru/
+                  - link "Работа в Крутч-Байгоре (Московская область)" [ref=f1e2543]:
+                    - /url: https://krutch-baygora.hh.ru/
+                  - link "Работа в Нагорном" [ref=f1e2548]:
+                    - /url: https://nagornoe50.hh.ru/
+                  - link "Работа в Мосрентгене (Москва)" [ref=f1e2553]:
+                    - /url: https://mosrentgen.hh.ru/
+                  - link "Работа в Битце (Ленинский городской округ, Московская область)" [ref=f1e2558]:
+                    - /url: https://bittsa50.hh.ru/
+                  - link "Работа в Бутово (Московская область)" [ref=f1e2563]:
+                    - /url: https://butovo50.hh.ru/
+                  - link "Работа в Мытищах (Московская область)" [ref=f1e2568]:
+                    - /url: https://mytishchi.hh.ru/
+                  - link "Работа в Измайлово (Московская область)" [ref=f1e2573]:
+                    - /url: https://izmaylovo50.hh.ru/
+                  - link "Работа в Скуратово (Московская область)" [ref=f1e2578]:
+                    - /url: https://skuratovo50.hh.ru/
+                  - link "Работа в Путилково (Московская область)" [ref=f1e2583]:
+                    - /url: https://putilkovo.hh.ru/
+              - generic [ref=f1e2591]:
+                - heading "Популярные профессии" [level=3] [ref=f1e2593]
+                - generic [ref=f1e2595]:
+                  - link "Работа для программиста" [ref=f1e2597]:
+                    - /url: /vacancies/programmist?hhtmFrom=main
+                  - link "Работа для бухгалтера" [ref=f1e2601]:
+                    - /url: /vacancies/bukhgalter?hhtmFrom=main
+                  - link "Работа для инженера" [ref=f1e2605]:
+                    - /url: /vacancies/inzhener?hhtmFrom=main
+                  - link "Работа для менеджера по продажам" [ref=f1e2609]:
+                    - /url: /vacancies/menedzher_po_prodazham?hhtmFrom=main
+                  - link "Работа для директора" [ref=f1e2613]:
+                    - /url: /vacancies/direktor?hhtmFrom=main
+          - generic [ref=f1e2624]:
+            - img "App QR Code" [ref=f1e2629]
+            - generic [ref=f1e2630]:
+              - generic [ref=f1e2631]: Сканируйте QR-код, чтобы скачать приложение
+              - generic [ref=f1e2632]: Свежие вакансии, ответы на отклики и доступ к резюме — всегда у вас под рукой
+          - generic [ref=f1e2646]:
+            - heading "Работа в России" [level=2] [ref=f1e2648]
+            - paragraph [ref=f1e2650]: "Работа составляет большую часть жизни почти каждого из нас. Но ничто не вечно: случается, что однажды приходится менять место работы и с головой погружаться в поиски вакансий — хочется ведь найти хорошую альтернативу текущей должности."
+            - paragraph [ref=f1e2651]: "Однако зачастую при смене работы мы задумываемся не только о смене компании, но и об изменении профессиональной деятельности. И именно в эти моменты возникает вопрос: «Как теперь найти хорошую работу в Москве? А главное, какой должна быть эта работа?»"
+            - button "Развернуть" [ref=f1e2654]
+      - contentinfo [ref=f1e2664]:
+        - generic [ref=f1e2668]:
+          - navigation "Навигация в подвале" [ref=f1e2669]:
+            - generic [ref=f1e2670]:
+              - generic [ref=f1e2672]:
+                - generic [ref=f1e2673]: HeadHunter
+                - list [ref=f1e2675]:
+                  - listitem [ref=f1e2676]:
+                    - link "Размещение вакансий" [ref=f1e2678]:
+                      - /url: /employer?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2681]:
+                    - link "Поиск по резюме" [ref=f1e2683]:
+                      - /url: /search/resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2686]:
+                    - link "О компании" [ref=f1e2688]:
+                      - /url: /article/28?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2691]:
+                    - link "Наши вакансии" [ref=f1e2693]:
+                      - /url: /employer/1455?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2696]:
+                    - link "Реклама на сайте" [ref=f1e2698]:
+                      - /url: /article/promoproducts?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2701]:
+                    - link "Требования к ПО" [ref=f1e2703]:
+                      - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2706]:
+                    - link "Безопасный HeadHunter" [ref=f1e2708]:
+                      - /url: /safety?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2711]:
+                    - link "HeadHunter API" [ref=f1e2713]:
+                      - /url: https://dev.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - listitem [ref=f1e2716]:
+                    - link "Партнерам" [ref=f1e2718]:
+                      - /url: /partners?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2721]:
+                    - link "Инвесторам" [ref=f1e2723]:
+                      - /url: https://investor.hh.ru/
+                  - listitem [ref=f1e2726]:
+                    - link "Каталог компаний" [ref=f1e2728]:
+                      - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2731]:
+                    - link "Поиск по вакансиям в Москве" [ref=f1e2733]:
+                      - /url: /vacancies
+                  - listitem [ref=f1e2736]:
+                    - link "Работа рядом с метро" [ref=f1e2738]:
+                      - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2741]:
+                    - 'link "Сетка: соцсеть для нетворкинга" [ref=f1e2743]':
+                      - /url: https://setka.ru/
+              - generic [ref=f1e2747]:
+                - generic [ref=f1e2748]: Соискателям
+                - list [ref=f1e2750]:
+                  - listitem [ref=f1e2751]:
+                    - link "hh PRO" [ref=f1e2753]:
+                      - /url: /applicant-services/hhpro?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2756]:
+                    - link "Готовое резюме" [ref=f1e2758]:
+                      - /url: /article/expert_resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2761]:
+                    - link "Все сервисы" [ref=f1e2763]:
+                      - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2766]:
+                    - link "Хочу у вас работать" [ref=f1e2768]:
+                      - /url: /applicant-services/hhpro?rte=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2771]:
+                    - link "Производственный календарь" [ref=f1e2773]:
+                      - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2776]:
+                    - link "Экспертная рекомендация" [ref=f1e2778]:
+                      - /url: /article/resume_audit?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                - generic [ref=f1e2782]: Новости и статьи
+                - list [ref=f1e2784]:
+                  - listitem [ref=f1e2785]:
+                    - link "Блог" [ref=f1e2787]:
+                      - /url: /blog?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2790]:
+                    - link "О компаниях в игровой форме" [ref=f1e2792]:
+                      - /url: /articles/guide-to-companies/special-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2795]:
+                    - link "Жизнь в компании" [ref=f1e2797]:
+                      - /url: /articles/guide-to-companies/insider?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2800]:
+                    - link "ИТ-проекты" [ref=f1e2802]:
+                      - /url: /articles/guide-to-companies/it-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2805]:
+                    - link "Рейтинг работодателей России" [ref=f1e2807]:
+                      - /url: https://rating.hh.ru/poll?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+              - generic [ref=f1e2811]:
+                - generic [ref=f1e2812]: Молодым специалистам
+                - list [ref=f1e2814]:
+                  - listitem [ref=f1e2815]:
+                    - link "Карьера для молодых специалистов" [ref=f1e2817]:
+                      - /url: /youth_vacancies?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+                  - listitem [ref=f1e2820]:
+                    - link "Школа программистов" [ref=f1e2822]:
+                      - /url: http://school.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - listitem [ref=f1e2825]:
+                    - link "Карьера в некоммерческих организациях" [ref=f1e2827]:
+                      - /url: https://nko.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                - list [ref=f1e2831]:
+                  - listitem [ref=f1e2832]:
+                    - generic [ref=f1e2833]: Боты для уведомлений
+                    - generic [ref=f1e2835]:
+                      - button "Подключить telegram бот" [ref=f1e2836] [cursor=pointer]
+                      - button "Подключить viber бот" [ref=f1e2843] [cursor=pointer]
+                      - button "Подключить ВК бот" [ref=f1e2851] [cursor=pointer]
+                - generic [ref=f1e2860]:
+                  - generic [ref=f1e2861]: Мобильное приложение
+                  - img "QR-код для установки мобильного приложения" [ref=f1e2863]
+          - navigation "Правовая информация" [ref=f1e2871]:
+            - list [ref=f1e2872]:
+              - listitem [ref=f1e2873]:
+                - link "Этика и комплаенс" [ref=f1e2875]:
+                  - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+              - listitem [ref=f1e2878]:
+                - link "Оказание услуг" [ref=f1e2880]:
+                  - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+              - listitem [ref=f1e2883]:
+                - link "Использование сайтов" [ref=f1e2885]:
+                  - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+              - listitem [ref=f1e2888]:
+                - link "Защита персональных данных" [ref=f1e2890]:
+                  - /url: /article/personal_data?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+              - listitem [ref=f1e2893]:
+                - link "Пользовательское соглашение" [ref=f1e2895]:
+                  - /url: /account/agreement?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+              - listitem [ref=f1e2898]:
+                - link "ИТ аккредитация" [ref=f1e2900]:
+                  - /url: /article/it-accreditation?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=main
+          - generic [ref=f1e2908]:
+            - text: На информационном ресурсе hh.ru
+            - link "применяются рекомендательные технологии" [ref=f1e2909] [cursor=pointer]:
+              - /url: /article/recommendation_technologies?hhtmFrom=main
+            - text: (информационные технологии предоставления информации на основе сбора, систематизации и анализа сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации)
+          - generic [ref=f1e2914]:
+            - generic [ref=f1e2915]:
+              - button "Перейти в Сетку" [ref=f1e2916] [cursor=pointer]
+              - button "Перейти в ВК" [ref=f1e2923] [cursor=pointer]
+              - button "Перейти в Дзен" [ref=f1e2931] [cursor=pointer]
+              - button "Перейти в Telegram" [ref=f1e2939] [cursor=pointer]
+            - generic [ref=f1e2947]:
+              - list [ref=f1e2948]:
+                - listitem [ref=f1e2949]:
+                  - combobox "Выбор языка сайта" [ref=f1e2952]:
+                    - generic [ref=f1e2953]: Русский
+              - generic [ref=f1e2960]: © 2026 ООО «Хэдхантер»
+  - alertdialog [active] [ref=f1e2962]:
+    - generic [ref=f1e2963]:
+      - generic [ref=f1e2964]: Ваш регион — Москва?
+      - generic [ref=f1e2968]:
+        - button "Да, верно" [ref=f1e2969] [cursor=pointer]
+        - button "Нет, другой" [ref=f1e2974] [cursor=pointer]

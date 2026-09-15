@@ -1,0 +1,24 @@
+2026/09/11-11:17:59.627 1f80 Reusing MANIFEST C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile\Default\IndexedDB\https_hh.ru_0.indexeddb.leveldb/MANIFEST-000001
+2026/09/11-11:17:59.628 1f80 Recovering log #274
+2026/09/11-11:17:59.628 1f80 Reusing old log C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile\Default\IndexedDB\https_hh.ru_0.indexeddb.leveldb/000274.log 
+2026/09/11-11:17:59.629 1f80 Delete type=2 #272
+2026/09/11-11:17:59.930 1f80 Manual compaction at level-0 from '\x00T\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00U\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/09/11-11:18:01.949 1f80 Level-0 table #279: started
+2026/09/11-11:18:01.968 1f80 Level-0 table #279: 1445 bytes OK
+2026/09/11-11:18:01.970 1f80 Delete type=0 #274
+2026/09/11-11:18:01.971 1f80 Manual compaction at level-0 from (begin) .. (end); will stop at '\x00T\x01\x03\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 7483 : 1
+2026/09/11-11:18:01.971 1f80 Compacting 1@0 + 1@1 files
+2026/09/11-11:18:01.986 1f80 Generated table #280@0: 213 keys, 4051 bytes
+2026/09/11-11:18:01.986 1f80 Compacted 1@0 + 1@1 files => 4051 bytes
+2026/09/11-11:18:01.987 1f80 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/09/11-11:18:01.987 1f80 Delete type=2 #276
+2026/09/11-11:18:01.987 1f80 Delete type=2 #279
+2026/09/11-11:18:01.989 1f80 Manual compaction at level-0 from '\x00T\x01\x03\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 7483 : 1 .. (end); will stop at (end)
+2026/09/11-11:18:01.990 1f80 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x05\x01\x02\x01\x0c\x00l\x00a\x00s\x00t\x00S\x00e\x00n\x00t\x00T\x00i\x00m\x00e' @ 7079 : 1
+2026/09/11-11:18:01.990 1f80 Compacting 1@1 + 1@2 files
+2026/09/11-11:18:02.007 1f80 Generated table #281@1: 39 keys, 865 bytes
+2026/09/11-11:18:02.007 1f80 Compacted 1@1 + 1@2 files => 865 bytes
+2026/09/11-11:18:02.009 1f80 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/09/11-11:18:02.009 1f80 Delete type=2 #5
+2026/09/11-11:18:02.009 1f80 Delete type=2 #280
+2026/09/11-11:18:02.010 1f80 Manual compaction at level-1 from '\x00\x05\x01\x02\x01\x0c\x00l\x00a\x00s\x00t\x00S\x00e\x00n\x00t\x00T\x00i\x00m\x00e' @ 7079 : 1 .. (end); will stop at (end)

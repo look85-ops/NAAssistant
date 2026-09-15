@@ -1,0 +1,7 @@
+2026/09/11-13:26:22.484 35d8 Reusing MANIFEST C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile-monitor\Default\IndexedDB\https_hh.ru_0.indexeddb.leveldb/MANIFEST-000001
+2026/09/11-13:26:22.484 35d8 Recovering log #4
+2026/09/11-13:26:22.485 35d8 Reusing old log C:\Users\marcenuk\Desktop\Новый проект\scripts\browser-state\hh-profile-monitor\Default\IndexedDB\https_hh.ru_0.indexeddb.leveldb/000004.log 
+2026/09/11-13:26:22.519 3d14 Level-0 table #8: started
+2026/09/11-13:26:22.533 3d14 Level-0 table #8: 1343 bytes OK
+2026/09/11-13:26:22.539 3d14 Delete type=0 #4
+2026/09/11-13:26:22.541 3d14 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,421 @@
+- generic [ref=f32e3]:
+  - generic [ref=f32e8]:
+    - generic [ref=f32e9]:
+      - text: Для обеспечения удобства пользователей сайта используются cookies.
+      - link "Узнайте подробнее" [ref=f32e10] [cursor=pointer]:
+        - /url: /article/cookie_policy?hhtmFrom=resume_profile_front
+    - generic [ref=f32e11]:
+      - button "Принять" [ref=f32e12] [cursor=pointer]
+      - button "Отказаться" [ref=f32e13] [cursor=pointer]
+  - banner [ref=f32e15]:
+    - generic [ref=f32e17]:
+      - link "Главная страница сайта" [ref=f32e18] [cursor=pointer]:
+        - /url: /
+      - link [ref=f32e23] [cursor=pointer]
+      - button "Выбор региона,Минск" [ref=f32e35] [cursor=pointer]:
+        - generic [ref=f32e36]: Минск
+      - button "Чаты" [ref=f32e50] [cursor=pointer]
+      - link "Избранное" [ref=f32e62] [cursor=pointer]:
+        - /url: /applicant/favorite_vacancies
+      - button "Уведомления" [ref=f32e74] [cursor=pointer]
+      - button "Создать резюме" [ref=f32e84] [cursor=pointer]
+      - button [ref=f32e91] [cursor=pointer]
+  - generic [ref=f32e103]:
+    - main [ref=f32e104]:
+      - generic [ref=f32e109]:
+        - generic [ref=f32e112]:
+          - button "open-photo-viewer" [ref=f32e114] [cursor=pointer]:
+            - generic "profile-avatar" [ref=f32e120]
+          - generic [ref=f32e122]:
+            - heading "Наталья Марценюк" [level=1] [ref=f32e125]
+            - link "Редактировать" [ref=f32e129]:
+              - /url: /profile/edit/common?hhtmFrom=applicant_profile
+              - generic [ref=f32e130]: Россия
+            - button "Активно ищу работу" [ref=f32e145] [cursor=pointer]
+          - generic [ref=f32e154]:
+            - generic [ref=f32e155]:
+              - generic [ref=f32e156]:
+                - generic [ref=f32e157]: Советы
+                - generic [ref=f32e158]: "9"
+              - link "Все" [ref=f32e160]:
+                - /url: /applicant/profile/advice?hhtmFrom=applicant_profile
+            - region [ref=f32e169]:
+              - list [ref=f32e170]:
+                - generic [ref=f32e172]:
+                  - listitem [ref=f32e173]:
+                    - generic [ref=f32e178]:
+                      - generic [ref=f32e180]:
+                        - generic [ref=f32e181]: Покажите резюме
+                        - generic [ref=f32e182]: Сделайте видимым резюме «Менеджер образовательных проектов»
+                      - button "Показать всем" [ref=f32e189]
+                  - listitem [ref=f32e192]:
+                    - generic [ref=f32e197]:
+                      - generic [ref=f32e199]:
+                        - generic [ref=f32e200]: Включите уведомления о поиске и сообщениях
+                        - generic [ref=f32e201]: Не пропустите новые вакансии и сообщения от работодателей
+                      - button "Включить" [ref=f32e207]
+                  - listitem [ref=f32e210]:
+                    - generic [ref=f32e215]:
+                      - generic [ref=f32e217]:
+                        - generic [ref=f32e218]: Подпишитесь на вакансии
+                        - generic [ref=f32e219]: Узнавайте о новых вакансиях по вашим запросам в поиске
+                      - link "К моим поискам" [ref=f32e225]:
+                        - /url: /applicant/autosearch?hhtmFrom=applicant_profile
+                  - listitem [ref=f32e228]:
+                    - generic [ref=f32e233]:
+                      - generic [ref=f32e235]:
+                        - generic [ref=f32e236]: Добавьте фото в резюме
+                        - generic [ref=f32e237]: Так вы станете заметнее для работодателей
+                      - button "Добавить" [ref=f32e243]
+                  - listitem [ref=f32e246]:
+                    - generic [ref=f32e251]:
+                      - generic [ref=f32e253]:
+                        - generic [ref=f32e254]: Создайте профиль в Сетке
+                        - generic [ref=f32e255]: Чтобы связаться с HR или будущими коллегами
+                      - link "Зарегистрироваться" [ref=f32e264]:
+                        - /url: https://setka.onelink.me/tQlI?af_ios_url=https%3A%2F%2Fsetka.ru%2Fposts%2Fresume%2Fnew%3Fresume_hash%3D5875098fff10b244b40039ed1f615849597254&af_android_url=https%3A%2F%2Fsetka.ru%2Fposts%2Fresume%2Fnew%3Fresume_hash%3D5875098fff10b244b40039ed1f615849597254&af_web_dp=https%3A%2F%2Fsetka.ru%2Fposts%2Fresume%2Fnew%3Fresume_hash%3D5875098fff10b244b40039ed1f615849597254&af_xp=custom&pid=resume_popup&c=prodhh_resume_popup-hh_site_desktop&deep_link_value=https%3A%2F%2Fsetka.ru%2Fcreate_post%3Ftype%3Dresume%26resume_hash%3D5875098fff10b244b40039ed1f615849597254&af_dp=https%3A%2F%2Fsetka.ru%2Fposts%2Fresume%2Fnew%3Fresume_hash%3D5875098fff10b244b40039ed1f615849597254&utm_source=hh_site_desktop&utm_medium=resume_popup&utm_campaign=prodhh_resume_popup
+        - generic [ref=f32e270]:
+          - button "Откликнитесь ещё 4 раза По статистике для приглашения нужно ~10 откликов 6" [ref=f32e271] [cursor=pointer]:
+            - generic [ref=f32e275]:
+              - generic [ref=f32e278]:
+                - text: Откликнитесь ещё
+                - generic [ref=f32e279]: 4 раза
+              - generic [ref=f32e287]:
+                - text: По статистике для приглашения нужно ~
+                - generic [ref=f32e288]: 10 откликов
+              - progressbar [ref=f32e289]
+          - generic [ref=f32e291]:
+            - generic [ref=f32e292]:
+              - heading "Мои резюме | rabota.by" [level=4] [ref=f32e294]
+              - generic [ref=f32e295]: Создать резюме
+            - generic [ref=f32e310]:
+              - generic [ref=f32e312]:
+                - button "Постоянная работа Менеджер образовательных проектов Многие не видят ваше резюме" [ref=f32e313] [cursor=pointer]:
+                  - generic [ref=f32e320]:
+                    - generic [ref=f32e321]: Постоянная работа
+                    - generic [ref=f32e323]: Менеджер образовательных проектов
+                    - generic [ref=f32e330]: Многие не видят ваше резюме
+                - generic [ref=f32e348]:
+                  - generic [ref=f32e349]:
+                    - link "Открыть" [ref=f32e352]:
+                      - /url: /resume/edit/5875098fff10b244b40039ed1f615849597254/visibility?hhtmFrom=applicant_profile
+                    - generic [ref=f32e360]:
+                      - status [ref=f32e362]:
+                        - img "loading" [ref=f32e363]
+                      - generic [ref=f32e367]: Загружаем
+                  - button [ref=f32e373] [cursor=pointer]
+              - generic [ref=f32e380]:
+                - separator [ref=f32e381]
+                - generic [ref=f32e382]:
+                  - button "Постоянная работа Методолог / Instructional Designer Многие не видят ваше резюме" [ref=f32e383] [cursor=pointer]:
+                    - generic [ref=f32e390]:
+                      - generic [ref=f32e391]: Постоянная работа
+                      - generic [ref=f32e393]: Методолог / Instructional Designer
+                      - generic [ref=f32e400]: Многие не видят ваше резюме
+                  - generic [ref=f32e418]:
+                    - generic [ref=f32e419]:
+                      - link "+1 просмотр" [ref=f32e420]:
+                        - /url: /applicant/resumeview/history?resumeHash=ff0d86dfff109513e30039ed1f517437394b69&hhtmFrom=applicant_profile
+                        - generic [ref=f32e423]:
+                          - text: +
+                          - generic [ref=f32e424]: 1 просмотр
+                      - link "Открыть" [ref=f32e427]:
+                        - /url: /resume/edit/ff0d86dfff109513e30039ed1f517437394b69/visibility?hhtmFrom=applicant_profile
+                      - generic [ref=f32e430]: Поднять в 15:52
+                    - button [ref=f32e434] [cursor=pointer]
+              - generic [ref=f32e441]:
+                - separator [ref=f32e442]
+                - generic [ref=f32e443]:
+                  - button "Постоянная работа Менеджер образовательных проектов / Senior L&D 220 000 ₽ · Удалённо, Гибрид" [ref=f32e444] [cursor=pointer]:
+                    - generic [ref=f32e451]:
+                      - generic [ref=f32e452]: Постоянная работа
+                      - generic [ref=f32e454]: Менеджер образовательных проектов / Senior L&D
+                      - generic [ref=f32e461]: 220 000 ₽ · Удалённо, Гибрид
+                  - generic [ref=f32e476]:
+                    - generic [ref=f32e477]:
+                      - generic [ref=f32e478]: Поднять в поиске
+                      - generic [ref=f32e487]:
+                        - status [ref=f32e489]:
+                          - img "loading" [ref=f32e490]
+                        - generic [ref=f32e494]: Загружаем
+                    - button [ref=f32e500] [cursor=pointer]
+              - button "3 Все резюме" [ref=f32e508] [cursor=pointer]:
+                - generic [ref=f32e511]:
+                  - generic [ref=f32e512]: "3"
+                  - generic [ref=f32e513]: Все резюме
+          - generic [ref=f32e514]:
+            - heading "Настройки поиска" [level=4] [ref=f32e516]
+            - generic [ref=f32e520]:
+              - generic [ref=f32e521]:
+                - generic [ref=f32e524]:
+                  - generic [ref=f32e525]: Где живёте
+                  - generic [ref=f32e532]: Москва · Место не указано
+                - generic [ref=f32e550]:
+                  - generic [ref=f32e551]: Где ищете работу
+                  - generic [ref=f32e558]: Минск, Москва
+              - button "Редактировать" [ref=f32e565] [cursor=pointer]
+          - generic [ref=f32e570]:
+            - heading "Контакты" [level=4] [ref=f32e572]
+            - region [ref=f32e575]:
+              - list [ref=f32e578]:
+                - generic [ref=f32e580]:
+                  - listitem [ref=f32e581]
+                  - generic [ref=f32e582]:
+                    - listitem [ref=f32e583]:
+                      - button "Телефон +7 903 973-98-30" [ref=f32e586] [cursor=pointer]:
+                        - generic [ref=f32e597]:
+                          - generic [ref=f32e598]: Телефон
+                          - generic [ref=f32e605]: +7 903 973-98-30
+                    - listitem [ref=f32e614]:
+                      - button "Почта look85@gmail.com" [ref=f32e617] [cursor=pointer]:
+                        - generic [ref=f32e627]:
+                          - generic [ref=f32e628]: Почта
+                          - generic [ref=f32e635]: look85@gmail.com
+                    - listitem [ref=f32e644]:
+                      - button [ref=f32e646] [cursor=pointer]
+                    - listitem [ref=f32e653]:
+                      - button "Telegram @mrk_natalia" [ref=f32e656] [cursor=pointer]:
+                        - generic [ref=f32e665]:
+                          - generic [ref=f32e666]: Telegram
+                          - generic [ref=f32e673]: "@mrk_natalia"
+                    - listitem [ref=f32e682]:
+                      - button [ref=f32e684] [cursor=pointer]
+                    - listitem [ref=f32e692]:
+                      - button [ref=f32e694] [cursor=pointer]
+                    - listitem [ref=f32e702]:
+                      - button [ref=f32e704] [cursor=pointer]
+                  - listitem [ref=f32e712]
+          - button "Другие способы связи Соцсети или блог" [ref=f32e719] [cursor=pointer]:
+            - generic [ref=f32e721]:
+              - generic [ref=f32e722]: Другие способы связи
+              - generic [ref=f32e731]: Соцсети или блог
+          - generic [ref=f32e745]:
+            - 'heading "Опыт работы: 12 лет и 5 месяцев" [level=4] [ref=f32e748]':
+              - generic [ref=f32e749]:
+                - text: "Опыт работы:"
+                - generic [ref=f32e750]: 12 лет
+                - text: и
+                - generic [ref=f32e751]: 5 месяцев
+            - generic [ref=f32e756]:
+              - generic [ref=f32e757]:
+                - generic [ref=f32e762]:
+                  - generic [ref=f32e764]:
+                    - generic "Корпоративный университет ОАО «РЖД», АНО" [ref=f32e769]
+                    - generic [ref=f32e771]:
+                      - generic [ref=f32e772]: Корпоративный университет ОАО «РЖД», АНО
+                      - generic [ref=f32e786]:
+                        - generic [ref=f32e787]: 2 года
+                        - text: и 8 месяцев
+                  - list [ref=f32e789]:
+                    - listitem [ref=f32e790]:
+                      - generic [ref=f32e803]:
+                        - generic [ref=f32e806]:
+                          - generic [ref=f32e807]: Главный методист / Менеджер образовательных проектов
+                          - generic [ref=f32e814]: Февраль 2024 — сейчас
+                        - generic [ref=f32e823]:
+                          - generic [ref=f32e824]: "Участие в создании и развитии Центра профессионального обучения руководителей (основан в 2024 г.).Разработка и запуск флагманской программы развития профессиональных компетенций «Профессионал +» (190 ак.ч., смешанное обучение) для руководителей путевого комплекса — полный цикл:– определение целей и анализ потребностей обучения совместно с бизнес-заказчиком– разработка методологии, структуры и форматов оценки программы – проектирование контента (очные модули, e-learning, выездные стажировки)– управление LMS-операциями (ТЗ, контроль качества, приёмка)– работа с видеопродакшеном (ТЗ, съемка, монтаж, контроль качества)– координация команды (2 чел.)– отбор и подготовка 24 преподавателей из 8 регионов РФ– супервизия преподавателей, аудит качества, работа с обратной связью– подготовка отчётов, пресс-релизов, справочной информации– внедрение AI-аналитики анкет обратной связи: автоматическая обработка 100+ анкет за цикл, генерация отчётов, сокращение ручной обработки Результаты:– NPS 9.7 на март 2026– Премия «Смарт Пирамида — 2024» в номинации «Лучшая программа корпоративного обучения»– Разработала инструмент детекции социальной желательности в обратной связи (NPS, аномалии, сравнение волн) -"
+                          - link "https://github.com/look85-ops/aos-analyzer" [ref=f32e826] [cursor=pointer]:
+                            - /url: https://github.com/look85-ops/aos-analyzer
+                - generic [ref=f32e831]:
+                  - separator [ref=f32e832]
+                  - generic [ref=f32e833]:
+                    - generic [ref=f32e835]:
+                      - generic "Московский государственный технический университет им. Н.Э. Баумана" [ref=f32e840]
+                      - generic [ref=f32e842]:
+                        - generic [ref=f32e843]: Московский государственный технический университет им. Н.Э. Баумана
+                        - generic [ref=f32e850]: 10 месяцев
+                    - list [ref=f32e859]:
+                      - listitem [ref=f32e860]:
+                        - generic [ref=f32e873]:
+                          - generic [ref=f32e876]:
+                            - generic [ref=f32e877]: Менеджер образовательных проектов
+                            - generic [ref=f32e884]: Май 2023 — Февраль 2024
+                          - generic [ref=f32e892]: "Разработка программ ДПО для внешних заказчиков с нуля. Полный цикл: от исследования потребности до запуска (от 72 ак. ч.) Проектирование внутренней системы непрерывного развития сотрудников Кластера «Инженерия в науках о жизни»: общие треки обучения, индивидуальные планы развития.Методическая поддержка преподавателей, контроль качества образовательных программ."
+                - generic [ref=f32e900]:
+                  - separator [ref=f32e901]
+                  - generic [ref=f32e902]:
+                    - generic [ref=f32e904]:
+                      - generic "МойОфис" [ref=f32e909]
+                      - generic [ref=f32e911]:
+                        - generic [ref=f32e912]: МойОфис
+                        - generic [ref=f32e919]: 2 месяца
+                    - list [ref=f32e928]:
+                      - listitem [ref=f32e929]:
+                        - generic [ref=f32e942]:
+                          - generic [ref=f32e945]:
+                            - generic [ref=f32e946]: Методист по оценке продуктовых знаний (проектная работа)
+                            - generic [ref=f32e953]: Май 2022 — Июнь 2022
+                          - generic [ref=f32e961]: Проектирование системы адаптации и оценки продуктовых знаний новых сотрудников коммерческого блока — с нуля.Создание базы 500+ кейсов и тестов для формирования и оценки знаний на этапе онбординга.
+              - button "Редактировать" [ref=f32e970] [cursor=pointer]
+          - generic [ref=f32e975]:
+            - heading "Образование" [level=4] [ref=f32e977]
+            - generic [ref=f32e982]:
+              - generic [ref=f32e984]:
+                - generic [ref=f32e987]:
+                  - generic [ref=f32e988]: Московский городской педагогический университет, Москва
+                  - generic [ref=f32e995]: 2008 · Высшее
+                - generic [ref=f32e1004]:
+                  - generic [ref=f32e1005]: Московский городской педагогический университет, Москва
+                  - generic [ref=f32e1012]: 2007 · Высшее
+              - button "Редактировать" [ref=f32e1019] [cursor=pointer]
+          - generic [ref=f32e1024]:
+            - heading "Повышение квалификации, курсы" [level=4] [ref=f32e1026]
+            - generic [ref=f32e1031]:
+              - generic [ref=f32e1032]:
+                - generic [ref=f32e1035]:
+                  - generic [ref=f32e1036]: "Маркетинг. Базовый курс: теории, тренды, технологии"
+                  - generic [ref=f32e1043]: Маркетинг
+                  - generic [ref=f32e1050]: "2026"
+                - generic [ref=f32e1059]:
+                  - generic [ref=f32e1060]: "Фабрика вайб-кодинга: создание IT-продуктов с помощью AI-агентов"
+                  - generic [ref=f32e1067]: ScrumTrek
+                  - generic [ref=f32e1074]: "2026"
+                - generic [ref=f32e1083]:
+                  - generic [ref=f32e1084]: Как принимать решения на основе данных
+                  - generic [ref=f32e1091]: Британская высшая школа дизайна
+                  - generic [ref=f32e1098]: "2026"
+                - generic [ref=f32e1107]:
+                  - generic [ref=f32e1108]: Искусство как опыт
+                  - generic [ref=f32e1115]: Московская школа современного искусства
+                  - generic [ref=f32e1122]: "2025"
+                - generic [ref=f32e1131]:
+                  - generic [ref=f32e1132]: Интенсивный курс по проектированию обучения
+                  - generic [ref=f32e1139]: Университет ИТМО
+                  - generic [ref=f32e1146]: "2023"
+                - generic [ref=f32e1155]:
+                  - generic [ref=f32e1156]: Внутренний маркетинг и коммуникации
+                  - generic [ref=f32e1163]: НИУ ВШЭ
+                  - generic [ref=f32e1170]: "2022"
+                - generic [ref=f32e1179]:
+                  - generic [ref=f32e1180]: Методология управления проектом
+                  - generic [ref=f32e1187]: GeekBrains
+                  - generic [ref=f32e1194]: "2022"
+              - button "Редактировать" [ref=f32e1201] [cursor=pointer]
+          - button "Тесты и экзамены" [ref=f32e1211] [cursor=pointer]
+          - generic [ref=f32e1229]:
+            - heading "Документы" [level=4] [ref=f32e1231]
+            - generic [ref=f32e1235]:
+              - generic [ref=f32e1237]:
+                - generic [ref=f32e1238]:
+                  - generic [ref=f32e1239]: Самозанятость и медкнижка
+                  - generic [ref=f32e1246]: Не указаны
+                - generic [ref=f32e1253]:
+                  - generic [ref=f32e1254]: Опыт вождения
+                  - generic [ref=f32e1261]: Нет своей машины
+              - button "Редактировать" [ref=f32e1268] [cursor=pointer]
+          - generic [ref=f32e1273]:
+            - heading "Языки" [level=4] [ref=f32e1275]
+            - generic [ref=f32e1281]:
+              - generic [ref=f32e1283]:
+                - generic [ref=f32e1284]: Русский, Родной
+                - generic [ref=f32e1287]: Английский, B2 — Средне-продвинутый
+              - button "Редактировать" [ref=f32e1290] [cursor=pointer]
+          - generic [ref=f32e1300]:
+            - heading "Подтверждение навыков и языков" [level=5] [ref=f32e1306]
+            - generic [ref=f32e1307]: Подтверждайте навыки — это выделит вас среди других кандидатов
+            - generic [ref=f32e1316]:
+              - generic [ref=f32e1317]: Английский
+              - generic [ref=f32e1320]: API
+              - generic [ref=f32e1323]: C#
+              - generic [ref=f32e1326]: C++
+              - generic [ref=f32e1329]: CSS
+              - generic [ref=f32e1332]: Docker
+              - generic [ref=f32e1335]: ...
+            - button "Перейти к тестам" [ref=f32e1339] [cursor=pointer]
+    - contentinfo [ref=f32e1345]:
+      - generic [ref=f32e1348]:
+        - navigation "Навигация в подвале" [ref=f32e1349]:
+          - generic [ref=f32e1350]:
+            - generic [ref=f32e1352]:
+              - generic [ref=f32e1353]: rabota.by
+              - list [ref=f32e1355]:
+                - listitem [ref=f32e1356]:
+                  - link "Помощь" [ref=f32e1358]:
+                    - /url: /feedback?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1361]:
+                  - link "Наши вакансии" [ref=f32e1363]:
+                    - /url: /employer/770139?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1366]:
+                  - link "Реклама на сайте" [ref=f32e1368]:
+                    - /url: /article/media?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front#region/belarus
+                - listitem [ref=f32e1371]:
+                  - link "Требования к ПО" [ref=f32e1373]:
+                    - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1376]:
+                  - link "Политика обработки cookie" [ref=f32e1378]:
+                    - /url: /article/cookie_policy?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1381]:
+                  - link "Настройки cookie" [ref=f32e1383]:
+                    - /url: /?reselect_cookie_policy=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1386]:
+                  - link "Напишите нам" [ref=f32e1388]:
+                    - /url: mailto:feedback@hh.by
+                - listitem [ref=f32e1391]:
+                  - link "Каталог компаний" [ref=f32e1393]:
+                    - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1396]:
+                  - link "Поиск по вакансиям в Минске" [ref=f32e1398]:
+                    - /url: /vacancies
+                - listitem [ref=f32e1401]:
+                  - link "Работа рядом с метро" [ref=f32e1403]:
+                    - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+            - generic [ref=f32e1408]:
+              - generic [ref=f32e1409]: Соискателям
+              - list [ref=f32e1411]:
+                - listitem [ref=f32e1412]:
+                  - link "Все сервисы" [ref=f32e1414]:
+                    - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1417]:
+                  - link "Кадровые агентства Беларуси" [ref=f32e1419]:
+                    - /url: /article/2046?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+                - listitem [ref=f32e1422]:
+                  - link "Производственный календарь" [ref=f32e1424]:
+                    - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+            - generic [ref=f32e1429]:
+              - list [ref=f32e1430]:
+                - listitem [ref=f32e1431]:
+                  - generic [ref=f32e1432]: Боты для уведомлений
+                  - generic [ref=f32e1434]:
+                    - button "Подключить telegram бот" [ref=f32e1435] [cursor=pointer]
+                    - button "Подключить viber бот" [ref=f32e1442] [cursor=pointer]
+                    - button "Подключить ВК бот" [ref=f32e1450] [cursor=pointer]
+              - generic [ref=f32e1459]:
+                - generic [ref=f32e1460]: Мобильное приложение
+                - img "QR-код для установки мобильного приложения" [ref=f32e1462]
+        - navigation "Правовая информация" [ref=f32e1470]:
+          - list [ref=f32e1471]:
+            - listitem [ref=f32e1472]:
+              - link "Этика и комплаенс" [ref=f32e1474]:
+                - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+            - listitem [ref=f32e1477]:
+              - link "Оказание услуг" [ref=f32e1479]:
+                - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+            - listitem [ref=f32e1482]:
+              - link "Использование сайтов" [ref=f32e1484]:
+                - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+            - listitem [ref=f32e1487]:
+              - link "Политика обработки данных" [ref=f32e1489]:
+                - /url: /article/23457?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+            - listitem [ref=f32e1492]:
+              - link "Пользовательское соглашение" [ref=f32e1494]:
+                - /url: /oferta?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=resume_profile_front
+        - generic [ref=f32e1501]:
+          - paragraph [ref=f32e1502]: "ООО «ВСЯ РАБОТА» Зарегистрировано Минским горисполкомом 09.07.2020. 220004, г. Минск, ул. К. Цеткин, 24-76. Режим работы предприятия: пн.-пт. 09.00-18.00, вых. дн. – сб., вс. Режим работы сайта – круглосуточно. E-mail ООО «ВСЯ РАБОТА» support@hh.by"
+          - paragraph [ref=f32e1504]: р/с BY51ALFA30122667720010270000 ЗАО "Альфа-банк" 220013 г. Минск, ул. Сурганова, 43‑47
+          - paragraph [ref=f32e1506]:
+            - img "mastercard" [ref=f32e1507]
+            - img "visa" [ref=f32e1508]
+            - img "belcart" [ref=f32e1509]
+            - img "belcart-internetparol" [ref=f32e1510]
+        - generic [ref=f32e1515]:
+          - generic [ref=f32e1516]:
+            - button "Перейти в ВК" [ref=f32e1517] [cursor=pointer]
+            - button "Перейти в FaceBook" [ref=f32e1525] [cursor=pointer]
+            - button "Перейти в Instagram" [ref=f32e1533] [cursor=pointer]
+            - button "Перейти в Viber" [ref=f32e1541] [cursor=pointer]
+          - generic [ref=f32e1550]:
+            - list [ref=f32e1551]:
+              - listitem [ref=f32e1552]:
+                - combobox "Выбор языка сайта" [ref=f32e1555]:
+                  - generic [ref=f32e1556]: Русский
+            - generic [ref=f32e1563]: © 2026 ООО «ВСЯ РАБОТА» УНП 193441893

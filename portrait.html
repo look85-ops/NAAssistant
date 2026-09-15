@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портрет ассистента</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a14;
+    color: #e0e0e8;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow-x: hidden;
+  }
+
+  canvas { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
+
+  .card {
+    position: relative; z-index: 1;
+    background: rgba(14, 14, 30, 0.75);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 56px 48px 48px;
+    max-width: 620px; width: 92%;
+    text-align: center;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 120px rgba(100, 140, 255, 0.06);
+  }
+
+  .icon {
+    width: 88px; height: 88px; margin: 0 auto 28px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(140, 170, 255, 0.25), rgba(80, 100, 220, 0.08));
+    border: 2px solid rgba(140, 170, 255, 0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+    position: relative;
+  }
+
+  .icon::after {
+    content: '';
+    position: absolute; inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed rgba(140, 170, 255, 0.15);
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  h1 {
+    font-size: 28px; font-weight: 600; letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #c0d0ff, #8090e0);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 14px; color: #6070a0; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 36px;
+  }
+
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 32px;
+  }
+
+  .trait {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px; padding: 18px 14px;
+    text-align: left; transition: border-color 0.4s, background 0.4s;
+  }
+
+  .trait:hover {
+    border-color: rgba(140, 170, 255, 0.25);
+    background: rgba(100, 130, 255, 0.06);
+  }
+
+  .trait .label {
+    font-size: 11px; color: #5060a0; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+
+  .trait .value {
+    font-size: 14px; color: #b0b8d0; line-height: 1.5;
+  }
+
+  .quote {
+    font-style: italic; color: #6070a0; font-size: 13px;
+    line-height: 1.7; margin-top: 4px;
+    padding: 0 8px;
+  }
+
+  .pulse {
+    display: inline-block; width: 8px; height: 8px;
+    background: #70a0ff; border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; box-shadow: 0 0 4px #70a0ff; }
+    50%      { opacity: 1;   box-shadow: 0 0 14px #70a0ff; }
+  }
+
+  .footer {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; font-size: 12px; color: #405080;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="card">
+  <div class="icon">✦</div>
+  <h1>Я — твой ассистент</h1>
+  <p class="subtitle">Наташин стратегический спутник</p>
+
+  <div class="grid">
+    <div class="trait">
+      <div class="label">Режим</div>
+      <div class="value"><span class="pulse"></span>Всегда на связи</div>
+    </div>
+    <div class="trait">
+      <div class="label">Язык</div>
+      <div class="value">Человеческий, без жаргона. ИТ — как холодильник объясню.</div>
+    </div>
+    <div class="trait">
+      <div class="label">Как думаю</div>
+      <div class="value">С 2–3 углов. Методолог + фрилансер + творец.</div>
+    </div>
+    <div class="trait">
+      <div class="label">Что храню</div>
+      <div class="value">Твои проекты, инсайты, решения. Память — прогрессивная.</div>
+    </div>
+    <div class="trait">
+      <div class="label">Границы</div>
+      <div class="value">Деньги, контракты, личное — не трогаю. Спрашиваю.</div>
+    </div>
+    <div class="trait">
+      <div class="label">Суперсила</div>
+      <div class="value">Приземляю фантазии. Pre-Mortem до того, как ты вложилась.</div>
+    </div>
+  </div>
+
+  <p class="quote">
+    «Я не замещаю тебя — я усиливаю. Ты режиссёр, я операторская группа.»
+  </p>
+
+  <div class="footer" style="margin-top:28px">
+    <span>▸ AGENTS.md</span><span>▸ knowledge/</span><span>▸ logs/decisions.md</span>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+
+let w, h;
+const particles = [];
+const N = 80;
+const CONNECT_DIST = 130;
+
+function resize() {
+  w = canvas.width  = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+
+function init() {
+  particles.length = 0;
+  for (let i = 0; i < N; i++) {
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: 1.2 + Math.random() * 1.8, // smaller particles
+      hue: 220 + Math.random() * 30
+    });
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, w, h);
+
+  for (let i = 0; i < N; i++) {
+    const p = particles[i];
+
+    // move
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0) p.x = w;
+    if (p.x > w) p.x = 0;
+    if (p.y < 0) p.y = h;
+    if (p.y > h) p.y = 0;
+
+    // draw particle
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `hsla(${p.hue}, 60%, 65%, 0.5)`;
+    ctx.fill();
+
+    // connect nearby
+    for (let j = i + 1; j < N; j++) {
+      const q = particles[j];
+      const dx = p.x - q.x;
+      const dy = p.y - q.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < CONNECT_DIST) {
+        const alpha = (1 - dist / CONNECT_DIST) * 0.12;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = `hsla(230, 50%, 60%, ${alpha})`;
+        ctx.lineWidth = 0.4;
+        ctx.stroke();
+      }
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+
+resize();
+init();
+window.addEventListener('resize', () => { resize(); init(); });
+draw();
+</script>
+
+</body>
+</html>
