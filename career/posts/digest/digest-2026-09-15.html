@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Радар L&D. Выпуск 02 — 15 сентября 2026</title>
+<meta name="description" content="Еженедельная карта контекста для L&D-специалистов и HR: agentic AI, симуляции, Human+AI talent model.">
+<link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/posts/digest/digest-2026-09-15.html">
+<meta property="og:title" content="Радар L&D · выпуск 02">
+<meta property="og:description" content="Карта контекста: agentic AI в L&D, симуляции вместо лекций, Human+AI talent model.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#F4F0E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F0E8;
+    --ink: #1E1D1B;
+    --accent: #A6332E;
+    --navy: #2B3A55;
+    --muted: #6B675F;
+    --line: #DAD4C7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Golos Text', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 760px; margin: 0 auto; padding: 48px 28px 64px; }
+  .cover { border-bottom: 3px double var(--ink); padding-bottom: 24px; margin-bottom: 40px; }
+  .masthead { display: flex; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
+  .issue-no { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+  h1 { font-family: 'Literata', serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  .lede { font-size: 18px; line-height: 1.55; max-width: 60ch; color: var(--ink); }
+  .lede strong { font-weight: 600; }
+  .for-whom { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8579; max-width: 72ch; line-height: 1.7; margin-bottom: 16px; }
+  section { margin-bottom: 52px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 22px; display: flex; justify-content: space-between; align-items: baseline; }
+  .section-label .running { color: var(--muted); }
+  .signal { margin-bottom: 30px; }
+  .signal:last-child { margin-bottom: 0; }
+  .signal h3 { font-family: 'Literata', serif; font-size: 21px; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+  .signal .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .signal p { font-size: 15.5px; margin-bottom: 6px; }
+  .signal .implication { font-size: 15.5px; border-left: 3px solid var(--accent); padding-left: 12px; margin-top: 10px; }
+  .signal .implication strong { font-weight: 600; }
+  .radar { border: 1px solid var(--line); }
+  .radar-row { display: flex; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .radar-row:last-child { border-bottom: none; }
+  .radar-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); white-space: nowrap; width: 128px; flex-shrink: 0; }
+  .radar-status .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+  .rise .dot { background: var(--accent); }
+  .steady .dot { background: var(--navy); }
+  .fall .dot { background: var(--muted); }
+  .emerge .dot { background: var(--ink); }
+  .radar-text { font-size: 14.5px; line-height: 1.55; }
+  .radar-text em { font-style: italic; color: var(--muted); }
+  .thesis { border-left: 3px solid var(--accent); padding: 6px 0 6px 24px; }
+  .thesis blockquote { font-family: 'Literata', serif; font-size: 24px; font-style: italic; line-height: 1.45; }
+  .tool { border: 1px solid var(--navy); background: #EFEAE0; padding: 20px 22px; }
+  .tool h3 { font-family: 'Literata', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .tool p { font-size: 15px; margin-bottom: 8px; }
+  .tool .src { font-size: 12.5px; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 10px; }
+  .footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="cover">
+    <div class="masthead"><span>Радар L&amp;D · weekly context map</span><span>№ 02</span></div>
+    <p class="for-whom">Еженедельный дайджест об обучении, ИИ и карьере. Для L&amp;D-специалистов и HR-руководителей: тренды, инструменты, цифры.</p>
+    <p class="issue-no">Выпуск 02 · 15 сентября 2026</p>
+    <h1>Карта недели: agentic AI пришёл в L&amp;D, симуляции вытесняют лекции, а ROI обучения — вопрос выживания</h1>
+    <p class="lede">Сентябрьский сдвиг: <strong>agentic AI</strong> требует от L&amp;D не обучения сотрудников, а пересборки рабочих процессов. <strong>Симуляции</strong> с AI-сценариями становятся стандартом корпоративной практики. А <strong>измерение бизнес-результата</strong> обучения — больше не «хорошо бы», а условие существования функции.</p>
+  </div>
+
+  <section>
+    <div class="section-label"><span>01 · Карта недели</span><span class="running">что сдвинулось</span></div>
+
+    <div class="signal">
+      <h3>Agentic AI переопределяет L&D: четыре вопроса, без которых AI не даст бизнес-результата</h3>
+      <div class="meta">Training Industry · John Durocher · 14.09.2026</div>
+      <p>Agentic AI — не «ещё один инструмент», а сдвиг в том, как устроена работа. L&D-лидерам предлагают ответить на четыре вопроса до внедрения: как перепроектированы рабочие процессы, кто отвечает за решения AI, как измеряется бизнес-результат и какой уровень AI-грамотности уже есть у сотрудников. Без ответов — AI-тренинг остаётся галочкой.</p>
+      <p class="implication"><strong>Что это меняет:</strong> роль L&D смещается от «провести тренинг по AI» к «спроектировать рабочее место, где человек и AI-агент усиливают друг друга». Без этой рамки любой AI-курс — деньги на ветер.</p>
+    </div>
+
+    <div class="signal">
+      <h3>Human + AI Talent Model: от «активности с AI» к измеримому влиянию на бизнес</h3>
+      <div class="meta">Training Industry · Caroline Monfrais · 10.09.2026</div>
+      <p>Большинство компаний фиксируют «мы используем AI», но не могут сказать, улучшило ли это результат сотрудника. Новая модель предлагает: переопределить навыки под AI-рабочие процессы, встроить обучение прямо в поток работы и измерять не adoption, а business impact — скорость, качество, выручку.</p>
+      <p class="implication"><strong>Что это меняет:</strong> метрика L&D перестаёт быть «прошли курс» — ей становится «сотрудник с AI работает быстрее/точнее/прибыльнее, чем без». Это новая планка для всей функции.</p>
+    </div>
+
+    <div class="signal">
+      <h3>Симуляции с AI: знание превращается в навык через практику, а не через слайды</h3>
+      <div class="meta">Training Industry · Shamli Jacob · 09.09.2026</div>
+      <p>Симуляционное обучение — с реалистичными AI-сценариями, осмысленными последствиями решений и структурированной обратной связью — становится стандартом там, где раньше были лекции и тесты. Сотрудники практикуют решения до того, как ставки станут реальными, а не читают про них.</p>
+      <p class="implication"><strong>Что это меняет:</strong> грань между «обучением» и «работой» стирается. L&D проектирует среду, в которой сотрудник учится действовать — а не контент, который он потребляет. Бюджеты смещаются от производства курсов к созданию симуляционных сценариев.</p>
+    </div>
+
+    <div class="signal">
+      <h3>Разговор про ROI обучения: completion rate больше не аргумент</h3>
+      <div class="meta">Training Industry · Bradley A. Davis · 14.09.2026</div>
+      <p>Организационная аккредитация и систематическая оценка меняют математику разговора о ценности обучения. Сильный ROI-кейс строится не на «прошли курс» и «довольны», а на измеримых результатах: assessment до/после, бизнес-метрики, связка с операционными показателями. Компании, которые это делают, получают бюджеты; остальные — сокращения.</p>
+      <p class="implication"><strong>Что это меняет:</strong> L&D-специалист без навыка измерения бизнес-результата становится уязвимым. Базовое требование к роли: уметь показать деньгами, что обучение сработало.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>02 · Радар трендов</span><span class="running">состояние тем</span></div>
+    <div class="radar">
+      <div class="radar-row rise"><span class="radar-status"><span class="dot"></span>усиливается</span><span class="radar-text">Автономные ИИ-агенты в офисе — agentic AI выходит за рамки кода: переписка, документы, рабочие процессы <em>(продолжение наблюдения, вып. 01)</em></span></div>
+      <div class="radar-row rise"><span class="radar-status"><span class="dot"></span>усиливается</span><span class="radar-text">L&amp;D теряет монополию на обучение — Human+AI talent model встраивает обучение в рабочий поток, в обход функции <em>(продолжение)</em></span></div>
+      <div class="radar-row steady"><span class="radar-status"><span class="dot"></span>плато</span><span class="radar-text">Сжатие L&amp;D-функции — тренд года закрепился, новых цифр о сокращениях нет, но давление сохраняется <em>(продолжение)</em></span></div>
+      <div class="radar-row steady"><span class="radar-status"><span class="dot"></span>плато</span><span class="radar-text">«Гигиена работы с ИИ» — тема перешла из наблюдения в операционную практику, без новых всплесков <em>(продолжение, вып. 01)</em></span></div>
+      <div class="radar-row emerge"><span class="radar-status"><span class="dot"></span>появился</span><span class="radar-text">Agentic AI как стратегический вопрос L&amp;D — не «обучить сотрудника», а «перепроектировать работу» <em>(новое в наблюдении)</em></span></div>
+      <div class="radar-row rise"><span class="radar-status"><span class="dot"></span>усиливается</span><span class="radar-text">Симуляционное обучение с AI-сценариями — от нишевых пилотов к стандарту корпоративной практики</span></div>
+      <div class="radar-row emerge"><span class="radar-status"><span class="dot"></span>появился</span><span class="radar-text">Бизнес-метрики как язык L&amp;D — ROI, assessment, связка с операционными показателями вместо completion rate <em>(новое в наблюдении)</em></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>03 · Сквозная мысль</span><span class="running">вывод недели</span></div>
+    <div class="thesis">
+      <blockquote>L&amp;D переходит от модели «научить сотрудника работать с AI» к модели «перепроектировать работу так, чтобы человек и AI усиливали друг друга». Ставка — не на знание инструментов, а на архитектуру рабочих процессов и измеримый бизнес-результат. Выигрывает тот, кто отвечает на вопрос «как изменилась работа?», а не «сколько человек прошли курс».</blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>04 · Инструмент недели</span><span class="running">применить за 10 минут</span></div>
+    <div class="tool">
+      <h3>AI-симуляции своими руками: разветвлённые сценарии на любом LLM</h3>
+      <p>Не нужен специальный софт. Любая LLM (Claude, ChatGPT, DeepSeek) может стать генератором симуляционных сценариев для обучения. Вы задаёте контекст — должность, типовую ситуацию, ключевые решения, — а модель генерирует разветвлённый диалог с последствиями каждого выбора.</p>
+      <p>Как применить: опишите модели рабочую ситуацию (например, «разговор менеджера с сотрудником о выгорании»), попросите разыграть роль сотрудника и реагировать на решения обучаемого. Добавьте ветвление: «если менеджер выбирает давление — покажи эскалацию; если эмпатию — покажи конструктивный диалог». У вас готовая симуляция за 10 минут.</p>
+      <p><strong>Связь с выводом недели:</strong> AI-симуляции — это и есть «обучение, встроенное в рабочий процесс» на практике. Вы не рассказываете сотруднику, как действовать, — вы даёте ему прожить ситуацию и увидеть последствия своих решений до того, как они станут реальными.</p>
+      <p class="src">Подход на основе материала Training Industry · Shamli Jacob · 09.09.2026 + практика работы с LLM</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>05 · Рынок / Карьера</span><span class="running">международный фон</span></div>
+    <div class="signal">
+      <p>Глобальный рынок L&D перегрет на входе и поляризован наверху. Спрос смещается от L&D-администраторов (координация курсов, логистика) к L&D-архитекторам — ролям, которые проектируют AI-интегрированные процессы обучения и измеряют бизнес-результат, а не посещаемость.</p>
+      <p>Вакансии с названиями «Learning Experience Architect», «AI-Enabled Learning Designer», «Workforce Transformation Lead» растут в США и Европе. Работодатели формулируют запрос прямо: «нам нужен не тот, кто проведёт тренинг по AI, а тот, кто пересоберёт обучение вокруг AI и покажет цифры». Навыки assessment-дизайна, data-грамотности и проектирования симуляционных сред выходят на первый план.</p>
+      <p>Для российских L&D-специалистов, смотрящих на международный рынок: языковой барьер остаётся фильтром, но предметная экспертиза — проектирование обучения с измеримым результатом — универсальна и конвертируется.</p>
+    </div>
+  </section>
+
+  <div class="footer">Радар L&amp;D · вып. 02 · 15 сентября 2026</div>
+
+</div>
+</body>
+</html>

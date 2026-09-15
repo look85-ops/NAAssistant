@@ -8,11 +8,11 @@
 - Learning Analytics (оценка эффективности обучения)
 - Customer Education (клиентское обучение)
 - Microlearning (микрообучение)
-- Playbooks / Job Aids (рабочие шпаргалки)
+- Андрагогика / обучение взрослых
+- Корпоративный университет / Корпоративное обучение
 - Матрица компетенций (Competency Matrix)
-- Time‑to‑Productivity / Time‑to‑First‑Deal
-- Adoption (внедрение и использование)
-- Data‑informed дизайн обучения (гипотезы → MVP → метрики)
+- Оценка персонала и аттестация (Assessment)
+- Кадровый резерв и ИПР (Succession Planning)
 
 ## Полный список (включая Top‑10)
 - Корпоративное обучение (L&D)
@@ -24,6 +24,14 @@
 - Клиентское обучение (Customer Education)
 - Learning Analytics / оценка эффективности обучения
 - Kirkpatrick / Phillips (модели оценки)
+- Андрагогика / обучение взрослых
+- Корпоративный университет / Академия
+- ИПР (индивидуальный план развития)
+- Кадровый резерв / succession planning
+- Оценка персонала / аттестация / assessment
+- Наставничество / mentoring
+- iSpring Suite / SCORM / LMS-администрирование
+- TNA (Training Needs Analysis) / Gap-анализ
 - Microlearning / микрообучение
 - Playbooks / Job Aids / чеклисты
 - Матрица компетенций (Competency Matrix)

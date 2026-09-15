@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Радар L&D. Выпуск 01 — 20 августа 2026</title>
+<meta name="description" content="Еженедельная карта контекста для L&D-специалистов и HR: тренды обучения, методики, инструменты, ИИ.">
+<link rel="canonical" href="https://look85-ops.github.io/NAAssistant/career/posts/digest/digest-2026-08-20.html">
+<meta property="og:title" content="Радар L&D · выпуск 01">
+<meta property="og:description" content="Карта контекста: усталость от ИИ, автономные агенты, сжатие L&D-функции.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#F4F0E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F0E8;
+    --ink: #1E1D1B;
+    --accent: #A6332E;
+    --navy: #2B3A55;
+    --muted: #6B675F;
+    --line: #DAD4C7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Golos Text', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 760px; margin: 0 auto; padding: 48px 28px 64px; }
+  /* Обложка */
+  .cover { border-bottom: 3px double var(--ink); padding-bottom: 24px; margin-bottom: 40px; }
+  .masthead { display: flex; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
+  .issue-no { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+  h1 { font-family: 'Literata', serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 14px; }
+  .lede { font-size: 18px; line-height: 1.55; max-width: 60ch; color: var(--ink); }
+  .lede strong { font-weight: 600; }
+  .date-line { margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+  .for-whom { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A8579; max-width: 72ch; line-height: 1.7; margin-bottom: 16px; }
+  /* Секции */
+  section { margin-bottom: 52px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 22px; display: flex; justify-content: space-between; align-items: baseline; }
+  .section-label .running { color: var(--muted); }
+  /* Карта недели */
+  .signal { margin-bottom: 30px; }
+  .signal:last-child { margin-bottom: 0; }
+  .signal h3 { font-family: 'Literata', serif; font-size: 21px; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+  .signal .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .signal p { font-size: 15.5px; margin-bottom: 6px; }
+  .signal .implication { font-size: 15.5px; border-left: 3px solid var(--accent); padding-left: 12px; margin-top: 10px; }
+  .signal .implication strong { font-weight: 600; }
+  /* Радар */
+  .radar { border: 1px solid var(--line); }
+  .radar-row { display: flex; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .radar-row:last-child { border-bottom: none; }
+  .radar-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); white-space: nowrap; width: 128px; flex-shrink: 0; }
+  .radar-status .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+  .rise .dot { background: var(--accent); }
+  .steady .dot { background: var(--navy); }
+  .fall .dot { background: var(--muted); }
+  .emerge .dot { background: var(--ink); }
+  .radar-text { font-size: 14.5px; line-height: 1.55; }
+  .radar-text em { font-style: italic; color: var(--muted); }
+  /* Цитата */
+  .thesis { border-left: 3px solid var(--accent); padding: 6px 0 6px 24px; }
+  .thesis blockquote { font-family: 'Literata', serif; font-size: 24px; font-style: italic; line-height: 1.45; }
+  /* Микро-инструмент */
+  .tool { border: 1px solid var(--navy); background: #EFEAE0; padding: 20px 22px; }
+  .tool h3 { font-family: 'Literata', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .tool p { font-size: 15px; margin-bottom: 8px; }
+  .tool .src { font-size: 12.5px; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 10px; }
+  .footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="cover">
+    <div class="masthead"><span>Радар L&amp;D · weekly context map</span><span>№ 01</span></div>
+    <p class="for-whom">Еженедельный дайджест об обучении, ИИ и карьере. Для L&amp;D-специалистов и HR-руководителей: тренды, инструменты, цифры.</p>
+    <p class="issue-no">Выпуск 01 · 20 августа 2026</p>
+    <h1>Карта недели: усталость от ИИ, автономные агенты и сжатие L&amp;D-функции</h1>
+    <p class="lede">Три-четыре сдвига, которые стоит учесть, пока вы проектируете осенние программы: <strong>brain fry</strong> — сотрудники выгорают от неструктурированного ИИ, <strong>агенты</strong> — ИИ начал сам отвечать на письма, <strong>функция</strong> — старшие роли L&amp;D сокращаются быстрее, чем когда-либо.</p>
+  </div>
+
+  <section>
+    <div class="section-label"><span>01 · Карта недели</span><span class="running">что сдвинулось</span></div>
+
+    <div class="signal">
+      <h3>«AI brain fry»: работникам диагностируют усталость от ИИ, и это запрос к L&amp;D</h3>
+      <div class="meta">Training Industry · 19.08.2026</div>
+      <p>Термин получил хождение как реакция на реальный кейс: сотрудники устают и эмоционально истощаются от ежедневной интеграции ИИ в работу. Авторы связывают это с неструктурированным внедрением — инструменты дают всем, а границы и правила — никому.</p>
+      <p>Рекомендуемый ответ: понятные границы использования ИИ, маппинг навыков в реальном времени, фокус на возможности команды вместо нарезки отдельных курсов.</p>
+      <p class="implication"><strong>Что это меняет:</strong> к любому плану ИИ-обучения добавляется блок «гигиена работы с ИИ» — оценка нагрузки, а не только прокачка навыков.</p>
+    </div>
+
+    <div class="signal">
+      <h3>Автономные агенты дошли до офиса: Claude сам отвечает на письма и управляет Google Drive</h3>
+      <div class="meta">Анонс @claudeai (Anthropic) · Habr · 20.08.2026</div>
+      <p>Ассистент получил автономные функции для всех платных тарифов. Аудитория приняла это с осторожностью: сотни комментариев про спам в почте, ручную редактуру текста и водяные знаки на письмах. Требовали доработки работы с несколькими аккаунтами и таблицами.</p>
+      <p class="implication"><strong>Что это меняет:</strong> агентские сценарии (почта, документы) приходят в массовый офис — L&amp;D нужно заранее решить, где автономия упрощает рутину, а где нужны ревью-процессы и нормы качества.</p>
+    </div>
+
+    <div class="signal">
+      <h3>JetBrains: 90% разработчиков работают с ИИ-агентами еженедельно, Claude Code обогнал Copilot</h3>
+      <div class="meta">Developer Ecosystem Survey 2026 · JetBrains Research · 20.08.2026</div>
+      <p>Опрос 15 000 респондентов (май–июль 2026): 90% профессионалов используют ИИ-кодинг-агенты минимум еженедельно, 68% — ежедневно. Claude Code вырос с 18% до 39% за полгода, почти вдвое опередив GitHub Copilot (21%). Codex — с 3% до 16%.</p>
+      <p class="implication"><strong>Что это меняет:</strong> официальные цифры для бюджетов на ИИ-компетенции: «ИИ в рабочем потоке» — норма, а не эксперимент; пора оценивать форматы обучения агентным рабочим процессам.</p>
+    </div>
+
+    <div class="signal">
+      <h3>L&amp;D-функция сжимается: старшие роли уходят, обучение делегируется линейным менеджерам</h3>
+      <div class="meta">HR Executive · 12.06.2026 (тренд года, сохраняет актуальность)</div>
+      <p>96% компаний за первые пять месяцев года сократили senior L&amp;D-позиции. Обучение смещается к линейным руководителям, а половина работников считает свои навыки уже устаревшими и учится сама — в обход корпоративных программ.</p>
+      <p class="implication"><strong>Что это меняет:</strong> ставка на «старшего методолога» слабеет — сильнее позиция L&amp;D-продукта, который умеет строить обучение поверх живой практики и измерять результат.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>02 · Радар трендов</span><span class="running">состояние тем</span></div>
+    <div class="radar">
+      <div class="radar-row rise"><span class="radar-status"><span class="dot"></span>усиливается</span><span class="radar-text">Автономные ИИ-агенты в офисе — от работы с кодом к документам и почте, вслед за JetBrains и Anthropic</span></div>
+      <div class="radar-row emerge"><span class="radar-status"><span class="dot"></span>появился</span><span class="radar-text">«Гигиена работы с ИИ» как тема L&amp;D — усталость, границы, оценка нагрузки <em>(новое в наблюдении)</em></span></div>
+      <div class="radar-row rise"><span class="radar-status"><span class="dot"></span>усиливается</span><span class="radar-text">Сжатие L&amp;D-функции — обучение делегируется линейным менеджерам, старшие роли уходят</span></div>
+      <div class="radar-row rise"><span class="radar-status"><span class="dot"></span>усиливается</span><span class="radar-text">L&amp;D теряет монополию на обучение — люди учат ИИ сами, в обход корпоративных программ</span></div>
+      <div class="radar-row emerge"><span class="radar-status"><span class="dot"></span>появился</span><span class="radar-text">Интерактивные форматы без пассивного просмотра — обучение через сборку структуры, а не через чтение <em>(см. инструмент недели)</em></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>03 · Сквозная мысль</span><span class="running">вывод недели</span></div>
+    <div class="thesis">
+      <blockquote>Выигрывает не тот, кто знает больше об ИИ, а тот, кто управляет рабочими процессами и гигиеной ИИ для компании. Позиция «старшего методолога» сжимается рынком — позиция «L&amp;D-продукта с операционным умением» укрепляется.</blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label"><span>04 · Инструмент недели</span><span class="running">применить за 10 минут</span></div>
+    <div class="tool">
+      <h3>Идея недели: учиться, собирая, а не читая</h3>
+      <p>SelfUniversity (Show HN этой недели) превращает материал курса в интерактивные пазлы, которые собираешь руками: вопросы и структуры складываются в систему, а не прочитываются и забываются. В основе — generation effect: информация запоминается лучше, когда человек воссоздаёт её сам.</p>
+      <p>Что взять себе: принцип легко переносится в корпоративный трек — квиз-сборка структуры курса, пазл-разбор кейса, восстановление схемы процесса с нуля. Плюс хороший вопрос для команды перед осенними программами: где мы даём людям почитать материал, а где учим собирать его самим.</p>
+      <p><strong>Связь с выводом недели:</strong> собирающий формат — это и есть позиция «L&amp;D-продукта» на практике: вместо готового контента вы проектируете действие, в котором человек сам воспроизводит систему.</p>
+      <p class="src">Источник: Hacker News · Show HN · 16.08.2026 · selfuniversity.site</p>
+    </div>
+  </section>
+
+  <div class="footer">Радар L&amp;D · вып. 01 · 20 августа 2026</div>
+
+</div>
+</body>
+</html>
