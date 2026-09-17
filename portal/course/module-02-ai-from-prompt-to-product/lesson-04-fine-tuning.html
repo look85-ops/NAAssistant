@@ -8,55 +8,574 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 <style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
-.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
-.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
-.hlogo span{color:#474a1a}
-.hnav{display:flex;gap:28px}
-.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
-.hnav a:hover{color:#2b2b1a}
 
-.lesson{padding:140px 0 80px}
-.li{max-width:720px;margin:0 auto;padding:0 48px}
-.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
-.bc a{color:#737366;text-decoration:none}
-.bc a:hover{color:#2b2b1a}
-.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
-.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
-.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
-.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
-.content strong{font-weight:550}
-.content ul,.content ol{margin:0 0 20px 24px}
-.content li{margin-bottom:8px;color:#3a3a32}
-.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
-.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
-.content pre code{background:none;padding:0}
-.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
-.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
-.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
-.content td{color:#3a3a32}
-.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
-.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
-.content em{font-style:italic}
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
 
-.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
-.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:#737366;text-decoration:none}
-.flinks a:hover{color:#2b2b1a}
-.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.fupd{font-size:11px;color:#b0b0a8}
-.fnote{font-size:11px;color:#c0beb8}
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
 
-@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
 </style>
 </head>
 <body>
+
+<div class="pbar" id="pbar"></div>
 
 <header class="header">
   <div class="hi">
@@ -69,219 +588,322 @@ body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1
   </div>
 </header>
 
-<section class="lesson">
-  <div class="li">
-    <p class="bc"><a href="/course/">Курс</a> / Модуль 2. AI: от промпта до продукта</p>
+<section class="hero">
+  <div class="hero-wm">02.4</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 2 · AI: от промпта до продукта</div>
     <h1>Урок 4. Fine-tuning: справочный урок</h1>
-    <p class="lmeta">**Модуль 2:** · **Время:**</p>
-    <div class="content">
+    <p class="meta">Урок 4 · Справочный</p>
 
-<p><strong>Модуль 2:</strong> AI: от промпта до продукта
-<strong>Неделя:</strong> 4 из 4
-<strong>Тип:</strong> справочный — читать и понимать, практика по желанию
-<strong>Время:</strong> 1–1.5 ч</p>
-
-<h2>1. Зачем этот урок</h2>
-<p><strong>Это справочный урок, не боевой.</strong> Уроки 1–3 (параметры модели, RAG, агенты) — то, что вы будете использовать каждый день. Fine-tuning — редкий инструмент: его осмысленно применяют, когда нужен особый стиль ответов в больших объёмах. Большинству из нас это не понадобится.</p>
-<p>Прочитайте урок один раз, чтобы:
-- понимать, что такое дообучение и чем оно отличается от RAG;
-- уметь отговорить себя от fine-tuning, когда достаточно промпта или RAG (так вы сэкономите деньги и время);
-- знать, что если задача созреет — с чего начать и куда смотреть.</p>
-<p>Ничего обучать здесь не обязательно. Это «шпаргалка с лифтом до сути».</p>
-<hr />
-<h2>2. Теория</h2>
-<h3>Что такое fine-tuning</h3>
-<p><strong>Fine-tuning (дообучение, тонкая настройка)</strong> — процесс, при котором готовую модель дополнительно дообучают на ваших примерах, чтобы она подстроилась под ваш стиль, формат и правила. База знаний не меняется — меняется поведение.</p>
-<p><strong>Метафора:</strong> опытный врач знает медицину (база). Дать ему папку с внутренними инструкциями — RAG (читает перед ответом). Отправить на курсы по фирменному протоколу клиники — fine-tuning (усваивает правила раз и навсегда).</p>
-<h3>Чем отличается от RAG</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>RAG</th>
-<th>Fine-tuning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Когда подключается</td>
-<td>В момент ответа</td>
-<td>Заранее, при обучении</td>
-</tr>
-<tr>
-<td>Что даёт модели</td>
-<td>Нужный документ</td>
-<td>Привычку отвечать в стиле</td>
-</tr>
-<tr>
-<td>Когда менять данные</td>
-<td>Перезагрузил документ</td>
-<td>Переобучать заново</td>
-</tr>
-<tr>
-<td>Стоимость</td>
-<td>Почти нулевая</td>
-<td>Есть, заметная</td>
-</tr>
-<tr>
-<td>Ваш труд</td>
-<td>Подготовить документы</td>
-<td>Собрать примеры и оценить</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Главное правило:</strong> сначала промпт, потом RAG, и только в крайнем случае fine-tuning. Пирамида:</p>
-<ol>
-<li><strong>Промпт</strong> — 5 минут, бесплатно. Всегда начинайте здесь.</li>
-<li><strong>RAG</strong> — загрузили документы — ответ по материалам.</li>
-<li><strong>Fine-tuning</strong> — дообучили на примерах — свой стиль.</li>
-</ol>
-<h3>Когда fine-tuning реально нужен</h3>
-<ul>
-<li>Модель должна <strong>постоянно</strong> писать в вашем стиле: тон, формат, терминология, глубина.</li>
-<li>Модель должна <strong>оценивать по вашей шкале</strong>: «отлично/соответствует/доработать».</li>
-<li>Задача большая и повторяющаяся: тысячи ответов, а не десять раз.</li>
-<li>Промпт уже выжал максимум, RAG не применим (речь не про факты).</li>
-</ul>
-<p>Если задача разовая или маленькая — fine-tuning вам не нужен.</p>
-<h3>Как это устроено (для общего понимания)</h3>
-<p>Три этапа:
-1. <strong>Данные.</strong> 50–200 пар «запрос → правильный ответ» из вашей практики. Качество важнее количества.
-2. <strong>Обучение.</strong> Загрузка примеров в сервис дообучения, создание вашей копии модели (занимает от 30 минут).
-3. <strong>Оценка.</strong> Сравнение базовой и дообученной модели на новых запросах.</p>
-<p>Стоимость: платите за подготовку данных, за сам запуск обучения и за использование дообученной модели (обычно в 2–6 раз дороже, чем базовая). Поэтому дообучают компактные модели (mini/flash/tiny), а не самые мощные.</p>
-<hr />
-<h2>3. Шпаргалка (сохраните себе)</h2>
-<table>
-<thead>
-<tr>
-<th>Термин</th>
-<th>Определение одним предложением</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fine-tuning</td>
-<td>Дообучение модели на ваших примерах, чтобы она отвечала в вашем стиле</td>
-</tr>
-<tr>
-<td>Датасет</td>
-<td>Набор пар «запрос → правильный ответ» для обучения</td>
-</tr>
-<tr>
-<td>Базовая модель</td>
-<td>Исходная модель до дообучения</td>
-</tr>
-<tr>
-<td>Дообученная модель</td>
-<td>Ваша копия с учётом ваших примеров</td>
-</tr>
-<tr>
-<td>Токены (вспомнить урок 1)</td>
-<td>Единицы, которыми модель считает текст — вместе с ними считается и цена</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Карта выбора:</strong>
-- Факты из документов → RAG (урок 2)
-- Стиль и формат, массово и навсегда → fine-tuning
-- Всё остальное → промпт (урок 1)
-- Автономные задачи с инструментами → агенты (урок 3)</p>
-<p><strong>Куда смотреть, если понадобится:</strong>
-- Google AI Studio Tuning — https://aistudio.google.com/prompts/tuning — бесплатно попробовать, доступен из РФ
-- OpenAI fine-tuning — https://platform.openai.com/docs/guides/fine-tuning — удобнее, но оплата из РФ сложнее
-- Локальный вариант — Llama + LoRA через Ollama — для тех, кто хочет полностью офлайн</p>
-<hr />
-<h2>4. Практика (по желанию, лёгкая)</h2>
-<p>Ничего из этого не обязательно делать. Это три маленьких упражнения, чтобы закрепить понимание, если захочется.</p>
-<h3>Упражнение 1. Разведи три случая (10 мин)</h3>
-<p>Про себя или на бумаге решите, к какому уровню относятся задачи:</p>
-<table>
-<thead>
-<tr>
-<th>Задача</th>
-<th>Уровень</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>«Сколько хранится договор по нашему регламенту?»</td>
-<td>RAG</td>
-</tr>
-<tr>
-<td>«Пиши поздравления ученикам в нашем дружеском тоне»</td>
-<td>Fine-tuning (большой объём)</td>
-</tr>
-<tr>
-<td>«Сделай краткий конспект лекции»</td>
-<td>Промпт</td>
-</tr>
-<tr>
-<td>«Собери отчёт по моим документам за меня»</td>
-<td>Агент (урок 3)</td>
-</tr>
-</tbody>
-</table>
-<p>Придумайте 2–3 свои задачи и назовите их уровень. Если у вас ни одна не вышла на fine-tuning — вы в норме.</p>
-<h3>Упражнение 2. Чёрновик датасета на заготовку (15 мин)</h3>
-<p>Если хотите просто посмотреть, как выглядит процесс: попросите OpenCode сгенерировать 5 примеров «запрос → ответ» для любой вымышленной задачи (например, «оценка ответа стажёра по шкале отлично/соответствует/доработать»). Посмотрите на пары глазом. Ничего не обучайте.</p>
-<h3>Упражнение 3. Решите: а надо ли было? (10 мин)</h3>
-<p>Прочитайте вслух «Главное правило» из теории. Придумайте ситуацию, где вы бы поставили промпт, RAG, агента — и попробуйте объяснить, какой уровень тут лишний. Цель — натренировать рефлекс «не дообучать, пока не упёрся».</p>
-<hr />
-<h2>5. Рефлексия (напишите мне)</h2>
-<ol>
-<li>Сколько заняло?</li>
-<li>Что из урока запомнилось сильнее всего?</li>
-<li>Согласны ли вы, что fine-tuning редко нужен? Аргумент за или против.</li>
-<li>Оценка материала от 1 до 5</li>
-</ol>
-<hr />
-<h2>6. Чек-лист готовности</h2>
-<ul>
-<li>[ ] Могу объяснить разницу между RAG и fine-tuning</li>
-<li>[ ] Понимаю пирамиду «промпт → RAG → fine-tuning»</li>
-<li>[ ] Знаю, когда fine-tuning оправдан, а когда нет</li>
-<li>[ ] Знаю, куда смотреть, если задача созреет (Google AI Studio, OpenAI, локально)</li>
-</ul>
-<hr />
-<h2>7. Итог модуля 2</h2>
-<p>Вы прошли все 4 недели:</p>
-<ol>
-<li><strong>Параметры модели</strong> (урок 1) — токены, температура, контекст, промпты. Вы управляете поведением модели.</li>
-<li><strong>RAG</strong> (урок 2) — модель отвечает по вашим документам. Вы закрыли галлюцинации.</li>
-<li><strong>Агенты</strong> (урок 3) — модель делает задачи сама, с инструментами. Вы перешли от «спросить» к «поставить задачу».</li>
-<li><strong>Fine-tuning</strong> (этот урок) — справочник на будущее. Обычно не нужен, но вы знаете, что это.</li>
-</ol>
-<p><strong>Что это даёт вам как L&amp;D-специалисту:</strong> вы не «пользуетесь чатом», а строите рабочую систему из модели, промптов, документов и агентов. Это уровень, который выделяет вас на рынке: вы решаете задачу человека (сделать курс, оценить, собрать отчёт) с помощью AI, а не просто «просите написать текст».</p>
-<p><strong>Куда двигаться дальше:</strong>
-- Практикуйтесь: выбирайте одну рабочую задачу в неделю и собирайте под неё агента.
-- Углубляйте модуль 3, если продолжим: интеграция агентов в рабочие процессы, собственные пайплайны, MCP.
-- Самое ценное сейчас — стабильность: делайте это каждую неделю, по чуть-чуть.</p>
-<h3>Вопросы для итоговой проверки модуля (устно, без подсказок)</h3>
-<ol>
-<li>Зачем нужна температура? При 0 и при 1.5?</li>
-<li>Что такое RAG и как он борется с галлюцинациями?</li>
-<li>Чем агент отличается от чата?</li>
-<li>Когда стоит задуматься о fine-tuning?</li>
-<li>Какой инструмент для вас главный: OpenCode или веб-чат? Почему?</li>
-</ol>
-    </div>
+    <ul class="outcomes">
+      <li>Объяснить коллеге разницу между RAG и fine-tuning за 2 минуты</li>
+      <li>Знать, когда fine-tuning действительно нужен, а когда — нет</li>
+      <li>Знать, куда смотреть, если решите двигаться в эту сторону</li>
+    </ul>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="fi">
-    <div class="flinks">
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> ничего делать не нужно. Это справочный урок — прочитайте и отложите. Если хочется — полистайте шпаргалку ниже.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем этот урок</h2>
+
+<p>Fine-tuning — одна из тех тем, про которые спрашивают на собеседованиях, упоминают в статьях и путают с RAG. Этот урок — не руководство к действию, а <strong>справочный</strong>: чтобы вы понимали, о чём речь, когда услышите «мы дообучили модель», и могли осмысленно участвовать в разговоре.</p>
+
+<p>Скорее всего, в ближайший год вам <em>не</em> понадобится запускать fine-tuning самостоятельно. Но понимать, когда он уместен, а когда достаточно промпта или RAG — это то, что отделяет «я просто пользователь» от «я управляю AI-инструментами осознанно».</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02">Что такое fine-tuning</h2>
+
+<p>Fine-tuning (дообучение) — это когда вы берёте уже обученную модель (например, GPT-4o) и <strong>дополнительно тренируете</strong> её на своих данных. Модель не просто «читает» ваши документы — она <em>меняет свои внутренние веса</em>, чтобы лучше справляться с вашими задачами.</p>
+
+<div class="metaphor">
+  <strong>Метафора: врач и курсы повышения квалификации.</strong> Базовая модель — это выпускник мединститута: знает анатомию, физиологию, может поставить диагноз. RAG — это когда вы даёте врачу справочник перед приёмом: «вот история пациента, вот протокол лечения». Fine-tuning — это когда врач прошёл годичную ординатуру по кардиологии: он не просто заглядывает в справочник, он <em>стал</em> кардиологом.
+</div>
+
+<p>Оба подхода решают задачу «модель должна работать с моими данными», но принципиально по-разному:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Критерий</th>
+      <th>RAG</th>
+      <th>Fine-tuning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Как работает</td>
+      <td>Ищет релевантные документы и подаёт их в промпт</td>
+      <td>Меняет веса модели на ваших примерах</td>
+    </tr>
+    <tr>
+      <td>Данные</td>
+      <td>Документы, статьи, базы — любые тексты</td>
+      <td>Пары «вопрос → идеальный ответ» (датасет)</td>
+    </tr>
+    <tr>
+      <td>Когда обновить знания</td>
+      <td>Мгновенно: добавили документ — модель его видит</td>
+      <td>Часы/дни: нужно переобучить модель заново</td>
+    </tr>
+    <tr>
+      <td>Стоимость</td>
+      <td>Низкая: платите за поиск + токены</td>
+      <td>Высокая: GPU-часы для обучения + хостинг модели</td>
+    </tr>
+    <tr>
+      <td>Типичный сценарий</td>
+      <td>Ответы по базе знаний, поиск по документам</td>
+      <td>Стиль, формат ответа, узкая предметная экспертиза</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="margin-note">
+  <strong>Правило большого пальца:</strong> если модель должна <em>знать факты</em> — RAG. Если модель должна <em>вести себя определённым образом</em> (тон, формат, стиль рассуждений) — возможно, fine-tuning.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="03">Когда нужен fine-tuning</h2>
+
+<p>Fine-tuning — не серебряная пуля. Вот четыре условия, при которых он <strong>оправдан</strong>:</p>
+
+<ol>
+  <li><strong>Промпт не справляется.</strong> Вы перепробовали системные промпты, few-shot примеры, цепочки рассуждений — модель всё равно сбивается на определённых задачах.</li>
+  <li><strong>RAG не подходит.</strong> Задача не про поиск фактов, а про стабильный стиль, формат вывода или следование сложной внутренней логике.</li>
+  <li><strong>Есть качественный датасет.</strong> Минимум 50–100 примеров «вот что пришло → вот что должно получиться». Датасет — это самая трудная часть.</li>
+  <li><strong>Есть бюджет и время.</strong> Обучение стоит денег (GPU), а развёртывание своей модели — усилий. Если у вас нет разработчика под рукой — скорее всего, не ваш случай.</li>
+</ol>
+
+<h3>Три этапа: как устроен процесс</h3>
+
+<p><strong>Этап 1. Подготовка датасета.</strong> Вы собираете примеры в формате JSONL — каждая строка: системный промпт + пользовательский ввод + идеальный ответ ассистента. Это самая трудоёмкая часть. Хороший датасет — 80% успеха.</p>
+
+<p><strong>Этап 2. Запуск обучения.</strong> Вы загружаете датасет в платформу (OpenAI, Together AI, Fireworks), выбираете базовую модель, указываете параметры и запускаете. Обучение длится от 20 минут до нескольких часов.</p>
+
+<p><strong>Этап 3. Оценка и итерация.</strong> Вы тестируете дообученную модель на задачах, которых не было в датасете. Если результат не устраивает — чистите датасет, добавляете примеры, перезапускаете. Обычно нужно 2–4 итерации.</p>
+
+<div class="pull-quote">
+  Сначала промпт, потом RAG, и только в крайнем случае — fine-tuning.
+</div>
+
+<div class="interim"><h3>Промежуточный итог</h3><p>Fine-tuning — мощный, но дорогой инструмент. RAG решает 80% задач L&D-специалиста дешевле и быстрее. Этот урок нужен, чтобы вы не путали подходы и знали, в какой момент пора звать разработчика с GPU.</p></div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>Fine-tuning — не ежедневный инструмент</h2>
+    <p>Это знание: знать, что такое fine-tuning есть, понимать, когда он уместен, и не применять его там, где хватит RAG. Для 95% L&D-задач правильный промпт и векторный поиск сделают больше, чем месяц обучения модели.</p>
+  </div>
+</div>
+
+<div class="cheatsheet">
+  <h2>Шпаргалка</h2>
+
+  <h3>Термины</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Термин</th>
+        <th>Значение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fine-tuning</td>
+        <td>Дообучение готовой модели на своих данных. Меняет веса, а не просто подсказывает.</td>
+      </tr>
+      <tr>
+        <td>RAG (Retrieval-Augmented Generation)</td>
+        <td>Модель ищет релевантные документы и добавляет их в промпт. Факты живут отдельно от модели.</td>
+      </tr>
+      <tr>
+        <td>Датасет</td>
+        <td>Набор примеров «вопрос → идеальный ответ» в формате JSONL. Основа для fine-tuning.</td>
+      </tr>
+      <tr>
+        <td>Few-shot prompting</td>
+        <td>Вы даёте модели 2–5 примеров прямо в промпте. Часто этого достаточно, и fine-tuning не нужен.</td>
+      </tr>
+      <tr>
+        <td>LoRA (Low-Rank Adaptation)</td>
+        <td>Облегчённый метод fine-tuning: дообучается не вся модель, а небольшая надстройка. Дешевле и быстрее.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Карта выбора</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Если вам нужно…</th>
+        <th>То начните с…</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Модель отвечает по вашим документам</td>
+        <td>RAG (векторная база + поиск)</td>
+      </tr>
+      <tr>
+        <td>Модель придерживается стиля/формата</td>
+        <td>Системный промпт + few-shot примеры</td>
+      </tr>
+      <tr>
+        <td>Промпт не держит стиль на длинных диалогах</td>
+        <td>Fine-tuning (если есть датасет 50+)</td>
+      </tr>
+      <tr>
+        <td>Модель должна выучить редкий жаргон</td>
+        <td>Глоссарий в промпте → RAG → Fine-tuning</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Куда смотреть</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Ресурс</th>
+        <th>Зачем</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://platform.openai.com/docs/guides/fine-tuning" target="_blank" rel="noopener">OpenAI Fine-tuning Guide</a></td>
+        <td>Официальная документация: форматы, цены, ограничения</td>
+      </tr>
+      <tr>
+        <td><a href="https://docs.together.ai/docs/fine-tuning-overview" target="_blank" rel="noopener">Together AI Fine-tuning</a></td>
+        <td>Альтернатива OpenAI: дешевле, больше моделей (Llama, Mistral)</td>
+      </tr>
+      <tr>
+        <td><a href="https://huggingface.co/docs/peft/index" target="_blank" rel="noopener">Hugging Face PEFT / LoRA</a></td>
+        <td>Библиотека для самостоятельного fine-tuning с LoRA</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="04">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. Разведи три случая (15 мин)</summary>
+      <div class="details-content">
+        <p>Ниже три ситуации. Для каждой определите: хватит ли системного промпта, нужен RAG или пора думать о fine-tuning. Запишите ответ и аргумент в две строки.</p>
+
+        <h3>Ситуация A</h3>
+        <p>Вы делаете AI-ассистента для онбординга. У вас есть 120 страниц внутренней документации компании: политики, процессы, шаблоны писем. Сотрудник задаёт вопрос — ассистент должен найти ответ в документах.</p>
+
+        <h3>Ситуация B</h3>
+        <p>Вы настраиваете автоответчик для вакансий. Ответы должны быть в строго определённом тоне: «тёплый, но деловой», с конкретными формулировками «благодарим за интерес», «на данном этапе», «приглашаем на следующий этап». Простые промпты съезжают то в сухость, то в излишнюю фамильярность.</p>
+
+        <h3>Ситуация C</h3>
+        <p>Вы делаете AI-тренера по продажам. Модель должна имитировать диалог с клиентом и давать обратную связь по пяти критериям: работа с возражениями, выявление потребностей, закрытие, тон, структура. Структура обратной связи сложная и всегда одинаковая. Промпт работает на 60% диалогов — в 40% модель забывает один из критериев или меняет формат.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. Чёрновик датасета (20 мин)</summary>
+      <div class="details-content">
+        <p>Это упражнение на понимание структуры — вы <strong>не</strong> будете запускать обучение. Просто почувствуйте, как выглядит датасет для fine-tuning.</p>
+        <ol class="steps">
+          <li>Выберите одну повторяющуюся задачу из своей практики (например: «написать программу вебинара по описанию заказчика» или «оценить резюме по трём критериям»).</li>
+          <li>Придумайте 5 примеров в формате:</li>
+        </ol>
+        <pre>{"messages": [
+  {"role": "system", "content": "Ты — L&D-методист. Оцениваешь резюме по трём критериям: релевантный опыт, структура, конкретика."},
+  {"role": "user", "content": "Оцени резюме: [текст резюме]"},
+  {"role": "assistant", "content": "1. Релевантный опыт: ...\n2. Структура: ...\n3. Конкретика: ..."}
+]}</pre>
+        <ol class="steps" start="3">
+          <li>Обратите внимание: системный промпт одинаковый для всех примеров, user — разный, assistant — идеальный ответ.</li>
+          <li>Запишите вывод: что было самым трудным при составлении примеров? (Скорее всего — придумать «идеальный ответ», который не стыдно показать модели.)</li>
+        </ol>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="05">После урока</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>✓ Можете объяснить разницу между RAG и fine-tuning за 2 минуты</li>
+    <li>✓ Знаете четыре условия, при которых fine-tuning оправдан</li>
+    <li>✓ Понимаете три этапа процесса (датасет → обучение → оценка)</li>
+    <li>✓ Развели три ситуации: где промпт, где RAG, где fine-tuning</li>
+    <li>✓ Представляете структуру JSONL-датасета</li>
+  </ul>
+</div>
+
+<h3>Итог модуля 2</h3>
+
+<p>Вы прошли путь от «напиши промпт» до «я знаю, когда нужно дообучать модель». Модуль 2 дал вам язык и карту: вы понимаете, как работают промпты, когда подключать RAG, что такое агенты и зачем нужен fine-tuning. Вы не просто пользователь ChatGPT — вы человек, который <strong>проектирует взаимодействие</strong> с AI.</p>
+
+<p>Дальше — модуль 3: «AI-стратегия и ROI». Переходим от техники к бизнес-смыслу: как выбирать AI-проекты, считать эффект и не сливать бюджет.</p>
+
+<h3>Вопросы для проверки</h3>
+
+<ol>
+  <li>Коллега говорит: «Давай натренируем модель на наших документах, чтобы она отвечала как наш эксперт». Что вы ответите — RAG или fine-tuning? Обоснуйте в двух предложениях.</li>
+  <li>У вас есть 20 примеров «вопрос → идеальный ответ». Достаточно ли этого для fine-tuning? Почему?</li>
+  <li>Назовите две ситуации, когда fine-tuning <strong>не</strong> нужен, хотя на первый взгляд кажется, что нужен.</li>
+  <li>Что сложнее в fine-tuning: написать код для обучения или собрать качественный датасет? Почему?</li>
+</ol>
+
+<div class="nav-bottom">
+  <a href="lesson-03-agents.html">← Agents</a>
+  <a href="../../module-03-ai-strategy-and-roi/lesson-01-ai-readiness.html" class="nav-next">Модуль 3. Урок 1. AI Readiness →</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
       <a href="/">L&D без суеты</a>
       <a href="https://t.me/mrk_natalia">Telegram</a>
       <a href="https://github.com/look85-ops">GitHub</a>
     </div>
     <div class="fmeta">
-      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
-      <span class="fnote">Собрано с помощью AI-ассистента</span>
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
 
 </body>
 </html>

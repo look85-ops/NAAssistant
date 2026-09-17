@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI для онбординга: воркбук — L&D без суеты</title>
+<meta name="description" content="5 готовых AI-промптов для онбординга новых сотрудников. Скопировал → вставил → получил результат. Без Python, без бюджета на ИТ.">
+<meta property="og:title" content="AI для онбординга: воркбук за 1490 ₽">
+<meta property="og:description" content="5 промптов + сценарий внедрения + чек-лист. Для L&D и HR.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
+:root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a;--light:#fafaf8}
+
+/* ═══ HEADER ═══ */
+.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{font-size:15px;font-weight:550;color:var(--ink);text-decoration:none}
+.hlogo span{color:var(--olive)}
+.hnav{display:flex;gap:28px}
+.hnav a{font-size:14px;font-weight:400;color:var(--muted);text-decoration:none;transition:color 150ms}
+.hnav a:hover{color:var(--ink)}
+
+/* ═══ HERO ═══ */
+.hero{padding:140px 0 60px;position:relative;overflow:hidden}
+.hero-wm{position:absolute;left:-30px;top:80px;font-size:260px;font-weight:100;color:var(--olive);opacity:.03;line-height:1;pointer-events:none;user-select:none}
+.hi2{max-width:720px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
+.hero .mod-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--terracotta);margin-bottom:16px}
+.hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:650;line-height:1.12;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px}
+.hero .sub{font-size:1.15rem;color:var(--muted);line-height:1.5;margin-bottom:32px;max-width:540px}
+
+/* ═══ CTA BUTTON ═══ */
+.cta-btn{display:inline-block;padding:16px 36px;background:var(--terracotta);color:#fff;font-size:1.1rem;font-weight:550;text-decoration:none;letter-spacing:.01em;transition:background 150ms}
+.cta-btn:hover{background:#984c26}
+.cta-price{font-size:.85rem;font-weight:400;color:rgba(255,255,255,.8);margin-left:8px}
+
+/* ═══ CONTENT ═══ */
+.content{max-width:720px;margin:0 auto;padding:0 48px}
+h2{font-size:1.5rem;font-weight:600;color:var(--ink);margin:80px 0 20px;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:600;color:var(--ink);margin:48px 0 14px;letter-spacing:-.01em}
+
+/* ═══ WHAT'S INSIDE ═══ */
+.inside-list{margin:32px 0;display:flex;flex-direction:column;gap:20px}
+.inside-item{display:flex;gap:20px;align-items:flex-start;padding:0;border-left:3px solid var(--olive);padding-left:24px}
+.inside-num{font-size:1.8rem;font-weight:200;color:var(--olive);line-height:1;min-width:36px;opacity:.6}
+.inside-text h3{font-size:1.1rem;font-weight:550;color:var(--ink);margin:0 0 4px}
+.inside-text p{font-size:.95rem;color:var(--muted);line-height:1.5}
+
+/* ═══ HOW IT WORKS ═══ */
+.steps{display:flex;flex-direction:column;gap:32px;margin:32px 0}
+.step{display:flex;gap:20px;align-items:flex-start}
+.step-num{width:36px;height:36px;border:1.5px solid var(--olive);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:var(--olive);flex-shrink:0}
+.step-text h3{font-size:1.05rem;font-weight:550;color:var(--ink);margin:2px 0 6px}
+.step-text p{font-size:.95rem;color:var(--muted);line-height:1.5}
+
+/* ═══ SECTION NUMBER WATERMARK ═══ */
+.section-hd{position:relative}
+.section-hd::after{content:attr(data-num);position:absolute;right:-50px;top:-40px;font:900 180px/1 'Geist',sans-serif;color:var(--olive);opacity:.035;pointer-events:none;user-select:none;z-index:0}
+.section-hd h2{position:relative;z-index:1}
+
+/* ═══ QUOTE ═══ */
+.quote-block{margin:60px 0;padding:36px;background:var(--surface)}
+.quote-block p{font:italic 450 1.2rem/1.5 'Geist',sans-serif;color:var(--ink);margin-bottom:12px}
+.quote-block .attr{font-size:.85rem;color:var(--muted);font-style:normal}
+
+/* ═══ FAQ ═══ */
+.faq-item{margin-bottom:24px}
+.faq-q{font-size:1.05rem;font-weight:550;color:var(--ink);cursor:default}
+.faq-a{font-size:.95rem;color:var(--muted);margin-top:6px;line-height:1.5}
+
+/* ═══ FINAL CTA (full-width) ═══ */
+.final-cta{width:100vw;margin-left:calc(-50vw + 50%);background:var(--olive);padding:80px 0;margin-top:100px;margin-bottom:60px;position:relative;overflow:hidden}
+.final-cta::after{content:'▲';position:absolute;right:-20px;bottom:-10px;font-size:300px;font-weight:900;color:rgba(255,255,255,.03);pointer-events:none;user-select:none;line-height:1}
+.final-inner{max-width:720px;margin:0 auto;padding:0 48px;position:relative;z-index:1;text-align:center}
+.final-inner h2{font-size:1.8rem;font-weight:650;color:#fff;margin:0 0 12px}
+.final-inner p{font-size:1.1rem;color:rgba(255,255,255,.8);margin-bottom:28px;line-height:1.5}
+.final-inner .cta-btn{background:#fff;color:var(--olive);font-weight:600}
+.final-inner .cta-btn:hover{background:rgba(255,255,255,.9)}
+.final-inner .cta-price{color:var(--muted)}
+
+/* ═══ GEOMETRIC DIVIDER ═══ */
+.geo-div{display:flex;align-items:center;gap:16px;margin:64px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+/* ═══ FOOTER ═══ */
+.footer{border-top:1px solid var(--border);padding:48px 0 36px}
+.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:var(--muted);text-decoration:none}
+.flinks a:hover{color:var(--ink)}
+.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fupd{font-size:11px;color:#b0b0a8}
+.fnote{font-size:11px;color:#c0beb8}
+
+/* ═══ INSIGHT ═══ */
+.insight{margin:40px 0;padding-left:20px;border-left:4px solid var(--olive);font-size:1.05rem;font-weight:450;color:var(--ink);line-height:1.6}
+
+@media(max-width:768px){
+  .hi,.hi2,.content,.final-inner,.fi{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:140px;left:-16px;top:100px}
+  .section-hd::after{font-size:100px;right:-10px;top:-20px}
+  .inside-item{flex-direction:column;gap:8px}
+  .final-cta::after{font-size:160px}
+}
+
+@media(prefers-reduced-motion:reduce){}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="hi">
+    <a href="/" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="/course/">Курс</a>
+      <a href="/products/">Продукты</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-wm">AI+ONB</div>
+  <div class="hi2">
+    <p class="mod-tag">Воркбук · Самое необходимое</p>
+    <h1>AI для онбординга: 5 промптов, которые запустят адаптацию за 2 часа</h1>
+    <p class="sub">План адаптации, AI-бадди для новичка, welcome-письмо, чек-лист первого дня и опросник «как прошёл месяц» — в одном файле. Без Python, без бюджета на ИТ.</p>
+    <a href="https://t.me/mrk_natalia" class="cta-btn" target="_blank">Купить за 1 490 ₽<span class="cta-price"> · PDF + Google Doc</span></a>
+  </div>
+</section>
+
+<div class="content">
+
+<!-- ═══ WHAT'S INSIDE ═══ -->
+<div class="section-hd" data-num="01">
+<h2>Что внутри</h2>
+</div>
+<div class="inside-list">
+  <div class="inside-item">
+    <div class="inside-num">01</div>
+    <div class="inside-text">
+      <h3>AI-план онбординга под роль</h3>
+      <p>Пятинедельный план адаптации, разбитый по дням: что изучать, с кем встретиться, какой результат показать. Скопировали промпт → подставили должность → получили готовый документ.</p>
+    </div>
+  </div>
+  <div class="inside-item">
+    <div class="inside-num">02</div>
+    <div class="inside-text">
+      <h3>AI-бадди для новичка</h3>
+      <p>FAQ-бот на базе знаний вашей компании. Новичок спрашивает «где взять пропуск» — бот отвечает на основе регламентов. 80% типовых вопросов — без вас.</p>
+    </div>
+  </div>
+  <div class="inside-item">
+    <div class="inside-num">03</div>
+    <div class="inside-text">
+      <h3>Чек-лист первого дня</h3>
+      <p>Почасовой план первого рабочего дня — не «познакомиться с командой», а «10:00 — HR выдаёт пропуск, 10:30 — наставник показывает кухню». Конкретика, которую остаётся только распечатать.</p>
+    </div>
+  </div>
+  <div class="inside-item">
+    <div class="inside-num">04</div>
+    <div class="inside-text">
+      <h3>Письмо-приветствие от руководителя</h3>
+      <p>Тёплое welcome-письмо, которое новичок получает накануне. «Привет, [Имя]! Мы тебя ждали». Никакого «ознакомьтесь с регламентом». 2 минуты на замену имени — и отправлять.</p>
+    </div>
+  </div>
+  <div class="inside-item">
+    <div class="inside-num">05</div>
+    <div class="inside-text">
+      <h3>Оценка онбординга через 30 дней</h3>
+      <p>Опросник из 7 вопросов, на которые хочется отвечать. Не «оцените качество инструктажа по шкале», а «твой совет руководителю — одним предложением».</p>
+    </div>
+  </div>
+</div>
+
+<div class="insight">
+  Плюс: сценарий внедрения за 4 шага, чек-лист первой недели (ПН/СР/ПТ), шпаргалка параметров AI-модели и письмо «Как обосновать бюджет руководителю». <strong>Всё — скопировал → вставил → работает.</strong>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<div class="section-hd" data-num="02">
+<h2>Как это работает</h2>
+</div>
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">
+      <h3>Выбираете шаблон</h3>
+      <p>Какая боль самая острая? Нет плана адаптации — берите №1. Новички заваливают вопросами — берите №2.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">
+      <h3>Копируете промпт</h3>
+      <p>Открываете ChatGPT (или Claude, или OpenRouter), вставляете готовый промпт, заменяете [переменные в квадратных скобках] на свои данные.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">
+      <h3>Получаете результат за 2 минуты</h3>
+      <p>AI выдаёт готовый документ. Вы подправляете под компанию (реальные имена, системы, даты) — и отдаёте в работу.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-text">
+      <h3>Показываете руководителю</h3>
+      <p>Не «я тут AI-инструмент внедрил». А «я подготовил план адаптации для нового менеджера. Посмотри — норм?» Руководитель видит пользу, а не технологию.</p>
+    </div>
+  </div>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ═══ WHO IS IT FOR ═══ -->
+<div class="section-hd" data-num="03">
+<h2>Кому это нужно</h2>
+</div>
+<p style="font-size:1.05rem;color:#3a3a32;line-height:1.7;margin-bottom:20px"><strong>Методистам и L&D-специалистам,</strong> которые проектируют онбординг и хотят перестать делать это с нуля каждый раз.</p>
+<p style="font-size:1.05rem;color:#3a3a32;line-height:1.7;margin-bottom:20px"><strong>HR-менеджерам,</strong> которые ведут адаптацию и устали отвечать на одни и те же вопросы новых сотрудников.</p>
+<p style="font-size:1.05rem;color:#3a3a32;line-height:1.7;margin-bottom:20px"><strong>Руководителям отделов,</strong> которым CEO сказал: «Покажи план AI-онбординга к пятнице». А плана нет.</p>
+
+<div class="quote-block">
+  <p>«CEO на планёрке сказал: в следующем квартале жду от L&D план внедрения AI в онбординг. Я понятия не имела, с чего начать. Потом открыла этот воркбук — и через 40 минут у меня был готовый документ на стол руководителю.»</p>
+  <span class="attr">Марина, руководитель отдела обучения, финтех</span>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ═══ FAQ ═══ -->
+<div class="section-hd" data-num="04">
+<h2>Частые вопросы</h2>
+</div>
+
+<div class="faq-item">
+  <p class="faq-q">У меня нет платного ChatGPT. Промпты будут работать?</p>
+  <p class="faq-a">Да. Все промпты работают в бесплатных версиях ChatGPT, Claude и OpenRouter. Шпаргалка параметров внутри воркбука объясняет, что выбрать.</p>
+</div>
+<div class="faq-item">
+  <p class="faq-q">Я не технарь. Там будет код?</p>
+  <p class="faq-a">Ни строчки кода. Только текст промптов на русском языке, которые вы копируете и вставляете в чат с AI. Как отправить сообщение в мессенджере.</p>
+</div>
+<div class="faq-item">
+  <p class="faq-q">Что я получу после оплаты?</p>
+  <p class="faq-a">Google Doc со всеми 5 шаблонами, сценарием внедрения, чек-листом и шпаргалкой. Можно скопировать себе, править, делиться с командой. Плюс PDF-версия.</p>
+</div>
+<div class="faq-item">
+  <p class="faq-q">А если не сработает?</p>
+  <p class="faq-a">Напишите мне в Telegram — разберём конкретно ваш случай. Возможно, нужен другой подход или я докручу шаблон под вашу задачу. Деньги не верну, но доведу до работающего результата.</p>
+</div>
+
+</div><!-- /content -->
+
+<!-- ═══ FINAL CTA ═══ -->
+<div class="final-cta">
+  <div class="final-inner">
+    <h2>1 490 ₽ за 5 готовых AI-промптов</h2>
+    <p>Это дешевле одного бизнес-ланча. И сэкономит 10+ часов в месяц на онбординге. Открываете, копируете, показываете результат руководителю — всё в одной вкладке.</p>
+    <a href="https://t.me/mrk_natalia" class="cta-btn" target="_blank">Написать в Telegram<span class="cta-price"> · @mrk_natalia</span></a>
+  </div>
+</div>
+
+<div class="content">
+
+<p style="font-size:1.05rem;color:#3a3a32;line-height:1.7;margin:60px 0;text-align:center"><strong>Напишите «Хочу воркбук» → оплата → через 5 минут ссылка на Google Doc у вас.</strong></p>
+
+</div>
+
+<footer class="footer">
+  <div class="fi">
+    <div class="flinks">
+      <a href="/">L&D без суеты</a>
+      <a href="/course/">Курс</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+    </div>
+    <div class="fmeta">
+      <span class="fupd">16 сентября 2026</span>
+      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

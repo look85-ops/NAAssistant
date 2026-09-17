@@ -8,55 +8,574 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 <style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
-.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
-.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
-.hlogo span{color:#474a1a}
-.hnav{display:flex;gap:28px}
-.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
-.hnav a:hover{color:#2b2b1a}
 
-.lesson{padding:140px 0 80px}
-.li{max-width:720px;margin:0 auto;padding:0 48px}
-.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
-.bc a{color:#737366;text-decoration:none}
-.bc a:hover{color:#2b2b1a}
-.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
-.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
-.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
-.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
-.content strong{font-weight:550}
-.content ul,.content ol{margin:0 0 20px 24px}
-.content li{margin-bottom:8px;color:#3a3a32}
-.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
-.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
-.content pre code{background:none;padding:0}
-.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
-.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
-.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
-.content td{color:#3a3a32}
-.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
-.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
-.content em{font-style:italic}
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
 
-.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
-.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:#737366;text-decoration:none}
-.flinks a:hover{color:#2b2b1a}
-.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.fupd{font-size:11px;color:#b0b0a8}
-.fnote{font-size:11px;color:#c0beb8}
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
 
-@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
 </style>
 </head>
 <body>
+
+<div class="pbar" id="pbar"></div>
 
 <header class="header">
   <div class="hi">
@@ -69,365 +588,487 @@ body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1
   </div>
 </header>
 
-<section class="lesson">
-  <div class="li">
-    <p class="bc"><a href="/course/">Курс</a> / Модуль 1. Технический минимум</p>
+<section class="hero">
+  <div class="hero-wm">01.2</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 1 · Технический минимум: читать, понимать, коммитить</div>
     <h1>Урок 2. Git: версионирование и первый коммит</h1>
-    <p class="lmeta">**Модуль 1:** · **Время:**</p>
-    <div class="content">
+    <p class="meta">Урок 2</p>
 
-<p><strong>Модуль 1:</strong> Технический минимум: читать, понимать, коммитить
-<strong>Неделя:</strong> 2 из 3
-<strong>Время:</strong> 2–2.5 ч</p>
-
-<h2>1. Цель недели</h2>
-<p><strong>Зачем это L&amp;D-специалисту в работе с AI.</strong></p>
-<p>Все ваши AI-артефакты (промпты, схемы агентов, скрипты, датасеты для fine-tuning) живут в файлах. Git — это машина времени для этих файлов. Вы можете откатиться к любой версии, посмотреть, что изменилось, и не бояться «а вдруг я всё сломаю». Без Git любая серьёзная работа с AI-инструментами превращается в кашу из файлов <code>финальная_версия_окончательная_v2.py</code>.</p>
-<p>К концу этого урока вы создадите свой первый репозиторий, сделаете коммит, зальёте код на GitHub — и поймёте, почему разработчики не работают без этой системы.</p>
-<hr />
-<h2>2. Теория</h2>
-<h3>Что такое Git</h3>
-<p>Git — это система контроля версий. Она записывает <strong>слепки</strong> всех изменений в ваших файлах. Каждый слепок = коммит (commit). Вы можете в любой момент вернуться к любому коммиту, посмотреть, что изменилось, и даже разветвить историю.</p>
-<p>Представьте, что вы пишете курсовую:
-- Версия 1: набросок
-- Версия 2: добавили главу
-- Версия 3: переписали введение
-- Версия 4: поняли, что старое введение было лучше → вернулись к версии 2</p>
-<p>Без Git вы храните 4 файла: <code>курсовая_v1.docx</code>, <code>курсовая_v2.docx</code>... С Git у вас один файл и 4 коммита. Вы переключаетесь между ними одной командой.</p>
-<h3>Репозиторий</h3>
-<p>Репозиторий (repo) — это папка, за которой Git следит. Внутри неё есть скрытая папка <code>.git</code> — там хранится вся история. Вы её не трогаете, Git сам с ней работает.</p>
-<h3>Основные понятия</h3>
-<ul>
-<li><strong>commit (коммит)</strong> — сохранённый слепок всех файлов в папке. У каждого коммита есть сообщение (что изменили), автор, дата и уникальный хеш (длинный набор букв и цифр).</li>
-<li><strong>ветка (branch)</strong> — отдельная линия разработки. По умолчанию вы в ветке <code>main</code> (или <code>master</code>). Можно создать отдельную ветку для эксперимента, поработать в ней, а потом влить обратно в <code>main</code>.</li>
-<li><strong>локальный репозиторий</strong> — на вашем компьютере.</li>
-<li><strong>удалённый репозиторий (remote)</strong> — на GitHub. Это как бэкап + возможность работать с другими.</li>
-<li><strong>push</strong> — отправить ваши коммиты на GitHub.</li>
-<li><strong>pull</strong> — скачать чужие коммиты с GitHub.</li>
-</ul>
-<h3>Жизненный цикл файла в Git</h3>
-<p>У файла три состояния:
-1. <strong>Untracked</strong> — Git не знает про этот файл (вы его только создали).
-2. <strong>Staged (индексирован)</strong> — вы сказали Git: «этот файл хочу сохранить в следующем коммите». Команда <code>git add</code>.
-3. <strong>Committed (сохранён)</strong> — вы сделали слепок. Команда <code>git commit</code>.</p>
-<p>Схема:</p>
-<pre><code>Working Directory  →  Staging Area  →  Repository
-      git add               git commit
-</code></pre>
-<h3>GitHub — это не Git</h3>
-<p>Git — программа на вашем компьютере. GitHub — сайт, где хранятся удалённые репозитории. Можно работать и без GitHub (только локально), но для бэкапа и коллаборации он нужен.</p>
-<hr />
-<h2>3. Шпаргалка (сохраните себе)</h2>
-<p>Этот урок вы будете почти полностью выполнять в терминале. Git-команды выглядят как <code>git что-то</code>. Проверьте, что Git установлен:</p>
-<pre><code>git --version
-</code></pre>
-<p>Если Git не установлен — скачайте с https://git-scm.com/downloads (установка: везде «Далее», ничего не меняйте). После установки перезапустите PowerShell.</p>
-<h3>Основные команды</h3>
-<table>
-<thead>
-<tr>
-<th>Действие</th>
-<th>Команда</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Создать репозиторий в текущей папке</td>
-<td><code>git init</code></td>
-</tr>
-<tr>
-<td>Проверить статус файлов</td>
-<td><code>git status</code></td>
-</tr>
-<tr>
-<td>Добавить файл в staging</td>
-<td><code>git add имя_файла</code></td>
-</tr>
-<tr>
-<td>Добавить все файлы</td>
-<td><code>git add .</code></td>
-</tr>
-<tr>
-<td>Сделать коммит</td>
-<td><code>git commit -m "сообщение"</code></td>
-</tr>
-<tr>
-<td>Посмотреть историю</td>
-<td><code>git log</code></td>
-</tr>
-<tr>
-<td>Посмотреть историю (кратко)</td>
-<td><code>git log --oneline</code></td>
-</tr>
-<tr>
-<td>Увидеть изменения</td>
-<td><code>git diff</code></td>
-</tr>
-</tbody>
-</table>
-<h3>Первичная настройка (один раз)</h3>
-<p>Перед первым коммитом нужно представиться:</p>
-<pre><code>git config --global user.name &quot;Ваше Имя&quot;
-git config --global user.email &quot;ваша@почта.ru&quot;
-</code></pre>
-<h3>Работа с GitHub</h3>
-<table>
-<thead>
-<tr>
-<th>Действие</th>
-<th>Команда</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Связать локальный репозиторий с удалённым</td>
-<td><code>git remote add origin https://github.com/ваш-логин/название-репозитория.git</code></td>
-</tr>
-<tr>
-<td>Отправить коммиты на GitHub</td>
-<td><code>git push -u origin main</code></td>
-</tr>
-<tr>
-<td>Забрать изменения с GitHub</td>
-<td><code>git pull</code></td>
-</tr>
-<tr>
-<td>Посмотреть, с каким удалённым репозиторием связана папка</td>
-<td><code>git remote -v</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>4. Практика</h2>
-<p>Все упражнения выполняйте в <strong>PowerShell</strong> (который вы освоили на прошлой неделе).</p>
-<h3>Упражнение 1. Проверка Git и настройка (10 мин)</h3>
-<p>Откройте PowerShell. Проверьте, установлен ли Git:</p>
-<pre><code>git --version
-</code></pre>
-<p>Если видите номер версии — отлично. Если ошибка «не является командой» — Git не установлен. Скачайте с https://git-scm.com/downloads и установите.</p>
-<p>Теперь представьтесь (сделайте один раз, Git запомнит):</p>
-<pre><code>git config --global user.name &quot;Ваше Имя&quot;
-git config --global user.email &quot;ваша@почта.ru&quot;
-</code></pre>
-<h3>Упражнение 2. Первый репозиторий (15 мин)</h3>
-<p>Создайте новую папку для эксперимента:</p>
-<pre><code>mkdir C:\Users\ИмяПользователя\Desktop\my-first-repo
-cd C:\Users\ИмяПользователя\Desktop\my-first-repo
-</code></pre>
-<p>Теперь сделайте эту папку репозиторием:</p>
-<pre><code>git init
-</code></pre>
-<p>Git ответит: <code>Initialized empty Git repository in ...</code>. Проверьте:</p>
-<pre><code>git status
-</code></pre>
-<p>Вы увидите: <code>On branch main</code> и <code>nothing to commit</code>. Репозиторий пуст.</p>
-<h3>Упражнение 3. Первый коммит (15 мин)</h3>
-<p>Создайте файл <code>readme.md</code> (через терминал, как на прошлом уроке):</p>
-<pre><code>ni readme.md
-</code></pre>
-<p>Откройте его в любом редакторе и напишите:</p>
-<pre><code># my-first-repo
-
-Мой первый репозиторий. Учусь работать с Git.
-</code></pre>
-<p>Сохраните файл. Проверьте статус:</p>
-<pre><code>git status
-</code></pre>
-<p>Git скажет, что есть <code>untracked file</code> — файл, за которым Git ещё не следит. Добавьте его:</p>
-<pre><code>git add readme.md
-</code></pre>
-<p>Проверьте статус снова:</p>
-<pre><code>git status
-</code></pre>
-<p>Файл перешёл в состояние <code>staged</code> (зелёным цветом). Теперь сделайте коммит:</p>
-<pre><code>git commit -m &quot;Первый коммит: readme&quot;
-</code></pre>
-<p>Вы увидите что-то вроде:</p>
-<pre><code>1 file changed, 3 insertions(+)
-create mode 100644 readme.md
-</code></pre>
-<p>Поздравляю. Только что вы сделали свой первый коммит. Посмотрите историю:</p>
-<pre><code>git log --oneline
-</code></pre>
-<p>Вы увидите одну строчку — ваш первый коммит.</p>
-<h3>Упражнение 4. Второй коммит: меняем файл (10 мин)</h3>
-<p>Откройте <code>readme.md</code> в редакторе и допишите строку:</p>
-<pre><code>## Как я учусь
-
-Прохожу курс L&amp;D × AI. На этой неделе осваиваю Git.
-</code></pre>
-<p>Сохраните. Проверьте статус:</p>
-<pre><code>git status
-</code></pre>
-<p>Файл изменился — Git это видит. Посмотрите, что именно изменилось:</p>
-<pre><code>git diff readme.md
-</code></pre>
-<p>Git покажет добавленные строки (они будут зелёными со знаком <code>+</code>). Теперь сохраните изменения:</p>
-<pre><code>git add readme.md
-git commit -m &quot;Добавил раздел Как я учусь&quot;
-</code></pre>
-<p>Посмотрите историю:</p>
-<pre><code>git log --oneline
-</code></pre>
-<p>Теперь два коммита. Обратите внимание: у каждого свой хеш — короткий идентификатор (например, <code>a1b2c3d</code>).</p>
-<h3>Упражнение 5. Возврат к предыдущей версии (10 мин)</h3>
-<p>Git позволяет вернуться к любому коммиту. Посмотрите историю с полными хешами:</p>
-<pre><code>git log
-</code></pre>
-<p>Скопируйте хеш первого коммита (он самый нижний). Вернитесь к нему:</p>
-<pre><code>git checkout &lt;хеш&gt;
-</code></pre>
-<p>Файл <code>readme.md</code> теперь снова содержит только первую версию — Git откатил состояние. Вернитесь обратно к последней версии:</p>
-<pre><code>git checkout main
-</code></pre>
-<p>Файл снова полный. Git работает как машина времени.</p>
-<h3>Упражнение 6. Ветки (15 мин)</h3>
-<p>Создайте новую ветку для эксперимента:</p>
-<pre><code>git branch experiment
-</code></pre>
-<p>Проверьте, какие ветки есть:</p>
-<pre><code>git branch
-</code></pre>
-<p>Ветка <code>main</code> выделена звёздочкой (<code>* main</code>). Переключитесь на новую ветку:</p>
-<pre><code>git checkout experiment
-</code></pre>
-<p>Теперь вы в ветке <code>experiment</code>. Откройте <code>readme.md</code> и допишите строку:</p>
-<pre><code>## Эксперимент
-
-Это изменение я делаю в отдельной ветке.
-</code></pre>
-<p>Сохраните, закоммитьте:</p>
-<pre><code>git add .
-git commit -m &quot;Эксперимент в отдельной ветке&quot;
-</code></pre>
-<p>Вернитесь в <code>main</code>:</p>
-<pre><code>git checkout main
-</code></pre>
-<p>Файл снова без экспериментальной строки. Ветки не мешают друг другу. Теперь влейте эксперимент в <code>main</code>:</p>
-<pre><code>git merge experiment
-</code></pre>
-<p>Файл обновился — строка из ветки <code>experiment</code> появилась в <code>main</code>.</p>
-<p>Посмотрите историю — теперь видно, что была развилка:</p>
-<pre><code>git log --oneline
-</code></pre>
-<h3>Упражнение 7. Gitignore (10 мин)</h3>
-<p>Бывают файлы, которые не нужно сохранять в Git: временные, служебные, с паролями. Для этого есть файл <code>.gitignore</code>.</p>
-<p>Создайте два файла:</p>
-<pre><code>ni secret.txt
-ni notes.txt
-</code></pre>
-<p>Добавьте запись в <code>secret.txt</code>: <code>это секрет</code>. Теперь создайте файл <code>.gitignore</code>:</p>
-<pre><code>ni .gitignore
-</code></pre>
-<p>Откройте <code>.gitignore</code> в редакторе и напишите:</p>
-<pre><code>secret.txt
-</code></pre>
-<p>Сохраните. Проверьте статус:</p>
-<pre><code>git status
-</code></pre>
-<p><code>secret.txt</code> исчез из списка — Git его игнорирует. <code>notes.txt</code> всё ещё на месте. Закоммитьте <code>.gitignore</code>:</p>
-<pre><code>git add .gitignore
-git commit -m &quot;Добавил gitignore, скрыл secret.txt&quot;
-</code></pre>
-<h3>Упражнение 8. GitHub: локальный → удалённый (25 мин)</h3>
-<p><strong>Это упражнение требует аккаунта на GitHub.</strong> Если его нет — зарегистрируйтесь на github.com (бесплатно).</p>
-<ol>
-<li>Зайдите на github.com, нажмите зелёную кнопку <strong>New</strong> (создать новый репозиторий).</li>
-<li>Введите название: <code>my-first-repo</code> (как ваша локальная папка).</li>
-<li>Оставьте Public, <strong>не</strong> ставьте галочку «Add a README» (у вас уже есть).</li>
-<li>Нажмите <strong>Create repository</strong>.</li>
-</ol>
-<p>GitHub покажет вам команды. Найдите строку:</p>
-<pre><code>git remote add origin https://github.com/ваш-логин/my-first-repo.git
-</code></pre>
-<p>Скопируйте и выполните в PowerShell (в папке <code>my-first-repo</code>):</p>
-<pre><code>git remote add origin https://github.com/ваш-логин/my-first-repo.git
-</code></pre>
-<p>Проверьте:</p>
-<pre><code>git remote -v
-</code></pre>
-<p>Теперь отправьте ваши коммиты на GitHub:</p>
-<pre><code>git push -u origin main
-</code></pre>
-<p>PowerShell запросит логин и пароль GitHub. Введите:
-- Логин: ваш email на GitHub
-- Пароль: не обычный пароль, а <strong>Personal Access Token</strong> (если его нет — создайте в GitHub: Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token, поставьте галочку <code>repo</code>, скопируйте токен и сохраните).</p>
-<p>После успешного пуша обновите страницу репозитория на GitHub — вы увидите ваши файлы и историю коммитов.</p>
-<h3>Упражнение 9. Создание артефакта (10 мин)</h3>
-<p>Создайте файл с историей ваших коммитов:</p>
-<pre><code>cd C:\Users\ИмяПользователя\Desktop\ваш-проект
-mkdir career
-git log --oneline &gt; career\git-demo.md
-</code></pre>
-<p>Откройте <code>career\git-demo.md</code> в редакторе. Вы увидите список коммитов. Допишите в начало три предложения:</p>
-<pre><code># Git-демо: мой первый опыт
-
-**Дата:** [дата]
-**Что делала:** создала репозиторий, сделала несколько коммитов, поработала с ветками, отправила на GitHub.
-
-## Лог коммитов
-</code></pre>
-<p>Сохраните. Теперь закоммитьте артефакт в ваш основной проект, а не в экспериментальный репозиторий.</p>
-<hr />
-<h2>5. Рефлексия (напишите мне)</h2>
-<ol>
-<li>Сколько времени заняло?</li>
-<li>Что было самым непонятным в Git?</li>
-<li>Что было самым полезным?</li>
-<li>Оценка материала от 1 до 5</li>
-</ol>
-<hr />
-<h2>6. Чек-лист готовности</h2>
-<ul>
-<li>[ ] Проверили Git: <code>git --version</code> вернула номер</li>
-<li>[ ] Создали локальный репозиторий (<code>git init</code>)</li>
-<li>[ ] Сделали минимум 2 коммита с разными сообщениями</li>
-<li>[ ] Создали и слили ветку (<code>git branch</code>, <code>git merge</code>)</li>
-<li>[ ] Настроили <code>.gitignore</code></li>
-<li>[ ] Создали репозиторий на GitHub и запушили коммиты (<code>git push</code>)</li>
-<li>[ ] Создали артефакт <code>career/git-demo.md</code> с логом коммитов</li>
-</ul>
-<hr />
-<h2>7. Артефакт</h2>
-<p>В вашем проекте должен появиться файл:</p>
-<pre><code>ваш-проект/
-└── career/
-    └── git-demo.md          # Лог коммитов + описание опыта
-</code></pre>
-<p>Также на GitHub появится публичный репозиторий <code>my-first-repo</code> с историей ваших коммитов.</p>
-<hr />
-<h2>8. Что дальше</h2>
-<p>На следующей неделе — API и чтение кода. Вы научитесь делать запросы к AI-моделям через терминал, читать документацию API и понимать, что происходит в чужом коде.</p>
-<p>Но сначала закрепите Git. Сделайте ещё пару коммитов в свой основной проект — хотя бы по одному на каждый день. Git становится полезным, когда вы входите в привычку коммитить часто.</p>
-<h4>Шутка дня (Git-сага)</h4>
-<p>Представьте: отдел L&amp;D целый год пишет курс. Без Git. Версии файлов называются: <code>курс.docx</code>, <code>курс_итог.docx</code>, <code>курс_окончательный.docx</code>, <code>курс_реально_последний.docx</code>, <code>курс_удали_всё_прежнее.docx</code>, <code>курс_нет_это_финал.docx</code>. Пришёл новый руководитель и спросил: «А где тут версия, которую утверждали в марте?» — тишина.</p>
-<p>С Git это выглядит так: <code>git log --oneline</code> — и вы видите всю историю. `git checkout &lt;хеш&gt; — и вы в марте. Git не даёт вам врать самому себе про «финальную версию».</p>
-<p><em>Пасхалка: если кто-то скажет «Git — это сложно», напомните эту историю про курс.docx.</em> 😄</p>
-<h3>Дополнительно (необязательно, но полезно)</h3>
-<ul>
-<li><code>git log --graph</code> — показывает историю в виде графа (наглядно видны ветки)</li>
-<li><code>git commit --amend</code> — исправить сообщение последнего коммита (если ошиблись)</li>
-<li><code>git reset HEAD readme.md</code> — убрать файл из staging (если случайно добавили)</li>
-<li>Попробуйте ввести в терминале <code>git lol</code> — если Git ругнётся, значит, это не настоящая команда, а байка. Настоящие гики делают себе алиас <code>git lol</code> для красивого лога. Хотите — сделайте: <code>git config --global alias.lol "log --oneline --graph --all"</code>, и команда <code>git lol</code> заработает.</li>
-<li>Прочитайте первые 3 раздела книги Pro Git на русском: https://git-scm.com/book/ru/v2</li>
-</ul>
-    </div>
+    <ul class="outcomes">
+      <li>Создать репозиторий и сделать первый коммит</li>
+      <li>Работать с ветками и сливать изменения</li>
+      <li>Отправлять код на GitHub</li>
+      <li>Объяснить коллеге разницу между Git и GitHub</li>
+    </ul>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="fi">
-    <div class="flinks">
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> откройте PowerShell. Введите <code>git --version</code>. Видите номер версии? Git установлен. Если нет — скачайте с git-scm.com.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
+
+<p>Все ваши AI-артефакты — промпты, схемы агентов, скрипты, датасеты для fine-tuning — живут в файлах. Git — это <strong>машина времени</strong> для этих файлов. Вы можете откатиться к любой версии, посмотреть, что изменилось, и не бояться «а вдруг я всё сломаю».</p>
+
+<p>Без Git любая серьёзная работа с AI-инструментами превращается в кашу из файлов: <code>финальная_версия.py</code>, <code>окончательная_v2.py</code>, <code>реально_последняя.py</code>. Кто из них рабочий — непонятно. Git убирает этот хаос: у вас один файл и цепочка коммитов.</p>
+
+<p>К концу этого урока вы создадите свой первый репозиторий, сделаете коммит, зальёте код на GitHub — и поймёте, почему разработчики не работают без этой системы.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02">Что такое Git</h2>
+
+<p>Git — это система контроля версий. Она записывает <strong>слепки</strong> всех изменений в ваших файлах. Каждый слепок называется <strong>коммит</strong> (commit). Вы можете в любой момент вернуться к любому коммиту, посмотреть, что изменилось, и даже разветвить историю.</p>
+
+<p>Представьте, что вы пишете курсовую:</p>
+
+<ul>
+  <li>Версия 1: набросок</li>
+  <li>Версия 2: добавили главу</li>
+  <li>Версия 3: переписали введение</li>
+  <li>Версия 4: поняли, что старое введение было лучше → вернулись к версии 2</li>
+</ul>
+
+<p>Без Git вы храните 4 файла: <code>курсовая_v1.docx</code>, <code>курсовая_v2.docx</code>... С Git у вас один файл и 4 коммита. Вы переключаетесь между ними одной командой.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Git — как машина времени. Это Ctrl+Z, который работает через месяц. Или даже через год. Вы всегда можете вернуться к тому моменту, когда всё работало.
+</div>
+
+<h2 class="section-hd" data-num="03">Репозиторий и основные понятия</h2>
+
+<p><strong>Репозиторий</strong> (repo) — это папка, за которой Git следит. Внутри неё есть скрытая папка <code>.git</code> — там хранится вся история. Вы её не трогаете, Git сам с ней работает.</p>
+
+<p>Основные понятия, без которых не разобраться:</p>
+
+<ul>
+  <li><strong>commit (коммит)</strong> — сохранённый слепок всех файлов. У каждого коммита есть сообщение, автор, дата и уникальный хеш.</li>
+  <li><strong>ветка (branch)</strong> — отдельная линия разработки. По умолчанию — <code>main</code>. Можно создать ветку для эксперимента, поработать в ней, а потом влить обратно.</li>
+  <li><strong>локальный репозиторий</strong> — на вашем компьютере.</li>
+  <li><strong>удалённый репозиторий (remote)</strong> — на GitHub. Бэкап + совместная работа.</li>
+  <li><strong>push</strong> — отправить ваши коммиты на GitHub.</li>
+  <li><strong>pull</strong> — скачать чужие коммиты с GitHub.</li>
+</ul>
+
+<p>У файла в Git три состояния:</p>
+
+<ul>
+  <li><strong>Untracked</strong> — Git не знает про этот файл (вы его только создали).</li>
+  <li><strong>Staged (индексирован)</strong> — вы сказали Git: «этот файл хочу сохранить в следующем коммите» (<code>git add</code>).</li>
+  <li><strong>Committed (сохранён)</strong> — вы сделали слепок (<code>git commit</code>).</li>
+</ul>
+
+<div class="pull-quote">
+  Один <code>git log</code> — и вся история перед глазами. Без папок «финальная_версия_окончательная_v2».
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="04">GitHub — это не Git</h2>
+
+<p>Это самое частое заблуждение новичков. <strong>Git</strong> — программа на вашем компьютере. <strong>GitHub</strong> — сайт, где хранятся удалённые репозитории. Это как разница между редактором Word (у вас на компьютере) и облачным хранилищем Google Диск (в интернете).</p>
+
+<p>Git работает локально: вы можете делать коммиты, создавать ветки, смотреть историю — всё без интернета. GitHub нужен для двух вещей: бэкапа (ваш код не пропадёт, если сломается ноутбук) и совместной работы (коллега может скачать ваш репозиторий и предложить изменения).</p>
+
+<div class="margin-note">
+  <strong>Можно работать без GitHub — только локально.</strong> GitHub нужен для бэкапа и совместной работы. Если вы единственный автор и у вас есть резервная копия — GitHub не обязателен. Но для портфолио и коллабораций — бесценен.
+</div>
+
+</div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>Git не даёт вам врать самому себе про «финальную версию»</h2>
+    <p>Один <code>git log --oneline</code> — и вы видите кто, когда и зачем изменил каждую строчку. Никаких «я не помню, что я там меняла». Никаких «кажется, в среду всё работало». История — перед глазами. Прозрачность, которой не хватает в рабочей переписке.</p>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="interim"><h3>Промежуточный итог</h3><p>Untracked → <code>git add</code> → Staged → <code>git commit</code> → Committed → <code>git push</code> → GitHub. Вы знаете, что Git — это машина времени на вашем компьютере, а GitHub — облачное хранилище для бэкапа и коллаборации. Дальше — шпаргалка и практика.</p></div>
+
+<div class="cheatsheet">
+  <h2>Шпаргалка</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Действие</th>
+        <th>Команда</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Создать репозиторий в текущей папке</td>
+        <td><code>git init</code></td>
+      </tr>
+      <tr>
+        <td>Проверить статус файлов</td>
+        <td><code>git status</code></td>
+      </tr>
+      <tr>
+        <td>Добавить файл в staging</td>
+        <td><code>git add имя_файла</code></td>
+      </tr>
+      <tr>
+        <td>Добавить все файлы</td>
+        <td><code>git add .</code></td>
+      </tr>
+      <tr>
+        <td>Сделать коммит</td>
+        <td><code>git commit -m "сообщение"</code></td>
+      </tr>
+      <tr>
+        <td>Посмотреть историю</td>
+        <td><code>git log</code></td>
+      </tr>
+      <tr>
+        <td>Посмотреть историю (кратко)</td>
+        <td><code>git log --oneline</code></td>
+      </tr>
+      <tr>
+        <td>Увидеть изменения</td>
+        <td><code>git diff</code></td>
+      </tr>
+      <tr>
+        <td>Создать ветку</td>
+        <td><code>git branch имя</code></td>
+      </tr>
+      <tr>
+        <td>Переключиться на ветку</td>
+        <td><code>git checkout имя</code></td>
+      </tr>
+      <tr>
+        <td>Влить ветку в текущую</td>
+        <td><code>git merge имя</code></td>
+      </tr>
+      <tr>
+        <td>Вернуться к коммиту по хешу</td>
+        <td><code>git checkout хеш</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Действие</th>
+        <th>Команда</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Представиться (имя)</td>
+        <td><code>git config --global user.name "Ваше Имя"</code></td>
+      </tr>
+      <tr>
+        <td>Представиться (email)</td>
+        <td><code>git config --global user.email "ваша@почта.ru"</code></td>
+      </tr>
+      <tr>
+        <td>Проверить настройки</td>
+        <td><code>git config --global --list</code></td>
+      </tr>
+      <tr>
+        <td>Красивый лог (алиас)</td>
+        <td><code>git config --global alias.lol "log --oneline --graph --all"</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Действие</th>
+        <th>Команда</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Связать локальный репозиторий с удалённым</td>
+        <td><code>git remote add origin https://github.com/логин/репо.git</code></td>
+      </tr>
+      <tr>
+        <td>Отправить коммиты на GitHub</td>
+        <td><code>git push -u origin main</code></td>
+      </tr>
+      <tr>
+        <td>Забрать изменения с GitHub</td>
+        <td><code>git pull</code></td>
+      </tr>
+      <tr>
+        <td>Посмотреть, с каким удалённым репозиторием связана папка</td>
+        <td><code>git remote -v</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="05">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. Проверка Git и настройка (10 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Откройте PowerShell. Проверьте: <code>git --version</code></li>
+          <li>Представьтесь Git (один раз, запомнит):
+<pre><code>git config --global user.name "Ваше Имя"
+git config --global user.email "ваша@почта.ru"</code></pre>
+          </li>
+          <li>Проверьте: <code>git config --global --list</code></li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. Первый репозиторий (15 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Создайте папку и перейдите в неё:
+<pre><code>mkdir C:\Users\ИмяПользователя\Desktop\my-first-repo
+cd C:\Users\ИмяПользователя\Desktop\my-first-repo</code></pre>
+          </li>
+          <li>Сделайте папку репозиторием: <code>git init</code></li>
+          <li>Git ответит: «Initialized empty Git repository in ...»</li>
+          <li>Проверьте: <code>git status</code> — увидите «On branch main» и «nothing to commit»</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 3. Первый коммит (15 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Создайте файл: <code>ni readme.md</code></li>
+          <li>Откройте в редакторе и напишите:
+<pre><code># my-first-repo
+
+Мой первый репозиторий. Учусь работать с Git.</code></pre>
+          </li>
+          <li>Сохраните. Проверьте: <code>git status</code> — файл «untracked»</li>
+          <li>Добавьте в staging: <code>git add readme.md</code></li>
+          <li>Проверьте: <code>git status</code> — файл «staged» (зелёным)</li>
+          <li>Сделайте коммит: <code>git commit -m "Первый коммит: readme"</code></li>
+          <li>Посмотрите историю: <code>git log --oneline</code></li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 4. Второй коммит (10 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Откройте <code>readme.md</code> и допишите:
+<pre><code>## Как я учусь
+
+Прохожу курс L&D × AI. На этой неделе осваиваю Git.</code></pre>
+          </li>
+          <li>Сохраните. Проверьте: <code>git status</code></li>
+          <li>Посмотрите изменения: <code>git diff readme.md</code> — Git покажет добавленные строки</li>
+          <li>Сохраните изменения:
+<pre><code>git add readme.md
+git commit -m "Добавил раздел Как я учусь"</code></pre>
+          </li>
+          <li>Посмотрите историю: <code>git log --oneline</code> — теперь два коммита</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 5. Возврат к предыдущей версии (10 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Посмотрите полную историю: <code>git log</code></li>
+          <li>Скопируйте хеш первого коммита (самый нижний)</li>
+          <li>Вернитесь к нему: <code>git checkout &lt;хеш&gt;</code></li>
+          <li>Откройте <code>readme.md</code> — файл снова содержит только первую версию</li>
+          <li>Вернитесь к последней версии: <code>git checkout main</code></li>
+          <li>Файл снова полный. Git работает как машина времени</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 6. Ветки (15 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Создайте ветку для эксперимента: <code>git branch experiment</code></li>
+          <li>Проверьте ветки: <code>git branch</code> — <code>main</code> выделена звёздочкой</li>
+          <li>Переключитесь: <code>git checkout experiment</code></li>
+          <li>Откройте <code>readme.md</code> и допишите:
+<pre><code>## Эксперимент
+
+Это изменение я делаю в отдельной ветке.</code></pre>
+          </li>
+          <li>Закоммитьте:
+<pre><code>git add .
+git commit -m "Эксперимент в отдельной ветке"</code></pre>
+          </li>
+          <li>Вернитесь в main: <code>git checkout main</code> — файл без экспериментальной строки</li>
+          <li>Влейте эксперимент: <code>git merge experiment</code></li>
+          <li>Файл обновился. История: <code>git log --oneline</code></li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 7. Gitignore (10 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Создайте два файла:
+<pre><code>ni secret.txt
+ni notes.txt</code></pre>
+          </li>
+          <li>Запишите в <code>secret.txt</code>: «это секрет»</li>
+          <li>Создайте <code>.gitignore</code>: <code>ni .gitignore</code></li>
+          <li>Откройте <code>.gitignore</code> и напишите: <code>secret.txt</code></li>
+          <li>Проверьте: <code>git status</code> — <code>secret.txt</code> исчез из списка</li>
+          <li>Закоммитьте <code>.gitignore</code>:
+<pre><code>git add .gitignore
+git commit -m "Добавил gitignore, скрыл secret.txt"</code></pre>
+          </li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 8. GitHub: локальный → удалённый (25 мин)</summary>
+      <div class="details-content">
+        <p><strong>Нужен аккаунт на GitHub.</strong> Если нет — зарегистрируйтесь на github.com (бесплатно).</p>
+        <ol class="steps">
+          <li>Зайдите на github.com, нажмите зелёную кнопку <strong>New</strong></li>
+          <li>Название: <code>my-first-repo</code>. Public. <strong>Не</strong> ставьте галочку «Add a README»</li>
+          <li>Нажмите <strong>Create repository</strong></li>
+          <li>Скопируйте команду со страницы и выполните в PowerShell:
+<pre><code>git remote add origin https://github.com/ваш-логин/my-first-repo.git</code></pre>
+          </li>
+          <li>Проверьте: <code>git remote -v</code></li>
+          <li>Отправьте коммиты:
+<pre><code>git push -u origin main</code></pre>
+          </li>
+          <li>Для входа GitHub запросит логин и токен (не пароль!). Токен создаётся: GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token, галочка <code>repo</code></li>
+          <li>Обновите страницу репозитория на GitHub — увидите свои файлы и историю</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 9. Артефакт (10 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Перейдите в папку вашего основного проекта курса</li>
+          <li>Создайте папку: <code>mkdir career</code></li>
+          <li>Сохраните лог коммитов: <code>git log --oneline &gt; career\git-demo.md</code></li>
+          <li>Откройте файл и допишите в начало:
+<pre><code># Git-демо: мой первый опыт
+
+**Дата:** [сегодня]
+**Что делала:** создала репозиторий, сделала несколько коммитов, поработала с ветками, отправила на GitHub.
+
+## Лог коммитов</code></pre>
+          </li>
+          <li>Закоммитьте артефакт в основной проект</li>
+        </ol>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="06">После практики</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>✓ Проверили Git: <code>git --version</code> вернула номер</li>
+    <li>✓ Создали локальный репозиторий (<code>git init</code>)</li>
+    <li>✓ Сделали минимум 2 коммита с разными сообщениями</li>
+    <li>✓ Посмотрели изменения через <code>git diff</code> и <code>git log</code></li>
+    <li>✓ Вернулись к предыдущей версии (<code>git checkout</code>)</li>
+    <li>✓ Создали и слили ветку (<code>git branch</code>, <code>git merge</code>)</li>
+    <li>✓ Настроили <code>.gitignore</code></li>
+    <li>✓ Создали репозиторий на GitHub и запушили коммиты (<code>git push</code>)</li>
+    <li>✓ Создали артефакт <code>career/git-demo.md</code> с логом коммитов</li>
+  </ul>
+</div>
+
+<h3>Артефакт урока</h3>
+
+<p>После урока в вашем проекте должна появиться структура:</p>
+
+<pre>ваш-проект/
+├── career/
+│   └── git-demo.md          # Лог коммитов + описание опыта
+└── (my-first-repo на GitHub)  # Публичный репозиторий с историей</pre>
+
+<div class="open-loop">
+  <h3>Челлендж на завтра</h3>
+  <p>Сделайте ещё пару коммитов в свой основной проект — хотя бы по одному на каждый день. Git становится полезным, когда вы входите в привычку коммитить часто. Достаточно 5 минут: изменили строчку → <code>git add .</code> → <code>git commit -m "описание"</code>. Завтра, послезавтра, через неделю. Через месяц вы не сможете представить работу без этого.</p>
+</div>
+
+<h3>Что дальше</h3>
+
+<p>На следующем уроке — <strong>API и чтение кода</strong>. Вы научитесь делать запросы к AI-моделям через терминал, читать документацию API и понимать, что происходит в чужом коде. Но сначала закрепите Git — повторите любой шаг, который был непонятен.</p>
+
+<h3>Дополнительно (необязательно, но полезно)</h3>
+
+<ul>
+  <li><code>git log --graph</code> — показывает историю в виде графа (наглядно видны ветки)</li>
+  <li><code>git commit --amend</code> — исправить сообщение последнего коммита (если ошиблись)</li>
+  <li><code>git reset HEAD readme.md</code> — убрать файл из staging (если случайно добавили)</li>
+  <li>Сделайте алиас для красивого лога: <code>git config --global alias.lol "log --oneline --graph --all"</code> — и команда <code>git lol</code> заработает</li>
+  <li>Прочитайте первые 3 раздела книги Pro Git на русском: https://git-scm.com/book/ru/v2</li>
+</ul>
+
+<div class="nav-bottom">
+  <a href="lesson-01-terminal.html">← Урок 1. Терминал и командная строка</a>
+  <a href="lesson-03-api.html" class="nav-next">Урок 3. API и чтение кода →</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
       <a href="/">L&D без суеты</a>
       <a href="https://t.me/mrk_natalia">Telegram</a>
       <a href="https://github.com/look85-ops">GitHub</a>
     </div>
     <div class="fmeta">
-      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
-      <span class="fnote">Собрано с помощью AI-ассистента</span>
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
 
 </body>
 </html>

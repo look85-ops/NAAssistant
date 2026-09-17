@@ -3,60 +3,579 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Урок 2. ROI и Roadmap: от «давайте попробуем AI» к «вот цифры и план» — L&D без суеты</title>
+<title>Урок 2. ROI и дорожная карта — L&D без суеты</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 <style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
-.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
-.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
-.hlogo span{color:#474a1a}
-.hnav{display:flex;gap:28px}
-.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
-.hnav a:hover{color:#2b2b1a}
 
-.lesson{padding:140px 0 80px}
-.li{max-width:720px;margin:0 auto;padding:0 48px}
-.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
-.bc a{color:#737366;text-decoration:none}
-.bc a:hover{color:#2b2b1a}
-.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
-.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
-.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
-.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
-.content strong{font-weight:550}
-.content ul,.content ol{margin:0 0 20px 24px}
-.content li{margin-bottom:8px;color:#3a3a32}
-.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
-.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
-.content pre code{background:none;padding:0}
-.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
-.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
-.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
-.content td{color:#3a3a32}
-.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
-.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
-.content em{font-style:italic}
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
 
-.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
-.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:#737366;text-decoration:none}
-.flinks a:hover{color:#2b2b1a}
-.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.fupd{font-size:11px;color:#b0b0a8}
-.fnote{font-size:11px;color:#c0beb8}
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
 
-@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
 </style>
 </head>
 <body>
+
+<div class="pbar" id="pbar"></div>
 
 <header class="header">
   <div class="hi">
@@ -69,356 +588,514 @@ body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1
   </div>
 </header>
 
-<section class="lesson">
-  <div class="li">
-    <p class="bc"><a href="/course/">Курс</a> / Модуль 3. AI-стратегия и ROI</p>
-    <h1>Урок 2. ROI и Roadmap: от «давайте попробуем AI» к «вот цифры и план»</h1>
-    <p class="lmeta">**Модуль 3:** · **Время:**</p>
-    <div class="content">
+<section class="hero">
+  <div class="hero-wm">03.2</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 3 · AI-стратегия и ROI</div>
+    <h1>Урок 2. ROI и дорожная карта: от «давайте попробуем» к «вот цифры и план»</h1>
+    <p class="meta">Урок 2</p>
 
-<p><strong>Модуль 3:</strong> AI-стратегия и ROI в компании
-<strong>Неделя:</strong> 2 из 2
-<strong>Время:</strong> 2.5–3 ч</p>
+    <ul class="outcomes">
+      <li>Посчитать полную стоимость AI-проекта по пяти компонентам, а не только цену подписки</li>
+      <li>Перевести «экономию времени» в деньги и оценить выгоду для бизнеса</li>
+      <li>Посчитать ROI и срок окупаемости — и интерпретировать результат</li>
+      <li>Построить дорожную карту на 12 месяцев и собрать презентацию для руководства</li>
+    </ul>
+  </div>
+</section>
 
-<h2>1. Цель недели</h2>
-<p><strong>Зачем это L&amp;D-специалисту в работе с AI.</strong></p>
-<p>На прошлой неделе вы провели аудит готовности, составили список use case'ов и выбрали топ-5. Это была аналитическая работа. Теперь — разговор на языке бизнеса.</p>
-<p>Руководству не нужны «прикольные AI-штуки». Им нужен ответ на три вопроса: <strong>сколько это стоит, когда окупится и какие риски.</strong> L&amp;D-специалист, который приходит не с «давайте внедрим AI», а с «вот пять проектов, вот их ROI, вот дорожная карта на год» — говорит на одном языке с CEO.</p>
-<p>На этой неделе вы научитесь считать цепочку «внедрение → выгода → деньги → результат» и строить дорожную карту внедрения AI. К концу урока у вас будет готовый документ для защиты бюджета перед руководством.</p>
-<hr />
-<h2>2. Теория</h2>
-<h3>2.1. Почему ROI для AI считают неправильно (и как правильно)</h3>
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> откройте текстовый редактор или возьмите лист бумаги. Запишите один use case из топ-3 с прошлого урока. Сегодня мы превратим его в финансовый документ, с которым можно идти к руководству.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
+
+<p>На прошлом уроке вы провели аудит готовности, составили список use case'ов и выбрали топ-3. Это была аналитическая работа. Теперь — разговор на языке бизнеса.</p>
+
+<p>Руководству не нужны «прикольные AI-штуки». Им нужен ответ на три вопроса: <strong>сколько это стоит, когда окупится и какие риски.</strong></p>
+
+<p>На этом уроке вы научитесь считать цепочку «внедрение → выгода → деньги → результат» и строить дорожную карту внедрения AI. К концу урока у вас будет готовый документ для защиты бюджета перед руководством.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02">Почему ROI для AI считают неправильно (и как правильно)</h2>
+
 <p>Классическая ошибка при расчёте ROI для AI: считать только стоимость подписки. «ChatGPT стоит $20/мес — вот и весь бюджет». Это как при покупке кофемашины посчитать только цену капсул и забыть про саму машину, розетку, обучение бариста и сломанные чашки.</p>
-<p><strong>Реальная стоимость AI-внедрения складывается из пяти компонентов:</strong></p>
+
+<p>Реальная стоимость AI-внедрения складывается из пяти компонентов:</p>
+
 <table>
-<thead>
-<tr>
-<th>Компонент</th>
-<th>Что входит</th>
-<th>Пример</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Лицензии/подписки</strong></td>
-<td>API-ключи, подписки на инструменты, серверы</td>
-<td>$20–200/мес на API</td>
-</tr>
-<tr>
-<td><strong>Интеграция</strong></td>
-<td>Часы разработчика, настройка, подключение к системам</td>
-<td>20–80 ч разработки</td>
-</tr>
-<tr>
-<td><strong>Данные</strong></td>
-<td>Очистка, разметка, приведение к единому формату</td>
-<td>2–4 недели методиста</td>
-</tr>
-<tr>
-<td><strong>Обучение людей</strong></td>
-<td>Онбординг команды, инструкции, поддержка</td>
-<td>2–4 ч на сотрудника</td>
-</tr>
-<tr>
-<td><strong>Сопровождение</strong></td>
-<td>Мониторинг качества, обновление моделей, фиксы</td>
-<td>2–4 ч/нед методиста</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Компонент</th>
+      <th>Что входит</th>
+      <th>Пример</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Лицензии / подписки</td>
+      <td>API-ключи, подписки на инструменты, серверы</td>
+      <td>$20–200/мес на API</td>
+    </tr>
+    <tr>
+      <td>Интеграция</td>
+      <td>Часы разработчика, настройка, подключение к системам</td>
+      <td>20–80 ч разработки</td>
+    </tr>
+    <tr>
+      <td>Данные</td>
+      <td>Очистка, разметка, приведение к единому формату</td>
+      <td>2–4 недели методиста</td>
+    </tr>
+    <tr>
+      <td>Обучение людей</td>
+      <td>Онбординг команды, инструкции, поддержка</td>
+      <td>2–4 ч на сотрудника</td>
+    </tr>
+    <tr>
+      <td>Сопровождение</td>
+      <td>Мониторинг качества, обновление моделей, фиксы</td>
+      <td>2–4 ч/нед методиста</td>
+    </tr>
+  </tbody>
 </table>
-<p><strong>Метафора:</strong> внедрение AI — не покупка принтера (купил и печатает), а найм стажёра. Вы платите ему зарплату (подписка), обучаете (онбординг), даёте материалы (данные), проверяете работу (сопровождение). И только через месяц-два он начинает приносить реальную пользу.</p>
-<p><strong>Формула ROI для AI-проекта:</strong></p>
-<pre><code>ROI = (Выгода − Затраты) / Затраты × 100%
-</code></pre>
-<p>Где <strong>выгода</strong> — не «стало удобнее», а конкретные цифры: сэкономленные часы × ставка сотрудника, снижение ошибок × стоимость ошибки, дополнительная выручка от продукта.</p>
-<hr />
-<h3>2.2. Типы выгоды: как перевести «удобно» в деньги</h3>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Внедрение AI — не покупка принтера (купил и печатает), а найм стажёра. Вы платите ему зарплату (подписка), обучаете (онбординг), даёте материалы (данные), проверяете работу (сопровождение). И только через месяц-два он начинает приносить реальную пользу.
+</div>
+
+<p>Формула ROI для AI-проекта:</p>
+
+<pre>ROI = (Выгода − Затраты) / Затраты × 100%</pre>
+
+<p>Где выгода — не «стало удобнее», а конкретные цифры: сэкономленные часы × ставка сотрудника, снижение ошибок × стоимость ошибки, дополнительная выручка от продукта.</p>
+
+<h2 class="section-hd" data-num="02.2">Типы выгоды: как перевести «удобно» в деньги</h2>
+
 <p>У выгоды от AI есть четыре формы. Выберите ту, которая ближе к вашему use case'у:</p>
+
 <table>
-<thead>
-<tr>
-<th>Тип выгоды</th>
-<th>Как посчитать</th>
-<th>Пример</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Экономия времени</strong></td>
-<td>(Часы ручной работы − Часы с AI) × Ставка часа × Периодов в год</td>
-<td>Проверка тестов: 4 ч → 30 мин. Экономия 3.5 ч/нед × ₽2000/ч × 40 нед = ₽280 000/год</td>
-</tr>
-<tr>
-<td><strong>Снижение ошибок</strong></td>
-<td>(Ошибок до − Ошибок после) × Средняя стоимость ошибки</td>
-<td>Ошибка в учебной программе → переделка 8 ч. Было 5 ошибок/год, стало 1. Экономия: 4 × 8 × ₽2000 = ₽64 000/год</td>
-</tr>
-<tr>
-<td><strong>Рост скорости процесса</strong></td>
-<td>Время цикла до / Время цикла после</td>
-<td>Разработка модуля курса: 5 дней → 1 день. Ускорение ×5</td>
-</tr>
-<tr>
-<td><strong>Новая выручка</strong></td>
-<td>Цена продукта × Ожидаемое число клиентов</td>
-<td>AI-инструмент для методологов: $15/мес × 50 клиентов = $750/мес</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Тип выгоды</th>
+      <th>Как посчитать</th>
+      <th>Пример</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Экономия времени</td>
+      <td>(Часы ручной − Часы с AI) × Ставка × Периодов/год</td>
+      <td>Проверка тестов: 4 ч → 30 мин. Экономия 3,5 ч/нед × ₽2000/ч × 40 нед = ₽280 000/год</td>
+    </tr>
+    <tr>
+      <td>Снижение ошибок</td>
+      <td>(Ошибок до − Ошибок после) × Стоимость ошибки</td>
+      <td>Ошибка в программе → переделка 8 ч. Было 5/год, стало 1. Экономия: 4 × 8 × ₽2000 = ₽64 000/год</td>
+    </tr>
+    <tr>
+      <td>Рост скорости</td>
+      <td>Время цикла до / Время цикла после</td>
+      <td>Разработка модуля: 5 дней → 1 день. Ускорение ×5</td>
+    </tr>
+    <tr>
+      <td>Новая выручка</td>
+      <td>Цена × Число клиентов</td>
+      <td>AI-инструмент для методологов: $15/мес × 50 клиентов = $750/мес</td>
+    </tr>
+  </tbody>
 </table>
-<p><strong>Правило:</strong> если не можете привязать выгоду к деньгам или времени — используйте «ускорение в X раз». Даже это лучше, чем «стало классно». Руководство понимает «×3 быстрее», но не понимает «инновационно».</p>
-<hr />
-<h3>2.3. Горизонты: когда ждать отдачи</h3>
+
+<div class="margin-note">
+  <strong>Правило:</strong> если не можете привязать выгоду к деньгам или времени — используйте «ускорение в X раз». Даже это лучше, чем «стало классно».
+</div>
+
+<h2 class="section-hd" data-num="02.3">Горизонты: когда ждать отдачи</h2>
+
 <p>AI-проекты не дают отдачу на первой неделе. Они проходят три стадии:</p>
+
 <table>
-<thead>
-<tr>
-<th>Горизонт</th>
-<th>Срок</th>
-<th>Что происходит</th>
-<th>Чего ждать</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>0–3 месяца</strong></td>
-<td>Пилот</td>
-<td>Настройка, тест на малой группе, сбор первых метрик</td>
-<td>Минус (траты), первые замеры скорости</td>
-</tr>
-<tr>
-<td><strong>3–6 месяцев</strong></td>
-<td>Масштабирование</td>
-<td>Расширение на весь отдел, интеграция в процессы</td>
-<td>Выход в ноль — плюс</td>
-</tr>
-<tr>
-<td><strong>6–12 месяцев</strong></td>
-<td>Стабилизация</td>
-<td>Процесс отлажен, люди привыкли, метрики стабильны</td>
-<td>Устойчивый плюс</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Горизонт</th>
+      <th>Срок</th>
+      <th>Что происходит</th>
+      <th>Чего ждать</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0–3 месяца</td>
+      <td>Пилот</td>
+      <td>Настройка, тест на малой группе, сбор метрик</td>
+      <td>Минус (траты), первые замеры</td>
+    </tr>
+    <tr>
+      <td>3–6 месяцев</td>
+      <td>Масштабирование</td>
+      <td>Расширение на отдел, интеграция в процессы</td>
+      <td>Выход в ноль — плюс</td>
+    </tr>
+    <tr>
+      <td>6–12 месяцев</td>
+      <td>Стабилизация</td>
+      <td>Процесс отлажен, люди привыкли, метрики стабильны</td>
+      <td>Устойчивый плюс</td>
+    </tr>
+  </tbody>
 </table>
-<p><strong>Важно:</strong> не обещайте руководству «окупится через месяц». Нормальный горизонт для AI-проекта в L&amp;D — 6–12 месяцев до устойчивой отдачи. Если кто-то обещает «AI окупится за неделю» — он либо не понимает, либо продаёт.</p>
-<p><strong>Метафора:</strong> AI-проект — как ремонт в квартире. Первые две недели — пыль, шум и «зачем мы это затеяли». Через месяц — уже видно, что красиво. Через три — живёте и радуетесь.</p>
-<hr />
-<h3>2.4. Roadmap: дорожная карта внедрения</h3>
-<p>Дорожная карта — это не «список желаний на год». Это последовательность шагов с контрольными точками. Для каждого из топ-5 use case'ов строится цепочка:</p>
-<pre><code>Пилот (мес 1–2) → Оценка (мес 3) → Масштабирование (мес 4–8) → Стабилизация (мес 9–12)
-</code></pre>
-<p><strong>Структура дорожной карты:</strong></p>
+
+<div class="insight">
+  <strong>Важно:</strong> не обещайте руководству «окупится через месяц». Нормальный горизонт для AI-проекта в L&D — 6–12 месяцев до устойчивой отдачи. Если кто-то обещает «AI окупится за неделю» — он либо не понимает, либо продаёт.
+</div>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> AI-проект — как ремонт в квартире. Первые две недели — пыль, шум и «зачем мы это затеяли». Через месяц — уже видно, что красиво. Через три — живёте и радуетесь.
+</div>
+
+<h2 class="section-hd" data-num="02.4">Roadmap: дорожная карта внедрения</h2>
+
+<p>Для каждого из топ-3 use case'ов строится цепочка:</p>
+
+<pre>Пилот (мес 1–2) → Оценка (мес 3) → Масштабирование (мес 4–8) → Стабилизация (мес 9–12)</pre>
+
+<p>Пример дорожной карты для двух use case'ов:</p>
+
 <table>
-<thead>
-<tr>
-<th>Use case</th>
-<th>Q1: Пилот</th>
-<th>Q2: Оценка + правки</th>
-<th>Q3: Масштабирование</th>
-<th>Q4: Стабилизация</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AI-анализ фидбека</td>
-<td>Тест на 1 группе</td>
-<td>Сравнение с ручным</td>
-<td>Все 5 групп</td>
-<td>Авто-отчёты ежемесячно</td>
-</tr>
-<tr>
-<td>AI-ассистент курсов</td>
-<td>1 модуль в AI</td>
-<td>Сравнение качества</td>
-<td>Все модули</td>
-<td>Шаблон для новых курсов</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Use case</th>
+      <th>Q1: Пилот</th>
+      <th>Q2: Оценка + правки</th>
+      <th>Q3: Масштабирование</th>
+      <th>Q4: Стабилизация</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AI-анализ АОС</td>
+      <td>Тест на 1 группе</td>
+      <td>Сравнение с ручным</td>
+      <td>Все 5 групп</td>
+      <td>Авто-отчёты ежемесячно</td>
+    </tr>
+    <tr>
+      <td>AI-ассистент курсов</td>
+      <td>1 модуль в AI</td>
+      <td>Сравнение качества</td>
+      <td>Все модули</td>
+      <td>Шаблон для новых курсов</td>
+    </tr>
+  </tbody>
 </table>
-<p><strong>Принципы хорошей дорожной карты:</strong></p>
-<ol>
-<li><strong>Не всё сразу.</strong> Два пилота одновременно — максимум. Три — уже хаос.</li>
-<li><strong>Контрольные точки каждые 4–6 недель.</strong> Не «посмотрим через год», а «15 ноября — замер метрик».</li>
-<li><strong>Go/No-Go после пилота.</strong> Чёткий критерий: «если метрика X не выросла на Y% — останавливаем».</li>
-<li><strong>Человек в петле на всех этапах.</strong> Даже на стабилизации — выборочная проверка результатов.</li>
-</ol>
-<hr />
-<h3>2.5. Как презентовать руководству</h3>
+
+<p>Принципы хорошей дорожной карты:</p>
+
+<ul>
+  <li><strong>Не всё сразу.</strong> Два пилота одновременно — максимум. Три — уже хаос.</li>
+  <li><strong>Контрольные точки каждые 4–6 недель.</strong> Не «посмотрим через год», а «15 ноября — замер метрик».</li>
+  <li><strong>Go/No-Go после пилота.</strong> Чёткий критерий: «если метрика X не выросла на Y% — останавливаем».</li>
+  <li><strong>Человек в петле на всех этапах.</strong> Даже на стабилизации — выборочная проверка результатов.</li>
+</ul>
+
+<h2 class="section-hd" data-num="02.5">Как презентовать руководству</h2>
+
 <p>Вы пришли не с «давайте попробуем AI», а с готовым документом. Вот структура презентации на 5 слайдов (или 1 страницу A4):</p>
-<p><strong>Слайд 1. Что и зачем.</strong> Одна фраза: «Мы внедряем AI в [конкретный процесс], чтобы [конкретный результат в цифрах]».</p>
-<p><strong>Слайд 2. Сколько стоит.</strong> Полная стоимость: лицензии + интеграция + данные + обучение + сопровождение. Годовая цифра.</p>
-<p><strong>Слайд 3. Что получим.</strong> Выгода за год в деньгах или часах. Конкретно, без «синергии» и «инноваций».</p>
-<p><strong>Слайд 4. Когда.</strong> Дорожная карта на год: пилот → оценка → масштабирование. С датами.</p>
-<p><strong>Слайд 5. Риски и что с ними делаем.</strong> Три главных риска (из risk-фильтра урока 1) + контрмеры.</p>
-<p><strong>Правило одного абзаца:</strong> если вы не можете объяснить суть проекта в трёх предложениях — вы не готовы идти к руководству. Потренируйтесь на кошке (или на зеркале).</p>
-<hr />
-<h2>3. Шпаргалка (сохраните себе)</h2>
-<h3>Формулы</h3>
-<table>
-<thead>
-<tr>
-<th>Что считаем</th>
-<th>Формула</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>ROI</strong></td>
-<td>(Выгода − Затраты) / Затраты × 100%</td>
-</tr>
-<tr>
-<td><strong>Экономия времени в деньгах</strong></td>
-<td>Сэкономленные часы × Ставка часа × Кол-во периодов в год</td>
-</tr>
-<tr>
-<td><strong>Ускорение</strong></td>
-<td>Время «до» / Время «после»</td>
-</tr>
-<tr>
-<td><strong>Срок окупаемости</strong></td>
-<td>Затраты / Ежемесячная выгода (в месяцах)</td>
-</tr>
-</tbody>
-</table>
-<h3>Пять компонентов стоимости AI-проекта</h3>
-<ol>
-<li>Лицензии / подписки</li>
-<li>Интеграция (разработка)</li>
-<li>Данные (очистка, подготовка)</li>
-<li>Обучение людей</li>
-<li>Сопровождение (мониторинг, обновление)</li>
-</ol>
-<h3>Горизонты отдачи</h3>
-<table>
-<thead>
-<tr>
-<th>0–3 мес</th>
-<th>3–6 мес</th>
-<th>6–12 мес</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Пилот: траты, замеры</td>
-<td>Выход в ноль</td>
-<td>Устойчивый плюс</td>
-</tr>
-</tbody>
-</table>
-<h3>Структура презентации для руководства</h3>
-<ol>
-<li>Что и зачем (одна фраза + цифра)</li>
-<li>Сколько стоит (полная стоимость за год)</li>
-<li>Что получим (выгода в деньгах/часах)</li>
-<li>Когда (дорожная карта с датами)</li>
-<li>Риски и контрмеры (из risk-фильтра)</li>
-</ol>
-<hr />
-<h2>4. Практика</h2>
-<h3>Упражнение 1. Считаем полную стоимость (20 мин)</h3>
-<p>Возьмите <strong>один</strong> use case из топ-5 (прошлая неделя). Пройдите по пяти компонентам стоимости и оцените каждый:</p>
-<table>
-<thead>
-<tr>
-<th>Компонент</th>
-<th>Ваша оценка</th>
-<th>Как считали</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Лицензии / подписки</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Интеграция</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Данные</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Обучение людей</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Сопровождение (год)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Итого за год</strong></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Правила оценки:</strong>
-- Если не знаете точную цену — напишите диапазон (от–до).
-- Если компонент не применим (например, данные уже готовы) — ставьте 0, но напишите почему.
-- Ставку часа методиста/разработчика берите реалистичную для вашего рынка.</p>
-<hr />
-<h3>Упражнение 2. Считаем выгоду (20 мин)</h3>
-<p>Для того же use case'а оцените выгоду по одному из четырёх типов:</p>
-<p><strong>Если экономия времени:</strong>
-- Часов в неделю на задачу сейчас: ___
-- Часов в неделю с AI (оценка): ___
-- Ставка часа: ___
-- Недель в году: ___
-- <strong>Годовая экономия:</strong> (часы до − часы после) × ставка × недель = ___</p>
-<p><strong>Если снижение ошибок:</strong>
-- Ошибок в год сейчас: ___
-- Ошибок в год с AI (оценка): ___
-- Средняя стоимость одной ошибки (часы × ставка): ___
-- <strong>Годовая экономия:</strong> (ошибок до − ошибок после) × стоимость ошибки = ___</p>
-<p><strong>Если рост скорости:</strong>
-- Время цикла сейчас: ___
-- Время цикла с AI: ___
-- <strong>Ускорение:</strong> в ___ раз</p>
-<p><strong>Если новая выручка:</strong>
-- Цена продукта: ___
-- Ожидаемое число клиентов в год: ___
-- <strong>Годовая выручка:</strong> цена × клиенты = ___</p>
-<hr />
-<h3>Упражнение 3. Считаем ROI и срок окупаемости (15 мин)</h3>
-<p>Используйте цифры из упражнений 1 и 2:</p>
-<ol>
-<li><strong>ROI:</strong> (выгода − затраты) / затраты × 100% = ___%</li>
-<li><strong>Срок окупаемости:</strong> затраты / (выгода / 12) = ___ месяцев</li>
-</ol>
-<p><strong>Интерпретация:</strong>
-- ROI &gt; 100% → проект однозначно стоит делать.
-- ROI 0–100% → стоит, если не требует критичных ресурсов.
-- ROI &lt; 0% → сейчас не время. Либо выгода занижена, либо затраты завышены — перепроверьте цифры.
-- Срок окупаемости &gt; 18 месяцев → для AI в L&amp;D это нормально. Не пугайтесь.</p>
-<p><strong>Важно:</strong> если ROI отрицательный — это не провал. Это сигнал: либо вы неправильно посчитали, либо проект действительно не окупается. Честный «нет» лучше, чем самообман с «как-нибудь окупится».</p>
-<hr />
-<h3>Упражнение 4. Строим дорожную карту (25 мин)</h3>
-<p>Возьмите <strong>топ-3</strong> use case'а из прошлой недели. Для каждого постройте дорожную карту на 12 месяцев:</p>
-<pre><code>Use case 1: [название]
 
-Q1 (мес 1–3): [Что делаем] → Контрольная точка: [дата, метрика]
-Q2 (мес 4–6): [Что делаем] → Контрольная точка: [дата, метрика]
-Q3 (мес 7–9): [Что делаем] → Контрольная точка: [дата, метрика]
-Q4 (мес 10–12): [Что делаем] → Контрольная точка: [дата, метрика]
+<ul>
+  <li><strong>Слайд 1. Что и зачем.</strong> Одна фраза: «Мы внедряем AI в [процесс], чтобы [результат в цифрах]».</li>
+  <li><strong>Слайд 2. Сколько стоит.</strong> Полная стоимость: лицензии + интеграция + данные + обучение + сопровождение. Годовая цифра.</li>
+  <li><strong>Слайд 3. Что получим.</strong> Выгода за год в деньгах или часах. Конкретно, без «синергии» и «инноваций».</li>
+  <li><strong>Слайд 4. Когда.</strong> Дорожная карта на год: пилот → оценка → масштабирование. С датами.</li>
+  <li><strong>Слайд 5. Риски и что с ними делаем.</strong> Три главных риска (из risk-фильтра Урока 1) + контрмеры.</li>
+</ul>
 
-Go/No-Go после пилота: если [метрика] &lt; [порог] → останавливаем.
-</code></pre>
-<p><strong>Правила:</strong>
-- Не планируйте больше 2 пилотов одновременно в Q1.
-- Контрольные точки — конкретные даты (хотя бы месяц) и конкретные цифры.
-- Go/No-Go — жёсткий критерий. Не «посмотрим по ситуации», а «меньше X → закрываем».</p>
-<hr />
-<h3>Упражнение 5. Собираем презентацию для руководства (25 мин)</h3>
-<p>Создайте (или дополните) файл <code>docs/strategy/AI_ROI_initiative.md</code> разделом ROI и Roadmap:</p>
-<pre><code class="language-markdown"># AI ROI &amp; Roadmap: [название отдела/компании]
+<div class="margin-note">
+  <strong>Правило одного абзаца:</strong> если вы не можете объяснить суть проекта в трёх предложениях — вы не готовы идти к руководству. Потренируйтесь на кошке (или на зеркале).
+</div>
+
+<div class="interim"><h3>Промежуточный итог</h3><p>Вы знаете, из чего складывается реальная стоимость AI-проекта, как перевести выгоду в деньги, какие бывают горизонты отдачи и как выглядит дорожная карта. Дальше — шпаргалка и практика.</p></div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>ROI — не про цифры. ROI — про язык, на котором говорит бизнес</h2>
+    <p>Когда вы приходите к руководству с «окупаемость за 8 месяцев» вместо «давайте попробуем AI», вы перестаёте быть просителем. Вы становитесь стратегом, который понимает, куда, зачем и с каким эффектом внедряется технология.</p>
+  </div>
+</div>
+
+<div class="cheatsheet">
+  <h2>Шпаргалка: формулы</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Что считаем</th>
+        <th>Формула</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ROI</td>
+        <td><code>(Выгода − Затраты) / Затраты × 100%</code></td>
+      </tr>
+      <tr>
+        <td>Экономия времени в деньгах</td>
+        <td><code>Сэкономленные часы × Ставка часа × Кол-во периодов в год</code></td>
+      </tr>
+      <tr>
+        <td>Ускорение</td>
+        <td><code>Время «до» / Время «после»</code></td>
+      </tr>
+      <tr>
+        <td>Срок окупаемости</td>
+        <td><code>Затраты / Ежемесячная выгода (в месяцах)</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Пять компонентов стоимости AI-проекта</h3>
+
+  <ol>
+    <li>Лицензии / подписки</li>
+    <li>Интеграция (разработка)</li>
+    <li>Данные (очистка, подготовка)</li>
+    <li>Обучение людей</li>
+    <li>Сопровождение (мониторинг, обновление)</li>
+  </ol>
+
+  <h3>Горизонты отдачи</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>0–3 мес</th>
+        <th>3–6 мес</th>
+        <th>6–12 мес</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Пилот: траты, замеры</td>
+        <td>Выход в ноль</td>
+        <td>Устойчивый плюс</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Интерпретация ROI</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ROI</th>
+        <th>Что значит</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&gt; 100%</td>
+        <td>Проект однозначно стоит делать</td>
+      </tr>
+      <tr>
+        <td>0–100%</td>
+        <td>Стоит, если не требует критичных ресурсов</td>
+      </tr>
+      <tr>
+        <td>&lt; 0%</td>
+        <td>Сейчас не время. Перепроверьте цифры</td>
+      </tr>
+      <tr>
+        <td>Окупаемость &gt; 18 мес</td>
+        <td>Для AI в L&D это нормально. Не пугайтесь</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="04">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. Считаем полную стоимость (20 мин)</summary>
+      <div class="details-content">
+        <p>Возьмите один use case из топ-3 (прошлый урок). Пройдите по пяти компонентам стоимости и оцените каждый:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Компонент</th>
+              <th>Ваша оценка</th>
+              <th>Как считали</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Лицензии / подписки</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Интеграция</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Данные</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Обучение людей</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Сопровождение (год)</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Итого за год</strong></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Правила оценки:</p>
+        <ul>
+          <li>Если не знаете точную цену — напишите диапазон (от–до).</li>
+          <li>Если компонент не применим (например, данные уже готовы) — ставьте 0, но напишите почему.</li>
+          <li>Ставку часа методиста/разработчика берите реалистичную для вашего рынка.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. Считаем выгоду (20 мин)</summary>
+      <div class="details-content">
+        <p>Для того же use case'а оцените выгоду по одному из четырёх типов:</p>
+
+        <p><strong>Если экономия времени:</strong></p>
+        <ul>
+          <li>Часов в неделю на задачу сейчас: ___</li>
+          <li>Часов в неделю с AI (оценка): ___</li>
+          <li>Ставка часа: ___</li>
+          <li>Недель в году: ___</li>
+          <li>Годовая экономия: (часы до − часы после) × ставка × недель = ___</li>
+        </ul>
+
+        <p><strong>Если снижение ошибок:</strong></p>
+        <ul>
+          <li>Ошибок в год сейчас: ___</li>
+          <li>Ошибок в год с AI (оценка): ___</li>
+          <li>Средняя стоимость одной ошибки (часы × ставка): ___</li>
+          <li>Годовая экономия: (ошибок до − ошибок после) × стоимость ошибки = ___</li>
+        </ul>
+
+        <p><strong>Если рост скорости:</strong></p>
+        <ul>
+          <li>Время цикла сейчас: ___</li>
+          <li>Время цикла с AI: ___</li>
+          <li>Ускорение: в ___ раз</li>
+        </ul>
+
+        <p><strong>Если новая выручка:</strong></p>
+        <ul>
+          <li>Цена продукта: ___</li>
+          <li>Ожидаемое число клиентов в год: ___</li>
+          <li>Годовая выручка: цена × клиенты = ___</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 3. Считаем ROI и срок окупаемости (15 мин)</summary>
+      <div class="details-content">
+        <p>Используйте цифры из упражнений 1 и 2:</p>
+
+        <ul>
+          <li>ROI: (выгода − затраты) / затраты × 100% = ___%</li>
+          <li>Срок окупаемости: затраты / (выгода / 12) = ___ месяцев</li>
+        </ul>
+
+        <p><strong>Интерпретация:</strong></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ROI</th>
+              <th>Что значит</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&gt; 100%</td>
+              <td>Проект однозначно стоит делать</td>
+            </tr>
+            <tr>
+              <td>0–100%</td>
+              <td>Стоит, если не требует критичных ресурсов</td>
+            </tr>
+            <tr>
+              <td>&lt; 0%</td>
+              <td>Сейчас не время. Перепроверьте цифры</td>
+            </tr>
+            <tr>
+              <td>Окупаемость &gt; 18 мес</td>
+              <td>Для AI в L&D это нормально. Не пугайтесь</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="insight">
+          <strong>Важно:</strong> если ROI отрицательный — это не провал. Это сигнал: либо вы неправильно посчитали, либо проект действительно не окупается. Честный «нет» лучше, чем самообман с «как-нибудь окупится».
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 4. Строим дорожную карту (25 мин)</summary>
+      <div class="details-content">
+        <p>Возьмите топ-3 use case'а из прошлой недели. Для каждого постройте дорожную карту на 12 месяцев:</p>
+
+        <pre>Use case 1: [название]
+
+Q1 (мес 1–3): [Что делаем] → КТ: [дата, метрика]
+Q2 (мес 4–6): [Что делаем] → КТ: [дата, метрика]
+Q3 (мес 7–9): [Что делаем] → КТ: [дата, метрика]
+Q4 (мес 10–12): [Что делаем] → КТ: [дата, метрика]
+
+Go/No-Go после пилота: если [метрика] &lt; [порог] → останавливаем.</pre>
+
+        <p>Правила:</p>
+        <ul>
+          <li>Не планируйте больше 2 пилотов одновременно в Q1.</li>
+          <li>Контрольные точки — конкретные даты (хотя бы месяц) и конкретные цифры.</li>
+          <li>Go/No-Go — жёсткий критерий. Не «посмотрим по ситуации», а «меньше X → закрываем».</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 5. Собираем презентацию (25 мин)</summary>
+      <div class="details-content">
+        <p>Соберите презентацию для руководства. Вот шаблон (5 слайдов / 1 стр. A4):</p>
+
+        <pre># AI ROI & Roadmap: [название отдела]
 
 **Дата:** [сегодня]
-**Основание:** AI Readiness Check от [дата прошлого урока], топ-5 use case'ов
+**Основание:** AI Readiness Check от [дата], топ-3 use case'ов
 
 ---
 
@@ -426,133 +1103,135 @@ Go/No-Go после пилота: если [метрика] &lt; [порог] �
 
 | Use case | Затраты/год | Выгода/год | ROI | Окупаемость |
 |----------|-------------|------------|-----|-------------|
-| 1. [название] | | | | |
-| 2. [название] | | | | |
-| 3. [название] | | | | |
+| 1. []    |             |            |     |             |
 
 ## Дорожная карта (12 месяцев)
 
 ### Use case 1: [название]
-- **Q1 (пилот):**
-- **Q2 (оценка):**
-- **Q3 (масштабирование):**
-- **Q4 (стабилизация):**
-- **Go/No-Go:**
-
-### Use case 2: [название]
-...
+- Q1 (пилот):
+- Q2 (оценка):
+- Q3 (масштаб):
+- Q4 (стабилизация):
+- Go/No-Go:
 
 ## Презентация для руководства (1 стр. A4)
 
-**Что и зачем:**
-[Одна фраза + цифра]
+Что и зачем: [фраза + цифра]
+Сколько стоит: [полная стоимость]
+Что получим: [выгода]
+Когда: [даты]
+Риски: [3 риска + контрмеры]</pre>
 
-**Сколько стоит:**
-[Полная стоимость за год]
+        <p>После заполнения — прочитайте вслух. Если звучит убедительно для вас, значит убедительно и для руководства.</p>
+      </div>
+    </details>
 
-**Что получим:**
-[Выгода за год в деньгах или часах]
-
-**Когда:**
-[Ключевые даты дорожной карты]
-
-**Риски:**
-1. [Риск] → [Контрмера]
-2. [Риск] → [Контрмера]
-3. [Риск] → [Контрмера]
-</code></pre>
-<hr />
-<h2>5. Рефлексия (напишите мне)</h2>
-<ol>
-<li>Сколько времени заняло?</li>
-<li>Какой use case оказался самым выгодным по ROI?</li>
-<li>Какой — самым дорогим или долгим по окупаемости?</li>
-<li>Что было труднее: посчитать затраты или оценить выгоду?</li>
-<li>Что вы теперь скажете руководству, чего не сказали бы до этого урока?</li>
-<li>Оценка материала от 1 до 5</li>
-</ol>
-<hr />
-<h2>6. Чек-лист готовности</h2>
-<ul>
-<li>[ ] Посчитал(а) полную стоимость одного use case'а (5 компонентов)</li>
-<li>[ ] Оценил(а) выгоду в деньгах или часах</li>
-<li>[ ] Посчитал(а) ROI и срок окупаемости</li>
-<li>[ ] Построил(а) дорожную карту на 12 месяцев для топ-3</li>
-<li>[ ] Для каждого прописал(а) Go/No-Go после пилота</li>
-<li>[ ] Собрал(а) слайды презентации для руководства (5 слайдов / 1 стр. A4)</li>
-<li>[ ] Дополнил(а) <code>docs/strategy/AI_ROI_initiative.md</code> разделами ROI и Roadmap</li>
-</ul>
-<hr />
-<h2>7. Артефакт</h2>
-<p>После урока ваш <code>docs/strategy/AI_ROI_initiative.md</code> будет содержать:</p>
-<pre><code>docs/
-└── strategy/
-    └── AI_ROI_initiative.md    # AI Readiness Check + топ-5 use case'ов
-                                  + финансовая модель (ROI)
-                                  + дорожная карта (12 мес)
-                                  + презентация для руководства (1 стр.)
-</code></pre>
-<hr />
-<h2>8. Что дальше</h2>
-<p>Вы завершили Модуль 3. Теперь вы:</p>
-<ul>
-<li>Провели AI Readiness Check своего отдела (люди / процессы / данные)</li>
-<li>Составили и приоритизировали топ-5 use case'ов по трём осям (ценность, усилия, риск)</li>
-<li>Посчитали ROI и срок окупаемости для ключевых проектов</li>
-<li>Построили дорожную карту на 12 месяцев с контрольными точками</li>
-<li>Подготовили документ для защиты бюджета перед руководством</li>
-</ul>
-<p>Это уровень, на котором L&amp;D говорит на языке бизнеса. Вы больше не «человек, который просит купить ChatGPT». Вы — стратег, который понимает, куда, зачем и с каким эффектом внедряется AI.</p>
-<p><strong>Вы завершили программу lndxAI.</strong> Дальше — практика на своих проектах.</p>
-<h3>Итоговая проверка Модуля 3 (ответьте себе, можно устно)</h3>
-<ol>
-<li>Из каких пяти компонентов складывается реальная стоимость AI-проекта?</li>
-<li>Как перевести «экономию времени» в деньги?</li>
-<li>Почему AI-проект не окупается за месяц? Назовите реалистичный горизонт.</li>
-<li>Что такое Go/No-Go после пилота? Приведите пример критерия.</li>
-<li>Из чего состоит презентация AI-проекта для руководства (5 слайдов)?</li>
-</ol>
-<p>Если на все 5 вопросов отвечаете без подсказок — Модуль 3 пройден.</p>
-<h3>Итоговая проверка всей программы (ответьте себе)</h3>
-<ol>
-<li>Как отправить API-запрос из терминала и прочитать JSON-ответ?</li>
-<li>Что такое RAG и когда его использовать вместо fine-tuning?</li>
-<li>Чем AI-агент отличается от чата?</li>
-<li>Как приоритизировать use case'ы по трём осям (ценность, усилия, риск)?</li>
-<li>Как посчитать ROI AI-проекта и построить дорожную карту?</li>
-</ol>
-<p>Если на все 5 вопросов отвечаете — вы прошли путь от «не понимаю, что такое API» до «могу защитить AI-бюджет перед CEO».</p>
-<h3>Дополнительно (необязательно, но полезно)</h3>
-<ul>
-<li><strong>Книга:</strong> «AI Transformation Playbook» (Andrew Ng, landing.ai) — бесплатный гайд по внедрению AI в компанию: https://landing.ai/transformation-playbook/</li>
-<li><strong>Инструмент:</strong> попробуйте калькулятор ROI для AI-проектов от McKinsey (или сделайте свой в Google Sheets — шаблон из упражнения 3)</li>
-<li><strong>Практика:</strong> попросите AI-модель (Claude/ChatGPT) проверить ваши расчёты ROI — «вот мои цифры, что я упустил(а)?» Иногда модель видит слепые зоны.</li>
-<li><strong>Документ:</strong> если вы работаете в компании — запросите внутреннюю методику расчёта ROI проектов и сравните с нашей. Возможно, в компании уже есть утверждённая формула — используйте её, цифры будут убедительнее.</li>
-</ul>
-<hr />
-<h2>9. Анонс Модуля 4: Позиционирование и портфолио L&amp;D+AI</h2>
-<p><strong>2 недели, по 2–2.5 ч</strong> | Пилот для коллег</p>
-<p>Вы умеете работать с AI. Теперь — как упаковать это в историю, которая продаёт вас как специалиста.</p>
-<p><strong>Неделя 1. Позиционирование:</strong> elevator pitch (30 сек / 2 мин / 5 мин), кейсы по формуле «задача → AI-решение → цифры», narrative под разные аудитории.</p>
-<p><strong>Неделя 2. Портфолио:</strong> собираем артефакты модулей 1–3 в читаемый пакет, GitHub Pages за час, LinkedIn-профиль с AI-нарративом.</p>
-<p><strong>На выходе:</strong> <code>career/narrative.md</code>, сайт-визитка на GitHub Pages, обновлённый LinkedIn.</p>
-    </div>
   </div>
-</section>
+</div>
 
-<footer class="footer">
-  <div class="fi">
-    <div class="flinks">
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="05">После практики</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>✓ Посчитал(а) полную стоимость одного use case'а (5 компонентов)</li>
+    <li>✓ Оценил(а) выгоду в деньгах или часах</li>
+    <li>✓ Посчитал(а) ROI и срок окупаемости</li>
+    <li>✓ Построил(а) дорожную карту на 12 месяцев для топ-3</li>
+    <li>✓ Для каждого прописал(а) Go/No-Go после пилота</li>
+    <li>✓ Собрал(а) слайды презентации для руководства (5 слайдов / 1 стр. A4)</li>
+  </ul>
+</div>
+
+<h3>Артефакт урока</h3>
+
+<p>После урока в вашем проекте должно появиться:</p>
+
+<pre>ваш-проект/
+└── ai-roi-analysis/
+    ├── full-costs.md          (полная стоимость одного use case'а)
+    ├── benefits.md            (оценка выгоды в деньгах или часах)
+    ├── roi-calculation.md     (ROI и срок окупаемости)
+    └── roadmap.md             (дорожная карта на 12 месяцев)
+    └── presentation-a4.md     (презентация для руководства)</pre>
+
+<div class="open-loop">
+  <h3>Челлендж на завтра</h3>
+  <p>Покажите вашу презентацию (5 слайдов / 1 стр. A4) коллеге, который ничего не знает об AI. Если он понял суть за 2 минуты — презентация готова. Если нет — упростите. Руководство слушает ещё меньше, чем коллега.</p>
+</div>
+
+<h3>Что дальше</h3>
+
+<p><strong>Вы завершили Модуль 3.</strong> Вот что вы сделали за две недели:</p>
+
+<ul>
+  <li>Провели AI Readiness Check своего отдела (люди / процессы / данные)</li>
+  <li>Составили и приоритизировали топ-3 use case'ов по трём осям (ценность, усилия, риск)</li>
+  <li>Посчитали ROI и срок окупаемости для ключевых проектов</li>
+  <li>Построили дорожную карту на 12 месяцев с контрольными точками</li>
+  <li>Подготовили документ для защиты бюджета перед руководством</li>
+</ul>
+
+<p>Это уровень, на котором L&D говорит на языке бизнеса. Вы больше не «человек, который просит купить ChatGPT». Вы — стратег, который понимает, куда, зачем и с каким эффектом внедряется AI.</p>
+
+<h3>Итоговая проверка Модуля 3 (ответьте себе, можно устно)</h3>
+
+<ol>
+  <li>Из каких пяти компонентов складывается реальная стоимость AI-проекта?</li>
+  <li>Как перевести «экономию времени» в деньги?</li>
+  <li>Почему AI-проект не окупается за месяц? Назовите реалистичный горизонт.</li>
+  <li>Что такое Go/No-Go после пилота? Приведите пример критерия.</li>
+  <li>Из чего состоит презентация AI-проекта для руководства (5 слайдов)?</li>
+</ol>
+
+<p>Если на все 5 вопросов отвечаете без подсказок — Модуль 3 пройден.</p>
+
+<h3>Дополнительно (необязательно, но полезно)</h3>
+
+<ul>
+  <li><strong>Книга:</strong> «AI Transformation Playbook» (Andrew Ng, landing.ai) — бесплатный гайд по внедрению AI в компанию: <a href="https://landing.ai/transformation-playbook/">landing.ai/transformation-playbook</a></li>
+  <li><strong>Инструмент:</strong> попробуйте калькулятор ROI для AI-проектов от McKinsey (или сделайте свой в Google Sheets)</li>
+  <li><strong>Практика:</strong> попросите AI-модель (Claude/ChatGPT) проверить ваши расчёты ROI — «вот мои цифры, что я упустил(а)?» Иногда модель видит слепые зоны.</li>
+  <li><strong>Документ:</strong> если вы работаете в компании — запросите внутреннюю методику расчёта ROI проектов и сравните с нашей. Возможно, в компании уже есть утверждённая формула — используйте её, цифры будут убедительнее.</li>
+</ul>
+
+<div class="nav-bottom">
+  <a href="lesson-01-ai-readiness.html">← Урок 1. AI Readiness</a>
+  <a href="/course/" class="nav-next">← К курсу</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
       <a href="/">L&D без суеты</a>
       <a href="https://t.me/mrk_natalia">Telegram</a>
       <a href="https://github.com/look85-ops">GitHub</a>
     </div>
     <div class="fmeta">
-      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
-      <span class="fnote">Собрано с помощью AI-ассистента</span>
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
 
 </body>
 </html>

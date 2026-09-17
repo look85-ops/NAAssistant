@@ -8,55 +8,572 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 <style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
-.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #e0ded8}
-.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.hlogo{font-size:15px;font-weight:550;color:#2b2b1a;text-decoration:none}
-.hlogo span{color:#474a1a}
-.hnav{display:flex;gap:28px}
-.hnav a{font-size:14px;font-weight:400;color:#737366;text-decoration:none}
-.hnav a:hover{color:#2b2b1a}
 
-.lesson{padding:140px 0 80px}
-.li{max-width:720px;margin:0 auto;padding:0 48px}
-.bc{font-size:13px;color:#b0b0a8;margin-bottom:32px}
-.bc a{color:#737366;text-decoration:none}
-.bc a:hover{color:#2b2b1a}
-.lesson h1{font-size:2rem;font-weight:650;line-height:1.15;letter-spacing:-0.03em;color:#2b2b1a;margin-bottom:8px}
-.lmeta{font-size:13px;color:#b0b0a8;margin-bottom:40px}
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-.content h2{font-size:1.35rem;font-weight:550;color:#2b2b1a;margin:48px 0 16px;letter-spacing:-0.01em}
-.content h3{font-size:1.1rem;font-weight:550;color:#2b2b1a;margin:32px 0 12px}
-.content p{margin-bottom:16px;color:#3a3a32;line-height:1.65}
-.content strong{font-weight:550}
-.content ul,.content ol{margin:0 0 20px 24px}
-.content li{margin-bottom:8px;color:#3a3a32}
-.content code{font-family:'Geist Mono',monospace;font-size:0.9em;background:#f4f4ef;padding:2px 6px}
-.content pre{background:#f4f4ef;padding:20px 24px;margin:0 0 20px;overflow-x:auto;font-size:0.9rem;line-height:1.5}
-.content pre code{background:none;padding:0}
-.content table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.9rem}
-.content th,.content td{text-align:left;padding:10px 14px;border-bottom:1px solid #e8e6e0}
-.content th{font-weight:550;color:#2b2b1a;font-size:0.85rem}
-.content td{color:#3a3a32}
-.content hr{border:none;border-top:1px solid #e8e6e0;margin:40px 0}
-.content blockquote{border-left:3px solid #474a1a;padding:4px 0 4px 20px;margin:0 0 20px;color:#5a5a52;font-style:italic}
-.content em{font-style:italic}
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
 
-.footer{border-top:1px solid #e0ded8;padding:48px 0 36px}
-.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:#737366;text-decoration:none}
-.flinks a:hover{color:#2b2b1a}
-.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.fupd{font-size:11px;color:#b0b0a8}
-.fnote{font-size:11px;color:#c0beb8}
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
 
-@media(max-width:768px){.hi,.li,.fi{padding:0 24px}.hnav{gap:16px}}
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
 </style>
 </head>
 <body>
+
+<div class="pbar" id="pbar"></div>
 
 <header class="header">
   <div class="hi">
@@ -69,406 +586,454 @@ body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1
   </div>
 </header>
 
-<section class="lesson">
-  <div class="li">
-    <p class="bc"><a href="/course/">Курс</a> / Модуль 2. AI: от промпта до продукта</p>
+<section class="hero">
+  <div class="hero-wm">02.3</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 2 · AI: от промпта к продукту</div>
     <h1>Урок 3. AI-агенты: от «спросить модель» к «поставить задачу»</h1>
-    <p class="lmeta">**Модуль 2:** · **Время:**</p>
-    <div class="content">
+    <p class="meta">Урок 3</p>
 
-<p><strong>Модуль 2:</strong> AI: от промпта до продукта
-<strong>Неделя:</strong> 3 из 4
-<strong>Время:</strong> 2.5–3 ч</p>
-
-<h2>1. Цель недели</h2>
-<p><strong>Зачем это L&amp;D-специалисту в работе с AI.</strong></p>
-<p>До сих пор вы просили модель отвечать: задали вопрос — получили текст. Это как попросить коллегу «напиши мне абзац про мотивацию». Он напишет, а дальше вы сами читаете, проверяете, переделываете, ищете источники, сохраняете. Вся работа — на вас.</p>
-<p>Агент — это когда вы поручаете коллеге <strong>задачу целиком</strong>: «собери мне подборку из пяти современных моделей обучения, найди по каждой пример внедрения, скомпонуй в таблицу и сохрани файлом». Он сам ищет, читает, думает, пишет, проверяет и делает файл. Вы проверяете результат — и только.</p>
-<p>На этой неделе вы научитесь работать с AI-агентами — и делать это в инструменте, который уже стоит на вашем компьютере. Вы узнаете, чем агент отличается от чата, как дать ему инструменты (файлы, терминал, свои документы) и как заставить его работать автономно. Это шаг, после которого вы перестаёте быть «человеком, который копирует ответы из чата», и становитесь человеком, который <strong>ставит задачи</strong> и управляет результатом.</p>
-<hr />
-<h2>2. Теория</h2>
-<h3>Чат против агента</h3>
-<p>Обычный чат (ChatGPT, Claude в веб-браузере) работает так: вы пишете запрос → модель отвечает текстом → диалог заканчивается. Модель <strong>не выполняет действий</strong> за пределами текста: не может открыть файл, проверить папку, запустить программу, создать документ.</p>
-<p>Агент — это модель плюс <strong>инструменты</strong> и <strong>право действовать</strong>. Агент не просто отвечает, а делает: читает файлы, смотрит папки, выполняет команды, создаёт и меняет документы. И главное — он может делать <strong>несколько шагов подряд</strong>, сам решая, что делать дальше.</p>
-<p><strong>Метафора:</strong> чат — это справочная по телефону. Вы спросили — вам ответили. Агент — это помощник, которому вы дали доступ к своему компьютеру, папкам и терминалу. Вы говорите: «сделай вот это», он идёт и делает, а если что-то не так — пробует другой путь.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Чат</th>
-<th>Агент</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Что делает</td>
-<td>Отвечает текстом</td>
-<td>Делает действия</td>
-</tr>
-<tr>
-<td>Может читать ваши файлы</td>
-<td>Только если прикрепить</td>
-<td>Да, по запросу</td>
-</tr>
-<tr>
-<td>Может работать с папками/терминалом</td>
-<td>Нет</td>
-<td>Да</td>
-</tr>
-<tr>
-<td>Сам делает несколько шагов</td>
-<td>Нет</td>
-<td>Да</td>
-</tr>
-<tr>
-<td>Создаёт артефакты (файлы, документы)</td>
-<td>Текст, который вы копируете</td>
-<td>Создаёт файлы сам</td>
-</tr>
-<tr>
-<td>Где живёт</td>
-<td>Браузер (ChatGPT, Claude)</td>
-<td>На вашем компьютере (OpenCode, VS Code)</td>
-</tr>
-</tbody>
-</table>
-<h3>Инструменты агента: чем он «руками» работает</h3>
-<p>Агент умеет пользоваться инструментами — это его «руки». Основные:</p>
-<table>
-<thead>
-<tr>
-<th>Инструмент</th>
-<th>Что агент может им делать</th>
-<th>Бытовой аналог</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Чтение файлов</td>
-<td>Открыть ваш документ и понять его</td>
-<td>Взять папку и прочитать</td>
-</tr>
-<tr>
-<td>Запись файлов</td>
-<td>Создать документ, отчёт, заметку</td>
-<td>Написать и сохранить</td>
-</tr>
-<tr>
-<td>Поиск по файлам</td>
-<td>Найти, где упоминается тема</td>
-<td>Пройтись по архиву</td>
-</tr>
-<tr>
-<td>Терминал</td>
-<td>Выполнить команды компьютера</td>
-<td>Нажать кнопки и запустить</td>
-</tr>
-<tr>
-<td>Веб-поиск</td>
-<td>Найти свежую информацию в интернете</td>
-<td>Открыть браузер и поискать</td>
-</tr>
-<tr>
-<td>Работа с кодом</td>
-<td>Править скрипты, сайты, конфиги</td>
-<td>Разобраться в программе</td>
-</tr>
-</tbody>
-</table>
-<p>Для L&amp;D-специалиста самая ценная связка — <strong>ваши документы + агент</strong>: он читает ваши методички, инструкции, программы (как в RAG из урока 2) и делает с ними работу — сравнивает, собирает, приводит в единый вид, ищет противоречия. Только теперь без вашей ручной возни.</p>
-<h3>Автономность: как агент работает сам</h3>
-<p>Когда вы даёте агенту задачу, он идёт циклом:</p>
-<ol>
-<li><strong>Понял задачу</strong> → решил, с чего начать.</li>
-<li><strong>Сделал шаг</strong> (прочитал файл, выполнил команду).</li>
-<li><strong>Оценил результат</strong> — получилось? нет? почему?</li>
-<li><strong>Решил следующий шаг</strong> — исправить, попробовать иначе, спросить вас.</li>
-<li>Повторяет, пока не доведёт до результата или не упрётся.</li>
-</ol>
-<p><strong>Метафора:</strong> это как нанять стажёра. Вы даёте задачу «разбери папку с отчётами и собери сводку». Стажёр не спрашивает вас на каждом шаге — он сам смотрит файлы, решает, что важно, и приносит результат. Если что-то непонятно или опасно — останавливается и спрашивает.</p>
-<p>Важно: автономность — не «без присмотра». Вы задаёте границы: что трогать, чего не делать, что считать готовым. Хороший агент спрашивает разрешения перед необратимыми действиями.</p>
-<h3>Папка проекта: дом агента</h3>
-<p>Агент живёт <strong>в папке проекта</strong> — это его «рабочий кабинет». Каждый агент привязан к конкретной папке на вашем компьютере: он видит её содержимое, читает файлы, создаёт новые. Это самое важное, что нужно понять про устройство агента: <strong>агент работает не «в воздухе», а внутри выбранной папки</strong>.</p>
-<p><strong>Метафора:</strong> представьте рабочее место. У вас есть стол (компьютер), на столе — папки с делами (проекты). Помощник (агент) садится за стол и работает с теми папками, которые вы ему дали. Если вы дали папку «Методички» — он возится в ней. Если папку «Портфолио» — работает с ней. Он не ходит по всему столу сам — только по вашей папке.</p>
-<p><strong>Папка проекта</strong> — это просто обычная папка на диске (например, <code>C:\Users\Имя\Desktop\мой-проект</code>), в которой лежат файлы вашей задачи: документы, материалы, заметки, а также артефакты, которые создаст агент.</p>
-<p><strong>Как агент появляется?</strong> Агента не нужно «создавать» как программу — он уже есть (это OpenCode). Вы <strong>запускаете</strong> его в нужной папке: открываете командную строку, переходите в папку проекта и запускаете там агента. С этой секунды его «рабочим кабинетом» становится эта папка.</p>
-<p>Это похоже на то, что вы уже делали в модуле 1: вы переходили в папку командой <code>cd</code> и создавали файлы. Разница в том, что теперь в этой папке «поселился» агент — и он сам будет работать с файлами вместо вас.</p>
-<p><strong>Правило:</strong> под важную задачу заводите <strong>свою папку проекта</strong> — не работайте агентом прямо в системных папках (Windows, Program Files) или в чужих проектах. Своя папка = свой порядок, ничего чужого агент не заденет.</p>
-<h3>Главный инструмент: OpenCode</h3>
-<p>Вы уже знаете OpenCode — это ваш рабочий AI-терминал из модуля 1. С ним вы работаете каждый день (и многие из нас — тоже). OpenCode — это <strong>полноценный агент</strong>, встроенный в командную строку:</p>
-<ul>
-<li>работает с вашими файлами и папками на диске;</li>
-<li>может выполнять команды в терминале;</li>
-<li>создаёт и правит документы;</li>
-<li>помнит контекст всего проекта;</li>
-<li>работает с моделями, которые доступны в РФ.</li>
-</ul>
-<p>Если вам привычнее окно с кнопками, а не командная строка — есть <strong>VS Code</strong> (бесплатный редактор от Microsoft): в него ставятся AI-агенты, и те же возможности выглядят привычнее: слева папки, справа чат, файлы открываются кликом. Принцип тот же — модель с инструментами. Начните с OpenCode, потому что он уже у вас стоит, и интерфейс командной строки вы уже прошли в модуле 1.</p>
-<h3>Какие модели использовать (доступность из РФ)</h3>
-<p>Ключевой момент для нас: <strong>ChatGPT и Claude в веб-браузере — не лучший вариант из РФ.</strong> С ними много сложностей: нельзя оплатить из России без VPN и обхода блокировок, аккаунты требуют зарубежную карту, сервисы периодически блокируют доступ. Они хороши, но работа с ними превращается в танцы с бубном. Мы строим систему, которая работает <strong>здесь и сейчас</strong>.</p>
-<p>Что реально работает из РФ:</p>
-<table>
-<thead>
-<tr>
-<th>Провайдер</th>
-<th>Что даёт</th>
-<th>Доступность из РФ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>OpenRouter</strong></td>
-<td>Единый доступ к сотням моделей (GPT, Claude, Gemini, DeepSeek, Qwen и др.)</td>
-<td>Через сайт — с VPN; через API в OpenCode — работает</td>
-</tr>
-<tr>
-<td><strong>Google AI Studio</strong></td>
-<td>Модели Gemini — бесплатные, в т.ч. с большим контекстом</td>
-<td>Обычно доступен без VPN</td>
-</tr>
-<tr>
-<td><strong>DeepSeek</strong></td>
-<td>Китайские модели, дешёвые и сильные</td>
-<td>Доступен, оплата проще</td>
-</tr>
-<tr>
-<td><strong>Qwen (Alibaba)</strong></td>
-<td>Модели Qwen, отличный русский язык</td>
-<td>Доступен, оплата проще</td>
-</tr>
-<tr>
-<td><strong>Локальные модели</strong></td>
-<td>Ollama — модели у вас на компьютере, офлайн, бесплатно</td>
-<td>Работают всегда, нужен приличный компьютер</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Что это значит для вас:</strong> в OpenCode вы подключаете один из провайдеров (настройка — в конфиге, обычно уже сделана), и дальше работаете как с любым чатом, только с инструментами. Разные задачи — разные модели: для массовых текстов подешевле, для сложных — посильнее. Хорошая новость: вы не привязаны к одной компании — рынок свободный.</p>
-<p><strong>Практическое правило:</strong> не зацикливайтесь на выборе модели. Для начала возьмите одну из работающих и используйте её. Смена модели — это минута в настройках, а не проект.</p>
-<hr />
-<h2>3. Шпаргалка (сохраните себе)</h2>
-<h3>Термины</h3>
-<table>
-<thead>
-<tr>
-<th>Термин</th>
-<th>Определение одним предложением</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AI-агент</td>
-<td>Модель с инструментами, которая делает задачу, а не отвечает текстом</td>
-</tr>
-<tr>
-<td>Инструменты</td>
-<td>Действия агента: файлы, терминал, поиск, веб</td>
-</tr>
-<tr>
-<td>Автономность</td>
-<td>Способность агента идти к цели несколькими шагами, самому решая, что делать дальше</td>
-</tr>
-<tr>
-<td>Папка проекта</td>
-<td>Папка на диске, в которой «живёт» агент: он видит и создаёт файлы только в ней</td>
-</tr>
-<tr>
-<td>OpenCode</td>
-<td>Ваш рабочий AI-агент в командной строке (есть на вашем компьютере)</td>
-</tr>
-<tr>
-<td>VS Code</td>
-<td>Бесплатный редактор с интерфейсом-окном, куда ставятся AI-агенты</td>
-</tr>
-<tr>
-<td>Провайдер</td>
-<td>Компания, у которой вы берёте модели (OpenRouter, Google, DeepSeek, Qwen)</td>
-</tr>
-</tbody>
-</table>
-<h3>Как ставить задачу агенту (шаблон)</h3>
-<ol>
-<li><strong>Цель:</strong> «Сделай / собери / проверь...»</li>
-<li><strong>Материалы:</strong> «Вот папка/файл, работай с ними»</li>
-<li><strong>Ограничения:</strong> «Не трогай то-то, не удаляй без спроса»</li>
-<li><strong>Результат:</strong> «Сохрани результат в файл ...»</li>
-<li><strong>Стиль:</strong> «Пиши коротко / по-человечески / таблицей»</li>
-</ol>
-<p>Пример: «Посмотри папку "методички". Собери из них список всех тем. Сведи в таблицу: тема, модуль, есть ли упражнения. Сохрани в файл "обзор-тем.md". Ничего не удаляй и не меняй в исходных файлах.»</p>
-<h3>Пирамида уровня «сам справляюсь»</h3>
-<ol>
-<li><strong>Промпт</strong> (урок 1) — спросить.</li>
-<li><strong>RAG</strong> (урок 2) — спросить по своим документам.</li>
-<li><strong>Агент</strong> (этот урок) — поставить задачу с инструментами.</li>
-<li><strong>Fine-tuning</strong> (урок 4) — справочник, редко нужно.</li>
-</ol>
-<hr />
-<h2>4. Практика</h2>
-<p>Все упражнения — в <strong>OpenCode</strong> (ваш AI-терминал). Если привычнее окно — откройте VS Code с AI-агентом, принципы те же.</p>
-<p><strong>Внимание, правила безопасности:</strong>
-- Работаем в тестовой папке, а не в рабочих файлах.
-- Агенту говорим «ничего не удаляй, не переименовывай, сначала покажи план».
-- Если агент предлагает команду, смысл которой неясен — сначала спросите его, что команда делает.</p>
-<h3>Подготовка. Папка проекта и запуск агента (10 мин)</h3>
-<p>Создайте свою рабочую папку для агента — это будет его «рабочий кабинет» на весь урок.</p>
-<ol>
-<li>Откройте PowerShell (<code>Win</code> → введите <code>PowerShell</code> → Enter).</li>
-<li>Создайте папку проекта на рабочем столе:</li>
-</ol>
-<pre><code>cd C:\Users\ИмяПользователя\Desktop
-mkdir agent-demo
-cd agent-demo
-</code></pre>
-<ol>
-<li>Положите в неё несколько текстовых файлов с вашими материалами (можно скопировать пару ваших методичек или сделать 2–3 простых текста самим). Это полигон: здесь агенту можно всё, рабочие файлы не пострадают.</li>
-<li>Запустите агента прямо в этой папке — командой OpenCode:</li>
-</ol>
-<pre><code>opencode
-</code></pre>
-<p>С этой секунды агент «поселился» в папке <code>agent-demo</code>: он видит её файлы и будет работать только с ней. Вы остаётесь в этом же окне терминала на все упражнения.</p>
-<h3>Упражнение 1. Задайте агенту первую настоящую задачу (20 мин)</h3>
-<p>В OpenCode выполните:</p>
-<blockquote>
-<p>«Посмотри на файлы в папке agent-demo. Составь список из того, что в них есть. Предложи, как их можно сгруппировать по темам. Ничего не меняй — просто покажи результат в ответе.»</p>
-</blockquote>
-<p>Следите, что делает агент: он <strong>читает файлы сам</strong> (вы видите его шаги), а не просто «отвечает по памяти». Это и есть разница с чатом: он реально открыл ваши материалы.</p>
-<p><strong>Вывод:</strong> агент видит ваши файлы и работает с ними, как человек, которому дали папку.</p>
-<h3>Упражнение 2. Агент создаёт артефакт (25 мин)</h3>
-<p>Теперь дайте задачу с результатом-файлом:</p>
-<blockquote>
-<p>«Посмотри файлы в agent-demo. Собери из них шпаргалку по главным темам: для каждой темы — название и 2–3 ключевые мысли из файлов. Сохрани результат в файл "шпаргалка.md" в той же папке. Файлы менять не нужно.»</p>
-</blockquote>
-<p>Агент создаст файл. Проверьте его: откройте и прочитайте.</p>
-<p><strong>Вывод:</strong> агент не просто отвечает — он <strong>создаёт документ на диске</strong>. Это готовый продукт, а не текст в окне чата, который вы бы копировали руками.</p>
-<h3>Упражнение 3. Агент и терминал (20 мин)</h3>
-<p>Дайте задачу, где нужны команды:</p>
-<blockquote>
-<p>«Сколько всего файлов в папке agent-demo и какого они размера? Посчитай и покажи список. Менять ничего не надо.»</p>
-</blockquote>
-<p>Агент выполнит команды терминала и ответит. Обратите внимание, как он решает, какую команду запустить.</p>
-<p><strong>Вывод:</strong> агент умеет работать с компьютером на уровне команд — это его «руки». Вы контролируете, что он делает, глядя на его шаги.</p>
-<h3>Упражнение 4. Сравнение: чат против агента (15 мин)</h3>
-<p>Возьмите задачу из упражнения 2. Сначала представьте, как бы вы делали её в веб-чате (ChatGPT/Claude): скопировать содержимое файлов, вставить, попросить сгруппировать, скопировать ответ, вставить в документ, сохранить. Оцените: сколько кликов и копирований.</p>
-<p>Теперь посмотрите, что сделал агент в упражнении 2: один запрос — и файл готов.</p>
-<p>Запишите в рефлексию: «На чате это заняло бы ~N действий, на агенте — 1 запрос».</p>
-<p><strong>Вывод:</strong> агент забирает у вас механическую работу — копирование, вставку, сохранение. Вы оставляете себе главное: сформулировать задачу и проверить результат.</p>
-<h3>Упражнение 5. Агент и ваши документы (20 мин)</h3>
-<p>Свяжите агента с вашей реальной задачей (но на копиях — не трогайте оригиналы). Например:</p>
-<blockquote>
-<p>«Скопируй себе в agent-demo два моих документа [укажите]. Сравни, какие темы в них повторяются, и предложи, как объединить их в одну структуру. Сохрани предложение в файл "план-объединения.md".»</p>
-</blockquote>
-<p>Это связка из урока 2 (работа с вашими документами) и этого урока (агент делает её сам). Вы увидите, как агент читает, сравнивает и выдаёт структурированный результат.</p>
-<p><strong>Вывод:</strong> самое ценное применение агента для L&amp;D — работа с вашими материалами: сводки, сравнения, выжимки, ревизии — без ручной возни.</p>
-<h3>Упражнение 6. Создание артефакта: дневник эксперимента (15 мин)</h3>
-<p>Создайте файл <code>ai-experiments/experiment-03-agents.md</code>:</p>
-<pre><code class="language-markdown"># Эксперимент 3: AI-агенты — от запроса к задаче
-
-**Дата:** [сегодня]
-**Инструмент:** OpenCode
-**Модель:** [какая модель подключена]
-
-## 1. Первая задача
-
-- Что я поручил(а):
-- Что агент сделал сам (читал файлы? создал файл? запускал команды?):
-- Что я проверил(а) в результате:
-
-## 2. Создание артефакта
-
-- Какой файл агент создал:
-- Оценил(а) качество: [хорошо/приемлемо/плохо]
-- Что бы я поправил(а):
-
-## 3. Работа с терминалом
-
-- Какую команду агент выполнил:
-- Понял(а) ли я, зачем она нужна:
-
-## 4. Сравнение с чатом
-
-- Сколько действий заняла бы задача в веб-чате:
-- Сколько запросов на агенте:
-- Что я теперь могу не делать руками:
-
-## 5. Агент и мои документы
-
-- Задача:
-- Что агент сделал с моими документами:
-
-## 6. Выводы (2-3 предложения)
-
-Когда я буду использовать агента вместо чата:
-</code></pre>
-<hr />
-<h2>5. Рефлексия (напишите мне)</h2>
-<ol>
-<li>Сколько времени заняло?</li>
-<li>Что было самым непривычным в работе с агентом?</li>
-<li>Что было самым полезным?</li>
-<li>Какая рабочая задача у вас первая кандидат на «отдать агенту»?</li>
-<li>Оценка материала от 1 до 5</li>
-</ol>
-<hr />
-<h2>6. Чек-лист готовности</h2>
-<ul>
-<li>[ ] Создал(а) папку проекта <code>agent-demo</code> и запустил(а) в ней агента (<code>opencode</code>)</li>
-<li>[ ] Дал(а) агенту задачу, и он сам прочитал файлы</li>
-<li>[ ] Агент создал файл-артефакт, я его проверил(а)</li>
-<li>[ ] Видел(а), как агент выполняет команды терминала</li>
-<li>[ ] Сравнил(а) чат и агента на одной задаче</li>
-<li>[ ] Поручил(а) агенту работу с моими документами</li>
-<li>[ ] Заполнил(а) артефакт <code>ai-experiments/experiment-03-agents.md</code></li>
-</ul>
-<hr />
-<h2>7. Артефакт</h2>
-<p>После урока в вашем проекте появится структура:</p>
-<pre><code>ваш-проект/
-├── agent-demo/                         # Тестовый полигон
-│   ├── [ваши файлы]
-│   ├── шпаргалка.md                    # Создал агент
-│   └── план-объединения.md             # Создал агент
-└── ai-experiments/
-    ├── experiment-01-temperature.md    # Урок 1
-    ├── experiment-02-rag.md            # Урок 2
-    └── experiment-03-agents.md         # Урок 3
-</code></pre>
-<hr />
-<h2>8. Что дальше</h2>
-<p>Вы прошли ключевую развилку курса: от «спрашивать модель» к «ставить задачу». Теперь вы умеете: управлять моделью (урок 1), кормить её своими документами (урок 2) и поручать ей автономную работу с инструментами (этот урок).</p>
-<p><strong>Следующая неделя: Fine-tuning</strong> — справочный урок, что такое дообучение и почему оно вам почти наверняка не понадобится. Короткий, читается за час, практика по желанию. После него модуль 2 закрывается, и вы получаете полную картину: как построить рабочую систему из модели, промптов, документов и агентов.</p>
-<h3>Итоговая проверка недели (ответьте себе, можно устно)</h3>
-<ol>
-<li>Чем агент отличается от чата?</li>
-<li>Какие инструменты есть у агента и что они дают?</li>
-<li>Что значит «агент работает автономно» и как вы задаёте ему границы?</li>
-<li>Почему для нас в РФ важнее OpenCode, чем веб-чат ChatGPT/Claude?</li>
-<li>Какую задачу вы отдадите агенту в ближайшую неделю?</li>
-</ol>
-<p>Если отвечаете без подсказок — неделя пройдена.</p>
-<h3>Дополнительно (необязательно, но полезно)</h3>
-<ul>
-<li><strong>VS Code:</strong> если командная строка неудобна — установите бесплатный VS Code (https://code.visualstudio.com) и добавьте в него AI-агента (расширение). Тот же принцип, окно с кнопками. Многие предпочитают его.</li>
-<li><strong>Другие модели:</strong> в OpenCode попробуйте сменить модель на другую (например, с большой контекстной памятью) и задайте агенту задачу посложнее — почувствуйте разницу.</li>
-<li><strong>Осторожность:</strong> настройте для агента правило — перед необратимыми действиями (удаление, перезапись) спрашивать вас. Это как «перед отправкой письма — показать мне».</li>
-<li><strong>Полезная привычка:</strong> любую рутинную операцию, которую вы делаете руками больше трёх раз, формулируйте как задачу агенту. Через месяц это станет вашей второй натурой.</li>
-</ul>
-    </div>
+    <ul class="outcomes">
+      <li>Объяснить разницу между чатом и агентом коллеге-гуманитарию</li>
+      <li>Запустить агента в OpenCode и дать ему задачу с файлами и терминалом</li>
+      <li>Понимать, какие инструменты есть у агента и зачем они нужны</li>
+      <li>Сформулировать задачу для агента так, чтобы он довёл её до результата</li>
+    </ul>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="fi">
-    <div class="flinks">
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> создайте папку agent-demo на рабочем столе. Откройте её в терминале. Это будет полигон для агента.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
+
+<p>Чат с моделью — это как позвонить эксперту: вы задаёте вопрос, получаете ответ, и на этом разговор окончен. Чтобы сделать что-то полезное, вы должны сами скопировать ответ, вставить в документ, запустить скрипт, проверить результат. Вы — курьер между моделью и результатом.</p>
+
+<p>AI-агент — это <strong>исполнитель, который сам ходит по файлам, сам запускает код, сам читает документацию и сам проверяет результат</strong>. Вы не копируете ответы туда-сюда. Вы ставите задачу и принимаете готовый артефакт.</p>
+
+<p>Для L&D это означает: агент может собрать программу курса из ваших материалов, проанализировать 50 отзывов студентов, сгенерировать тесты по учебнику, проверить контент на соответствие стандартам — без вашего участия в каждом шаге.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02">Чат vs Агент: в чём разница</h2>
+
+<p>Главное различие — не в «умности» модели, а в <strong>способе взаимодействия</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Критерий</th>
+      <th>Чат</th>
+      <th>Агент</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Как работает</td>
+      <td>Вопрос → ответ. Один ход.</td>
+      <td>Задача → план → действия → результат. Много ходов.</td>
+    </tr>
+    <tr>
+      <td>Кто делает шаги</td>
+      <td>Вы: скопировать, вставить, проверить</td>
+      <td>Агент: сам читает, пишет, запускает</td>
+    </tr>
+    <tr>
+      <td>Доступ к файлам</td>
+      <td>Только то, что вы вставили в промпт</td>
+      <td>Читает всю папку проекта, ищет нужное</td>
+    </tr>
+    <tr>
+      <td>Исправление ошибок</td>
+      <td>Вы видите ошибку → новый вопрос</td>
+      <td>Агент видит ошибку → сам исправляет → перезапускает</td>
+    </tr>
+    <tr>
+      <td>Пример задачи</td>
+      <td>«Напиши программу курса»</td>
+      <td>«Возьми файлы из theory/, собери программу на 24 часа, сохрани в curriculum.md»</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Чат — это справочная библиотеки: вы спросили, вам ответили, вы пошли делать сами. Агент — это помощник, которому вы дали ключи от кабинета: он сам найдёт книги, сделает выписки, напечатает документ и положит вам на стол.
+</div>
+
+<h2 class="section-hd" data-num="03">Инструменты: руки агента</h2>
+
+<p>Агент без инструментов — это просто чат. Инструменты — то, что превращает модель в исполнителя. OpenCode даёт агенту доступ к четырём типам инструментов:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Инструмент</th>
+      <th>Что делает</th>
+      <th>Аналог в реальном мире</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Read</code></td>
+      <td>Читает файлы и папки. Агент «видит» содержимое проекта.</td>
+      <td>Открыть папку и прочитать документы</td>
+    </tr>
+    <tr>
+      <td><code>Write / Edit</code></td>
+      <td>Создаёт и правит файлы. Агент «пишет».</td>
+      <td>Ручка и бумага</td>
+    </tr>
+    <tr>
+      <td><code>Bash</code></td>
+      <td>Запускает команды в терминале. Агент «делает».</td>
+      <td>Клавиатура — выполняет действия</td>
+    </tr>
+    <tr>
+      <td><code>Grep / Glob</code></td>
+      <td>Ищет по содержимому и именам файлов. Агент «ориентируется».</td>
+      <td>Поиск по шкафу с документами</td>
+    </tr>
+    <tr>
+      <td><code>WebFetch</code></td>
+      <td>Читает страницы в интернете. Агент «гуглит».</td>
+      <td>Открыть браузер и прочитать статью</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Инструменты — это руки агента. Без них он только говорит. С ними — читает, пишет, запускает, ищет, проверяет. Ваша задача — не мешать рукам работать, а смотреть на результат.
+</div>
+
+<div class="micro-prac">
+  <strong>➤ Запомните</strong><br>
+  Когда вы пишете агенту «создай файл», он использует <code>Write</code>. Когда «проверь, что получилось», он использует <code>Read</code>. Когда «запусти скрипт» — <code>Bash</code>. Агент сам выбирает инструмент под задачу. Вы просто говорите, что нужно сделать.
+</div>
+
+<h2 class="section-hd" data-num="04">Автономность: цикл «план → действие → проверка»</h2>
+
+<p>Автономность агента — это не «магия». Это <strong>цикл из трёх шагов</strong>, который агент повторяет, пока не получит результат:</p>
+
+<ol>
+  <li><strong>План.</strong> Агент читает задачу и решает: «Чтобы сделать X, мне нужно прочитать файл Y, создать Z, запустить W».</li>
+  <li><strong>Действие.</strong> Агент выполняет шаг: читает, пишет, запускает команду.</li>
+  <li><strong>Проверка.</strong> Агент смотрит на результат. Если ошибка — возвращается к плану, исправляет, пробует снова.</li>
+</ol>
+
+<p>Этот цикл — главное отличие от чата. Чат делает один ход и ждёт вас. Агент делает ход, проверяет, делает следующий — <strong>пока задача не решена</strong>.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Агент — как стажёр, которому вы дали задачу, доступ к инструментам и право на ошибку. Он пробует, ошибается, исправляет, пробует снова. Ваша роль — поставить задачу понятно и проверить финальный результат. Не стойте над душой на каждом шаге.
+</div>
+
+<div class="pull-quote">
+  Агент забирает механическую работу. Вы оставляете себе задачу и проверку.
+</div>
+
+<h2 class="section-hd" data-num="05">Папка проекта, OpenCode и модели РФ</h2>
+
+<p>Агент работает <strong>в контексте папки</strong>. Всё, что он видит и меняет — внутри этой папки. Это как дать помощнику отдельный кабинет: он не пойдёт переставлять мебель в соседнем крыле, если вы не скажете.</p>
+
+<p>OpenCode — это среда, в которой агент получает инструменты и выполняет задачи. Вы открываете папку в терминале, запускаете <code>opencode</code>, и агент готов к работе.</p>
+
+<p>Под капотом агента — <strong>языковая модель</strong>. Для работы из РФ без VPN доступны несколько провайдеров:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Провайдер</th>
+      <th>Модели</th>
+      <th>Особенность</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OpenRouter</td>
+      <td>Claude, GPT, Gemini, DeepSeek и др.</td>
+      <td>Единый API-ключ, доступ ко всем моделям. Работает из РФ.</td>
+    </tr>
+    <tr>
+      <td>Yandex Cloud</td>
+      <td>YandexGPT</td>
+      <td>Российский провайдер, без VPN, лимиты бесплатного tier.</td>
+    </tr>
+    <tr>
+      <td>SberCloud</td>
+      <td>GigaChat</td>
+      <td>Российский, без VPN, своя экосистема.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="margin-note">
+  <strong>Рекомендация:</strong> для курса используем OpenRouter с DeepSeek — оптимальный баланс «цена / качество / доступность из РФ». API-ключ получаете за 2 минуты на openrouter.ai.
+</div>
+
+<div class="interim"><h3>Промежуточный итог</h3><p>Вы знаете, чем агент отличается от чата, какие инструменты у него есть и как работает цикл автономности. Вы понимаете, что агент — это исполнитель с доступом к файлам и терминалу, который сам планирует шаги и исправляет ошибки. Дальше — шпаргалка и практика.</p></div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>Вы перестаёте быть человеком, который копирует ответы из чата. Вы становитесь тем, кто ставит задачи и управляет результатом.</h2>
+    <p>Это переход от оператора к руководителю. Не «напиши текст», а «собери курс из этих материалов и сохрани в трёх форматах». Не «исправь ошибку», а «просканируй проект, найди проблемы, исправь, проверь». Масштаб задач растёт — количество ваших действий сокращается.</p>
+  </div>
+</div>
+
+<div class="cheatsheet">
+  <h2>Шпаргалка</h2>
+
+  <h3>Термины</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Термин</th>
+        <th>Определение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AI-агент</td>
+        <td>Модель + инструменты + цикл «план → действие → проверка»</td>
+      </tr>
+      <tr>
+        <td>Инструмент (tool)</td>
+        <td>Функция, которую агент может вызвать: прочитать файл, записать, запустить код</td>
+      </tr>
+      <tr>
+        <td>Автономность</td>
+        <td>Способность агента делать несколько шагов подряд без участия человека</td>
+      </tr>
+      <tr>
+        <td>OpenCode</td>
+        <td>Среда запуска агента: даёт модели доступ к файлам, терминалу и поиску</td>
+      </tr>
+      <tr>
+        <td>Контекст (папка)</td>
+        <td>Рабочая директория агента — всё, что он видит и меняет, внутри этой папки</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Шаблон задачи для агента</h3>
+
+  <p>Хорошая задача для агента содержит четыре элемента:</p>
+
+  <ol>
+    <li><strong>Что сделать</strong> — конкретный результат (файл, папка, структура).</li>
+    <li><strong>Где взять исходные данные</strong> — путь к файлам или папке.</li>
+    <li><strong>Куда положить результат</strong> — имя файла или папки.</li>
+    <li><strong>Как проверить</strong> — что должно быть в результате.</li>
+  </ol>
+
+  <p>Пример: «Возьми файлы из <code>materials/</code>, собери программу курса на 12 часов, сохрани в <code>output/program.md</code>. Проверь, что каждый модуль содержит цели, темы и практику.»</p>
+
+  <h3>Пирамида AI-инструментов</h3>
+
+  <p>От простого к сложному — что и когда использовать:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Уровень</th>
+        <th>Инструмент</th>
+        <th>Когда применять</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Промпт</td>
+        <td>Чат с моделью</td>
+        <td>Один вопрос — один ответ. Быстрая справка, идея, перевод.</td>
+      </tr>
+      <tr>
+        <td>2. RAG</td>
+        <td>Модель + ваши документы</td>
+        <td>Ответы по базе знаний, стандартам, регламентам.</td>
+      </tr>
+      <tr>
+        <td>3. Агент</td>
+        <td>Модель + инструменты + автономность</td>
+        <td>Собрать, проанализировать, сгенерировать, проверить — за много шагов.</td>
+      </tr>
+      <tr>
+        <td>4. Fine-tuning</td>
+        <td>Дообученная модель</td>
+        <td>Уникальный стиль, формат, терминология — когда промпта не хватает.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="06">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. Папка и запуск (5 мин)</summary>
+      <div class="details-content">
+        <p>Создайте полигон для агента и запустите OpenCode:</p>
+        <ol class="steps">
+          <li>Откройте терминал (PowerShell)</li>
+          <li>Перейдите на рабочий стол: <code>cd Desktop</code></li>
+          <li>Создайте папку и зайдите в неё: <code>mkdir agent-demo</code> → <code>cd agent-demo</code></li>
+          <li>Запустите OpenCode: <code>opencode</code></li>
+          <li>Убедитесь, что агент запустился и видит папку</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. Первая задача для агента (10 мин)</summary>
+      <div class="details-content">
+        <p>Дайте агенту простую задачу, чтобы увидеть цикл «план → действие → проверка»:</p>
+        <ol class="steps">
+          <li>В OpenCode напишите: «Создай файл <code>hello.md</code> с заголовком "Привет, агент!" и списком из трёх любых L&D-тем. Проверь, что файл создался.»</li>
+          <li>Наблюдайте: агент напишет план, создаст файл, проверит результат</li>
+          <li>Убедитесь, что <code>hello.md</code> появился в папке <code>agent-demo</code></li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 3. Артефакт из нескольких файлов (15 мин)</summary>
+      <div class="details-content">
+        <p>Дайте агенту задачу, требующую создания нескольких файлов:</p>
+        <ol class="steps">
+          <li>В OpenCode напишите: «Создай папку <code>course-brief</code>. Внутри создай три файла: <code>goals.md</code> (цели курса для L&D-специалистов), <code>audience.md</code> (портрет аудитории), <code>structure.md</code> (структура из 3 модулей). После создания проверь, что все файлы на месте.»</li>
+          <li>Наблюдайте, как агент планирует, создаёт, проверяет</li>
+          <li>Откройте файлы — оцените результат</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 4. Агент в терминале (10 мин)</summary>
+      <div class="details-content">
+        <p>Дайте агенту задачу с использованием терминала:</p>
+        <ol class="steps">
+          <li>В OpenCode напишите: «С помощью терминала выведи содержимое папки <code>course-brief</code>. Потом посчитай количество файлов в папке и допиши эту информацию в файл <code>hello.md</code>. Проверь результат.»</li>
+          <li>Агент использует <code>Bash</code> (команды <code>ls</code>, <code>wc</code>) и <code>Edit</code></li>
+          <li>Проверьте <code>hello.md</code> — в нём должна появиться информация о файлах</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 5. Чат vs агент — почувствуйте разницу (15 мин)</summary>
+      <div class="details-content">
+        <p>Одну и ту же задачу выполните двумя способами и сравните:</p>
+        <ol class="steps">
+          <li>Откройте обычный чат с Claude/ChatGPT</li>
+          <li>Попросите: «Напиши структуру тренинга по коммуникации на 4 часа»</li>
+          <li>Скопируйте ответ в файл вручную, сохраните как <code>chat-result.md</code> в папке <code>agent-demo</code></li>
+          <li>Теперь в OpenCode напишите: «Создай файл <code>agent-result.md</code> со структурой тренинга по коммуникации на 4 часа. Проверь, что файл создался и содержит 4 блока по часу каждый.»</li>
+          <li>Сравните усилия: в чате — вы копировали и сохраняли. С агентом — вы только поставили задачу.</li>
+        </ol>
+        <p><strong>Инсайт:</strong> разница не в качестве ответа, а в том, <strong>кто делает механическую работу</strong>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 6. Агент читает документы (10 мин)</summary>
+      <div class="details-content">
+        <p>Агент умеет читать ваши файлы и работать с их содержимым:</p>
+        <ol class="steps">
+          <li>Создайте файл <code>notes.txt</code> в папке <code>agent-demo</code> с произвольным списком из 5–7 L&D-тем (каждая с новой строки)</li>
+          <li>В OpenCode напишите: «Прочитай <code>notes.txt</code>, выбери 3 самые актуальные темы для 2026 года и сохрани их в файл <code>top-3.md</code> с кратким обоснованием для каждой. Проверь, что файл создался.»</li>
+          <li>Агент прочитает → проанализирует → создаст результат</li>
+          <li>Оцените выбор агента — согласны?</li>
+        </ol>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="07">После практики</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>✓ Создали папку <code>agent-demo</code> и запустили в ней OpenCode</li>
+    <li>✓ Дали агенту первую задачу — он создал файл и проверил результат</li>
+    <li>✓ Попросили агента создать структуру из нескольких файлов</li>
+    <li>✓ Видели, как агент использует терминал (Bash) для проверки</li>
+    <li>✓ Сравнили чат и агента на одной задаче — почувствовали разницу</li>
+    <li>✓ Дали агенту прочитать ваш файл и создать новый на его основе</li>
+  </ul>
+</div>
+
+<h3>Артефакт урока</h3>
+
+<p>После урока в папке <code>agent-demo</code> должна появиться структура:</p>
+
+<pre>Desktop/
+└── agent-demo/
+    ├── hello.md
+    ├── chat-result.md
+    ├── agent-result.md
+    ├── notes.txt
+    ├── top-3.md
+    └── course-brief/
+        ├── goals.md
+        ├── audience.md
+        └── structure.md</pre>
+
+<div class="open-loop">
+  <h3>Челлендж на завтра</h3>
+  <p>Дайте агенту реальную L&D-задачу из вашей практики. Например: «Проанализируй программу курса (если есть в файле), предложи 3 улучшения и сохрани в <code>improvements.md</code>». Или: «Создай шаблон брифа для заказчика обучения». Цель — не идеальный результат, а привычка <strong>думать задачами, а не вопросами</strong>.</p>
+</div>
+
+<h3>Что дальше</h3>
+
+<p>На следующем уроке — <strong>Fine-tuning</strong>. Вы научитесь дообучать модель под свой стиль и задачи, чтобы она говорила вашим голосом и следовала вашим стандартам. Но сначала закрепите работу с агентом — это фундамент.</p>
+
+<div class="nav-bottom">
+  <a href="lesson-02-rag.html">← Урок 2. RAG: научите модель отвечать по вашим документам</a>
+  <a href="lesson-04-fine-tuning.html" class="nav-next">Урок 4. Fine-tuning: научите модель вашему стилю →</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
       <a href="/">L&D без суеты</a>
       <a href="https://t.me/mrk_natalia">Telegram</a>
       <a href="https://github.com/look85-ops">GitHub</a>
     </div>
     <div class="fmeta">
-      <span class="fupd"><time datetime="2026-09-15">15 сентября 2026</time></span>
-      <span class="fnote">Собрано с помощью AI-ассистента</span>
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
 
 </body>
 </html>
