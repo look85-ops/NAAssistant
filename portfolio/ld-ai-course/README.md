@@ -12,7 +12,7 @@
 
 - `index.html` — главная без упоминаний Бустера.
 - `materials/first-agent.html` — бесплатный материал.
-- `materials/first-agent-print.html` — источник PDF-версии бесплатного материала.
+- `materials/first-agent-print.html` — историческая print-страница; скачиваемый PDF собирается строго из DOCX-эталона `portal-mvp/materials/first-agent-etalon.docx`.
 - Платные продукты в этой витрине отключены. Исходники остались в основном `portal-mvp`.
 - Воркбук по онбордингу исключён из MVP. Исходники сохранены в основном `portal`.
 - `course/` — бесплатная программа и уроки.
