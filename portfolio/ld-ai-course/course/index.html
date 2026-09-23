@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Методист в эпоху AI — L&D без суеты</title>
+<meta name="description" content="Практическая программа для L&D-специалистов: от терминала до AI-стратегии.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/base.css">
+<link rel="stylesheet" href="../styles/components.css">
+<style>
+:root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a}
+
+.hero{padding:160px 0 100px;background:var(--surface);border-bottom:4px solid var(--olive)}
+.hero-inner{max-width:780px;margin:0 auto;padding:0 var(--space-8)}
+.hero-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--terracotta);margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:650;line-height:1.1;letter-spacing:-0.03em;color:var(--ink);margin-bottom:16px}
+.hero-lead{font-size:1.15rem;color:var(--muted);max-width:540px;line-height:1.55}
+
+.stats{display:flex;gap:40px;margin-top:32px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-val{font-size:1.6rem;font-weight:600;color:var(--olive);line-height:1.1}
+.stat-label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;margin-top:4px}
+
+.program{padding:100px 0}
+.program-inner{max-width:780px;margin:0 auto;padding:0 var(--space-8)}
+.program h2{font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:40px}
+
+.modules{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.module{background:#fff}
+.module summary{display:flex;align-items:baseline;gap:20px;padding:28px 32px;cursor:pointer;list-style:none;transition:background 150ms}
+.module summary:hover{background:var(--surface)}
+.module summary::-webkit-details-marker{display:none}
+.module summary::before{content:'+';font-size:1.2rem;font-weight:400;color:var(--olive);flex-shrink:0;width:24px;text-align:center;transition:transform 200ms}
+.module[open] summary::before{content:'−'}
+.mod-num{font-size:13px;font-weight:600;color:var(--olive);text-transform:uppercase;letter-spacing:0.06em;min-width:80px}
+.mod-text{flex:1}
+.mod-text h3{font-size:1.15rem;font-weight:550;color:var(--ink);margin-bottom:4px}
+.mod-text p{font-size:0.9rem;color:var(--muted);line-height:1.5}
+.mod-hours{font-size:0.85rem;color:var(--muted);white-space:nowrap}
+
+.lessons{padding:0 32px 24px 140px;display:flex;flex-direction:column;gap:0}
+.lesson{border-top:1px solid var(--border)}
+.lesson a{display:flex;align-items:center;gap:12px;padding:12px 0;text-decoration:none;color:var(--ink);transition:color 150ms}
+.lesson a:hover{color:var(--olive)}
+.lesson .lnum{font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;min-width:56px}
+.lesson .ltitle{font-size:1rem;flex:1}
+.lesson .ltime{font-size:0.8rem;color:var(--muted);white-space:nowrap}
+.lesson .lcta{font-size:0.8rem;color:var(--terracotta);opacity:0;transition:opacity 150ms}
+.lesson a:hover .lcta{opacity:1}
+
+.module-paid{display:flex;align-items:center;gap:8px;padding:12px 0}
+.mod-paid-tag{display:inline-block;font-size:11px;font-weight:600;color:var(--olive);background:rgba(71,74,26,0.08);padding:3px 10px;text-transform:uppercase;letter-spacing:0.04em}
+
+@media(max-width:768px){
+  .hero{padding:140px 0 80px}
+  .stats{gap:24px}
+  .module summary{padding:24px 20px;gap:12px}
+  .mod-num{min-width:60px;font-size:11px}
+  .lessons{padding:0 20px 20px 92px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="header-logo">L&D <span>без суеты</span></a>
+    <nav class="header-nav">
+      <a href="../index.html">← Главная</a>
+      <a href="../materials/first-agent.html">Бесплатный материал</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-tag">Программа</p>
+    <h1>Методист в эпоху AI</h1>
+    <p class="hero-lead">От «как открыть терминал» до «какую AI-задачу решать первой». Практика, метафоры, рабочие артефакты — без гонки и технического жаргона.</p>
+    <div class="stats">
+      <div class="stat"><span class="stat-val">3</span><span class="stat-label">модуля</span></div>
+      <div class="stat"><span class="stat-val">9</span><span class="stat-label">материалов</span></div>
+      <div class="stat"><span class="stat-val">~20 ч</span><span class="stat-label">общее время</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-inner">
+    <h2>Что внутри</h2>
+    <div class="modules">
+
+      <details class="module" open>
+        <summary>
+          <span class="mod-num">Модуль 1</span>
+          <span class="mod-text">
+            <h3>Технический минимум</h3>
+            <p>Терминал, Git, API — база без которой разговор об AI остаётся абстрактным.</p>
+          </span>
+          <span class="mod-hours">~6 ч</span>
+        </summary>
+        <div class="lessons">
+          <div class="lesson"><a href="module-01-technical-minimum/lesson-01-terminal.html"><span class="lnum">Урок 1</span><span class="ltitle">Терминал и командная строка</span><span class="ltime">2–2,5 ч</span><span class="lcta">→</span></a></div>
+          <div class="lesson"><a href="module-01-technical-minimum/lesson-02-git.html"><span class="lnum">Урок 2</span><span class="ltitle">Git: версионирование и первый коммит</span><span class="ltime">2–2,5 ч</span><span class="lcta">→</span></a></div>
+          <div class="lesson"><a href="module-01-technical-minimum/lesson-03-api.html"><span class="lnum">Урок 3</span><span class="ltitle">API и чтение кода</span><span class="ltime">2–2,5 ч</span><span class="lcta">→</span></a></div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>
+          <span class="mod-num">Модуль 2</span>
+          <span class="mod-text">
+            <h3>AI: от промпта до продукта</h3>
+            <p>Как работают LLM, RAG, агенты и зачем нужен fine-tuning.</p>
+          </span>
+          <span class="mod-hours">~9 ч</span>
+        </summary>
+        <div class="lessons">
+          <div class="lesson"><a href="module-02-ai-from-prompt-to-product/lesson-01-llm-internals.html"><span class="lnum">Урок 1</span><span class="ltitle">Как работают LLM: токены, контекст, температура</span><span class="ltime">2–3 ч</span><span class="lcta">→</span></a></div>
+          <div class="lesson"><a href="module-02-ai-from-prompt-to-product/lesson-02-rag.html"><span class="lnum">Урок 2</span><span class="ltitle">RAG: научите модель отвечать по вашим документам</span><span class="ltime">2–3 ч</span><span class="lcta">→</span></a></div>
+          <div class="lesson"><a href="module-02-ai-from-prompt-to-product/lesson-03-agents.html"><span class="lnum">Урок 3</span><span class="ltitle">AI-агенты: от «спросить» к «поставить задачу»</span><span class="ltime">2,5–3 ч</span><span class="lcta">→</span></a></div>
+          <div class="lesson"><a href="module-02-ai-from-prompt-to-product/lesson-04-fine-tuning.html"><span class="lnum">Урок 4</span><span class="ltitle">Fine-tuning: справочный урок</span><span class="ltime">1–1,5 ч</span><span class="lcta">→</span></a></div>
+        </div>
+      </details>
+
+      <details class="module" open>
+        <summary>
+          <span class="mod-num">Модуль 3</span>
+          <span class="mod-text">
+            <h3>AI-стратегия и ROI</h3>
+            <p>Оценка готовности, дорожная карта внедрения, расчёт эффекта.</p>
+          </span>
+          <span class="mod-hours">~5 ч</span>
+        </summary>
+        <div class="lessons">
+          <div class="lesson"><a href="module-03-ai-strategy-and-roi/lesson-01-ai-readiness.html"><span class="lnum">Урок 1</span><span class="ltitle">AI Readiness: аудит готовности и приоритизация</span><span class="ltime">2–3 ч</span><span class="lcta">→</span></a></div>
+          <div class="lesson"><a href="module-03-ai-strategy-and-roi/lesson-02-roi-roadmap.html"><span class="lnum">Урок 2</span><span class="ltitle">ROI и дорожная карта</span><span class="ltime">2,5–3 ч</span><span class="lcta">→</span></a></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../index.html">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="footer-meta">
+      <span class="footer-updated"><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span class="footer-note">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

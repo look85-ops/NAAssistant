@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Твой первый AI-агент за 15 минут — L&D без суеты</title>
+<meta name="description" content="Пошаговая инструкция: как собрать AI-агента без единой строки кода. Шаблон AGENTS.md внутри.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a}
+
+body{font-family:'Geist',sans-serif;font-weight:400;font-size:1rem;line-height:1.7;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+
+.page{max-width:720px;margin:0 auto;padding:0 48px}
+
+/* ── Cover ── */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.cover-watermark{position:absolute;left:-50px;top:50%;transform:translateY(-50%);font-size:280px;font-weight:100;color:var(--olive);opacity:.03;line-height:.85;pointer-events:none;user-select:none;white-space:nowrap}
+.cover-inner{position:relative;z-index:1}
+.cover-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--terracotta);margin-bottom:20px}
+.cover h1{font-size:2.3rem;font-weight:650;line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;max-width:580px}
+.cover-sub{font-size:1.15rem;color:var(--muted);line-height:1.55;margin-bottom:44px;max-width:520px}
+.cover-brand{margin-top:auto;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:.02em}
+
+/* ── TOC ── */
+.toc{padding-top:80px}
+.toc h2{font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:28px;letter-spacing:-.01em;padding-left:20px;border-left:3px solid var(--olive)}
+.toc-list{list-style:none}
+.toc-list li{font-size:1.05rem;color:#3a3a32;line-height:1.7;padding:8px 0 8px 28px;position:relative;border-bottom:1px dotted var(--border)}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li::before{content:'';position:absolute;left:4px;top:18px;width:6px;height:6px;background:var(--olive);opacity:.5}
+
+/* ── Sections ── */
+h2{font-size:1.4rem;font-weight:600;color:var(--ink);margin:48px 0 18px;letter-spacing:-.01em;padding-left:20px;border-left:3px solid var(--olive)}
+h3{font-size:1.1rem;font-weight:600;color:var(--ink);margin:36px 0 10px}
+p{font-size:1.02rem;color:#3a3a32;line-height:1.75;margin-bottom:18px}
+
+ul,ol{padding-left:24px;margin-bottom:18px}
+li{font-size:1.02rem;color:#3a3a32;line-height:1.65;padding:4px 0;margin-bottom:6px}
+
+/* ── Metaphor ── */
+.metaphor{margin:40px 0;padding:24px 0 24px 24px;border-left:3px solid var(--olive);font-size:1.05rem;color:var(--muted);font-style:italic;line-height:1.65;max-width:600px}
+.metaphor strong{font-style:normal;color:var(--ink);font-weight:550}
+
+/* ── Insight ── */
+.insight{margin:36px 0;padding-left:20px;border-left:4px solid var(--olive);font-size:1.02rem;font-weight:450;color:var(--ink);line-height:1.65}
+.insight strong{font-weight:550}
+
+/* ── Geometric divider ── */
+.geo-div{display:flex;align-items:center;gap:16px;margin:56px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+/* ── Steps ── */
+.step-list{list-style:none;padding-left:0;counter-reset:step}
+.step-list li{counter-increment:step;padding:0 0 20px 44px;position:relative;margin-bottom:0;line-height:1.65}
+.step-list li::before{content:counter(step);position:absolute;left:0;top:2px;width:24px;height:24px;background:var(--olive);color:#fff;font-size:13px;font-weight:600;text-align:center;line-height:24px}
+.step-list li strong{font-weight:600}
+
+/* ── Table ── */
+.levels-table{width:100%;border-collapse:collapse;margin:28px 0 36px;font-size:1rem}
+.levels-table thead th{text-transform:uppercase;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--muted);text-align:left;padding:10px 16px;border-bottom:1px solid var(--olive)}
+.levels-table tbody td{padding:14px 16px;color:#3a3a32;line-height:1.6;vertical-align:top;border-bottom:1px solid var(--border)}
+.levels-table tbody tr:nth-child(even) td{background:var(--surface)}
+.levels-table tbody td:first-child{font-weight:550;color:var(--ink);white-space:nowrap}
+
+/* ── Download box ── */
+.download-box{margin:48px 0;padding:36px 32px;border:1px solid var(--olive);text-align:center}
+.download-box h3{font-size:1.15rem;font-weight:600;margin:0 0 8px}
+.download-box p{font-size:1rem;color:var(--muted);margin-bottom:12px}
+.download-box .ref-link{font-size:1rem;color:var(--olive);text-decoration:none;font-weight:550}
+
+/* ── Code ── */
+code{font-family:'Geist Mono','SF Mono',monospace;font-size:.88em}
+pre{margin:24px 0;padding:0 0 0 24px;border-left:2px solid var(--olive);font-family:'Geist Mono','SF Mono',monospace;font-size:.88rem;line-height:1.65;color:var(--ink);overflow-x:auto}
+pre code{background:none;padding:0}
+
+/* ── Links ── */
+a{color:var(--olive);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── Colophon ── */
+.colophon{padding-top:72px;padding-bottom:48px;text-align:center}
+.colophon .colophon-tag{font-size:14px;font-weight:550;color:var(--ink);margin-bottom:6px}
+.colophon .colophon-contact{font-size:14px;color:var(--muted);margin-bottom:2px}
+.colophon .colophon-date{font-size:13px;color:#b0b0a8;margin-top:20px}
+
+/* ── Print ── */
+@media print{
+  @page{size:A4;margin:20mm}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:11pt}
+  .page{max-width:none;padding:0}
+  .cover{page-break-after:always;min-height:257mm}
+  .cover-watermark{opacity:.03;font-size:240px;left:-30px}
+  .toc{page-break-after:always;padding-top:0}
+  .geo-div{margin:40px 0}
+  h2{margin-top:40px}
+  .levels-table thead th,.levels-table tbody td{padding:8px 12px}
+}
+
+@media(max-width:768px){
+  .page{padding:0 24px}
+  .cover h1{font-size:1.7rem}
+  .cover-watermark{font-size:150px;left:-20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ COVER ═══════════ -->
+<section class="cover page">
+  <div class="cover-watermark">AGENT</div>
+  <div class="cover-inner">
+    <p class="cover-tag">Бесплатный материал</p>
+    <h1>Твой первый AI-агент за&nbsp;15&nbsp;минут</h1>
+    <p class="cover-sub">Никакого кода. Только текст, логика и&nbsp;файлы.</p>
+    <div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+  </div>
+  <p class="cover-brand">L&D без суеты</p>
+</section>
+
+<!-- ═══════════ TOC ═══════════ -->
+<div class="toc page">
+  <h2>Содержание</h2>
+  <ol class="toc-list">
+    <li>Зачем тебе агент</li>
+    <li>Три уровня AI-помощника</li>
+    <li>Как собрать за 15 минут</li>
+    <li>Шаблон AGENTS.md</li>
+    <li>Примеры задач для методиста</li>
+    <li>Советы для старта</li>
+    <li>Что дальше</li>
+  </ol>
+</div>
+
+<!-- ═══════════ CONTENT ═══════════ -->
+<div class="page">
+
+<!-- ── Зачем тебе агент ── -->
+<h2>Зачем тебе агент</h2>
+
+<p>Обычный чат — это прохожий на улице. Ты задаёшь вопрос → тебе отвечают. Каждый раз с чистого листа. Он забывает контекст через 10 сообщений.</p>
+
+<p><strong>Агент — это сотрудник, которому ты дал должностную инструкцию.</strong> Один раз описываешь: кто ты, что тебе нужно, как отвечать. Дальше он работает сам. Помнит тебя, твои файлы, твои решения.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Без агента — ты&nbsp;каждый раз нанимаешь нового человека и&nbsp;объясняешь всё с&nbsp;нуля. С&nbsp;агентом — у&nbsp;тебя есть постоянный ассистент, который знает твой стиль, правила и&nbsp;проекты.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ── Три уровня AI-помощника ── -->
+<h2>Три уровня AI-помощника</h2>
+
+<p>Не бросайся к сложному. Начни с того, что подходит под твою задачу.</p>
+
+<table class="levels-table">
+  <thead>
+    <tr>
+      <th>Уровень</th>
+      <th>Что это</th>
+      <th>Когда достаточно</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Обычный чат</td>
+      <td>ChatGPT, Claude, DeepSeek</td>
+      <td>Разовые вопросы, черновики, поиск информации</td>
+    </tr>
+    <tr>
+      <td>Project / Custom GPT</td>
+      <td>Чат + постоянная инструкция + прикреплённые файлы</td>
+      <td>Одна повторяющаяся задача</td>
+    </tr>
+    <tr>
+      <td>Полноценный агент</td>
+      <td>AI, который живёт в папке, видит файлы, редактирует их, копит знания</td>
+      <td>Несколько проектов, долгая память, предсказуемость</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Этот гайд — про третий уровень. 15–30 минут настройки.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ── Как собрать за 15 минут ── -->
+<h2>Как собрать за 15 минут</h2>
+
+<ol class="step-list">
+  <li><strong>Скачай шаблон AGENTS.md</strong> — файл, в котором описано, кто твой агент и как он работает.</li>
+  <li><strong>Заполни 6 полей:</strong> Identity (кто он), Core Purpose (зачем), Voice &amp; Tone (как говорит), Boundaries (что можно/нельзя), Workflow (шаги), Memory (какие файлы читать).</li>
+  <li><strong>Подключи агента.</strong> В opencode — положи AGENTS.md в корень проекта. В Claude — вставь в Custom Instructions проекта. В ChatGPT — создай Custom GPT.</li>
+  <li><strong>Протестируй.</strong> Дай простую задачу: «Спроектируй структуру двухдневного курса по [твоя тема]». Похоже на то, как сделала бы ты? Поправь AGENTS.md и повтори.</li>
+</ol>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ── Шаблон AGENTS.md ── -->
+<h2>Шаблон AGENTS.md</h2>
+
+<p>Готовый шаблон с подсказками. Заполни поля → сохрани в папку проекта → агент готов.</p>
+
+<div class="download-box">
+  <h3>Скачай шаблон</h3>
+  <p>Шаблон AGENTS.md можно скачать из раздела «Материалы».</p>
+  <a class="ref-link" href="first-agent-etalon.docx">Скачать шаблон AGENTS.md (DOCX)</a>
+</div>
+
+<div class="insight">
+  <strong>Важно:</strong> AGENTS.md — живой документ. Первая версия займёт 10 минут. Через неделю ты его перепишешь, потому что поймёшь, что агенту нужно на самом деле. Это нормально.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ── Примеры задач для методиста ── -->
+<h2>Примеры задач для методиста</h2>
+
+<ul>
+  <li>Спроектировать структуру учебного модуля по теме [X]</li>
+  <li>Написать сценарий видео-лекции на 7 минут</li>
+  <li>Проверить текст на соответствие tone-of-voice компании</li>
+  <li>Придумать 5 форматов проверки знаний</li>
+  <li>Собрать пост для LinkedIn о новом курсе</li>
+  <li>Разобрать обратную связь от участников и выделить паттерны</li>
+</ul>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ── Советы для старта ── -->
+<h2>Советы для старта</h2>
+
+<ul>
+  <li><strong>Не пиши идеально.</strong> Набросай и поправь после 2–3 тестов, а не вылизывай неделю.</li>
+  <li><strong>Дай границы.</strong> Чётко пропиши что можно, а что нет. Иначе агент начнёт придумывать.</li>
+  <li><strong>Используй метафоры.</strong> Если агент объясняет сложное — пусть приводит примеры из твоей сферы.</li>
+  <li><strong>Обучай агента.</strong> Каждый раз когда сделал хорошо → скажи. Каждый раз когда ошибся → объясни почему.</li>
+  <li><strong>Один агент — одна задача.</strong> Лучше три маленьких агента, чем один, который ничего не умеет хорошо.</li>
+</ul>
+
+<div class="insight">
+  После первого агента ты захочешь: добавить папку знаний (knowledge/), создать бэклог задач, научить агента работать с файлами, добавить суб-агентов для разных типов задач. Шаблон <a href="agents-template.md">AGENTS.md</a> — для этого.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<!-- ── Что дальше ── -->
+<h2>Что дальше</h2>
+
+<p>Этот гайд — быстрый старт. Если хочешь глубже: настройка нескольких агентов, работа с кодом и данными, реальные кейсы из L&D — смотри полный гайд <strong>«AI-агенты: от первого запуска до своей команды»</strong>.</p>
+
+<p><a href="../course/index.html">Открыть программу курса →</a></p>
+
+</div>
+
+<!-- ═══════════ COLOPHON ═══════════ -->
+<div class="page">
+  <div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+  <div class="colophon">
+    <p class="colophon-tag">L&D без суеты</p>
+    <p class="colophon-contact"><a href="https://look85-ops.github.io/NAAssistant/portfolio/">Об авторе курса</a> · Telegram @mrk_natalia</p>
+    <p class="colophon-date">16 сентября 2026</p>
+  </div>
+</div>
+
+</body>
+</html>

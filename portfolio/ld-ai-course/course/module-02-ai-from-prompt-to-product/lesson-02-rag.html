@@ -1,0 +1,1113 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 2. RAG: научите модель отвечать по вашим документам — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/quiz.css">
+<style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
+
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="pbar"></div>
+
+<header class="header">
+  <div class="hi">
+    <a href="../../index.html" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="../index.html">← Программа</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wm">02.2</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 2 · AI: от промпта до продукта</div>
+    <h1>Урок 2. RAG: научите модель отвечать по вашим документам</h1>
+    <p class="meta">Урок 2</p>
+
+    <ul class="outcomes">
+      <li>Объяснить, зачем L&D-специалисту RAG, и назвать 3 сценария применения</li>
+      <li>Загрузить документ в NotebookLM и получить осмысленный ответ по его содержанию</li>
+      <li>Разбить текст на чанки и объяснить, почему размер чанка влияет на качество ответа</li>
+      <li>Отличить RAG от fine-tuning по таблице и выбрать нужный подход под задачу</li>
+    </ul>
+  </div>
+</section>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> откройте notebooklm.google.com. Создайте блокнот. Загрузите любой ваш документ. Задайте вопрос по нему.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
+
+<p>LLM-модели вроде ChatGPT знают много — но не знают <strong>ваших</strong> документов. Ваш учебный курс, корпоративный регламент, скрипт вебинара, база знаний отдела — всего этого нет в обучающей выборке модели. Если вы спросите «какой у нас регламент адаптации новых сотрудников», модель начнёт фантазировать. Она не врёт — она просто не знает.</p>
+
+<p>RAG (Retrieval-Augmented Generation) решает эту проблему. Вы даёте модели доступ к вашим документам, и она отвечает <strong>по ним</strong>, а не по памяти. Для L&D это означает:</p>
+
+<ul>
+  <li><strong>AI-тьютор по вашему курсу.</strong> Студент спрашивает — модель отвечает по материалам курса, а не по Википедии.</li>
+  <li><strong>Поиск по корпоративной базе знаний.</strong> Сотрудник пишет «как оформить командировку» — получает ответ из регламента, а не галлюцинацию.</li>
+  <li><strong>Анализ обратной связи.</strong> Загрузили 500 анкет — модель summarise по ним, а не по общим представлениям об обучении.</li>
+</ul>
+
+<p>К концу урока вы поймёте, как это работает внутри, и сможете собрать простой RAG-конвейер.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02">Что такое RAG</h2>
+
+<p>RAG — это когда модель <strong>не отвечает по памяти</strong>, а сначала ищет нужную информацию в ваших документах и только потом формулирует ответ. Три шага: Retrieve (найти), Augment (добавить в промпт), Generate (сгенерировать ответ).</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Представьте, что вы нанимаете эксперта-консультанта. Вы не просите его помнить всё наизусть — вы даёте ему папку с документами и говорите: «Ответь, опираясь только на эти материалы». Модель — эксперт, ваши документы — папка, RAG — процесс «прочитай папку → ответь».
+</div>
+
+<p>Без RAG модель опирается на то, что «запомнила» при обучении. Данные обучения заканчиваются определённой датой, а ваших документов там никогда не было. С RAG модель получает <strong>контекст из ваших документов прямо в запросе</strong> — и отвечает по нему.</p>
+
+<p>Почему это важно для L&D: каждый ваш курс, каждый регламент, каждый скрипт — это уникальный контекст. Модель не может знать его заранее. RAG даёт ей этот контекст ровно в момент запроса.</p>
+
+<div class="micro-prac">
+  <strong>➤ Микро-практика</strong><br>
+  Откройте ChatGPT или Claude. Спросите: «Расскажи содержание моего последнего рабочего документа». Модель не знает. Теперь скопируйте текст любого вашего документа и вставьте в чат со словами «Ответь по этому тексту: [ваш текст]». Спросите то же самое. Чувствуете разницу? Вы только что вручную сделали то, что RAG делает автоматически.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="03">Конвейер RAG: три шага</h2>
+
+<p>RAG-конвейер — это последовательность действий, которые происходят между вопросом пользователя и ответом модели. Разберём каждый шаг.</p>
+
+<h3>Шаг 1. Индексация (подготовка документов)</h3>
+
+<p>Прежде чем отвечать на вопросы, нужно подготовить документы. Вы берёте свои файлы (PDF, DOCX, Markdown, страницы сайта), извлекаете текст и разбиваете его на <strong>чанки</strong> — небольшие осмысленные фрагменты.</p>
+
+<div class="metaphor">
+  <strong>Метафора: книга с закладками.</strong> Вы не можете дать модели целую книгу в 300 страниц — она «захлебнётся». Вы разрезаете книгу на страницы, вкладываете закладки с ключевыми словами и складываете в картотеку. Чанк — это одна страница с закладкой. Когда приходит вопрос, вы достаёте не всю книгу, а 3–5 нужных страниц.
+</div>
+
+<p><strong>Почему размер чанка важен:</strong></p>
+
+<ul>
+  <li><strong>Слишком маленький чанк</strong> (1–2 предложения) — теряется контекст. Модель видит обрывок и не понимает, о чём речь.</li>
+  <li><strong>Слишком большой чанк</strong> (5 страниц) — модель «тонет» в тексте, а поиск становится неточным.</li>
+  <li><strong>Оптимально:</strong> 500–1500 символов (примерно абзац-полтора). Достаточно для смысла, достаточно мало для точного поиска.</li>
+</ul>
+
+<h3>Шаг 2. Эмбеддинги (превращаем текст в координаты)</h3>
+
+<p>Компьютер не понимает смысл слов. Чтобы найти «похожие по смыслу» фрагменты, текст нужно превратить в числа — <strong>эмбеддинги</strong>. Это как координаты на карте: два текста, близких по смыслу, получают близкие координаты.</p>
+
+<div class="metaphor">
+  <strong>Метафора: карта города.</strong> Эмбеддинг — это GPS-координаты смысла. «Как приготовить борщ» и «Рецепт свекольного супа» — это два разных адреса, но на карте они в одном районе. «Как приготовить борщ» и «Расписание электричек» — в разных концах города. Поиск по эмбеддингам находит «тот же район», даже если слова разные.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Поиск по ключевым словам (Ctrl+F)</th>
+      <th>Поиск по эмбеддингам (RAG)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ищет точное совпадение слов</td>
+      <td>Ищет смысловую близость</td>
+    </tr>
+    <tr>
+      <td>«Адаптация сотрудников» найдёт только документы с этой фразой</td>
+      <td>«Адаптация сотрудников» найдёт и «онбординг», и «введение в должность»</td>
+    </tr>
+    <tr>
+      <td>Не поймёт синонимы и перефразирования</td>
+      <td>Понимает синонимы, переводы, перефразы</td>
+    </tr>
+    <tr>
+      <td>Быстро, дёшево, детерминировано</td>
+      <td>Чуть медленнее, требует вычислительных ресурсов</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Шаг 3. Генерация ответа</h3>
+
+<p>Когда пользователь задаёт вопрос:</p>
+
+<ol>
+  <li><strong>Вопрос превращается в эмбеддинг</strong> — находим его координаты на карте смыслов.</li>
+  <li><strong>Ищем ближайшие чанки</strong> — 3–5 фрагментов документов, которые ближе всего по смыслу к вопросу.</li>
+  <li><strong>Добавляем чанки в промпт</strong> — вместе с вопросом и инструкцией «отвечай только по этим документам».</li>
+  <li><strong>Модель генерирует ответ</strong> — опираясь на найденные чанки, а не на память.</li>
+</ol>
+
+<pre>Пользователь: «Какой у нас процесс адаптации?»
+→ Эмбеддинг вопроса → поиск ближайших чанков
+→ Найдено: [Regulation_01.md, Onboarding_2026.pdf]
+→ Промпт модели: «Ответь на вопрос, используя ТОЛЬКО эти документы:
+   [содержимое чанков]
+   Вопрос: Какой у нас процесс адаптации?»
+→ Ответ модели: «Согласно регламенту, адаптация длится 3 месяца и включает...»</pre>
+
+<div class="interim"><h3>Промежуточный итог</h3><p>RAG-конвейер = индексация (разбили на чанки → сделали эмбеддинги → сложили в базу) + запрос (вопрос → эмбеддинг → поиск ближайших чанков → добавили в промпт → ответ). Три шага, которые превращают «модель не знает» в «модель отвечает по вашим документам».</p></div>
+
+<div class="pull-quote">
+  В 9 из 10 вам нужен RAG. Быстро, дёшево, обратимо.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="04">RAG vs Fine-tuning</h2>
+
+<p>Частый вопрос: «Может, просто дообучить модель на моих документах?» У этого подхода есть название — <strong>fine-tuning</strong>. Но для большинства L&D-задач он избыточен.</p>
+
+<div class="margin-note">
+  <strong>Fine-tuning — только для постоянной специализации модели.</strong> Если вы хотите, чтобы модель всегда говорила в вашем тоне и стиле, знала вашу терминологию и никогда не выходила за рамки — fine-tuning. Если нужно отвечать по документам, которые обновляются раз в неделю — RAG.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Критерий</th>
+      <th>RAG</th>
+      <th>Fine-tuning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Что делает</td>
+      <td>Ищет ответ в ваших документах при каждом запросе</td>
+      <td>«Вшивает» знания в саму модель на этапе обучения</td>
+    </tr>
+    <tr>
+      <td>Скорость внедрения</td>
+      <td>Часы (загрузили документы — работает)</td>
+      <td>Дни–недели (подготовка данных, обучение, валидация)</td>
+    </tr>
+    <tr>
+      <td>Обновление знаний</td>
+      <td>Мгновенно: добавили документ — он в поиске</td>
+      <td>Нужно переобучать модель заново</td>
+    </tr>
+    <tr>
+      <td>Стоимость</td>
+      <td>Низкая: платите только за запросы к LLM</td>
+      <td>Высокая: аренда GPU + время обучения</td>
+    </tr>
+    <tr>
+      <td>Точность на ваших данных</td>
+      <td>Высокая: модель буквально цитирует документы</td>
+      <td>Средняя: модель «помнит» не всё и может путать</td>
+    </tr>
+    <tr>
+      <td>Когда применять</td>
+      <td>Базы знаний, FAQ, курсы, регламенты — всё что обновляется</td>
+      <td>Стиль, тон, терминология — когда знания стабильны</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Простое правило: если ваши документы обновляются — RAG. Если вы хотите изменить «личность» модели — fine-tuning. Подробнее о fine-tuning — в уроке 4 этого модуля.</p>
+
+</div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>Модель не знает ваших документов. Но ей не нужно знать всё — ей нужно знать где искать.</h2>
+    <p>Вы не помните наизусть содержимое всех папок в шкафу. Вы помните, в какой папке что лежит, и открываете нужную, когда приходит запрос. RAG делает то же самое для модели: не заставляет помнить — даёт инструмент поиска.</p>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="cheatsheet">
+  <h2>Шпаргалка</h2>
+
+  <h3>Термины</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Термин</th>
+        <th>Что значит</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RAG</td>
+        <td>Retrieval-Augmented Generation — модель ищет в документах и отвечает по ним</td>
+      </tr>
+      <tr>
+        <td>Чанк (chunk)</td>
+        <td>Фрагмент документа (500–1500 символов), единица поиска</td>
+      </tr>
+      <tr>
+        <td>Эмбеддинг (embedding)</td>
+        <td>Вектор (массив чисел), представляющий смысл текста. Близкие по смыслу = близкие координаты</td>
+      </tr>
+      <tr>
+        <td>Векторная база (vector DB)</td>
+        <td>Хранилище эмбеддингов с быстрым поиском ближайших соседей. Примеры: Chroma, Pinecone, Qdrant</td>
+      </tr>
+      <tr>
+        <td>Retriever</td>
+        <td>Компонент, который по вопросу находит релевантные чанки</td>
+      </tr>
+      <tr>
+        <td>Fine-tuning</td>
+        <td>Дообучение модели на своих данных — меняет «личность» модели, а не контекст запроса</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Конвейер RAG</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Этап</th>
+        <th>Что происходит</th>
+        <th>Бытовая метафора</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Индексация</td>
+        <td>Документы → чанки → эмбеддинги → векторная база</td>
+        <td>Разложили документы по папкам с ярлыками</td>
+      </tr>
+      <tr>
+        <td>2. Поиск (Retrieve)</td>
+        <td>Вопрос → эмбеддинг → поиск ближайших чанков</td>
+        <td>По ключевому слову нашли нужную папку</td>
+      </tr>
+      <tr>
+        <td>3. Дополнение (Augment)</td>
+        <td>Чанки + вопрос + инструкция → промпт модели</td>
+        <td>Положили содержимое папки перед экспертом</td>
+      </tr>
+      <tr>
+        <td>4. Генерация (Generate)</td>
+        <td>Модель читает чанки и пишет ответ</td>
+        <td>Эксперт изучил документы и дал заключение</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Когда что использовать</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Задача</th>
+        <th>Инструмент</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ответы по документам компании</td>
+        <td>RAG</td>
+      </tr>
+      <tr>
+        <td>AI-тьютор по курсу</td>
+        <td>RAG</td>
+      </tr>
+      <tr>
+        <td>Поиск по базе знаний</td>
+        <td>RAG</td>
+      </tr>
+      <tr>
+        <td>Единый стиль и тон всех ответов</td>
+        <td>Fine-tuning</td>
+      </tr>
+      <tr>
+        <td>Терминология предметной области</td>
+        <td>Fine-tuning (как дополнение к RAG)</td>
+      </tr>
+      <tr>
+        <td>Документы обновляются каждую неделю</td>
+        <td>Только RAG</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="05">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. Документ в чате — ручной RAG (10 мин)</summary>
+      <div class="details-content">
+        <p>Самый простой способ почувствовать RAG — сделать его руками.</p>
+        <ol class="steps">
+          <li>Возьмите любой ваш рабочий документ: регламент, программу курса, должностную инструкцию.</li>
+          <li>Откройте ChatGPT или Claude. <strong>Не</strong> задавайте вопрос сразу.</li>
+          <li>Сначала вставьте текст документа с префиксом: «Ответь на следующие вопросы, используя ТОЛЬКО этот документ: [ваш текст]».</li>
+          <li>Задайте вопрос по документу. Например: «Какие этапы включает процесс?», «Кто ответственный за согласование?».</li>
+          <li>Теперь задайте тот же вопрос в новом чате, <strong>без</strong> документа. Сравните ответы.</li>
+        </ol>
+        <p><strong>Что вы увидели:</strong> модель с документом отвечает точно, без документа — фантазирует или отказывается. Это и есть разница между RAG и обычным LLM.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. NotebookLM — RAG для смертных (15 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Откройте <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a> (нужен Google-аккаунт).</li>
+          <li>Создайте новый блокнот. Назовите «Тест RAG».</li>
+          <li>Загрузите 2–3 документа: можно PDF, можно Google Doc, можно скопировать текст.</li>
+          <li>Задайте вопрос, который требует сопоставления информации из разных документов. Например: «Сравни процессы из документа А и документа Б. В чём отличия?»</li>
+          <li>Посмотрите на ответ. Обратите внимание: под ответом есть ссылки на источники — модель показывает, из какого чанка взяла информацию.</li>
+        </ol>
+        <p>NotebookLM — это Google-обёртка над RAG. Внутри тот же конвейер: чанки → эмбеддинги → поиск → генерация. Теперь вы знаете, как оно устроено.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 3. Поиграйте с чанками (15 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Возьмите текст на 3000–5000 знаков. Подойдёт статья, глава из книги, методичка.</li>
+          <li>Разбейте его на чанки тремя способами:
+            <ul>
+              <li><strong>Мелко:</strong> по 2–3 предложения (200–400 знаков)</li>
+              <li><strong>Средне:</strong> по 2–3 абзаца (800–1200 знаков)</li>
+              <li><strong>Крупно:</strong> по 5–6 абзацев (2000–3000 знаков)</li>
+            </ul>
+          </li>
+          <li>Для каждого варианта придумайте 3 вопроса по тексту.</li>
+          <li>«Проиграйте» поиск мысленно: в каком варианте чанков легче найти ответ? Где контекст теряется? Где чанк содержит лишнее?</li>
+          <li>Запишите вывод: какой размер лучше для вашего типа документов и почему.</li>
+        </ol>
+        <p><strong>Инсайт:</strong> размер чанка — это компромисс. Мелко = точный поиск, но потеря контекста. Крупно = полный контекст, но размытый поиск. Идеального размера нет — он зависит от структуры ваших документов.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 4. Поиск по ключевым словам vs смысловой поиск (10 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Откройте любой документ в текстовом редакторе.</li>
+          <li>Выполните Ctrl+F по слову «обучение». Запишите, сколько совпадений и какие.</li>
+          <li>Теперь мысленно поищите «развитие сотрудников» через Ctrl+F. Сколько совпадений? Скорее всего, ноль — хотя по смыслу это то же самое, что «обучение» во многих контекстах.</li>
+          <li>Сформулируйте 3 пары «запрос — синоним» из вашей предметной области. Например: «адаптация — onboarding», «оценка — performance review», «ментор — наставник».</li>
+          <li>Для каждой пары спросите себя: найдёт ли Ctrl+F документы по синониму? А эмбеддинг-поиск?</li>
+        </ol>
+        <p>Это упражнение — не про код. Оно про понимание, почему эмбеддинги мощнее обычного поиска. Смысловой поиск находит то, что Ctrl+F пропустит.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 5. Спроектируйте RAG-агента (20 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li>Выберите один L&D-сценарий:
+            <ul>
+              <li><strong>AI-тьютор курса:</strong> студенты спрашивают — модель отвечает по материалам курса.</li>
+              <li><strong>Поиск по базе знаний:</strong> сотрудники спрашивают — модель находит ответ в регламентах.</li>
+              <li><strong>Анализатор обратной связи:</strong> загрузили 500 анкет — модель summarise по ним.</li>
+            </ul>
+          </li>
+          <li>Опишите для выбранного сценария:
+            <ul>
+              <li>Какие документы пойдут в индексацию?</li>
+              <li>Какой размер чанка выберете и почему?</li>
+              <li>Какие вопросы будут задавать пользователи? (3–5 примеров)</li>
+              <li>Что должно быть в системном промпте модели?</li>
+            </ul>
+          </li>
+          <li>Запишите результат в файл <code>rag-agent-design.md</code> в папке проекта.</li>
+        </ol>
+        <p>Вы только что спроектировали RAG-систему. Без кода — но с пониманием всех компонентов. Когда дойдёте до технической реализации, у вас уже будет спецификация.</p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="06">После практики</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>✓ Понимаете, зачем L&D-специалисту RAG, и можете назвать 3 сценария</li>
+    <li>✓ Сделали ручной RAG в ChatGPT: добавили документ → задали вопрос → получили ответ по документу</li>
+    <li>✓ Поработали в NotebookLM: загрузили документы и увидели ссылки на источники</li>
+    <li>✓ Понимаете, что такое чанк и как его размер влияет на качество поиска</li>
+    <li>✓ Можете объяснить разницу между поиском по ключевым словам и смысловым поиском</li>
+    <li>✓ Отличаете RAG от fine-tuning по таблице из 6 критериев</li>
+    <li>✓ Спроектировали RAG-агента и записали спецификацию в <code>rag-agent-design.md</code></li>
+  </ul>
+</div>
+
+<h3>Артефакт урока</h3>
+
+<p>После урока в вашей папке проекта должен появиться файл:</p>
+
+<pre>ваш-проект/
+└── rag-agent-design.md    ← спецификация RAG-агента (сценарий, документы, чанки, примеры вопросов)</pre>
+
+<div class="open-loop">
+  <h3>Челлендж на завтра</h3>
+  <p>Откройте рабочий документ — любой, с которым вы реально работаете. Регламент, программа курса, должностная инструкция. Скопируйте его в чат с моделью и задайте 5 вопросов. Заметьте: модель отвечает точно, ссылается на конкретные места в тексте, не придумывает. Это RAG в его простейшей форме. Теперь представьте, что то же самое может работать автоматически для всей базы знаний компании.</p>
+</div>
+
+<h3>Что дальше</h3>
+
+<p>В следующем материале — <strong>AI-агенты</strong>. Вы узнаете, как модель может не просто отвечать, а выполнять цепочки действий: искать информацию, вызывать API, принимать решения. RAG — один из инструментов, который агент использует. Но сначала закрепите материал этого урока.</p>
+
+<div class="quiz" data-quiz-id="m02-lesson-02">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">1. Что такое RAG?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Метод сжатия ответов модели для экономии токенов</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Метод, при котором модель ищет ответ в ваших документах, а не «из головы»</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Алгоритм для ускорения обучения модели</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">2. Что такое эмбеддинг?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> Числовое представление текста, позволяющее сравнивать смыслы</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> Картинка, встроенная в текст</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> Ссылка на внешний документ</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">3. Зачем нужна векторная база данных в RAG?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Чтобы хранить пароли пользователей</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Чтобы сжимать документы перед отправкой</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Чтобы быстро находить документы, похожие по смыслу на запрос</label>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">4. В чём главное преимущество RAG перед обычным промптом?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> RAG работает быстрее</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> Модель опирается на конкретные документы, а не на память → меньше галлюцинаций</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> RAG не требует интернета</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
+<div class="nav-bottom">
+  <a href="lesson-01-llm-internals.html">← Урок 1. LLM: что внутри модели</a>
+  <a href="lesson-03-agents.html" class="nav-next">М2. Урок 3. AI-агенты →</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
+      <a href="../../index.html">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
+
+<script src="../../scripts/quiz.js"></script>
+
+</body>
+</html>

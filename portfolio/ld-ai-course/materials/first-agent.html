@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Твой первый AI-агент за 15 минут — L&D без суеты</title>
+<meta name="description" content="Пошаговая инструкция: как собрать AI-агента без единой строки кода. Шаблон AGENTS.md внутри.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
+:root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a;--light:#fafaf8}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.hlogo{font-size:15px;font-weight:550;color:var(--ink);text-decoration:none}
+.hlogo span{color:var(--olive)}
+.hnav{display:flex;gap:28px}
+.hnav a{font-size:14px;font-weight:400;color:var(--muted);text-decoration:none;transition:color 150ms}
+.hnav a:hover{color:var(--ink)}
+
+.hero{padding:140px 0 60px;position:relative;overflow:hidden}
+.hero-wm{position:absolute;left:-30px;top:80px;font-size:260px;font-weight:100;color:var(--olive);opacity:.03;line-height:1;pointer-events:none;user-select:none}
+.hi2{max-width:720px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
+.hero .mod-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--terracotta);margin-bottom:16px}
+.hero h1{font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:650;line-height:1.12;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px}
+.hero .sub{font-size:1.1rem;color:var(--muted);line-height:1.5;margin-bottom:28px;max-width:540px}
+
+.content{max-width:720px;margin:0 auto;padding:0 48px}
+h2{font-size:1.4rem;font-weight:600;color:var(--ink);margin:64px 0 16px;letter-spacing:-.01em}
+h3{font-size:1.1rem;font-weight:600;color:var(--ink);margin:40px 0 10px}
+.content p{font-size:1.02rem;color:#3a3a32;line-height:1.7;margin-bottom:18px}
+.content li{font-size:1.02rem;color:#3a3a32;line-height:1.6;padding:4px 0 4px 20px;position:relative;list-style:none}
+.content li::before{content:'';position:absolute;left:0;top:12px;width:6px;height:6px;background:var(--olive);opacity:.5}
+
+.metaphor{margin:40px 0;padding:24px 0 24px 24px;border-left:3px solid var(--olive);font-size:1.05rem;color:var(--muted);font-style:italic;line-height:1.6;max-width:600px}
+.metaphor strong{font-style:normal;color:var(--ink);font-weight:550}
+
+.insight{margin:36px 0;padding-left:20px;border-left:4px solid var(--olive);font-size:1.02rem;font-weight:450;color:var(--ink);line-height:1.6}
+.insight strong{font-weight:550}
+
+.cta-btn{display:inline-block;padding:14px 32px;background:var(--terracotta);color:#fff;font-size:1.05rem;font-weight:550;text-decoration:none;letter-spacing:.01em;transition:background 150ms}
+.cta-btn:hover{background:#984c26}
+
+.download-box{margin:48px 0;padding:32px;background:var(--surface);border:1px solid var(--olive);text-align:center}
+.download-box h3{margin-top:0}
+.download-box p{color:var(--muted);margin-bottom:20px}
+
+.steps{margin:28px 0;counter-reset:agentstep}
+.steps li::before{counter-increment:agentstep;content:counter(agentstep);width:auto;height:auto;background:none;top:4px;font-size:14px;font-weight:600;color:var(--olive);opacity:.8}
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:56px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+code{font-family:'Geist Mono','SF Mono',monospace;font-size:.88em;background:var(--surface);padding:1px 6px}
+pre{margin:24px 0;padding:0 0 0 24px;border-left:2px solid var(--olive);font-family:'Geist Mono','SF Mono',monospace;font-size:.88rem;line-height:1.6;color:var(--ink);overflow-x:auto}
+pre code{background:none;padding:0}
+
+.footer{border-top:1px solid var(--border);padding:48px 0 36px;margin-top:80px}
+.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:13px;color:var(--muted);text-decoration:none}
+.flinks a:hover{color:var(--ink)}
+.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fupd{font-size:11px;color:#b0b0a8}
+.fnote{font-size:11px;color:#c0beb8}
+
+@media(max-width:768px){
+  .hi,.hi2,.content,.fi{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:140px;left:-16px;top:100px}
+}
+
+@media(prefers-reduced-motion:reduce){}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="hi">
+    <a href="../index.html" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="../course/index.html">Программа</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wm">AGENT</div>
+  <div class="hi2">
+    <p class="mod-tag">Лид-магнит · Бесплатно</p>
+    <h1>Твой первый AI-агент за 15 минут</h1>
+    <p class="sub">Никакого кода. Только текст, логика и файлы. Собери помощника, который знает тебя, помнит контекст и работает предсказуемо.</p>
+  </div>
+</section>
+
+<div class="content">
+
+<h2>Зачем тебе агент</h2>
+
+<p>Обычный чат — это прохожий на улице. Ты задаёшь вопрос → тебе отвечают. Каждый раз с чистого листа. Он забывает контекст через 10 сообщений.</p>
+
+<p><strong>Агент — это сотрудник, которому ты дал должностную инструкцию.</strong> Один раз описываешь: кто ты, что тебе нужно, как отвечать. Дальше он работает сам. Помнит тебя, твои файлы, твои решения.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Без агента — ты&nbsp;каждый раз нанимаешь нового человека и&nbsp;объясняешь всё с&nbsp;нуля. С&nbsp;агентом — у&nbsp;тебя есть постоянный ассистент, который знает твой стиль, правила и&nbsp;проекты.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2>Три уровня AI-помощника</h2>
+
+<p>Не бросайся к сложному. Начни с того, что подходит под твою задачу.</p>
+
+<p><strong>Уровень 1. Обычный чат</strong> (ChatGPT, Claude, DeepSeek)<br>Когда достаточно: разовые вопросы, черновики, поиск информации.</p>
+
+<p><strong>Уровень 2. Project / Custom GPT</strong> (5 минут настройки)<br>Чат + постоянная инструкция + прикреплённые файлы. Когда достаточно: одна повторяющаяся задача.</p>
+
+<p><strong>Уровень 3. Полноценный агент</strong> (15-30 минут, этот гайд)<br>AI, который живёт в папке, видит файлы, редактирует их, копит знания. Когда нужно: несколько проектов, долгая память, предсказуемость.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2>Как собрать за 15 минут</h2>
+
+<ol class="steps">
+<li><strong>Скачай шаблон AGENTS.md</strong> — файл, в котором описано, кто твой агент и как он работает.</li>
+<li><strong>Заполни 6 полей:</strong> Identity (кто он), Core Purpose (зачем), Voice & Tone (как говорит), Boundaries (что можно/нельзя), Workflow (шаги), Memory (какие файлы читать).</li>
+<li><strong>Подключи агента.</strong> В opencode — положи AGENTS.md в корень проекта. В Claude — вставь в Custom Instructions проекта. В ChatGPT — создай Custom GPT.</li>
+<li><strong>Протестируй.</strong> Дай простую задачу: «Спроектируй структуру двухдневного курса по [твоя тема]». Похоже на то, как сделала бы ты? Поправь AGENTS.md и повтори.</li>
+</ol>
+
+<div class="download-box">
+  <h3>Шаблон AGENTS.md</h3>
+  <p>Готовый шаблон с подсказками. Заполни поля → сохрани в папку проекта → агент готов.</p>
+  <a href="first-agent-etalon.docx" class="cta-btn" download>Скачать шаблон DOCX</a>
+</div>
+
+<div class="insight">
+  <strong>Важно:</strong> AGENTS.md — живой документ. Первая версия займёт 10 минут. Через неделю ты его перепишешь, потому что поймёшь, что агенту нужно на самом деле. Это нормально.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2>Примеры задач для методиста</h2>
+
+<ul>
+<li>Спроектировать структуру учебного модуля по теме [X]</li>
+<li>Написать сценарий видео-лекции на 7 минут</li>
+<li>Проверить текст на соответствие tone-of-voice компании</li>
+<li>Придумать 5 форматов проверки знаний</li>
+<li>Собрать пост для LinkedIn о новом курсе</li>
+<li>Разобрать обратную связь от участников и выделить паттерны</li>
+</ul>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2>Советы для старта</h2>
+
+<ul>
+<li><strong>Не пиши идеально.</strong> Набросай и поправь после 2-3 тестов, а не вылизывай неделю.</li>
+<li><strong>Дай границы.</strong> Чётко пропиши что можно, а что нет. Иначе агент начнёт придумывать.</li>
+<li><strong>Используй метафоры.</strong> Если агент объясняет сложное — пусть приводит примеры из твоей сферы.</li>
+<li><strong>Обучай агента.</strong> Каждый раз когда сделал хорошо → скажи. Каждый раз когда ошибся → объясни почему.</li>
+<li><strong>Один агент — одна задача.</strong> Лучше три маленьких агента, чем один, который ничего не умеет хорошо.</li>
+</ul>
+
+<div class="insight">
+    После первого агента ты захочешь: добавить папку знаний (knowledge/), создать бэклог задач, научить агента работать с файлами, добавить суб-агентов для разных типов задач. Шаблон <a href="agents-template.md" style="color:var(--olive)">AGENTS.md</a> — для этого.
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2>Что дальше</h2>
+
+<p>Этот гайд — быстрый старт. Если хочешь глубже: настройка нескольких агентов, работа с кодом и данными, реальные кейсы из L&D — смотри полный гайд <strong>«AI-агенты: от первого запуска до своей команды»</strong>.</p>
+
+<a href="../course/index.html" class="cta-btn">Открыть программу курса</a>
+
+</div>
+
+<footer class="footer">
+  <div class="fi">
+    <div class="flinks">
+      <a href="../index.html">L&D без суеты</a>
+      <a href="../course/index.html">Программа</a>
+      <a href="https://look85-ops.github.io/NAAssistant/portfolio/">Об авторе курса</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+    </div>
+    <div class="fmeta">
+      <span class="fupd">16 сентября 2026</span>
+      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
