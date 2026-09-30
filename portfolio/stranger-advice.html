@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Совет от незнакомца</title>
+  <meta name="description" content="Анонимный совет от случайного незнакомца. Опиши ситуацию или просто получи записку.">
+  <meta name="theme-color" content="#c4a882">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://look85-ops.github.io/NAAssistant/portfolio/stranger-advice.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --kraft: oklch(0.72 0.06 72);
+      --kraft-dark: oklch(0.62 0.07 65);
+      --paper: oklch(0.95 0.015 82);
+      --ink: oklch(0.22 0.025 45);
+      --ink-light: oklch(0.35 0.02 45);
+      --accent: oklch(0.42 0.09 40);
+      --line: oklch(0.65 0.04 80);
+      --shadow: oklch(0.15 0.02 40 / 0.18);
+      --font-hand: 'Caveat', cursive;
+      --font-serif: 'PT Serif', Georgia, serif;
+      --note-max: 600px;
+    }
+
+    body {
+      background: var(--kraft);
+      background-image:
+        radial-gradient(ellipse at 20% 50%, oklch(0.74 0.05 70 / 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, oklch(0.70 0.07 75 / 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, oklch(0.76 0.04 68 / 0.25) 0%, transparent 50%);
+      font-family: var(--font-serif);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, oklch(0.55 0.04 75 / 0.06) 2px, oklch(0.55 0.04 75 / 0.06) 3px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, oklch(0.55 0.03 70 / 0.03) 40px, oklch(0.55 0.03 70 / 0.03) 41px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .surface {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--note-max);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-light);
+      letter-spacing: 0.02em;
+    }
+    .header .hero {
+      font-family: var(--font-serif);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: oklch(0.42 0.04 60);
+      max-width: 420px;
+      margin: 10px auto 0;
+      font-style: italic;
+    }
+
+    /* ---- BURGER + DRAWER ---- */
+    .burger-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: auto;
+      height: auto;
+      padding: 6px 14px;
+      border: 1px solid var(--ink-light);
+      background: transparent;
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--ink);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .burger-btn:hover { background: var(--ink); color: var(--paper); }
+    .burger-icon { font-size: 1rem; font-style: normal; }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 55;
+      background: oklch(0.1 0.02 40 / 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 58;
+      width: 280px;
+      max-width: 80vw;
+      background: var(--paper);
+      box-shadow: 4px 0 24px oklch(0.1 0.02 40 / 0.25);
+      transform: translateX(-100%);
+      transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+      overflow-y: auto;
+      padding: 60px 20px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .drawer.open { transform: translateX(0); }
+
+    .drawer-title {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      font-style: italic;
+      color: oklch(0.45 0.03 60);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+
+    .drawer-chip {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      font-style: italic;
+      padding: 7px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      color: var(--ink);
+      transition: background 0.15s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .drawer-chip:hover { background: oklch(0.85 0.03 80 / 0.5); }
+    .drawer-chip.selected {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    /* ---- NOTE ---- */
+    .note-stage {
+      width: 100%;
+      perspective: 1200px;
+    }
+
+    .note {
+      position: relative;
+      background: var(--paper);
+      background-image:
+        linear-gradient(0deg, transparent 28px, oklch(0.78 0.03 82 / 0.35) 28px);
+      background-size: 100% 29px;
+      border-radius: 3px 3px 8px 3px;
+      padding: 32px 28px 28px;
+      box-shadow:
+        0 1px 2px var(--shadow),
+        0 4px 8px oklch(0.15 0.02 40 / 0.10),
+        0 12px 24px oklch(0.15 0.02 40 / 0.08);
+      min-height: 160px;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.5s ease,
+                  opacity 0.3s ease;
+      transform-origin: top center;
+      will-change: transform;
+    }
+
+    .note.folded {
+      transform: rotateX(-8deg) translateY(2px);
+      box-shadow:
+        0 1px 2px var(--shadow),
+        0 3px 6px oklch(0.15 0.02 40 / 0.06);
+    }
+
+    .note.flat {
+      transform: rotateX(0deg) translateY(0);
+    }
+
+    .note-crease {
+      position: absolute;
+      top: 38%;
+      left: 8px;
+      right: 8px;
+      height: 0;
+      border-top: 1px dashed oklch(0.6 0.04 75 / 0.4);
+      pointer-events: none;
+      opacity: 0.6;
+      transition: opacity 0.5s ease;
+    }
+
+    .note.flat .note-crease {
+      opacity: 0.2;
+    }
+
+    .note-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--ink-light);
+      opacity: 0.5;
+      min-height: 120px;
+      font-family: var(--font-hand);
+      font-size: 1.3rem;
+      text-align: center;
+      transition: opacity 0.4s ease;
+    }
+
+    .note-content {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .note-content.visible {
+      display: flex;
+    }
+
+    .note-stranger {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid oklch(0.6 0.04 75 / 0.3);
+      padding-bottom: 10px;
+      margin-bottom: 4px;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .note-stranger.shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .note-text {
+      font-family: var(--font-hand);
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      line-height: 1.5;
+      color: var(--ink);
+      min-height: 58px;
+      position: relative;
+    }
+
+    .note-text .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--ink);
+      vertical-align: text-bottom;
+      margin-left: 1px;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .note-signature {
+      font-family: var(--font-hand);
+      font-size: 1.15rem;
+      color: var(--ink-light);
+      text-align: right;
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 0.6s ease 0.4s;
+    }
+    .note-signature.shown {
+      opacity: 0.8;
+    }
+
+    /* Paper edge tear */
+    .note::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--paper);
+      clip-path: polygon(0% 0%, 3% 80%, 7% 20%, 12% 90%, 17% 30%, 22% 70%, 27% 10%, 32% 60%, 37% 40%, 42% 85%, 47% 15%, 52% 75%, 57% 25%, 62% 65%, 67% 35%, 72% 80%, 77% 20%, 82% 70%, 87% 45%, 92% 85%, 97% 30%, 100% 60%);
+    }
+
+    /* ---- BUTTONS ---- */
+    .actions {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      padding: 10px 22px;
+      border: 1.5px solid var(--ink-light);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .btn:active {
+      transform: scale(0.97);
+    }
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .btn-primary {
+      flex: 1;
+      min-width: 180px;
+    }
+    .btn-secondary {
+      flex: 1;
+      min-width: 140px;
+      border-style: dashed;
+    }
+
+    .btn.loading {
+      color: transparent;
+      pointer-events: none;
+    }
+    .btn.loading::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 16px; height: 16px;
+      margin: -8px 0 0 -8px;
+      border: 2px solid var(--ink);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ---- INPUT ---- */
+    .input-area {
+      width: 100%;
+      position: relative;
+    }
+
+    .input-wrapper {
+      position: relative;
+      background: var(--paper);
+      background-image:
+        linear-gradient(0deg, transparent 27px, oklch(0.78 0.03 82 / 0.35) 27px);
+      background-size: 100% 28px;
+      border-radius: 3px;
+      box-shadow: 0 2px 6px oklch(0.15 0.02 40 / 0.10);
+      padding: 4px 0;
+      transition: box-shadow 0.3s ease;
+    }
+    .input-wrapper:focus-within {
+      box-shadow:
+        0 2px 6px oklch(0.15 0.02 40 / 0.10),
+        0 0 0 2px oklch(0.5 0.08 40 / 0.2);
+    }
+
+    .input-wrapper textarea {
+      width: 100%;
+      min-height: 90px;
+      border: none;
+      background: transparent;
+      font-family: var(--font-hand);
+      font-size: 1.25rem;
+      line-height: 28px;
+      color: var(--ink);
+      padding: 10px 20px;
+      resize: vertical;
+      outline: none;
+    }
+    .input-wrapper textarea::placeholder {
+      color: oklch(0.6 0.03 75);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .input-hint {
+      font-family: var(--font-serif);
+      font-size: 0.72rem;
+      font-style: italic;
+      color: oklch(0.5 0.04 70);
+      text-align: right;
+      padding: 4px 20px 8px;
+      opacity: 0.7;
+    }
+
+    /* ---- STATUS ---- */
+    .status-line {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--ink-light);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      min-height: 1.2em;
+    }
+    .status-line.visible {
+      opacity: 0.7;
+    }
+
+    /* ---- ERROR ---- */
+    .error-toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: oklch(0.3 0.08 20);
+      color: var(--paper);
+      font-family: var(--font-serif);
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      border-radius: 3px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .error-toast.show {
+      opacity: 1;
+    }
+
+    /* ---- RESPONSIVE ---- */
+@media (max-width: 480px) {
+      body { padding: 16px; align-items: flex-start; padding-top: 40px; }
+      .surface { gap: 20px; }
+      .note { padding: 24px 18px 20px; }
+      .btn { padding: 8px 14px; font-size: 0.78rem; }
+      .actions { flex-direction: column; }
+      .drawer { width: 260px; }
+      .burger-btn { font-size: 0.72rem; padding: 5px 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .note { transition: none; }
+      .note-text .cursor { animation: none; opacity: 0; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="error-toast" id="errorToast"></div>
+
+  <main class="surface">
+    <header class="header" title="Двойной клик — настройка API">
+      <h1>Совет от незнакомца</h1>
+      <p class="hero">Выбери незнакомца — или доверься случаю — и получи анонимную записку с советом из чужой жизни.</p>
+    </header>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="drawer" id="drawer">
+      <div class="drawer-title">Выбери незнакомца</div>
+      <div id="drawerList"></div>
+    </div>
+
+    <button class="burger-btn" id="burgerBtn"><span class="burger-icon">☰</span> выбрать незнакомца</button>
+
+    <div class="note-stage">
+      <div class="note folded" id="note">
+        <div class="note-crease"></div>
+        <div class="note-empty" id="noteEmpty">
+          <span>✉️</span>
+          <span>записка пока не получена</span>
+        </div>
+        <div class="note-content" id="noteContent">
+          <div class="note-stranger" id="noteStranger"></div>
+          <div class="note-text" id="noteText"></div>
+          <div class="note-signature" id="noteSignature">— незнакомец</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-wrapper">
+        <textarea id="situationInput" placeholder="Опиши ситуацию... (необязательно)" rows="3"></textarea>
+        <div class="input-hint">без ситуации попадётся случайный совет</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="randomBtn">получить случайную записку</button>
+      <button class="btn btn-secondary" id="situationBtn">отправить свою ситуацию</button>
+    </div>
+
+    <div class="status-line" id="statusLine"></div>
+  </main>
+
+  <script>
+    const HF_API = 'https://thrgbbnh-nmbot.hf.space/chat';
+    const HF_MODEL = 'deepseek/deepseek-chat';
+    const HF_FALLBACK = 'google/gemini-2.5-flash-lite';
+
+    const BOTHUB_API = 'https://openai.bothub.chat/v1/chat/completions';
+    const BOTHUB_MODEL = 'deepseek-chat';
+
+    let busy = false;
+    let typeTicker = null;
+
+    const note = document.getElementById('note');
+    const noteEmpty = document.getElementById('noteEmpty');
+    const noteContent = document.getElementById('noteContent');
+    const noteStranger = document.getElementById('noteStranger');
+    const noteText = document.getElementById('noteText');
+    const noteSignature = document.getElementById('noteSignature');
+    const situationInput = document.getElementById('situationInput');
+    const randomBtn = document.getElementById('randomBtn');
+    const situationBtn = document.getElementById('situationBtn');
+    const statusLine = document.getElementById('statusLine');
+    const errorToast = document.getElementById('errorToast');
+
+    let bothubKey = '';
+    try { bothubKey = localStorage.getItem('sa_bothub_key') || ''; } catch (_) {}
+
+    function getBothubKey() {
+      if (bothubKey) return bothubKey;
+      const params = new URLSearchParams(window.location.search);
+      const k = params.get('key') || '';
+      if (k) { bothubKey = k; try { localStorage.setItem('sa_bothub_key', k); } catch (_) {} }
+      return bothubKey;
+    }
+
+let selectedStrangerIdx = -1; // -1 = random
+
+    const STRANGER_LABELS = [
+      '🚕 таксист', '☕ бариста', '👴 старик в парке', '👧 подросток',
+      '🏛 ночной сторож', '📮 почтальон', '🏥 медсестра', '📚 библиотекарь',
+      '🍳 повар', '🗼 смотритель маяка', '💐 цветочница', '🧹 дворник',
+      '🎬 монахиня', '🎣 рыбак', '🛒 кассирша', '🎹 пианист',
+      '⛏ геолог', '🚋 кондуктор', '👩‍🏫 учительница', '🔧 сантехник',
+    ];
+
+    const burgerBtn = document.getElementById('burgerBtn');
+    const drawer = document.getElementById('drawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerList = document.getElementById('drawerList');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      drawerOverlay.classList.add('open');
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      drawerOverlay.classList.remove('open');
+    }
+
+    burgerBtn.addEventListener('click', () => {
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    function updateCurrentLabel() {
+      currentStranger.textContent = selectedStrangerIdx >= 0
+        ? STRANGER_LABELS[selectedStrangerIdx]
+        : '🎲 случайный незнакомец';
+    }
+
+function updateRandomBtn() {
+      randomBtn.textContent = selectedStrangerIdx >= 0
+        ? 'получить записку'
+        : 'получить случайную записку';
+    }
+
+    function buildDrawer() {
+      drawerList.innerHTML = '';
+
+      STRANGER_LABELS.forEach((label, i) => {
+        const item = document.createElement('div');
+        item.className = 'drawer-chip' + (selectedStrangerIdx === i ? ' selected' : '');
+        item.textContent = label;
+        item.addEventListener('click', () => {
+          selectedStrangerIdx = i;
+          updateRandomBtn();
+          buildDrawer();
+          closeDrawer();
+        });
+        drawerList.appendChild(item);
+      });
+
+      // "Any stranger" option at bottom
+      const anyItem = document.createElement('div');
+      anyItem.className = 'drawer-chip' + (selectedStrangerIdx === -1 ? ' selected' : '');
+      anyItem.textContent = '🎲 случайный незнакомец';
+      anyItem.addEventListener('click', () => {
+        selectedStrangerIdx = -1;
+        updateRandomBtn();
+        buildDrawer();
+        closeDrawer();
+      });
+      drawerList.appendChild(anyItem);
+    }
+
+    // ---- STRANGER PERSONAS ----
+    const STRANGER_POOL = [
+      'уставший таксист, который видел тысячи судеб',
+      'бариста в маленькой кофейне, которая слушает людей весь день',
+      'старик на скамейке в парке, который не спешит',
+      'девочка-подросток, которая замечает то, что взрослые пропускают',
+      'ночной сторож в музее, который разговаривает с картинами',
+      'почтальон на пенсии, который разносил письма 30 лет',
+      'медсестра из провинциальной больницы',
+      'библиотекарь, который прочитал половину фонда',
+      'повар в круглосуточной столовой',
+      'смотритель маяка, который редко видит людей',
+      'продавщица в цветочном магазине',
+      'дворник, который знает всех в районе по шагам',
+      'монахиня, которая ведёт блог о кино',
+      'рыбак, который думает о жизни между поклёвками',
+      'кассирша в супермаркете на окраине',
+      'пианист в холле гостиницы, который играет для тех кто ждёт',
+      'бывший геолог, который искал нефть а нашёл себя',
+      'кондуктор трамвая, который объявляет остановки как стихи',
+      'учительница младших классов на пенсии',
+      'сантехник, который чинит не только трубы но и настроение',
+    ];
+
+    const STRANGER_STYLES = [
+      'говорит рублеными фразами, как будто экономит слова',
+      'использует сравнения из своей профессии',
+      'начинает с истории из жизни, потом — совет',
+      'говорит тепло и чуть невпопад, но в точку',
+      'философствует, но простыми словами',
+      'отвечает вопросом на вопрос, сократовски',
+      'советует через отрицание: «не делай как я»',
+      'говорит народными мудростями, но не банальными',
+      'использует метафору погоды или природы',
+      'говорит как будто знает тебя сто лет, хотя видит впервые',
+    ];
+
+    function buildSystemPrompt(situation, stranger, style) {
+      const hasSituation = situation && situation.trim().length > 10;
+
+      let avoidBlock = '';
+      try {
+        const history = JSON.parse(localStorage.getItem('sa_history') || '[]');
+        if (history.length > 0) {
+          avoidBlock = '\nНЕ ПОВТОРЯЙ эти прошлые советы ни по смыслу, ни по формулировкам:\n' +
+            history.map((h, i) => `${i + 1}. «${h}»`).join('\n') +
+            '\nПридумай что-то совсем другое.';
+        }
+      } catch (_) {}
+
+      return [
+        'Ты — «Совет от незнакомца». Ты — случайный человек, который оставляет анонимную записку.',
+        '',
+        `Сегодня ты — ${stranger}.`,
+        `Твой стиль: ${style}.`,
+        '',
+        'ПРАВИЛА:',
+        '— Пиши от первого лица, как реальный человек.',
+        '— Никакой мотивационной чепухи, никаких «ты справишься», «всё будет хорошо».',
+        '— Совет должен быть конкретным, приземлённым, из твоего жизненного опыта.',
+        `— Длина: ${hasSituation ? '3-5' : '2-4'} предложений, 80–250 символов.`,
+        '— Без эмодзи. Без хештегов. Без цитат великих.',
+        '— Не подписывайся именем — ты аноним.',
+        '— Тон: тепло, но без сюсюканья. Прямо, но без грубости.',
+        '',
+        'ЗАПРЕЩЕНО:',
+        '— Религия, политика.',
+        '— Советы про деньги, здоровье, отношения — если ситуация явно не про это.',
+        '— «Я тебя понимаю», «я через это проходил» — ты незнакомец, ты не знаешь человека.',
+        '— Банальности вроде «будь собой», «всё к лучшему», «время лечит».',
+        '',
+        hasSituation
+          ? `СИТУАЦИЯ ЧЕЛОВЕКА: «${situation.trim()}»\n\nОтветь на эту ситуацию как ${stranger}. Дай совет из своего опыта.`
+          : 'Человек не описал ситуацию. Дай случайный жизненный совет — то, что ты сам(а) понял(а) за свою жизнь. Что-то, что ты хотел(а) бы сказать любому.',
+        '',
+        'ФОРМАТ ОТВЕТА:',
+        '— Только текст записки. Никаких «Вот записка:», «Совет:», кавычек, пояснений.',
+        '— Подпись в конце НЕ нужна — я добавлю её сам.',
+        '— Одна строка, без переносов.',
+        avoidBlock,
+      ].filter(Boolean).join('\n');
+    }
+
+    // ---- API CALLS ----
+    async function callHF(systemPrompt, userPrompt) {
+      const ctrl = new AbortController();
+      const tm = setTimeout(() => ctrl.abort(), 25000);
+      try {
+        const res = await fetch(HF_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: HF_MODEL,
+            fallback_model: HF_FALLBACK,
+            temperature: 0.85,
+            max_tokens: 200,
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userPrompt }
+            ]
+          }),
+          signal: ctrl.signal
+        });
+        if (!res.ok) throw new Error('HF ' + res.status);
+        const data = await res.json();
+        return (data?.output || data?.raw?.choices?.[0]?.message?.content || '').trim();
+      } finally {
+        clearTimeout(tm);
+      }
+    }
+
+    async function callBothub(systemPrompt, userPrompt) {
+      const key = getBothubKey();
+      if (!key) throw new Error('no_bothub_key');
+      const ctrl = new AbortController();
+      const tm = setTimeout(() => ctrl.abort(), 25000);
+      try {
+        const res = await fetch(BOTHUB_API, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${key}`
+          },
+          body: JSON.stringify({
+            model: BOTHUB_MODEL,
+            temperature: 0.85,
+            max_tokens: 200,
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userPrompt }
+            ]
+          }),
+          signal: ctrl.signal
+        });
+        if (!res.ok) throw new Error('Bothub ' + res.status);
+        const data = await res.json();
+        return (data?.choices?.[0]?.message?.content || '').trim();
+      } finally {
+        clearTimeout(tm);
+      }
+    }
+
+    function sanitizeText(raw) {
+      let s = String(raw || '').trim();
+      s = s.replace(/^```[\s\S]*?\n([\s\S]*?)\n```$/m, '$1').trim();
+      s = s.replace(/^`+|`+$/g, '').trim();
+      s = s.replace(/^(записка|совет|вот( что я скажу)?|ответ)[\s:：-]+/iu, '').trim();
+      s = s.replace(/^[«"'“”„]|[»"'“”„]$/g, '').trim();
+      s = s.replace(/\s*[—\-–]\s*\S.{0,30}$/u, '').trim();
+      s = s.replace(/^[-—–]\s*/, '').trim();
+      return s;
+    }
+
+    async function getAdvice(situation, stranger, style) {
+      const sys = buildSystemPrompt(situation, stranger, style);
+      const user = situation && situation.trim().length > 10
+        ? 'Дай совет по ситуации.'
+        : 'Дай случайный жизненный совет.';
+
+      // Try Bothub first if key is set, then HF
+      if (getBothubKey()) {
+        try {
+          const text = await callBothub(sys, user);
+          const clean = sanitizeText(text);
+          if (clean) return clean;
+        } catch (e) {
+          console.warn('Bothub failed, falling back to HF:', e.message);
+        }
+      }
+
+      const text = await callHF(sys, user);
+      return sanitizeText(text);
+    }
+
+    // ---- FALLBACKS ----
+    function pickFallback(situation) {
+      const hasSituation = situation && situation.trim().length > 10;
+      const general = [
+        'Иногда самое смелое — не прыгнуть, а остаться. Я понял это, когда трижды менял работу и только на четвёртый раз понял, что дело не в работе.',
+        'Люди врут, что утро вечера мудренее. Утро просто другое. Иногда нужно дожить до другого утра — и этого достаточно.',
+        'Я разносил письма тридцать лет. Знаешь, что я понял? Хорошие новости всегда приходят неожиданно. Их не ждут. Просто живут.',
+        'В море, когда шторм, не борются с волной — ложатся в дрейф. В жизни так же: иногда не надо грести.',
+        'Старые книги пахнут временем. Новые — возможностью. Я выбираю те, которые пахнут и тем и другим.',
+      ];
+      const withSituation = [
+        'Я не знаю твоей ситуации до конца. Но знаю одно: люди чаще жалеют о том, чего не сделали, чем о том, что сделали. Только проверь — твоё ли это желание, или чужое.',
+        'У меня в кофейне каждый день сидят люди с ноутбуками. Все что-то решают. И знаешь, те, у кого получается — они не самые умные. Они самые упрямые.',
+        'В больнице я видела сотни людей. Те, кто выкарабкиваются — не те, кто «позитивно мыслит». Те, кто принимает, что сейчас больно, и всё равно делает шаг.',
+      ];
+      const pool = hasSituation ? [...withSituation, ...general] : [...general];
+
+      // Exclude recently used fallbacks
+      let history = [];
+      try { history = JSON.parse(localStorage.getItem('sa_history') || '[]'); } catch (_) {}
+      const fresh = pool.filter(m => !history.includes(m));
+      const source = fresh.length > 0 ? fresh : pool;
+
+      return source[Math.floor(Math.random() * source.length)];
+    }
+
+    // ---- UI ----
+    function showError(msg) {
+      errorToast.textContent = msg;
+      errorToast.classList.add('show');
+      clearTimeout(errorToast._t);
+      errorToast._t = setTimeout(() => errorToast.classList.remove('show'), 3000);
+    }
+
+    function setStatus(msg) {
+      statusLine.textContent = msg;
+      statusLine.classList.add('visible');
+    }
+
+    function clearStatus() {
+      statusLine.classList.remove('visible');
+    }
+
+    function setButtonsDisabled(disabled) {
+      randomBtn.disabled = disabled;
+      situationBtn.disabled = disabled;
+      if (disabled) {
+        randomBtn.classList.add('loading');
+        situationBtn.classList.add('loading');
+      } else {
+        randomBtn.classList.remove('loading');
+        situationBtn.classList.remove('loading');
+      }
+    }
+
+    function unfoldNote() {
+      note.classList.remove('folded');
+      note.classList.add('flat');
+    }
+
+    function foldNote() {
+      note.classList.add('folded');
+      note.classList.remove('flat');
+    }
+
+    async function typeText(element, text, speed = 40) {
+      element.textContent = '';
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      element.appendChild(cursor);
+
+      let cancelled = false;
+      const cancel = () => { cancelled = true; };
+      typeTicker = cancel;
+
+      for (let i = 0; i < text.length; i++) {
+        if (cancelled) break;
+        await new Promise(r => setTimeout(r, speed + Math.random() * 20));
+        if (cancelled) break;
+        cursor.before(document.createTextNode(text[i]));
+      }
+      cursor.remove();
+      if (cancelled) element.textContent = text;
+      typeTicker = null;
+    }
+
+    async function showAdvice(text, stranger, style) {
+      // If already flat, fold back first
+      if (note.classList.contains('flat')) {
+        foldNote();
+        await new Promise(r => setTimeout(r, 400));
+      }
+
+      noteEmpty.style.display = 'none';
+      noteContent.classList.add('visible');
+
+      noteStranger.textContent = `совет от ${stranger}`;
+      noteStranger.classList.remove('shown');
+      noteSignature.classList.remove('shown');
+
+      noteText.textContent = '';
+
+      // Reveal stranger first
+      await new Promise(r => setTimeout(r, 250));
+      noteStranger.classList.add('shown');
+      await new Promise(r => setTimeout(r, 500));
+
+      await typeText(noteText, text, 35);
+
+      noteSignature.classList.add('shown');
+      unfoldNote();
+
+      try {
+        const history = JSON.parse(localStorage.getItem('sa_history') || '[]');
+        history.unshift(text);
+        if (history.length > 10) history.length = 10;
+        localStorage.setItem('sa_history', JSON.stringify(history));
+        localStorage.setItem('sa_last_text', text);
+      } catch (_) {}
+      try { localStorage.setItem('sa_last_stranger', stranger); } catch (_) {}
+    }
+
+    async function requestAdvice(situation) {
+      if (busy) return;
+      busy = true;
+      setButtonsDisabled(true);
+      setStatus('незнакомец пишет записку...');
+      clearTimeout(errorToast._t);
+      errorToast.classList.remove('show');
+
+      const stranger = selectedStrangerIdx >= 0
+        ? STRANGER_POOL[selectedStrangerIdx]
+        : STRANGER_POOL[Math.floor(Math.random() * STRANGER_POOL.length)];
+      const style = STRANGER_STYLES[Math.floor(Math.random() * STRANGER_STYLES.length)];
+
+      try {
+        let text;
+        try {
+          text = await getAdvice(situation, stranger, style);
+        } catch (e) {
+          console.warn('AI failed, using fallback:', e.message);
+          text = pickFallback(situation);
+        }
+
+        if (!text || text.length < 10) {
+          text = pickFallback(situation);
+        }
+
+        const sig = text.match(/[—\-–]\s*(незнакомец|\S.{2,25})$/u);
+        let cleanText = text;
+        if (sig) {
+          cleanText = text.slice(0, sig.index).trim();
+        }
+        if (!cleanText || cleanText.length < 5) cleanText = text;
+
+        await showAdvice(cleanText, stranger, style);
+        setStatus('');
+      } catch (e) {
+        showError('Не получилось. Попробуй ещё раз.');
+        setStatus('');
+      } finally {
+        busy = false;
+        setButtonsDisabled(false);
+      }
+    }
+
+    // ---- EVENTS ----
+    // Click on note during typing skips animation
+    note.addEventListener('click', () => {
+      if (typeTicker) typeTicker();
+    });
+
+    randomBtn.addEventListener('click', () => {
+      requestAdvice('');
+    });
+
+    situationBtn.addEventListener('click', () => {
+      const text = situationInput.value.trim();
+      if (!text) {
+        requestAdvice('');
+        return;
+      }
+      requestAdvice(text);
+    });
+
+    // Enter in textarea submits through situation button
+    situationInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        situationBtn.click();
+      }
+    });
+
+    // ---- INIT ----
+    buildDrawer();
+    updateRandomBtn();
+
+    // Double-click header to configure Bothub API key
+    document.querySelector('.header').addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      const key = prompt(
+        'Bothub API key (оставь пустым чтобы использовать только HF):',
+        getBothubKey()
+      );
+      if (key !== null) {
+        bothubKey = key.trim();
+        try { localStorage.setItem('sa_bothub_key', bothubKey); } catch (_) {}
+        setStatus(bothubKey ? 'Bothub подключён' : 'Используется HF');
+        setTimeout(clearStatus, 2000);
+      }
+    });
+
+    const savedText = (() => { try { return localStorage.getItem('sa_last_text') || ''; } catch (_) { return ''; } })();
+    const savedStranger = (() => { try { return localStorage.getItem('sa_last_stranger') || ''; } catch (_) { return ''; } })();
+
+    if (savedText) {
+      noteEmpty.style.display = 'none';
+      noteContent.classList.add('visible');
+      if (savedStranger) {
+        noteStranger.textContent = `совет от ${savedStranger}`;
+        noteStranger.classList.add('shown');
+      }
+      noteText.textContent = savedText;
+      noteSignature.classList.add('shown');
+      unfoldNote();
+    }
+  </script>
+</body>
+</html>
