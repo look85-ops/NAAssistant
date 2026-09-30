@@ -1,7 +1,7 @@
 name: Daily horoscope
 on:
-  schedule:
-    - cron: "0 7 * * *"
+  # schedule:  # отключён — см. logs/decisions.md
+  #   - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
