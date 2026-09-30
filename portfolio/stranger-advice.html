@@ -601,13 +601,7 @@ let selectedStrangerIdx = -1; // -1 = random
     });
     drawerOverlay.addEventListener('click', closeDrawer);
 
-    function updateCurrentLabel() {
-      currentStranger.textContent = selectedStrangerIdx >= 0
-        ? STRANGER_LABELS[selectedStrangerIdx]
-        : '🎲 случайный незнакомец';
-    }
-
-function updateRandomBtn() {
+    function updateRandomBtn() {
       randomBtn.textContent = selectedStrangerIdx >= 0
         ? 'получить записку'
         : 'получить случайную записку';
@@ -669,58 +663,88 @@ function updateRandomBtn() {
     const STRANGER_STYLES = [
       'говорит рублеными фразами, как будто экономит слова',
       'использует сравнения из своей профессии',
-      'начинает с истории из жизни, потом — совет',
+      'начинает с крошечной истории из жизни, потом — вывод',
       'говорит тепло и чуть невпопад, но в точку',
-      'философствует, но простыми словами',
+      'философствует простыми словами, без пафоса',
       'отвечает вопросом на вопрос, сократовски',
       'советует через отрицание: «не делай как я»',
-      'говорит народными мудростями, но не банальными',
       'использует метафору погоды или природы',
       'говорит как будто знает тебя сто лет, хотя видит впервые',
+      'роняет одну фразу — и замолкает, будто сказал всё',
+      'даёт совет через наблюдение за чем-то мелким: муравей, облако, трещина на асфальте',
+      'путается в словах, но в конце говорит что-то очень точное',
+    ];
+
+    const MOODS = [
+      'спокойный, как вечер после дождя',
+      'усталый, но не сдавшийся',
+      'весёлый, с тихой улыбкой',
+      'задумчивый, как будто только что что-то понял',
+      'резкий, без сантиментов',
+      'нежный, как человек который редко говорит вслух',
+    ];
+
+    const FORMS = [
+      'короткая история из твоей жизни',
+      'один вопрос, который заставляет задуматься',
+      'наблюдение, которое переворачивает привычный взгляд',
+      'разрешение: «тебе можно...»',
+      'предупреждение, сказанное с заботой',
+      'странный комплимент, который не сразу поймёшь',
+    ];
+
+    const MUTATIONS = [
+      'Начни с конкретной детали: звук, запах, цвет, текстура.',
+      'Твой совет должен содержать число.',
+      'В середине резко смени тон на противоположный, а потом вернись.',
+      'Напиши так, будто эта записка — последнее, что ты скажешь.',
+      'Используй сравнение с чем-то из природы.',
+      'Одна из фраз должна быть ритмичной, почти стихом.',
+      'Закончи не выводом, а новой мыслью — как будто только начал.',
+      'Представь, что совет написан на клочке бумаги, который вот-вот унесёт ветер.',
+      'Совет должен быть парадоксальным: противоречить сам себе и при этом быть верным.',
+      'Напиши от второго лица, но как будто говоришь о себе.',
+      'Включи в совет что-то, что ты видел сегодня по дороге.',
+      'Твой совет — это то, что ты хотел бы услышать сам 10 лет назад.',
     ];
 
     function buildSystemPrompt(situation, stranger, style) {
       const hasSituation = situation && situation.trim().length > 10;
+      const mood = MOODS[Math.floor(Math.random() * MOODS.length)];
+      const form = FORMS[Math.floor(Math.random() * FORMS.length)];
+      const mutation = MUTATIONS[Math.floor(Math.random() * MUTATIONS.length)];
 
       let avoidBlock = '';
       try {
         const history = JSON.parse(localStorage.getItem('sa_history') || '[]');
         if (history.length > 0) {
-          avoidBlock = '\nНЕ ПОВТОРЯЙ эти прошлые советы ни по смыслу, ни по формулировкам:\n' +
-            history.map((h, i) => `${i + 1}. «${h}»`).join('\n') +
-            '\nПридумай что-то совсем другое.';
+          avoidBlock = '\nВАЖНО: Вот советы которые ты УЖЕ давал. НЕ повторяй их ни по смыслу ни по формулировкам. Придумай СОВСЕМ ДРУГОЕ:\n' +
+            history.map((h, i) => `${i + 1}. «${h}»`).join('\n');
         }
       } catch (_) {}
 
       return [
-        'Ты — «Совет от незнакомца». Ты — случайный человек, который оставляет анонимную записку.',
+        `Ты — ${stranger}. Ты пишешь анонимную записку незнакомому человеку.`,
+        `Твой стиль речи: ${style}.`,
+        `Твоё настроение сейчас: ${mood}.`,
+        `Форма совета: ${form}.`,
         '',
-        `Сегодня ты — ${stranger}.`,
-        `Твой стиль: ${style}.`,
+        `СОЗДАЙ СОВЕТ:`,
+        `— Пиши от первого лица, как живой человек с реальным опытом.`,
+        `— Никаких мотивационных лозунгов, никаких «ты справишься», «всё будет хорошо», «время лечит», «будь собой».`,
+        `— Конкретика. Детали. То, что можно потрогать или представить.`,
+        `— Длина: 2–4 предложения, 90–280 символов.`,
+        `— Без эмодзи, без хештегов, без цитат, без подписи.`,
         '',
-        'ПРАВИЛА:',
-        '— Пиши от первого лица, как реальный человек.',
-        '— Никакой мотивационной чепухи, никаких «ты справишься», «всё будет хорошо».',
-        '— Совет должен быть конкретным, приземлённым, из твоего жизненного опыта.',
-        `— Длина: ${hasSituation ? '3-5' : '2-4'} предложений, 80–250 символов.`,
-        '— Без эмодзи. Без хештегов. Без цитат великих.',
-        '— Не подписывайся именем — ты аноним.',
-        '— Тон: тепло, но без сюсюканья. Прямо, но без грубости.',
-        '',
-        'ЗАПРЕЩЕНО:',
-        '— Религия, политика.',
-        '— Советы про деньги, здоровье, отношения — если ситуация явно не про это.',
-        '— «Я тебя понимаю», «я через это проходил» — ты незнакомец, ты не знаешь человека.',
-        '— Банальности вроде «будь собой», «всё к лучшему», «время лечит».',
+        `ЗАПРЕЩЕНО: религия, политика, токсичный позитив, обесценивание чувств.`,
         '',
         hasSituation
-          ? `СИТУАЦИЯ ЧЕЛОВЕКА: «${situation.trim()}»\n\nОтветь на эту ситуацию как ${stranger}. Дай совет из своего опыта.`
-          : 'Человек не описал ситуацию. Дай случайный жизненный совет — то, что ты сам(а) понял(а) за свою жизнь. Что-то, что ты хотел(а) бы сказать любому.',
+          ? `ЧЕЛОВЕК НАПИСАЛ: «${situation.trim()}»\n\nОтветь именно на это. Из своего опыта.`
+          : 'Человек не описал ситуацию. Дай случайный жизненный совет из своего опыта.',
         '',
-        'ФОРМАТ ОТВЕТА:',
-        '— Только текст записки. Никаких «Вот записка:», «Совет:», кавычек, пояснений.',
-        '— Подпись в конце НЕ нужна — я добавлю её сам.',
-        '— Одна строка, без переносов.',
+        `ДОПОЛНИТЕЛЬНОЕ ПРАВИЛО: ${mutation}`,
+        '',
+        'Выдай ТОЛЬКО текст записки. Одна строка. Без «Вот:», «Совет:», кавычек, пояснений.',
         avoidBlock,
       ].filter(Boolean).join('\n');
     }
@@ -736,7 +760,7 @@ function updateRandomBtn() {
           body: JSON.stringify({
             model: HF_MODEL,
             fallback_model: HF_FALLBACK,
-            temperature: 0.85,
+            temperature: 1.05,
             max_tokens: 200,
             messages: [
               { role: 'system', content: systemPrompt },
@@ -767,7 +791,7 @@ function updateRandomBtn() {
           },
           body: JSON.stringify({
             model: BOTHUB_MODEL,
-            temperature: 0.85,
+            temperature: 1.1,
             max_tokens: 200,
             messages: [
               { role: 'system', content: systemPrompt },
@@ -798,48 +822,22 @@ function updateRandomBtn() {
     async function getAdvice(situation, stranger, style) {
       const sys = buildSystemPrompt(situation, stranger, style);
       const user = situation && situation.trim().length > 10
-        ? 'Дай совет по ситуации.'
-        : 'Дай случайный жизненный совет.';
+        ? 'Дай совет.'
+        : 'Дай совет.';
 
-      // Try Bothub first if key is set, then HF
+      // Bothub first, HF fallback
       if (getBothubKey()) {
         try {
           const text = await callBothub(sys, user);
           const clean = sanitizeText(text);
-          if (clean) return clean;
+          if (clean && clean.length >= 10) return clean;
+          console.warn('Bothub returned empty/short, trying HF');
         } catch (e) {
-          console.warn('Bothub failed, falling back to HF:', e.message);
+          console.warn('Bothub failed, trying HF:', e.message);
         }
       }
 
-      const text = await callHF(sys, user);
-      return sanitizeText(text);
-    }
-
-    // ---- FALLBACKS ----
-    function pickFallback(situation) {
-      const hasSituation = situation && situation.trim().length > 10;
-      const general = [
-        'Иногда самое смелое — не прыгнуть, а остаться. Я понял это, когда трижды менял работу и только на четвёртый раз понял, что дело не в работе.',
-        'Люди врут, что утро вечера мудренее. Утро просто другое. Иногда нужно дожить до другого утра — и этого достаточно.',
-        'Я разносил письма тридцать лет. Знаешь, что я понял? Хорошие новости всегда приходят неожиданно. Их не ждут. Просто живут.',
-        'В море, когда шторм, не борются с волной — ложатся в дрейф. В жизни так же: иногда не надо грести.',
-        'Старые книги пахнут временем. Новые — возможностью. Я выбираю те, которые пахнут и тем и другим.',
-      ];
-      const withSituation = [
-        'Я не знаю твоей ситуации до конца. Но знаю одно: люди чаще жалеют о том, чего не сделали, чем о том, что сделали. Только проверь — твоё ли это желание, или чужое.',
-        'У меня в кофейне каждый день сидят люди с ноутбуками. Все что-то решают. И знаешь, те, у кого получается — они не самые умные. Они самые упрямые.',
-        'В больнице я видела сотни людей. Те, кто выкарабкиваются — не те, кто «позитивно мыслит». Те, кто принимает, что сейчас больно, и всё равно делает шаг.',
-      ];
-      const pool = hasSituation ? [...withSituation, ...general] : [...general];
-
-      // Exclude recently used fallbacks
-      let history = [];
-      try { history = JSON.parse(localStorage.getItem('sa_history') || '[]'); } catch (_) {}
-      const fresh = pool.filter(m => !history.includes(m));
-      const source = fresh.length > 0 ? fresh : pool;
-
-      return source[Math.floor(Math.random() * source.length)];
+      return sanitizeText(await callHF(sys, user));
     }
 
     // ---- UI ----
@@ -952,16 +950,10 @@ function updateRandomBtn() {
       const style = STRANGER_STYLES[Math.floor(Math.random() * STRANGER_STYLES.length)];
 
       try {
-        let text;
-        try {
-          text = await getAdvice(situation, stranger, style);
-        } catch (e) {
-          console.warn('AI failed, using fallback:', e.message);
-          text = pickFallback(situation);
-        }
+        let text = await getAdvice(situation, stranger, style);
 
         if (!text || text.length < 10) {
-          text = pickFallback(situation);
+          throw new Error('empty response');
         }
 
         const sig = text.match(/[—\-–]\s*(незнакомец|\S.{2,25})$/u);
@@ -974,7 +966,8 @@ function updateRandomBtn() {
         await showAdvice(cleanText, stranger, style);
         setStatus('');
       } catch (e) {
-        showError('Не получилось. Попробуй ещё раз.');
+        console.warn('Generation failed:', e.message);
+        showError('Не получилось сгенерировать. Попробуй ещё раз.');
         setStatus('');
       } finally {
         busy = false;
