@@ -526,13 +526,12 @@
     <div class="input-area">
       <div class="input-wrapper">
         <textarea id="situationInput" placeholder="Опиши ситуацию... (необязательно)" rows="3"></textarea>
-        <div class="input-hint">без ситуации попадётся случайный совет</div>
+        <div class="input-hint">оставь пустым — получишь случайный совет</div>
       </div>
     </div>
 
     <div class="actions">
       <button class="btn btn-primary" id="randomBtn">получить случайную записку</button>
-      <button class="btn btn-secondary" id="situationBtn">отправить свою ситуацию</button>
     </div>
 
     <div class="status-line" id="statusLine"></div>
@@ -557,7 +556,6 @@
     const noteSignature = document.getElementById('noteSignature');
     const situationInput = document.getElementById('situationInput');
     const randomBtn = document.getElementById('randomBtn');
-    const situationBtn = document.getElementById('situationBtn');
     const statusLine = document.getElementById('statusLine');
     const errorToast = document.getElementById('errorToast');
 
@@ -602,9 +600,14 @@ let selectedStrangerIdx = -1; // -1 = random
     drawerOverlay.addEventListener('click', closeDrawer);
 
     function updateRandomBtn() {
-      randomBtn.textContent = selectedStrangerIdx >= 0
-        ? 'получить записку'
-        : 'получить случайную записку';
+      const hasSituation = situationInput.value.trim().length > 0;
+      if (hasSituation) {
+        randomBtn.textContent = 'получить совет';
+      } else if (selectedStrangerIdx >= 0) {
+        randomBtn.textContent = 'получить записку';
+      } else {
+        randomBtn.textContent = 'получить случайную записку';
+      }
     }
 
     function buildDrawer() {
@@ -859,13 +862,10 @@ let selectedStrangerIdx = -1; // -1 = random
 
     function setButtonsDisabled(disabled) {
       randomBtn.disabled = disabled;
-      situationBtn.disabled = disabled;
       if (disabled) {
         randomBtn.classList.add('loading');
-        situationBtn.classList.add('loading');
       } else {
         randomBtn.classList.remove('loading');
-        situationBtn.classList.remove('loading');
       }
     }
 
@@ -982,23 +982,18 @@ let selectedStrangerIdx = -1; // -1 = random
     });
 
     randomBtn.addEventListener('click', () => {
-      requestAdvice('');
-    });
-
-    situationBtn.addEventListener('click', () => {
       const text = situationInput.value.trim();
-      if (!text) {
-        requestAdvice('');
-        return;
-      }
       requestAdvice(text);
     });
 
-    // Enter in textarea submits through situation button
+    // Update button text when typing
+    situationInput.addEventListener('input', updateRandomBtn);
+
+    // Ctrl+Enter submits
     situationInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
-        situationBtn.click();
+        randomBtn.click();
       }
     });
 
