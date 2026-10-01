@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/quiz.css">
 <style>
 :root {
   --olive: #474a1a;
@@ -581,7 +582,7 @@ footer .fmeta {
   <div class="hi">
     <a href="/" class="hlogo">L&D <span>без суеты</span></a>
     <nav class="hnav">
-      <a href="/course/">← Курс</a>
+      <a href="/course/">← Программа</a>
       <a href="/booster/">Бустер</a>
       <a href="/blog/">Блог</a>
     </nav>
@@ -1025,7 +1026,7 @@ git commit -m "Добавил gitignore, скрыл secret.txt"</code></pre>
 
 <h3>Что дальше</h3>
 
-<p>На следующем уроке — <strong>API и чтение кода</strong>. Вы научитесь делать запросы к AI-моделям через терминал, читать документацию API и понимать, что происходит в чужом коде. Но сначала закрепите Git — повторите любой шаг, который был непонятен.</p>
+<p>В следующем материале — <strong>API и чтение кода</strong>. Вы научитесь делать запросы к AI-моделям через терминал, читать документацию API и понимать, что происходит в чужом коде. А после Модуля 1 — <strong>Модуль 2: AI от промпта до продукта</strong>, где вы заглянете под капот LLM и соберёте своего первого агента.</p>
 
 <h3>Дополнительно (необязательно, но полезно)</h3>
 
@@ -1037,9 +1038,45 @@ git commit -m "Добавил gitignore, скрыл secret.txt"</code></pre>
   <li>Прочитайте первые 3 раздела книги Pro Git на русском: https://git-scm.com/book/ru/v2</li>
 </ul>
 
+<div class="quiz" data-quiz-id="m01-lesson-02">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">1. Что делает команда <code>git init</code>?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Скачивает чужой репозиторий</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Создаёт новый репозиторий в текущей папке</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Отправляет изменения на GitHub</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">2. Что такое коммит?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> Сохранённое состояние файлов в конкретный момент времени</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> Копия репозитория на другом компьютере</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> Команда для удаления файла</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">3. Для чего нужен файл <code>.gitignore</code>?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Чтобы скрыть репозиторий от других</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Чтобы ускорить работу Git</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Чтобы указать файлы и папки, которые Git НЕ должен отслеживать</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">4. Что происходит после <code>git add . && git commit -m "..."</code>?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> Файлы сохранены в локальном репозитории, но ещё не на GitHub</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> Файлы сразу отправлены на GitHub</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Создаётся новый репозиторий</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
 <div class="nav-bottom">
   <a href="lesson-01-terminal.html">← Урок 1. Терминал и командная строка</a>
-  <a href="lesson-03-api.html" class="nav-next">Урок 3. API и чтение кода →</a>
+  <a href="lesson-03-api.html" class="nav-next">М1. Урок 3. API и чтение кода →</a>
 </div>
 
 </div>
@@ -1069,6 +1106,8 @@ git commit -m "Добавил gitignore, скрыл secret.txt"</code></pre>
   });
 })();
 </script>
+
+<script src="/scripts/quiz.js"></script>
 
 </body>
 </html>

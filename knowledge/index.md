@@ -1,39 +1,95 @@
 # База знаний
 
-Наблюдения, правила и справочная информация, накопленные в работе.
+Навигация по накопленным знаниям. Детали — в подпапках.
 
-## Карьера
+## knowledge/
 
-- [Карьерные инсайты](career-insights.md) — приёмы по резюме и LinkedIn, что сработало
-- [Поиск икигая](ikigai-exploration.md) — сессия 2026-08-10: позиция «проектировать опыт человека», струи, маршрут «охота на красоту»
-- [Правила LinkedIn](linkedin-rules.md) — что работает в постах, форматы и хуки
-- [Разведка рынка РБ (08.2026)](minsk-market-2026-08-20.md) — площадки поиска работы РБ + живые вакансии L&D/HR Минска
-- [Формат дайджеста «Радар L&D»](digest-format.md) — канон выпуска: структура, дизайн-голос, анти-паттерны, сборка
+- [Формат дайджеста «Радар L&D»](digest-format.md)
+- [Книги: Attack Point, Content School, StoryBrand](book-attack-point.md)
+- [Приватные заметки](private.md)
+- [signal/](signal/) — дайджесты «Сигнал»
 
-## Репозитории и процессы
+## ai/ — Искусственный интеллект и агенты
 
-- [GitHub репозитории](github-repos.md) — все репозитории look85-ops
-- [Уроки процессов](process-lessons.md) — как работают агенты, что меняем
+- [AI-агенты с нуля](ai/ai-agents-from-scratch.md)
+- [Оценка агентов (RACI-стандарт)](ai/agent-eval-racistandard.md)
 
-## Инструменты
+## career/ — Карьера, вакансии, LinkedIn
 
-- [Playwright MCP — браузерный инструмент](playwright-mcp.md) — локальный headless-браузер (Chromium) для opencode: JS-сайты, скриншоты, мониторинг
-- [Сомелье тишины — Identity](channel-identity.md) — голос, принципы и границы канала
+- [Карьерные инсайты](career/career-insights.md)
+- [Правила LinkedIn](career/linkedin-rules.md)
+- [Холодный аутрич: статус](career/cold-outreach-status.md)
+- [Rabota.by: Playwright-воркфлоу](career/rabota-by-playwright-workflow.md)
+- [Rabota.by: правила отклика](career/rabota-by-response-rules.md)
+- [Разведка рынка РБ (08.2026)](career/minsk-market-2026-08-20.md)
 
-## Курсы РЖД
+## design/ — Дизайн, бренд, позиционирование
 
-- **[Полный алгоритм: раскладка презентации по сценарию](pptx-layout-workflow.md) — основной SOP от парсинга до валидации (8 этапов). Начинать отсюда для каждого нового модуля.**
-- [Раскладка по сценарию — принципы](pptx-scenario-layout.md) — методика М1Д4 (переупорядочивание, AP-дырки, MoveTo)
-- [Паттерны редактирования](pptx-editing-patterns.md) — статистика и layout-ы М1Д1
-- [Актуализация презентаций](pptx-actualization.md) — правила, каталог типов слайдов, пути к скриптам
-- [Чек-листы Академия пути и П+Путь](aok-checklists.md) — шпаргалки для разработки и ревью модулей
-- [Глоссарий ролей](roles-glossary.md) — роли участников программ
-- [Инструкция 2288р — шпаргалка](track-maintenance-cheatsheet.md) — нормы текущего содержания пути
+- [Дизайн-фреймворк Lola](design/lola-design-framework.md)
+- [Инсайты по лонгридам](design/longread-design-insights.md)
+- [Дизайн-система портала](design/portal-design-system.md)
+- [Аутентичный бренд](design/authentic-brand-insights.md)
+- [Идентичность канала](design/channel-identity.md)
+- [Позиционирование продукта (09.2026)](design/product-positioning-2026-09.md)
 
-### Технические уроки (pptx)
-- [COM + кириллица: баг TextBox](pptx-com-encoding.md) — идентификация шаблонов по SlideID
-- [python-pptx: баги клонирования](pptx-lessons.md) — layout fallback, rId дубликаты
-- [Verbatim: текст дословно](pptx-verbatim-lessons.md) — правила переноса текста из сценария
-- [Поиск слайдов: уникальные строки](pptx-unique-search.md) — устарело (использовать SlideID)
-- [Каталог шаблонов М1Д1](pptx-template-catalog.md) — референс, устарело (COM баг)
-- [Скрытие неиспользуемых слайдов](hide-unreferenced-slides.md) — правило
+## pptx/ — Работа с презентациями
+
+- [Полный алгоритм раскладки](pptx/pptx-layout-workflow.md) — основной SOP
+- [Раскладка по сценарию — принципы](pptx/pptx-scenario-layout.md)
+- [Паттерны редактирования](pptx/pptx-editing-patterns.md)
+- [Актуализация презентаций](pptx/pptx-actualization.md)
+- [COM + кириллица: баг TextBox](pptx/pptx-com-encoding.md)
+- [python-pptx: баги клонирования](pptx/pptx-lessons.md)
+- [Verbatim: текст дословно](pptx/pptx-verbatim-lessons.md)
+- [Поиск слайдов: уникальные строки](pptx/pptx-unique-search.md)
+- [Каталог шаблонов М1Д1](pptx/pptx-template-catalog.md)
+- [Скрытие неиспользуемых слайдов](pptx/hide-unreferenced-slides.md)
+- [Вставка слайдов в сценарий](pptx/slide-to-scenario-insertion.md)
+- [Доноры для клонирования](pptx/pptx-clone-donors.md)
+- [Быстрый старт pptx](pptx/pptx-quickstart.md)
+- [Очистка речи преподавателя](pptx/pptx-speech-cleanup.md)
+
+## course/ — Педагогический дизайн
+
+- [Course Ops: дифференциация энергии](course/course-ops-energy-differentiation.md)
+- [Course Ops: дизайн упражнений](course/course-ops-exercise-design.txt)
+- [Бриф дизайна урока](course/lesson-design-brief.md)
+- [Эталон урока](course/lesson-etalon.md)
+- [Воркбук онбординга: инсайты](course/workbook-onboarding-insights.md)
+
+## personal/ — Наташа: профиль, аудит, икигай
+
+- [Профиль Наташи](personal/natasha-profile.md)
+- [Поиск икигая](personal/ikigai-exploration.md)
+- [Персональный аудит (08.2026)](personal/personal-audit-2026-08.md)
+- [Pin-инсайты](personal/pin-insights.md)
+
+## process/ — Процессы, циклы, принципы
+
+- [Уроки процессов](process/process-lessons.md)
+- [Прерыватель циклов](process/loop-circuit-breaker.md)
+- [Журнал циклов](process/loop-ledger.md)
+- [Принципы проектов](process/project-principles.md)
+- [Шаблон задачи](process/task-template.md)
+- [Шпаргалка: текущее содержание пути](process/track-maintenance-cheatsheet.md)
+
+## tools/ — Инструменты, GitHub, MCP
+
+- [Gmail SMTP: настройка](tools/gmail-smtp-setup.md)
+- [Playwright Edge: настройка](tools/playwright-edge-setup.md)
+- [Playwright MCP: браузерный инструмент](tools/playwright-mcp.md)
+- [GitHub: все репозитории](tools/github-repos.md)
+- [GitHub Trending (12.08.2026)](tools/github-trending-2026-08-12.md)
+- [GitHub Trending (20.08.2026)](tools/github-trending-2026-08-20.md)
+- [Глоссарий ролей](tools/roles-glossary.md)
+- [Источники для дайджеста](tools/sources-digest.md)
+
+## projects/ — Специфика проектов
+
+- [Amalgama: не передизайнивать](projects/amalgamma-dont-redesign.md)
+- [Amalgama: подходы к оценке](projects/amalgamma-eval-approaches.md)
+- [Чек-листы АОК](projects/aok-checklists.md)
+- [AOS M3: инсайты](projects/aos-m3-insights.md)
+- [Stack L&D×AI: правила](projects/stack-ld-ai-rules.md)
+- [Статус портала](projects/portal-status.md)
+- [Алхимия: инсайты](projects/alchemy-insights.md)

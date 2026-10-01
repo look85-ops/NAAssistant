@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -10,20 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/base.css">
+<link rel="stylesheet" href="../styles/components.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1.6;color:#2b2b1a;background:#fff;-webkit-font-smoothing:antialiased}
 :root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a;--light:#fafaf8}
-
-/* ═══ HEADER ═══ */
-.header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.hi{max-width:1100px;margin:0 auto;padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between}
-.hlogo{font-size:15px;font-weight:550;color:var(--ink);text-decoration:none}
-.hlogo span{color:var(--olive)}
-.hnav{display:flex;gap:28px}
-.hnav a{font-size:14px;font-weight:400;color:var(--muted);text-decoration:none;transition:color 150ms}
-.hnav a:hover{color:var(--ink)}
 
 /* ═══ HERO ═══ */
 .hero{padding:140px 0 60px;position:relative;overflow:hidden}
@@ -32,11 +25,6 @@ body{font-family:'Geist',sans-serif;font-weight:350;font-size:1rem;line-height:1
 .hero .mod-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--terracotta);margin-bottom:16px}
 .hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:650;line-height:1.12;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px}
 .hero .sub{font-size:1.15rem;color:var(--muted);line-height:1.5;margin-bottom:32px;max-width:540px}
-
-/* ═══ CTA BUTTON ═══ */
-.cta-btn{display:inline-block;padding:16px 36px;background:var(--terracotta);color:#fff;font-size:1.1rem;font-weight:550;text-decoration:none;letter-spacing:.01em;transition:background 150ms}
-.cta-btn:hover{background:#984c26}
-.cta-price{font-size:.85rem;font-weight:400;color:rgba(255,255,255,.8);margin-left:8px}
 
 /* ═══ CONTENT ═══ */
 .content{max-width:720px;margin:0 auto;padding:0 48px}
@@ -57,56 +45,14 @@ h3{font-size:1.15rem;font-weight:600;color:var(--ink);margin:48px 0 14px;letter-
 .step-text h3{font-size:1.05rem;font-weight:550;color:var(--ink);margin:2px 0 6px}
 .step-text p{font-size:.95rem;color:var(--muted);line-height:1.5}
 
-/* ═══ SECTION NUMBER WATERMARK ═══ */
-.section-hd{position:relative}
-.section-hd::after{content:attr(data-num);position:absolute;right:-50px;top:-40px;font:900 180px/1 'Geist',sans-serif;color:var(--olive);opacity:.035;pointer-events:none;user-select:none;z-index:0}
-.section-hd h2{position:relative;z-index:1}
-
-/* ═══ QUOTE ═══ */
-.quote-block{margin:60px 0;padding:36px;background:var(--surface)}
-.quote-block p{font:italic 450 1.2rem/1.5 'Geist',sans-serif;color:var(--ink);margin-bottom:12px}
-.quote-block .attr{font-size:.85rem;color:var(--muted);font-style:normal}
-
 /* ═══ FAQ ═══ */
 .faq-item{margin-bottom:24px}
 .faq-q{font-size:1.05rem;font-weight:550;color:var(--ink);cursor:default}
 .faq-a{font-size:.95rem;color:var(--muted);margin-top:6px;line-height:1.5}
 
-/* ═══ FINAL CTA (full-width) ═══ */
-.final-cta{width:100vw;margin-left:calc(-50vw + 50%);background:var(--olive);padding:80px 0;margin-top:100px;margin-bottom:60px;position:relative;overflow:hidden}
-.final-cta::after{content:'▲';position:absolute;right:-20px;bottom:-10px;font-size:300px;font-weight:900;color:rgba(255,255,255,.03);pointer-events:none;user-select:none;line-height:1}
-.final-inner{max-width:720px;margin:0 auto;padding:0 48px;position:relative;z-index:1;text-align:center}
-.final-inner h2{font-size:1.8rem;font-weight:650;color:#fff;margin:0 0 12px}
-.final-inner p{font-size:1.1rem;color:rgba(255,255,255,.8);margin-bottom:28px;line-height:1.5}
-.final-inner .cta-btn{background:#fff;color:var(--olive);font-weight:600}
-.final-inner .cta-btn:hover{background:rgba(255,255,255,.9)}
-.final-inner .cta-price{color:var(--muted)}
-
-/* ═══ GEOMETRIC DIVIDER ═══ */
-.geo-div{display:flex;align-items:center;gap:16px;margin:64px 0}
-.geo-div .line{flex:1;height:1px;background:var(--border)}
-.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
-
-/* ═══ FOOTER ═══ */
-.footer{border-top:1px solid var(--border);padding:48px 0 36px}
-.fi{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-.flinks{display:flex;gap:18px}
-.flinks a{font-size:13px;color:var(--muted);text-decoration:none}
-.flinks a:hover{color:var(--ink)}
-.fmeta{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.fupd{font-size:11px;color:#b0b0a8}
-.fnote{font-size:11px;color:#c0beb8}
-
-/* ═══ INSIGHT ═══ */
-.insight{margin:40px 0;padding-left:20px;border-left:4px solid var(--olive);font-size:1.05rem;font-weight:450;color:var(--ink);line-height:1.6}
-
 @media(max-width:768px){
-  .hi,.hi2,.content,.final-inner,.fi{padding:0 24px}
-  .hnav{gap:16px}
   .hero-wm{font-size:140px;left:-16px;top:100px}
-  .section-hd::after{font-size:100px;right:-10px;top:-20px}
   .inside-item{flex-direction:column;gap:8px}
-  .final-cta::after{font-size:160px}
 }
 
 @media(prefers-reduced-motion:reduce){}
@@ -115,10 +61,10 @@ h3{font-size:1.15rem;font-weight:600;color:var(--ink);margin:48px 0 14px;letter-
 <body>
 
 <header class="header">
-  <div class="hi">
-    <a href="/" class="hlogo">L&D <span>без суеты</span></a>
-    <nav class="hnav">
-      <a href="/course/">Курс</a>
+  <div class="header-inner">
+    <a href="/" class="header-logo">L&D <span>без суеты</span></a>
+    <nav class="header-nav">
+      <a href="/course/">Программа</a>
       <a href="/products/">Продукты</a>
     </nav>
   </div>
@@ -277,15 +223,15 @@ h3{font-size:1.15rem;font-weight:600;color:var(--ink);margin:48px 0 14px;letter-
 </div>
 
 <footer class="footer">
-  <div class="fi">
-    <div class="flinks">
+  <div class="footer-inner">
+    <div class="footer-links">
       <a href="/">L&D без суеты</a>
-      <a href="/course/">Курс</a>
+      <a href="/course/">Программа</a>
       <a href="https://t.me/mrk_natalia">Telegram</a>
     </div>
-    <div class="fmeta">
-      <span class="fupd">16 сентября 2026</span>
-      <span class="fnote">Собрано с помощью AI-ассистента</span>
+    <div class="footer-meta">
+      <span class="footer-updated">16 сентября 2026</span>
+      <span class="footer-note">Собрано с помощью AI-ассистента</span>
     </div>
   </div>
 </footer>

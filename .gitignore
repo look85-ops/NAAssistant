@@ -49,3 +49,6 @@ scripts/browser-state/
 
 # Office temp files
 ~$*
+
+# Private data (never commit)
+knowledge/private.md

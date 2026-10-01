@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/quiz.css">
 <style>
 :root {
   --olive: #474a1a;
@@ -380,7 +381,7 @@ h3 {
   flex-shrink:0;
 }
 
-.practice details[open] summary::before { content:'&#8722;'; }
+.practice details[open] summary::before { content:'−'; }
 
 .practice details .details-content {
   padding:20px 0 20px 34px;
@@ -581,7 +582,7 @@ footer .fmeta {
   <div class="hi">
     <a href="/" class="hlogo">L&D <span>без суеты</span></a>
     <nav class="hnav">
-      <a href="/course/">← Курс</a>
+      <a href="/course/">← Программа</a>
       <a href="/booster/">Бустер</a>
       <a href="/blog/">Блог</a>
     </nav>
@@ -616,7 +617,7 @@ footer .fmeta {
 
 <h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
 
-<p>Вы уже умеете работать с API и отправлять запросы. Но <strong>отправить запрос</strong> и <strong>получить полезный ответ</strong> — разные вещи. Одна и та же модель может выдать сухой справочный текст или креативную идею для курса. Разница — в настройках, которые вы передаёте в запросе.</p>
+<p>Если вы прошли Модуль 1, вы уже знаете как отправлять API-запросы. Но <strong>отправить запрос</strong> и <strong>получить полезный ответ</strong> — разные вещи. Одна и та же модель может выдать сухой справочный текст или креативную идею для курса. Разница — в настройках, которые вы передаёте в запросе.</p>
 
 <p>LLM — это не магия. Это инструмент с ручками и рычагами: температура, контекстное окно, системный промпт, токены. Если вы не знаете, как они работают, — вы гадаете. Если знаете — вы управляете.</p>
 
@@ -1046,11 +1047,47 @@ footer .fmeta {
 
 <h3>Что дальше</h3>
 
-<p>На следующем уроке — <strong>RAG</strong> (Retrieval-Augmented Generation). Вы научитесь подключать к модели внешние источники: документы, базы знаний, курсы. Модель будет отвечать не «из головы», а по вашим материалам. Это фундамент для AI-ассистента методиста.</p>
+<p>В следующем материале — <strong>RAG</strong> (Retrieval-Augmented Generation). Вы научитесь подключать к модели внешние источники: документы, базы знаний, курсы. Модель будет отвечать не «из головы», а по вашим материалам. Это фундамент для AI-ассистента методиста.</p>
+
+<div class="quiz" data-quiz-id="m02-lesson-01">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">1. Что такое токен в контексте LLM?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Пароль для доступа к API</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Часть слова или целое слово, на которые модель разбивает текст</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Единица измерения скорости модели</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">2. Что делает параметр temperature (T)?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> Управляет «креативностью» ответа: низкая T — предсказуемо, высокая — разнообразно</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> Устанавливает максимальную длину ответа</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> Определяет язык, на котором модель отвечает</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">3. Что такое контекстное окно?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Время, в течение которого модель помнит разговор</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Интерфейс, через который вы общаетесь с моделью</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Максимальное количество токенов, которое модель может «видеть» одновременно</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">4. Что такое галлюцинация LLM?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> Когда модель выдаёт правдоподобный, но фактически неверный ответ</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> Когда модель отказывается отвечать</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Когда модель повторяет одно и то же слово</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
 
 <div class="nav-bottom">
   <a href="../../module-01-technical-minimum/lesson-03-api.html">← Урок 3. API</a>
-  <a href="lesson-02-rag.html" class="nav-next">Урок 2. RAG →</a>
+  <a href="lesson-02-rag.html" class="nav-next">М2. Урок 2. RAG →</a>
 </div>
 
 </div>
@@ -1080,6 +1117,8 @@ footer .fmeta {
   });
 })();
 </script>
+
+<script src="/scripts/quiz.js"></script>
 
 </body>
 </html>

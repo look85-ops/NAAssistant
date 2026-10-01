@@ -28,7 +28,7 @@
 
 | Репозиторий | Язык | GH Pages | Статус | Описание |
 |---|---|---|---|---|
-| **amalgamma** | Python | ✓ | Активен | Саморазвивающаяся AI-цивилизация. Цикл 1ч через GitHub Actions. Сознание, эволюция, артефакты. |
+| **amalgamma** | Python | ✓ | Активен | AI-зеркало новостей (v2). RSS (BBC/NPR) → LLM → HTML-артефакт каждые 4ч. 6 визуальных грамматик. Перезапущен 2026-09-17. |
 | **digital-garden** | Python | ✓ | Активен | AI-арт сад. Артефакт каждые 4ч, без памяти, только «почва». |
 | **methodist-booster** | HTML | ✓ | Активен | Многостраничный сайт: 8 инструментов для L&D-методиста (симулятор, генератор активностей, карты, аудит, vision-мастер, промпты, AI-каталог, страдания Иванова). 152 MB. |
 | **NAAssistant** | JavaScript | ✓ | Активен | Репозиторий-источник конфигурации ассистента. Портфолио, данные, боты, скрипты. |
@@ -65,7 +65,7 @@
 
 | Папка | GitHub источник | Содержимое |
 |---|---|---|
-| `amalgama/` | `look85-ops/amalgamma` | Полная копия: curator, harness, state, artifacts, chronicles — **заморожена 2026-08-19** (цикл off) |
+| `amalgama/` | `look85-ops/amalgamma` | Полная копия: curator.py (874 строк, v2), state, artifacts, archive. **Перезапущена 2026-09-17** (цикл каждые 4ч). Swarm/harness в attic. |
 | `garden/` | `look85-ops/digital-garden` | Полная копия: src, artifacts, README |
 | `NAAssistant/` | `look85-ops/NAAssistant` | Конфигурация, портфолио, данные, скрипты, боты |
 | `aos-analyzer/` | `look85-ops/aos-analyzer` | Python-инструмент + примеры |

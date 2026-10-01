@@ -1,0 +1,1819 @@
+- generic [active] [ref=f48e1]:
+  - generic [ref=f48e2]:
+    - generic [ref=f48e6]:
+      - banner [ref=f48e7]:
+        - navigation [ref=f48e10]:
+          - list [ref=f48e11]:
+            - listitem [ref=f48e12]:
+              - link "Промокод в приложении":
+                - /url: https://onliner.go.link/iTV1N
+              - link "Каталог" [ref=f48e16] [cursor=pointer]:
+                - /url: https://catalog.onliner.by
+            - listitem [ref=f48e18]:
+              - link "‹ Новости" [ref=f48e19] [cursor=pointer]:
+                - /url: https://www.onliner.by
+            - listitem [ref=f48e21]:
+              - link "‹ Автобарахолка" [ref=f48e22] [cursor=pointer]:
+                - /url: https://ab.onliner.by
+            - listitem [ref=f48e24]:
+              - link "‹ Дома и квартиры" [ref=f48e25] [cursor=pointer]:
+                - /url: https://r.onliner.by/pk
+            - listitem [ref=f48e27]:
+              - link "Услуги" [ref=f48e28] [cursor=pointer]:
+                - /url: https://s.onliner.by/tasks
+            - listitem [ref=f48e30]:
+              - link "Барахолка" [ref=f48e31] [cursor=pointer]:
+                - /url: https://baraholka.onliner.by/
+            - listitem [ref=f48e33]:
+              - link "Форум" [ref=f48e34] [cursor=pointer]:
+                - /url: https://forum.onliner.by/
+          - link "Onlíner Клевер" [ref=f48e36] [cursor=pointer]:
+            - /url: https://clever.onliner.by/?utm_source=onliner&utm_medium=navigation&utm_campaign=clever
+          - list [ref=f48e1879]:
+            - listitem [ref=f48e1880]:
+              - link "$ 3,0279" [ref=f48e1881] [cursor=pointer]:
+                - /url: https://kurs.onliner.by/
+            - listitem [ref=f48e1882]:
+              - link "Погода в Минске +11" [ref=f48e1883] [cursor=pointer]:
+                - /url: https://pogoda.onliner.by/
+                - generic "Погода в Минске" [ref=f48e1884]
+                - text: "+11"
+          - generic [ref=f48e37]: 18+
+          - list
+        - generic [ref=f48e39]:
+          - link [ref=f48e41] [cursor=pointer]:
+            - /url: https://www.onliner.by
+            - img "Onlíner" [ref=f48e42]
+          - generic [ref=f48e43]:
+            - textbox "Поиск в Каталоге. Например, \"книга про маркетинг\"" [ref=f48e46]
+            - generic [ref=f48e47]:
+              - generic [ref=f48e50] [cursor=pointer]:
+                - link "Вход" [ref=f48e51]:
+                  - /url: https://profile.onliner.by/login?redirect=https://r.onliner.by/pk/?rooms=3,4&price%5Bmax%5D=520000&metro=moskovskaya&only_owner=true
+                - generic "Facebook" [ref=f48e52]
+                - generic "ВКонтакте" [ref=f48e53]
+                - generic "Google" [ref=f48e54]
+              - link "Корзина" [ref=f48e57] [cursor=pointer]:
+                - /url: https://cart.onliner.by
+      - generic [ref=f48e59]:
+        - generic [ref=f48e61]:
+          - list [ref=f48e63]:
+            - listitem [ref=f48e64]:
+              - link "Продажа" [ref=f48e65] [cursor=pointer]:
+                - /url: https://r.onliner.by/pk/
+            - listitem [ref=f48e67]:
+              - link "Аренда" [ref=f48e68] [cursor=pointer]:
+                - /url: https://r.onliner.by/ak/
+          - link "Разместить объявление" [ref=f48e71] [cursor=pointer]:
+            - /url: https://r.onliner.by/pk/apartments/create
+        - generic [ref=f48e74]:
+          - generic [ref=f48e75]:
+            - generic [ref=f48e76]:
+              - generic:
+                - generic:
+                  - img [ref=f48e78] [cursor=pointer]
+                  - img [ref=f48e79] [cursor=pointer]
+                  - img [ref=f48e80] [cursor=pointer]
+                  - img [ref=f48e81] [cursor=pointer]
+                  - img [ref=f48e82] [cursor=pointer]
+                  - generic [ref=f48e1885] [cursor=pointer]
+                  - generic [ref=f48e1886] [cursor=pointer]
+                  - generic [ref=f48e1887] [cursor=pointer]
+                  - generic [ref=f48e1888] [cursor=pointer]
+                  - generic [ref=f48e1889] [cursor=pointer]
+                  - generic [ref=f48e1890] [cursor=pointer]
+                  - generic [ref=f48e1891] [cursor=pointer]
+                  - generic [ref=f48e1892] [cursor=pointer]
+                  - generic [ref=f48e1893] [cursor=pointer]
+                  - generic [ref=f48e1894] [cursor=pointer]
+                  - generic [ref=f48e1895] [cursor=pointer]
+                  - generic [ref=f48e1896] [cursor=pointer]
+                  - generic [ref=f48e1897] [cursor=pointer]
+                  - generic [ref=f48e1898] [cursor=pointer]
+                  - generic [ref=f48e1899] [cursor=pointer]
+                  - generic [ref=f48e1900] [cursor=pointer]
+                  - generic [ref=f48e1901] [cursor=pointer]
+                  - generic [ref=f48e1902] [cursor=pointer]
+                  - generic [ref=f48e1903] [cursor=pointer]
+                  - generic [ref=f48e1904] [cursor=pointer]
+                  - generic [ref=f48e1905] [cursor=pointer]
+                  - generic [ref=f48e1906] [cursor=pointer]
+                  - generic [ref=f48e1907] [cursor=pointer]
+                  - generic [ref=f48e1908] [cursor=pointer]
+                  - generic [ref=f48e1909] [cursor=pointer]
+                  - generic [ref=f48e1910] [cursor=pointer]
+                  - generic [ref=f48e1911] [cursor=pointer]
+                  - generic [ref=f48e1912] [cursor=pointer]
+                  - generic [ref=f48e1913] [cursor=pointer]
+                  - generic [ref=f48e1914] [cursor=pointer]
+                  - generic [ref=f48e1915] [cursor=pointer]
+                  - generic [ref=f48e1916] [cursor=pointer]
+                  - generic [ref=f48e1917] [cursor=pointer]
+                  - generic [ref=f48e1918] [cursor=pointer]
+                  - generic [ref=f48e1919] [cursor=pointer]
+                  - generic [ref=f48e1920] [cursor=pointer]
+                  - generic [ref=f48e1921] [cursor=pointer]
+                  - generic [ref=f48e1922] [cursor=pointer]
+                  - generic [ref=f48e1923] [cursor=pointer]
+                  - generic [ref=f48e1924] [cursor=pointer]
+                  - generic [ref=f48e1925] [cursor=pointer]
+                  - generic [ref=f48e1926] [cursor=pointer]
+                  - generic [ref=f48e1927] [cursor=pointer]
+                  - generic [ref=f48e1928] [cursor=pointer]
+                  - generic [ref=f48e1929] [cursor=pointer]
+                  - generic [ref=f48e1930] [cursor=pointer]
+                  - generic [ref=f48e1931] [cursor=pointer]
+                  - generic [ref=f48e1932] [cursor=pointer]
+                  - generic [ref=f48e1933] [cursor=pointer]
+                  - generic [ref=f48e1934] [cursor=pointer]
+                  - generic [ref=f48e1935] [cursor=pointer]
+                  - generic [ref=f48e1936] [cursor=pointer]
+                  - generic [ref=f48e1937] [cursor=pointer]
+                  - generic [ref=f48e1938] [cursor=pointer]
+                  - generic [ref=f48e1939] [cursor=pointer]
+                  - generic [ref=f48e1940] [cursor=pointer]
+                  - generic [ref=f48e1941] [cursor=pointer]
+                  - generic [ref=f48e1942] [cursor=pointer]
+                  - generic [ref=f48e1943] [cursor=pointer]
+                  - generic [ref=f48e1944] [cursor=pointer]
+                  - generic [ref=f48e1945] [cursor=pointer]
+                  - generic [ref=f48e1946] [cursor=pointer]
+                  - generic [ref=f48e1947] [cursor=pointer]
+                  - generic [ref=f48e1948] [cursor=pointer]
+                  - generic [ref=f48e1949] [cursor=pointer]
+                  - generic [ref=f48e1950] [cursor=pointer]
+                  - generic [ref=f48e1951] [cursor=pointer]
+                  - generic [ref=f48e1952] [cursor=pointer]
+                  - generic [ref=f48e1953] [cursor=pointer]
+                  - generic [ref=f48e1954] [cursor=pointer]
+                  - generic [ref=f48e1955] [cursor=pointer]
+                  - generic [ref=f48e1956] [cursor=pointer]
+                  - generic [ref=f48e1957] [cursor=pointer]
+                  - generic [ref=f48e1958] [cursor=pointer]
+                  - generic [ref=f48e1959] [cursor=pointer]
+                  - generic [ref=f48e1960] [cursor=pointer]
+                  - generic [ref=f48e1961] [cursor=pointer]
+                  - generic [ref=f48e1962] [cursor=pointer]
+                  - generic [ref=f48e1963] [cursor=pointer]
+                  - generic [ref=f48e1964] [cursor=pointer]
+                  - generic [ref=f48e1965] [cursor=pointer]
+                  - generic [ref=f48e1966] [cursor=pointer]
+                  - generic [ref=f48e1967] [cursor=pointer]
+                  - generic [ref=f48e1968] [cursor=pointer]
+                  - generic [ref=f48e1969] [cursor=pointer]
+                  - generic [ref=f48e1970] [cursor=pointer]
+                  - generic [ref=f48e1971] [cursor=pointer]
+                  - generic [ref=f48e1972] [cursor=pointer]
+                  - generic [ref=f48e1973] [cursor=pointer]
+                  - generic [ref=f48e1974] [cursor=pointer]
+                  - generic [ref=f48e1975] [cursor=pointer]
+                  - generic [ref=f48e1976] [cursor=pointer]
+                  - generic [ref=f48e1977] [cursor=pointer]
+                  - generic [ref=f48e1978] [cursor=pointer]
+                  - generic [ref=f48e1979] [cursor=pointer]
+                  - generic [ref=f48e1980] [cursor=pointer]
+                  - generic [ref=f48e1981] [cursor=pointer]
+                  - generic [ref=f48e1982] [cursor=pointer]
+                  - generic [ref=f48e1983] [cursor=pointer]
+                  - generic [ref=f48e1984] [cursor=pointer]
+                  - generic [ref=f48e1985] [cursor=pointer]
+                  - generic [ref=f48e1986] [cursor=pointer]
+                  - generic [ref=f48e1987] [cursor=pointer]
+                  - generic [ref=f48e1988] [cursor=pointer]
+                  - generic [ref=f48e1989] [cursor=pointer]
+                  - generic [ref=f48e1990] [cursor=pointer]
+                  - generic [ref=f48e1991] [cursor=pointer]
+                  - generic [ref=f48e1992] [cursor=pointer]
+                  - generic [ref=f48e1993] [cursor=pointer]
+                  - generic [ref=f48e1994] [cursor=pointer]
+                  - generic [ref=f48e1995] [cursor=pointer]
+                  - generic [ref=f48e1996] [cursor=pointer]
+                  - generic [ref=f48e1997] [cursor=pointer]
+                  - generic [ref=f48e1998] [cursor=pointer]
+                  - generic [ref=f48e1999] [cursor=pointer]
+                  - generic [ref=f48e2000] [cursor=pointer]
+                  - generic [ref=f48e2001] [cursor=pointer]
+                  - generic [ref=f48e2002] [cursor=pointer]
+                  - generic [ref=f48e2003] [cursor=pointer]
+                  - generic [ref=f48e2004] [cursor=pointer]
+                  - generic [ref=f48e2005] [cursor=pointer]
+                  - generic [ref=f48e2006] [cursor=pointer]
+                  - generic [ref=f48e2007] [cursor=pointer]
+                  - generic [ref=f48e2008] [cursor=pointer]
+                  - generic [ref=f48e2009] [cursor=pointer]
+                  - generic [ref=f48e2010] [cursor=pointer]
+                  - generic [ref=f48e2011] [cursor=pointer]
+                  - generic [ref=f48e2012] [cursor=pointer]
+                  - generic [ref=f48e2013] [cursor=pointer]
+                  - generic [ref=f48e2014] [cursor=pointer]
+                  - generic [ref=f48e2015] [cursor=pointer]
+                  - generic [ref=f48e2016] [cursor=pointer]
+                  - generic [ref=f48e2017] [cursor=pointer]
+                  - generic [ref=f48e2018] [cursor=pointer]
+                  - generic [ref=f48e2019] [cursor=pointer]
+                  - generic [ref=f48e2020] [cursor=pointer]
+                  - generic [ref=f48e2021] [cursor=pointer]
+                  - generic [ref=f48e2022] [cursor=pointer]
+                  - generic [ref=f48e2023] [cursor=pointer]
+                  - generic [ref=f48e2024] [cursor=pointer]
+                  - generic [ref=f48e2025] [cursor=pointer]
+                  - generic [ref=f48e2026] [cursor=pointer]
+                  - generic [ref=f48e2027] [cursor=pointer]
+                  - generic [ref=f48e2028] [cursor=pointer]
+                  - generic [ref=f48e2029] [cursor=pointer]
+                  - generic [ref=f48e2030] [cursor=pointer]
+                  - generic [ref=f48e2031] [cursor=pointer]
+                  - generic [ref=f48e2032] [cursor=pointer]
+                  - generic [ref=f48e2033] [cursor=pointer]
+                  - generic [ref=f48e2034] [cursor=pointer]
+                  - generic [ref=f48e2035] [cursor=pointer]
+              - generic:
+                - generic [ref=f48e83]:
+                  - button "Zoom in" [ref=f48e84] [cursor=pointer]:  +
+                  - button "Zoom out" [ref=f48e85] [cursor=pointer]:  −
+                - generic [ref=f48e86]:
+                  - text: ©
+                  - link "OpenStreetMap" [ref=f48e87] [cursor=pointer]:
+                    - /url: http://www.openstreetmap.org/copyright
+            - generic [ref=f48e88]:
+              - generic [ref=f48e90]:
+                - generic [ref=f48e91]:
+                  - generic [ref=f48e92] [cursor=pointer]:
+                    - generic [ref=f48e93]: ƃ
+                    - textbox "5000" [ref=f48e94]: 5 000
+                  - generic [ref=f48e95] [cursor=pointer]:
+                    - generic [ref=f48e96]: ƃ
+                    - textbox [ref=f48e97]: 520 000
+                  - generic [ref=f48e99]:
+                    - generic [ref=f48e100] [cursor=pointer]
+                    - generic [ref=f48e101] [cursor=pointer]
+                - generic [ref=f48e103]:
+                  - generic [ref=f48e104] [cursor=pointer]: "1"
+                  - generic [ref=f48e106] [cursor=pointer]: "2"
+                  - generic [ref=f48e108] [cursor=pointer]: "3"
+                  - generic [ref=f48e110] [cursor=pointer]: 4+
+                - generic [ref=f48e112]:
+                  - generic [ref=f48e113] [cursor=pointer]:
+                    - generic [ref=f48e114]:
+                      - text: м
+                      - superscript [ref=f48e115]: "2"
+                    - textbox "1" [ref=f48e116]
+                  - generic [ref=f48e117] [cursor=pointer]:
+                    - generic [ref=f48e118]:
+                      - text: м
+                      - superscript [ref=f48e119]: "2"
+                    - textbox "2000" [ref=f48e120]
+                  - generic [ref=f48e122]:
+                    - generic [ref=f48e123] [cursor=pointer]
+                    - generic [ref=f48e124] [cursor=pointer]
+                - generic [ref=f48e126]:
+                  - generic [ref=f48e127] [cursor=pointer]: Вторичка
+                  - generic [ref=f48e129] [cursor=pointer]: Новостройка
+                - generic [ref=f48e131]:
+                  - generic [ref=f48e132] [cursor=pointer]:
+                    - generic [ref=f48e133]: г.п.
+                    - textbox "1900" [ref=f48e134]
+                  - generic [ref=f48e135] [cursor=pointer]:
+                    - generic [ref=f48e136]: г.п.
+                    - textbox "2028" [ref=f48e137]
+                  - generic [ref=f48e139]:
+                    - generic [ref=f48e140] [cursor=pointer]
+                    - generic [ref=f48e141] [cursor=pointer]
+                - generic [ref=f48e146] [cursor=pointer]:
+                  - generic [ref=f48e147]: Материал стен
+                  - text:    
+                - generic [ref=f48e149] [cursor=pointer]:
+                  - generic [ref=f48e150]: Не 1-й и не последний этаж
+                  - text: 
+                - generic [ref=f48e155] [cursor=pointer]:
+                  - textbox "Город, район, улица" [ref=f48e156]
+                  - text: 
+              - generic [ref=f48e2036]: поиск при перемещении карты
+              - generic [ref=f48e159] [cursor=pointer]
+          - generic [ref=f48e162]:
+            - generic [ref=f48e163]:
+              - separator [aria-hidden] [ref=f48e164]
+              - generic [ref=f48e165]: 2216 объявлений
+              - generic [ref=f48e168] [cursor=pointer]:
+                - generic [ref=f48e169]: Актуальные
+                - text:      
+              - separator [aria-hidden] [ref=f48e170]
+            - generic:
+              - generic [ref=f48e171]:
+                - generic [ref=f48e172]:
+                  - generic [ref=f48e174]: 291 403,00 ƃ
+                  - generic [ref=f48e176]: UP!3 дня назад
+                  - generic "Премиальное объявление" [ref=f48e177] [cursor=pointer]
+                - generic [ref=f48e178]:
+                  - generic [ref=f48e179]:
+                    - generic [ref=f48e180]: 3 / 22
+                    - generic [ref=f48e182]:
+                      - generic [ref=f48e183]: 1к
+                      - generic [ref=f48e184]:
+                        - text: 31,3 / 24,2 м
+                        - superscript [ref=f48e185]: "2"
+                  - generic [ref=f48e186]: Братская 8
+                - link [ref=f48e188] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1281935
+              - generic [ref=f48e189]:
+                - generic [ref=f48e190]:
+                  - generic [ref=f48e192]: 357 292,20 ƃ
+                  - generic [ref=f48e194]: UP!4 дня назад
+                  - generic "Премиальное объявление" [ref=f48e196] [cursor=pointer]
+                - generic [ref=f48e197]:
+                  - generic [ref=f48e198]:
+                    - generic [ref=f48e199]: 6 / 10
+                    - generic [ref=f48e201]:
+                      - generic [ref=f48e202]: 2к
+                      - generic [ref=f48e203]:
+                        - text: 53,3 / 31,8 / 9,2 м
+                        - superscript [ref=f48e204]: "2"
+                  - generic [ref=f48e205]: Сергея Есенина, 117
+                - link [ref=f48e207] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284011
+              - generic [ref=f48e208]:
+                - generic [ref=f48e209]:
+                  - generic [ref=f48e211]: 492 942,12 ƃ
+                  - generic [ref=f48e213]: UP!день назад
+                  - generic "Премиальное объявление" [ref=f48e215] [cursor=pointer]
+                - generic [ref=f48e216]:
+                  - generic [ref=f48e217]:
+                    - generic [ref=f48e218]: 3 / 9
+                    - generic [ref=f48e220]:
+                      - generic [ref=f48e221]: 1к
+                      - generic [ref=f48e222]:
+                        - text: 41,7 / 37,4 м
+                        - superscript [ref=f48e223]: "2"
+                  - generic [ref=f48e224]: Виталия Цвирко, 84
+                - link [ref=f48e226] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1277837
+              - generic [ref=f48e227]:
+                - generic [ref=f48e228]:
+                  - generic [ref=f48e230]: 464 800,00 ƃ
+                  - generic [ref=f48e232]: UP!9 дней назад
+                  - generic "Премиальное объявление" [ref=f48e233] [cursor=pointer]
+                - generic [ref=f48e234]:
+                  - generic [ref=f48e235]:
+                    - generic [ref=f48e236]: 2 / 2
+                    - generic [ref=f48e238]:
+                      - generic [ref=f48e239]: 5к
+                      - generic [ref=f48e240]:
+                        - text: 281,8 / 198,5 / 17,1 м
+                        - superscript [ref=f48e241]: "2"
+                  - generic [ref=f48e242]: Острошицкогородокский сельский Совет, Острошицкий Городок, Ленинская
+                - link [ref=f48e244] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1278574
+              - generic [ref=f48e245]:
+                - generic [ref=f48e246]:
+                  - generic [ref=f48e248]: 439 045,50 ƃ
+                  - generic [ref=f48e250]: UP!день назад
+                  - generic "Премиальное объявление" [ref=f48e251] [cursor=pointer]
+                - generic [ref=f48e252]:
+                  - generic [ref=f48e253]:
+                    - generic [ref=f48e254]: 19 / 19
+                    - generic [ref=f48e256]:
+                      - generic [ref=f48e257]: 2к
+                      - generic [ref=f48e258]:
+                        - text: 47,3 / 30,8 / 10 м
+                        - superscript [ref=f48e259]: "2"
+                  - generic [ref=f48e260]: Нарочанская 4
+                - link [ref=f48e262] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1283944
+              - generic [ref=f48e263]:
+                - generic [ref=f48e264]:
+                  - generic [ref=f48e266]: 347 917,00 ƃ
+                  - generic [ref=f48e268]: UP!2 дня назад
+                  - generic "Премиальное объявление" [ref=f48e269] [cursor=pointer]
+                - generic [ref=f48e270]:
+                  - generic [ref=f48e271]:
+                    - generic [ref=f48e272]: 10 / 10
+                    - generic [ref=f48e274]:
+                      - generic [ref=f48e275]: 1к
+                      - generic [ref=f48e276]:
+                        - text: 42,4 / 18,6 / 9,3 м
+                        - superscript [ref=f48e277]: "2"
+                  - generic [ref=f48e278]: Горецкого 34
+                - link [ref=f48e280] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284227
+              - generic [ref=f48e281]:
+                - generic [ref=f48e282]:
+                  - generic [ref=f48e284]: 196 813,50 ƃ
+                  - generic [ref=f48e286]: UP!2 дня назад
+                  - generic "Премиальное объявление" [ref=f48e288] [cursor=pointer]
+                - generic [ref=f48e289]:
+                  - generic [ref=f48e290]:
+                    - generic [ref=f48e291]: 2 / 2
+                    - generic [ref=f48e293]:
+                      - generic [ref=f48e294]: 6к
+                      - generic [ref=f48e295]:
+                        - text: 600 / 500 м
+                        - superscript [ref=f48e296]: "2"
+                  - generic [ref=f48e297]: Острошицкогородокский сельский Совет, Губичи
+                - link [ref=f48e299] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1186579
+              - generic [ref=f48e300]:
+                - generic [ref=f48e301]:
+                  - generic [ref=f48e303]: 226 789,71 ƃ
+                  - generic [ref=f48e305]: UP!2 дня назад
+                  - generic "Премиальное объявление" [ref=f48e307] [cursor=pointer]
+                - generic [ref=f48e308]:
+                  - generic [ref=f48e309]:
+                    - generic [ref=f48e310]: 2 / 9
+                    - generic [ref=f48e312]:
+                      - generic [ref=f48e313]: 1к
+                      - generic [ref=f48e314]:
+                        - text: 34 / 17 / 7 м
+                        - superscript [ref=f48e315]: "2"
+                  - generic [ref=f48e316]: Мирошниченко, 16 к2
+                - link [ref=f48e318] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1276975
+              - generic [ref=f48e319]:
+                - generic [ref=f48e320]:
+                  - generic [ref=f48e322]: 330 000,00 ƃ
+                  - generic [ref=f48e324]: UP!3 дня назад
+                  - generic "Премиальное объявление" [ref=f48e326] [cursor=pointer]
+                - generic [ref=f48e327]:
+                  - generic [ref=f48e328]:
+                    - generic [ref=f48e329]: 3 / 9
+                    - generic [ref=f48e331]:
+                      - generic [ref=f48e332]: 2к
+                      - generic [ref=f48e333]:
+                        - text: 58,5 / 30 / 9 м
+                        - superscript [ref=f48e334]: "2"
+                  - generic [ref=f48e335]: Боровлянский сельский Совет, Боровляны, 40 лет Победы, 35
+                - link [ref=f48e337] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1281608
+              - generic [ref=f48e338]:
+                - generic [ref=f48e339]:
+                  - generic [ref=f48e341]: 373 945,65 ƃ
+                  - generic [ref=f48e343]: UP!3 дня назад
+                  - generic "Премиальное объявление" [ref=f48e345] [cursor=pointer]
+                - generic [ref=f48e346]:
+                  - generic [ref=f48e347]:
+                    - generic [ref=f48e348]: 24 / 25
+                    - generic [ref=f48e350]:
+                      - generic [ref=f48e351]: 2к
+                      - generic [ref=f48e352]:
+                        - text: 47,8 / 41,5 м
+                        - superscript [ref=f48e353]: "2"
+                  - generic [ref=f48e354]: Брилевская 25
+                - link [ref=f48e356] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1261257
+              - generic [ref=f48e357]:
+                - generic [ref=f48e358]:
+                  - generic [ref=f48e360]: 403 100,00 ƃ
+                  - generic [ref=f48e362]: UP!10 часов назад
+                  - generic "Премиальное объявление" [ref=f48e364] [cursor=pointer]
+                - generic [ref=f48e365]:
+                  - generic [ref=f48e366]:
+                    - generic [ref=f48e367]: 3 / 7
+                    - generic [ref=f48e369]:
+                      - generic [ref=f48e370]: 2к
+                      - generic [ref=f48e371]:
+                        - text: 57,8 / 34,1 / 11,2 м
+                        - superscript [ref=f48e372]: "2"
+                  - generic [ref=f48e373]: Боровлянский сельский Совет, Копище, Авиационная 59
+                - link [ref=f48e375] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1283401
+              - generic [ref=f48e376]:
+                - generic [ref=f48e377]:
+                  - generic [ref=f48e379]: 281 594,70 ƃ
+                  - generic [ref=f48e381]: UP!4 дня назад
+                  - generic "Премиальное объявление" [ref=f48e383] [cursor=pointer]
+                - generic [ref=f48e384]:
+                  - generic [ref=f48e385]:
+                    - generic [ref=f48e386]: 10 / 15
+                    - generic [ref=f48e388]:
+                      - generic [ref=f48e389]: 2к
+                      - generic [ref=f48e390]:
+                        - text: 44,2 / 40,2 м
+                        - superscript [ref=f48e391]: "2"
+                  - generic [ref=f48e392]: Михаила Савицкого
+                - link [ref=f48e394] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1283062
+              - generic [ref=f48e395]:
+                - generic [ref=f48e396]:
+                  - generic [ref=f48e398]: 493 500,00 ƃ
+                  - generic [ref=f48e400]: UP!4 минуты назад
+                - generic [ref=f48e401]:
+                  - generic [ref=f48e402]:
+                    - generic [ref=f48e403]: 9 / 10
+                    - generic [ref=f48e405]:
+                      - generic [ref=f48e406]: 3к
+                      - generic [ref=f48e407]:
+                        - text: 67,9 / 57,6 м
+                        - superscript [ref=f48e408]: "2"
+                  - generic [ref=f48e409]: Цвирко , 67
+                - link [ref=f48e411] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1254157
+              - generic [ref=f48e412]:
+                - generic [ref=f48e413]:
+                  - generic [ref=f48e415]: 270 997,05 ƃ
+                  - generic [ref=f48e417]: UP!7 минут назад
+                - generic [ref=f48e418]:
+                  - generic [ref=f48e419]:
+                    - generic [ref=f48e420]: 4 / 5
+                    - generic [ref=f48e422]:
+                      - generic [ref=f48e423]: 2к
+                      - generic [ref=f48e424]:
+                        - text: 44,5 / 28,9 / 5,8 м
+                        - superscript [ref=f48e425]: "2"
+                  - generic [ref=f48e426]: Калиновского 21
+                - link [ref=f48e428] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1280161
+              - generic [ref=f48e429]:
+                - generic [ref=f48e430]:
+                  - generic [ref=f48e432]: 59 044,05 ƃ
+                  - generic [ref=f48e434]: UP!7 минут назад
+                - generic [ref=f48e435]:
+                  - generic [ref=f48e436]:
+                    - generic [ref=f48e437]: 1 / 1
+                    - generic [ref=f48e439]:
+                      - generic [ref=f48e440]: 2к
+                      - generic [ref=f48e441]:
+                        - text: 54 / 24,7 / 8 м
+                        - superscript [ref=f48e442]: "2"
+                  - generic [ref=f48e443]: Кайково
+                - link [ref=f48e445] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1251741
+              - generic [ref=f48e446]:
+                - generic [ref=f48e447]:
+                  - generic [ref=f48e449]: 415 000,00 ƃ
+                  - generic [ref=f48e451]: UP!7 минут назад
+                - generic [ref=f48e452]:
+                  - generic [ref=f48e453]:
+                    - generic [ref=f48e454]: 1 / 2
+                    - generic [ref=f48e456]:
+                      - generic [ref=f48e457]: 3к
+                      - generic [ref=f48e458]:
+                        - text: 109,7 / 39,9 / 10,8 м
+                        - superscript [ref=f48e459]: "2"
+                  - generic [ref=f48e460]: Чуриловичи, Центральная
+                - link [ref=f48e462] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1254154
+              - generic [ref=f48e463]:
+                - generic [ref=f48e464]:
+                  - generic [ref=f48e466]: 108 000,00 ƃ
+                  - generic [ref=f48e468]: UP!7 минут назад
+                - generic [ref=f48e469]:
+                  - generic [ref=f48e470]:
+                    - generic [ref=f48e471]: 1 / 2
+                    - generic [ref=f48e473]:
+                      - generic [ref=f48e474]: 3к
+                      - generic [ref=f48e475]:
+                        - text: 60,8 / 60,8 м
+                        - superscript [ref=f48e476]: "2"
+                  - generic [ref=f48e477]: Белая Берёзка
+                - link [ref=f48e479] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1267967
+              - generic [ref=f48e480]:
+                - generic [ref=f48e481]:
+                  - generic [ref=f48e483]: 217 000,00 ƃ
+                  - generic [ref=f48e485]: UP!7 минут назад
+                - generic [ref=f48e486]:
+                  - generic [ref=f48e487]:
+                    - generic [ref=f48e488]: 1 / 1
+                    - generic [ref=f48e490]:
+                      - generic [ref=f48e491]: 2к
+                      - generic [ref=f48e492]:
+                        - text: 48 / 25 / 13,1 м
+                        - superscript [ref=f48e493]: "2"
+                  - generic [ref=f48e494]: Подсосонье, Центральная
+                - link [ref=f48e496] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1274015
+              - generic [ref=f48e497]:
+                - generic [ref=f48e498]:
+                  - generic [ref=f48e500]: 430 000,00 ƃ
+                  - generic [ref=f48e502]: UP!7 минут назад
+                - generic [ref=f48e503]:
+                  - generic [ref=f48e504]:
+                    - generic [ref=f48e505]: 1 / 2
+                    - generic [ref=f48e507]:
+                      - generic [ref=f48e508]: 6к
+                      - generic [ref=f48e509]:
+                        - text: 327,8 / 112,7 / 12,9 м
+                        - superscript [ref=f48e510]: "2"
+                  - generic [ref=f48e511]: Колодищи, Глебковка
+                - link [ref=f48e513] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1274404
+              - generic [ref=f48e514]:
+                - generic [ref=f48e515]:
+                  - generic [ref=f48e517]: 425 000,00 ƃ
+                  - generic [ref=f48e519]: UP!7 минут назад
+                - generic [ref=f48e520]:
+                  - generic [ref=f48e521]:
+                    - generic [ref=f48e522]: 1 / 3
+                    - generic [ref=f48e524]:
+                      - generic [ref=f48e525]: 3к
+                      - generic [ref=f48e526]:
+                        - text: 153,8 / 56,7 / 11,4 м
+                        - superscript [ref=f48e527]: "2"
+                  - generic [ref=f48e528]: Острошицкий Городок, Лесная, 1А
+                - link [ref=f48e530] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1276566
+              - generic [ref=f48e531]:
+                - generic [ref=f48e532]:
+                  - generic [ref=f48e534]: 453 000,00 ƃ
+                  - generic [ref=f48e536]: UP!7 минут назад
+                - generic [ref=f48e537]:
+                  - generic [ref=f48e538]:
+                    - generic [ref=f48e539]: 1 / 2
+                    - generic [ref=f48e541]:
+                      - generic [ref=f48e542]: 4к
+                      - generic [ref=f48e543]:
+                        - text: 110,5 / 50,5 / 30,1 м
+                        - superscript [ref=f48e544]: "2"
+                  - generic [ref=f48e545]: Слободщина
+                - link [ref=f48e547] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1279039
+              - generic [ref=f48e548]:
+                - generic [ref=f48e549]:
+                  - generic [ref=f48e551]: 351 000,00 ƃ
+                  - generic [ref=f48e553]: UP!7 минут назад
+                - generic [ref=f48e554]:
+                  - generic [ref=f48e555]:
+                    - generic [ref=f48e556]: 7 / 12
+                    - generic [ref=f48e558]:
+                      - generic [ref=f48e559]: 2к
+                      - generic [ref=f48e560]:
+                        - text: 51,4 / 29,2 / 8,8 м
+                        - superscript [ref=f48e561]: "2"
+                  - generic [ref=f48e562]: Леонида Беды, 13
+                - link [ref=f48e564] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1280666
+              - generic [ref=f48e565]:
+                - generic [ref=f48e566]:
+                  - generic [ref=f48e568]: 361 000,00 ƃ
+                  - generic [ref=f48e570]: UP!7 минут назад
+                - generic [ref=f48e571]:
+                  - generic [ref=f48e572]:
+                    - generic [ref=f48e573]: 6 / 9
+                    - generic [ref=f48e575]:
+                      - generic [ref=f48e576]: 2к
+                      - generic [ref=f48e577]:
+                        - text: 46,6 / 28,4 / 7,1 м
+                        - superscript [ref=f48e578]: "2"
+                  - generic [ref=f48e579]: Могилёвская, 6к 4
+                - link [ref=f48e581] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1282426
+              - generic [ref=f48e582]:
+                - generic [ref=f48e583]:
+                  - generic [ref=f48e585]: 419 739,00 ƃ
+                  - generic [ref=f48e587]: UP!7 минут назад
+                - generic [ref=f48e588]:
+                  - generic [ref=f48e589]:
+                    - generic [ref=f48e590]: 4 / 5
+                    - generic [ref=f48e592]:
+                      - generic [ref=f48e593]: 3к
+                      - generic [ref=f48e594]:
+                        - text: 54,9 / 33,5 / 6,6 м
+                        - superscript [ref=f48e595]: "2"
+                  - generic [ref=f48e596]: Слесарная, 4
+                - link [ref=f48e598] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1282900
+              - generic [ref=f48e599]:
+                - generic [ref=f48e600]:
+                  - generic [ref=f48e602]: 428 806,00 ƃ
+                  - generic [ref=f48e604]: UP!7 минут назад
+                - generic [ref=f48e605]:
+                  - generic [ref=f48e606]:
+                    - generic [ref=f48e607]: 3 / 7
+                    - generic [ref=f48e609]:
+                      - generic [ref=f48e610]: 1к
+                      - generic [ref=f48e611]:
+                        - text: 35,6 / 20,6 / 5,9 м
+                        - superscript [ref=f48e612]: "2"
+                  - generic [ref=f48e613]: Янки Купалы, 11
+                - link [ref=f48e615] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1282934
+              - generic [ref=f48e616]:
+                - generic [ref=f48e617]:
+                  - generic [ref=f48e619]: 276 000,00 ƃ
+                  - generic [ref=f48e621]: UP!11 минут назад
+                - generic [ref=f48e622]:
+                  - generic [ref=f48e623]:
+                    - generic [ref=f48e624]: 3 / 5
+                    - generic [ref=f48e626]:
+                      - generic [ref=f48e627]: 2к
+                      - generic [ref=f48e628]:
+                        - text: 49,1 / 30,8 / 6,6 м
+                        - superscript [ref=f48e629]: "2"
+                  - generic [ref=f48e630]: Голодеда, 16
+                - link [ref=f48e632] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1282161
+              - generic [ref=f48e633]:
+                - generic [ref=f48e634]:
+                  - generic [ref=f48e636]: 389 000,00 ƃ
+                  - generic [ref=f48e638]: UP!11 минут назад
+                - generic [ref=f48e639]:
+                  - generic [ref=f48e640]:
+                    - generic [ref=f48e641]: 11 / 19
+                    - generic [ref=f48e643]:
+                      - generic [ref=f48e644]: 2к
+                      - generic [ref=f48e645]:
+                        - text: 44,3 / 26,9 м
+                        - superscript [ref=f48e646]: "2"
+                  - generic [ref=f48e647]: 2-й пер. Тимошенко, 7
+                - link [ref=f48e649] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1283851
+              - generic [ref=f48e650]:
+                - generic [ref=f48e651]:
+                  - generic [ref=f48e653]: 63 585,90 ƃ
+                  - generic [ref=f48e655]: UP!12 минут назад
+                - generic [ref=f48e657]:
+                  - generic [ref=f48e658]:
+                    - generic [ref=f48e659]: 2 / 2
+                    - generic [ref=f48e661]:
+                      - generic [ref=f48e662]: 4к
+                      - generic [ref=f48e663]:
+                        - text: 62 / 55,9 / 4,4 м
+                        - superscript [ref=f48e664]: "2"
+                  - generic [ref=f48e665]: Садовое товарищество "Чистые пруды"
+                - link [ref=f48e667] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1280772
+              - generic [ref=f48e668]:
+                - generic [ref=f48e669]:
+                  - generic [ref=f48e671]: 354 999,99 ƃ
+                  - generic [ref=f48e673]: UP!12 минут назад
+                - generic [ref=f48e674]:
+                  - generic [ref=f48e675]:
+                    - generic [ref=f48e676]: 13 / 25
+                    - generic [ref=f48e678]:
+                      - generic [ref=f48e679]: 2к
+                      - generic [ref=f48e680]:
+                        - text: 44,4 / 37,7 м
+                        - superscript [ref=f48e681]: "2"
+                  - generic [ref=f48e682]: Беларусь, Минск, Аэродромная , 28
+                - link [ref=f48e684] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1279464
+              - generic [ref=f48e685]:
+                - generic [ref=f48e686]:
+                  - generic [ref=f48e688]: 238 499,99 ƃ
+                  - generic [ref=f48e690]: UP!13 минут назад
+                - generic [ref=f48e691]:
+                  - generic [ref=f48e692]:
+                    - generic [ref=f48e693]: 3 / 3
+                    - generic [ref=f48e695]:
+                      - generic [ref=f48e696]: 1к
+                      - generic [ref=f48e697]:
+                        - text: 28 / 16,8 / 6,5 м
+                        - superscript [ref=f48e698]: "2"
+                  - generic [ref=f48e699]: Беларусь, Минск, Либкнехта , 71
+                - link [ref=f48e701] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1281297
+              - generic [ref=f48e702]:
+                - generic [ref=f48e703]:
+                  - generic [ref=f48e705]: 235 000,00 ƃ
+                  - generic [ref=f48e707]: UP!16 минут назад
+                - generic [ref=f48e708]:
+                  - generic [ref=f48e709]:
+                    - generic [ref=f48e710]: 1 / 4
+                    - generic [ref=f48e712]:
+                      - generic [ref=f48e713]: 2к
+                      - generic [ref=f48e714]:
+                        - text: 44,4 / 29,5 / 5,9 м
+                        - superscript [ref=f48e715]: "2"
+                  - generic [ref=f48e716]: Мичурина, 11А
+                - link [ref=f48e718] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1283798
+              - generic [ref=f48e719]:
+                - generic [ref=f48e720]:
+                  - generic [ref=f48e722]: 257 371,50 ƃ
+                  - generic [ref=f48e724]: UP!25 минут назад
+                - generic [ref=f48e726]:
+                  - generic [ref=f48e727]:
+                    - generic [ref=f48e728]: 3 / 12
+                    - generic [ref=f48e730]:
+                      - generic [ref=f48e731]: 1к
+                      - generic [ref=f48e732]:
+                        - text: 35,5 / 17,1 / 7,5 м
+                        - superscript [ref=f48e733]: "2"
+                  - generic [ref=f48e734]: Шишкина, 20 к4
+                - link [ref=f48e736] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284368
+              - generic [ref=f48e737]:
+                - generic [ref=f48e738]:
+                  - generic [ref=f48e740]: 284 600,00 ƃ
+                  - generic [ref=f48e742]: UP!29 минут назад
+                - generic [ref=f48e743]:
+                  - generic [ref=f48e744]:
+                    - generic [ref=f48e745]: 2 / 5
+                    - generic [ref=f48e747]:
+                      - generic [ref=f48e748]: 2к
+                      - generic [ref=f48e749]:
+                        - text: 42,7 / 29,5 / 6,1 м
+                        - superscript [ref=f48e750]: "2"
+                  - generic [ref=f48e751]: Кулешова 4кА
+                - link [ref=f48e753] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1281585
+              - generic [ref=f48e754]:
+                - generic [ref=f48e755]:
+                  - generic [ref=f48e757]: 459 000,00 ƃ
+                  - generic [ref=f48e759]: UP!29 минут назад
+                - generic [ref=f48e760]:
+                  - generic [ref=f48e761]:
+                    - generic [ref=f48e762]: 3 / 9
+                    - generic [ref=f48e764]:
+                      - generic [ref=f48e765]: 3к
+                      - generic [ref=f48e766]:
+                        - text: 63,5 / 43,6 / 7,1 м
+                        - superscript [ref=f48e767]: "2"
+                  - generic [ref=f48e768]: Слободская 21
+                - link [ref=f48e770] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1278443
+              - generic [ref=f48e771]:
+                - generic [ref=f48e772]:
+                  - generic [ref=f48e774]: 414 412,00 ƃ
+                  - generic [ref=f48e776]: UP!29 минут назад
+                - generic [ref=f48e777]:
+                  - generic [ref=f48e778]:
+                    - generic [ref=f48e779]: 8 / 9
+                    - generic [ref=f48e781]:
+                      - generic [ref=f48e782]: 2к
+                      - generic [ref=f48e783]:
+                        - text: 51,7 / 34,1 / 7,2 м
+                        - superscript [ref=f48e784]: "2"
+                  - generic [ref=f48e785]: Цнянская 5
+                - link [ref=f48e787] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284366
+              - generic [ref=f48e788]:
+                - generic [ref=f48e789]:
+                  - generic [ref=f48e791]: 412 000,00 ƃ
+                  - generic [ref=f48e793]: UP!29 минут назад
+                - generic [ref=f48e794]:
+                  - generic [ref=f48e795]:
+                    - generic [ref=f48e796]: 2 / 14
+                    - generic [ref=f48e798]:
+                      - generic [ref=f48e799]: 3к
+                      - generic [ref=f48e800]:
+                        - text: 65,9 / 38 / 8,9 м
+                        - superscript [ref=f48e801]: "2"
+                  - generic [ref=f48e802]: Сухаревская 27
+                - link [ref=f48e804] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284367
+              - generic [ref=f48e805]:
+                - generic [ref=f48e806]:
+                  - generic [ref=f48e808]: 252 500,00 ƃ
+                  - generic [ref=f48e810]: UP!39 минут назад
+                - generic [ref=f48e811]:
+                  - generic [ref=f48e812]:
+                    - generic [ref=f48e813]: 2 / 9
+                    - generic [ref=f48e815]:
+                      - generic [ref=f48e816]: 1к
+                      - generic [ref=f48e817]:
+                        - text: 40,4 / 16,9 / 10,6 м
+                        - superscript [ref=f48e818]: "2"
+                  - generic [ref=f48e819]: Слобода, Машерова 7кА
+                - link [ref=f48e821] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1279859
+              - generic [ref=f48e822]:
+                - generic [ref=f48e823]:
+                  - generic [ref=f48e825]: 520 000,00 ƃ
+                  - generic [ref=f48e827]: UP!39 минут назад
+                - generic [ref=f48e828]:
+                  - generic [ref=f48e829]:
+                    - generic [ref=f48e830]: 1 / 9
+                    - generic [ref=f48e832]:
+                      - generic [ref=f48e833]: 3к
+                      - generic [ref=f48e834]:
+                        - text: 82,3 / 51,7 / 10,2 м
+                        - superscript [ref=f48e835]: "2"
+                  - generic [ref=f48e836]: Каменногорская 20
+                - link [ref=f48e838] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1283933
+              - generic [ref=f48e839]:
+                - generic [ref=f48e840]:
+                  - generic [ref=f48e842]: 438 400,00 ƃ
+                  - generic [ref=f48e844]: UP!39 минут назад
+                - generic [ref=f48e845]:
+                  - generic [ref=f48e846]:
+                    - generic [ref=f48e847]: 1 / 3
+                    - generic [ref=f48e849]:
+                      - generic [ref=f48e850]: 3к
+                      - generic [ref=f48e851]:
+                        - text: 60,3 / 35,6 / 6,8 м
+                        - superscript [ref=f48e852]: "2"
+                  - generic [ref=f48e853]: Чернышевского 11кА
+                - link [ref=f48e855] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1272341
+              - generic [ref=f48e856]:
+                - generic [ref=f48e857]:
+                  - generic [ref=f48e859]: 513 000,00 ƃ
+                  - generic [ref=f48e861]: UP!39 минут назад
+                - generic [ref=f48e862]:
+                  - generic [ref=f48e863]:
+                    - generic [ref=f48e864]: 15 / 19
+                    - generic [ref=f48e866]:
+                      - generic [ref=f48e867]: 2к
+                      - generic [ref=f48e868]:
+                        - text: 65,3 / 46,7 м
+                        - superscript [ref=f48e869]: "2"
+                  - generic [ref=f48e870]: Дзержинского просп. 15
+                - link [ref=f48e872] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284364
+              - generic [ref=f48e873]:
+                - generic [ref=f48e874]:
+                  - generic [ref=f48e876]: 514 700,00 ƃ
+                  - generic [ref=f48e878]: UP!39 минут назад
+                - generic [ref=f48e879]:
+                  - generic [ref=f48e880]:
+                    - generic [ref=f48e881]: 9 / 16
+                    - generic [ref=f48e883]:
+                      - generic [ref=f48e884]: 3к
+                      - generic [ref=f48e885]:
+                        - text: 65,3 / 59,7 м
+                        - superscript [ref=f48e886]: "2"
+                  - generic [ref=f48e887]: Братская 4
+                - link [ref=f48e889] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284365
+              - generic [ref=f48e890]:
+                - generic [ref=f48e891]:
+                  - generic [ref=f48e893]: 439 045,50 ƃ
+                  - generic [ref=f48e895]: UP!час назад
+                - generic [ref=f48e896]:
+                  - generic [ref=f48e897]:
+                    - generic [ref=f48e898]: 5 / 9
+                    - generic [ref=f48e900]:
+                      - generic [ref=f48e901]: 3к
+                      - generic [ref=f48e902]:
+                        - text: 76,4 / 39,3 / 9 м
+                        - superscript [ref=f48e903]: "2"
+                  - generic [ref=f48e904]: Космонавтов , 34
+                - link [ref=f48e906] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284362
+              - generic [ref=f48e907]:
+                - generic [ref=f48e908]:
+                  - generic [ref=f48e910]: 439 045,50 ƃ
+                  - generic [ref=f48e912]: UP!час назад
+                - generic [ref=f48e913]:
+                  - generic [ref=f48e914]:
+                    - generic [ref=f48e915]: 5 / 9
+                    - generic [ref=f48e917]:
+                      - generic [ref=f48e918]: 3к
+                      - generic [ref=f48e919]:
+                        - text: 76,4 / 39,3 / 9 м
+                        - superscript [ref=f48e920]: "2"
+                  - generic [ref=f48e921]: Космонавтов , 34
+                - link [ref=f48e923] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284361
+              - generic [ref=f48e924]:
+                - generic [ref=f48e925]:
+                  - generic [ref=f48e927]: 287 650,50 ƃ
+                  - generic [ref=f48e929]: UP!час назад
+                - generic [ref=f48e930]:
+                  - generic [ref=f48e931]:
+                    - generic [ref=f48e932]: 2 / 24
+                    - generic [ref=f48e934]:
+                      - generic [ref=f48e935]: 1к
+                      - generic [ref=f48e936]:
+                        - text: 27 / 22,4 / 1 м
+                        - superscript [ref=f48e937]: "2"
+                  - generic [ref=f48e938]: Белградская , 1
+                - link [ref=f48e940] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284360
+              - generic [ref=f48e941]:
+                - generic [ref=f48e942]:
+                  - generic [ref=f48e944]: 287 650,50 ƃ
+                  - generic [ref=f48e946]: UP!час назад
+                - generic [ref=f48e947]:
+                  - generic [ref=f48e948]:
+                    - generic [ref=f48e949]: 2 / 24
+                    - generic [ref=f48e951]:
+                      - generic [ref=f48e952]: 1к
+                      - generic [ref=f48e953]:
+                        - text: 27 / 22,4 / 1 м
+                        - superscript [ref=f48e954]: "2"
+                  - generic [ref=f48e955]: Белградская , 1
+                - link [ref=f48e957] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284359
+              - generic [ref=f48e958]:
+                - generic [ref=f48e959]:
+                  - generic [ref=f48e961]: 374 430,00 ƃ
+                  - generic [ref=f48e963]: UP!час назад
+                - generic [ref=f48e964]:
+                  - generic [ref=f48e965]:
+                    - generic [ref=f48e966]: 4 / 8
+                    - generic [ref=f48e968]:
+                      - generic [ref=f48e969]: 1к
+                      - generic [ref=f48e970]:
+                        - text: 53 / 40,6 м
+                        - superscript [ref=f48e971]: "2"
+                  - generic [ref=f48e972]: Левина 3
+                - link [ref=f48e974] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1278441
+              - generic [ref=f48e975]:
+                - generic [ref=f48e976]:
+                  - generic [ref=f48e978]: 317 929,50 ƃ
+                  - generic [ref=f48e980]: UP!час назад
+                - generic [ref=f48e982]:
+                  - generic [ref=f48e983]:
+                    - generic [ref=f48e984]: 4 / 5
+                    - generic [ref=f48e986]:
+                      - generic [ref=f48e987]: 2к
+                      - generic [ref=f48e988]:
+                        - text: 42 / 25 / 6 м
+                        - superscript [ref=f48e989]: "2"
+                  - generic [ref=f48e990]: Одоевского, 20 к1
+                - link [ref=f48e992] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1284357
+              - generic [ref=f48e993]:
+                - generic [ref=f48e994]:
+                  - generic [ref=f48e996]: 415 347,94 ƃ
+                  - generic [ref=f48e998]: UP!час назад
+                - generic [ref=f48e999]:
+                  - generic [ref=f48e1000]:
+                    - generic [ref=f48e1001]: 4 / 4
+                    - generic [ref=f48e1003]:
+                      - generic [ref=f48e1004]: 5к
+                      - generic [ref=f48e1005]:
+                        - text: 305,4 / 100,6 / 21,6 м
+                        - superscript [ref=f48e1006]: "2"
+                  - generic [ref=f48e1007]: Беларусь, Вицковщина, Центральная
+                - link [ref=f48e1009] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1177405
+              - generic [ref=f48e1010]:
+                - generic [ref=f48e1011]:
+                  - generic [ref=f48e1013]: 342 152,70 ƃ
+                  - generic [ref=f48e1015]: UP!час назад
+                - generic [ref=f48e1016]:
+                  - generic [ref=f48e1017]:
+                    - generic [ref=f48e1018]: 3 / 3
+                    - generic [ref=f48e1020]:
+                      - generic [ref=f48e1021]: 2к
+                      - generic [ref=f48e1022]:
+                        - text: 85 / 60,5 м
+                        - superscript [ref=f48e1023]: "2"
+                  - generic [ref=f48e1024]: Беларусь, КРИНИЧАНКА
+                - link [ref=f48e1026] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1177411
+              - generic [ref=f48e1027]:
+                - generic [ref=f48e1028]:
+                  - generic [ref=f48e1030]: 347 988,49 ƃ
+                  - generic [ref=f48e1032]: UP!час назад
+                - generic [ref=f48e1033]:
+                  - generic [ref=f48e1034]:
+                    - generic [ref=f48e1035]: 9 / 12
+                    - generic [ref=f48e1037]:
+                      - generic [ref=f48e1038]: 1к
+                      - generic [ref=f48e1039]:
+                        - text: 44,1 / 19,6 / 11 м
+                        - superscript [ref=f48e1040]: "2"
+                  - generic [ref=f48e1041]: Беларусь, Минск, Независимости просп., 168
+                - link [ref=f48e1043] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1177943
+              - generic [ref=f48e1044]:
+                - generic [ref=f48e1045]:
+                  - generic [ref=f48e1047]: 169 562,40 ƃ
+                  - generic [ref=f48e1049]: UP!час назад
+                - generic [ref=f48e1050]:
+                  - generic [ref=f48e1051]:
+                    - generic [ref=f48e1052]: 2 / 2
+                    - generic [ref=f48e1054]:
+                      - generic [ref=f48e1055]: 3к
+                      - generic [ref=f48e1056]:
+                        - text: 45 / 21,5 / 8,7 м
+                        - superscript [ref=f48e1057]: "2"
+                  - generic [ref=f48e1058]: Беларусь, РОМАШКА СОЛОМОРЕЧЕНСКАЯ
+                - link [ref=f48e1060] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1184560
+              - generic [ref=f48e1061]:
+                - generic [ref=f48e1062]:
+                  - generic [ref=f48e1064]: 342 636,23 ƃ
+                  - generic [ref=f48e1066]: UP!час назад
+                - generic [ref=f48e1067]:
+                  - generic [ref=f48e1068]:
+                    - generic [ref=f48e1069]: 2 / 9
+                    - generic [ref=f48e1071]:
+                      - generic [ref=f48e1072]: 1к
+                      - generic [ref=f48e1073]:
+                        - text: 44,5 / 19,4 / 10,9 м
+                        - superscript [ref=f48e1074]: "2"
+                  - generic [ref=f48e1075]: Беларусь, Минск, Независимости просп., 168
+                - link [ref=f48e1077] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1185277
+              - generic [ref=f48e1078]:
+                - generic [ref=f48e1079]:
+                  - generic [ref=f48e1081]: 331 555,05 ƃ
+                  - generic [ref=f48e1083]: UP!час назад
+                - generic [ref=f48e1084]:
+                  - generic [ref=f48e1085]:
+                    - generic [ref=f48e1086]: 1 / 1
+                    - generic [ref=f48e1088]:
+                      - generic [ref=f48e1089]: 3к
+                      - generic [ref=f48e1090]:
+                        - text: 124,6 / 64,1 / 23,7 м
+                        - superscript [ref=f48e1091]: "2"
+                  - generic [ref=f48e1092]: Беларусь, Минск, Багратиона , 48
+                - link [ref=f48e1094] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1191152
+              - generic [ref=f48e1095]:
+                - generic [ref=f48e1096]:
+                  - generic [ref=f48e1098]: 514 743,00 ƃ
+                  - generic [ref=f48e1100]: UP!час назад
+                - generic [ref=f48e1101]:
+                  - generic [ref=f48e1102]:
+                    - generic [ref=f48e1103]: 2 / 2
+                    - generic [ref=f48e1105]:
+                      - generic [ref=f48e1106]: 4к
+                      - generic [ref=f48e1107]:
+                        - text: 302,6 / 117,8 м
+                        - superscript [ref=f48e1108]: "2"
+                  - generic [ref=f48e1109]: Беларусь, Привольный, Южная
+                - link [ref=f48e1111] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1192742
+              - generic [ref=f48e1112]:
+                - generic [ref=f48e1113]:
+                  - generic [ref=f48e1115]: 404 302,04 ƃ
+                  - generic [ref=f48e1117]: UP!час назад
+                - generic [ref=f48e1118]:
+                  - generic [ref=f48e1119]:
+                    - generic [ref=f48e1120]: 2 / 2
+                    - generic [ref=f48e1122]:
+                      - generic [ref=f48e1123]: 3к
+                      - generic [ref=f48e1124]:
+                        - text: 119,4 / 70 м
+                        - superscript [ref=f48e1125]: "2"
+                  - generic [ref=f48e1126]: Беларусь, ВЕТЕРАН ВОЙНЫ
+                - link [ref=f48e1128] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1194145
+              - generic [ref=f48e1129]:
+                - generic [ref=f48e1130]:
+                  - generic [ref=f48e1132]: 37 848,75 ƃ
+                  - generic [ref=f48e1134]: UP!час назад
+                - generic [ref=f48e1135]:
+                  - generic [ref=f48e1136]:
+                    - generic [ref=f48e1137]: 2 / 2
+                    - generic [ref=f48e1139]:
+                      - generic [ref=f48e1140]: 3к
+                      - generic [ref=f48e1141]:
+                        - text: 47,2 / 34,4 / 4,4 м
+                        - superscript [ref=f48e1142]: "2"
+                  - generic [ref=f48e1143]: Беларусь, СВЕТЛЫЕ ПРУДЫ
+                - link [ref=f48e1145] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1194298
+              - generic [ref=f48e1146]:
+                - generic [ref=f48e1147]:
+                  - generic [ref=f48e1149]: 300 468,66 ƃ
+                  - generic [ref=f48e1151]: UP!час назад
+                - generic [ref=f48e1152]:
+                  - generic [ref=f48e1153]:
+                    - generic [ref=f48e1154]: 5 / 5
+                    - generic [ref=f48e1156]:
+                      - generic [ref=f48e1157]: 3к
+                      - generic [ref=f48e1158]:
+                        - text: 63,1 / 48,6 / 6,4 м
+                        - superscript [ref=f48e1159]: "2"
+                  - generic [ref=f48e1160]: Беларусь, Минск, Ротмистрова , 4
+                - link [ref=f48e1162] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1194652
+              - generic [ref=f48e1163]:
+                - generic [ref=f48e1164]:
+                  - generic [ref=f48e1166]: 59 044,05 ƃ
+                  - generic [ref=f48e1168]: UP!час назад
+                - generic [ref=f48e1169]:
+                  - generic [ref=f48e1170]:
+                    - generic [ref=f48e1171]: 2 / 2
+                    - generic [ref=f48e1173]:
+                      - generic [ref=f48e1174]: 3к
+                      - generic [ref=f48e1175]:
+                        - text: 52,4 / 18,6 / 4,2 м
+                        - superscript [ref=f48e1176]: "2"
+                  - generic [ref=f48e1177]: Беларусь, ИСКРА-ПЛЮС
+                - link [ref=f48e1179] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1195176
+              - generic [ref=f48e1180]:
+                - generic [ref=f48e1181]:
+                  - generic [ref=f48e1183]: 446 729,46 ƃ
+                  - generic [ref=f48e1185]: UP!час назад
+                - generic [ref=f48e1186]:
+                  - generic [ref=f48e1187]:
+                    - generic [ref=f48e1188]: 4 / 5
+                    - generic [ref=f48e1190]:
+                      - generic [ref=f48e1191]: 2к
+                      - generic [ref=f48e1192]:
+                        - text: 62,6 / 33,6 / 10,5 м
+                        - superscript [ref=f48e1193]: "2"
+                  - generic [ref=f48e1194]: Беларусь, Боровляны, 40 лет Победы , 34
+                - link [ref=f48e1196] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1196642
+              - generic [ref=f48e1197]:
+                - generic [ref=f48e1198]:
+                  - generic [ref=f48e1200]: 79 714,49 ƃ
+                  - generic [ref=f48e1202]: UP!час назад
+                - generic [ref=f48e1203]:
+                  - generic [ref=f48e1204]:
+                    - generic [ref=f48e1205]: 2 / 2
+                    - generic [ref=f48e1207]:
+                      - generic [ref=f48e1208]: 1к
+                      - generic [ref=f48e1209]:
+                        - text: 74,2 / 38,2 м
+                        - superscript [ref=f48e1210]: "2"
+                  - generic [ref=f48e1211]: Беларусь, МАЯК-БЕЛДОРНИИ
+                - link [ref=f48e1213] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1227560
+              - generic [ref=f48e1214]:
+                - generic [ref=f48e1215]:
+                  - generic [ref=f48e1217]: 453 276,63 ƃ
+                  - generic [ref=f48e1219]: UP!час назад
+                - generic [ref=f48e1220]:
+                  - generic [ref=f48e1221]:
+                    - generic [ref=f48e1222]: 1 / 4
+                    - generic [ref=f48e1224]:
+                      - generic [ref=f48e1225]: 3к
+                      - generic [ref=f48e1226]:
+                        - text: 72 / 49,9 / 10 м
+                        - superscript [ref=f48e1227]: "2"
+                  - generic [ref=f48e1228]: Беларусь, Минск, Центральная , 3
+                - link [ref=f48e1230] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1241745
+              - generic [ref=f48e1231]:
+                - generic [ref=f48e1232]:
+                  - generic [ref=f48e1234]: 234 454,35 ƃ
+                  - generic [ref=f48e1236]: UP!час назад
+                - generic [ref=f48e1237]:
+                  - generic [ref=f48e1238]:
+                    - generic [ref=f48e1239]: 2 / 2
+                    - generic [ref=f48e1241]:
+                      - generic [ref=f48e1242]: 5к
+                      - generic [ref=f48e1243]:
+                        - text: 162,2 / 111 м
+                        - superscript [ref=f48e1244]: "2"
+                  - generic [ref=f48e1245]: Беларусь, Горошки
+                - link [ref=f48e1247] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1242075
+              - generic [ref=f48e1248]:
+                - generic [ref=f48e1249]:
+                  - generic [ref=f48e1251]: 481 436,10 ƃ
+                  - generic [ref=f48e1253]: UP!час назад
+                - generic [ref=f48e1254]:
+                  - generic [ref=f48e1255]:
+                    - generic [ref=f48e1256]: 7 / 10
+                    - generic [ref=f48e1258]:
+                      - generic [ref=f48e1259]: 3к
+                      - generic [ref=f48e1260]:
+                        - text: 85 / 48,1 / 9,8 м
+                        - superscript [ref=f48e1261]: "2"
+                  - generic [ref=f48e1262]: Беларусь, Минск, Карвата , 13
+                - link [ref=f48e1264] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1244845
+              - generic [ref=f48e1265]:
+                - generic [ref=f48e1266]:
+                  - generic [ref=f48e1268]: 284 545,60 ƃ
+                  - generic [ref=f48e1270]: UP!час назад
+                - generic [ref=f48e1271]:
+                  - generic [ref=f48e1272]:
+                    - generic [ref=f48e1273]: 1 / 5
+                    - generic [ref=f48e1275]:
+                      - generic [ref=f48e1276]: 2к
+                      - generic [ref=f48e1277]:
+                        - text: 45,1 / 32,9 / 6,3 м
+                        - superscript [ref=f48e1278]: "2"
+                  - generic [ref=f48e1279]: Беларусь, Минск, Каховская , 32
+                - link [ref=f48e1281] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1248159
+              - generic [ref=f48e1282]:
+                - generic [ref=f48e1283]:
+                  - generic [ref=f48e1285]: 82 290,60 ƃ
+                  - generic [ref=f48e1287]: UP!час назад
+                - generic [ref=f48e1288]:
+                  - generic [ref=f48e1289]:
+                    - generic [ref=f48e1290]: 3 / 3
+                    - generic [ref=f48e1292]:
+                      - generic [ref=f48e1293]: 3к
+                      - generic [ref=f48e1294]:
+                        - text: 73 / 31,9 / 6,8 м
+                        - superscript [ref=f48e1295]: "2"
+                  - generic [ref=f48e1296]: Беларусь, Лысая Гора
+                - link [ref=f48e1298] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1254107
+              - generic [ref=f48e1299]:
+                - generic [ref=f48e1300]:
+                  - generic [ref=f48e1302]: 379 254,92 ƃ
+                  - generic [ref=f48e1304]: UP!час назад
+                - generic [ref=f48e1305]:
+                  - generic [ref=f48e1306]:
+                    - generic [ref=f48e1307]: 2 / 3
+                    - generic [ref=f48e1309]:
+                      - generic [ref=f48e1310]: 2к
+                      - generic [ref=f48e1311]:
+                        - text: 46,7 / 24,9 / 9 м
+                        - superscript [ref=f48e1312]: "2"
+                  - generic [ref=f48e1313]: Беларусь, Минск, Независимости просп., 27
+                - link [ref=f48e1315] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1255577
+              - generic [ref=f48e1316]:
+                - generic [ref=f48e1317]:
+                  - generic [ref=f48e1319]: 274 247,20 ƃ
+                  - generic [ref=f48e1321]: UP!час назад
+                - generic [ref=f48e1322]:
+                  - generic [ref=f48e1323]:
+                    - generic [ref=f48e1324]: 2 / 2
+                    - generic [ref=f48e1326]:
+                      - generic [ref=f48e1327]: 3к
+                      - generic [ref=f48e1328]:
+                        - text: 68,8 / 43,5 / 8,6 м
+                        - superscript [ref=f48e1329]: "2"
+                  - generic [ref=f48e1330]: Беларусь, Привольный, Юбилейная , 25/А
+                - link [ref=f48e1332] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1256109
+              - generic [ref=f48e1333]:
+                - generic [ref=f48e1334]:
+                  - generic [ref=f48e1336]: 328 729,78 ƃ
+                  - generic [ref=f48e1338]: UP!час назад
+                - generic [ref=f48e1339]:
+                  - generic [ref=f48e1340]:
+                    - generic [ref=f48e1341]: 1 / 1
+                    - generic [ref=f48e1343]:
+                      - generic [ref=f48e1344]: 5к
+                      - generic [ref=f48e1345]:
+                        - text: 41,7 / 25 / 12,6 м
+                        - superscript [ref=f48e1346]: "2"
+                  - generic [ref=f48e1347]: Беларусь, Каменная Горка, Садовая , 7
+                - link [ref=f48e1349] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1256274
+              - generic [ref=f48e1350]:
+                - generic [ref=f48e1351]:
+                  - generic [ref=f48e1353]: 416 931,14 ƃ
+                  - generic [ref=f48e1355]: UP!час назад
+                - generic [ref=f48e1356]:
+                  - generic [ref=f48e1357]:
+                    - generic [ref=f48e1358]: 1 / 16
+                    - generic [ref=f48e1360]:
+                      - generic [ref=f48e1361]: 2к
+                      - generic [ref=f48e1362]:
+                        - text: 60,7 / 35,8 м
+                        - superscript [ref=f48e1363]: "2"
+                  - generic [ref=f48e1364]: Беларусь, Минск, Семеняко , 23
+                - link [ref=f48e1366] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1258246
+              - generic [ref=f48e1367]:
+                - generic [ref=f48e1368]:
+                  - generic [ref=f48e1370]: 376 702,95 ƃ
+                  - generic [ref=f48e1372]: UP!час назад
+                - generic [ref=f48e1373]:
+                  - generic [ref=f48e1374]:
+                    - generic [ref=f48e1375]: 2 / 2
+                    - generic [ref=f48e1377]:
+                      - generic [ref=f48e1378]: 4к
+                      - generic [ref=f48e1379]:
+                        - text: 160,9 / 73,7 / 17,8 м
+                        - superscript [ref=f48e1380]: "2"
+                  - generic [ref=f48e1381]: Беларусь, Гриньково, Центральная
+                - link [ref=f48e1383] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1258677
+              - generic [ref=f48e1384]:
+                - generic [ref=f48e1385]:
+                  - generic [ref=f48e1387]: 417 463,48 ƃ
+                  - generic [ref=f48e1389]: UP!час назад
+                - generic [ref=f48e1390]:
+                  - generic [ref=f48e1391]:
+                    - generic [ref=f48e1392]: 3 / 9
+                    - generic [ref=f48e1394]:
+                      - generic [ref=f48e1395]: 3к
+                      - generic [ref=f48e1396]:
+                        - text: 62,1 / 40 / 8,3 м
+                        - superscript [ref=f48e1397]: "2"
+                  - generic [ref=f48e1398]: Беларусь, Минск, Сурганова , 86
+                - link [ref=f48e1400] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1258995
+              - generic [ref=f48e1401]:
+                - generic [ref=f48e1402]:
+                  - generic [ref=f48e1404]: 409 269,16 ƃ
+                  - generic [ref=f48e1406]: UP!час назад
+                - generic [ref=f48e1407]:
+                  - generic [ref=f48e1408]:
+                    - generic [ref=f48e1409]: 1 / 1
+                    - generic [ref=f48e1411]:
+                      - generic [ref=f48e1412]: 4к
+                      - generic [ref=f48e1413]:
+                        - text: 67,5 / 47,7 / 11,6 м
+                        - superscript [ref=f48e1414]: "2"
+                  - generic [ref=f48e1415]: Беларусь, Минск, Сурикова пер.
+                - link [ref=f48e1417] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1264196
+              - generic [ref=f48e1418]:
+                - generic [ref=f48e1419]:
+                  - generic [ref=f48e1421]: 390 598,89 ƃ
+                  - generic [ref=f48e1423]: UP!час назад
+                - generic [ref=f48e1424]:
+                  - generic [ref=f48e1425]:
+                    - generic [ref=f48e1426]: 4 / 9
+                    - generic [ref=f48e1428]:
+                      - generic [ref=f48e1429]: 3к
+                      - generic [ref=f48e1430]:
+                        - text: 91,1 / 53,6 / 11,4 м
+                        - superscript [ref=f48e1431]: "2"
+                  - generic [ref=f48e1432]: Беларусь, Лесковка, Центральная , 8
+                - link [ref=f48e1434] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1264937
+              - generic [ref=f48e1435]:
+                - generic [ref=f48e1436]:
+                  - generic [ref=f48e1438]: 496 576,21 ƃ
+                  - generic [ref=f48e1440]: UP!час назад
+                - generic [ref=f48e1441]:
+                  - generic [ref=f48e1442]:
+                    - generic [ref=f48e1443]: 9 / 9
+                    - generic [ref=f48e1445]:
+                      - generic [ref=f48e1446]: 3к
+                      - generic [ref=f48e1447]:
+                        - text: 90,5 / 55,4 / 12,8 м
+                        - superscript [ref=f48e1448]: "2"
+                  - generic [ref=f48e1449]: Беларусь, Минск, Яна Чечота , 28
+                - link [ref=f48e1451] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1267784
+              - generic [ref=f48e1452]:
+                - generic [ref=f48e1453]:
+                  - generic [ref=f48e1455]: 188 456,50 ƃ
+                  - generic [ref=f48e1457]: UP!час назад
+                - generic [ref=f48e1458]:
+                  - generic [ref=f48e1459]:
+                    - generic [ref=f48e1460]: 2 / 2
+                    - generic [ref=f48e1462]:
+                      - generic [ref=f48e1463]: 1к
+                      - generic [ref=f48e1464]:
+                        - text: 153,5 / 96 / 15 м
+                        - superscript [ref=f48e1465]: "2"
+                  - generic [ref=f48e1466]: Беларусь, Обчак, Лесная
+                - link [ref=f48e1468] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1268086
+              - generic [ref=f48e1469]:
+                - generic [ref=f48e1470]:
+                  - generic [ref=f48e1472]: 294 931,81 ƃ
+                  - generic [ref=f48e1474]: UP!час назад
+                - generic [ref=f48e1475]:
+                  - generic [ref=f48e1476]:
+                    - generic [ref=f48e1477]: 5 / 5
+                    - generic [ref=f48e1479]:
+                      - generic [ref=f48e1480]: 3к
+                      - generic [ref=f48e1481]:
+                        - text: 61,6 / 46,1 / 6,2 м
+                        - superscript [ref=f48e1482]: "2"
+                  - generic [ref=f48e1483]: Беларусь, Минск, Голодеда , 57
+                - link [ref=f48e1485] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1269248
+              - generic [ref=f48e1486]:
+                - generic [ref=f48e1487]:
+                  - generic [ref=f48e1489]: 394 908,71 ƃ
+                  - generic [ref=f48e1491]: UP!час назад
+                - generic [ref=f48e1492]:
+                  - generic [ref=f48e1493]:
+                    - generic [ref=f48e1494]: 2 / 2
+                    - generic [ref=f48e1496]:
+                      - generic [ref=f48e1497]: 3к
+                      - generic [ref=f48e1498]:
+                        - text: 147,2 / 51 / 10,3 м
+                        - superscript [ref=f48e1499]: "2"
+                  - generic [ref=f48e1500]: Беларусь, Русиновичи, Знатная
+                - link [ref=f48e1502] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1269449
+              - generic [ref=f48e1503]:
+                - generic [ref=f48e1504]:
+                  - generic [ref=f48e1506]: 413 986,33 ƃ
+                  - generic [ref=f48e1508]: UP!час назад
+                - generic [ref=f48e1509]:
+                  - generic [ref=f48e1510]:
+                    - generic [ref=f48e1511]: 2 / 5
+                    - generic [ref=f48e1513]:
+                      - generic [ref=f48e1514]: 2к
+                      - generic [ref=f48e1515]:
+                        - text: 56 / 36,7 / 5,7 м
+                        - superscript [ref=f48e1516]: "2"
+                  - generic [ref=f48e1517]: Беларусь, Минск, Захарова , 33
+                - link [ref=f48e1519] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1270374
+              - generic [ref=f48e1520]:
+                - generic [ref=f48e1521]:
+                  - generic [ref=f48e1523]: 345 813,25 ƃ
+                  - generic [ref=f48e1525]: UP!час назад
+                - generic [ref=f48e1526]:
+                  - generic [ref=f48e1527]:
+                    - generic [ref=f48e1528]: 7 / 10
+                    - generic [ref=f48e1530]:
+                      - generic [ref=f48e1531]: 2к
+                      - generic [ref=f48e1532]:
+                        - text: 51,2 / 28,5 / 8,9 м
+                        - superscript [ref=f48e1533]: "2"
+                  - generic [ref=f48e1534]: Беларусь, Минск, Есенина , 141
+                - link [ref=f48e1536] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1270958
+              - generic [ref=f48e1537]:
+                - generic [ref=f48e1538]:
+                  - generic [ref=f48e1540]: 313 944,18 ƃ
+                  - generic [ref=f48e1542]: UP!час назад
+                - generic [ref=f48e1543]:
+                  - generic [ref=f48e1544]:
+                    - generic [ref=f48e1545]: 5 / 5
+                    - generic [ref=f48e1547]:
+                      - generic [ref=f48e1548]: 4к
+                      - generic [ref=f48e1549]:
+                        - text: 58,3 / 42 / 6 м
+                        - superscript [ref=f48e1550]: "2"
+                  - generic [ref=f48e1551]: Беларусь, Минск, Плеханова , 36
+                - link [ref=f48e1553] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1271403
+              - generic [ref=f48e1554]:
+                - generic [ref=f48e1555]:
+                  - generic [ref=f48e1557]: 384 846,09 ƃ
+                  - generic [ref=f48e1559]: UP!час назад
+                - generic [ref=f48e1560]:
+                  - generic [ref=f48e1561]:
+                    - generic [ref=f48e1562]: 2 / 6
+                    - generic [ref=f48e1564]:
+                      - generic [ref=f48e1565]: 3к
+                      - generic [ref=f48e1566]:
+                        - text: 66,4 / 24 / 18 м
+                        - superscript [ref=f48e1567]: "2"
+                  - generic [ref=f48e1568]: Беларусь, Колодищи, Березовая Аллея , 6.18
+                - link [ref=f48e1570] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1271699
+              - generic [ref=f48e1571]:
+                - generic [ref=f48e1572]:
+                  - generic [ref=f48e1574]: 493 094,67 ƃ
+                  - generic [ref=f48e1576]: UP!час назад
+                - generic [ref=f48e1577]:
+                  - generic [ref=f48e1578]:
+                    - generic [ref=f48e1579]: 1 / 1
+                    - generic [ref=f48e1581]:
+                      - generic [ref=f48e1582]: 3к
+                      - generic [ref=f48e1583]:
+                        - text: 115 / 68 м
+                        - superscript [ref=f48e1584]: "2"
+                  - generic [ref=f48e1585]: Беларусь, МАЛИНКА
+                - link [ref=f48e1587] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1271729
+              - generic [ref=f48e1588]:
+                - generic [ref=f48e1589]:
+                  - generic [ref=f48e1591]: 213 900,00 ƃ
+                  - generic [ref=f48e1593]: UP!час назад
+                - generic [ref=f48e1594]:
+                  - generic [ref=f48e1595]:
+                    - generic [ref=f48e1596]: 2 / 9
+                    - generic [ref=f48e1598]:
+                      - generic [ref=f48e1599]: 1к
+                      - generic [ref=f48e1600]:
+                        - text: 39,7 / 17,7 / 8,7 м
+                        - superscript [ref=f48e1601]: "2"
+                  - generic [ref=f48e1602]: Беларусь, Прилуки, Мира , 29
+                - link [ref=f48e1604] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1271813
+              - generic [ref=f48e1605]:
+                - generic [ref=f48e1606]:
+                  - generic [ref=f48e1608]: 480 257,52 ƃ
+                  - generic [ref=f48e1610]: UP!час назад
+                - generic [ref=f48e1611]:
+                  - generic [ref=f48e1612]:
+                    - generic [ref=f48e1613]: 1 / 1
+                    - generic [ref=f48e1615]:
+                      - generic [ref=f48e1616]: 4к
+                      - generic [ref=f48e1617]:
+                        - text: 119 / 80,4 м
+                        - superscript [ref=f48e1618]: "2"
+                  - generic [ref=f48e1619]: Беларусь, Моторово, Советская
+                - link [ref=f48e1621] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1271889
+              - generic [ref=f48e1622]:
+                - generic [ref=f48e1623]:
+                  - generic [ref=f48e1625]: 190 757,70 ƃ
+                  - generic [ref=f48e1627]: UP!час назад
+                - generic [ref=f48e1628]:
+                  - generic [ref=f48e1629]:
+                    - generic [ref=f48e1630]: 2 / 2
+                    - generic [ref=f48e1632]:
+                      - generic [ref=f48e1633]: 3к
+                      - generic [ref=f48e1634]:
+                        - text: 45 / 21,5 / 8,7 м
+                        - superscript [ref=f48e1635]: "2"
+                  - generic [ref=f48e1636]: Беларусь, РОМАШКА СОЛОМОРЕЧЕНСКАЯ
+                - link [ref=f48e1638] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1272204
+              - generic [ref=f48e1639]:
+                - generic [ref=f48e1640]:
+                  - generic [ref=f48e1642]: 417 387,20 ƃ
+                  - generic [ref=f48e1644]: UP!час назад
+                - generic [ref=f48e1645]:
+                  - generic [ref=f48e1646]:
+                    - generic [ref=f48e1647]: 9 / 9
+                    - generic [ref=f48e1649]:
+                      - generic [ref=f48e1650]: 3к
+                      - generic [ref=f48e1651]:
+                        - text: 61,6 / 38 / 7,8 м
+                        - superscript [ref=f48e1652]: "2"
+                  - generic [ref=f48e1653]: Беларусь, Минск, Нахимова , 19
+                - link [ref=f48e1655] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1273538
+              - generic [ref=f48e1656]:
+                - generic [ref=f48e1657]:
+                  - generic [ref=f48e1659]: 248 817,92 ƃ
+                  - generic [ref=f48e1661]: UP!час назад
+                - generic [ref=f48e1662]:
+                  - generic [ref=f48e1663]:
+                    - generic [ref=f48e1664]: 5 / 10
+                    - generic [ref=f48e1666]:
+                      - generic [ref=f48e1667]: 1к
+                      - generic [ref=f48e1668]:
+                        - text: 37 / 17,1 / 10,2 м
+                        - superscript [ref=f48e1669]: "2"
+                  - generic [ref=f48e1670]: Беларусь, Лесной, Александровская , 17
+                - link [ref=f48e1672] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1273698
+              - generic [ref=f48e1673]:
+                - generic [ref=f48e1674]:
+                  - generic [ref=f48e1676]: 356 479,81 ƃ
+                  - generic [ref=f48e1678]: UP!час назад
+                - generic [ref=f48e1679]:
+                  - generic [ref=f48e1680]:
+                    - generic [ref=f48e1681]: 3 / 3
+                    - generic [ref=f48e1683]:
+                      - generic [ref=f48e1684]: 5к
+                      - generic [ref=f48e1685]:
+                        - text: 199,2 / 77,8 / 11,5 м
+                        - superscript [ref=f48e1686]: "2"
+                  - generic [ref=f48e1687]: Беларусь, ЛЕСНОЙ-2
+                - link [ref=f48e1689] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1274149
+              - generic [ref=f48e1690]:
+                - generic [ref=f48e1691]:
+                  - generic [ref=f48e1693]: 460 776,10 ƃ
+                  - generic [ref=f48e1695]: UP!час назад
+                - generic [ref=f48e1696]:
+                  - generic [ref=f48e1697]:
+                    - generic [ref=f48e1698]: 7 / 16
+                    - generic [ref=f48e1700]:
+                      - generic [ref=f48e1701]: 3к
+                      - generic [ref=f48e1702]:
+                        - text: 93,3 / 55,3 / 12,4 м
+                        - superscript [ref=f48e1703]: "2"
+                  - generic [ref=f48e1704]: Беларусь, Минск, Горецкого , 36
+                - link [ref=f48e1706] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1274238
+              - generic [ref=f48e1707]:
+                - generic [ref=f48e1708]:
+                  - generic [ref=f48e1710]: 330 000,01 ƃ
+                  - generic [ref=f48e1712]: UP!час назад
+                - generic [ref=f48e1713]:
+                  - generic [ref=f48e1714]:
+                    - generic [ref=f48e1715]: 2 / 2
+                    - generic [ref=f48e1717]:
+                      - generic [ref=f48e1718]: 4к
+                      - generic [ref=f48e1719]:
+                        - text: 168,6 / 120 м
+                        - superscript [ref=f48e1720]: "2"
+                  - generic [ref=f48e1721]: Беларусь, Новашино, Новаш
+                - link [ref=f48e1723] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275307
+              - generic [ref=f48e1724]:
+                - generic [ref=f48e1725]:
+                  - generic [ref=f48e1727]: 490 886,48 ƃ
+                  - generic [ref=f48e1729]: UP!час назад
+                - generic [ref=f48e1730]:
+                  - generic [ref=f48e1731]:
+                    - generic [ref=f48e1732]: 2 / 9
+                    - generic [ref=f48e1734]:
+                      - generic [ref=f48e1735]: 4к
+                      - generic [ref=f48e1736]:
+                        - text: 100 / 65 / 10,1 м
+                        - superscript [ref=f48e1737]: "2"
+                  - generic [ref=f48e1738]: Беларусь, Минск, Налибокская , 18
+                - link [ref=f48e1740] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275567
+              - generic [ref=f48e1741]:
+                - generic [ref=f48e1742]:
+                  - generic [ref=f48e1744]: 126 348,03 ƃ
+                  - generic [ref=f48e1746]: UP!час назад
+                - generic [ref=f48e1747]:
+                  - generic [ref=f48e1748]:
+                    - generic [ref=f48e1749]: 2 / 2
+                    - generic [ref=f48e1751]:
+                      - generic [ref=f48e1752]: 3к
+                      - generic [ref=f48e1753]:
+                        - text: 66,5 / 50 м
+                        - superscript [ref=f48e1754]: "2"
+                  - generic [ref=f48e1755]: Беларусь, Крутая Гора
+                - link [ref=f48e1757] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275615
+              - generic [ref=f48e1758]:
+                - generic [ref=f48e1759]:
+                  - generic [ref=f48e1761]: 165 453,12 ƃ
+                  - generic [ref=f48e1763]: UP!час назад
+                - generic [ref=f48e1764]:
+                  - generic [ref=f48e1765]:
+                    - generic [ref=f48e1766]: 6 / 10
+                    - generic [ref=f48e1768]:
+                      - generic [ref=f48e1769]: 1к
+                      - generic [ref=f48e1770]:
+                        - text: 19,6 / 14,3 м
+                        - superscript [ref=f48e1771]: "2"
+                  - generic [ref=f48e1772]: Беларусь, Фаниполь, Брестская , 3Б
+                - link [ref=f48e1774] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275724
+              - generic [ref=f48e1775]:
+                - generic [ref=f48e1776]:
+                  - generic [ref=f48e1778]: 414 820,60 ƃ
+                  - generic [ref=f48e1780]: UP!час назад
+                - generic [ref=f48e1781]:
+                  - generic [ref=f48e1782]:
+                    - generic [ref=f48e1783]: 2 / 25
+                    - generic [ref=f48e1785]:
+                      - generic [ref=f48e1786]: 3к
+                      - generic [ref=f48e1787]:
+                        - text: 65,9 / 56,8 м
+                        - superscript [ref=f48e1788]: "2"
+                  - generic [ref=f48e1789]: Беларусь, Минск, Мира просп., 6
+                - link [ref=f48e1791] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275786
+              - generic [ref=f48e1792]:
+                - generic [ref=f48e1793]:
+                  - generic [ref=f48e1795]: 451 157,10 ƃ
+                  - generic [ref=f48e1797]: UP!час назад
+                - generic [ref=f48e1798]:
+                  - generic [ref=f48e1799]:
+                    - generic [ref=f48e1800]: 3 / 3
+                    - generic [ref=f48e1802]:
+                      - generic [ref=f48e1803]: 5к
+                      - generic [ref=f48e1804]:
+                        - text: 216,7 / 121 / 16 м
+                        - superscript [ref=f48e1805]: "2"
+                  - generic [ref=f48e1806]: Беларусь, Ореховская, Центральная
+                - link [ref=f48e1808] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275795
+              - generic [ref=f48e1809]:
+                - generic [ref=f48e1810]:
+                  - generic [ref=f48e1812]: 344 943,03 ƃ
+                  - generic [ref=f48e1814]: UP!час назад
+                - generic [ref=f48e1815]:
+                  - generic [ref=f48e1816]:
+                    - generic [ref=f48e1817]: 5 / 9
+                    - generic [ref=f48e1819]:
+                      - generic [ref=f48e1820]: 3к
+                      - generic [ref=f48e1821]:
+                        - text: 61,9 / 40,4 / 8,2 м
+                        - superscript [ref=f48e1822]: "2"
+                  - generic [ref=f48e1823]: Беларусь, Минск, Асаналиева , 26
+                - link [ref=f48e1825] [cursor=pointer]:
+                  - /url: https://r.onliner.by/pk/apartments/1275955
+            - generic [ref=f48e1826]:
+              - link "Следующие 96 объявлений" [ref=f48e1827] [cursor=pointer]:
+                - /url: "#"
+              - generic [ref=f48e1828]: "1"
+    - contentinfo [ref=f48e1831]:
+      - generic [ref=f48e1834]:
+        - generic [ref=f48e1835]:
+          - list [ref=f48e1836]:
+            - listitem [ref=f48e1837]:
+              - link "О компании" [ref=f48e1838] [cursor=pointer]:
+                - /url: https://blog.onliner.by/about
+            - listitem [ref=f48e1839]:
+              - link "Контакты редакции" [ref=f48e1840] [cursor=pointer]:
+                - /url: https://people.onliner.by/contacts
+            - listitem [ref=f48e1841]:
+              - link "Реклама" [ref=f48e1842] [cursor=pointer]:
+                - /url: https://b2breg.onliner.by/advertising
+            - listitem [ref=f48e1843]:
+              - link "Тарифы" [ref=f48e1844] [cursor=pointer]:
+                - /url: https://docs.google.com/spreadsheets/d/1pDQOO6NOl4z2yjJeYzkb7CFzh9LgY2NF/preview
+            - listitem [ref=f48e1845]:
+              - link "Манифест" [ref=f48e1846] [cursor=pointer]:
+                - /url: https://blog.onliner.by/manifest
+            - listitem [ref=f48e1847]:
+              - link "Пользовательское соглашение" [ref=f48e1848] [cursor=pointer]:
+                - /url: https://blog.onliner.by/siterules
+            - listitem [ref=f48e1849]:
+              - link "Публичные договоры" [ref=f48e1850] [cursor=pointer]:
+                - /url: https://blog.onliner.by/publichnye-dogovory
+            - listitem [ref=f48e1851]:
+              - link "Политика обработки персональных данных" [ref=f48e1852] [cursor=pointer]:
+                - /url: https://blog.onliner.by/politika-konfidencialnosti
+            - listitem [ref=f48e1853]:
+              - link "Поддержка пользователей" [ref=f48e1854] [cursor=pointer]:
+                - /url: https://support.onliner.by
+            - listitem [ref=f48e1855]:
+              - link "Информация для покупателей" [ref=f48e1856] [cursor=pointer]:
+                - /url: https://blog.onliner.by/informaciya-dlya-pokupatelya
+            - listitem [ref=f48e1857]: Настройка cookie
+          - generic [ref=f48e1858]:
+            - link [ref=f48e1859] [cursor=pointer]:
+              - /url: https://t.me/+RH9nPH0rIHI4Y2Uy
+            - link [ref=f48e1860] [cursor=pointer]:
+              - /url: https://www.instagram.com/onlinerby
+            - link [ref=f48e1861] [cursor=pointer]:
+              - /url: https://vk.com/onliner
+            - link [ref=f48e1862] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@onlinereasy
+            - link [ref=f48e1863] [cursor=pointer]:
+              - /url: https://www.threads.com/@onlinerby/post/CuV4cMZIOVq?xmt=AQF0snhF3SR3NnEmU-lD9P9ZYnoHfmoFEri491nU8dSc5g
+        - generic [ref=f48e1864]:
+          - img "Onlíner" [ref=f48e1866]
+          - generic [ref=f48e1867]: © 2001—2026 Onlíner
+  - generic [ref=f48e1870]:
+    - generic [ref=f48e1871]: Мы используем cookie, чтобы сделать сайт удобнее
+    - generic [ref=f48e1872]: Мы обрабатываем cookie, чтобы ваш веб-серфинг шел как по маслу, а скидки и рекомендации для вас были точно в яблочко! Хотите адаптировать настройки под себя? Настроить Cookies
+    - generic [ref=f48e1873]:
+      - generic [ref=f48e1874] [cursor=pointer]: Отклонить
+      - generic [ref=f48e1875] [cursor=pointer]: Принять все cookie
+    - generic [ref=f48e1876]:
+      - text: Ознакомиться со
+      - link "списком cookie-файлов" [ref=f48e1877] [cursor=pointer]:
+        - /url: https://blog.onliner.by/spisok-fajlov-cookie
+      - text: и
+      - link "Политикой в отношении обработки cookie-файлов" [ref=f48e1878] [cursor=pointer]:
+        - /url: https://blog.onliner.by/politika-v-otnoshenii-obrabotki-cookie-fajlov

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/quiz.css">
 <style>
 :root {
   --olive: #474a1a;
@@ -581,7 +582,7 @@ footer .fmeta {
   <div class="hi">
     <a href="/" class="hlogo">L&D <span>без суеты</span></a>
     <nav class="hnav">
-      <a href="/course/">← Курс</a>
+      <a href="/course/">← Программа</a>
       <a href="/booster/">Бустер</a>
       <a href="/blog/">Блог</a>
     </nav>
@@ -1200,6 +1201,42 @@ Go/No-Go после пилота: если [метрика] &lt; [порог] �
   <li><strong>Документ:</strong> если вы работаете в компании — запросите внутреннюю методику расчёта ROI проектов и сравните с нашей. Возможно, в компании уже есть утверждённая формула — используйте её, цифры будут убедительнее.</li>
 </ul>
 
+<div class="quiz" data-quiz-id="m03-lesson-02">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">1. Как посчитать ROI от AI в обучении?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Цена подписки на AI × количество сотрудников</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> (Сэкономленные часы × стоимость часа) − затраты на AI-инструменты</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Количество скачанных PDF × 100</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">2. Что такое «низко висящий фрукт» в AI-внедрении?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> Задача, которую легко автоматизировать и сразу измерить эффект</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> Самая сложная задача в отделе</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> Бесплатный AI-инструмент</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">3. Какой горизонт планирования для AI-дорожной карты?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> 1 неделя</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> 5 лет</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> 3–6 месяцев для первых результатов, 12 месяцев для системы</label>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">4. Что важнее при старте: технология или процесс?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> Технология — без хорошего инструмента ничего не выйдет</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> Процесс — AI усиливает то, что уже работает, а не чинит сломанное</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Они одинаково важны</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
 <div class="nav-bottom">
   <a href="lesson-01-ai-readiness.html">← Урок 1. AI Readiness</a>
   <a href="/course/" class="nav-next">← К курсу</a>
@@ -1232,6 +1269,8 @@ Go/No-Go после пилота: если [метрика] &lt; [порог] �
   });
 })();
 </script>
+
+<script src="/scripts/quiz.js"></script>
 
 </body>
 </html>

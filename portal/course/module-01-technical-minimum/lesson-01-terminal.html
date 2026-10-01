@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/quiz.css">
 <style>
 :root {
   --olive: #474a1a;
@@ -581,7 +582,7 @@ footer .fmeta {
   <div class="hi">
     <a href="/" class="hlogo">L&D <span>без суеты</span></a>
     <nav class="hnav">
-      <a href="/course/">← Курс</a>
+      <a href="/course/">← Программа</a>
       <a href="/booster/">Бустер</a>
       <a href="/blog/">Блог</a>
     </nav>
@@ -596,7 +597,7 @@ footer .fmeta {
     <p class="meta">Урок 1</p>
 
     <ul class="outcomes">
-      <li>Открыть PowerShell и не испугаться</li>
+      <li>Открыть PowerShell и освоиться в терминале</li>
       <li>Ориентироваться в файловой системе через команды</li>
       <li>Создавать, копировать, удалять файлы и папки</li>
       <li>Объяснить коллеге разницу между cmd и PowerShell</li>
@@ -953,7 +954,7 @@ PS C:\Users\ИмяПользователя&gt;</pre>
 
 <h3>Что дальше</h3>
 
-<p>На следующем уроке — <strong>Git</strong>. Вы научитесь сохранять версии файлов, делать коммиты и не бояться слова «репозиторий». Но сначала закрепите терминал. Если какой-то шаг был непонятен — вернитесь и повторите.</p>
+<p>В следующем материале — <strong>Git</strong>. Вы научитесь сохранять версии файлов, делать коммиты и не бояться слова «репозиторий». Но сначала закрепите терминал. Если какой-то шаг был непонятен — вернитесь и повторите.</p>
 
 <h3>Дополнительно (необязательно, но полезно)</h3>
 
@@ -963,9 +964,45 @@ PS C:\Users\ИмяПользователя&gt;</pre>
   <li>Введите <code>Write-Host "Привет, мир!"</code> — терминал напечатает «Привет, мир!»</li>
 </ul>
 
+<div class="quiz" data-quiz-id="m01-lesson-01">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">1. Что делает команда <code>pwd</code>?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Показывает путь к текущей директории</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Создаёт новую папку</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Удаляет файл</label>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">2. Как перейти в папку на уровень выше?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> <code>cd top</code></label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> <code>cd ..</code></label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> <code>cd up</code></label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">3. Что делает команда <code>mkdir projects</code>?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Создаёт папку с именем projects</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Открывает папку projects</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Удаляет папку projects</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">4. Чем терминал принципиально отличается от проводника?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> В терминале нельзя посмотреть содержимое папки</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> Терминал работает только на Windows</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Терминал даёт точный текстовый контроль — проводник прячет детали</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
 <div class="nav-bottom">
   <div></div>
-  <a href="lesson-02-git.html" class="nav-next">Урок 2. Git: версионирование и первый коммит →</a>
+  <a href="lesson-02-git.html" class="nav-next">М1. Урок 2. Git: версионирование и первый коммит →</a>
 </div>
 
 </div>
@@ -995,6 +1032,8 @@ PS C:\Users\ИмяПользователя&gt;</pre>
   });
 })();
 </script>
+
+<script src="/scripts/quiz.js"></script>
 
 </body>
 </html>

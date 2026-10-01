@@ -5,6 +5,11 @@
       "type": "local",
       "command": ["npx.cmd", "-y", "@playwright/mcp@latest", "--browser", "msedge"],
       "enabled": true
+    },
+    "inspo": {
+      "type": "local",
+      "command": ["npx.cmd", "-y", "inspo-mcp"],
+      "enabled": true
     }
   }
 }

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI для онбординга: оценка + сценарий внедрения — L&D без суеты</title>
+<meta name="description" content="Опросник «Как прошёл первый месяц» + сценарий внедрения за 4 шага. Готово к печати.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--olive:#474a1a;--terracotta:#b05a2e;--muted:#737366;--border:#e0ded8;--surface:#f4f4ef;--ink:#2b2b1a}
+
+body{font-family:'Geist',sans-serif;font-weight:400;font-size:1rem;line-height:1.7;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+
+.page{max-width:720px;margin:0 auto;padding:0 48px}
+
+/* ── Cover ── */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.cover-watermark{position:absolute;left:-30px;top:50%;transform:translateY(-50%);font-size:220px;font-weight:100;color:var(--olive);opacity:.03;line-height:.85;pointer-events:none;user-select:none}
+.cover-inner{position:relative;z-index:1}
+.cover-tag{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--terracotta);margin-bottom:20px}
+.cover h1{font-size:2.3rem;font-weight:650;line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;max-width:580px}
+.cover-sub{font-size:1.15rem;color:var(--muted);line-height:1.55;margin-bottom:44px;max-width:520px}
+.cover-brand{margin-top:auto;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:.02em}
+
+/* ── Sections ── */
+.section{padding-top:80px}
+.section:first-of-type{padding-top:40px}
+.section h2{font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:24px;letter-spacing:-.01em;padding-left:20px;border-left:3px solid var(--olive)}
+.section h3{font-size:1.1rem;font-weight:600;color:var(--ink);margin:36px 0 12px;letter-spacing:-.01em}
+.section p{font-size:1rem;color:var(--muted);margin-bottom:16px;line-height:1.7}
+
+/* ── Prompt block ── */
+.prompt-block{margin:24px 0 36px;padding:28px 32px;background:var(--surface);font-size:.92rem;line-height:1.6;white-space:pre-wrap;color:var(--ink);overflow-x:auto}
+
+/* ── Results block ── */
+.result-block{margin:20px 0 40px;padding:24px 28px;border:1px solid var(--border);font-size:.95rem;line-height:1.8}
+.result-block strong{color:var(--olive);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:16px}
+.result-block strong:first-child{margin-top:0}
+
+/* ── Scenario steps ── */
+.scenario-steps{margin:32px 0;display:flex;flex-direction:column;gap:24px}
+.scenario-step{display:flex;gap:20px;align-items:flex-start}
+.step-num{width:40px;height:40px;border:2px solid var(--olive);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:var(--olive);flex-shrink:0}
+.step-body h3{font-size:1.05rem;font-weight:550;color:var(--ink);margin:2px 0 8px}
+.step-body p{font-size:.95rem;color:var(--muted);line-height:1.6;margin:0}
+
+/* ── Divider ── */
+.geo-div{display:flex;align-items:center;gap:16px;margin:64px 0}.geo-div .line{flex:1;height:1px;background:var(--border)}.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+/* ── Print ── */
+@media print{
+  body{font-size:11pt;line-height:1.5}
+  .page{max-width:100%;padding:0 32px}
+  .cover{min-height:auto;padding:60px 0}
+  .cover-watermark{font-size:140px}
+  .section{padding-top:40px;page-break-inside:avoid}
+  .prompt-block{font-size:9pt;padding:16px 20px;page-break-inside:avoid}
+  .result-block{font-size:9pt;page-break-inside:avoid}
+}
+
+@media(max-width:768px){
+  .page{padding:0 24px}
+  .cover-watermark{font-size:120px;left:-20px}
+  .cover h1{font-size:1.6rem}
+  .scenario-step{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Cover ── -->
+<div class="cover">
+  <div class="cover-watermark">ONB</div>
+  <div class="cover-inner">
+    <p class="cover-tag">AI для онбординга · Воркбук</p>
+    <h1>Оценка онбординга через 30 дней + сценарий внедрения</h1>
+    <p class="cover-sub">Опросник из 7 вопросов, на которые хочется отвечать. И пошаговый план: как внедрить AI в онбординг за неделю.</p>
+    <p class="cover-brand">L&D без суеты</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 5: ОЦЕНКА ОНБОРДИНГА ═══ -->
+<div class="section page">
+  <div class="page-inner">
+    <h2>5. Оценка онбординга через 30 дней</h2>
+    <p>Опросник, на который хочется отвечать. 7 вопросов — 5 минут.</p>
+
+    <h3>Промпт</h3>
+    <div class="prompt-block">system: Ты — L&D-методист. Проектируешь опросники, на которые люди отвечают с удовольствием. Никаких «оцените по шкале». Вопросы цепляют за живое.
+
+Составь опросник «Как прошёл твой первый месяц» для [ДОЛЖНОСТЬ].
+
+Требования:
+- 7-8 вопросов
+- Только 2 со шкалой 0-10, остальные открытые
+- Блок 1 (3 вопроса): ощущения — «Что чувствуешь спустя месяц?», «Что было самым трудным?»
+- Блок 2 (3 вопроса): процессы — «Какой информации не хватило?», «Что узнал слишком поздно?», «Кто из коллег помог больше всего?»
+- Блок 3 (2 вопроса): будущее — «Что бы изменил для следующего новичка?», «Твой совет руководителю одним предложением»
+- Финальный вопрос: «Насколько уверен, что останешься через год?» (0-10)
+- Без «оцените качество инструктажа»</div>
+
+    <h3>Когда отправлять</h3>
+    <p>День 28-30. Не раньше. Отправляет руководитель личным сообщением. Если на вопрос «останешься через год» ниже 7 — красный флаг, повод для разговора.</p>
+
+    <h3>Пример результата</h3>
+    <div class="result-block">
+      <strong>Блок 1: Ощущения</strong>
+      <p>1. Месяц спустя — что ты чувствуешь? (открытый)<br>
+      2. Что было самым трудным за этот месяц? (открытый)<br>
+      3. Что неожиданно порадовало? (открытый)</p>
+
+      <strong>Блок 2: Процессы</strong>
+      <p>4. Какой информации тебе не хватило? (открытый)<br>
+      5. Что ты узнал слишком поздно? (открытый)<br>
+      6. Кто из коллег помог больше всего? (открытый)</p>
+
+      <strong>Блок 3: Будущее</strong>
+      <p>7. Что бы ты изменил для следующего новичка? (открытый)<br>
+      8. Твой совет руководителю — одним предложением (открытый)</p>
+
+      <strong>Финальный</strong>
+      <p>Насколько ты уверен, что останешься через год? 0–10</p>
+    </div>
+  </div>
+</div>
+
+<div class="page"><div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div></div>
+
+<!-- ═══ СЦЕНАРИЙ ВНЕДРЕНИЯ ═══ -->
+<div class="section page">
+  <div class="page-inner">
+    <h2>Сценарий внедрения за 4 шага</h2>
+    <div class="scenario-steps">
+      <div class="scenario-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>ПН, 40 мин: Один промпт через себя</h3>
+          <p>Выберите ОДИН шаблон под самую острую боль. Скопируйте → замените [переменные] → отправьте в ChatGPT → посмотрите результат. Не пытайтесь внедрить всё сразу.</p>
+        </div>
+      </div>
+      <div class="scenario-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>ВТ, 30 мин: Покажите руководителю</h3>
+          <p>Скажите: «Я подготовил план адаптации для нового менеджера. Посмотри — норм?» Руководитель видит пользу, а не технологию.</p>
+        </div>
+      </div>
+      <div class="scenario-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>СР, 20 мин: Запустите на одном новичке</h3>
+          <p>Не на потоке. На одном. Дайте ему AI-бадди или план. Через неделю спросите: «Помогло?»</p>
+        </div>
+      </div>
+      <div class="scenario-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>ПТ, 15 мин: Замерьте результат</h3>
+          <p>Две цифры: (1) сколько раз новичок обратился к вам с вопросами за неделю, (2) что он помнит из плана адаптации. Через месяц — опросник (Шаблон 5).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+  <p style="font-size:.9rem;color:var(--muted);text-align:center;margin-bottom:60px">Из воркбука «AI для онбординга: 5 промптов, которые запустят адаптацию за 2 часа»<br>Автор: Наташа, методист с 17 годами в корпоративном обучении · Telegram @mrk_natalia</p>
+</div>
+
+</body>
+</html>

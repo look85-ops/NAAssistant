@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/quiz.css">
 <style>
 :root {
   --olive: #474a1a;
@@ -581,7 +582,7 @@ footer .fmeta {
   <div class="hi">
     <a href="/" class="hlogo">L&D <span>без суеты</span></a>
     <nav class="hnav">
-      <a href="/course/">← Курс</a>
+      <a href="/course/">← Программа</a>
       <a href="/booster/">Бустер</a>
       <a href="/blog/">Блог</a>
     </nav>
@@ -1216,9 +1217,45 @@ $response.choices[0].message.content</code></pre>
   <li>Прочитайте раздел "Making requests" в документации OpenRouter: <a href="https://openrouter.ai/docs/quick-start" target="_blank">openrouter.ai/docs/quick-start</a></li>
 </ul>
 
+<div class="quiz" data-quiz-id="m01-lesson-03">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">1. Что такое API?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Интерфейс, через который программы обмениваются данными и командами</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Язык программирования для веб-серверов</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Программа для тестирования кода</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">2. Какой HTTP-метод используется для получения данных?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> POST</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> PUT</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> GET</label>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">3. Что такое API-ключ?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Пароль от вашего компьютера</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Уникальный идентификатор, который подтверждает ваше право обращаться к API</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Название команды в терминале</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">4. В каком формате API обычно возвращает данные?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> JSON — текстовый формат, похожий на словарь</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> PDF-документ</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Изображение в формате PNG</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
 <div class="nav-bottom">
   <a href="lesson-02-git.html">← Урок 2. Git</a>
-  <a href="../../module-02-ai-from-prompt-to-product/lesson-01-llm-internals.html" class="nav-next">Модуль 2. Урок 1. LLM →</a>
+  <a href="../../module-02-ai-from-prompt-to-product/lesson-01-llm-internals.html" class="nav-next">М2. Урок 1. LLM →</a>
 </div>
 
 </div>
@@ -1248,6 +1285,8 @@ $response.choices[0].message.content</code></pre>
   });
 })();
 </script>
+
+<script src="/scripts/quiz.js"></script>
 
 </body>
 </html>

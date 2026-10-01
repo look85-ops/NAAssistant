@@ -1,0 +1,598 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - banner [ref=e5]:
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - link "Главная Куфара" [ref=e10] [cursor=pointer]:
+              - /url: https://www.kufar.by
+            - link "Путешествия" [ref=e11] [cursor=pointer]:
+              - /url: https://travel.kufar.by
+            - link "Авто" [ref=e12] [cursor=pointer]:
+              - /url: https://auto.kufar.by
+            - link "Услуги" [ref=e13] [cursor=pointer]:
+              - /url: https://www.kufar.by/l/uslugi
+            - link "Для бизнеса" [ref=e14] [cursor=pointer]:
+              - /url: https://business.kufar.by/
+            - link "Безопасность" [ref=e15] [cursor=pointer]:
+              - /url: https://helpcenter.kufar.by/knowledge_base/24279
+            - link "Куфар Карта" [ref=e16] [cursor=pointer]:
+              - /url: https://karta.kufar.by/
+            - link "Куфар Медиа" [ref=e17] [cursor=pointer]:
+              - /url: https://media.kufar.by/
+          - generic [ref=e18]:
+            - generic "Сообщения" [ref=e19] [cursor=pointer]
+            - generic "Избранные поиски" [ref=e22] [cursor=pointer]
+            - generic "Избранные объявления" [ref=e26] [cursor=pointer]
+            - generic "Уведомления" [ref=e29] [cursor=pointer]
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - button [ref=e37] [cursor=pointer]:
+                - img "kufar logo" [ref=e39]
+              - generic [ref=e40]: Недвижимость
+            - generic [ref=e41]:
+              - generic [ref=e43]:
+                - generic [ref=e44]: Продажа
+                - generic [ref=e48]: Аренда
+                - generic [ref=e52]: Новостройки
+                - generic [ref=e56]: Коммерческая
+                - link "Блог" [ref=e60] [cursor=pointer]:
+                  - /url: https://media.kufar.by/nedvizhimost
+              - generic [ref=e62] [cursor=pointer]: Квартиры в Минске
+          - generic [ref=e63]:
+            - button "Подать объявление" [ref=e66] [cursor=pointer]
+            - button "Войти" [ref=e72] [cursor=pointer]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - heading [level=1] [ref=e77]:
+            - img "chine-notification" [ref=e78]: 🔔
+            - text: Подпишитесь на уведомления
+          - paragraph [ref=e79]: "Много полезного: акции, подборки, новости, советы, как продавать безопасно и быстро"
+        - generic [ref=e80]:
+          - button "Нет, спасибо" [ref=e81]
+          - button "Подписаться" [ref=e82] [cursor=pointer]
+      - main [ref=e83]:
+        - generic [ref=e85]:
+          - generic [ref=e86] [cursor=pointer]:
+            - generic [ref=e89]:
+              - heading "Куфар – №1 в недвижимости" [level=4] [ref=e90]
+              - paragraph [ref=e91]: Надёжный сервис для поиска квартир
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - generic: Купить
+                - generic [ref=e96]: Снять
+                - generic [ref=e97]: Посуточно
+                - button "Минск" [ref=e100]
+              - generic [ref=e105]:
+                - generic [ref=e106]:
+                  - generic [ref=e107]: Квартиры
+                  - textbox "Район, улица, дом" [ref=e121]
+                  - button "Цена" [ref=e125]
+                  - button "Комнат" [ref=e131]
+                - button "Ещё фильтры" [ref=e134]
+              - generic [ref=e135]:
+                - button "Смотреть на карте" [ref=e136]
+                - button "Показать (13089)" [ref=e141]
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - img "diamond" [ref=e145]
+              - generic [ref=e146]: Премиум объявления
+            - generic [ref=e147]:
+              - link "246 410 р. 5 471 р. за м2 1 комн., 45.04 м², этаж 2 Игоря Лученка ул, 22, Минск, мкр. Минск-Мир Аэродромная 24 июл., 09:37" [ref=e149] [cursor=pointer]:
+                - /url: https://re.kufar.by/vi/minsk/kupit/kvartiru/v-novostrojke/bez-otdelki/1078350113?mainRegion=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&rank=0&searchId=1d70584b-e0bd-462a-8193-8fd489bc8c21&utm_campaign=main&utm_medium=premium&utm_source=rekufar
+                - generic [ref=e155]:
+                  - generic [ref=e156]:
+                    - generic [ref=e157]:
+                      - generic [ref=e158]: 246 410 р.
+                      - generic [ref=e159]: 5 471 р. за м2
+                    - generic [ref=e160]:
+                      - generic [ref=e161]: 1 комн., 45.04 м², этаж 2
+                      - generic [ref=e162]: Игоря Лученка ул, 22, Минск, мкр. Минск-Мир
+                      - generic [ref=e164]: Аэродромная
+                  - generic [ref=e176]: 24 июл., 09:37
+              - link "178 769 р. 5 780 р. за м2 1 комн., 30.91 м², этаж 5 Игоря Лученка ул, 22, Минск, мкр. Минск-Мир Аэродромная 24 июл., 09:37" [ref=e178] [cursor=pointer]:
+                - /url: https://re.kufar.by/vi/minsk/kupit/kvartiru/v-novostrojke/bez-otdelki/1078350114?mainRegion=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&rank=1&searchId=1d70584b-e0bd-462a-8193-8fd489bc8c21&utm_campaign=main&utm_medium=premium&utm_source=rekufar
+                - generic [ref=e184]:
+                  - generic [ref=e185]:
+                    - generic [ref=e186]:
+                      - generic [ref=e187]: 178 769 р.
+                      - generic [ref=e188]: 5 780 р. за м2
+                    - generic [ref=e189]:
+                      - generic [ref=e190]: 1 комн., 30.91 м², этаж 5
+                      - generic [ref=e191]: Игоря Лученка ул, 22, Минск, мкр. Минск-Мир
+                      - generic [ref=e193]: Аэродромная
+                  - generic [ref=e205]: 24 июл., 09:37
+              - link "226 058 р. 4 658 р. за м2 1 комн., 48.53 м², этаж 15 Николы Теслы ул, 33, Минск, мкр. Минск-Мир Аэродромная 23 июл., 18:36" [ref=e207] [cursor=pointer]:
+                - /url: https://re.kufar.by/vi/minsk/kupit/kvartiru/v-novostrojke/bez-otdelki/1078285785?mainRegion=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&rank=2&searchId=1d70584b-e0bd-462a-8193-8fd489bc8c21&utm_campaign=main&utm_medium=premium&utm_source=rekufar
+                - generic [ref=e231]:
+                  - generic [ref=e232]:
+                    - generic [ref=e233]:
+                      - generic [ref=e234]: 226 058 р.
+                      - generic [ref=e235]: 4 658 р. за м2
+                    - generic [ref=e236]:
+                      - generic [ref=e237]: 1 комн., 48.53 м², этаж 15
+                      - generic [ref=e238]: Николы Теслы ул, 33, Минск, мкр. Минск-Мир
+                      - generic [ref=e240]: Аэродромная
+                  - generic [ref=e252]: 23 июл., 18:36
+              - link "239 571 р. 4 846 р. за м2 1 комн., 49.44 м², этаж 12 Игоря Лученка ул, 4, Минск, мкр. Минск-Мир Аэродромная 30 июн., 18:37" [ref=e254] [cursor=pointer]:
+                - /url: https://re.kufar.by/vi/minsk/kupit/kvartiru/v-novostrojke/bez-otdelki/1069648072?mainRegion=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&rank=3&searchId=1d70584b-e0bd-462a-8193-8fd489bc8c21&utm_campaign=main&utm_medium=premium&utm_source=rekufar
+                - generic [ref=e260]:
+                  - generic [ref=e261]:
+                    - generic [ref=e262]:
+                      - generic [ref=e263]: 239 571 р.
+                      - generic [ref=e264]: 4 846 р. за м2
+                    - generic [ref=e265]:
+                      - generic [ref=e266]: 1 комн., 49.44 м², этаж 12
+                      - generic [ref=e267]: Игоря Лученка ул, 4, Минск, мкр. Минск-Мир
+                      - generic [ref=e269]: Аэродромная
+                  - generic [ref=e281]: 30 июн., 18:37
+              - link "226 437 р. 4 842 р. за м2 1 комн., 46.73 м², этаж 9 Игоря Лученка ул, 4, Минск, мкр. Минск-Мир Аэродромная 30 июн., 17:42" [ref=e283] [cursor=pointer]:
+                - /url: https://re.kufar.by/vi/minsk/kupit/kvartiru/v-novostrojke/bez-otdelki/1069648035?mainRegion=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&rank=4&searchId=1d70584b-e0bd-462a-8193-8fd489bc8c21&utm_campaign=main&utm_medium=premium&utm_source=rekufar
+                - generic [ref=e289]:
+                  - generic [ref=e290]:
+                    - generic [ref=e291]:
+                      - generic [ref=e292]: 226 437 р.
+                      - generic [ref=e293]: 4 842 р. за м2
+                    - generic [ref=e294]:
+                      - generic [ref=e295]: 1 комн., 46.73 м², этаж 9
+                      - generic [ref=e296]: Игоря Лученка ул, 4, Минск, мкр. Минск-Мир
+                      - generic [ref=e298]: Аэродромная
+                  - generic [ref=e310]: 30 июн., 17:42
+          - generic [ref=e311]:
+            - generic [ref=e312]: Новости недвижимости
+            - generic [ref=e313]:
+              - link "Сколько стоит снять жильё студенту в Беларуси? Сколько стоит снять жильё студенту в Беларуси? 27.08.2026" [ref=e314] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/skolko-stoit-snyat-zhile-studentu-v-belarusi
+                - img "Сколько стоит снять жильё студенту в Беларуси?" [ref=e316]
+                - generic [ref=e317]:
+                  - generic [ref=e318]: Сколько стоит снять жильё студенту в Беларуси?
+                  - text: 27.08.2026
+              - link "Что происходит с кредитами на недвижимость? Что происходит с кредитами на недвижимость? 05.08.2026" [ref=e319] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/chto-proishodit-s-kreditami-na-nedvizhimost
+                - img "Что происходит с кредитами на недвижимость?" [ref=e321]
+                - generic [ref=e322]:
+                  - generic [ref=e323]: Что происходит с кредитами на недвижимость?
+                  - text: 05.08.2026
+              - link "Как выбрать кабинет в аренду Как выбрать кабинет в аренду 02.07.2026" [ref=e324] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/kak-vybrat-kabinet-v-arendu
+                - img "Как выбрать кабинет в аренду" [ref=e326]
+                - generic [ref=e327]:
+                  - generic [ref=e328]: Как выбрать кабинет в аренду
+                  - text: 02.07.2026
+              - link "Рынок квартир в 2026 году Рынок квартир в 2026 году 16.06.2026" [ref=e329] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/rynok-kvartir-v-2026-godu
+                - img "Рынок квартир в 2026 году" [ref=e331]
+                - generic [ref=e332]:
+                  - generic [ref=e333]: Рынок квартир в 2026 году
+                  - text: 16.06.2026
+              - link "История одного переезда История одного переезда 25.06.2026" [ref=e334] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/istoriya-odnogo-pereezda
+                - img "История одного переезда" [ref=e336]
+                - generic [ref=e337]:
+                  - generic [ref=e338]: История одного переезда
+                  - text: 25.06.2026
+              - link "Стоит ли сейчас покупать квартиру как инвестицию? Стоит ли сейчас покупать квартиру как инвестицию? 21.05.2026" [ref=e339] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/stoit-li-seychas-pokupat-kvartiru-kak-investiciyu
+                - img "Стоит ли сейчас покупать квартиру как инвестицию?" [ref=e341]
+                - generic [ref=e342]:
+                  - generic [ref=e343]: Стоит ли сейчас покупать квартиру как инвестицию?
+                  - text: 21.05.2026
+              - link "Сколько стоит жильё в городах-спутниках? Обзор Куфар Недвижимости Сколько стоит жильё в городах-спутниках? Обзор Куфар Недвижимости 22.05.2026" [ref=e344] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/stoimost-zhilya-v-gorodah-sputnikah-obzor-kufar-nedvizhimosti
+                - img "Сколько стоит жильё в городах-спутниках? Обзор Куфар Недвижимости" [ref=e346]
+                - generic [ref=e347]:
+                  - generic [ref=e348]: Сколько стоит жильё в городах-спутниках? Обзор Куфар Недвижимости
+                  - text: 22.05.2026
+              - link "7 квартир в «Северном Береге», готовых к заселению прямо сейчас 7 квартир в «Северном Береге», готовых к заселению прямо сейчас 30.04.2026" [ref=e349] [cursor=pointer]:
+                - /url: https://media.kufar.by/nedvizhimost/7-kvartir-v-severnom-berege-gotovyh-k-zaseleniyu-pryamo-seychas
+                - img "7 квартир в «Северном Береге», готовых к заселению прямо сейчас" [ref=e351]
+                - generic [ref=e352]:
+                  - generic [ref=e353]: 7 квартир в «Северном Береге», готовых к заселению прямо сейчас
+                  - text: 30.04.2026
+            - link [ref=e355] [cursor=pointer]:
+              - /url: https://media.kufar.by/nedvizhimost
+              - text: Смотреть все
+              - img "chevron" [ref=e357]
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - generic [ref=e360] [cursor=pointer]: Купить
+              - generic [ref=e361] [cursor=pointer]: Снять
+            - generic [ref=e362]:
+              - link "category Квартиру" [ref=e363] [cursor=pointer]:
+                - /url: /l/minsk/kupit/kvartiru
+                - img "category" [ref=e364]
+                - generic [ref=e365]: Квартиру
+              - link "category Новостройку" [ref=e366] [cursor=pointer]:
+                - /url: /l/minsk/kupit/novostrojki
+                - img "category" [ref=e367]
+                - generic [ref=e368]: Новостройку
+              - link "category Комнату" [ref=e369] [cursor=pointer]:
+                - /url: /l/minsk/kupit/komnatu
+                - img "category" [ref=e370]
+                - generic [ref=e371]: Комнату
+              - link "category Дом" [ref=e372] [cursor=pointer]:
+                - /url: /l/minsk/kupit/dom
+                - img "category" [ref=e373]
+                - generic [ref=e374]: Дом
+              - link "category Офис" [ref=e375] [cursor=pointer]:
+                - /url: /l/minsk/kupit/kommercheskaya/ofisy
+                - img "category" [ref=e376]
+                - generic [ref=e377]: Офис
+              - link "category Гараж" [ref=e378] [cursor=pointer]:
+                - /url: /l/minsk/kupit/garazh
+                - img "category" [ref=e379]
+                - generic [ref=e380]: Гараж
+            - generic [ref=e382]:
+              - heading "Продажа квартир в Минске" [level=3] [ref=e383]
+              - generic [ref=e384]:
+                - button [ref=e385]:
+                  - heading "В Районе" [level=3] [ref=e386]
+                - generic [ref=e387]:
+                  - link "Центральный" [ref=e388] [cursor=pointer]:
+                    - /url: /l/minsk-centralnyj-rajon/kupit/kvartiru
+                  - link "Советский" [ref=e389] [cursor=pointer]:
+                    - /url: /l/minsk-sovetskij-rajon/kupit/kvartiru
+                  - link "Первомайский" [ref=e390] [cursor=pointer]:
+                    - /url: /l/minsk-pervomajskij-rajon/kupit/kvartiru
+                  - link "Партизанский" [ref=e391] [cursor=pointer]:
+                    - /url: /l/minsk-partizanskij-rajon/kupit/kvartiru
+                  - link "Заводской" [ref=e392] [cursor=pointer]:
+                    - /url: /l/minsk-zavodskoj-rajon/kupit/kvartiru
+                  - link "Ленинский" [ref=e393] [cursor=pointer]:
+                    - /url: /l/minsk-leninskij-rajon/kupit/kvartiru
+                  - link "Октябрьский" [ref=e394] [cursor=pointer]:
+                    - /url: /l/minsk-oktyabrskij-rajon/kupit/kvartiru
+                  - link "Московский" [ref=e395] [cursor=pointer]:
+                    - /url: /l/minsk-moskovskij-rajon/kupit/kvartiru
+                  - link "Фрунзенский" [ref=e396] [cursor=pointer]:
+                    - /url: /l/minsk-frunzenskij-rajon/kupit/kvartiru
+              - generic [ref=e397]:
+                - button [ref=e398]:
+                  - heading "В Микрорайоне" [level=3] [ref=e399]
+                - generic [ref=e400]:
+                  - link "Академия наук" [ref=e401] [cursor=pointer]:
+                    - /url: /l/minsk-akademiya-nauk-mkrn/kupit/kvartiru
+                  - link "Ангарская" [ref=e402] [cursor=pointer]:
+                    - /url: /l/minsk-angarskaya-mkrn/kupit/kvartiru
+                  - link "Аэродромная" [ref=e403] [cursor=pointer]:
+                    - /url: /l/minsk-aerodromnaya-mkrn/kupit/kvartiru
+                  - link "Боровая" [ref=e404] [cursor=pointer]:
+                    - /url: /l/minsk-borovaya-mkrn/kupit/kvartiru
+                  - link "Боровляны" [ref=e405] [cursor=pointer]:
+                    - /url: /l/minsk-borovlyany-mkrn/kupit/kvartiru
+                  - link "Брилевичи" [ref=e406] [cursor=pointer]:
+                    - /url: /l/minsk-brilevichi-mkrn/kupit/kvartiru
+                  - link "Верхний город" [ref=e407] [cursor=pointer]:
+                    - /url: /l/minsk-verhnij-gorod-mkrn/kupit/kvartiru
+                  - link "Веснянка" [ref=e408] [cursor=pointer]:
+                    - /url: /l/minsk-vesnyanka-mkrn/kupit/kvartiru
+                  - link "Восток" [ref=e409] [cursor=pointer]:
+                    - /url: /l/minsk-vostok-mkrn/kupit/kvartiru
+                  - link "Восточный" [ref=e410] [cursor=pointer]:
+                    - /url: /l/minsk-vostochnyj-mkrn/kupit/kvartiru
+                  - link "Грушевка" [ref=e411] [cursor=pointer]:
+                    - /url: /l/minsk-grushevka-mkrn/kupit/kvartiru
+                  - link "Домбровка" [ref=e412] [cursor=pointer]:
+                    - /url: /l/minsk-dombrovka-mkrn/kupit/kvartiru
+                  - link "Дражня" [ref=e413] [cursor=pointer]:
+                    - /url: /l/minsk-drazhnya-mkrn/kupit/kvartiru
+                  - link "Запад" [ref=e414] [cursor=pointer]:
+                    - /url: /l/minsk-zapad-mkrn/kupit/kvartiru
+                  - link "Заславская" [ref=e415] [cursor=pointer]:
+                    - /url: /l/minsk-zaslavskaya-mkrn/kupit/kvartiru
+                  - link "Зацень" [ref=e416] [cursor=pointer]:
+                    - /url: /l/minsk-zacen-mkrn/kupit/kvartiru
+                  - link "Зеленый луг" [ref=e417] [cursor=pointer]:
+                    - /url: /l/minsk-zelenyj-lug-mkrn/kupit/kvartiru
+                  - link "Каменная Горка" [ref=e418] [cursor=pointer]:
+                    - /url: /l/minsk-kamennaya-gorka-mkrn/kupit/kvartiru
+                  - link "Каскад" [ref=e419] [cursor=pointer]:
+                    - /url: /l/minsk-kaskad-mkrn/kupit/kvartiru
+                  - link "Комаровка" [ref=e420] [cursor=pointer]:
+                    - /url: /l/minsk-komarovka-mkrn/kupit/kvartiru
+                  - link "Красный Бор" [ref=e421] [cursor=pointer]:
+                    - /url: /l/minsk-krasnyj-bor-mkrn/kupit/kvartiru
+                  - link "Кунцевщина" [ref=e422] [cursor=pointer]:
+                    - /url: /l/minsk-kuncevshchina-mkrn/kupit/kvartiru
+                  - link "Курасовщина" [ref=e423] [cursor=pointer]:
+                    - /url: /l/minsk-kurasovshchina-mkrn/kupit/kvartiru
+                  - link "Лебяжий" [ref=e424] [cursor=pointer]:
+                    - /url: /l/minsk-lebyazhij-mkrn/kupit/kvartiru
+                  - link "Лошица" [ref=e425] [cursor=pointer]:
+                    - /url: /l/minsk-loshica-mkrn/kupit/kvartiru
+                  - link "Малиновка" [ref=e426] [cursor=pointer]:
+                    - /url: /l/minsk-malinovka-mkrn/kupit/kvartiru
+                  - link "Масюковщина" [ref=e427] [cursor=pointer]:
+                    - /url: /l/minsk-masyukovshchina-mkrn/kupit/kvartiru
+                  - link "Медвежино" [ref=e428] [cursor=pointer]:
+                    - /url: /l/minsk-medvezhino-mkrn/kupit/kvartiru
+                  - link "Минск-Сити" [ref=e429] [cursor=pointer]:
+                    - /url: /l/minsk-minsk-siti-mkrn/kupit/kvartiru
+                  - link "Михалово" [ref=e430] [cursor=pointer]:
+                    - /url: /l/minsk-mihalovo-mkrn/kupit/kvartiru
+                  - link "Новинки" [ref=e431] [cursor=pointer]:
+                    - /url: /l/minsk-novinki-mkrn/kupit/kvartiru
+                  - link "Озерище" [ref=e432] [cursor=pointer]:
+                    - /url: /l/minsk-ozerishche-mkrn/kupit/kvartiru
+                  - link "поселок Радужный" [ref=e433] [cursor=pointer]:
+                    - /url: /l/minsk-poselok-raduzhnyj-mkrn/kupit/kvartiru
+                  - link "Пулихова" [ref=e434] [cursor=pointer]:
+                    - /url: /l/minsk-p-ulihova-mkrn/kupit/kvartiru
+                  - link "Раковское шоссе" [ref=e435] [cursor=pointer]:
+                    - /url: /l/minsk-rakovskoe-shosse-mkrn/kupit/kvartiru
+                  - link "Ржавец" [ref=e436] [cursor=pointer]:
+                    - /url: /l/minsk-rzhavec-mkrn/kupit/kvartiru
+                  - link "Северный поселок" [ref=e437] [cursor=pointer]:
+                    - /url: /l/minsk-severnyj-poselok-mkrn/kupit/kvartiru
+                  - link "Сельхозпоселок" [ref=e438] [cursor=pointer]:
+                    - /url: /l/minsk-selhozposelok-mkrn/kupit/kvartiru
+                  - link "Семашко" [ref=e439] [cursor=pointer]:
+                    - /url: /l/minsk-semashko-mkrn/kupit/kvartiru
+                  - link "Серебрянка" [ref=e440] [cursor=pointer]:
+                    - /url: /l/minsk-serebryanka-mkrn/kupit/kvartiru
+                  - link "Серова" [ref=e441] [cursor=pointer]:
+                    - /url: /l/minsk-serova-mkrn/kupit/kvartiru
+                  - link "Слепянка" [ref=e442] [cursor=pointer]:
+                    - /url: /l/minsk-slepyanka-mkrn/kupit/kvartiru
+                  - link "Сокол" [ref=e443] [cursor=pointer]:
+                    - /url: /l/minsk-sokol-mkrn/kupit/kvartiru
+                  - link "Сосны" [ref=e444] [cursor=pointer]:
+                    - /url: /l/minsk-sosny-mkrn/kupit/kvartiru
+                  - link "Степянка" [ref=e445] [cursor=pointer]:
+                    - /url: /l/minsk-stepyanka-mkrn/kupit/kvartiru
+                  - link "Сторожовка" [ref=e446] [cursor=pointer]:
+                    - /url: /l/minsk-storozhovka-mkrn/kupit/kvartiru
+                  - link "Сухарево" [ref=e447] [cursor=pointer]:
+                    - /url: /l/minsk-suharevo-mkrn/kupit/kvartiru
+                  - link "Троицкое предместье" [ref=e448] [cursor=pointer]:
+                    - /url: /l/minsk-troickoe-predmeste-mkrn/kupit/kvartiru
+                  - link "Уручье" [ref=e449] [cursor=pointer]:
+                    - /url: /l/minsk-uruche-mkrn/kupit/kvartiru
+                  - link "Харьковская" [ref=e450] [cursor=pointer]:
+                    - /url: /l/minsk-harkovskaya-mkrn/kupit/kvartiru
+                  - link "Чижовка" [ref=e451] [cursor=pointer]:
+                    - /url: /l/minsk-chizhovka-mkrn/kupit/kvartiru
+                  - link "Шабаны" [ref=e452] [cursor=pointer]:
+                    - /url: /l/minsk-shabany-mkrn/kupit/kvartiru
+                  - link "Юго-Запад" [ref=e453] [cursor=pointer]:
+                    - /url: /l/minsk-yugo-zapad-mkrn/kupit/kvartiru
+              - generic [ref=e454]:
+                - button [ref=e455]:
+                  - heading "У Метро" [level=3] [ref=e456]
+                - generic [ref=e457]:
+                  - link "Автозаводская" [ref=e458] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-avtozavodskaya
+                  - link "Академия наук" [ref=e459] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-akademiya-nauk
+                  - link "Борисовский тракт" [ref=e460] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-borisovskij-trakt
+                  - link "Восток" [ref=e461] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-vostok
+                  - link "Грушевка" [ref=e462] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-grushevka
+                  - link "Институт культуры" [ref=e463] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-institut-kultury
+                  - link "Каменная горка" [ref=e464] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-kamennaya-gorka
+                  - link "Кунцевщина" [ref=e465] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-kuncevshchina
+                  - link "Малиновка" [ref=e466] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-malinovka
+                  - link "Михалово" [ref=e467] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-mihalovo
+                  - link "Могилевская" [ref=e468] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-mogilevskaya
+                  - link "Молодежная" [ref=e469] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-molodezhnaya
+                  - link "Московская" [ref=e470] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-moskovskaya
+                  - link "Немига" [ref=e471] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-nemiga
+                  - link "Октябрьская (Купаловская)" [ref=e472] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-oktyabrskaya-kupalovskaya
+                  - link "Парк Челюскинцев" [ref=e473] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-park-chelyuskincev
+                  - link "Партизанская" [ref=e474] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-partizanskaya
+                  - link "Первомайская" [ref=e475] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-pervomajskaya
+                  - link "Петровщина" [ref=e476] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-petrovshchina
+                  - link "Площадь Ленина" [ref=e477] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-ploshchad-lenina
+                  - link "Площадь Победы" [ref=e478] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-ploshchad-pobedy
+                  - link "Площадь Якуба Коласа" [ref=e479] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-ploshchad-yakuba-kolasa
+                  - link "Пролетарская" [ref=e480] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-proletarskaya
+                  - link "Пушкинская" [ref=e481] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-pushkinskaya
+                  - link "Спортивная" [ref=e482] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-sportivnaya
+                  - link "Тракторный завод" [ref=e483] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-traktornyj-zavod
+                  - link "Уручье" [ref=e484] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-uruche
+                  - link "Фрунзенская" [ref=e485] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/metro-frunzenskaya
+              - generic [ref=e486]:
+                - button [ref=e487]:
+                  - heading "Подборки" [level=3] [ref=e488]
+                - generic [ref=e489]:
+                  - link "Без посредников" [ref=e490] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/bez-posrednikov
+                  - link "Без отделки" [ref=e491] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/bez-otdelki
+                  - link "С отделкой" [ref=e492] [cursor=pointer]:
+                    - /url: /l/minsk/kupit/kvartiru/s-otdelkoj
+                  - link "Обмен" [ref=e493] [cursor=pointer]:
+                    - /url: /l/minsk/obmen/kvartiru
+    - contentinfo [ref=e495]:
+      - generic [ref=e496]:
+        - list [ref=e498]:
+          - listitem [ref=e499]:
+            - link "Путешествия" [ref=e500] [cursor=pointer]:
+              - /url: https://travel.kufar.by
+          - listitem [ref=e506]:
+            - link "Куфар Карта" [ref=e507] [cursor=pointer]:
+              - /url: https://karta.kufar.by/
+          - listitem [ref=e512]:
+            - link "Куфар Маркет" [ref=e513] [cursor=pointer]:
+              - /url: https://www.kufar.by/l?b2c=1&cmp=1&cnd=2&sort=lst.d&rgn=all
+          - listitem [ref=e519]:
+            - link "Куфар Медиа" [ref=e520] [cursor=pointer]:
+              - /url: https://media.kufar.by/
+          - listitem [ref=e524]:
+            - link "Доставка" [ref=e525] [cursor=pointer]:
+              - /url: https://dostavka.kufar.by/
+          - listitem [ref=e529]:
+            - link "Рассрочка" [ref=e530] [cursor=pointer]:
+              - /url: https://rassrochka.kufar.by/
+          - listitem [ref=e537]:
+            - link "Услуги продвижения" [ref=e538] [cursor=pointer]:
+              - /url: https://www.kufar.by/account/promotion_services
+        - generic [ref=e542]:
+          - generic [ref=e543]:
+            - generic [ref=e544]:
+              - img "QR-код для скачивания приложения" [ref=e545]
+              - paragraph [ref=e546]: Наведите камеруна QR-код и скачивайтеприложение
+            - generic [ref=e548]:
+              - generic [ref=e549]:
+                - paragraph [ref=e550]: О Куфаре
+                - list [ref=e551]:
+                  - listitem [ref=e552]:
+                    - link "Команда" [ref=e553] [cursor=pointer]:
+                      - /url: https://360.kufar.by/aboutus
+                  - listitem [ref=e554]:
+                    - link "Вакансии" [ref=e555] [cursor=pointer]:
+                      - /url: https://kufar.huntflow.io/
+                  - listitem [ref=e556]:
+                    - link "Блог" [ref=e557] [cursor=pointer]:
+                      - /url: https://media.kufar.by/nedvizhimost
+                  - listitem [ref=e558]:
+                    - link "Чат-бот" [ref=e559] [cursor=pointer]:
+                      - /url: https://t.me/re_kufar_bot
+              - generic [ref=e560]:
+                - paragraph [ref=e561]: Для бизнеса
+                - list [ref=e562]:
+                  - listitem [ref=e563]:
+                    - link "Тарифы" [ref=e564] [cursor=pointer]:
+                      - /url: https://business.kufar.by/
+                  - listitem [ref=e565]:
+                    - link "Размещение баннеров" [ref=e566] [cursor=pointer]:
+                      - /url: https://mediakit.kufar.by
+                  - listitem [ref=e567]:
+                    - link "Спецпроекты" [ref=e568] [cursor=pointer]:
+                      - /url: https://mediakit.kufar.by/specialproject
+              - generic [ref=e569]:
+                - paragraph [ref=e570]: Полезно
+                - list [ref=e571]:
+                  - listitem [ref=e572]:
+                    - link "Правовые документы" [ref=e573] [cursor=pointer]:
+                      - /url: https://www.kufar.by/legal
+                  - listitem [ref=e574]:
+                    - link "Правила подачи" [ref=e575] [cursor=pointer]:
+                      - /url: https://www.kufar.by/docs/agreements-and-rules?pageId=rules
+              - generic [ref=e576]:
+                - paragraph [ref=e577]: Безопасность
+                - list [ref=e578]:
+                  - listitem [ref=e579]:
+                    - link "Как себя обезопасить" [ref=e580] [cursor=pointer]:
+                      - /url: https://helpcenter.kufar.by/knowledge_base/24279
+                  - listitem [ref=e581]:
+                    - link "Защита от мошенничества" [ref=e582] [cursor=pointer]:
+                      - /url: https://safety.kufar.by/
+            - generic [ref=e583]:
+              - generic [ref=e584]:
+                - paragraph [ref=e585]: Контакты
+                - paragraph [ref=e586]:
+                  - generic [ref=e587]: "ООО «Куфар Тех», УНП 191767445 Пн-Пт: 10:00 – 18:00; Сб, Вс: Выходной 220029, г. Минск, ул. Красная 7А-2, 3-й этаж"
+                  - text: help@kufar.by
+                - button "Помощь" [ref=e588] [cursor=pointer]
+                - paragraph [ref=e590] [cursor=pointer]: Защита прав потребителей сервиса Куфар Маркет
+              - button "BY RU" [ref=e591]:
+                - generic [ref=e592]: BY
+                - generic [ref=e593]: RU
+          - generic [ref=e594]:
+            - list [ref=e595]:
+              - listitem [ref=e596]:
+                - link [ref=e597] [cursor=pointer]:
+                  - /url: https://apps.apple.com/by/app/kufar-besplatnye-ob-avlenia/id1149312972?utm_source=kufar&utm_medium=app_icon&utm_campaign=bottom_app_icon
+                  - img "apple" [ref=e598]
+              - listitem [ref=e599]:
+                - link [ref=e600] [cursor=pointer]:
+                  - /url: https://appgallery.huawei.com/#/app/C102385255?utm_source=kufar&utm_medium=app_icon&utm_campaign=bottom_app_icon
+                  - img "huawei" [ref=e601]
+              - listitem [ref=e602]:
+                - link [ref=e603] [cursor=pointer]:
+                  - /url: https://play.google.com/store/apps/details?id=se.scmv.belarus&utm_source=kufar&utm_medium=app_icon&utm_campaign=bottom_app_icon
+                  - img "google" [ref=e604]
+            - list [ref=e605]:
+              - listitem [ref=e606]:
+                - link [ref=e607] [cursor=pointer]:
+                  - /url: https://t.me/spasiboKufar
+                  - img "telegram" [ref=e608]
+              - listitem [ref=e609]:
+                - link [ref=e610] [cursor=pointer]:
+                  - /url: https://invite.viber.com/?g2=AQAAGl9I0gcmF0vM6pB%2FfH0hf5ow3vEDGzGXXvCkrtQ7j0ZuUu9KMuW8K1dyp3LX
+                  - img "viber" [ref=e611]
+              - listitem [ref=e612]:
+                - link [ref=e613] [cursor=pointer]:
+                  - /url: https://vk.com/kufar.official
+                  - img "vk" [ref=e614]
+              - listitem [ref=e615]:
+                - link [ref=e616] [cursor=pointer]:
+                  - /url: https://www.instagram.com/re.kufar/
+                  - img "instagram" [ref=e617]
+              - listitem [ref=e618]:
+                - link [ref=e619] [cursor=pointer]:
+                  - /url: https://www.facebook.com/kufar.official
+                  - img "facebook" [ref=e620]
+              - listitem [ref=e621]:
+                - link [ref=e622] [cursor=pointer]:
+                  - /url: https://ok.ru/kufar.by
+                  - img "ok" [ref=e623]
+              - listitem [ref=e624]:
+                - link [ref=e625] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCSc8YunZJe-wkf5rQ3P4cXA
+                  - img "youtube" [ref=e626]
+        - generic [ref=e627]:
+          - generic [ref=e628]:
+            - paragraph [ref=e629]: Куфар — площадка объявлений Беларуси. ООО «Куфар Тех» включено в государственный информационный ресурс «Реестр рекламораспространителей»
+            - paragraph [ref=e630]: "*Оплата производится в белорусских рублях по курсу НБ РБ."
+            - generic [ref=e631]:
+              - link "Пользовательское соглашение" [ref=e632] [cursor=pointer]:
+                - /url: https://www.kufar.by/docs/agreements-and-rules?pageId=agreements
+              - link "Политика обработки персональных данных" [ref=e633] [cursor=pointer]:
+                - /url: https://www.kufar.by/docs/privacy-policy
+              - button "Политика в отношении обработки cookie" [ref=e634] [cursor=pointer]
+          - generic [ref=e635]:
+            - img "reward"
+            - paragraph [ref=e636]: Куфар Недвижимость — площадка о недвижимости №1 по итогам потребительского голосования на конкурсе «Бренд года» в 2019-2023, 2025
+        - generic [ref=e637]:
+          - generic [ref=e638]: "Популярные разделы:"
+          - list [ref=e639]:
+            - listitem [ref=e640]:
+              - link "Минск" [ref=e641] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e642]:
+              - link "Брест" [ref=e643] [cursor=pointer]:
+                - /url: /brest
+            - listitem [ref=e644]:
+              - link "Витебск" [ref=e645] [cursor=pointer]:
+                - /url: /vitebsk
+            - listitem [ref=e646]:
+              - link "Гродно" [ref=e647] [cursor=pointer]:
+                - /url: /grodno
+            - listitem [ref=e648]:
+              - link "Гомель" [ref=e649] [cursor=pointer]:
+                - /url: /gomel
+            - listitem [ref=e650]:
+              - link "Могилев" [ref=e651] [cursor=pointer]:
+                - /url: /mogilev
+            - listitem [ref=e652]:
+              - link "Все города" [ref=e653] [cursor=pointer]:
+                - /url: /regions
+  - alert [ref=e654]

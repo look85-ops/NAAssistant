@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/quiz.css">
 <style>
 :root {
   --olive: #474a1a;
@@ -581,7 +582,7 @@ footer .fmeta {
   <div class="hi">
     <a href="/" class="hlogo">L&D <span>без суеты</span></a>
     <nav class="hnav">
-      <a href="/course/">← Курс</a>
+      <a href="/course/">← Программа</a>
       <a href="/booster/">Бустер</a>
       <a href="/blog/">Блог</a>
     </nav>
@@ -872,9 +873,45 @@ footer .fmeta {
   <li>Что сложнее в fine-tuning: написать код для обучения или собрать качественный датасет? Почему?</li>
 </ol>
 
+<div class="quiz" data-quiz-id="m02-lesson-04">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">1. Что такое fine-tuning?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Настройка температуры модели</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Дообучение модели на своих примерах, чтобы она следовала вашему стилю и формату</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Установка модели на свой компьютер</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">2. Когда fine-tuning НЕ нужен?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> Когда у вас больше 1000 примеров</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> Когда модель не понимает ваш язык</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> Когда достаточно хорошего промпта и пары примеров в контексте</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">3. Что нужно для fine-tuning?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Набор пар «запрос → идеальный ответ» (50–100+ примеров)</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Только один хороший пример</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Исходный код модели</label>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">4. Чем fine-tuning отличается от RAG?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> Это одно и то же</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> RAG ищет ответ в документах, fine-tuning меняет поведение самой модели</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Fine-tuning работает только с картинками</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
 <div class="nav-bottom">
   <a href="lesson-03-agents.html">← Agents</a>
-  <a href="../../module-03-ai-strategy-and-roi/lesson-01-ai-readiness.html" class="nav-next">Модуль 3. Урок 1. AI Readiness →</a>
+  <a href="../../module-03-ai-strategy-and-roi/lesson-01-ai-readiness.html" class="nav-next">М3. Урок 1. AI Readiness →</a>
 </div>
 
 </div>
@@ -904,6 +941,8 @@ footer .fmeta {
   });
 })();
 </script>
+
+<script src="/scripts/quiz.js"></script>
 
 </body>
 </html>
