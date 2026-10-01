@@ -1,6 +1,6 @@
 # Совет от незнакомца / Stranger Advice
 
-**[Открыть →](https://look85-ops.github.io/NAAssistant/portfolio/stranger-advice.html)**
+**[Открыть →](https://look85-ops.github.io/NAAssistant/portfolio/stranger-advice/)**
 
 ---
 
