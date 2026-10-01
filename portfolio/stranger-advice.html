@@ -451,6 +451,22 @@
       opacity: 0.7;
     }
 
+    /* ---- FOOTER ---- */
+    .page-footer {
+      text-align: center;
+      padding-top: 4px;
+    }
+    .page-footer a {
+      font-family: var(--font-serif);
+      font-size: 0.7rem;
+      font-style: italic;
+      color: oklch(0.45 0.03 60);
+      text-decoration: none;
+      opacity: 0.5;
+      transition: opacity 0.2s ease;
+    }
+    .page-footer a:hover { opacity: 0.9; }
+
     /* ---- ERROR ---- */
     .error-toast {
       position: fixed;
@@ -535,6 +551,10 @@
     </div>
 
     <div class="status-line" id="statusLine"></div>
+
+    <footer class="page-footer">
+      <a href="https://github.com/look85-ops/NAAssistant/blob/main/portfolio/stranger-advice-README.md" target="_blank" rel="noopener">О проекте</a>
+    </footer>
   </main>
 
   <script>
