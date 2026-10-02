@@ -64,7 +64,7 @@
 ## Roles
 
 | Agent | Что делает | Где пишет |
-|---|---|---|
+|---|---|---|---|
 | career-architect | Резюме, LinkedIn, анализ вакансий, сопроводительные | `career/` |
 | product-analyst | Идеи → бэклог, критерии готовности | `docs/BACKLOG.md` |
 | post-writer | Анализ/доработка постов, дайджест | `career/posts/` |
@@ -73,12 +73,21 @@
 | frontend_developer | HTML по ТЗ | `(stdout)` |
 | aos-analyst | Обработка АОС: метрики, отчёты, A/B | `docs/aos/`, `knowledge/` |
 | learning-designer | Педагогический дизайн (П+Путь, Энергия, Академия пути) | `docs/course/` |
+| archivist | Сканирует новое, индексирует knowledge/, учится понимать фрагментарные запросы | `knowledge/index.md`, `logs/transcripts/` |
+| architect | Структурирует контент, хранит транскрипты чатов, ведёт докумёнтацию и скилы | `AGENTS.md`, `knowledge/index.md`, `logs/transcripts/` |
+| growth-director | Ежемесячный аудит целей, обратная связь по чатам, управляет Архиваиусом и Архитектором | `/monthly-audit` → `knowledge/personal/goals-revew.md` |
 
 ## Workflow
 
 **Добавление идеи:** `/idea` → product-analyst → Pre-Mortem → BACKLOG.md.
 
-**Разработка:** `/plan` (если > 3 файлов или > 1 агента) → `/start-task F-NNN` → работа → `/verify` или `/quality-gate` → `/finish-task`.
+**Разработка:** `/plan` (если > 3 файлов или > 1 агента) → `/start-task F-NNN` → работа → `/quality-gate` → `/finish-task`.
+
+**Hygiene (проактивно, без напоминаний):**
+- `/plan` — перед любой задачей с > 3 файлов или > 1 агента. Pre-Mortem, фазы, риски, барьер «только после твоего да».
+- `/checkpoint` — между фазами длинных задач. Сохраняет прогресс в `logs/checkpoints/`.
+- `/quality-gate` — перед коммитом в main. Линтеры + 5 Critical Assets + git hygiene.
+- `/instincts` — раз в 2–4 недели. Сканирует `knowledge/` на повторяющиеся паттерны, пробелы, конфликты.
 
 **Ритуал `/finish-task`:** сохранить 1–3 инсайта в `knowledge/`, строку в `logs/decisions.md`, проверить уровень автономии.
 
@@ -113,9 +122,9 @@
 Три артефакта должны работать на main:
 1. `portfolio/` — сайт-визитка (GitHub Pages)
 2. `methodist-booster/` — Бустер методиста
-3. `portfolio/message-accidental_1.html` — послание
+3. `portfolio/stranger-advice/index.html` — Совет незнакомца
 
-Перед коммитом в main — smoke-test portfolio и booster.
+Перед коммитом в main — `/quality-gate` (smoke-test portfolio и booster).
 
 ## Guardrails
 

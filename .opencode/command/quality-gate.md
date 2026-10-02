@@ -16,7 +16,7 @@
 ### 2. Critical Assets (5 артефактов из AGENTS.md)
 - [ ] portfolio/index.html — открывается, нет битых ссылок
 - [ ] methodist-booster/ — не сломан
-- [ ] portfolio/message-accidental_1.html — цел
+- [ ] portfolio/stranger-advice/index.html — цел
 - [ ] garden/ — деплой работает (если трогали)
 - [ ] amalgama/ — цикл не нарушен (если трогали)
 
