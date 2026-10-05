@@ -1,15 +1,15 @@
-name: digest
+name: hunt
 
 on:
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 6,16 * * *"  # 9:00 и 19:00 Минск (UTC+3)
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  generate:
+  hunt:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,19 +21,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate digest
-        run: python src/curator.py
+      - name: Run Apartment Hunter
+        run: python src/apt_hunter.py
         env:
           DS_API_KEY: ${{ secrets.DS_API_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Commit and push
         run: |
-          git config --global user.name "context-bot"
+          git config --global user.name "apt-bot"
           git config --global user.email "bot@look85-ops.github.io"
           git stash
           git pull --rebase origin main
           git stash pop || true
           git add -A
-          git diff --staged --quiet || git commit -m "digest: $(date +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "hunt: $(date +%Y-%m-%d_%H:%M)"
           git push

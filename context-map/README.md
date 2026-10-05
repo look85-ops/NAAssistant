@@ -1,72 +1,37 @@
-# Context Map
+# Apartment Hunter
 
-**Геополитический дайджест для переезжающих и переехавших в Беларусь из РФ.**  
-**Geopolitical digest for those relocating to Minsk or already there.**
+**Авто-подбор квартир в Минске для покупки.**
 
----
+Работает вместо старого Context Map (геополитический дайджест).
 
-## RU
+## Что делает
 
-**Context Map** — автоматический дайджест, который собирает геополитический контекст, важный для переезда и жизни в Минске. Генерируется дважды в неделю (пн, ср) на основе свежих новостей, отфильтрованных от пропагандистских источников.
+- Ищет 3-4 комнатные квартиры на Kufar.by и Realt.by через DDG
+- LLM (DeepSeek V3) анализирует сниппеты, фильтрует по критериям, ранжирует
+- Результат — HTML-таблица на GitHub Pages
+- Обновляется 2 раза в день: 9:00 и 19:00 по Минску
 
-### Что внутри
+## Критерии поиска
 
-1. **Обзорная карта** — ключевой тренд, главный риск, главная возможность
-2. **Поле боя** — ситуация в РФ, РБ, Украине и мире (только то, что влияет на жизнь)
-3. **Слабые сигналы** — edge signals, которые не в мейнстриме, но могут выстрелить
-4. **Устойчивые паттерны** — тренды, подтверждённые 3+ периодов
-5. **Влияние на решения** — работа, недвижимость, деньги, отрасли (с цифрами и конкретикой)
-6. **Сценарии** — базовый / эскалация / деэскалация на 1-3 мес с триггерами
-7. **Дополнительно** — слепые пятна и неочевидные факторы
+- 3-4 комнаты, до 520 000 BYN
+- Не 1-й этаж, не 4-5 этаж в пятиэтажках
+- Балкон/лоджия обязателен
+- Зона: м. Восток — м. Октябрьская
 
-### Как работает
+## Как работает
 
-Новости собираются через DuckDuckGo → фильтрация от пропаганды → анализ ИИ → генерация HTML. Всё в GitHub Actions.
+DDG-поиск (9 запросов) → сбор URL+сниппетов → DeepSeek V3 (bothub.ru API) → HTML-таблица → GitHub Pages.
 
-### Стек
+Стек: Python, DDGS, DeepSeek V3, GitHub Actions.
 
-- Python (curator.py)
-- DuckDuckGo Search (ddgs)
-- DeepSeek V3 (bothub.ru API)
-- GitHub Actions (cron пн, ср)
-- GitHub Pages (хостинг)
+## Live
 
----
+https://look85-ops.github.io/context-map/
 
-## EN
+## Fork & Adapt
 
-**Context Map** is an auto-generated digest that monitors geopolitical developments relevant to relocating to or living in Minsk. Updated twice a week (Mon, Wed).
+Хочешь такой же подбор под свой город/бюджет?
 
-### Contents
-
-1. Overview — key trend, main risk, main opportunity
-2. Situation — Russia, Belarus, Ukraine, World
-3. Weak signals — edge cases that may shift the landscape
-4. Stable patterns — trends confirmed over 3+ cycles
-5. Impact on decisions — jobs, real estate, money, industries
-6. Scenarios — baseline / escalation / de-escalation with triggers
-7. Additional — blind spots worth watching
-
-### How it works
-
-News collected via DuckDuckGo → propaganda filtering → AI analysis → HTML output. Runs on GitHub Actions.
-
-### Stack
-
-Python, DuckDuckGo Search, DeepSeek V3 (bothub.ru), GitHub Actions (Mon, Wed), GitHub Pages.
-
----
-
-**Live:** https://look85-ops.github.io/context-map/
-
-### Fork & Adapt для другого региона
-
-Хочешь сделать такой дайджест под свой город/страну? Форкни репозиторий и поменяй:
-
-1. В `src/curator.py`: `SEARCH_QUERIES` (ключевые слова для поиска) и `SYSTEM_PROMPT` (описание твоей аудитории)
-2. В `.github/workflows/digest.yml`: `cron` (частоту генерации)
+1. В `src/apt_hunter.py`: поменяй `SEARCH_QUERIES`, `CRITERIA` и `SYSTEM_PROMPT`
+2. В `.github/workflows/hunt.yml`: поменяй `cron` под свою частоту
 3. Включи GitHub Pages в настройках репозитория (ветка `main`, папка `/`)
-
-Изменения в репозиторий вносятся **только через fork** — пул-реквесты не принимаю, это личный инструмент.
-
-**Repo:** https://github.com/look85-ops/context-map
