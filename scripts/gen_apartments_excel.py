@@ -114,7 +114,7 @@ def fetch_kufar():
                 f = int(floor) if str(floor).isdigit() else 0
                 ft = int(tf) if str(tf).isdigit() else 0
                 if f == 1: break
-                if ft == 5 and f in (4,5): break
+                if ft in (4, 5): break  # exclude 4-5 storey buildings
                 if props.get("Балкон","") == "Нет": break
                 addr_lower = item.get("address",{}).get("streetAddress","").lower()
                 if any(ex in addr_lower for ex in EXCLUDE_ADDR): break
@@ -160,7 +160,7 @@ def fetch_realt():
             if price > MAX_PRICE: continue
             fv = apt.get("storey") or 0; tfv = apt.get("storeys") or 0
             f = int(fv) if fv else 0; tf = int(tfv) if tfv else 0
-            if tf == 5 and f in (4,5): continue
+            if tf in (4, 5): continue  # exclude 4-5 storey buildings
             if not apt.get("balconyType"): continue
             addr = apt.get("address","?")
             lat = lng = None
