@@ -6,7 +6,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
 # === CONFIG ===
 MAX_PRICE = 520000
-EXCLUDE_ADDR = ["белинского", "беломорская"]
+EXCLUDE_ADDR = ["белинского", "беломорская", "куйбышева 44", "куйбышева 46", "филимонова 45"]
 EXCLUDE_MICRO = ["минск-мир", "минск мир"]
 
 METRO = [
