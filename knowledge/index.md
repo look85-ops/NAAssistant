@@ -5,7 +5,9 @@
 ## knowledge/
 
 - [Формат дайджеста «Радар L&D»](digest-format.md)
-- [Книги: Attack Point, Content School, StoryBrand](book-attack-point.md)
+- [Книга: «Найдите точку атаки»](book-attack-point.md)
+- [Книга: «Блог как инструмент продвижения»](book-content-school.md)
+- [Книга: StoryBrand (семичастная схема)](book-storybrand.md)
 - [Приватные заметки](private.md)
 - [signal/](signal/) — дайджесты «Сигнал»
 
@@ -22,6 +24,7 @@
 - [Rabota.by: Playwright-воркфлоу](career/rabota-by-playwright-workflow.md)
 - [Rabota.by: правила отклика](career/rabota-by-response-rules.md)
 - [Разведка рынка РБ (08.2026)](career/minsk-market-2026-08-20.md)
+- [Срез рынка L&D Минск (10.2026) — статус компаний + вакансии](career/minsk-market-2026-10-09.md)
 
 ## design/ — Дизайн, бренд, позиционирование
 
@@ -52,14 +55,17 @@
 ## course/ — Педагогический дизайн
 
 - [Course Ops: дифференциация энергии](course/course-ops-energy-differentiation.md)
+- [П+Энергия: концепция v2 (29.09.2026)](course/energy-concept-v2-2026-09-29.md)
 - [Course Ops: дизайн упражнений](course/course-ops-exercise-design.txt)
 - [Бриф дизайна урока](course/lesson-design-brief.md)
 - [Эталон урока](course/lesson-etalon.md)
+- [Performance consulting и дизайн программ](course/performance-consulting-and-program-design.md)
 - [Воркбук онбординга: инсайты](course/workbook-onboarding-insights.md)
 
 ## personal/ — Наташа: профиль, аудит, икигай
 
 - [Профиль Наташи](personal/natasha-profile.md)
+- [Ежемесячный обзор целей](personal/goals-review.md)
 - [Поиск икигая](personal/ikigai-exploration.md)
 - [Персональный аудит (08.2026)](personal/personal-audit-2026-08.md)
 - [Pin-инсайты](personal/pin-insights.md)
@@ -81,6 +87,7 @@
 - [GitHub: все репозитории](tools/github-repos.md)
 - [GitHub Trending (12.08.2026)](tools/github-trending-2026-08-12.md)
 - [GitHub Trending (20.08.2026)](tools/github-trending-2026-08-20.md)
+- [GitHub Trending (01.10.2026)](tools/github-trending-2026-10-01.md)
 - [Глоссарий ролей](tools/roles-glossary.md)
 - [Источники для дайджеста](tools/sources-digest.md)
 
@@ -89,7 +96,10 @@
 - [Amalgama: не передизайнивать](projects/amalgamma-dont-redesign.md)
 - [Amalgama: подходы к оценке](projects/amalgamma-eval-approaches.md)
 - [Чек-листы АОК](projects/aok-checklists.md)
+- [AOS Analyzer: verification card](projects/aos-verification-card.md)
 - [AOS M3: инсайты](projects/aos-m3-insights.md)
 - [Stack L&D×AI: правила](projects/stack-ld-ai-rules.md)
+- [Контекст коммерческой программы «L&D без суеты»](projects/commercial-ld-bez-suety-context.md)
+- [Аудит Бустера методиста (02.10.2026)](projects/methodist-booster-audit-2026-10.md)
 - [Статус портала](projects/portal-status.md)
 - [Алхимия: инсайты](projects/alchemy-insights.md)
