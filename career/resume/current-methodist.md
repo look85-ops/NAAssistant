@@ -7,7 +7,7 @@ Headline
 Ведущий методист / Instructional Designer | L&D, EdTech, корпоративное обучение взрослых | Минск (релокация, осень 2026)
 
 Summary
-Проектирую образовательные программы, которые дают измеримый бизнес-результат: рост конверсии и win rate, снижение time-to-productivity, улучшение NPS. Работаю data-informed: гипотезы → MVP → итерации → метрики. Владею полным циклом — от discovery до оценки эффективности (Learning Analytics). Создаю microlearning, playbooks, программы онбординга и Customer Education. Работаю с матрицей компетенций, role-based треками, ИПР и траекториями обучения. Применяю андрагогику и современные форматы e-learning.
+Проектирую образовательные программы, которые дают измеримый бизнес-результат: рост конверсии и win rate, снижение time-to-productivity, улучшение NPS. Работаю как performance-консультант: проблема бизнеса → нужное поведение → практика → поддержка в работе → метрика результата. Работаю data-informed: гипотезы → MVP → итерации → метрики. Владею полным циклом — от discovery до оценки эффективности (Learning Analytics). Создаю microlearning, playbooks, программы онбординга и Customer Education. Работаю с матрицей компетенций, role-based треками, ИПР и траекториями обучения. Применяю андрагогику и современные форматы e-learning.
 
 Ключевые компетенции
 - Проектирование программ обучения (Instructional Design)
@@ -16,7 +16,7 @@ Summary
 - Learning Analytics, андрагогика / обучение взрослых
 - Матрица компетенций, role-based треки, ИПР, траектории обучения
 - Stakeholder & Vendor Management, Content QA, ToT
-- GenAI for Content, Prompting, Workflow Automation
+- GenAI for Content, Prompting, Workflow Automation, multi-agent systems, AI governance, verification loops
 
 Опыт (выборочно)
 Ведущий методист / Менеджер образовательных проектов — Корпоративный университет ОАО «РЖД» (2024–н.в.)

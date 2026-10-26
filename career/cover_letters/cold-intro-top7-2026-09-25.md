@@ -1,4 +1,4 @@
-# Холодные письма — топ-компании Минска (25.09.2026)
+# Холодные письма — топ-компании Минска (02.10.2026)
 
 **Правила:** без БГАИ, без AI-ассистента. 10+ лет (не 17). Цифры: от 2 до 310 ак.ч., 490+ руководителей, NPS 9,7.
 **Даты в Минске:** 11–14 октября 2026.
@@ -147,7 +147,7 @@ Telegram: @mrk_natalia
 
 ---
 
-## 7. Skillbox
+## 7. Skillbox (исключён; письмо не отправлять)
 
 **Тема:** Главный методист Корпоративного университета РЖД — EdTech-продюсер / Learning Product Manager
 
@@ -179,7 +179,7 @@ Telegram: @mrk_natalia
 | 3 | ВТБ Беларусь | LinkedIn: HRD ВТБ Беларусь | HIGH |
 | 4 | Andersen | LinkedIn: Talent Development Lead | MEDIUM |
 | 5 | IBA Group | LinkedIn: HR BP | MEDIUM |
-| 6 | А1 | LinkedIn: Head of L&D А1 | MEDIUM |
-| 7 | Skillbox | LinkedIn: HRD / Рук. обучения | MEDIUM |
+| 6 | А1 | Официальная форма: https://www.a1.by/ru/career; LinkedIn: Head of L&D А1 | MEDIUM |
+| 7 | Skillbox | — | ИСКЛЮЧЁН |
 
 **Способ:** LinkedIn или email. Письмо — в тело, резюме PDF — во вложение.
