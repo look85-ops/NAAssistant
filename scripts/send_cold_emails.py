@@ -5,6 +5,7 @@
 Запуск: python scripts/send_cold_emails.py
 Можно запустить заранее — скрипт дождётся 9:05.
 """
+import os
 import smtplib
 import time
 from email.mime.text import MIMEText
@@ -16,7 +17,7 @@ from datetime import datetime
 
 # ----- CONFIG -----
 FROM = "look85@gmail.com"
-PASSWORD = "lkgn vymg wunx dlsd"
+PASSWORD = os.environ.get("GMAIL_APP_PASSWORD")
 RESUME = Path(r"C:\Users\marcenuk\Desktop\Резюме_Марценюк Наталья.pdf")
 SUBJECT = "Специалист по обучению и развитию — возможное сотрудничество"
 TARGET_TIME = (9, 5)  # 09:05
