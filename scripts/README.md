@@ -29,35 +29,14 @@
 
 ## PowerPoint
 
-| Скрипт | Что делает |
-|---|---|
-| `pptx_pipeline.py` | **Единый CLI-конвейер раскладки по сценарию** (Фаза A: parse/catalog/diff/update/layout/validate; Фаза B: export/insert) |
-| `pptx_tool.py` | Создание/редактирование pptx через python-pptx |
-| `pptx_diff.py` | Сверка «сценарий ↔ презентация» по слайдам (внутри `pptx_pipeline.py diff`) |
-| `pptx_com.py` | COM-библиотека правок слайдов (clone/edit/hide/tag/textbox/table) |
-| `parse_scenario_xml.py` | Парсинг docx-сценария через XML (для файлов > 50 МБ) |
-| `word_pages.py` | Парсинг docx-сценария через Word COM (для малых файлов) |
-| `catalog_types.py` | Каталогизация слайдов pptx по типу |
-| `insert_slides_batch.py` | Вставка слайдов в свободные маркеры (ручная конфигурация в шапке) |
-
-### pptx_pipeline.py — примеры
-
-```powershell
-$env:PYTHONIOENCODING="utf-8"
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py parse  scenario.docx scenario.json
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py catalog pres.pptx catalog.json
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py diff  scenario.json catalog.json -o diff.md
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py update pres.pptx operations.json --backup
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py layout pres.pptx target_order.txt --backup
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py validate pres.pptx [-o report.txt]
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py export  pres.pptx slides_dir [--range 1-20]
-& "C:\Users\marcenuk\AppData\Local\Python\bin\python.exe" scripts\pptx_pipeline.py insert  scenario.docx result.docx slides_dir
-```
-
-Порядок работы для одного дня:
-1. **Фаза A** (сценарий → презентация, до дизайнера): `parse` → `catalog` → `diff` (план: добавить/исправить/скрыть) → `update` (clone/edit/hide) → `layout` (порядок по карте) → `validate`.
-2. **Пауза**: презентация уходит к дизайнеру.
-3. **Фаза B** (презентация → сценарий, после дизайнера): `export` (слайды → PNG) → `insert` (PNG по меткам «Слайд» в docx, по контенту, без номеров).
+> ⚠️ **Устарело (2026-10).** Скрипты добавления/удаления слайдов через COM
+> (`pptx_com.py`, `pptx_pipeline.py`, `insert_slides_batch.py`, `catalog_types.py`,
+> `word_pages.py`, `parse_scenario_xml.py`) работают плохо и **перемещены в
+> `attic/obsolete-slide-scripts/`**. Рабочий пайплайн направления
+> «презентация → сценарий» (нумерация «Слайд №N» + скрины) описан в
+> `knowledge/pptx/scenario-slide-autonumbering.md` — рендер → TF-IDF+DTW-сопоставление
+> → вставка через `lxml`+`zipfile`. Постоянных скриптов для этого направления нет —
+> пересоздаются разово в `%TEMP%\opencode\` под каждую пару файлов.
 
 ## Генерация контента
 

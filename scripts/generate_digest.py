@@ -8,7 +8,20 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 
-API_KEY = (os.environ.get("BOTHUB_API_KEY") or "").strip()
+def read_dotenv_value(name):
+    dotenv = Path(__file__).resolve().parents[1] / ".env"
+    if not dotenv.exists():
+        return ""
+    try:
+        for line in dotenv.read_text(encoding="utf-8", errors="ignore").splitlines():
+            if line.startswith(name + "="):
+                return line.split("=", 1)[1].strip().strip('"\'')
+    except OSError:
+        pass
+    return ""
+
+
+API_KEY = (os.environ.get("BOTHUB_API_KEY") or read_dotenv_value("BOTHUB_API_KEY")).strip()
 API_URL = os.environ.get("BOTHUB_API_URL", "https://openai.bothub.chat/v1/chat/completions")
 if not API_KEY:
     print("BOTHUB_API_KEY not set")

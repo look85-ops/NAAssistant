@@ -59,6 +59,20 @@ def _read_env_or_file(name, *paths):
     return ""
 
 
+def _read_dotenv_value(name):
+    """Читает одну переменную из корневого .env без внешней зависимости."""
+    dotenv = Path(__file__).resolve().parents[1] / ".env"
+    if not dotenv.exists():
+        return ""
+    try:
+        for line in dotenv.read_text(encoding="utf-8", errors="ignore").splitlines():
+            if line.startswith(name + "="):
+                return line.split("=", 1)[1].strip().strip('"\'')
+    except OSError:
+        pass
+    return ""
+
+
 def _read_key_value_file(text):
     """Разбирает формат 'model:key' по строкам. Пустые строки игнорирует."""
     out = []
@@ -113,7 +127,7 @@ class LLMGateway:
         2. NVIDIA NIM (NVIDIA_API_KEY, OpenAI-совместимый)
         3. DeepSeek (DEEPSEEK_API_KEY)
         4. Gemini (GEMINI_API_KEY)
-        5. API.txt 'model:key' -> PROXY_URL / BOTHUB_URL / дефолт
+        5. BOTHUB_API_KEY или API.txt 'model:key' -> PROXY_URL / BOTHUB_URL / дефолт
         6. DGAPIFREE.txt / FREE_API_KEYS (deepseek free)
         """
         if base_dir:
@@ -145,6 +159,14 @@ class LLMGateway:
         self.add_gemini_provider(os.environ.get("GEMINI_API_KEY", ""))
 
         # 5. API.txt (model:key) -> OpenAI-совместимый прокси
+        bothub_key = (os.environ.get("BOTHUB_API_KEY", "").strip()
+                      or _read_dotenv_value("BOTHUB_API_KEY"))
+        if bothub_key:
+            model = os.environ.get("BOTHUB_MODEL", "deepseek-chat")
+            self.add_openai_provider("bothub", bothub_key,
+                                     os.environ.get("BOTHUB_URL", DEFAULT_PROXY_URL),
+                                     [model])
+
         raw = _read_env_or_file("EITHER_API_KEY", self.base_dir / "API.txt")
         base = proxy_url or os.environ.get("PROXY_URL", "") or \
             os.environ.get("BOTHUB_URL", DEFAULT_PROXY_URL)
