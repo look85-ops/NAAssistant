@@ -15,6 +15,8 @@
 
 - [AI-агенты с нуля](ai/ai-agents-from-scratch.md)
 - [Оценка агентов (RACI-стандарт)](ai/agent-eval-racistandard.md)
+- [Промптинг для управленцев (7+5 техник + светофор)](ai/prompting-playbook-kulinich.md)
+- [Промпт «Продвинутый поиск идей» (модель OMS)](ai/ideation-oms-prompt.md)
 
 ## career/ — Карьера, вакансии, LinkedIn
 
@@ -25,6 +27,7 @@
 - [Rabota.by: правила отклика](career/rabota-by-response-rules.md)
 - [Разведка рынка РБ (08.2026)](career/minsk-market-2026-08-20.md)
 - [Срез рынка L&D Минск (10.2026) — статус компаний + вакансии](career/minsk-market-2026-10-09.md)
+- [Минск: джоб-борды и прямой выход](career/minsk-job-boards.md)
 
 ## design/ — Дизайн, бренд, позиционирование
 
@@ -47,7 +50,9 @@
 - [Поиск слайдов: уникальные строки](pptx/pptx-unique-search.md)
 - [Каталог шаблонов М1Д1](pptx/pptx-template-catalog.md)
 - [Скрытие неиспользуемых слайдов](pptx/hide-unreferenced-slides.md)
-- [Вставка слайдов в сценарий](pptx/slide-to-scenario-insertion.md)
+- [Вставка слайдов в сценарий (устарело, см. автонумерацию)](pptx/slide-to-scenario-insertion.md)
+- [Автонумерация «Слайд №N» + скрины (рабочий алгоритм)](pptx/scenario-slide-autonumbering.md)
+- [Бриф агента: что нужно на входе, дисциплина, отчёт (ценно мне)](pptx/slide-scenario-agent-brief.md)
 - [Доноры для клонирования](pptx/pptx-clone-donors.md)
 - [Быстрый старт pptx](pptx/pptx-quickstart.md)
 - [Очистка речи преподавателя](pptx/pptx-speech-cleanup.md)
@@ -57,6 +62,7 @@
 - [Course Ops: дифференциация энергии](course/course-ops-energy-differentiation.md)
 - [П+Энергия: концепция v2 (29.09.2026)](course/energy-concept-v2-2026-09-29.md)
 - [Course Ops: дизайн упражнений](course/course-ops-exercise-design.txt)
+- [Course Ops: цикл «Проживание → Теория → Перенос» (референс)](course/course-ops-lived-cycle-kulinich.md)
 - [Бриф дизайна урока](course/lesson-design-brief.md)
 - [Эталон урока](course/lesson-etalon.md)
 - [Performance consulting и дизайн программ](course/performance-consulting-and-program-design.md)
@@ -78,18 +84,22 @@
 - [Принципы проектов](process/project-principles.md)
 - [Шаблон задачи](process/task-template.md)
 - [Шпаргалка: текущее содержание пути](process/track-maintenance-cheatsheet.md)
+- [Loop harness + валидация до PR (looper, no-mistakes)](process/loop-harness-quality.md)
 
 ## tools/ — Инструменты, GitHub, MCP
 
 - [Gmail SMTP: настройка](tools/gmail-smtp-setup.md)
+- [Mineru — PDF/документы → Markdown (OCR)](tools/mineru.md)
 - [Playwright Edge: настройка](tools/playwright-edge-setup.md)
 - [Playwright MCP: браузерный инструмент](tools/playwright-mcp.md)
 - [GitHub: все репозитории](tools/github-repos.md)
 - [GitHub Trending (12.08.2026)](tools/github-trending-2026-08-12.md)
 - [GitHub Trending (20.08.2026)](tools/github-trending-2026-08-20.md)
 - [GitHub Trending (01.10.2026)](tools/github-trending-2026-10-01.md)
+- [GitHub Trending (26.10.2026)](tools/github-trending-2026-10-26.md)
 - [Глоссарий ролей](tools/roles-glossary.md)
 - [Источники для дайджеста](tools/sources-digest.md)
+- [4 персоны юзабилити-проверки](tools/usability-personas.md)
 
 ## projects/ — Специфика проектов
 
@@ -98,6 +108,7 @@
 - [Чек-листы АОК](projects/aok-checklists.md)
 - [AOS Analyzer: verification card](projects/aos-verification-card.md)
 - [AOS M3: инсайты](projects/aos-m3-insights.md)
+- [АОС П+ (Профессионал+): процесс обработки — SOP](projects/aos-processing-sop.md)
 - [Stack L&D×AI: правила](projects/stack-ld-ai-rules.md)
 - [Контекст коммерческой программы «L&D без суеты»](projects/commercial-ld-bez-suety-context.md)
 - [Аудит Бустера методиста (02.10.2026)](projects/methodist-booster-audit-2026-10.md)

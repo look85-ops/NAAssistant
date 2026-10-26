@@ -52,3 +52,8 @@ scripts/browser-state/
 
 # Private data (never commit)
 knowledge/private.md
+
+# Local images (not for git)
+resume-full.png
+listing-image.png
+dvor-mvp-mobile.png
