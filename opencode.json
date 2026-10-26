@@ -7,8 +7,8 @@
       "enabled": true
     },
     "inspo": {
-      "type": "local",
-      "command": ["npx.cmd", "-y", "inspo-mcp"],
+      "type": "remote",
+      "url": "https://inspomcp.dev/api/mcp?profile=lite&images=none",
       "enabled": true
     }
   }
