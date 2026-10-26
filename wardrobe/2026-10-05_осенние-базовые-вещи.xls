@@ -1,0 +1,18 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style>
+table { border-collapse: collapse; font-family: Arial; font-size: 11pt; }
+th { background: #263238; color: white; font-weight: bold; }
+td, th { border: 1px solid #999; padding: 7px; vertical-align: top; }
+</style></head>
+<body>
+<table>
+<tr><th>Категория</th><th>Товар</th><th>Цена</th><th>Размер</th><th>Состав / плотность</th><th>Цвет</th><th>Ссылка</th><th>Почему подходит / ограничения</th></tr>
+<tr><td>Плотный лонгслив-футболка</td><td>Marc O'Polo DENIM, лонгслив</td><td>8 161 руб. с Lamoda Club</td><td>46 RUS доступен</td><td>100% органический хлопок, плотное джерси</td><td>Коричневый</td><td><a href="https://www.lamoda.ru/p/mp002xw1ot1n/clothes-marcopolo-longsliv/">Открыть карточку</a></td><td>Свободный крой, реглан, манжеты. По цвету компромисс: не бордовый и не синий.</td></tr>
+<tr><td>Вязаный топ в рубчик</td><td>Luisa Wang, джемпер</td><td>4 745 руб. по акции</td><td>44 RUS (M INT)</td><td>67% тенсел, 33% шерсть, мелкий вертикальный рубчик</td><td>Темный шоколад</td><td><a href="https://www.lamoda.ru/p/mp002xw1k5kd/clothes-luisawang-dzhemper/">Открыть карточку</a></td><td>Есть воздух по размеру, но карточка указывает прилегающий силуэт. Брать с примеркой.</td></tr>
+<tr><td>Плотная клетчатая рубашка</td><td>Lusio, рубашка</td><td>8 994 руб. по акции</td><td>44 RUS (M INT)</td><td>100% хлопок; Lamoda указывает плотность для самостоятельного слоя</td><td>Бордово-серая клетка</td><td><a href="https://www.lamoda.ru/p/mp002xw0w89g/clothes-lusio-rubashka/">Открыть карточку</a></td><td>Прямой крой, карманы, классический воротник. Не изумрудно-синяя, но близкая по глубине цвета.</td></tr>
+<tr><td>Лонгслив-поло</td><td>Annemore, поло</td><td>6 750 руб.</td><td>42/44 RUS, последний</td><td>100% хлопок, плотность трикотажа 230 г/м²</td><td>Мультиколор</td><td><a href="https://www.lamoda.ru/p/mp002xw1m04y/clothes-annemore-polo/">Открыть карточку</a></td><td>Точное попадание по воротнику, длинному рукаву и плотности. Цвет менее базовый.</td></tr>
+<tr><td>Теплый шерстяной нижний слой</td><td>IDOL, водолазка</td><td>11 691 руб.</td><td>Размеры нужно проверить</td><td>100% мериносовая шерсть</td><td>Серый</td><td><a href="https://www.lamoda.ru/p/mp002xw1odbx/clothes-idol-vodolazka/">Открыть карточку</a></td><td>Тонкий теплый слой. Карточка указывает приталенный силуэт, поэтому нужен размер 46 или примерка 44.</td></tr>
+<tr><td>Короткое прямое пальто</td><td>Lusio, полупальто</td><td>42 990 руб.</td><td>44 RUS (M INT), последний</td><td>90% шерсть мериноса, 10% кашемир</td><td>Темно-коричневый</td><td><a href="https://www.lamoda.ru/p/mp002xw1nhne/clothes-lusio-polupalto/">Открыть карточку</a></td><td>Прямой силуэт, плотная теплая ткань. Уточнить по фото фактическую длину до середины бедра.</td></tr>
+<tr><td>Суперплотная белая мужская футболка</td><td>Frht Jumble, футболка</td><td>8 541 руб. с Lamoda Club</td><td>46/48 RUS (S INT)</td><td>100% хлопок, 300 г/м², oversize</td><td>Белый</td><td><a href="https://www.lamoda.ru/p/mp002xm05udk/clothes-frht-futbolka/">Открыть карточку</a></td><td>Самое точное попадание по плотности и свободе. Есть принт, это не чистая белая база.</td></tr>
+</table>
+</body></html>
