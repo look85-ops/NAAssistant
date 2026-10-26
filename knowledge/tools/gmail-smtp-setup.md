@@ -2,7 +2,7 @@
 
 ## Учётные данные
 - **Email:** look85@gmail.com
-- **Пароль приложения:** `lkgn vymg wunx dlsd` (из `.env`, переменная `GMAIL_APP_PASSWORD`)
+- **Пароль приложения:** в `.env`, переменная `GMAIL_APP_PASSWORD` (НЕ хранить в этом файле)
 - **SMTP:** smtp.gmail.com:465 (SSL)
 
 ## Как отправлять
@@ -18,7 +18,7 @@ msg['Subject'] = 'Тема'
 msg.attach(MIMEText('Тело письма', 'plain', 'utf-8'))
 
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
-    s.login('look85@gmail.com', 'lkgn vymg wunx dlsd')
+    s.login('look85@gmail.com', os.environ['GMAIL_APP_PASSWORD'])
     s.send_message(msg)
 ```
 
