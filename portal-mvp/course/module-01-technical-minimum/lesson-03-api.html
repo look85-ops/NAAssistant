@@ -1,0 +1,1290 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 3. API и чтение кода — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/quiz.css">
+<style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
+
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="pbar"></div>
+
+<header class="header">
+  <div class="hi">
+    <a href="../../index.html" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="../index.html">← Программа</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wm">01.3</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 1 · Технический минимум: читать, понимать, коммитить</div>
+    <h1>Урок 3. API и чтение кода</h1>
+    <p class="meta">Урок 3</p>
+
+    <ul class="outcomes">
+      <li>Отправить первый API-запрос из терминала и прочитать ответ в JSON</li>
+      <li>Отличить GET от POST и понять статус-коды</li>
+      <li>Прочитать чужой код и объяснить что он делает</li>
+      <li>Изучить документацию OpenRouter и понять структуру запроса к AI-модели</li>
+    </ul>
+  </div>
+</section>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> откройте PowerShell. Выполните: <code>Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/todos/1"</code>. Видите таблицу с данными? Это ваш первый API-запрос. 30 секунд.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
+
+<p>Все AI-модели, с которыми вы работаете (Claude, ChatGPT, OpenRouter), живут не в интерфейсе чата, а за API. API — это дверь, через которую одна программа общается с другой. AI-агент, которого вы запускаете, не «думает» сам — он отправляет запрос к модели через API и получает ответ.</p>
+
+<p>Если вы понимаете, как устроен такой запрос, вы можете: прочитать документацию любой AI-модели, понять, что делает чужой код, объяснить разработчику задачу на его языке и — при желании — собрать простого AI-агента без конструктора. Это <strong>последний кирпич технического минимума</strong> перед погружением в AI.</p>
+
+<p>Пример из жизни: когда вы пишете вопрос в ChatGPT, браузер отправляет API-запрос к серверу OpenAI. Текст вопроса улетает туда, модель обрабатывает его и возвращает ответ. Всё, что вы видите в интерфейсе — это красивая обёртка над API-запросами.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02">Что такое API</h2>
+
+<p>API (Application Programming Interface) — это способ, которым одна программа просит что-то у другой программы. Проще всего представить <strong>официанта в ресторане</strong>:</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Кухня — это сервер (там обрабатывают данные, запускают модели). Официант — это API (принимает заказ, относит на кухню, приносит результат). Меню — это документация API (что можно заказать и как). Вы — это ваш код (клиент, который отправляет запрос).
+</div>
+
+<p>Вы не идёте на кухню, не знаете, как работает плита. Вы говорите официанту: «Мне пасту карбонара». Он передаёт заказ на кухню и приносит тарелку. Так же работает API: вы отправляете запрос в понятном формате, сервер обрабатывает и возвращает ответ.</p>
+
+<h3>HTTP-методы: GET и POST</h3>
+
+<p>Когда вы заходите на сайт, ваш браузер отправляет HTTP-запросы. Два основных типа:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Метод</th>
+      <th>Что делает</th>
+      <th>Аналогия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>GET</code></td>
+      <td>Запрашивает данные (чтение)</td>
+      <td>«Принесите меню, пожалуйста»</td>
+    </tr>
+    <tr>
+      <td><code>POST</code></td>
+      <td>Отправляет данные на сервер (создание)</td>
+      <td>«Я хочу заказать пасту, вот мой заказ»</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>GET</code> — вы не меняете ничего на сервере, просто читаете. <code>POST</code> — вы отправляете данные, и сервер что-то с ними делает (создаёт, считает, генерирует). Все запросы к AI-моделям — это <code>POST</code>: вы посылаете промпт, модель возвращает ответ. Есть и другие методы (PUT, DELETE, PATCH), но в 80% случаев вы встретите GET и POST.</p>
+
+<h3>API-ключ: ваш пропуск</h3>
+
+<p>Большинство AI-API требуют ключ — длинную строку символов, которую вы прикрепляете к запросу. Это как билет на концерт: без него вас не пустят, с ним — вы свой.</p>
+
+<p>Ключ передаётся в заголовке запроса (headers):</p>
+
+<pre><code>Authorization: Bearer sk-or-v1-ваш-длинный-ключ</code></pre>
+
+<p>Правила безопасности:</p>
+
+<ul>
+  <li>Никогда не публикуйте ключ в открытом коде на GitHub (их воруют боты).</li>
+  <li>Храните ключ в переменных окружения или в файле <code>.env</code> (файл, который Git игнорирует).</li>
+  <li>Если ключ «утёк» — срочно перегенерируйте его в личном кабинете сервиса.</li>
+</ul>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="03">JSON: язык API</h2>
+
+<p>JSON (JavaScript Object Notation) — это формат, на котором программы общаются друг с другом. Способ записать данные так, чтобы их легко читал и человек, и машина.</p>
+
+<p>Пример JSON-запроса к AI-модели:</p>
+
+<pre><code>{
+  "model": "openai/gpt-4o",
+  "messages": [
+    {"role": "user", "content": "Привет, как дела?"}
+  ],
+  "temperature": 0.7
+}</code></pre>
+
+<p>Правила JSON:</p>
+
+<ul>
+  <li>Всё в фигурных скобках <code>{ }</code> — объект (как анкета)</li>
+  <li><code>[ ]</code> — список (массив)</li>
+  <li>Ключи — всегда в двойных кавычках: <code>"model"</code>, а не <code>model</code></li>
+  <li>Значения могут быть: строка <code>"текст"</code>, число <code>0.7</code>, массив <code>[ ]</code>, объект <code>{ }</code>, булево <code>true/false</code></li>
+  <li>Запятые между парами, но без запятой после последней</li>
+</ul>
+
+<div class="margin-note">
+  <strong>Как читать JSON.</strong> Представьте матрёшку. Открываете внешнюю — внутри объект. Открываете объект — внутри поле <code>choices</code>. Открываете <code>choices</code> — внутри список. Первый элемент списка — ещё объект с полем <code>message</code>. А внутри <code>message</code> — поле <code>content</code> с текстом ответа. Научиться читать JSON — как научиться читать квитанцию: сначала кажется китайской грамотой, через неделю — привычно.
+</div>
+
+<p>В ответ модель тоже пришлёт JSON — с результатом внутри поля <code>choices[0].message.content</code>. Почти каждый API-ответ выглядит как JSON.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="04">Статус-коды</h2>
+
+<p>Когда сервер отвечает на запрос, он всегда присылает код — трёхзначное число, которое говорит, что случилось:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Код</th>
+      <th>Значение</th>
+      <th>Когда</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>200</code></td>
+      <td>OK</td>
+      <td>Всё хорошо, данные в ответе</td>
+    </tr>
+    <tr>
+      <td><code>201</code></td>
+      <td>Created</td>
+      <td>Что-то создано (обычно после POST)</td>
+    </tr>
+    <tr>
+      <td><code>400</code></td>
+      <td>Bad Request</td>
+      <td>Вы отправили кривой запрос (опечатка в JSON)</td>
+    </tr>
+    <tr>
+      <td><code>401</code></td>
+      <td>Unauthorized</td>
+      <td>Нет ключа или ключ неверный</td>
+    </tr>
+    <tr>
+      <td><code>403</code></td>
+      <td>Forbidden</td>
+      <td>Ключ есть, но доступа нет (чужая модель)</td>
+    </tr>
+    <tr>
+      <td><code>404</code></td>
+      <td>Not Found</td>
+      <td>Такого адреса нет</td>
+    </tr>
+    <tr>
+      <td><code>429</code></td>
+      <td>Too Many Requests</td>
+      <td>Слишком много запросов, подождите</td>
+    </tr>
+    <tr>
+      <td><code>500</code></td>
+      <td>Internal Server Error</td>
+      <td>Сервер упал, не ваша вина</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pull-quote">
+  2xx = успех, 4xx = ваша ошибка, 5xx = ошибка сервера
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="05">Как читать чужой код</h2>
+
+<p>Вы не будете писать код с нуля. Но вы будете его читать: скрипт коллеги, пример из документации, AI-сгенерированный файл. Чтение кода — это навык отличать лес от деревьев.</p>
+
+<p>При встрече с незнакомым файлом задайте себе <strong>три вопроса</strong>:</p>
+
+<ol>
+  <li><strong>Что на входе?</strong> — Какие данные получает программа: аргументы командной строки? Файл? Запрос от пользователя? Ищите <code>input()</code>, <code>sys.argv</code>, <code>open()</code>, <code>requests.get()</code>.</li>
+  <li><strong>Что внутри?</strong> — Что она делает с данными: циклы, условия, вызовы других функций. Читайте сверху вниз, как рецепт.</li>
+  <li><strong>Что на выходе?</strong> — Что программа возвращает: печатает в консоль? Сохраняет в файл? Отправляет ответ? Ищите <code>print()</code>, <code>return</code>, <code>write()</code>, <code>requests.post()</code>.</li>
+</ol>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> Чтение кода — как чтение рецепта на незнакомом языке. Вы не знаете всех слов, но понимаете: «взять X, смешать с Y, поставить в духовку на Z минут». Импорты — список ингредиентов, функции — шаги рецепта, вызов — «духовку включить».
+</div>
+
+<p>Не надо понимать каждую строчку. Вам нужно понимать логику: что заходит, что делается, что выходит. Остальное — детали, которые вы нагуглите.</p>
+
+<div class="interim"><h3>Промежуточный итог</h3><p>API — универсальный язык программ. GET читает. POST отправляет. JSON — формат. Статус-коды — обратная связь.</p></div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>Понимать API — как знать английский в IT</h2>
+    <p>Вы не обязаны писать код, но обязаны понимать о чём говорят разработчики. API, JSON, статус-коды, эндпоинты — это базовый словарь. Без него вы слышите шум. С ним — участвуете в разговоре на равных.</p>
+  </div>
+</div>
+
+<div class="cheatsheet">
+  <h2>Шпаргалка</h2>
+
+  <h3>API-запросы в PowerShell</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Действие</th>
+        <th>Команда</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>GET-запрос</td>
+        <td><code>Invoke-RestMethod -Uri "https://api.example.com/data"</code></td>
+      </tr>
+      <tr>
+        <td>GET с параметрами</td>
+        <td><code>Invoke-RestMethod -Uri "https://api.example.com/search?q=термин"</code></td>
+      </tr>
+      <tr>
+        <td>POST-запрос с JSON</td>
+        <td><code>Invoke-RestMethod -Method Post -Uri "..." -Body (ConvertTo-Json @{key="val"}) -ContentType "application/json"</code></td>
+      </tr>
+      <tr>
+        <td>POST с заголовком (ключ)</td>
+        <td>Добавить <code>-Headers @{"Authorization"="Bearer sk-key"}</code></td>
+      </tr>
+      <tr>
+        <td>Сохранить ответ в переменную</td>
+        <td><code>$ответ = Invoke-RestMethod -Uri "..."</code></td>
+      </tr>
+      <tr>
+        <td>Посмотреть поле ответа</td>
+        <td><code>$ответ.поле</code> или <code>$ответ[0].поле</code></td>
+      </tr>
+      <tr>
+        <td>Сохранить ответ в файл</td>
+        <td><code>... | ConvertTo-Json -Depth 10 | Out-File -FilePath "ответ.json"</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Статус-коды</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Диапазон</th>
+        <th>Смысл</th>
+        <th>Пример</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>2xx</code></td>
+        <td>Успех</td>
+        <td>200 OK, 201 Created</td>
+      </tr>
+      <tr>
+        <td><code>3xx</code></td>
+        <td>Перенаправление</td>
+        <td>301 Moved Permanently</td>
+      </tr>
+      <tr>
+        <td><code>4xx</code></td>
+        <td>Ошибка на вашей стороне</td>
+        <td>400 Bad Request, 401 Unauthorized, 404 Not Found</td>
+      </tr>
+      <tr>
+        <td><code>5xx</code></td>
+        <td>Ошибка на стороне сервера</td>
+        <td>500 Internal Server Error, 503 Service Unavailable</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Структура кода</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Элемент</th>
+        <th>Python</th>
+        <th>JavaScript</th>
+        <th>Что делает</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Импорт библиотек</td>
+        <td><code>import requests</code></td>
+        <td><code>const fetch = require('node-fetch')</code></td>
+        <td>Подключает готовый код, чтоб не писать с нуля</td>
+      </tr>
+      <tr>
+        <td>Функция</td>
+        <td><code>def send_prompt(text):</code></td>
+        <td><code>function sendPrompt(text) { }</code></td>
+        <td>Блок действий, который можно вызвать по имени</td>
+      </tr>
+      <tr>
+        <td>Переменная</td>
+        <td><code>api_key = "sk-..."</code></td>
+        <td><code>const apiKey = "sk-..."</code></td>
+        <td>Хранит данные (строку, число, список)</td>
+      </tr>
+      <tr>
+        <td>Условие</td>
+        <td><code>if status == 200:</code></td>
+        <td><code>if (status === 200) { }</code></td>
+        <td>«Если это правда — делай это, иначе — то»</td>
+      </tr>
+      <tr>
+        <td>Цикл</td>
+        <td><code>for item in items:</code></td>
+        <td><code>for (let item of items) { }</code></td>
+        <td>Повторить действие для каждого элемента</td>
+      </tr>
+      <tr>
+        <td>Вызов API</td>
+        <td><code>requests.get(url, headers=...)</code></td>
+        <td><code>fetch(url, { method: 'POST', ... })</code></td>
+        <td>Отправить HTTP-запрос к серверу</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="06">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. Первый GET-запрос (10 мин)</summary>
+      <div class="details-content">
+        <p>Откройте PowerShell. Мы отправим запрос к бесплатному тестовому API <code>jsonplaceholder</code> — это «песочница» для тренировки запросов (не требует ключа).</p>
+        <pre><code>Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/todos/1"</code></pre>
+        <p>Вы увидите таблицу с полями <code>userId</code>, <code>id</code>, <code>title</code>, <code>completed</code>. PowerShell распознал JSON и показал его таблицей.</p>
+        <p>Теперь запросите все задачи и посчитайте их количество:</p>
+        <pre><code>$todos = Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/todos"
+$todos.Count</code></pre>
+        <p>Сколько вернулось? Должно быть 200. Переменная <code>$todos</code> — это коробка, куда мы сложили ответ, чтобы потом с ним работать.</p>
+        <p>Посмотрите первую и последнюю задачу:</p>
+        <pre><code>$todos[0]
+$todos[-1]</code></pre>
+        <p>Вы только что сделали то же, что и AI-скрипт: отправили запрос, получили JSON, достали поле из ответа.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. API с параметрами (10 мин)</summary>
+      <div class="details-content">
+        <p>API могут принимать параметры — как фильтр в интернет-магазине. Параметры идут после знака <code>?</code>:</p>
+        <pre><code>Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/todos?userId=1"</code></pre>
+        <p>Вы получили задачи только пользователя с ID=1. Попробуйте <code>userId=2</code>, <code>userId=3</code>.</p>
+        <p>Теперь попробуйте другой публичный API — поиск книг:</p>
+        <pre><code>$books = Invoke-RestMethod -Uri "https://openlibrary.org/search.json?q=learning+design"
+$books.docs.Count
+$books.docs[0].title</code></pre>
+        <p>Вы получили список книг по запросу "learning design" и посмотрели название первой. Символ <code>?</code> отделяет адрес от параметров, <code>=</code> — название параметра от значения, <code>+</code> заменяет пробел.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 3. Чтение документации OpenRouter (20 мин)</summary>
+      <div class="details-content">
+        <p>OpenRouter — это сервис, через который можно обращаться к сотням AI-моделей по единому API. Нам он понадобится в следующем модуле.</p>
+        <p>Откройте в браузере: <a href="https://openrouter.ai/docs/quick-start" target="_blank">openrouter.ai/docs/quick-start</a></p>
+        <p>Ваша задача — не понять всё, а найти ответы на три вопроса (запишите в блокнот):</p>
+        <ol class="steps">
+          <li>Какой URL для отправки запроса? (Подсказка: ищите <code>POST</code> и <code>api/v1/</code>)</li>
+          <li>Какое поле в ответе содержит текст, который сгенерировала модель? (Подсказка: ищите <code>choices</code> и <code>content</code>)</li>
+          <li>Как называется заголовок для передачи API-ключа? (Подсказка: ищите слово <code>Authorization</code>)</li>
+        </ol>
+        <p>Теперь откройте раздел Models: <a href="https://openrouter.ai/models" target="_blank">openrouter.ai/models</a></p>
+        <p>Найдите одну бесплатную модель (с пометкой "Free") и запишите её полное название (например, <code>google/gemini-2.0-flash-001</code>).</p>
+        <p>Это тренировка навыка «читать документацию» — самого важного для разработчика. Не бойтесь, если непонятно: ваша цель — найти три конкретных факта, а не понять всё.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 4. POST-запрос: отправляем данные (15 мин)</summary>
+      <div class="details-content">
+        <p>GET-запросы просто читают. POST — отправляют данные на сервер. Попробуем на тестовом API:</p>
+        <pre><code>$body = @{
+    title  = "Моя тестовая задача"
+    body   = "Учусь отправлять POST-запросы"
+    userId = 1
+} | ConvertTo-Json
+
+$response = Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/posts" -Method Post -Body $body -ContentType "application/json"
+$response</code></pre>
+        <p>Вы увидите созданный объект с полем <code>id: 101</code> — сервер подтвердил создание.</p>
+        <p>Разбор команды по частям:</p>
+        <ul>
+          <li><code>@{ ... }</code> — создали хеш-таблицу (словарь) с данными</li>
+          <li><code>| ConvertTo-Json</code> — превратили в JSON-строку</li>
+          <li><code>-Method Post</code> — указали метод</li>
+          <li><code>-Body $body</code> — передали данные</li>
+          <li><code>-ContentType "application/json"</code> — сказали серверу: «Я посылаю JSON»</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 5. Статус-коды на практике (10 мин)</summary>
+      <div class="details-content">
+        <p>Специально сделаем неправильные запросы, чтобы увидеть статус-коды:</p>
+        <p>1. Несуществующая страница (404):</p>
+        <pre><code>try { Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/ne-postoi" } catch { $_.Exception.Message }</code></pre>
+        <p>2. Битый JSON (400):</p>
+        <pre><code>try { Invoke-RestMethod -Uri "https://jsonplaceholder.typicode.com/posts" -Method Post -Body '{"title": "oops' -ContentType "application/json" } catch { $_.Exception.Message }</code></pre>
+        <p>Конструкция <code>try { ... } catch { ... }</code> — это «попробуй выполнить, а если ошибка — покажи сообщение, но не падай».</p>
+        <p>Запомните: <strong>если пришёл 4xx — проверьте свой запрос. Если 5xx — подождите и попробуйте позже, проблема не у вас.</strong></p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 6. Чтение чужого кода (25 мин)</summary>
+      <div class="details-content">
+        <p>Ниже — скрипт на Python, который обращается к AI-модели через OpenRouter API. Ваша задача — не написать такой же, а прочитать и объяснить, что он делает.</p>
+        <pre><code>import os
+import requests
+import json
+
+# --- 1. Настройки ---
+API_KEY = os.environ.get("OPENROUTER_API_KEY")
+MODEL = "google/gemini-2.0-flash-001"
+API_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+# --- 2. Запрос ---
+system_prompt = "Ты — L&D-методист. Отвечай коротко, по делу."
+user_question = "Объясни разницу между RAG и fine-tuning одной фразой."
+
+headers = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json"
+}
+
+payload = {
+    "model": MODEL,
+    "messages": [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_question}
+    ],
+    "temperature": 0.3,
+    "max_tokens": 100
+}
+
+# --- 3. Отправка ---
+response = requests.post(API_URL, headers=headers, json=payload)
+
+# --- 4. Обработка ответа ---
+if response.status_code == 200:
+    answer = response.json()
+    print(answer["choices"][0]["message"]["content"])
+else:
+    print(f"Ошибка {response.status_code}: {response.text}")</code></pre>
+        <p>Задание: откройте Блокнот и напишите ответы на вопросы в свободной форме:</p>
+        <ol class="steps">
+          <li><strong>Что на входе?</strong> — Какие данные получает скрипт перед запуском?</li>
+          <li><strong>Что внутри?</strong> — Перечислите основные блоки (1–4), которые вы видите. Опишите назначение каждого блока своими словами.</li>
+          <li><strong>Что на выходе?</strong> — Что произойдёт, если скрипт выполнится успешно? Что — если ключ не указан?</li>
+          <li><strong>Какие строчки вам непонятны?</strong> — Выпишите 1–3 строки. Попробуйте догадаться из контекста.</li>
+          <li><strong>Что такое <code>temperature</code> в payload?</strong> — Догадайтесь из контекста.</li>
+        </ol>
+        <p>Не подсматривайте ответы, пока не напишете свои. Дальше — разбор.</p>
+        <details>
+          <summary><em>Разбор (откройте после того, как ответили сами)</em></summary>
+          <p><strong>1. Что на входе:</strong> API-ключ из переменной окружения <code>OPENROUTER_API_KEY</code>, название модели, URL для запроса, системный промпт, вопрос пользователя.</p>
+          <p><strong>2. Блоки:</strong></p>
+          <ul>
+            <li>Блок 1 (строки 1–3): Импорт. Подключаем библиотеки для работы с переменными окружения, HTTP-запросами и JSON.</li>
+            <li>Блок 2 (строки 5–7): Конфигурация. Задаём ключ, модель и адрес. Ключ берётся не из кода (опасно), а из переменной окружения.</li>
+            <li>Блок 3 (строки 9–27): Формируем текст запроса — системный промпт, вопрос пользователя, заголовки с ключом, тело запроса (payload) с моделью, сообщениями, температурой и лимитом токенов.</li>
+            <li>Блок 4 (строки 29–35): Отправка и обработка. POST-запрос с заголовками и телом. Если код 200 — печатаем ответ модели. Если нет — печатаем ошибку.</li>
+          </ul>
+          <p><strong>3. Что на выходе:</strong> Успех — в терминале появится ответ модели (одна фраза про RAG vs fine-tuning). Нет ключа — ошибка 401 (Unauthorized).</p>
+          <p><strong>4. Непонятные строки:</strong> <code>os.environ.get("OPENROUTER_API_KEY")</code> — берёт значение из переменной окружения, чтобы не хранить ключ в коде. <code>f"Bearer {API_KEY}"</code> — f-строка подставляет значение переменной внутрь текста. <code>response.json()</code> — превращает JSON-ответ сервера в объект Python.</p>
+          <p><strong>5. Temperature:</strong> Число от 0 до 2. 0 = модель отвечает строго, как по учебнику. 1 = творчески, с вариациями. 0.3 — почти строго, но с лёгкой свободой.</p>
+        </details>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 7. Создание артефакта (15 мин)</summary>
+      <div class="details-content">
+        <p>Вернитесь в папку вашего учебного проекта. Создайте папку <code>api-demo</code> и внутри — файл <code>openrouter-test.md</code>:</p>
+        <pre><code>mkdir api-demo
+ni api-demo\openrouter-test.md</code></pre>
+        <p>Откройте файл в редакторе и запишите:</p>
+        <ol class="steps">
+          <li>Свой первый GET-запрос — URL и что вернулось.</li>
+          <li>Свой первый POST-запрос — какой JSON отправили и какой id присвоил сервер.</li>
+          <li>Ответы на пять вопросов из Упражнения 6 (чтение кода).</li>
+          <li>Три факта, которые вы нашли в документации OpenRouter.</li>
+          <li>2–3 предложения своими словами: что я понял(а) про API.</li>
+        </ol>
+        <p>Сохраните, закройте. Проверьте через терминал:</p>
+        <pre><code>cat api-demo\openrouter-test.md</code></pre>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 8. Бонус: реальный запрос к OpenRouter (15 мин)</summary>
+      <div class="details-content">
+        <p>Если у вас есть желание и 15 минут — выполните бонусное упражнение. Оно не обязательно, но даст вам первый реальный опыт общения с AI-моделью через API.</p>
+        <p>Что нужно:</p>
+        <ol class="steps">
+          <li>Зайдите на <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a>, зарегистрируйтесь (бесплатно) и создайте API-ключ.</li>
+          <li>Положите немного денег на баланс ($1–2, этого хватит на десятки запросов).</li>
+          <li>Вернитесь в PowerShell. НЕ вставляйте ключ в код — задайте переменную окружения:</li>
+        </ol>
+        <pre><code>$env:OPENROUTER_API_KEY = "ваш-ключ-сюда"</code></pre>
+        <p>Теперь отправьте запрос к бесплатной модели:</p>
+        <pre><code>$headers = @{
+    "Authorization" = "Bearer $env:OPENROUTER_API_KEY"
+    "Content-Type"  = "application/json"
+}
+
+$body = @{
+    model    = "google/gemini-2.0-flash-001"
+    messages = @(
+        @{ role = "user"; content = "Привет! Напиши хайку про осень." }
+    )
+} | ConvertTo-Json -Depth 3
+
+$response = Invoke-RestMethod -Uri "https://openrouter.ai/api/v1/chat/completions" -Method Post -Headers $headers -Body $body
+$response.choices[0].message.content</code></pre>
+        <p>Если всё получилось — вы только что отправили свой первый запрос к AI-модели не через чат-интерфейс, а напрямую через API.</p>
+        <p>Если что-то пошло не так — проверьте:</p>
+        <ul>
+          <li>Правильно ли скопирован ключ (весь, без пробелов в начале/конце)</li>
+          <li>Есть ли деньги на балансе OpenRouter</li>
+          <li>Доступна ли модель <code>google/gemini-2.0-flash-001</code> (бесплатная, но иногда с задержкой)</li>
+        </ul>
+        <p><strong>Важно:</strong> после эксперимента закройте PowerShell (ключ удалится из переменной окружения) и никогда не публикуйте ключ в Git.</p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="07">После практики</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>&check; Выполнили GET-запрос к jsonplaceholder и получили данные</li>
+    <li>&check; Поняли разницу между GET и POST</li>
+    <li>&check; Отправили POST-запрос с JSON-телом</li>
+    <li>&check; Умеете читать статус-коды (200, 400, 401, 404, 500)</li>
+    <li>&check; Изучили документацию OpenRouter: видите, из чего состоит запрос к AI-модели</li>
+    <li>&check; Разобрали чужой код: ответили на 5 вопросов из Упражнения 6</li>
+    <li>&check; Создали артефакт <code>api-demo/openrouter-test.md</code></li>
+  </ul>
+</div>
+
+<h3>Артефакт урока</h3>
+
+<p>После урока в вашем проекте должна появиться структура:</p>
+
+<pre>ваш-проект/
+└── api-demo/
+    └── openrouter-test.md    # Описание запроса к OpenRouter + разбор кода</pre>
+
+<div class="open-loop">
+  <h3>Челлендж на завтра</h3>
+  <p>Откройте DevTools в браузере (F12) → вкладка Network → обновите любую страницу. Вы увидите все API-запросы, которые делает сайт. Ваш браузер — это клиент, который постоянно общается с серверами через API. Найдите один GET-запрос, один POST-запрос и посмотрите на их статус-коды. Это займёт 5 минут, но закрепит понимание на практике.</p>
+</div>
+
+<h3>Что дальше</h3>
+
+<p>Вы завершили Модуль 1. Технический минимум. Теперь вы умеете:</p>
+
+<ul>
+  <li>Работать в терминале: навигация, файлы, папки</li>
+  <li>Использовать Git: коммиты, ветки, репозитории</li>
+  <li>Отправлять API-запросы и читать JSON-ответы</li>
+  <li>Читать чужой код на Python без паники</li>
+</ul>
+
+<p>Следующий модуль: <strong>AI — от промпта до продукта.</strong> Вы узнаете, как работают LLM на самом деле, что такое RAG и эмбеддинги, и соберёте своего первого AI-агента. Всё, что вы освоили в этом модуле, — база, на которой это строится.</p>
+
+<h3>Итоговая проверка Модуля 1</h3>
+
+<p>Ответьте себе (можно устно):</p>
+
+<ol>
+  <li>Как создать папку и файл из терминала?</li>
+  <li>Как сделать коммит и отправить его на GitHub?</li>
+  <li>Чем GET отличается от POST?</li>
+  <li>Что означает статус-код 401?</li>
+  <li>Из чего состоит API-запрос к AI-модели? (метод, URL, заголовки, тело)</li>
+</ol>
+
+<p>Если на все 5 вопросов отвечаете без подсказок — Модуль 1 пройден.</p>
+
+<h3>Дополнительно (необязательно, но полезно)</h3>
+
+<ul>
+  <li>Установите <a href="https://postman.com" target="_blank">Postman</a> — графический инструмент для тестирования API. Многие считают его удобнее терминала для первых экспериментов.</li>
+  <li>Посмотрите, что возвращает API случайных фактов о котах: <code>Invoke-RestMethod -Uri "https://catfact.ninja/fact"</code></li>
+  <li>Прочитайте раздел "Making requests" в документации OpenRouter: <a href="https://openrouter.ai/docs/quick-start" target="_blank">openrouter.ai/docs/quick-start</a></li>
+</ul>
+
+<div class="quiz" data-quiz-id="m01-lesson-03">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">1. Что такое API?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Интерфейс, через который программы обмениваются данными и командами</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Язык программирования для веб-серверов</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Программа для тестирования кода</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">2. Какой HTTP-метод используется для получения данных?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> POST</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> PUT</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> GET</label>
+  </div>
+
+  <div class="quiz-item" data-correct="1">
+    <p class="quiz-question">3. Что такое API-ключ?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Пароль от вашего компьютера</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> Уникальный идентификатор, который подтверждает ваше право обращаться к API</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> Название команды в терминале</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">4. В каком формате API обычно возвращает данные?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> JSON — текстовый формат, похожий на словарь</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> PDF-документ</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Изображение в формате PNG</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
+<div class="nav-bottom">
+  <a href="lesson-02-git.html">← Урок 2. Git</a>
+  <a href="../../module-02-ai-from-prompt-to-product/lesson-01-llm-internals.html" class="nav-next">М2. Урок 1. LLM →</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
+      <a href="../../index.html">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
+
+<script src="../../scripts/quiz.js"></script>
+
+</body>
+</html>

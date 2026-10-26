@@ -1,0 +1,76 @@
+/* ═══════════════════════════════════════════
+   L&D без суеты — Design Tokens
+   Brand: Olive + Terracotta on pure white
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* ── Palette ── */
+  --color-bg:       oklch(1.000 0.000 0);      /* pure white */
+  --color-surface:  oklch(0.960 0.003 110);     /* barely olive */
+  --color-primary:  oklch(0.350 0.075 110);     /* deep olive */
+  --color-accent:   oklch(0.600 0.120 55);      /* burnt terracotta */
+  --color-ink:      oklch(0.150 0.004 110);     /* near-black olive */
+  --color-muted:    oklch(0.450 0.003 110);     /* olive gray */
+  --color-border:   oklch(0.880 0.003 110);     /* subtle olive border */
+
+  /* Ink-on-primary: always white text */
+  --color-on-primary:  oklch(1.000 0.000 0);
+  /* Ink-on-accent: white text (mid-luminance saturated fill) */
+  --color-on-accent:   oklch(1.000 0.000 0);
+
+  /* ── Typography ── */
+  --font-display: 'Geist', sans-serif;
+  --font-body:    'Geist', sans-serif;
+  --font-mono:    'Geist Mono', monospace;
+
+  /* Type scale (modular, ratio 1.25) */
+  --text-xs:    clamp(0.70rem, 1.2vw, 0.75rem);
+  --text-sm:    clamp(0.80rem, 1.3vw, 0.875rem);
+  --text-base:  clamp(0.95rem, 1.5vw, 1.00rem);
+  --text-lg:    clamp(1.10rem, 1.8vw, 1.25rem);
+  --text-xl:    clamp(1.30rem, 2.3vw, 1.563rem);
+  --text-2xl:   clamp(1.60rem, 3.0vw, 1.953rem);
+  --text-3xl:   clamp(2.00rem, 4.0vw, 2.441rem);
+  --text-4xl:   clamp(2.80rem, 5.5vw, 3.815rem);
+  --text-5xl:   clamp(3.50rem, 7.0vw, 5.960rem);
+
+  /* ── Spacing (8px base) ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --space-48: 12rem;
+
+  /* ── Radii ── */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:  0 8px 30px rgba(0,0,0,0.10);
+
+  /* ── Z-index scale ── */
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+}

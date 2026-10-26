@@ -1,0 +1,1211 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Урок 1. AI Readiness: аудит готовности и приоритизация — L&D без суеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/quiz.css">
+<style>
+:root {
+  --olive: #474a1a;
+  --terracotta: #b05a2e;
+  --muted: #737366;
+  --border: #e0ded8;
+  --surface: #f4f4ef;
+  --ink: #2b2b1a;
+  --light: #fafaf8;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body {
+  font-family:'Geist',sans-serif;
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+.pbar {
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  background:var(--olive);
+  z-index:300;
+  transition:width 0.1s linear;
+}
+
+.header {
+  position:fixed;
+  top:4px;
+  left:0;
+  right:0;
+  z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.hi {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 48px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hlogo {
+  font-size:15px;
+  font-weight:550;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.hlogo span { color:var(--olive); }
+
+.hnav {
+  display:flex;
+  gap:28px;
+}
+
+.hnav a {
+  font-size:14px;
+  font-weight:400;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.hnav a:hover { color:var(--ink); }
+
+.hero {
+  padding:140px 0 60px;
+  background:var(--surface);
+  border-bottom:4px solid var(--olive);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-wm {
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:280px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.hi2 {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+.mod-tag {
+  display:inline-block;
+  font-size:12px;
+  font-weight:500;
+  color:var(--terracotta);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:16px;
+}
+
+.hero h1 {
+  font-size:clamp(1.8rem,3.5vw,2.4rem);
+  font-weight:650;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+
+.meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.outcomes {
+  list-style:none;
+  margin:0 0 24px;
+  padding:0;
+}
+
+.outcomes li {
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
+}
+
+.outcomes li::before {
+  content:'—';
+  position:absolute;
+  left:0;
+  color:var(--olive);
+}
+
+.hero-cta {
+  margin:0 0 48px;
+  background:var(--light);
+  border:1px solid var(--olive);
+  padding:16px 24px;
+  font-size:15px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.hero-cta strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:4px;
+}
+
+.content {
+  max-width:720px;
+  margin:0 auto;
+  padding:0 48px;
+}
+
+h2 {
+  font-size:1.35rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:60px 0 18px;
+  letter-spacing:-0.01em;
+}
+
+h3 {
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  margin:40px 0 12px;
+}
+
+.content p {
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:var(--ink);
+  line-height:1.65;
+  text-wrap:pretty;
+  hyphens:auto;
+  orphans:2;
+  widows:2;
+}
+
+.content strong { font-weight:550; }
+
+.content ul,.content ol { margin:0 0 20px 24px; }
+
+.content li { font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+
+.content em { font-style:italic; }
+
+.section-hd {
+  position:relative;
+}
+
+.section-hd::after {
+  content:attr(data-num);
+  position:absolute;
+  right:0;
+  top:-30px;
+  font-size:220px;
+  font-weight:900;
+  color:var(--olive);
+  opacity:.035;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+
+.metaphor {
+  border-left:3px solid var(--olive);
+  font-style:italic;
+  max-width:600px;
+  padding:4px 0 4px 20px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.insight {
+  border-left:4px solid var(--olive);
+  padding:12px 0 12px 20px;
+  margin:0 0 20px;
+  background:var(--surface);
+  font-size:0.95rem;
+}
+
+.pull-quote {
+  border-left:3px solid var(--terracotta);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.5vw,1.6rem);
+  padding:4px 0 4px 24px;
+  margin:32px 0;
+  color:var(--ink);
+  line-height:1.35;
+}
+
+.margin-note {
+  display:inline-block;
+  background:var(--surface);
+  border-left:3px solid var(--olive);
+  padding:12px 18px;
+  margin:8px 0 16px;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.micro-prac {
+  background:var(--light);
+  border:1px solid var(--border);
+  padding:16px 24px;
+  margin:16px 0 20px;
+  font-size:14px;
+  color:var(--ink);
+}
+
+.micro-prac strong {
+  display:inline-block;
+  font-weight:550;
+  color:var(--olive);
+  margin-bottom:6px;
+}
+
+.interim {
+  background:var(--surface);
+  padding:40px 48px;
+  margin:60px 0 40px;
+}
+
+.interim h3 {
+  text-transform:uppercase;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.interim p { margin:0; font-size:15px; }
+
+.episode {
+  background:var(--olive);
+  color:#fff;
+  padding:75px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
+}
+
+.episode .hi2 { position:relative; z-index:1; max-width:900px; }
+
+.episode h2 { font-size:2.25rem; margin-top:0; color:#fff; }
+
+.episode p { font-size:1.5rem; line-height:1.55; color:rgba(255,255,255,0.9); }
+
+.practice {
+  padding:60px 0;
+  margin:60px 0;
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  background:var(--surface);
+}
+
+.practice .hi2 { position:relative; }
+
+.practice h3 {
+  font-size:1.15rem;
+  font-weight:550;
+  margin:24px 0 8px;
+}
+
+.practice details {
+  margin-bottom:24px;
+}
+
+.practice summary {
+  cursor:pointer;
+  font-size:1.1rem;
+  font-weight:550;
+  color:var(--ink);
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.practice summary::-webkit-details-marker { display:none; }
+
+.practice summary::before {
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  font-size:18px;
+  font-weight:400;
+  color:var(--olive);
+  flex-shrink:0;
+}
+
+.practice details[open] summary::before { content:'−'; }
+
+.practice details .details-content {
+  padding:20px 0 20px 34px;
+}
+
+.practice .steps {
+  list-style:none;
+  counter-reset:step;
+  padding:0;
+  margin:0 0 16px;
+}
+
+.practice .steps li {
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  margin-bottom:10px;
+}
+
+.practice .steps li::before {
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--olive);
+  color:#fff;
+  font-size:12px;
+  font-weight:550;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.content table {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 20px;
+  font-size:0.9rem;
+}
+
+.content thead th {
+  text-align:left;
+  padding:10px 14px;
+  text-transform:uppercase;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:550;
+  color:var(--muted);
+  border-bottom:2px solid var(--olive);
+}
+
+.content tbody td {
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink);
+  transition:background 150ms;
+}
+
+.content tbody tr:hover td {
+  background:var(--surface);
+}
+
+.content tbody tr:nth-child(even) td {
+  background:var(--light);
+}
+
+.content tbody tr:nth-child(even):hover td {
+  background:var(--surface);
+}
+
+.content code {
+  font-family:'Geist Mono',monospace;
+  font-size:0.9em;
+  background:var(--surface);
+  padding:2px 6px;
+  color:var(--olive);
+}
+
+.content pre {
+  background:var(--light);
+  border-left:2px solid var(--olive);
+  padding:20px 24px;
+  margin:0 0 20px;
+  overflow-x:auto;
+  font-size:0.9rem;
+  line-height:1.5;
+  font-family:'Geist Mono',monospace;
+}
+
+.content pre code {
+  background:none;
+  padding:0;
+  color:var(--ink);
+}
+
+.cheatsheet {
+  border:1px solid var(--olive);
+  padding:0 24px 20px;
+  margin:40px 0;
+  position:relative;
+}
+
+.cheatsheet h2,.cheatsheet h3 { margin-top:20px; }
+
+.geo-div{display:flex;align-items:center;gap:16px;margin:80px 0}
+.geo-div .line{flex:1;height:1px;background:var(--border)}
+.geo-div .sq{width:12px;height:12px;background:var(--terracotta);flex-shrink:0}
+
+.open-loop {
+  border:1px dashed var(--terracotta);
+  padding:24px;
+  margin:32px 0;
+}
+
+.open-loop h3 { margin-top:0; color:var(--terracotta); }
+
+.nav-bottom {
+  border-top:1px solid var(--border);
+  padding:32px 0;
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.nav-bottom a {
+  font-size:15px;
+  font-weight:500;
+  color:var(--olive);
+  text-decoration:none;
+}
+
+.nav-bottom a:hover { text-decoration:underline; }
+
+.nav-bottom .nav-next {
+  margin-left:auto;
+  text-align:right;
+}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:48px 0 36px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+footer .hi {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+footer a {
+  color:var(--muted);
+  text-decoration:none;
+  margin-right:18px;
+}
+
+footer a:hover { color:var(--ink); }
+
+footer .fmeta {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  font-size:11px;
+  color:#b0b0a8;
+}
+
+@media(max-width:768px) {
+  .hi,.hi2,.content{padding:0 24px}
+  .hnav{gap:16px}
+  .hero-wm{font-size:160px;right:-20px}
+  .section-hd::after{font-size:140px;top:-20px}
+  .practice summary{font-size:1rem}
+  .nav-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  .interim{padding:32px 24px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html{scroll-behavior:auto}
+  .pbar{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="pbar" id="pbar"></div>
+
+<header class="header">
+  <div class="hi">
+    <a href="../../index.html" class="hlogo">L&D <span>без суеты</span></a>
+    <nav class="hnav">
+      <a href="../index.html">← Программа</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wm">03.1</div>
+  <div class="hi2">
+    <div class="mod-tag">Модуль 3 · AI-стратегия и ROI</div>
+    <h1>Урок 1. AI Readiness: аудит готовности и приоритизация</h1>
+    <p class="meta">Урок 1</p>
+
+    <ul class="outcomes">
+      <li>Провести AI Readiness Check своего отдела по трём слоям (люди, процессы, данные)</li>
+      <li>Составить и приоритизировать список use case'ов по трём осям (ценность, усилия, риск)</li>
+      <li>Применять risk-фильтр и human-in-the-loop в каждом AI-решении</li>
+      <li>Сформировать вендор-чеклист: какие вопросы задавать до покупки AI-инструмента</li>
+    </ul>
+  </div>
+</section>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<div class="content">
+
+<div class="hero-cta">
+  <p><strong>Прямо сейчас:</strong> представьте — вы внедряете AI-бота для онбординга новичков. Какие <strong>два вопроса про безопасность</strong> вы зададите вендору, прежде чем подписать договор? Запишите их. В конце урока мы к ним вернёмся — и вы увидите, насколько глубже стали ваши вопросы.</p>
+</div>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="01">Зачем это L&amp;D-специалисту</h2>
+
+<p>Если вы прошли Модули 1 и 2, вы знаете как управлять моделью, строить RAG-агентов и дообучать модели. Но теперь вы не исполнитель — вы тот, кто решает, <strong>куда вообще приложить AI в своей организации</strong>. Это другой уровень: не «как сделать», а «стоит ли делать» и «с чего начать».</p>
+
+<p>К концу урока вы проведёте аудит готовности своего отдела/компании к AI и составите список из 5 приоритетных use case'ов — не «вообще классных идей», а задач, где AI даст реальную пользу при разумных усилиях и контролируемых рисках. У вас будет рабочий документ — AI Readiness Check.</p>
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="02.0">Разогрев: «Чужой разум» — почему это касается вас</h2>
+
+<p>В сентябре 2026 года главный научный сотрудник OpenAI Якуб Пачоцки опубликовал текст «An Alien Mind» — не маркетинговый анонс, а трезвую оценку происходящего.</p>
+
+<p>Суть в трёх предложениях:</p>
+
+<ul>
+  <li>AI умнеет не потому, что его «спроектировали» умным — он «вырастает» из масштабирования вычислений. Мы не до конца понимаем, как он работает.</li>
+  <li>AI начинает улучшать сам себя (recursive self-improvement). Скорость изменений такова, что никто — включая создателей — не готов к последствиям.</li>
+  <li>Главный риск не в том, что AI «захватит мир», а в том, что он начнёт действовать по логике, которую мы не контролируем и не всегда понимаем.</li>
+</ul>
+
+<p>При чём здесь L&D? Напрямую. Каждый раз, когда вы выбираете AI-инструмент для обучения, вы делаете ставку. Ставку на то, что инструмент <strong>не навредит</strong> сотрудникам, не выдаст опасную рекомендацию, не обучит людей неверным решениям.</p>
+
+<div class="pull-quote">
+  AI — не покупка кофемашины. Это как нанять умного, но очень молодого стажёра. Он быстрый, но неопытный. Если дать ему подписывать договоры в первый день — последствия будут реальными.
+</div>
+
+<h2 class="section-hd" data-num="02.1">Что такое AI Readiness и почему «купить ChatGPT» — не стратегия</h2>
+
+<p>AI Readiness — это не «есть ли у нас доступ к ChatGPT». Это способность организации <strong>осмысленно</strong> внедрить AI: с понятными целями, подготовленными людьми, чистыми данными и контролем рисков.</p>
+
+<div class="metaphor">
+  <strong>Метафора.</strong> AI в компании — это не покупка кофемашины (поставил и заработало). Это как нанять умного, но очень молодого стажёра. Он быстрый, но неопытный. Он может ошибиться — и если вы дадите ему подписывать договоры в первый день, последствия будут реальными.
+</div>
+
+<p><strong>Три слоя готовности</strong> — проверьте каждый:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Слой</th>
+      <th>Вопрос</th>
+      <th>Пример: готов</th>
+      <th>Пример: не готов</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Люди</strong></td>
+      <td>Понимают ли сотрудники, что AI может ошибаться?</td>
+      <td>Команда прошла AI-грамотность, знает про галлюцинации</td>
+      <td>«AI всегда прав, он же компьютер»</td>
+    </tr>
+    <tr>
+      <td><strong>Процессы</strong></td>
+      <td>Есть ли понятные задачи, куда AI ложится без насилия?</td>
+      <td>Рутинная классификация заявок, анализ фидбека</td>
+      <td>«Давайте AI всё оптимизирует» (вообще всё — это не задача)</td>
+    </tr>
+    <tr>
+      <td><strong>Данные</strong></td>
+      <td>Есть ли чистые, структурированные данные для AI?</td>
+      <td>База учебных материалов в едином формате</td>
+      <td>300 документов в разных папках, часть устарела, часть дублируется</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="margin-note">
+  <strong>Практический вывод:</strong> если люди боятся AI, процессы хаотичны, а данные — свалка, то никакой инструмент не спасёт. Готовность — это сначала порядок, потом технология. Не наоборот.
+</div>
+
+<h2 class="section-hd" data-num="02.2">Матрица L&amp;D-задач × AI-возможностей: куда смотреть</h2>
+
+<p>Прежде чем приоритизировать — надо понять, что вообще можно автоматизировать. Вот карта типовых L&D-задач и того, что AI умеет делать с ними уже сегодня:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>L&amp;D-задача</th>
+      <th>Что AI может</th>
+      <th>Пример инструмента</th>
+      <th>Уровень зрелости</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Анализ обратной связи</td>
+      <td>Классификация тональности, кластеризация тем, саммари</td>
+      <td>RAG-агент на документах</td>
+      <td>Высокий</td>
+    </tr>
+    <tr>
+      <td>Создание учебного контента</td>
+      <td>Генерация текстов, сценариев, тестовых вопросов</td>
+      <td>LLM + промпты</td>
+      <td>Высокий</td>
+    </tr>
+    <tr>
+      <td>Адаптивное обучение</td>
+      <td>AI-тьютор, который подстраивается под ответы ученика</td>
+      <td>Agentic workflow + RAG</td>
+      <td>Средний</td>
+    </tr>
+    <tr>
+      <td>Оценка компетенций</td>
+      <td>Анализ ответов, сравнение с эталоном, выявление пробелов</td>
+      <td>LLM + чек-листы</td>
+      <td>Средний</td>
+    </tr>
+    <tr>
+      <td>Онбординг</td>
+      <td>AI-бот, отвечающий на вопросы новичков по регламентам</td>
+      <td>RAG на внутренних документах</td>
+      <td>Высокий</td>
+    </tr>
+    <tr>
+      <td>Предиктивная аналитика</td>
+      <td>Прогноз оттока, эффективности обучения</td>
+      <td>ML-модели (не LLM)</td>
+      <td>Средний</td>
+    </tr>
+    <tr>
+      <td>Автоматизация отчётности</td>
+      <td>Генерация дашбордов, саммари по метрикам</td>
+      <td>LLM + API</td>
+      <td>Средний</td>
+    </tr>
+    <tr>
+      <td>Разработка стратегии L&amp;D</td>
+      <td>Анализ трендов, бенчмаркинг, сценарное планирование</td>
+      <td>LLM + веб-поиск</td>
+      <td>Низкий</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="margin-note">
+  <strong>Как читать таблицу:</strong> «Уровень зрелости» — не «качество AI», а «насколько технология готова к production-use прямо сейчас». Высокий — бери и делай. Средний — нужно пилотировать. Низкий — AI поможет как ассистент, но финальное решение за человеком.
+</div>
+
+<div class="micro-prac">
+  <strong>➤ Упражнение (5 мин)</strong><br>
+  Выпишите 10–15 задач вашего отдела. Против каждой отметьте, есть ли AI-инструмент, который это уже умеет. Если не знаете — напишите «?». Это ваш сырой список для следующего шага.
+</div>
+
+<h2 class="section-hd" data-num="02.3">Приоритизация: три оси вместо двух</h2>
+
+<p>Классический подход: оцениваем use case по двум осям — ценность для бизнеса и усилия на внедрение. Но этого мало. Сентябрь 2026, «Чужой разум» даёт третью ось: <strong>риск</strong>.</p>
+
+<h3>Ось 1 — Ценность для бизнеса (1–5)</h3>
+
+<ul>
+  <li><strong>5:</strong> напрямую влияет на деньги/безопасность/ключевую метрику (например, снижение аварийности через обучение)</li>
+  <li><strong>3:</strong> ускоряет существующий процесс (например, автогенерация тестов)</li>
+  <li><strong>1:</strong> «прикольно, но без этого жили и проживём»</li>
+</ul>
+
+<h3>Ось 2 — Усилия на внедрение (1–5, где 1 = легко, 5 = тяжело)</h3>
+
+<ul>
+  <li><strong>1:</strong> настройка промпта в существующем инструменте</li>
+  <li><strong>3:</strong> нужен RAG на ваших документах</li>
+  <li><strong>5:</strong> нужна кастомная разработка, интеграция с ERP, обучение всей команды</li>
+</ul>
+
+<h3>Ось 3 — Риск (1–5 по каждому вопросу, сумма 3–15)</h3>
+
+<p>Ответьте на каждый вопрос по шкале 1–5 (1 = нет, 5 = точно да):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Вопрос</th>
+      <th>1</th>
+      <th>3</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Может ли ошибка AI навредить людям?</td>
+      <td>Нет, это аналитика «в стол»</td>
+      <td>Может дать неверную рекомендацию преподавателю</td>
+      <td>Может дать опасный совет сотруднику на производстве</td>
+    </tr>
+    <tr>
+      <td>Понимаю ли я, как модель принимает решение?</td>
+      <td>Да, простой промпт, предсказуемо</td>
+      <td>Частично: RAG, но источники контролирую</td>
+      <td>Нет, цепочка рассуждений непрозрачна</td>
+    </tr>
+    <tr>
+      <td>Что случится через год, когда модель обновится?</td>
+      <td>Ничего, мои промпты продолжат работать</td>
+      <td>Нужно будет перепроверить качество</td>
+      <td>Модель может изменить поведение, и я не узнаю</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="insight">
+  <p style="margin:0"><strong>Risk-фильтр:</strong> сумма 3–6 = зелёный (низкий риск). 7–10 = жёлтый (средний). 11–15 = красный (высокий).</p>
+</div>
+
+<h3>Принцип «человек в петле» (human-in-the-loop)</h3>
+
+<p>Из статьи Пачоцки: главная угроза RSI (recursive self-improvement) — что AI выпадет из-под человеческого контроля. Контрмера на уровне L&D: каждое AI-решение проектируем так, чтобы <strong>человек оставался в контуре принятия решений</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Не human-in-the-loop</th>
+      <th>Human-in-the-loop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AI сам оценивает компетенции сотрудника и назначает программу обучения</td>
+      <td>AI предлагает оценку и рекомендацию, методист утверждает или правит</td>
+    </tr>
+    <tr>
+      <td>AI-бот отвечает новичкам без контроля</td>
+      <td>AI-бот отвечает, но каждую неделю методист выборочно проверяет диалоги</td>
+    </tr>
+    <tr>
+      <td>AI генерирует учебный контент и сразу публикует</td>
+      <td>AI генерирует черновик, редактор вычитывает перед публикацией</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="margin-note">
+  <strong>Правило большого пальца:</strong> если ошибка AI в этой задаче может навредить человеку — человек должен быть в петле. Точка.
+</div>
+
+<h2 class="section-hd" data-num="02.4">Сводим в матрицу: ценность / усилия / риск</h2>
+
+<p>Теперь для каждого use case'а из вашего списка заполните таблицу:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use case</th>
+      <th>Ценность (1–5)</th>
+      <th>Усилия (1–5)</th>
+      <th>Риск (3–15)</th>
+      <th>Вердикт</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>…</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Как читать вердикты:</strong></p>
+
+<ul>
+  <li>Высокая ценность, низкие усилия, низкий риск → <strong>«В приоритет»</strong> — делаем прямо сейчас</li>
+  <li>Высокая ценность, средние усилия, средний риск → <strong>«Пилот»</strong> — тестируем на малой группе, с метриками, с human-in-the-loop</li>
+  <li>Любая ценность, высокий риск → <strong>«Отложить»</strong> — возвращаемся, когда появятся средства контроля (лучший мониторинг, более зрелые модели, обученные люди)</li>
+  <li>Низкая ценность, высокие усилия → <strong>«Не делать»</strong> — AI-хайп не оправдывает затрат</li>
+</ul>
+
+<div class="pull-quote">
+  Вы отбираете топ-3. Не 15, не «всё, что влезло». Три. Это дисциплина: если вы не можете выбрать три — вы не готовы к внедрению. Лучше сделать мало, но хорошо, чем распылиться на двадцать.
+</div>
+
+<div class="interim"><h3>Промежуточный итог</h3><p>Вы знаете, что AI Readiness — это три слоя (люди, процессы, данные) и три оси приоритизации (ценность, усилия, риск). Вы понимаете принцип human-in-the-loop и умеете применять risk-фильтр из трёх вопросов. Осталось упаковать это в шпаргалку и отработать на практике.</p></div>
+
+<div class="episode">
+  <div class="hi2">
+    <h2>AI в компании — не покупка кофемашины</h2>
+    <p>Это как нанять умного, но очень молодого стажёра. Он быстрый, но неопытный. Если дать ему подписывать договоры в первый день — последствия реальны. AI Readiness — сначала порядок в людях, процессах и данных, потом технология. Три слоя, три оси, три вопроса risk-фильтра. Не наоборот.</p>
+  </div>
+</div>
+
+<div class="cheatsheet">
+  <h2>Шпаргалка</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Термин</th>
+        <th>Определение одним предложением</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>AI Readiness</strong></td>
+        <td>Способность организации осмысленно внедрить AI: цели, люди, процессы, данные, контроль рисков</td>
+      </tr>
+      <tr>
+        <td><strong>Use case</strong></td>
+        <td>Конкретная задача, которую вы отдаёте AI — не «улучшить обучение», а «классифицировать заявки на обучение по темам»</td>
+      </tr>
+      <tr>
+        <td><strong>Human-in-the-loop</strong></td>
+        <td>Принцип: человек всегда утверждает финальное решение там, где ошибка AI может навредить</td>
+      </tr>
+      <tr>
+        <td><strong>RSI (Recursive Self-Improvement)</strong></td>
+        <td>AI ускоряет собственное развитие; главный риск — потеря человеческого контроля</td>
+      </tr>
+      <tr>
+        <td><strong>CoT monitoring</strong></td>
+        <td>Подглядывание в цепочку рассуждений модели; один из немногих инструментов контроля, но слабеет с ростом моделей</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Risk-фильтр (3 вопроса)</th>
+        <th>Шкала</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Может ли ошибка AI навредить людям?</td>
+        <td>1–5</td>
+      </tr>
+      <tr>
+        <td>Понимаю ли я, как модель принимает решение?</td>
+        <td>1–5</td>
+      </tr>
+      <tr>
+        <td>Что случится через год, когда модель обновится?</td>
+        <td>1–5</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Сумма баллов</th>
+        <th>Уровень риска</th>
+        <th>Действие</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3–6</td>
+        <td>Зелёный</td>
+        <td>Можно делать</td>
+      </tr>
+      <tr>
+        <td>7–10</td>
+        <td>Жёлтый</td>
+        <td>Пилот + human-in-the-loop</td>
+      </tr>
+      <tr>
+        <td>11–15</td>
+        <td>Красный</td>
+        <td>Отложить до появления средств контроля</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<div class="practice">
+  <div class="hi2">
+    <h2 class="section-hd" data-num="04">Практика</h2>
+
+    <details>
+      <summary>Упражнение 1. AI Readiness Check вашего отдела (25 мин)</summary>
+      <div class="details-content">
+        <p>Возьмите свой отдел или компанию (реальную или учебную). Пройдите по трём слоям готовности и честно оцените:</p>
+
+        <h3>Люди</h3>
+        <ul>
+          <li>[ ] Сотрудники понимают, что AI ошибается</li>
+          <li>[ ] Есть хотя бы 1–2 человека, которые уже пробовали AI в работе</li>
+          <li>[ ] Нет массового страха «AI нас заменит»</li>
+          <li>[ ] Руководство хотя бы нейтрально к экспериментам с AI</li>
+        </ul>
+
+        <h3>Процессы</h3>
+        <ul>
+          <li>[ ] Есть повторяющиеся задачи, которые отнимают > 2 часов в неделю</li>
+          <li>[ ] Есть задачи, где качество страдает от человеческого фактора (пропуски, ошибки по невнимательности)</li>
+          <li>[ ] Процессы описаны (хотя бы в виде чек-листов), а не живут «в голове»</li>
+          <li>[ ] Есть понимание, как измерять результат от внедрения AI (метрики)</li>
+        </ul>
+
+        <h3>Данные</h3>
+        <ul>
+          <li>[ ] Учебные материалы лежат в едином месте, а не разбросаны по почте/чатам/папкам</li>
+          <li>[ ] Форматы материалов единообразны (или хотя бы читаемы)</li>
+          <li>[ ] Данные актуальны (нет инструкций 2015 года, которые никто не отменил)</li>
+          <li>[ ] Нет юридических ограничений на обработку данных внешним AI</li>
+        </ul>
+
+        <p><strong>За каждый пункт «да» — 1 балл. Максимум — 12.</strong></p>
+
+        <div class="insight">
+          <ul style="margin:0;list-style:none;padding:0;">
+            <li><strong>9–12 баллов:</strong> высокая готовность. Можно начинать с пилота.</li>
+            <li><strong>5–8 баллов:</strong> средняя. Сначала наведите порядок в 1–2 слоях, потом AI.</li>
+            <li><strong>0–4 балла:</strong> низкая. Начните с AI-грамотности для себя и одного союзника. Не внедряйте AI в хаос — сначала порядок.</li>
+          </ul>
+        </div>
+
+        <p>Запишите свой результат и <strong>один конкретный шаг</strong>, который вы сделаете на этой неделе, чтобы поднять готовность на 1 балл.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 2. Список use case'ов (20 мин)</summary>
+      <div class="details-content">
+        <p>Выпишите 10–15 конкретных задач вашего отдела, которые потенциально можно отдать AI. Правила:</p>
+
+        <ul>
+          <li>Не «улучшить обучение» (слишком размыто). А «сократить время на проверку тестов с 4 часов до 30 минут».</li>
+          <li>Не «внедрить AI» (это не задача, это средство). А «автоматически кластеризовать темы обращений в поддержку».</li>
+          <li>Пишите задачи, которые реально есть сейчас, а не «было бы здорово».</li>
+          <li>Формат: одна задача — одна строка. <strong>Глагол + объект + текущая боль.</strong></li>
+        </ul>
+
+        <p>Примеры:</p>
+        <ul>
+          <li>«Классифицировать 200+ заявок на обучение по темам за 5 минут вместо 3 часов ручной сортировки»</li>
+          <li>«Собирать саммари по АОС за семестр за 30 минут»</li>
+          <li>«Генерировать черновики тестовых вопросов по готовой программе за 10 минут»</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 3. Оцените по трём осям (30 мин)</summary>
+      <div class="details-content">
+        <ol class="steps">
+          <li><strong>Ценность (1–5):</strong> насколько задача важна для бизнеса. Без фантазий — реальная ценность прямо сейчас.</li>
+          <li><strong>Усилия (1–5):</strong> насколько сложно внедрить. Учитывайте: нужна ли разработка, интеграция, обучение людей, закупка инструментов.</li>
+          <li><strong>Риск (3 вопроса — сумма 3–15):</strong> пройдите risk-фильтр для каждой задачи.</li>
+        </ol>
+
+        <p>Сведите в таблицу и отсортируйте. Критерий выбора: <strong>максимальная ценность при разумных усилиях и контролируемом риске</strong>.</p>
+
+        <p>Для каждого use case'а из топ-5 пропишите:</p>
+        <ul>
+          <li>Как именно работает human-in-the-loop (кто проверяет результат и с какой периодичностью)</li>
+          <li>Как вы узнаете, что внедрение успешно (конкретная метрика: время, качество, количество ошибок)</li>
+          <li>Первый шаг (что можно сделать за ближайшие 2 недели)</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Упражнение 4. Вернитесь к разогреву (10 мин)</summary>
+      <div class="details-content">
+        <p>В начале урока вы записали два вопроса, которые задали бы вендору AI-решения для онбординга.</p>
+
+        <p>Теперь, после risk-фильтра и human-in-the-loop, дополните или перепишите их. У вас должно получиться минимум 4 вопроса — и они должны покрывать:</p>
+
+        <ul>
+          <li><strong>Прозрачность решений</strong> — как я узнаю, почему модель ответила именно так?</li>
+          <li><strong>Контроль ошибок</strong> — что происходит, когда модель ошибается? кто это заметит?</li>
+          <li><strong>Стабильность</strong> — как часто модель обновляется? что будет с моими настройками после обновления?</li>
+          <li><strong>Человек в петле</strong> — могу ли я посмотреть логи диалогов? могу ли отключить автоматические ответы?</li>
+        </ul>
+
+        <p>Сравните с теми двумя, что записали в начале. Почувствуйте разницу в глубине вопросов — это и есть результат урока.</p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="content">
+
+<div class="geo-div"><div class="line"></div><div class="sq"></div><div class="line"></div></div>
+
+<h2 class="section-hd" data-num="05">После практики</h2>
+
+<h3>Чек-лист готовности</h3>
+
+<div class="insight">
+  <ul style="margin:0;list-style:none;padding:0;">
+    <li>✓ Прочитал(а) разогрев «Чужой разум», записал(а) два вопроса вендору</li>
+    <li>✓ Провёл(а) AI Readiness Check своего отдела (люди / процессы / данные)</li>
+    <li>✓ Составил(а) список из 10–15 конкретных use case'ов</li>
+    <li>✓ Оценил(а) каждый по трём осям: ценность, усилия, риск</li>
+    <li>✓ Отобрал(а) топ-5 с вердиктами и первыми шагами</li>
+    <li>✓ Для каждого топ-5 прописал(а) human-in-the-loop и метрику успеха</li>
+    <li>✓ Вернулся(-ась) к вопросам вендору и дополнил(а) их</li>
+  </ul>
+</div>
+
+<h3>Артефакт урока</h3>
+
+<p>После урока у вас должен появиться рабочий документ со структурой:</p>
+
+<pre>ваш-проект/
+└── module-03/
+    ├── ai-readiness-check.md          ← оценка по 12 пунктам, ваш балл, первый шаг
+    ├── use-case-matrix.md             ← таблица: 10–15 задач с оценками по трём осям
+    └── vendor-checklist.md            ← минимум 4 вопроса, которыми вы встретите любого вендора</pre>
+
+<div class="open-loop">
+  <h3>Челлендж на завтра</h3>
+  <p>Перед любым «а давайте внедрим AI для X» — прогоните X через risk-фильтр. Три вопроса, 30 секунд. Сделайте это привычкой. 30 секунд сейчас сэкономят недели разгребания последствий потом.</p>
+</div>
+
+<h3>Что дальше</h3>
+
+<p>В следующем материале — <strong>ROI и дорожная карта</strong>. Вы научитесь считать цепочку «внедрение → выгода → деньги → результат» и строить дорожную карту внедрения AI на год. После этого урока у вас будет готовый документ, с которым можно идти к руководству и говорить на языке бизнеса: не «давайте попробуем AI», а «вот пять проектов, вот их ROI, вот дорожная карта на год».</p>
+
+<h3>Дополнительно (необязательно, но полезно)</h3>
+
+<ul>
+  <li>Статья: <strong>«An Alien Mind»</strong> — полный текст Jakub Pachocki (OpenAI, сентябрь 2026): <a href="https://openai.com/index/an-alien-mind/">openai.com/index/an-alien-mind</a> — прочитайте целиком, это 15 минут, которые меняют оптику</li>
+  <li>Статья: <strong>«The Instruction Hierarchy»</strong> — как OpenAI учит модели слушаться системные промпты и не поддаваться на jailbreak: <a href="https://openai.com/index/the-instruction-hierarchy/">openai.com/index/the-instruction-hierarchy</a></li>
+  <li>Инструмент: если вы работаете в крупной компании — поищите внутренние AI-политики и сравните с вашим Readiness Check. Где политики жёстче вашей оценки? Где мягче?</li>
+</ul>
+
+<div class="quiz" data-quiz-id="m03-lesson-01">
+  <h3 class="quiz-title">Проверь себя</h3>
+  <span class="quiz-previous" style="display:none;font-size:0.8rem;color:var(--muted,#737366);margin-bottom:12px"></span>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">1. Что оценивает AI Readiness аудит?</p>
+    <label class="quiz-option"><input type="radio" name="q0" value="0"> Готовность компании к внедрению AI: люди, процессы, данные, инфраструктура</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="1"> Только техническую инфраструктуру</label>
+    <label class="quiz-option"><input type="radio" name="q0" value="2"> Только бюджет на AI-инструменты</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">2. С чего лучше начать внедрение AI в L&D?</p>
+    <label class="quiz-option"><input type="radio" name="q1" value="0"> Сразу купить дорогую LMS с AI</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="1"> Обучить всю команду за один день</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="2"> С маленькой, измеримой задачи с быстрой и очевидной победой</label>
+  </div>
+
+  <div class="quiz-item" data-correct="0">
+    <p class="quiz-question">3. Какой главный риск при внедрении AI?</p>
+    <label class="quiz-option"><input type="radio" name="q2" value="0"> Внедрить инструмент без обучения людей и без изменения процессов</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="1"> AI слишком медленно работает</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="2"> AI стоит слишком дорого</label>
+  </div>
+
+  <div class="quiz-item" data-correct="2">
+    <p class="quiz-question">4. Кто такой «AI-чемпион» в компании?</p>
+    <label class="quiz-option"><input type="radio" name="q3" value="0"> Руководитель IT-отдела</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="1"> Внешний консультант по AI</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="2"> Сотрудник, который тестирует AI-инструменты и помогает коллегам их освоить</label>
+  </div>
+
+  <button class="quiz-submit">Проверить</button>
+  <div class="quiz-result"></div>
+</div>
+
+<div class="nav-bottom">
+  <a href="../../module-02-ai-from-prompt-to-product/lesson-04-fine-tuning.html">← Урок 4. Fine-tuning</a>
+  <a href="lesson-02-roi-roadmap.html" class="nav-next">М3. Урок 2. ROI и дорожная карта →</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="hi">
+    <div>
+      <a href="../../index.html">L&D без суеты</a>
+      <a href="https://t.me/mrk_natalia">Telegram</a>
+      <a href="https://github.com/look85-ops">GitHub</a>
+    </div>
+    <div class="fmeta">
+      <span><time datetime="2026-09-17">17 сентября 2026</time></span>
+      <span>Собрано с помощью AI-ассистента</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pbar = document.getElementById('pbar');
+  window.addEventListener('scroll',function(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pbar.style.width = scrolled + '%';
+  });
+})();
+</script>
+
+<script src="../../scripts/quiz.js"></script>
+
+</body>
+</html>
