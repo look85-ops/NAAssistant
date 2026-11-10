@@ -23,7 +23,7 @@
 
 ## О тебе (коротко)
 
-40 лет, 17 лет в L&D, гражданка РФ. Переезд Москва → Минск (октябрь–ноябрь 2026). Поступление в БГАИ «Режиссура видеофильма» (заочная, 24 мес). Целевая роль: Head of L&D / Senior L&D Manager / EdTech-продюсер.
+40 лет, 11 лет в L&D, гражданка РФ. Переезд Москва → Минск (октябрь–ноябрь 2026). Поступление в БГАИ «Режиссура видеофильма» (заочная, 24 мес). Целевая роль: Head of L&D / Senior L&D Manager / EdTech-продюсер.
 
 Детальный контекст (проекты, эмоциональный профиль, триггеры): `knowledge/personal/natasha-profile.md`.
 
@@ -45,9 +45,9 @@
 ├── .opencode/          # Движок: agent/, command/, skills/
 ├── .github/            # CI (ci.yml, digest.yml, horoscope.yml) + release.yml
 ├── .wrangler/          # Конфиг Cloudflare (methodist-booster)
-├── docs/               # BACKLOG.md, strategy/, course/, prd/, process/, relocation/, aos/, skills/, pukuru/
+├── docs/               # BACKLOG.md, strategy/, course/, prd/, process/, relocation/, aos/, skills/, pukuru/, stickers/
 ├── career/             # linkedin/, market/, resume/, cover_letters/, posts/, strategy/
-├── projects/           # amalgama/, garden/, aos-analyzer/, booster/, stack-ld-ai/, minsk-map/
+├── projects/           # amalgama/, garden/, aos-analyzer/, booster/, stack-ld-ai/, minsk-map/, dvor/, ai-producer-personal/, coffee-charge/, moscow-local/, interior-moodboard/
 ├── knowledge/          # Живая база: правила, инсайты, уроки
 ├── logs/               # decisions.md, transcripts/, checkpoints/, handoffs/
 ├── scripts/            # Утилиты
@@ -58,6 +58,7 @@
 ├── presentations/      # Деки (ai-practices/)
 ├── wardrobe/           # Подбор одежды (stylist)
 ├── attic/              # Архив неиспользуемого
+├── tmp/                # Черновики и скриншоты (в .gitignore)
 ├── AGENTS.md           # Якорь: правила, роли, workflow
 ├── CONTEXT.md          # Разделяемый язык + оперативный контекст
 ├── PRODUCT.md          # Продуктовое видение
@@ -97,6 +98,23 @@
 Роли (не агенты, описаны в Knowledge Ops ниже): архивариус, архитектор, директор по развитию.
 
 ## Workflow
+
+**Дизайн-референсы:** при любой задаче про визуальный дизайн интерфейса,
+лендинга или презентации сначала используй GradientDeck UI как библиотеку
+референсов:
+
+- подбери 2–3 реальных сайта по задаче, аудитории и настроению;
+- изучи страницу и `DESIGN.md`: цвета, шрифты, сетку, отступы, плотность и
+  композицию; при необходимости используй extended-версию;
+- сравни референсы и собери адаптированную визуальную систему, а не копию:
+  не переноси брендинг, тексты и уникальные элементы;
+- объясни, что взято из референсов и что изменено под наш контент;
+- проверь результат на desktop и mobile, контраст, читаемость и соответствие
+  задаче. GradientDeck — компас для решений, не шаблон для слепого копирования.
+
+Основной адрес: `https://ui.gradientdeck.com/`. Для точечного поиска используй
+`inspo_recommend`, `inspo_search_screens`, `inspo_get_design_system` и
+`inspo_get_reference_jsx`, если они доступны в текущей среде.
 
 **Добавление идеи:** `/idea` → product-analyst → Pre-Mortem → BACKLOG.md.
 

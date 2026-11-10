@@ -58,3 +58,10 @@ knowledge/private.md
 resume-full.png
 listing-image.png
 dvor-mvp-mobile.png
+
+# Python virtualenv (never commit)
+.venv/
+**/.venv/
+
+# Temp / scratch
+tmp/

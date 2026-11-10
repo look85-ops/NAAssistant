@@ -68,6 +68,10 @@
 - [Performance consulting и дизайн программ](course/performance-consulting-and-program-design.md)
 - [Воркбук онбординга: инсайты](course/workbook-onboarding-insights.md)
 
+## insights/ — Инсайты и разборы
+
+- [Локальность важнее масштаба (28.10.2026)](insights/locality-over-scale.md)
+
 ## personal/ — Наташа: профиль, аудит, икигай
 
 - [Профиль Наташи](personal/natasha-profile.md)
@@ -85,11 +89,13 @@
 - [Шаблон задачи](process/task-template.md)
 - [Шпаргалка: текущее содержание пути](process/track-maintenance-cheatsheet.md)
 - [Loop harness + валидация до PR (looper, no-mistakes)](process/loop-harness-quality.md)
+- [Ритуал: GitHub Trending — 5 минут в неделю](process/github-trending-ritual.md)
 
 ## tools/ — Инструменты, GitHub, MCP
 
 - [Gmail SMTP: настройка](tools/gmail-smtp-setup.md)
 - [Mineru — PDF/документы → Markdown (OCR)](tools/mineru.md)
+- [Транскрибация аудио/видео (Whisper)](tools/transcribe-setup.md)
 - [Playwright Edge: настройка](tools/playwright-edge-setup.md)
 - [Playwright MCP: браузерный инструмент](tools/playwright-mcp.md)
 - [GitHub: все репозитории](tools/github-repos.md)
