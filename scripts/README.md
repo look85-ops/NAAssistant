@@ -23,8 +23,7 @@
 | Скрипт | Что делает |
 |---|---|
 | `read_doc.py` | Читает .docx / .pdf / .pptx и выводит текст в stdout или .md |
-| `convert_md_to_docx.py` | Конвертация .md → .docx (стиль L&DxAI) |
-| `convert_signal_to_docx.py` | Конвертация дайджеста «Сигнал» .md → .docx (в `knowledge/signal/`) |
+| `convert_md_to_docx.py` | Конвертация .md → .docx (стиль L&DxAI), в т.ч. дайджест «Сигнал» в `knowledge/signal/` |
 | `build_resume_docx.py` | Резюме .md → .docx с акцентным цветом |
 
 ## PowerPoint
