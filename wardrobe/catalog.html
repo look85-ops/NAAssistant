@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Гардероб Наташи</title>
+  <style>
+    :root{--ink:#20231f;--muted:#6c7169;--paper:#f4f5ef;--surface:#fffefa;--line:#d9ddd1;--accent:#a34f37;--accent-soft:#f1dfd6;--ok:#35654d}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Arial,sans-serif}main{max-width:1240px;margin:0 auto;padding:clamp(28px,5vw,72px) clamp(18px,4vw,52px) 70px}
+    .top{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:52px}.kicker{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.title{max-width:720px;margin:10px 0 0;font:700 clamp(38px,7vw,82px)/.95 Georgia,serif;letter-spacing:-.045em}.intro{max-width:430px;margin:0;color:var(--muted)}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:26px}.toolbar label{display:flex;align-items:center;gap:8px;font-weight:700}.toolbar select,.toolbar button{border:1px solid var(--line);background:var(--surface);border-radius:3px;padding:10px 12px;color:var(--ink);font:inherit}.toolbar button{cursor:pointer}.toolbar button:hover{border-color:var(--accent)}.count{margin-left:auto;color:var(--muted);font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:18px}.item{background:var(--surface);border:1px solid var(--line);position:relative;transition:transform .2s,box-shadow .2s}.item:hover{transform:translateY(-3px);box-shadow:0 10px 24px #20231f12}.item.bought{border-color:#9db7a4}.photo{display:block;width:100%;height:290px;object-fit:contain;background:#e9ebe3}.body{padding:16px}.brand{font-size:13px;color:var(--muted);margin:0 0 3px}.name{font-weight:700;margin:0 0 10px}.price{font-weight:700;color:var(--accent);margin:0 0 14px}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}.tag{background:#edf0e8;color:#4d554b;padding:4px 7px;font-size:12px}.purchase{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--ok);cursor:pointer}.purchase input{width:20px;height:20px;accent-color:var(--ok)}.link{display:block;margin-top:14px;color:var(--accent);font-size:14px;font-weight:700}.empty{display:none;padding:40px 0;color:var(--muted)}
+    @media(max-width:700px){.top{display:block;margin-bottom:34px}.intro{margin-top:20px}.count{width:100%;margin-left:0}.photo{height:230px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.body{padding:12px}.name{font-size:14px}.price{font-size:14px}.link{font-size:12px}}
+    @media(max-width:390px){.grid{grid-template-columns:1fr}.photo{height:280px}}
+    @media(prefers-reduced-motion:reduce){.item{transition:none}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="top"><div><div class="kicker">Личный гардероб · 04.11.2026</div><h1 class="title">Вещи, которые уже могут работать вместе.</h1></div><p class="intro">Отметь чекбоксом то, что выкупила. Отмеченные вещи сохраняются в этом браузере и станут базой для луков на рабочую неделю.</p></header>
+  <section class="toolbar" aria-label="Фильтры каталога">
+    <label><input id="boughtOnly" type="checkbox"> Только выкупленное</label>
+    <select id="season"><option value="all">Все сезоны</option><option>Осень</option><option>Зима</option><option>Весна</option><option>Лето</option><option>Демисезон</option><option>Всесезон</option></select>
+    <select id="category"><option value="all">Все категории</option><option>Верх</option><option>Низ</option><option>Обувь</option><option>Аксессуары</option></select>
+    <button id="clear" type="button">Снять все отметки</button><button id="export" type="button">Скачать каталог для стилиста</button><span class="count" id="count"></span>
+  </section>
+  <section class="grid" id="catalog" aria-live="polite"></section><p class="empty" id="empty">В этом фильтре пока нет вещей.</p>
+  <p id="script-status" style="padding:18px 0;color:#6c7169">Загружаю каталог…</p>
+</main>
+<script>
+document.querySelector('#script-status').remove();
+const items=[
+ ['The Kas','Кардиган','Верх','Осень','8 277','xd001xw05v3i','https://a.lmcdn.ru/img236x341/X/D/XD001XW05V3I_37798023_1_v2_2x.jpg','https://www.lamoda.ru/p/xd001xw05v3i/'],
+ ['The North Face','Свитшот','Верх','Демисезон','6 545','rtlafq434801','https://a.lmcdn.ru/img236x341/R/T/RTLAFQ434801_39323660_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafq434801/'],
+ ["Marc O'Polo",'Рубашка','Верх','Осень','16 141','mp002xw1p5if','https://a.lmcdn.ru/img236x341/M/P/MP002XW1P5IF_38854249_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1p5if/'],
+ ['Iceberg','Свитшот','Верх','Демисезон','16 065','rtlafn750501','https://a.lmcdn.ru/img236x341/R/T/RTLAFN750501_38391848_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafn750501/'],
+ ['Tezenis','Бюстгальтер','Аксессуары','Всесезон','2 799','mp002xw0rsw8','https://a.lmcdn.ru/img236x341/M/P/MP002XW0RSW8_27255205_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0rsw8/'],
+ ['Pennyblack','Джемпер','Верх','Зима','16 915','rtlafl423101','https://a.lmcdn.ru/img236x341/R/T/RTLAFL423101_36736034_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafl423101/'],
+ ['Mango','Футболка','Верх','Лето','2 380','rtlafo839701','https://a.lmcdn.ru/img236x341/R/T/RTLAFO839701_38139754_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafo839701/'],
+ ['Moaconcept','Кеды','Обувь','Демисезон','24 400','rtlafm449901','https://a.lmcdn.ru/img236x341/R/T/RTLAFM449901_38298886_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafm449901/'],
+ ['Lusio','Лонгслив','Верх','Демисезон','5 593','mp002xw1kjs2','https://a.lmcdn.ru/img236x341/M/P/MP002XW1KJS2_33047043_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1kjs2/'],
+ ['Emka','Водолазка','Верх','Зима','8 990','mp002xw1ni1g','https://a.lmcdn.ru/img236x341/M/P/MP002XW1NI1G_37013729_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1ni1g/'],
+ ['12 STOREEZ','Брюки','Низ','Демисезон','17 000','mp002xw1nkfa','https://a.lmcdn.ru/img236x341/M/P/MP002XW1NKFA_37055054_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1nkfa/'],
+ ['Ksubi','Джинсы','Низ','Демисезон','12 779','rtlafe458701','https://a.lmcdn.ru/img236x341/R/T/RTLAFE458701_33499825_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafe458701/'],
+ ['Vassa Code','Брюки','Низ','Демисезон','13 383','mp002xw1l8xo','https://a.lmcdn.ru/img236x341/M/P/MP002XW1L8XO_33303535_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1l8xo/'],
+ ['Essentiel Antwerp','Рубашка','Верх','Лето','14 080','rtlaff039701','https://a.lmcdn.ru/img236x341/R/T/RTLAFF039701_34107930_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaff039701/'],
+ ['Max&Co','Джемпер','Верх','Зима','10 848','rtlaev494101','https://a.lmcdn.ru/img236x341/R/T/RTLAEV494101_31185737_1_v2_2x.jpg','https://www.lamoda.ru/p/rtlaev494101/'],
+ ['Falconeri','Футболка','Верх','Лето','11 900','mp002xw1e11x','https://a.lmcdn.ru/img236x341/M/P/MP002XW1E11X_32333875_1_v3_2x.jpg','https://www.lamoda.ru/p/mp002xw1e11x/'],
+ ['Annemore','Футболка','Верх','Лето','2 700','mp002xw1k3ny','https://a.lmcdn.ru/img236x341/M/P/MP002XW1K3NY_31047192_1_v2.jpg','https://www.lamoda.ru/p/mp002xw1k3ny/'],
+ ['Lusio','Футболка','Верх','Лето','9 990','mp002xw1ktqp','https://a.lmcdn.ru/img236x341/M/P/MP002XW1KTQP_33114177_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1ktqp/'],
+ ['ZNWR','Футболка','Верх','Лето','6 400','mp002xw1kig0','https://a.lmcdn.ru/img236x341/M/P/MP002XW1KIG0_32831147_1_v2.jpg','https://www.lamoda.ru/p/mp002xw1kig0/'],
+ ['Woolrich','Брюки','Низ','Демисезон','16 320','rtlafd803501','https://a.lmcdn.ru/img236x341/R/T/RTLAFD803501_33534762_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafd803501/'],
+ ['Inuikii','Балетки','Обувь','Лето','14 615','rtlafd754901','https://a.lmcdn.ru/img236x341/R/T/RTLAFD754901_33374358_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafd754901/'],
+ ['KRAKATAU','Лонгслив','Верх','Демисезон','8 990','mp002xw1kztv','https://a.lmcdn.ru/img236x341/M/P/MP002XW1KZTV_33468483_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw1kztv/'],
+ ['Daily Daisy','Шнурки','Аксессуары','Всесезон','1 562','mp002xw1kyct','https://a.lmcdn.ru/img236x341/M/P/MP002XW1KYCT_33105080_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1kyct/'],
+ ['Aeronautica Militare','Стёганая куртка','Верх','Осень','31 360','rtlaex275801','https://a.lmcdn.ru/img236x341/R/T/RTLAEX275801_31410263_1_v2_2x.jpg','https://www.lamoda.ru/p/rtlaex275801/'],
+ ['Tantino','Палантин','Аксессуары','Демисезон','1 226','mp002xw0nna2','https://a.lmcdn.ru/img236x341/M/P/MP002XW0NNA2_29291059_1_v4_2x.jpg','https://www.lamoda.ru/p/mp002xw0nna2/'],
+ ['12 STOREEZ','Лонгслив','Верх','Демисезон','4 800','mp002xw17h0b','https://a.lmcdn.ru/img236x341/M/P/MP002XW17H0B_24124855_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw17h0b/'],
+ ['Volcom','Свитшот','Верх','Демисезон','8 160','rtlafd336301','https://a.lmcdn.ru/img236x341/R/T/RTLAFD336301_32911764_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlafd336301/'],
+ ['Stefanel','Джемпер','Верх','Зима','8 154','mp002xw0vmeq','https://a.lmcdn.ru/img236x341/M/P/MP002XW0VMEQ_30040127_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0vmeq/'],
+ ['Ash','Кроссовки','Обувь','Демисезон','17 520','rtlaew986301','https://a.lmcdn.ru/img236x341/R/T/RTLAEW986301_31278102_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaew986301/'],
+ ['JNBY','Брюки','Низ','Лето','9 950','mp002xw0x66i','https://a.lmcdn.ru/img236x341/M/P/MP002XW0X66I_20023031_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw0x66i/'],
+ ['M.Reason','Юбка','Низ','Лето','12 593','mp002xw0g8bn','https://a.lmcdn.ru/img236x341/M/P/MP002XW0G8BN_28733408_1_v2.jpg','https://www.lamoda.ru/p/mp002xw0g8bn/'],
+ ['JNBY','Платье','Верх','Лето','13 950','mp002xw0x66j','https://a.lmcdn.ru/img236x341/M/P/MP002XW0X66J_20034586_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw0x66j/'],
+ ["Marc O'Polo",'Ветровка','Верх','Демисезон','24 291','mp002xw1d3am','https://a.lmcdn.ru/img236x341/M/P/MP002XW1D3AM_31340813_1_v3_2x.jpg','https://www.lamoda.ru/p/mp002xw1d3am/'],
+ ['Lusio','Лонгслив','Верх','Демисезон','5 994','mp002xw0wae3','https://a.lmcdn.ru/img236x341/M/P/MP002XW0WAE3_30560024_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0wae3/'],
+ ['Lusio','Водолазка','Верх','Зима','10 493','mp002xw0u2v1','https://a.lmcdn.ru/img236x341/M/P/MP002XW0U2V1_29234365_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0u2v1/'],
+ ['Maison David','Рубашка','Верх','Осень','5 910','xd001xw02p8f','https://a.lmcdn.ru/img236x341/X/D/XD001XW02P8F_28411861_1_v2_2x.jpg','https://www.lamoda.ru/p/xd001xw02p8f/'],
+ ['2Mood','Джинсы','Низ','Демисезон','14 990','mp002xw0xrya','https://a.lmcdn.ru/img236x341/M/P/MP002XW0XRYA_30708466_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0xrya/'],
+ ['Max&Co','Майка','Верх','Лето','6 669','rtlael532001','https://a.lmcdn.ru/img236x341/R/T/RTLAEL532001_28783509_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlael532001/'],
+ ["Marc O'Polo",'Рубашка','Верх','Осень','11 332','mp002xw0nk13','https://a.lmcdn.ru/img236x341/M/P/MP002XW0NK13_29103173_1_v2.jpg','https://www.lamoda.ru/p/mp002xw0nk13/']
+ ,['12 STOREEZ','Брюки','Низ','Демисезон','15 000','mp002xw0i8jk','https://a.lmcdn.ru/img236x341/M/P/MP002XW0I8JK_22756259_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0i8jk/']
+ ,['7Dots','Брюки','Низ','Демисезон','10 209','mp002xw0uwz3','https://a.lmcdn.ru/img236x341/M/P/MP002XW0UWZ3_29830217_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw0uwz3/']
+ ,['Stefanel','Рубашка','Верх','Лето','8 769','mp002xw0vg42','https://a.lmcdn.ru/img236x341/M/P/MP002XW0VG42_29957948_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0vg42/']
+ ,['adidas Originals','Кеды','Обувь','Демисезон','6 570','rtlael829601','https://a.lmcdn.ru/img236x341/R/T/RTLAEL829601_29466454_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlael829601/']
+ ,['Stefanel','Брюки','Низ','Демисезон','10 791','mp002xw0xty6','https://a.lmcdn.ru/img236x341/M/P/MP002XW0XTY6_30752512_1_v6_2x.jpg','https://www.lamoda.ru/p/mp002xw0xty6/']
+ ,['Befree','Лонгслив','Верх','Демисезон','1 649','mp002xw0w1sy','https://a.lmcdn.ru/img236x341/M/P/MP002XW0W1SY_30333934_1_v2.jpg','https://www.lamoda.ru/p/mp002xw0w1sy/']
+ ,['Stefanel','Джинсы','Низ','Демисезон','10 119','mp002xw0w6fi','https://a.lmcdn.ru/img236x341/M/P/MP002XW0W6FI_30410969_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0w6fi/']
+ ,['Stefanel','Блуза','Верх','Лето','6 069','mp002xw0vg38','https://a.lmcdn.ru/img236x341/M/P/MP002XW0VG38_29973945_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0vg38/']
+ ,['Stefanel','Джемпер','Верх','Зима','15 111','mp002xw0w6ez','https://a.lmcdn.ru/img236x341/M/P/MP002XW0W6EZ_30410281_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0w6ez/']
+ ,['Blackstone','Ботинки','Обувь','Зима','27 990','mp002xw0vmpv','https://a.lmcdn.ru/img236x341/M/P/MP002XW0VMPV_30552849_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw0vmpv/']
+ ,['Mango','Джинсы','Низ','Демисезон','5 600','rtlaes161001','https://a.lmcdn.ru/img236x341/R/T/RTLAES161001_30114083_1_v1.jpg','https://www.lamoda.ru/p/rtlaes161001/']
+ ,['Inni','Джинсы','Низ','Демисезон','9 029','mp002xw0if4c','https://a.lmcdn.ru/img236x341/M/P/MP002XW0IF4C_25442796_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw0if4c/']
+ ,['Stefanel','Джемпер','Верх','Зима','11 790','mp002xw0vme8','https://a.lmcdn.ru/img236x341/M/P/MP002XW0VME8_30038979_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0vme8/']
+ ,['Trussardi','Джемпер','Верх','Зима','7 320','rtlaej648901','https://a.lmcdn.ru/img236x341/R/T/RTLAEJ648901_27940279_1_v2_2x.jpg','https://www.lamoda.ru/p/rtlaej648901/']
+ ,['Margarita Petkevich','Джемпер','Верх','Зима','4 620','mp002xw0qxz5','https://a.lmcdn.ru/img236x341/M/P/MP002XW0QXZ5_26545536_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw0qxz5/']
+ ,['Marc O\'Polo','Пуховик','Верх','Зима','35 991','mp002xw0utff','https://a.lmcdn.ru/img236x341/M/P/MP002XW0UTFF_29631291_1_v2.jpg','https://www.lamoda.ru/p/mp002xw0utff/']
+ ,['Charuel','Джемпер','Верх','Зима','8 813','mp002xw0ibox','https://a.lmcdn.ru/img236x341/M/P/MP002XW0IBOX_25215106_1_v1_2x.jpeg','https://www.lamoda.ru/p/mp002xw0ibox/']
+ ,['12 STOREEZ','Водолазка','Верх','Зима','13 000','mp002xw0ua61','https://a.lmcdn.ru/img236x341/M/P/MP002XW0UA61_29328836_1_v3_2x.jpg','https://www.lamoda.ru/p/mp002xw0ua61/']
+ ,['Margarita Petkevich','Джемпер','Верх','Зима','4 620','mp002xw1362y','https://a.lmcdn.ru/img236x341/M/P/MP002XW1362Y_26539722_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw1362y/']
+ ,['Canoe','Шапка','Аксессуары','Зима','9 300','mp002xw177wr','https://a.lmcdn.ru/img236x341/M/P/MP002XW177WR_24463372_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw177wr/']
+ ,['Moontrees','Лонгслив','Верх','Демисезон','2 700','mp002xw1bk2x','https://a.lmcdn.ru/img236x341/M/P/MP002XW1BK2X_26915348_1_v2.jpg','https://www.lamoda.ru/p/mp002xw1bk2x/']
+ ,['Befree','Майка','Верх','Лето','450','mp002xw1ix1m','https://a.lmcdn.ru/img236x341/M/P/MP002XW1IX1M_28037741_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1ix1m/']
+ ,['John Richmond','Джинсы','Низ','Демисезон','12 669','rtlaea849401','https://a.lmcdn.ru/img236x341/R/T/RTLAEA849401_26335191_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaea849401/']
+ ,['Labbra','Перчатки','Аксессуары','Зима','4 361','mp002xw1fb28','https://a.lmcdn.ru/img236x341/M/P/MP002XW1FB28_33697808_1_v3_2x.jpg','https://www.lamoda.ru/p/mp002xw1fb28/']
+ ,['Marc O\'Polo','Кардиган','Верх','Осень','13 492','mp002xw0g6u1','https://a.lmcdn.ru/img236x341/M/P/MP002XW0G6U1_28807054_1_v3.jpg','https://www.lamoda.ru/p/mp002xw0g6u1/']
+ ,['True Red','Кардиган','Верх','Осень','10 500','mp002xw1k353','https://a.lmcdn.ru/img236x341/M/P/MP002XW1K353_28869475_1_v3_2x.jpg','https://www.lamoda.ru/p/mp002xw1k353/']
+ ,['Телодвижения','Футболка','Верх','Лето','588','mp002xw0t2ri','https://a.lmcdn.ru/img236x341/M/P/MP002XW0T2RI_27893520_1_v3_2x.jpg','https://www.lamoda.ru/p/mp002xw0t2ri/']
+ ,['Paige','Джинсы','Низ','Демисезон','19 095','rtlaeb183801','https://a.lmcdn.ru/img236x341/R/T/RTLAEB183801_26183435_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaeb183801/']
+ ,['M-M by Max Mara','Лонгслив','Верх','Демисезон','9 283','rtlaem275001','https://a.lmcdn.ru/img236x341/R/T/RTLAEM275001_28858630_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaem275001/']
+ ,['Kriskis','Лонгслив','Верх','Демисезон','4 194','mp002xw0teuk','https://a.lmcdn.ru/img236x341/M/P/MP002XW0TEUK_27775969_1_v3.jpg','https://www.lamoda.ru/p/mp002xw0teuk/']
+ ,['Charuel','Брюки','Низ','Демисезон','13 990','mp002xw0zrtw','https://a.lmcdn.ru/img236x341/M/P/MP002XW0ZRTW_24915454_1_v1_2x.jpeg','https://www.lamoda.ru/p/mp002xw0zrtw/']
+ ,['2Mood','Брюки','Низ','Демисезон','7 990','mp002xw1fvxb','https://a.lmcdn.ru/img236x341/M/P/MP002XW1FVXB_26532077_1_v1_2x.jpeg','https://www.lamoda.ru/p/mp002xw1fvxb/']
+ ,['Falconeri','Блуза','Верх','Лето','9 950','mp002xw0zdeh','https://a.lmcdn.ru/img236x341/M/P/MP002XW0ZDEH_24693812_1_v1_2x.png','https://www.lamoda.ru/p/mp002xw0zdeh/']
+ ,['Caractere','Платье','Верх','Лето','23 680','rtlaeh731301','https://a.lmcdn.ru/img236x341/R/T/RTLAEH731301_27838383_1_v3_2x.jpg','https://www.lamoda.ru/p/rtlaeh731301/']
+ ,['Good News','Кеды','Обувь','Демисезон','7 715','rtlaei089101','https://a.lmcdn.ru/img236x341/R/T/RTLAEI089101_27506218_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaei089101/']
+ ,['Charuel','Шорты','Низ','Лето','8 990','mp002xw1b8ju','https://a.lmcdn.ru/img236x341/M/P/MP002XW1B8JU_26742749_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw1b8ju/']
+ ,['Lusio','Рубашка','Верх','Осень','11 691','mp002xw0xc5t','https://a.lmcdn.ru/img236x341/M/P/MP002XW0XC5T_23892539_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0xc5t/']
+ ,['Trussardi','Рубашка','Верх','Демисезон','9 600','rtlaee971501','https://a.lmcdn.ru/img236x341/R/T/RTLAEE971501_26879183_1_v4_2x.jpg','https://www.lamoda.ru/p/rtlaee971501/']
+ ,['Emme Marella','Брюки','Низ','Демисезон','10 800','rtlaea527601','https://a.lmcdn.ru/img236x341/R/T/RTLAEA527601_26305885_1_v1_2x.jpg','https://www.lamoda.ru/p/rtlaea527601/']
+ ,['Ruck&Maul','Рубашка','Верх','Демисезон','5 700','mp002xw0wpmm','https://a.lmcdn.ru/img236x341/M/P/MP002XW0WPMM_22934471_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0wpmm/']
+ ,['Ruck&Maul','Брюки','Низ','Демисезон','10 764','mp002xw14zu1','https://a.lmcdn.ru/img236x341/M/P/MP002XW14ZU1_23282343_1_v1_2x.jpg','https://www.lamoda.ru/p/mp002xw14zu1/']
+ ,['Present & Simple','Футболка','Верх','Лето','4 990','xd001xw01pr4','https://a.lmcdn.ru/img236x341/X/D/XD001XW01PR4_27122669_1_v2_2x.jpg','https://www.lamoda.ru/p/xd001xw01pr4/']
+ ,['Lusio','Рубашка','Верх','Лето','2 997','mp002xw0ek23','https://a.lmcdn.ru/img236x341/M/P/MP002XW0EK23_20829166_1_v2_2x.jpg','https://www.lamoda.ru/p/mp002xw0ek23/']
+ ,['Marc O\'Polo','Брюки','Низ','Демисезон','8 990','mp002xw0mwgz','https://a.lmcdn.ru/img236x341/M/P/MP002XW0MWGZ_22892671_1_v1.jpeg','https://www.lamoda.ru/p/mp002xw0mwgz/']
+ ,['Carhartt WIP','Джинсы','Низ','Демисезон','13 280','rtlacp365401','https://a.lmcdn.ru/img236x341/R/T/RTLACP365401_19838178_1_v2_2x.jpg','https://www.lamoda.ru/p/rtlacp365401/']
+];
+const key='natasha-wardrobe-current';
+let memoryBought=[];
+const storage={get(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return memoryBought}},set(value){memoryBought=value;try{localStorage.setItem(key,JSON.stringify(value))}catch{}}};
+let bought=storage.get();
+if(!Array.isArray(bought)) bought=[];
+const catalog=document.querySelector('#catalog');const count=document.querySelector('#count');
+function draw(){const season=document.querySelector('#season').value,category=document.querySelector('#category').value,only=document.querySelector('#boughtOnly').checked;catalog.innerHTML='';let visible=0;items.forEach((x,i)=>{if((season!=='all'&&x[3]!==season)||(category!=='all'&&x[2]!==category)||(only&&!bought.includes(i)))return;visible++;const article=document.createElement('article');article.className='item '+(bought.includes(i)?'bought':'');article.innerHTML=`<a href="${x[7]}" target="_blank" rel="noreferrer"><img class="photo" src="${x[6]}" alt="${x[0]} — ${x[1]}" loading="lazy"></a><div class="body"><p class="brand">${x[0]}</p><p class="name">${x[1]}</p><p class="price">${x[4]} ₽</p><div class="meta"><span class="tag">${x[2]}</span><span class="tag">${x[3]}</span></div><label class="purchase"><input type="checkbox" ${bought.includes(i)?'checked':''} data-index="${i}"> Есть сейчас</label><a class="link" href="${x[7]}" target="_blank" rel="noreferrer">Открыть на Lamoda →</a></div>`;catalog.append(article)});count.textContent=`${visible} из ${items.length} вещей`;document.querySelector('#empty').style.display=visible?'none':'block';catalog.querySelectorAll('input').forEach(input=>input.onchange=()=>{const i=+input.dataset.index;bought=input.checked?[...new Set([...bought,i])]:bought.filter(n=>n!==i);storage.set(bought);draw()})}
+document.querySelector('#export').onclick=()=>{const data=items.map((x,i)=>({brand:x[0],name:x[1],category:x[2],season:x[3],price:x[4]+' ₽',photo:x[6],url:x[7],current:bought.includes(i)}));const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='wardrobe-for-stylist.json';a.click()};
+document.querySelectorAll('select,#boughtOnly').forEach(el=>el.onchange=draw);document.querySelector('#clear').onclick=()=>{bought=[];storage.set(bought);draw()};draw();
+</script>
+</body>
+</html>
