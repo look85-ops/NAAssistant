@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="165mm" height="60mm" viewBox="0 0 624 227">
+  <title>Драфт-тройка стикеров для коллег</title>
+  <desc>Три круглых стикера диаметром 50 миллиметров. Минималистичная железнодорожная графика.</desc>
+  <rect width="624" height="227" fill="#f7f3df"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#17191c">
+    <g transform="translate(12 12)">
+      <circle cx="101" cy="101" r="91" fill="#fff7c9" stroke="#fff" stroke-width="12"/>
+      <circle cx="101" cy="101" r="82" fill="none" stroke="#17191c" stroke-width="2"/>
+      <path d="M53 99h99M72 99v34m58-34v34M63 141h76M101 75v24" fill="none" stroke="#17191c" stroke-width="5" stroke-linecap="round"/>
+      <path d="M101 75l-9 12h18z" fill="#e55d61"/>
+      <path d="M78 158h47" stroke="#e55d61" stroke-width="5" stroke-linecap="round"/>
+      <text x="101" y="177" font-size="12" font-weight="700">НЕ ТУПИМ,</text>
+      <text x="101" y="192" font-size="12" font-weight="700">А МАНЕВРИРУЕМ</text>
+    </g>
+    <g transform="translate(213 12)">
+      <circle cx="101" cy="101" r="91" fill="#f4c7c9" stroke="#fff" stroke-width="12"/>
+      <circle cx="101" cy="101" r="82" fill="none" stroke="#17191c" stroke-width="2"/>
+      <path d="M43 85c13-28 32 26 46-5s34 18 49-12 31 15 43-7M45 106c20-25 30 18 49-10s32 20 49-8 29 17 40-7M56 129c14-18 27 9 43-9s30 14 44-6 25 9 31-2" fill="none" stroke="#5271a6" stroke-width="3" stroke-linecap="round"/>
+      <path d="M57 153h88" stroke="#e55d61" stroke-width="5" stroke-linecap="round"/>
+      <text x="101" y="177" font-size="12" font-weight="700">ПЛАН ЕСТЬ.</text>
+      <text x="101" y="192" font-size="11">ГДЕ-ТО ЗДЕСЬ</text>
+    </g>
+    <g transform="translate(414 12)">
+      <circle cx="101" cy="101" r="91" fill="#fbfaf1" stroke="#fff" stroke-width="12"/>
+      <circle cx="101" cy="101" r="82" fill="none" stroke="#17191c" stroke-width="2"/>
+      <path d="M53 131h95M70 131l12-31h38l12 31M82 100l-7-26m45 26 7-26M75 74h50" fill="none" stroke="#17191c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="#e55d61"><circle cx="57" cy="66" r="4"/><circle cx="146" cy="61" r="4"/></g>
+      <g fill="#7da0d1"><circle cx="67" cy="57" r="3"/><circle cx="137" cy="70" r="3"/></g>
+      <g stroke="#7d9d4a" stroke-width="2" stroke-linecap="round"><path d="M58 66l-7-8m7 8 9-9M146 61l-8-8m8 8 8-8"/></g>
+      <text x="101" y="177" font-size="12" font-weight="700">ВСЁ ПО ПЛЕЧУ</text>
+    </g>
+  </g>
+</svg>
