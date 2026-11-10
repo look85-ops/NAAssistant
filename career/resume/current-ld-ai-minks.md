@@ -1,6 +1,6 @@
 # Марценюк Наталья
 
-**Руководитель образовательных проектов · L&D × AI**
+**Руководитель образовательных проектов · Методолог**
 
 +7 (903) 973-98-30 · look85@gmail.com · Telegram: @mrk_natalia
 GitHub: github.com/look85-ops · Портфолио: look85-ops.github.io/NAAssistant/portfolio/
