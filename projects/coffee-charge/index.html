@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1115">
+<title>Кофе-зарядка · 3 минуты</title>
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22%D0%9A%D0%BE%D1%84%D0%B5-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4%D0%BA%D0%B0%22%2C%22short_name%22%3A%22%D0%97%D0%B0%D1%80%D1%8F%D0%B4%D0%BA%D0%B0%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230f1115%22%2C%22theme_color%22%3A%22%230f1115%22%7D">
+<style>
+  :root{
+    --bg:#0f1115; --card:#1a1d24; --line:#2a2e38;
+    --text:#e8eaf0; --muted:#8b93a1; --accent:#e0a458; --accent2:#6ea8a0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg); color:var(--text); min-height:100vh;
+    padding:max(16px,env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));
+  }
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  h1{font-size:20px;font-weight:600;letter-spacing:.3px}
+  .tag{font-size:12px;color:var(--accent);background:rgba(224,164,88,.12);padding:4px 10px;border-radius:20px}
+  .week{display:flex;gap:6px;margin-bottom:20px}
+  .day{
+    flex:1;text-align:center;padding:9px 0;border-radius:12px;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);color:var(--muted);
+    font-size:12px;font-weight:500;transition:.2s;
+  }
+  .day.active{background:rgba(224,164,88,.15);border-color:var(--accent);color:var(--accent)}
+  .day.done{border-color:rgba(110,168,160,.5);color:var(--accent2)}
+  .day.done::after{content:" •";color:var(--accent2)}
+  .timer-box{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:22px;text-align:center;margin-bottom:18px;
+  }
+  .timer{font-size:56px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px}
+  .timer.go{color:var(--accent)}
+  .timer-label{color:var(--muted);font-size:13px;margin-top:4px}
+  button{
+    margin-top:14px;width:100%;padding:15px;border:none;border-radius:14px;
+    font-size:16px;font-weight:600;cursor:pointer;background:var(--accent);color:#1a120a;transition:.2s;
+  }
+  button:active{transform:scale(.98)}
+  button.secondary{background:var(--card);color:var(--text);border:1px solid var(--line)}
+  .ex-list{margin-top:4px}
+  .ex{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:13px 14px;margin-bottom:8px;
+  }
+  .ex b{font-size:14px;font-weight:600;display:block;margin-bottom:2px}
+  .ex span.desc{font-size:12px;color:var(--text);line-height:1.35;display:block;opacity:.9}
+  .ex span.how{font-size:12px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+  .ex .t{font-size:13px;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .ex.now{border-color:var(--accent);background:rgba(224,164,88,.12);box-shadow:0 0 0 1px var(--accent) inset}
+  .ex.now.start{border-left:4px solid var(--accent)}
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:18px;line-height:1.5}
+  .bar{display:flex;gap:6px;margin-top:10px}
+  .bar i{flex:1;height:4px;border-radius:2px;background:var(--line)}
+  .bar i.f{background:var(--accent2)}
+</style>
+</head>
+<body>
+  <header>
+    <h1>☕ Кофе-зарядка</h1>
+    <span class="tag" id="todayTag">3 мин</span>
+  </header>
+
+  <div class="week" id="week"></div>
+
+  <div class="timer-box">
+    <div class="timer" id="clock">03:00</div>
+    <div class="timer-label" id="clockLabel">пока заваривается кофе</div>
+    <button id="btn">▶ Начать 3 минуты</button>
+  </div>
+
+  <div class="ex-list" id="exList"></div>
+
+  <div class="foot">
+    Недельный прогресс
+    <div class="bar" id="bar"></div>
+  </div>
+
+<script>
+const DAYS = [
+  { name:"Пн", tag:"Шея и плечи",
+    ex:[["Наклоны головы вперёд/назад","5 медленных, без рывков","Плавно опусти подбородок к груди, потом подними вверх","40 с",null],
+        ["Наклоны к плечам влево/вправо","по 5 на сторону","Тянись ухом к плечу, плечо не поднимай","40 с",20],
+        ["Повороты головы влево/вправо","по 5, плавно","Медленно поверни голову, взгляд назад","40 с",20],
+        ["Круги плечами назад/вперёд","по 10 в каждую сторону","Подними плечи к ушам и отведи назад по кругу","30 с",null],
+        ["Пожимание плеч к ушам","поднять и отпустить, 8 раз","Подними плечи вверх, задержись, резко расслабь","30 с",null]] },
+  { name:"Вт", tag:"Позвоночник и таз",
+    ex:[["Наклоны вбок стоя","по 6 на сторону","Рука скользит вдоль бедра, тянись вбок, не вперёд","50 с",25],
+        ["Скручивание корпуса","руки в замке, по 6 на сторону","Стой ровно, поворачивай только верх тела, таз на месте","50 с",25],
+        ["Кошка-корова стоя","8 медленных циклов","Колени чуть согнуты, руки на бёдрах. Прогнись грудью вперёд, потом округли спину назад","40 с",null],
+        ["Круги тазом","по 8 в каждую сторону","Ноги на ширине плеч, рисуй тазом круг","40 с",20]] },
+  { name:"Ср", tag:"Ноги и верх тела",
+    ex:[["Выпады вперёд","по 5 на каждую ногу","Шаг вперёд, заднее колено к полу, переднее над пяткой. Спина прямая","75 с",37],
+        ["Раскрытие груди у косяка","2×20 сек","Предплечье на дверной косяк на уровне груди, мягко подайся корпусом вперёд, пока тянет грудь","45 с",22],
+        ["Лопатка к лопатке","свести/развести, 12 раз","Плечи назад-вниз, сведи лопатки, задержись, отпусти","60 с",null]] },
+  { name:"Чт", tag:"Ноги и баланс",
+    ex:[["Медленные приседания","8 раз","Опускайся, будто садишься на стул, колени за носки не уходят","40 с",null],
+        ["Подъёмы на носки","12 раз без опоры","Поднимись на носки, задержись, мягко вниз","40 с",null],
+        ["Баланс на одной ноге","по 20 сек на каждую","Взгляд в одну точку впереди, одной ногой чуть вверх. Шатает — коснись стула пальцем","60 с",30],
+        ["Наклон с прямой спиной","растяжка задней ноги","Стопа на пятке, спина прямая, наклон вперёд","40 с",null]] },
+  { name:"Пт", tag:"Мобильность и дыхание",
+    ex:[["Наклоны с круглой спиной","5 медленных","Стой свободно, округли спину и тянись вниз, медленно раскручивайся","40 с",null],
+        ["Мельница","рука к ноге, по 5 на сторону","Ноги широко, руки в стороны. Наклонись, тянись правой рукой к левой ноге, вторая вверх, взгляд наверх","50 с",25],
+        ["Разминка запястий и щиколоток","круговые движения","Крути кисти и стопы по кругу в обе стороны","40 с",null],
+        ["Дыхание «4-4-4»","5 циклов, спокойно","Вдох носом на 4 счёта, задержка 4, медленный выдох 4","50 с",null]] }
+];
+
+let done = JSON.parse(localStorage.getItem("coffee-done") || "{}");
+let active = new Date().getDay(); // 1=Пн...5=Пт
+if(active < 1 || active > 5) active = 1;
+let idx = active - 1;
+
+let remaining = 180, timerId = null;
+
+function render(){
+  const week = document.getElementById("week");
+  week.innerHTML = "";
+  DAYS.forEach((d,i)=>{
+    const el = document.createElement("div");
+    el.className = "day" + (i===idx?" active":"") + (done[i]?" done":"");
+    el.textContent = d.name;
+    el.onclick = ()=>{ idx = i; stop(); render(); };
+    week.appendChild(el);
+  });
+
+  document.getElementById("todayTag").textContent = idx===active-1 ? "сегодня" : DAYS[idx].tag;
+
+  const exList = document.getElementById("exList");
+  exList.innerHTML = "";
+  DAYS[idx].ex.forEach(([t,desc,how,time],i)=>{
+    const d = document.createElement("div");
+    d.className = "ex";
+    d.dataset.i = i;
+    d.innerHTML = "<div><b>"+t+"</b><span class=\"desc\">"+desc+"</span><span class=\"how\">"+how+"</span></div><div class=\"t\">"+time+"</div>";
+    exList.appendChild(d);
+  });
+
+  const bar = document.getElementById("bar");
+  bar.innerHTML = "";
+  DAYS.forEach((_,i)=>{
+    const s = document.createElement("i");
+    if(done[i]) s.className = "f";
+    bar.appendChild(s);
+  });
+
+  document.getElementById("btn").textContent =
+    done[idx] ? "✓ Готово · сбросить" : "▶ Начать 3 минуты";
+}
+
+function fmt(s){
+  const m = Math.floor(s/60), r = s%60;
+  return String(m).padStart(2,"0")+":"+String(r).padStart(2,"0");
+}
+
+let audioCtx = null;
+function beep(times=1){
+  try{
+    audioCtx = audioCtx || new (window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state === "suspended") audioCtx.resume();
+    for(let i=0;i<times;i++){
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.connect(g); g.connect(audioCtx.destination);
+      o.frequency.value = 880;
+      o.type = "sine";
+      g.gain.setValueAtTime(0.0001, audioCtx.currentTime + i*0.35);
+      g.gain.exponentialRampToValueAtTime(0.25, audioCtx.currentTime + i*0.35 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + i*0.35 + 0.18);
+      o.start(audioCtx.currentTime + i*0.35);
+      o.stop(audioCtx.currentTime + i*0.35 + 0.2);
+    }
+  }catch(e){}
+}
+
+function currentEx(){
+  const ex = DAYS[idx].ex;
+  const secs = ex.map(e=>parseInt(e[3]));
+  let elapsed = 180 - remaining;
+  let acc = 0;
+  for(let i=0;i<ex.length;i++){
+    acc += secs[i];
+    if(elapsed < acc || i===ex.length-1) return i;
+  }
+  return 0;
+}
+
+function highlight(){
+  const items = document.querySelectorAll("#exList .ex");
+  if(!timerId){ items.forEach(el=>el.classList.remove("now","start")); return; }
+  const now = currentEx();
+  items.forEach((el,i)=>{
+    el.classList.toggle("now", i===now);
+    el.classList.toggle("start", i<=now);
+  });
+  const el = items[now];
+  if(el && el.scrollIntoView){ el.scrollIntoView({behavior:"smooth", block:"center"}); }
+}
+
+let midBeats = [];
+function buildMidBeats(){
+  midBeats = [];
+  let acc = 0;
+  DAYS[idx].ex.forEach(e=>{
+    const sec = parseInt(e[3]), m = e[4];
+    if(m != null) midBeats.push(acc + m);
+    acc += sec;
+  });
+}
+
+function start(){
+  if(timerId){ stop(); return; }
+  remaining = 180;
+  buildMidBeats();
+  let lastElapsed = 0;
+  const c = document.getElementById("clock");
+  c.classList.add("go");
+  document.getElementById("clockLabel").textContent = "заваривается кофе…";
+  document.getElementById("btn").textContent = "■ Стоп";
+  c.textContent = fmt(remaining);
+  highlight();
+  timerId = setInterval(()=>{
+    remaining--;
+    const elapsed = 180 - remaining;
+    midBeats.forEach(b=>{
+      if(b > lastElapsed && b <= elapsed) beep(2);
+    });
+    lastElapsed = elapsed;
+    c.textContent = fmt(remaining);
+    highlight();
+    if(remaining <= 0){
+      stop(true);
+    }
+  },1000);
+}
+
+function stop(finished){
+  clearInterval(timerId); timerId = null;
+  const c = document.getElementById("clock");
+  c.classList.remove("go");
+  document.getElementById("clockLabel").textContent = "пока заваривается кофе";
+  if(finished){
+    done[idx] = true;
+    localStorage.setItem("coffee-done", JSON.stringify(done));
+    if(navigator.vibrate) navigator.vibrate([200,100,200]);
+  }
+  highlight();
+  c.textContent = "03:00";
+  render();
+}
+
+document.getElementById("btn").onclick = ()=>{
+  if(done[idx] && !timerId){
+    done[idx] = false;
+    localStorage.setItem("coffee-done", JSON.stringify(done));
+    render();
+    return;
+  }
+  start();
+};
+
+render();
+</script>
+</body>
+</html>

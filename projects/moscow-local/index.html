@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мои места — полчаса от дома</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root{--paper:#f6f2ea;--card:#fbf9f4;--ink:#191613;--muted:#7a746c;--line:#26221c;--hl:#2d5568;--hl-bg:#e7edf0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .serif{font-family:Georgia,"Times New Roman",serif}
+  header{padding:32px 0 0}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 2px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;flex-wrap:wrap;gap:6px}
+  .hero{position:relative;padding:56px 0 40px;overflow:hidden}
+  .hero #map{position:absolute;inset:0;z-index:0;opacity:.22;filter:grayscale(1);pointer-events:none}
+  .hero h1,.hero .sub{position:relative;z-index:1}
+  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,7.5vw,78px);font-weight:700;line-height:.98;letter-spacing:-.01em;max-width:26ch}
+  .sub{margin-top:22px;font-size:15px;color:var(--muted);max-width:74ch;font-style:italic}
+  .ticker{margin-top:36px;border:1.5px solid var(--ink);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;background:var(--card)}
+  .ticker .big{font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;letter-spacing:.02em}
+  .ticker .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .legend{margin-top:20px;font-size:13px;color:var(--muted);font-style:italic}
+  main{padding:12px 0 80px}
+  section{padding:36px 0 8px}
+  .cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+  .cat-head h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:700}
+  .cat-head span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);padding:18px;cursor:pointer;position:relative;display:flex;flex-direction:column;min-height:140px;transition:border-color .15s ease}
+  .card:hover{border-color:var(--hl)}
+  .card.visited{background:var(--hl-bg);border-color:var(--hl)}
+  .card .name{font-family:Georgia,"Times New Roman",serif;font-size:19px;font-weight:700;line-height:1.1}
+  .card .why{margin-top:8px;font-size:13px;color:var(--muted);line-height:1.45}
+  .card .walk{margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--hl)}
+  .card .maplink{margin-top:12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+  .card .check{position:absolute;top:14px;right:14px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--hl);opacity:0;transition:opacity .2s ease}
+  .card.visited .check{opacity:1}
+  .card.visited .check::before{content:"✓ "}
+  footer{padding:30px 0 70px;border-top:1px solid var(--ink);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <span>Дубнинская 6к2</span>
+    <span>Москва · до отъезда</span>
+  </div>
+  <div class="hero">
+    <div id="map"></div>
+    <h1>Мои места<br>в получасе<br>от дома</h1>
+    <p class="sub">52 точки в радиусе 2.4 км (~30 мин пешком), собранные из OpenStreetMap. Что значимо именно здесь — тебе виднее меня: кликни по карточке, чтобы отметить «была». Карта живёт в браузере, никуда не уходит.</p>
+  </div>
+  <div class="ticker">
+    <span class="lbl">Рядом с домом</span>
+    <span class="big serif" id="count">0</span>
+  </div>
+  <div class="legend">Отсортировано по расстоянию от дома. «Почему это я» — категория объекта из карты, при желании перепишешь на своё.</div>
+</header>
+
+<main class="wrap">
+  <div id="sections"></div>
+</main>
+
+<footer class="wrap">Локальный контекст · карта © OpenStreetMap (Nominatim) · данные собраны вручную, возможны неточности</footer>
+
+<script>
+const HOME = [55.8729528, 37.5591633];
+const GROUPS = [{"cat":"Еда и кофе","items":[{"name":"Узбечка","why":"кафе","ll":[55.865589,37.5455056],"dist":1182}, {"name":"CofeFest","why":"кафе","ll":[55.87776,37.5408347],"dist":1262}, {"name":"Кашкадарья","why":"ресторан","ll":[55.8725226,37.5383668],"dist":1298}, {"name":"Палермо","why":"кафе","ll":[55.8644663,37.5446001],"dist":1310}, {"name":"Добрынинский","why":"кондитерская","ll":[55.8739815,37.5361217],"dist":1442}, {"name":"Буханка","why":"пекарня","ll":[55.8588925,37.5591338],"dist":1563}, {"name":"Гофер","why":"кафе","ll":[55.8604869,37.5471927],"dist":1575}, {"name":"SeDelice","why":"пекарня","ll":[55.8617789,37.5410087],"dist":1681}, {"name":"Столовая","why":"столовая","ll":[55.8588371,37.5464889],"dist":1758}, {"name":"Сладкий Лев","why":"кондитерская","ll":[55.8630408,37.5853082],"dist":1969}]}, {"cat":"Продукты","items":[{"name":"Магнит","why":"супермаркет","ll":[55.8761548,37.5707092],"dist":803}, {"name":"Перекрёсток","why":"супермаркет","ll":[55.8639369,37.5510678],"dist":1123}, {"name":"Евроспар","why":"супермаркет","ll":[55.8790896,37.5809394],"dist":1520}, {"name":"Милти","why":"продуктовый магазин","ll":[55.8611051,37.5420495],"dist":1696}, {"name":"Дикси","why":"супермаркет","ll":[55.8630824,37.5342388],"dist":1903}]}, {"cat":"Парки и прогулки","items":[{"name":"Бескудниковский бульвар","why":"бульвар","ll":[55.865841,37.5591979],"dist":791}, {"name":"Орловский сад","why":"парк","ll":[55.8692879,37.5425855],"dist":1112}, {"name":"Пруд Алтуфьевского района","why":"пруд","ll":[55.8786805,37.5843181],"dist":1693}, {"name":"Парк «Северные Дубки»","why":"парк","ll":[55.8886308,37.5650423],"dist":1781}, {"name":"Дегунинский пруд","why":"пруд","ll":[55.8655147,37.5311583],"dist":1933}, {"name":"Стадион","why":"стадион","ll":[55.888556,37.5364196],"dist":2241}, {"name":"Молния","why":"стадион","ll":[55.8881303,37.5344505],"dist":2286}]}, {"cat":"Третьи места","items":[{"name":"Дом культуры «Юность»","why":"дом культуры","ll":[55.8843107,37.5577069],"dist":1266}, {"name":"Читай-город","why":"книжный магазин","ll":[55.863759,37.5460126],"dist":1311}, {"name":"Киномакс XL","why":"кинотеатр","ll":[55.8632961,37.54658],"dist":1330}, {"name":"Детская библиотека №91","why":"библиотека","ll":[55.8675457,37.5875643],"dist":1871}, {"name":"Библиотека № 30","why":"библиотека","ll":[55.882718,37.5330928],"dist":1955}, {"name":"Дом культуры \"Восход\"","why":"дом культуры","ll":[55.8888278,37.5391555],"dist":2162}, {"name":"Вики синема","why":"кинотеатр","ll":[55.8899973,37.5379044],"dist":2313}, {"name":"Анжелика","why":"книжный магазин","ll":[55.8790643,37.5230749],"dist":2351}]}, {"cat":"Здоровье и медицина","items":[{"name":"Salvadora Dent","why":"стоматология","ll":[55.8625313,37.5603206],"dist":1161}, {"name":"Медси","why":"Медси","ll":[55.8618072,37.5678813],"dist":1353}, {"name":"Brainmark","why":"стоматология","ll":[55.8596739,37.557217],"dist":1482}, {"name":"Поликлиника","why":"поликлиника","ll":[55.8730752,37.5350852],"dist":1502}, {"name":"Оникс","why":"стоматология","ll":[55.8591767,37.5630321],"dist":1551}, {"name":"6 к3","why":"стоматология","ll":[55.8584632,37.5633433],"dist":1632}, {"name":"Детская городская поликлиника № 86 филиал № 1","why":"поликлиника","ll":[55.8893863,37.5619216],"dist":1835}, {"name":"Поликлиника Отрадное","why":"поликлиника","ll":[55.8653062,37.5854011],"dist":1845}, {"name":"10","why":"стоматология","ll":[55.8715646,37.5290608],"dist":1884}, {"name":"Дент-Актив","why":"стоматология","ll":[55.8896602,37.5809133],"dist":2300}]}, {"cat":"Покупки и быт","items":[{"name":"Точка красоты","why":"парикмахерская","ll":[55.8773858,37.5590037],"dist":493}, {"name":"Яблоко","why":"салон красоты","ll":[55.875935,37.5505358],"dist":632}, {"name":"Status","why":"салон красоты","ll":[55.8699019,37.5487677],"dist":732}, {"name":"Почта Банк","why":"банк","ll":[55.8806055,37.5586711],"dist":851}, {"name":"27 к1","why":"парикмахерская","ll":[55.863748,37.5652104],"dist":1091}, {"name":"Торговый центр","why":"торговый центр","ll":[55.862026,37.5634584],"dist":1244}, {"name":"Charuel","why":"магазин одежды","ll":[55.8637108,37.544961],"dist":1357}, {"name":"Твое","why":"магазин одежды","ll":[55.863628,37.544545],"dist":1381}, {"name":"Семейная лаборатория красоты","why":"салон красоты","ll":[55.8799628,37.5327525],"dist":1823}]}, {"cat":"Транспорт","items":[{"name":"Люблинско-Дмитровская линия","why":"станция метро","ll":[55.8546366,37.5636471],"dist":2056}]}, {"cat":"Необычное и красивое","items":[{"name":"Храм во имя святых страстотерпцев Бориса и Глеба в Дегунине","why":"храм","ll":[55.8668054,37.5343771],"dist":1691}, {"name":"Церковь Матроны Московской","why":"церковь","ll":[55.8857115,37.5318775],"dist":2216}]}];
+const KEY = "moscow-local-done-v1";
+let done = new Set();
+try { done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch(e) { done = new Set(); }
+
+function fmtMin(m){
+  if(m === 0) return "у дома";
+  if(m < 1) return "меньше минуты";
+  const n = Math.round(m);
+  const m10=n%10, m100=n%100;
+  let w = "минут";
+  if(m10===1 && m100!==11) w="минута";
+  else if(m10>=2&&m10<=4&&(m100<12||m100>14)) w="минуты";
+  return n+" "+w;
+}
+function mapLink(ll){
+  return "https://yandex.ru/maps/?pt=" + ll.join(",") + "&z=16";
+}
+
+const sections = document.getElementById("sections");
+let total = 0;
+
+GROUPS.forEach((g,gi)=>{
+  const sec = document.createElement("section");
+  const head = document.createElement("div");
+  head.className = "cat-head";
+  head.innerHTML = "<h2>" + g.cat + "</h2><span>" + g.items.length + "</span>";
+  sec.appendChild(head);
+  const grid = document.createElement("div");
+  grid.className = "grid";
+  g.items.forEach(it=>{
+    total++;
+    const id = gi + ":" + it.name;
+    const el = document.createElement("div");
+    el.className = "card" + (done.has(id) ? " visited" : "");
+    el.innerHTML = '<span class="check">была</span>' +
+      '<div class="name">' + it.name + '</div>' +
+      '<div class="why">' + it.why + '</div>' +
+      '<div class="walk">' + fmtMin(it.dist/80) + ' пешком · ' + it.dist + ' м</div>' +
+      '<a class="maplink" target="_blank" rel="noopener" href="' + mapLink(it.ll) + '">на карте</a>';
+    el.addEventListener("click", e=>{
+      if(e.target.closest("a")) return;
+      done.has(id) ? done.delete(id) : done.add(id);
+      localStorage.setItem(KEY, JSON.stringify([...done]));
+      el.classList.toggle("visited");
+      renderCount();
+    });
+    grid.appendChild(el);
+  });
+  sec.appendChild(grid);
+  sections.appendChild(sec);
+});
+
+function renderCount(){
+  document.getElementById("count").textContent = done.size + " из " + total + " мест отмечено";
+}
+renderCount();
+
+const map = L.map("map", {
+  center: HOME, zoom: 14, zoomControl:false, attributionControl:false,
+  dragging:false, scrollWheelZoom:false, touchZoom:false,
+  doubleClickZoom:false, boxZoom:false, keyboard:false
+});
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom:18 }).addTo(map);
+L.circle(HOME, { radius:2400, color:"#2d5568", weight:1, dashArray:"6 5", fillColor:"#2d5568", fillOpacity:.05 }).addTo(map);
+L.marker(HOME).addTo(map).bindPopup("<b>Дом</b> — Дубнинская 6к2");
+GROUPS.forEach(g=>g.items.forEach(it=>{
+  L.marker(it.ll).addTo(map).bindPopup("<b>" + it.name + "</b><br>" + it.why + "<br>" + fmtMin(it.dist/80) + " пешком");
+}));
+</script>
+</body>
+</html>

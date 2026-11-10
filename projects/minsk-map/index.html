@@ -1,212 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Наш первый год в Минске — 27 мест</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Минск, который станет нашим</title>
 <style>
-  :root{
-    --paper:#f6f2ea;
-    --card:#fbf9f4;
-    --ink:#191613;
-    --muted:#7a746c;
-    --line:#26221c;
-    --hl:#2d5568;
-    --hl-bg:#e7edf0;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Helvetica Neue",-apple-system,"Segoe UI",Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-    line-height:1.5;
-  }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  .serif{font-family:Georgia,"Times New Roman",serif}
-
-  header{padding:32px 0 0}
-  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 2px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
-  .hero{position:relative;padding:56px 0 40px;overflow:hidden}
-  .hero #map{position:absolute;inset:0;z-index:0;opacity:.22;filter:grayscale(1);pointer-events:none}
-  .hero h1,.hero .sub{position:relative;z-index:1}
-  h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,7.5vw,84px);font-weight:700;line-height:.98;letter-spacing:-.01em;max-width:26ch}
-  .sub{margin-top:22px;font-size:15px;color:var(--muted);max-width:74ch;font-style:italic}
-
-  .ticker{
-    margin-top:36px;border:1.5px solid var(--ink);padding:14px 20px;
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-    background:var(--card);
-  }
-  .ticker .big{font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;letter-spacing:.02em}
-  .ticker .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-
-  main{padding:12px 0 80px}
-  section{padding:36px 0 8px}
-  .cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
-  .cat-head h2{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:700}
-  .cat-head span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:20px;
-    cursor:pointer;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    min-height:170px;
-    transition:border-color .15s ease;
-  }
-  .card:hover{border-color:var(--hl)}
-  .card .name{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;line-height:1.1}
-  .card .why{margin-top:10px;font-size:14px;color:var(--muted);line-height:1.5}
-  .card .addr{margin-top:12px;font-size:12px;letter-spacing:.03em;color:var(--muted);font-style:italic}
-  .card .map{margin-top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
-  .card .ok{
-    position:absolute;top:14px;right:14px;
-    font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--hl);
-    opacity:0;transition:opacity .2s ease;
-  }
-  .card.done{background:var(--hl-bg);border-color:var(--hl)}
-  .card.done .name{text-decoration:line-through;text-decoration-color:var(--hl)}
-  .card.done .why,.card.done .addr{color:var(--muted)}
-  .card.done .ok{opacity:1}
-  .card.done .ok::before{content:"✓ "}
-
-  footer{padding:30px 0 70px;border-top:1px solid var(--ink);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+:root{--milk:#f2f2ea;--ink:#202229;--muted:#626773;--blue:#ccd5ff;--sage:#c3d6a8;--coral:#fc8b69;--white:#fff;--line:rgba(32,34,41,.25)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--milk);color:var(--ink);font-family:Arial,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}button{font:inherit;color:inherit}.shell{max-width:1160px;margin:auto;padding:0 28px}.topline{display:flex;justify-content:space-between;padding:18px 0 12px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.hero{position:relative;min-height:650px;padding:clamp(72px,13vw,150px) clamp(24px,6vw,76px) 58px;margin-top:18px;overflow:hidden;background:var(--blue)}.hero h1,.hero p,.hero .welcome{position:relative;z-index:1}.hero h1{max-width:700px;margin:0;font-size:clamp(52px,10vw,132px);line-height:.86;letter-spacing:-.07em;text-wrap:balance}.hero p{max-width:390px;margin:34px 0 0;font-size:18px;line-height:1.4}.welcome{position:absolute;right:clamp(24px,7vw,90px);bottom:52px;max-width:230px;padding:18px;background:var(--coral);font-size:13px;line-height:1.4}.welcome b{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.map-bg{position:absolute;inset:0;opacity:.42;pointer-events:none}.map-bg svg{width:100%;height:100%;transform:rotate(-8deg) scale(1.15)}.road{fill:none;stroke:#7784bd;stroke-width:2}.water{fill:none;stroke:var(--sage);stroke-width:15}.route-line{fill:none;stroke:var(--coral);stroke-width:6;stroke-linecap:round;stroke-dasharray:1 14}.pin{fill:var(--coral)}.map-label{font-size:12px;fill:var(--ink);font-weight:bold}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:86px 0 20px;border-bottom:2px solid var(--ink)}.section-head h2{margin:0;font-size:clamp(30px,5vw,52px);letter-spacing:-.06em}.section-head p{max-width:280px;margin:0;font-size:13px;line-height:1.4;color:var(--muted)}.moods{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:22px 0 100px}.mood{min-height:260px;border:1px solid var(--ink);background:var(--white);padding:24px;display:flex;flex-direction:column;text-align:left;cursor:pointer;transition:transform .2s ease,background .2s ease}.mood:hover,.mood:focus-visible{transform:translateY(-4px);outline:none}.mood:nth-child(3n+1){background:var(--sage)}.mood:nth-child(3n+2){background:var(--coral)}.mood:nth-child(3n){background:var(--blue)}.mood small{font-size:10px;letter-spacing:.16em;text-transform:uppercase}.mood h3{max-width:420px;margin:auto 0 10px;font-size:clamp(27px,4vw,48px);line-height:.92;letter-spacing:-.06em}.mood p{max-width:360px;margin:0;font-size:14px;line-height:1.4}.mood .open{margin-top:26px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}.drawer{position:fixed;inset:0;background:rgba(32,34,41,.45);display:flex;justify-content:flex-end;z-index:4}.drawer[hidden]{display:none}.drawer-panel{width:min(650px,100%);height:100%;overflow:auto;background:var(--milk);padding:30px clamp(24px,5vw,64px) 50px}.close{float:right;border:0;background:none;font-size:28px;cursor:pointer}.drawer-panel small{display:block;clear:both;padding-top:60px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.drawer-panel h2{margin:12px 0 14px;font-size:clamp(38px,7vw,70px);line-height:.9;letter-spacing:-.07em}.drawer-panel .lead{font-size:17px;line-height:1.45;max-width:480px}.stops{margin:36px 0;border-top:1px solid var(--ink)}.stop{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}.stop b{font-size:12px}.stop strong{display:block;font-size:18px;letter-spacing:-.03em}.stop span{display:block;margin-top:5px;font-size:13px;line-height:1.4;color:var(--muted)}.walk{display:inline-block;padding:15px 18px;background:var(--ink);color:var(--milk);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}.note{margin-top:34px;padding:18px;background:var(--sage);font-size:14px;line-height:1.45}@media(max-width:650px){.shell{padding:0 16px}.topline{font-size:9px}.hero{min-height:600px;padding:76px 22px 30px}.hero h1{font-size:clamp(52px,16vw,90px)}.welcome{position:relative;right:auto;bottom:auto;margin-top:100px}.section-head{display:block;padding-top:60px}.section-head p{margin-top:14px}.moods{grid-template-columns:1fr;padding-bottom:60px}.mood{min-height:220px}.mood h3{font-size:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mood{transition:none}}
 </style>
 </head>
 <body>
-<header class="wrap">
-  <div class="masthead">
-    <span>Места, которые мы откроем вместе.</span>
-    <span>2026 — 2027</span>
-  </div>
-  <div class="hero">
-    <div id="map"></div>
-    <h1>Наш первый год<br>в Минске</h1>
-    <p class="sub">Отмечаем, где побывали, — и смотрим, как город становится нашим.</p>
-  </div>
-  <div class="ticker">
-    <span class="lbl">Посетили</span>
-    <span class="big serif" id="count">0 из 27</span>
-  </div>
+<header class="shell">
+  <div class="topline"><span>Приватная карта для Антона</span><span>Минск · 2026</span></div>
+  <section class="hero">
+    <div class="map-bg" aria-hidden="true"><svg viewBox="0 0 900 500"><path class="water" d="M-30 390C140 330 190 450 350 380s260-50 580 25"/><path class="road" d="M30 420C180 330 270 280 440 260S690 180 940 70"/><path class="road" d="M120 35c130 70 180 150 320 225s240 120 400 180"/><path class="road" d="M0 190c180 35 300 80 440 70s270 30 470 20"/><path class="road" d="M590 0c-70 120-100 210-90 300s45 145 100 220"/><path class="route-line" d="M270 250c75 10 125 20 170 10s80-10 140 20"/><circle class="pin" cx="270" cy="250" r="8"/><circle class="pin" cx="580" cy="280" r="8"/><text class="map-label" x="285" y="241">будущий дом</text><text class="map-label" x="592" y="300">библиотека</text></svg></div>
+    <h1>Минск,<br>который<br>станет нашим</h1>
+    <p>Город, который мы будем узнавать не за один день, а по маршрутам, привычкам и случайным поворотам.</p>
+    <div class="welcome"><b>Антон, добро пожаловать</b>Здесь собраны шесть способов прожить один минский день. Выбирай настроение.</div>
+  </section>
 </header>
-
-<main class="wrap">
-  <div id="sections"></div>
+<main class="shell">
+  <div class="section-head"><h2>Выбрать день</h2><p>Реальные маршруты, которые можно открыть и пройти вместе.</p></div>
+  <section class="moods" id="moods" aria-label="Маршруты по настроению"></section>
 </main>
-
-<footer class="wrap">Места, которые мы откроем вместе. · карта © OpenStreetMap</footer>
-
+<div class="drawer" id="drawer" hidden><article class="drawer-panel"><button class="close" id="close" aria-label="Закрыть">×</button><small id="drawer-kicker"></small><h2 id="drawer-title"></h2><p class="lead" id="drawer-lead"></p><div class="stops" id="stops"></div><a class="walk" id="walk" target="_blank" rel="noopener">открыть пеший маршрут</a><div class="note" id="note"></div></article></div>
 <script>
-  const PLACES = [
-    {cat:"Театры", name:"Новый драматический театр", addr:"ул. Лизы Чайкиной, 16", why:"Камерный, актёрский, честный."},
-    {cat:"Театры", name:"Театр им. Янки Купалы", addr:"ул. Энгельса, 7", why:"Национальная классика в живом звуке."},
-    {cat:"Театры", name:"Белорусский ТЮЗ", addr:"ул. Энгельса, 26", why:"Спектакли, на которые идёшь и в сорок."},
-    {cat:"Театры", name:"РТБД — Республиканский театр белорусской драматургии", addr:"ул. Кропоткина, 44", why:"Смелая современная драматургия."},
-    {cat:"Театры", name:"Белорусский театр кукол", addr:"ул. Энгельса, 20", why:"Куклы для взрослых — неожиданно глубоко."},
-
-    {cat:"Совриск и кластеры", name:"Креативный кластер «Горизонт» (KORPUS, ЦЕХ)", addr:"пр. Машерова, 9", why:"Красный кирпич, кофейни, бары до утра — здесь же Дом экспериментального искусства."},
-    {cat:"Совриск и кластеры", name:"ОК16", addr:"ул. Октябрьская, 16", why:"Арт-пространство в старом здании."},
-    {cat:"Совриск и кластеры", name:"Арт-фабрика", addr:"ул. Свердлова, 2", why:"Креативное пространство в бывших цехах."},
-    {cat:"Совриск и кластеры", name:"Галерея «Ў»", addr:"ул. Октябрьская, 19", why:"Бар-галерея, где искусство и тусовка вместе."},
-    {cat:"Совриск и кластеры", name:"DK Gallery", addr:"ул. Герцена, 2А", why:"Частная галерея, камерные выставки."},
-
-    {cat:"Музеи и галереи", name:"Музей-мастерская Заира Азгура", addr:"ул. Азгура, 8", why:"Мастерская скульптора — как была при жизни."},
-    {cat:"Музеи и галереи", name:"Музей валунов", addr:"м-н Уручье", why:"Каменная карта Беларуси под открытым небом."},
-    {cat:"Музеи и галереи", name:"Художественная галерея Михаила Савицкого", addr:"пл. Свободы, 15", why:"Живопись народного художника в здании бывшей ратуши."},
-
-    {cat:"Городские места", name:"Осмоловка", addr:"ул. Богдановича / Киселёва", why:"Сталинский ампир, тихие дворы, кофейни."},
-    {cat:"Городские места", name:"Красный дворик на Романовской Слободе", addr:"ул. Революционная, 7 / 11", why:"Портал в богему за аркой."},
-    {cat:"Городские места", name:"Верхний город: внутренние дворики", addr:"от пл. Свободы до Музыкального переулка", why:"Подвалы XV века и старые балконы."},
-    {cat:"Городские места", name:"Водонапорная башня", addr:"Автодоровская ул., 3А", why:"Индустриальный маяк города."},
-    {cat:"Городские места", name:"Раковское предместье", addr:"между ул. Освобождения, Опанского и Раковской", why:"Один из старейших кварталов города."},
-    {cat:"Городские места", name:"Скульптура «Ухо желаний»", addr:"ул. Революционная, напротив дома №14", why:"Скульптура, у которой загадывают желания."},
-    {cat:"Городские места", name:"Lake Side Park", coords:"53.962869,27.571426", why:"Урбанистика у воды и дикие берега."},
-
-    {cat:"Окрестности", name:"Усадьба-замок «Стары Менск»", addr:"Минская обл., д. Городище, ул. Пионерская, 5а", why:"Реконструкция древнего Минска под открытым небом."},
-    {cat:"Окрестности", name:"Усадьба Ададуровых «Белая дача»", addr:"ул. Казинца, 54", why:"Старинная усадьба с парком."},
-    {cat:"Окрестности", name:"Усадьба Чапского в Прилуках", addr:"Минская обл., д. Прилуки", why:"Усадьба графа Чапского с дворцом и парком."},
-
-    {cat:"Кафе и рестораны", name:"Grand Cafe", addr:"ул. Ленина, 2", why:"Утренний кофе и газеты в центре."},
-    {cat:"Кафе и рестораны", name:"News Cafe", addr:"ул. Карла Маркса, 34", why:"Завтраки и десерты."},
-    {cat:"Кафе и рестораны", name:"Гастробар «Лампа»", addr:"ул. Октябрьская, 23", why:"Ужин в красном кирпиче, на месте старого ENZO."},
-    {cat:"Кафе и рестораны", name:"Кафе Mon Nom", addr:"ул. Клумова, 11 / Стахановская, 2", why:"Кофейня с круассанами и тихими завтраками."}
-  ];
-
-  const KEY = "minsk-map-done";
-  const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
-  const TOTAL = PLACES.length;
-
-  function mapLink(p){
-    const q = p.coords ? p.coords : encodeURIComponent((p.addr || p.name) + " Минск");
-    return "https://yandex.by/maps/?text=" + q;
-  }
-
-  function plural(n){
-    const m10 = n % 10, m100 = n % 100;
-    if(m10 === 1 && m100 !== 11) return "место";
-    if(m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return "места";
-    return "мест";
-  }
-
-  const sections = document.getElementById("sections");
-  const byCat = {};
-  PLACES.forEach((p,i)=>(byCat[p.cat] ||= []).push({...p, i}));
-
-  Object.entries(byCat).forEach(([cat, items])=>{
-    const sec = document.createElement("section");
-    const head = document.createElement("div");
-    head.className = "cat-head";
-    head.innerHTML = `<h2>${cat}</h2><span>${items.length} ${plural(items.length)}</span>`;
-    sec.appendChild(head);
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    items.forEach(({name, why, addr, coords, i})=>{
-      const el = document.createElement("div");
-      el.className = "card" + (done.has(i) ? " done" : "");
-      el.innerHTML = `
-        <span class="ok">посетили</span>
-        <span class="name">${name}</span>
-        <span class="why">${why}</span>
-        <span class="addr">${addr || ""}</span>
-        <span class="maps"><a class="map" href="${mapLink({name, addr, coords})}" target="_blank" rel="noopener">место на карте</a></span>`;
-      el.addEventListener("click",(e)=>{
-        if(e.target.closest("a")) return;
-        done.has(i) ? done.delete(i) : done.add(i);
-        localStorage.setItem(KEY, JSON.stringify([...done]));
-        render();
-      });
-      grid.appendChild(el);
-    });
-    sec.appendChild(grid);
-    sections.appendChild(sec);
-  });
-
-  function render(){
-    const n = done.size;
-    document.getElementById("count").textContent = n + " из " + TOTAL;
-    document.querySelectorAll(".card").forEach((c,i)=>{
-      c.classList.toggle("done", done.has(i));
-    });
-  }
-  render();
-
-  const map = L.map("map", {
-    center:[53.9023, 27.5618],
-    zoom:12,
-    zoomControl:false,
-    attributionControl:false,
-    dragging:false, scrollWheelZoom:false, touchZoom:false,
-    doubleClickZoom:false, boxZoom:false, keyboard:false
-  });
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom:18 }).addTo(map);
+const ROUTES=[
+ {title:'От будущего дома к библиотеке',tag:'маршрут 01 · дом',lead:'Первый большой маршрут из пункта А в пункт Б. Выйти из будущей квартиры и дойти до здания, которое знают все минчане.',points:[['А','Логойский тракт, 37, корпус 2','точка, с которой начнётся наш Минск'],['01','Национальная библиотека','главная цель прогулки и повод идти не самым коротким путём']],from:'Логойский тракт 37 корпус 2 Минск',to:'Национальная библиотека Беларуси, проспект Независимости 116, Минск',note:'Этот маршрут появится в нашей жизни после переезда. Пока он существует как обещание. Время в пути лучше уточнить в картах перед прогулкой.'},
+ {title:'Завтрак с видом',tag:'маршрут 02 · утро',lead:'Медленное утро в центре: кофе, вода и город, который только начинает шуметь.',points:[['А','Grand Cafe','кофе и завтрак на улице Ленина'],['01','Верхний город','пройти через площадь Свободы и внутренние дворики'],['Б','Набережная Свислочи','закончить прогулку у воды']],from:'Grand Cafe, улица Ленина 2, Минск',to:'Набережная Свислочи, Минск',note:'Лучше идти в выходной и не ставить после этого никаких обязательных дел.'},
+ {title:'После театра',tag:'маршрут 03 · вечер',lead:'Спектакль, короткая прогулка и разговор, который не хочется заканчивать у дверей театра.',points:[['А','Новый драматический театр','начать с камерной сцены'],['01','Осмоловка','тихие улицы и дворы после спектакля'],['Б','Кофейня Mon Nom','финальная точка для десерта и обсуждения']],from:'Новый драматический театр, улица Лизы Чайкиной 16, Минск',to:'Кофейня Mon Nom, улица Клумова 11, Минск',note:'Расписание спектаклей меняется, поэтому театр выбираем первым, а маршрут подстраиваем под него.'},
+ {title:'Искусство и Октябрьская',tag:'маршрут 04 · город',lead:'Красный кирпич, выставки и тот тип вечера, когда город кажется чуть смелее обычного.',points:[['А','ОК16','начать с арт-пространства в бывшем заводском здании'],['01','Галерея «Ў»','перейти к выставке и разговору'],['Б','Октябрьская улица','закончить прогулку среди света и старых фасадов']],from:'ОК16, улица Октябрьская 16, Минск',to:'улица Октябрьская 19, Минск',note:'Маршрут компактный: точки находятся рядом, поэтому можно выбирать выставки уже по настроению.'},
+ {title:'Прогулка у воды',tag:'маршрут 05 · воздух',lead:'День без списка дел: вода, длинная дорога и право свернуть в любую сторону.',points:[['А','Lake Side Park','начать у воды и городского берега'],['01','Цнянское водохранилище','идти дальше, если захочется тишины'],['Б','первое кафе по пути','оставить финал открытым']],from:'Lake Side Park, Минск',to:'Цнянское водохранилище, Минск',note:'Это маршрут с запасом времени. Его не нужно проходить целиком, чтобы день удался.'},
+ {title:'День за городом',tag:'маршрут 06 · поездка',lead:'Небольшой побег из города: старый дом, парк и дорога, которую приятно обсуждать по пути.',points:[['А','Усадьба Чапского в Прилуках','начать с дворца и парка'],['01','Усадьба-замок «Стары Менск»','продолжить поездку к реконструкции древнего города'],['Б','домой в Минск','вернуться с ощущением маленького путешествия']],from:'Усадьба Чапского в Прилуках, Беларусь',to:'Усадьба-замок Стары Менск, Городище, Беларусь',note:'Загородный маршрут лучше планировать на светлую часть дня и отдельно проверить часы работы мест.'}
+];
+const moods=document.getElementById('moods');
+ROUTES.forEach((route,index)=>{const card=document.createElement('button');card.className='mood';card.innerHTML=`<small>${route.tag}</small><h3>${route.title}</h3><p>${route.lead}</p><span class="open">открыть маршрут</span>`;card.addEventListener('click',()=>openRoute(index));moods.appendChild(card)});
+function openRoute(index){const route=ROUTES[index];document.getElementById('drawer-kicker').textContent=route.tag;document.getElementById('drawer-title').textContent=route.title;document.getElementById('drawer-lead').textContent=route.lead;document.getElementById('stops').innerHTML=route.points.map(point=>`<div class="stop"><b>${point[0]}</b><div><strong>${point[1]}</strong><span>${point[2]}</span></div></div>`).join('');document.getElementById('walk').href='https://yandex.by/maps/?rtext='+encodeURIComponent(route.from+'~'+route.to)+'&rtt=pedestrian';document.getElementById('note').textContent=route.note;document.getElementById('drawer').hidden=false;document.body.style.overflow='hidden'}
+function closeRoute(){document.getElementById('drawer').hidden=true;document.body.style.overflow=''}document.getElementById('close').addEventListener('click',closeRoute);document.getElementById('drawer').addEventListener('click',event=>{if(event.target.id==='drawer')closeRoute()});document.addEventListener('keydown',event=>{if(event.key==='Escape')closeRoute()});
 </script>
 </body>
 </html>

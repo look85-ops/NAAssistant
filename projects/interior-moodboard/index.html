@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>НК · эскиз интерьера</title>
+  <style>
+    :root {
+      --ink: #25231f;
+      --muted: #716b61;
+      --paper: #f4f1e9;
+      --panel: #fffdf8;
+      --line: #d9d2c5;
+      --wood: #a77954;
+      --sage: #7b8a74;
+      --clay: #bd6f55;
+      --night: #33424a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, sans-serif; }
+    main { max-width: 1320px; margin: auto; padding: 44px 5vw 80px; }
+    header { display: grid; grid-template-columns: 1.25fr .75fr; gap: 42px; align-items: end; padding-bottom: 42px; border-bottom: 1px solid var(--line); }
+    .kicker { color: var(--clay); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+    h1 { margin: 12px 0 16px; font-family: Georgia, serif; font-size: clamp(42px, 7vw, 88px); line-height: .96; letter-spacing: -.045em; font-weight: 500; }
+    h2 { margin: 0 0 14px; font-family: Georgia, serif; font-size: 34px; font-weight: 500; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p { line-height: 1.55; max-width: 66ch; }
+    .intro { color: var(--muted); font-size: 16px; }
+    .facts { border-top: 3px solid var(--ink); padding-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .fact strong { display: block; font-size: 25px; font-weight: 500; }
+    .fact span { color: var(--muted); font-size: 13px; }
+    section { padding: 52px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: baseline; margin-bottom: 24px; }
+    .section-head p { color: var(--muted); margin: 0; font-size: 14px; }
+    .mood { display: grid; grid-template-columns: 1.25fr .75fr .75fr; grid-template-rows: 230px 230px; gap: 12px; }
+    .mood figure { margin: 0; overflow: hidden; background: #ddd; position: relative; }
+    .mood figure:first-child { grid-row: span 2; }
+    .mood img { width: 100%; height: 100%; object-fit: contain; display: block; filter: saturate(.82) contrast(.95); }
+    figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(255,253,248,.9); padding: 7px 9px; font-size: 12px; }
+    .references { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .references figure { margin: 0; background: var(--panel); position: relative; min-height: 240px; overflow: hidden; }
+    .references img { width: 100%; height: 210px; object-fit: contain; display: block; filter: saturate(.82); }
+    .references figcaption { position: static; background: transparent; padding: 11px 13px; }
+    .palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .swatch { min-height: 112px; padding: 12px; display: flex; align-items: end; font-size: 12px; }
+    .swatch:nth-child(1) { background: #f4f1e9; } .swatch:nth-child(2) { background: #c8b9a2; }
+    .swatch:nth-child(3) { background: #a77954; color: white; } .swatch:nth-child(4) { background: #7b8a74; color: white; }
+    .swatch:nth-child(5) { background: #bd6f55; color: white; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .room { background: var(--panel); padding: 22px; min-height: 330px; border-top: 3px solid var(--room); }
+    .room p { color: var(--muted); font-size: 14px; margin: 8px 0 18px; }
+    .room ul { padding-left: 18px; margin: 0; line-height: 1.7; font-size: 14px; }
+    .room svg { width: 100%; height: 120px; display: block; margin: 8px 0 16px; }
+    .sleep { --room: var(--sage); } .living { --room: var(--clay); } .office { --room: var(--wood); }
+    .plan { background: var(--panel); padding: 24px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 30px; }
+    .plan svg { width: 100%; height: auto; background: #faf8f2; }
+    .plan-notes { border-left: 1px solid var(--line); padding-left: 24px; }
+    .plan-notes li { margin-bottom: 14px; line-height: 1.45; }
+    .materials { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .material { min-height: 150px; padding: 16px; background: var(--panel); }
+    .material .sample { height: 70px; margin-bottom: 13px; }
+    .wood-sample { background: repeating-linear-gradient(5deg, #b98b63 0 10px, #a77954 11px 14px, #c89c72 15px 18px); }
+    .textile-sample { background: repeating-linear-gradient(90deg, #d9d0c1 0 3px, #b9ab96 4px 5px); }
+    .tile-sample { background: radial-gradient(circle at 20% 30%, #aeb5a5 0 9%, transparent 10%), #d8d8cf; background-size: 34px 34px; }
+    .metal-sample { background: linear-gradient(115deg, #222 0 45%, #8b806a 46% 49%, #222 50%); }
+    footer { padding-top: 28px; color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; gap: 20px; }
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      main { max-width: none; padding: 0; }
+      header { min-height: 245px; }
+      section { break-inside: avoid; page-break-inside: avoid; padding: 26px 0; }
+      .mood { grid-template-rows: 180px 180px; }
+      .references img { height: 150px; }
+      .room { min-height: 270px; padding: 15px; }
+      .room svg { height: 90px; }
+      .plan { padding: 15px; gap: 18px; }
+      .materials .material { min-height: 120px; padding: 12px; }
+      .material .sample { height: 52px; }
+      footer { padding-top: 14px; }
+    }
+    @media (max-width: 760px) {
+      main { padding: 28px 20px 50px; } header, .plan { grid-template-columns: 1fr; } .mood { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 170px 170px; } .mood figure:first-child { grid-column: span 2; grid-row: auto; }
+      .grid, .materials, .references { grid-template-columns: 1fr; } .palette { grid-template-columns: repeat(2, 1fr); } .plan-notes { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div><div class="kicker">Эскиз · квартира НК</div><h1>Дом, в котором<br>можно выдохнуть</h1><p class="intro">Тёплый светлый интерьер без холодного минимализма: дерево, мягкий текстиль, встроенное хранение и отдельные места для музыки, гостей и кошки.</p></div>
+    <div class="facts"><div class="fact"><strong>3</strong><span>жилые комнаты</span></div><div class="fact"><strong>2</strong><span>балкона</span></div><div class="fact"><strong>1</strong><span>кошка в проекте</span></div><div class="fact"><strong>37к2</strong><span>рабочее название</span></div></div>
+  </header>
+
+  <section><div class="section-head"><h2>Визуальный вектор</h2></div>
+    <div class="mood">
+      <figure><img src="https://i.pinimg.com/236x/fd/c2/0a/fdc20ab9329257072e7069811bff0679.jpg" alt="Тёплая гостиная с диваном и стеллажом"><figcaption>мягкий свет + хранение</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/236x/59/32/69/5932690d65232e0b507b215bbbc11653.jpg" alt="Скамья у окна со встроенным хранением"><figcaption>подоконник как место жизни на балконе</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/236x/17/d2/cf/17d2cfde83777bfdc3e9884b55e2428d.jpg" alt="Рабочий стол под окном"><figcaption>кабинет с функцией гостевой</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/236x/28/85/de/2885ded618ca9e6b9ed98212da4fd1c1.jpg" alt="Тёплая ванная комната"><figcaption>фактура, а не холодный блеск</figcaption></figure>
+    </div>
+  </section>
+
+  <section><div class="section-head"><h2>Точные референсы по зонам</h2></div>
+    <div class="references">
+      <figure><img src="https://i.pinimg.com/736x/3d/ef/8e/3def8e4bed6dde4e9273fff4f7682ef8.jpg" alt="Спальня со встроенными шкафами и кроватью"><figcaption><strong>Спальня</strong><br>единый фронт хранения, мягкий потолочный свет</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/736x/90/0f/d1/900fd14d6438ae7044883fca84540535.jpg" alt="Санузел с душевой зоной"><figcaption><strong>Ванная</strong><br>душевая, спокойная плитка, тёплые детали</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/736x/7e/93/2e/7e932eed9819abfef189623a9f027fc7.jpg" alt="Небольшой туалет с голубыми стенами и белой сантехникой"><figcaption><strong>Туалет</strong><br>голубой акцент и выразительная стена</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/736x/fb/47/3f/fb473ffdbb85023a4a9ce80c2b4b6ddb.jpg" alt="Санузел с белой сантехникой и хранением"><figcaption><strong>Санузел / хранение</strong><br>закрытая тумба и аккуратная бытовая зона</figcaption></figure>
+      <figure><img src="https://i.pinimg.com/736x/86/9a/ff/869affe6d605fcac46ff8b6ec2ae20e4.jpg" alt="Светлая прихожая со встроенным хранением"><figcaption><strong>Прихожая</strong><br>светлая встроенная система хранения</figcaption></figure>
+    </div>
+  </section>
+
+  <section><div class="section-head"><h2>Палитра</h2><p>база спокойная, акценты живые</p></div><div class="palette"><div class="swatch">молочный<br>#F4F1E9</div><div class="swatch">грэйдж<br>#C8B9A2</div><div class="swatch">дуб<br>#A77954</div><div class="swatch">шалфей<br>#7B8A74</div><div class="swatch">глина<br>#BD6F55</div></div></section>
+
+  <section><div class="section-head"><h2>Сценарии комнат</h2><p>первый эскиз расстановки, не рабочий чертёж</p></div><div class="grid">
+    <article class="room sleep"><h3>Спальня · 17,02 м²</h3><svg viewBox="0 0 330 120"><rect x="12" y="12" width="306" height="96" fill="#eef0e9" stroke="#7b8a74" stroke-width="3"/><rect x="125" y="35" width="104" height="62" fill="#b8c3b0"/><rect x="242" y="18" width="62" height="16" fill="#a77954"/><path d="M245 45h55v52h-55" fill="none" stroke="#a77954" stroke-width="8"/><text x="20" y="25" font-size="9">балкон</text><text x="247" y="72" font-size="9">гардеробная</text></svg><p>Кровать 1700×2000. Отдельная гардеробная-ниша с входом, без распашных фасадов в проходе.</p><ul><li>мягкая лавка или кресло у балкона</li><li>закрытое хранение по глухой стене</li><li>свет: бра у кровати + общий мягкий</li></ul></article>
+    <article class="room living"><h3>Гостиная · 17,16 м²</h3><svg viewBox="0 0 330 120"><rect x="12" y="12" width="306" height="96" fill="#f5ebe4" stroke="#bd6f55" stroke-width="3"/><rect x="34" y="25" width="190" height="22" fill="#bd6f55"/><rect x="245" y="22" width="57" height="72" fill="#d9cdbb"/><circle cx="264" cy="42" r="7" fill="#7b8a74"/><path d="M232 68h62" stroke="#25231f" stroke-width="4"/><text x="20" y="25" font-size="9">балкон</text><text x="246" y="105" font-size="9">кошачья зона</text></svg><p>Диван около 3000 мм. Балконный выход остаётся свободным, рядом появляется кошачья точка наблюдения.</p><ul><li>диван вдоль длинной стены</li><li>ТВ или проектор напротив</li><li>лежанка, полки и когтеточка у окна</li></ul></article>
+    <article class="room office"><h3>Кабинет-гостевая · 12,88 м²</h3><svg viewBox="0 0 330 120"><rect x="12" y="12" width="306" height="96" fill="#f0e8df" stroke="#a77954" stroke-width="3"/><rect x="30" y="25" width="118" height="18" fill="#c89c72"/><rect x="180" y="25" width="105" height="18" fill="#a77954"/><rect x="42" y="73" width="140" height="23" rx="10" fill="#b9ab96"/><text x="32" y="20" font-size="9">стол</text><text x="183" y="20" font-size="9">синтезатор 1400</text><text x="46" y="108" font-size="9">диван-кровать 1400–1600</text></svg><p>Полноценный стол, обычный клавишный синтезатор и компактный диван-кровать для двух гостей на несколько ночей.</p><ul><li>стол у окна; синтезатор на отдельной стойке</li><li>диван в сложенном виде не съедает центр комнаты</li><li>закрытый шкаф глубиной 400–450 мм</li></ul></article>
+  </div></section>
+
+  <section><div class="section-head"><h2>Схема потоков</h2><p>кухня получает вход из коридора</p></div><div class="plan"><svg viewBox="0 0 720 420" role="img" aria-label="Условная схема квартиры с функциями комнат"><rect x="12" y="12" width="696" height="396" fill="#fbfaf5" stroke="#25231f" stroke-width="5"/><rect x="28" y="28" width="245" height="145" fill="#eef0e9" stroke="#7b8a74" stroke-width="3"/><rect x="28" y="188" width="245" height="145" fill="#f5ebe4" stroke="#bd6f55" stroke-width="3"/><rect x="292" y="28" width="175" height="145" fill="#f0e8df" stroke="#a77954" stroke-width="3"/><rect x="292" y="188" width="175" height="145" fill="#eeeae0" stroke="#9e927f" stroke-width="3"/><rect x="486" y="28" width="206" height="118" fill="#e8dfd2" stroke="#a77954" stroke-width="3"/><rect x="486" y="161" width="95" height="76" fill="#e3ddd1" stroke="#9e927f" stroke-width="3"/><rect x="593" y="161" width="99" height="76" fill="#e3ddd1" stroke="#9e927f" stroke-width="3"/><path d="M486 250h206v83H486z" fill="#f0ece3" stroke="#9e927f" stroke-width="3"/><text x="72" y="90" font-size="16">СПАЛЬНЯ</text><text x="67" y="112" font-size="12">17,02 · балкон</text><text x="70" y="252" font-size="16">ГОСТИНАЯ</text><text x="67" y="274" font-size="12">17,16 · балкон</text><text x="327" y="90" font-size="16">КАБИНЕТ</text><text x="329" y="112" font-size="12">12,88 · гости</text><text x="319" y="252" font-size="14">КОРИДОР</text><text x="520" y="90" font-size="16">КУХНЯ</text><text x="506" y="112" font-size="12">вход из коридора</text><text x="498" y="196" font-size="12">ванная / туалет</text><text x="516" y="290" font-size="12">кладовые + хранение</text></svg><div class="plan-notes"><h3>Что проверяем дальше</h3><ul><li>точное место нового дверного проёма на кухню;</li><li>гардеробная в спальне не должна съесть проход к балкону;</li><li>в гостиной оставить прямой маршрут к балкону для людей и кошки;</li><li>мокрые точки кухни не уводить далеко от существующих стояков.</li></ul><p><strong>Это эскиз.</strong> Перед ремонтом его нужно сверить с обмерами, радиаторами, подоконниками и правилами перепланировки.</p></div></div></section>
+
+  <section><div class="section-head"><h2>Материальный язык</h2><p>четыре повторяющихся тактильных мотива</p></div><div class="materials"><div class="material"><div class="sample wood-sample"></div><h3>Дуб</h3><p>пол, фасады, тёплые детали</p></div><div class="material"><div class="sample textile-sample"></div><h3>Текстиль</h3><p>лён, шерсть, рогожка</p></div><div class="material"><div class="sample tile-sample"></div><h3>Фактурная плитка</h3><p>санузел и кухонный фартук</p></div><div class="material"><div class="sample metal-sample"></div><h3>Тёмный металл</h3><p>свет, ручки, детали мебели</p></div></div></section>
+  <footer><span>Эскизный мудборд · версия 01</span></footer>
+</main>
+</body>
+</html>

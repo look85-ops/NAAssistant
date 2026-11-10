@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Антон · 22 ноября · Минск</title>
+<style>
+  :root{
+    --bg:#dfe6e6;
+    --bg-deep:#cddada;
+    --surface:#f4f7f7;
+    --ink:#3f4747;
+    --ink-soft:#6b7474;
+    --ink-faint:#8a9292;
+    --line:#c6d1d1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{
+    font-family:"Georgia","Times New Roman",serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 40px 48px;
+  }
+
+  /* ===== Opening ===== */
+  .opening{text-align:center;padding:34mm 0 24px;}
+  .opening .rule{
+    width:44px;height:1px;background:var(--ink-faint);
+    margin:0 auto 22px;
+  }
+  .opening h1{
+    font-size:56px;line-height:1.02;font-weight:400;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin:0 0 14px;
+    text-wrap:balance;
+  }
+  .opening .date{
+    font-size:15px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ===== Image band ===== */
+  .band{
+    border:1px solid var(--line);
+    background:var(--surface);
+    padding:26px;
+    margin-bottom:14px;
+  }
+  .band img{
+    display:block;width:100%;height:auto;
+    filter:saturate(.85);
+  }
+  .band figcaption{
+    margin-top:13px;font-size:13px;color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+
+  /* ===== Hotel story ===== */
+  .story{padding:24px 0 20px;max-width:560px;margin:0 auto;}
+  .story .eyebrow{
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:18px;
+  }
+  .story h2{
+    font-size:28px;font-weight:400;line-height:1.2;
+    color:var(--ink);margin-bottom:18px;
+  }
+  .story p{
+    font-size:15px;color:var(--ink-soft);margin-bottom:14px;
+  }
+  .story p strong{color:var(--ink);font-weight:400;}
+
+  /* ===== The day ===== */
+  .day{padding:24px 0 16px;}
+  .day .eyebrow{
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:26px;
+  }
+  .row{
+    display:grid;grid-template-columns:110px 1fr;
+    gap:24px;padding:26px 0;border-top:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:1px solid var(--line);}
+  .row .time{
+    font-size:15px;letter-spacing:.06em;color:var(--ink);
+    font-variant-numeric:lining-nums;padding-top:3px;
+  }
+  .row .what h3{
+    font-size:21px;font-weight:400;color:var(--ink);margin-bottom:4px;
+  }
+  .row .what .place{
+    font-size:13px;color:var(--ink-faint);letter-spacing:.04em;
+    margin-bottom:10px;
+  }
+  .row .what p{font-size:14px;color:var(--ink-soft);max-width:460px;}
+
+  /* ===== Close ===== */
+  .closing{text-align:center;padding:24px 0 16px;}
+  .closing .rule{
+    width:44px;height:1px;background:var(--ink-faint);
+    margin:0 auto 24px;
+  }
+  .closing p{
+    font-size:16px;color:var(--ink-soft);font-style:italic;max-width:380px;margin:0 auto;
+  }
+  .closing .sign{font-size:13px;color:var(--ink-faint);letter-spacing:.16em;text-transform:uppercase;margin-top:26px;}
+  .nowrap{white-space:nowrap;}
+
+  @media print{
+    @page{size:A4;margin:0;}
+    body{background:var(--bg);}
+    .page{max-width:none;padding:0;}
+    .opening,.story,.day,.closing,.band{padding-left:22mm;padding-right:22mm;}
+    .page2,.page3,.page4{page-break-before:always;break-before:page;padding-top:22mm;}
+    .page4{min-height:240mm;}
+    .band,.row,.story p{break-inside:avoid;}
+    h1,h2,h3,.date,.eyebrow{break-after:avoid;}
+  }
+  @media (max-width:560px){
+    .page{padding:36px 22px 32px;}
+    .opening h1{font-size:44px;}
+    .row{grid-template-columns:1fr;gap:6px;}
+    .row .time{padding-top:0;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- OPENING -->
+  <div class="opening">
+    <div class="rule"></div>
+    <h1>Солнце моё,<br>это твой день.</h1>
+    <div class="date">22 ноября · воскресенье</div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <figure class="band">
+    <img src="https://th.bing.com/th/id/R.71a72f4a9e9f106244f3a8b2598b3855?rik=70pIWAd9%2f%2bi%2fpw&riu=http%3a%2f%2fwww.minsk.nemiga.info%2fgorod%2fverhniy_gorod.jpg&ehk=3HTL0g71WOYQysROlK4fUTt0ehA0iPLve69Fe%2fNuLxs%3d&risl=&pid=ImgRaw&r=0" alt="Верхний город, Минск">
+    <figcaption>Верхний город — историческое сердце Минска, где начнётся день.</figcaption>
+  </figure>
+
+  <!-- HOTEL STORY -->
+  <div class="story page2">
+    <div class="eyebrow">где остановимся</div>
+    <h2>Дом Залкинда</h2>
+    <p>Бутик-отель в <strong>памятнике архитектуры XIX века</strong> на Революционной, 24 — улице, чьи корни уходят в XVII век.</p>
+    <p>С 1881 года домом владели купцы Залкинды. Они сдавали квартиры обеспеченным горожанам — дворянам, чиновникам, купцам. Интересно, что уже тогда в квартирах было электричество и отдельные ватерклозеты.</p>
+    <p>Заселяемся накануне, 21-го вечером, — чтобы утро дня рождения началось в тишине старого города.</p>
+  </div>
+
+  <!-- HOTEL IMAGE -->
+  <figure class="band">
+    <img src="https://zhotel.by/local/templates/travelsoft/assets/img/Zalkind_Building.png" alt="Дом Залкинда">
+    <figcaption>Дом Залкинда. Улица Революционная, 24.</figcaption>
+  </figure>
+
+  <!-- THE DAY -->
+  <div class="day page3">
+    <div class="eyebrow">План на 22 ноября</div>
+
+    <div class="row">
+      <div class="time">10:00</div>
+      <div class="what">
+        <h3>Завтрак в отеле</h3>
+        <div class="place">Zalkind Kitchen</div>
+        <p>Медленный завтрак без будильника. Никуда не торопимся.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time">13:00</div>
+      <div class="what">
+        <h3>«Минск без спешки»</h3>
+        <div class="place">индивидуальная прогулка с гидом · 2,5 часа от БГПУ им. Максима Танка</div>
+        <p>Только мы вдвоём — по Верхнему городу, Ратуше и Троицкому предместью.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time">16:00</div>
+      <div class="what">
+        <h3>Имена</h3>
+        <div class="place">площадь Свободы, 2</div>
+        <p>Праздничный обед в новом гастрономическом пространстве Минска.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time">вечер</div>
+      <div class="what">
+        <h3>Домой</h3>
+        <div class="place">к кошке Кузе</div>
+        <p>Без спешки собираемся и возвращаемся. Кузя ждёт.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="rule"></div>
+    <p>С днём рождения!<br><span class="nowrap">Пусть всё в твоей жизни складывается легко.</span></p>
+    <div class="sign">с любовью, твой заяц</div>
+  </div>
+
+  <!-- BLANK BACK PAGE -->
+  <div class="blank page4"></div>
+
+</div>
+</body>
+</html>
