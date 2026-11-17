@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зимний журнал | 17 поводов собраться вместе</title>
+  <meta name="description" content="Зимний журнал команды ЦПО: 17 совместных действий с 14 по 30 декабря.">
+  <meta property="og:title" content="Зимний журнал — 17 поводов собраться вместе">
+  <meta property="og:description" content="Тёплый декабрьский календарь для коллег.">
+  <meta property="og:type" content="website">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
+
+    :root {
+      --night: #182d2a;
+      --pine: #234b43;
+      --cranberry: #b43d4d;
+      --coral: #ed7565;
+      --sun: #f6c85f;
+      --cream: #fff7e9;
+      --ink: #193a35;
+      --muted: #55706a;
+      --line: rgba(25, 58, 53, .17);
+      --shadow: 0 18px 45px rgba(12, 38, 34, .2);
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--night); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font: 16px/1.55 Commissioner, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image: radial-gradient(rgba(255,255,255,.75) 1px, transparent 1px);
+      background-size: 18px 18px;
+      mix-blend-mode: soft-light;
+    }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      padding: 42px 0 72px;
+      color: var(--cream);
+      background: var(--night);
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "✦  ❄  ✦  ❄  ✦";
+      position: absolute;
+      right: -20px;
+      bottom: 10px;
+      color: rgba(246, 200, 95, .45);
+      font-size: clamp(42px, 9vw, 120px);
+      letter-spacing: .15em;
+      transform: rotate(-8deg);
+      z-index: -1;
+    }
+    .topline { display: flex; justify-content: space-between; align-items: center; color: #b9d2c8; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .mark { color: var(--sun); font-weight: 800; letter-spacing: .08em; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: end; margin-top: 86px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 690px; margin-bottom: 24px; font-size: clamp(48px, 8vw, 104px); line-height: .94; letter-spacing: -.065em; text-wrap: balance; }
+    h1 em { color: var(--sun); font: 600 clamp(48px, 8vw, 104px)/.94 Fraunces, Georgia, serif; letter-spacing: -.04em; }
+    .intro { max-width: 540px; margin-bottom: 0; color: #d5e3d9; font-size: 18px; }
+    .hero-note { justify-self: end; max-width: 270px; padding: 22px; color: var(--ink); background: var(--sun); transform: rotate(3deg); box-shadow: 10px 10px 0 rgba(180, 61, 77, .6); }
+    .hero-note strong { display: block; margin-bottom: 7px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-note p { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 21px; line-height: 1.25; }
+
+    main { padding: 78px 0 110px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    h2 { margin-bottom: 0; font-size: clamp(28px, 4vw, 48px); line-height: 1; letter-spacing: -.05em; }
+    .section-head p { max-width: 370px; margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .day {
+      position: relative;
+      min-height: 180px;
+      padding: 19px;
+      border: 0;
+      color: var(--ink);
+      background: #fffdf8;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 2px 0 var(--line);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .day:nth-child(3n) { background: #f9d9c4; }
+    .day:nth-child(4n) { background: #dce8c9; }
+    .day:nth-child(5n) { background: #f7e2a4; }
+    .day:nth-child(5n) { grid-column: span 2; }
+    .day:nth-child(7n) { background: var(--coral); color: #fffaf0; }
+    .day:hover:not(:disabled), .day:focus-visible:not(:disabled) { transform: translateY(-7px) rotate(-1deg); box-shadow: var(--shadow); outline: none; }
+    .day:focus-visible { outline: 3px solid var(--cranberry); outline-offset: 4px; }
+    .day:disabled { cursor: not-allowed; filter: saturate(.45); opacity: .72; }
+    .day-number { display: block; margin-bottom: 24px; font: 600 42px/.8 Fraunces, Georgia, serif; }
+    .day-label { display: block; max-width: 110px; font-size: 14px; font-weight: 700; line-height: 1.15; }
+    .day-icon {
+      position: absolute;
+      right: 16px;
+      bottom: 12px;
+      color: rgba(25, 58, 53, .22);
+      font-size: 58px;
+      line-height: 1;
+      transform: rotate(-8deg);
+      transition: transform 180ms ease, color 180ms ease;
+    }
+    .day:nth-child(7n) .day-icon { color: rgba(255, 250, 240, .42); }
+    .day:hover:not(:disabled) .day-icon, .day:focus-visible:not(:disabled) .day-icon { color: rgba(25, 58, 53, .34); transform: rotate(5deg) scale(1.08); }
+    .day:nth-child(7n):hover:not(:disabled) .day-icon, .day:nth-child(7n):focus-visible:not(:disabled) .day-icon { color: rgba(255, 250, 240, .68); }
+    .lock { position: absolute; right: 15px; bottom: 13px; font-size: 13px; opacity: .65; }
+
+    dialog { width: min(560px, calc(100% - 32px)); padding: 0; color: var(--ink); border: 0; background: transparent; box-shadow: var(--shadow); }
+    dialog::backdrop { background: rgba(16, 37, 34, .7); backdrop-filter: blur(4px); }
+    .modal { position: relative; padding: 36px; background: var(--cream); }
+    .modal::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 12px; background: var(--cranberry); }
+    .modal-icon { font-size: 42px; }
+    .modal h2 { margin: 12px 0 12px; font-size: 34px; }
+    .modal p { max-width: 52ch; margin-bottom: 22px; }
+    .tip { padding: 15px 18px; background: #f7e2a4; font-size: 14px; }
+    .close { float: right; border: 0; color: var(--ink); background: transparent; font-size: 28px; line-height: 1; cursor: pointer; }
+    footer { padding: 26px 0 40px; color: #b9d2c8; background: var(--night); font-size: 13px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+    footer p { margin: 0; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, 560px); }
+      .hero { min-height: auto; padding: 26px 0 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; margin-top: 64px; }
+      .hero-note { justify-self: start; max-width: 230px; }
+      .topline span:last-child { display: none; }
+      main { padding: 52px 0 76px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; }
+      .calendar { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .day, .day:nth-child(5n) { grid-column: span 1; min-height: 138px; padding: 15px; }
+      .day:nth-child(3n) { transform: none; }
+      .day-number { margin-bottom: 22px; font-size: 36px; }
+      .day-icon { right: 12px; bottom: 10px; font-size: 48px; }
+      footer .wrap { display: block; }
+      footer p + p { margin-top: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topline"><span class="mark">Зимний журнал</span><span>14—30 декабря · выпуск 2026</span></div>
+      <div class="hero-grid">
+        <div>
+          <h1>17 маленьких<br><em>поводов</em><br>быть вместе</h1>
+          <p class="intro">Открывайте по одному окошку в день. Внутри — только совместные действия, которые команда ЦПО создаёт и проживает вместе.</p>
+        </div>
+        <aside class="hero-note"><strong>Редакционная заметка</strong><p>Праздник начинается не 31 декабря. Иногда ему достаточно мандарина и пяти свободных минут.</p></aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Открываем вместе</h2>
+        <p id="status">Сегодняшнее окошко уже ждёт. Прошлые можно открывать снова.</p>
+      </div>
+      <section class="calendar" aria-label="Окошки адвент-календаря" id="calendar"></section>
+    </div>
+  </main>
+
+  <dialog id="surprise">
+    <article class="modal">
+      <button class="close" type="button" aria-label="Закрыть">×</button>
+      <div class="modal-icon" id="modal-icon"></div>
+      <h2 id="modal-title"></h2>
+      <p id="modal-text"></p>
+      <div class="tip" id="modal-tip"></div>
+    </article>
+  </dialog>
+
+  <footer><div class="wrap"><p>Собрано с теплом для команды ЦПО.</p><p>✦ Хорошего декабря</p></div></footer>
+
+  <script>
+    const surprises = [
+      ['Снежинки для кабинета', '❄️', 'Каждый вырезает снежинку. Наклеим их в кабинете и создадим новогоднее настроение.', ''],
+      ['Общий плейлист', '🎧', 'Каждый предлагает одну песню, которая ассоциируется с зимой. Собираем общий плейлист ЦПО.', 'Пусть в нём будут разные истории, а не только очевидные новогодние хиты.'],
+      ['Киноафиша ЦПО', '🎬', 'Каждый предлагает фильм или мультфильм для зимнего вечера. Из ответов собираем общую киноафишу.', 'К названию добавляем одну фразу: почему стоит посмотреть.'],
+      ['Рецепты команды', '🍲', 'Каждый делится простым новогодним блюдом или напитком. Собираем рецепты в одну праздничную подборку.', 'Подойдут рецепты без сложных ингредиентов и многочасовой подготовки.'],
+      ['Мем дня', '😂', 'Каждый присылает мем, картинку или шутку, которая описывает конец года. Выбираем командный мем декабря.', 'Объяснительная записка не требуется.'],
+      ['Стихи и строчки', '📖', 'Каждый предлагает стихотворение или одну строчку, которая создаёт зимнее настроение. Собираем общую страницу цитат.', 'Подойдут классика, современная поэзия и собственные находки.'],
+      ['Вопрос о детстве', '❔', 'Отвечаем в общем чате: какой запах мгновенно переносит вас в детство?', 'Из ответов можно собрать карту зимних воспоминаний команды.'],
+      ['Тёплые сообщения', '💬', 'Каждый пишет в чат короткое спасибо или тёплое сообщение одному из коллег.', 'Можно адресовать его человеку или всей команде.'],
+      ['Зарядка от коллег', '🧘', 'Каждый предлагает одно простое упражнение, а затем мы делаем все упражнения вместе.', 'Подойдёт движение, которое можно выполнить прямо в кабинете за минуту.'],
+      ['Полезные находки', '🔗', 'Каждый рекомендует сервис, приложение, канал, подкаст или сайт. Собираем общий список находок.', 'Добавляем одну фразу: чем эта находка хороша.'],
+      ['Зимние традиции', '🕯️', 'Каждый делится семейной или личной новогодней традицией, которую хочется сохранить.', 'Собираем традиции в общий список команды.'],
+      ['Места для прогулки', '🌟', 'Каждый рекомендует место для зимней прогулки, кофе или посиделок: парк, улицу, каток, кофейню или книжный.', 'Добавляем настроение: когда туда лучше идти.'],
+      ['Книги и аудиоспектакли', '📚', 'Каждый рекомендует книгу, рассказ или аудиоспектакль для декабря. Собираем зимнюю полку ЦПО.', 'Можно добавить пометку: «подойдёт, если хочется…»'],
+      ['Слово нашей команды', '🔤', 'Каждый предлагает одно слово, которое хочется взять с собой в следующий год. Выбираем слово команды.', 'Это не цель и не KPI, а желаемое состояние.'],
+      ['Добрые прогнозы', '🔮', 'Придумываем друг для друга приятные и смешные прогнозы на ближайшие дни.', 'Например: идеальный мандарин, день без слова «срочно» или внезапный выходной.'],
+      ['Выводы года', '🪞', 'Каждый делится одной мыслью, которую этот год подарил. Собираем общую страницу выводов.', 'Это может быть совет, наблюдение или короткая честная фраза.'],
+      ['Журнал ЦПО', '🎄', 'Собираем все рекомендации, фотографии, снежинки, плейлист и выводы в общий цифровой или печатный журнал.', 'Финальный выпуск — подарок, который команда сделала сама.']
+    ];
+    const calendar = document.querySelector('#calendar');
+    const dialog = document.querySelector('#surprise');
+    const today = new Date();
+    const day = today.getMonth() === 11 ? today.getDate() : 0;
+    surprises.forEach((item, index) => {
+      const number = index + 14;
+      const unlockAt = new Date(today.getFullYear(), 11, number, 6, 0, 0, 0);
+      const available = today >= unlockAt;
+      const button = document.createElement('button');
+      button.className = 'day';
+      button.type = 'button';
+      button.disabled = !available;
+      button.setAttribute('aria-label', available ? `Открыть окошко ${number} декабря` : `Окошко ${number} декабря откроется позже`);
+      button.innerHTML = `<span class="day-number">${String(number).padStart(2, '0')}</span><span class="day-icon">${item[1]}</span>${available ? '' : '<span class="lock">закрыто</span>'}`;
+      button.addEventListener('click', () => {
+        document.querySelector('#modal-icon').textContent = item[1];
+        document.querySelector('#modal-title').textContent = `${number} декабря · ${item[0]}`;
+        document.querySelector('#modal-text').textContent = item[2];
+        const tip = document.querySelector('#modal-tip');
+        tip.textContent = item[3];
+        tip.hidden = !item[3];
+        dialog.showModal();
+      });
+      calendar.append(button);
+    });
+    document.querySelector('#status').textContent = day >= 14 ? `Сегодня ${day} декабря. Открыто окошек: ${Math.min(Math.max(day - 13, 0), 17)}.` : 'Окошки начнут открываться 14 декабря с 06:00.';
+    document.querySelector('.close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  </script>
+</body>
+</html>
