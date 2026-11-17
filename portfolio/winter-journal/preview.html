@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Демоверсия: все окошки открыты для просмотра до начала календаря. -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зимний журнал | демоверсия</title>
+  <meta name="description" content="Демоверсия зимнего журнала команды: все 17 совместных окошек открыты для просмотра.">
+  <script>
+    fetch('index.html')
+      .then(response => response.text())
+      .then(source => {
+        const html = source
+          .replace(/<title>[^<]*<\/title>/, '<title>Зимний журнал | демоверсия</title>')
+          .replace(/<meta name="description"[^>]*>/, '<meta name="description" content="Демоверсия зимнего журнала команды: все 17 совместных окошек открыты для просмотра.">')
+          .replace(/const available = today >= unlockAt;/, 'const available = true;')
+          .replace(/Окошки начнут открываться 14 декабря с 06:00\./, 'Демоверсия: все окошки открыты для просмотра.')
+          .replace(/<\/body>/, '<div style="position:fixed;left:16px;bottom:16px;z-index:20;padding:10px 14px;color:#fff7e9;background:#b43d4d;font:600 12px/1.3 Commissioner,system-ui,sans-serif;box-shadow:0 6px 18px rgba(12,38,34,.2)">ДЕМО · все окошки открыты</div></body>');
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(() => { document.body.textContent = 'Не удалось загрузить демоверсию. Откройте рабочую версию календаря.'; });
+  </script>
+</head>
+<body>
+  <p>Загружается демоверсия…</p>
+</body>
+</html>
