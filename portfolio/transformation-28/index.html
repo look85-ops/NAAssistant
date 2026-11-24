@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10231c">
+  <meta name="description" content="Точка опоры: 28 дней спокойной практики самонаблюдения и новых маленьких действий.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%231b4b38%22/><text x=%2250%22 y=%2270%22 text-anchor=%22middle%22 font-size=%2260%22 fill=%22%23f4bd45%22>✦</text></svg>">
+  <title>Точка опоры · 28 дней к себе</title>
+  <style>
+    :root {
+      --bg: oklch(0.985 0 0);
+      --surface: oklch(0.955 0.012 150);
+      --ink: oklch(0.23 0.035 150);
+      --muted: oklch(0.48 0.035 150);
+      --line: oklch(0.86 0.025 150);
+      --primary: oklch(0.34 0.095 150);
+      --primary-soft: oklch(0.9 0.055 150);
+      --accent: oklch(0.72 0.14 70);
+      --white: oklch(0.99 0 0);
+      --radius: 22px;
+      --shadow: 0 18px 45px oklch(0.2 0.04 150 / .08);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--bg); font-family: ui-rounded, "Avenir Next", system-ui, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    button, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .app { max-width: 760px; margin: 0 auto; padding: 0 20px 48px; }
+    header { padding: 30px 0 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -.02em; }
+    .mark { width: 34px; height: 34px; display: grid; place-items: center; color: var(--white); background: var(--primary); border-radius: 50%; font-size: 18px; }
+    .reset { border: 0; color: var(--muted); background: transparent; padding: 8px; font-size: 12px; }
+    .hero { padding: 28px 0 34px; }
+    .eyebrow { margin: 0 0 12px; color: var(--primary); font-size: 12px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    h1, h2, p { margin-top: 0; }
+    h1 { max-width: 590px; margin-bottom: 16px; font-size: clamp(38px, 9vw, 68px); line-height: 1.02; letter-spacing: -.06em; text-wrap: balance; }
+    .lead { max-width: 560px; margin-bottom: 26px; color: var(--muted); font-size: 17px; }
+    .progress-wrap { display: flex; align-items: center; gap: 14px; }
+    .progress-track { height: 8px; flex: 1; overflow: hidden; background: var(--surface); border-radius: 99px; }
+    .progress-bar { height: 100%; width: 0; background: var(--primary); border-radius: inherit; transition: width .5s ease; }
+    .progress-label { min-width: 54px; color: var(--primary); font-size: 13px; font-weight: 700; text-align: right; }
+    .day-picker { display: flex; gap: 9px; overflow-x: auto; padding: 3px 0 14px; scrollbar-width: none; }
+    .day-picker::-webkit-scrollbar { display: none; }
+    .day-button { flex: 0 0 46px; height: 46px; border: 1px solid var(--line); color: var(--muted); background: var(--bg); border-radius: 50%; font-size: 13px; font-weight: 700; }
+    .day-button.current { border-color: var(--primary); color: var(--white); background: var(--primary); }
+    .day-button.done { border-color: var(--primary-soft); color: var(--primary); background: var(--primary-soft); }
+    .stage { margin: 0 0 20px; color: var(--muted); font-size: 14px; }
+    .practice { padding: clamp(24px, 6vw, 42px); background: var(--primary); color: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .practice .eyebrow { color: var(--accent); }
+    .practice h2 { max-width: 580px; margin-bottom: 18px; font-size: clamp(28px, 7vw, 44px); line-height: 1.08; letter-spacing: -.045em; text-wrap: balance; }
+    .practice-copy { max-width: 590px; margin-bottom: 25px; color: oklch(0.93 0.025 150); }
+    .timer-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 21px; border-top: 1px solid oklch(0.9 0.04 150 / .22); }
+    .timer { color: var(--accent); font-variant-numeric: tabular-nums; font-size: 24px; font-weight: 700; }
+    .timer-button, .complete-button { border: 0; border-radius: 99px; font-weight: 800; transition: transform .2s ease, background .2s ease; }
+    .timer-button { padding: 12px 16px; color: var(--ink); background: var(--accent); }
+    .timer-button:hover, .complete-button:hover { transform: translateY(-2px); }
+    .reflection { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 30px 0; }
+    .reflection label { display: block; color: var(--primary); font-size: 13px; font-weight: 800; }
+    .reflection label:last-child { grid-column: 1 / -1; }
+    textarea { display: block; width: 100%; min-height: 112px; margin-top: 8px; padding: 13px 14px; border: 1px solid var(--line); resize: vertical; color: var(--ink); background: var(--white); border-radius: 14px; line-height: 1.5; }
+    textarea::placeholder { color: var(--muted); }
+    .complete-button { width: 100%; padding: 16px; color: var(--white); background: var(--primary); font-size: 16px; }
+    .complete-button.is-done { color: var(--primary); background: var(--primary-soft); }
+    .summary { display: none; margin-top: 34px; padding: 26px; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); }
+    .summary.visible { display: block; animation: appear .45s ease both; }
+    .summary h2 { margin-bottom: 8px; font-size: clamp(26px, 6vw, 38px); line-height: 1.1; letter-spacing: -.04em; }
+    .summary-intro { margin-bottom: 22px; color: var(--muted); }
+    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 22px; }
+    .summary-card { min-height: 110px; padding: 14px; background: var(--white); border-radius: 15px; }
+    .summary-card strong { display: block; margin-bottom: 6px; color: var(--primary); font-size: 13px; }
+    .summary-card span { color: var(--ink); font-size: 14px; }
+    .summary-section { padding-top: 18px; border-top: 1px solid var(--line); }
+    .summary-section h3 { margin-bottom: 7px; font-size: 15px; }
+    .summary-section p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .privacy { margin: 18px 0 0; color: var(--muted); font-size: 11px; }
+    @keyframes appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 520px) { .summary-grid { grid-template-columns: 1fr; } }
+    .note { margin: 28px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .toast { position: fixed; right: 20px; bottom: 20px; left: 20px; max-width: 420px; margin: auto; padding: 13px 16px; color: var(--white); background: var(--ink); border-radius: 13px; box-shadow: var(--shadow); text-align: center; transform: translateY(130%); transition: transform .3s ease; z-index: 2; }
+    .toast.show { transform: translateY(0); }
+    @media (max-width: 520px) { .reflection { grid-template-columns: 1fr; } .reflection label:last-child { grid-column: auto; } header { padding-top: 22px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand"><span class="mark" aria-hidden="true">✦</span><span>Точка опоры</span></div>
+      <button class="reset" id="resetButton" type="button">Начать заново</button>
+    </header>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">28 дней · без гонки</p>
+      <h1 id="title">Маленькая практика, которая возвращает тебя к себе.</h1>
+      <p class="lead">Четыре недели, чтобы заметить привычные реакции, представить желаемое состояние и поддержать его реальными действиями.</p>
+      <div class="progress-wrap" aria-label="Общий прогресс">
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+        <span class="progress-label" id="progressLabel">0 из 28</span>
+      </div>
+    </section>
+    <nav class="day-picker" id="dayPicker" aria-label="Выбор дня"></nav>
+    <p class="stage" id="stage"></p>
+    <article class="practice" aria-live="polite">
+      <p class="eyebrow" id="dayLabel">День 1</p>
+      <h2 id="practiceTitle"></h2>
+      <p class="practice-copy" id="practiceCopy"></p>
+      <div class="timer-row">
+        <span class="timer" id="timer">05:00</span>
+        <button class="timer-button" id="timerButton" type="button">Начать практику</button>
+      </div>
+    </article>
+    <section class="reflection" aria-label="Дневниковая запись">
+      <label>Что я замечаю сейчас?<textarea id="notice" placeholder="Без правильного ответа…"></textarea></label>
+      <label>Что я выбираю сегодня?<textarea id="choose" placeholder="Одно состояние или качество…"></textarea></label>
+      <label>Мой маленький шаг<textarea id="step" placeholder="Что я сделаю в реальной жизни?"></textarea></label>
+    </section>
+    <button class="complete-button" id="completeButton" type="button">Отметить день выполненным</button>
+    <section class="summary" id="summary" aria-live="polite" aria-labelledby="summaryTitle">
+      <p class="eyebrow">Твоя точка опоры</p>
+      <h2 id="summaryTitle">Ты прошла этот путь.</h2>
+      <p class="summary-intro" id="summaryIntro"></p>
+      <div class="summary-grid">
+        <div class="summary-card"><strong>Что замечала</strong><span id="summaryNotice"></span></div>
+        <div class="summary-card"><strong>Что выбирала</strong><span id="summaryChoose"></span></div>
+        <div class="summary-card"><strong>Что делала</strong><span id="summaryStep"></span></div>
+      </div>
+      <div class="summary-section"><h3>Повторяющиеся слова</h3><p id="summaryWords"></p></div>
+      <div class="summary-section"><h3>Что продолжить</h3><p id="summaryNext"></p></div>
+      <p class="privacy">Разбор создан на этом устройстве из твоих записей. Ничего не отправляется в интернет.</p>
+    </section>
+    <p class="note">Это бережный инструмент саморефлексии, а не медицинская программа. Если практика усиливает тревогу или неприятные ощущения, остановись и обратись за поддержкой к специалисту.</p>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    const days = [
+      ['Замечать автоматическое', 'Заметь момент, когда привычная реакция включается сама. Назови её без критики.', 'Какая мысль или эмоция повторяется чаще всего?'],
+      ['Замечать автоматическое', 'Сегодня понаблюдай за телом: где живёт напряжение, а где есть хотя бы немного опоры?', 'Что моё тело пытается мне сказать?'],
+      ['Замечать автоматическое', 'Отдели факт от истории, которую ты добавляешь к нему. Запиши оба слоя.', 'Какую историю я рассказываю себе о происходящем?'],
+      ['Замечать автоматическое', 'Поймай знакомый внутренний сценарий и сделай один спокойный вдох перед ответом.', 'Что меняется, если я не отвечаю сразу?'],
+      ['Замечать автоматическое', 'Найди одну привычку, которая забирает энергию, и одну, которая её возвращает.', 'Что я готова перестать кормить вниманием?'],
+      ['Замечать автоматическое', 'Сегодня не исправляй себя. Просто собери данные о своём дне как любопытный исследователь.', 'Какой факт о себе я сегодня узнала?'],
+      ['Замечать автоматическое', 'Подведи итоги первой недели: что стало чуть яснее?', 'Какая автоматическая реакция уже потеряла силу?'],
+      ['Освободить место', 'Представь, что у тебя появилось немного больше внутреннего пространства. Как ты стоишь, дышишь, говоришь?', 'Как ощущается пространство внутри?'],
+      ['Освободить место', 'Сделай пять медленных выдохов. На каждом выдохе отпускай то, что не нужно решать прямо сейчас.', 'Что я могу сегодня не нести?'],
+      ['Освободить место', 'Напиши три вещи, за которые можешь поблагодарить не «правильно», а по-настоящему.', 'Что уже поддерживает меня?'],
+      ['Освободить место', 'Выбери один внешний шум и уменьши его на час: уведомления, ленту, разговоры.', 'Что я слышу, когда становится тише?'],
+      ['Освободить место', 'Спроси себя: если бы мне не нужно было никому ничего доказывать, чего бы я хотела сегодня?', 'Какое желание появляется без давления?'],
+      ['Освободить место', 'Сделай одно маленькое действие по дому или в делах, которое создаст ощущение порядка.', 'Как порядок снаружи влияет на меня?'],
+      ['Освободить место', 'Заверши этап словами: от чего я отказываюсь, чтобы выбрать себя?', 'Что я больше не обязана продолжать?'],
+      ['Выбрать новое', 'Опиши не идеальную себя, а состояние, в котором хочешь прожить сегодняшний день.', 'Какое качество я выбираю?'],
+      ['Выбрать новое', 'Представь ближайший обычный день, где это качество уже с тобой. Что ты делаешь иначе?', 'Как новое состояние выглядит в быту?'],
+      ['Выбрать новое', 'Подбери короткую фразу-якорь, которая возвращает тебя к выбранному состоянию.', 'Моя фраза-якорь:'],
+      ['Выбрать новое', 'Сделай что-то на 5% смелее, чем обычно. Не рывок, а маленькое расширение.', 'Где я могу дать себе 5% больше свободы?'],
+      ['Выбрать новое', 'Отследи, как ты разговариваешь с собой. Замени одну жёсткую фразу на честную и поддерживающую.', 'Что я скажу себе как близкому человеку?'],
+      ['Выбрать новое', 'Положи ладонь на грудь или живот и назови три чувства, которые есть прямо сейчас.', 'Какое чувство я разрешаю себе прожить?'],
+      ['Выбрать новое', 'Заметь совпадение между внутренним выбором и внешним поступком.', 'Какой мой поступок уже говорит о новом состоянии?'],
+      ['Выбрать новое', 'Напиши письмо себе из конца этой недели: без магии, только с благодарностью за конкретные шаги.', 'За что будущая я благодарит меня?'],
+      ['Закрепить', 'Выбери один ритуал на 2 минуты, который помогает возвращаться к себе.', 'Какой ритуал я оставляю?'],
+      ['Закрепить', 'Сделай сегодня одно действие в пользу тела: вода, прогулка, сон, еда, пауза.', 'Как я позаботилась о теле?'],
+      ['Закрепить', 'Сделай одно действие в пользу будущего: письмо, список, звонок, 10 минут работы.', 'Какой мостик в будущее я построила?'],
+      ['Закрепить', 'Подумай о поддержке. Кому или чему ты можешь сказать: «Мне это важно»?', 'Где я могу не быть одной?'],
+      ['Закрепить', 'Собери личную формулу продолжения: когда, где и как ты будешь возвращаться к этой практике.', 'Мой реалистичный план после 28 дней:'],
+      ['Закрепить', 'Закрой цикл. Запиши три изменения, которые ты заметила, и одно, которое хочешь продолжать растить.', 'Что во мне стало живее?']
+    ];
+    const key = 'new-state-28-v1';
+    let state = JSON.parse(localStorage.getItem(key) || 'null') || { current: 0, done: [], notes: {} };
+    let timerId = null; let seconds = 300;
+    const $ = (id) => document.getElementById(id);
+    function save() { localStorage.setItem(key, JSON.stringify(state)); }
+    function renderPicker() { $('dayPicker').innerHTML = days.map((_, i) => `<button class="day-button ${i === state.current ? 'current' : ''} ${state.done.includes(i) ? 'done' : ''}" type="button" data-day="${i}" aria-label="День ${i + 1}${state.done.includes(i) ? ', выполнен' : ''}">${i + 1}</button>`).join(''); }
+    function render() {
+      const day = days[state.current]; const notes = state.notes[state.current] || {};
+      $('dayLabel').textContent = `День ${state.current + 1} · ${day[0]}`; $('stage').textContent = `Неделя ${Math.floor(state.current / 7) + 1} из 4 · ${day[0]}`;
+      $('practiceTitle').textContent = day[2]; $('practiceCopy').textContent = day[1];
+      ['notice', 'choose', 'step'].forEach((id) => $(id).value = notes[id] || '');
+      const percent = Math.round(state.done.length / days.length * 100); $('progressBar').style.width = `${percent}%`; $('progressLabel').textContent = `${state.done.length} из 28`;
+      renderPicker(); resetTimer();
+      const completed = state.done.includes(state.current); $('completeButton').classList.toggle('is-done', completed); $('completeButton').textContent = completed ? 'День сохранён' : 'Отметить день выполненным';
+    }
+    function saveNotes() { state.notes[state.current] = { notice: $('notice').value, choose: $('choose').value, step: $('step').value }; save(); }
+    function analyze() {
+      const entries = Object.values(state.notes).flatMap((note) => Object.values(note || {}).filter(Boolean));
+      const text = entries.join(' ').toLowerCase();
+      const stopWords = new Set('это что как я и в на не с для из к по а но или уже мне меня мой моя моё мы ты он она они быть бы быт от за о об же так то всё все себя свой свою сегодня сейчас когда где если чтобы чем только очень ещё просто один одна одно без есть был была было будут тебе себя нужно могу хочу хочуся'.split(' '));
+      const words = text.replace(/[^а-яё\s-]/g, ' ').split(/\s+/).filter((word) => word.length > 4 && !stopWords.has(word));
+      const counts = words.reduce((result, word) => { result[word] = (result[word] || 0) + 1; return result; }, {});
+      const common = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([word, count]) => `${word} (${count})`);
+      const pick = (field, fallback) => { const values = Object.values(state.notes).map((note) => note && note[field]).filter((value) => value && value.trim()); return values.length ? values[values.length - 1] : fallback; };
+      $('summaryIntro').textContent = `Заполнено записей: ${entries.length}. Здесь не оценка и не диагноз, а несколько ниточек, к которым можно вернуться.`;
+      $('summaryNotice').textContent = pick('notice', 'Ты пока не оставила заметок этого типа.'); $('summaryChoose').textContent = pick('choose', 'Попробуй назвать качество, которое хочется поддержать.'); $('summaryStep').textContent = pick('step', 'Выбери один маленький шаг на ближайшие сутки.');
+      $('summaryWords').textContent = common.length ? common.join(' · ') : 'Когда появятся записи, здесь проявятся повторяющиеся темы.';
+      $('summaryNext').textContent = pick('step', 'Выбери одну практику из программы и повторяй её 2–3 раза в неделю.');
+      $('summary').classList.add('visible');
+    }
+    function maybeShowSummary() { if (state.done.length === days.length) analyze(); }
+    function resetTimer() { clearInterval(timerId); timerId = null; seconds = 300; $('timer').textContent = '05:00'; $('timerButton').textContent = 'Начать практику'; }
+    function showToast(message) { $('toast').textContent = message; $('toast').classList.add('show'); setTimeout(() => $('toast').classList.remove('show'), 2400); }
+    $('dayPicker').addEventListener('click', (event) => { const button = event.target.closest('[data-day]'); if (!button) return; saveNotes(); state.current = Number(button.dataset.day); save(); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    ['notice', 'choose', 'step'].forEach((id) => $(id).addEventListener('input', saveNotes));
+    $('timerButton').addEventListener('click', () => { if (timerId) { clearInterval(timerId); timerId = null; $('timerButton').textContent = 'Продолжить'; return; } $('timerButton').textContent = 'Пауза'; timerId = setInterval(() => { seconds--; $('timer').textContent = `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; if (seconds <= 0) { clearInterval(timerId); timerId = null; $('timerButton').textContent = 'Практика завершена'; showToast('Пять минут для себя уже случились.'); } }, 1000); });
+    $('completeButton').addEventListener('click', () => { saveNotes(); if (!state.done.includes(state.current)) state.done.push(state.current); save(); render(); maybeShowSummary(); $('completeButton').classList.add('is-done'); $('completeButton').textContent = 'День сохранён'; showToast(state.current === 27 ? 'Ты завершила 28 дней.' : 'День сохранён. Увидимся завтра.'); });
+    $('resetButton').addEventListener('click', () => { if (!confirm('Удалить весь прогресс и записи?')) return; state = { current: 0, done: [], notes: {} }; save(); render(); showToast('Начинаем с чистого листа.'); });
+    render(); maybeShowSummary();
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тепло внутри — два стиля</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500&display=swap');
+  :root{
+    --ink:#26201a;
+    --wine:#6b2430;
+    --ivory:#faf6ef;
+    --gold:#b98a3f;
+    --line:#e4dccf;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#f2efe8;color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 24px 80px}
+  .lead{margin-bottom:44px}
+  .lead h1{font:400 clamp(30px,4vw,44px)/1.05 Fraunces,Georgia,serif;letter-spacing:-.02em;margin:0 0 10px}
+  .lead p{color:#6d6458;max-width:52ch;margin:0}
+  .stage{margin-bottom:56px}
+  .stage-title{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:10px}
+  .stage-title h2{font:500 15px/1 Fraunces,Georgia,serif;margin:0;letter-spacing:.04em}
+  .stage-title span{font-size:12px;color:#8d8376}
+
+  /* ===== СТИЛЬ 2 — ЗАКЛАДКИ-ПАУЗЫ ===== */
+  .bookmarks{display:flex;gap:20px;flex-wrap:wrap}
+  .bm{width:148px;min-height:340px;background:var(--wine);color:var(--ivory);padding:22px 16px;display:flex;flex-direction:column;position:relative;border-radius:2px}
+  .bm .tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.55);margin-bottom:auto}
+  .bm h3{font:400 26px/1.02 Fraunces,Georgia,serif;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
+  .bm p{font-size:11px;line-height:1.5;color:rgba(250,246,239,.82);margin:0}
+  .bm .rec{margin-top:16px;font-size:10px;color:var(--gold);letter-spacing:.02em;border-top:1px solid rgba(250,246,239,.18);padding-top:10px}
+  .bm .thread{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--gold)}
+
+  /* ===== СТИЛЬ 3 — ОДНА ЛИНИЯ ===== */
+  .lines{display:flex;gap:20px;flex-wrap:wrap}
+  .ln{width:240px;min-height:300px;background:var(--ivory);border:1px solid var(--line);padding:26px 22px;display:flex;flex-direction:column;position:relative}
+  .ln svg{display:block;margin-bottom:20px;opacity:.9}
+  .ln h3{font:400 24px/1.05 Fraunces,Georgia,serif;letter-spacing:-.01em;margin:0 0 12px}
+  .ln p{font-size:12px;line-height:1.55;color:#5d554a;margin:0}
+  .ln .rec{margin-top:auto;padding-top:16px;font-size:11px;color:var(--wine);border-top:1px solid var(--line);margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="lead">
+    <h1>Тепло внутри</h1>
+    <p>Два стиля для одного набора — 12 медленных зимних мгновений. Для тех, кто покупает не вещь, а тишину.</p>
+  </header>
+
+  <section class="stage">
+    <div class="stage-title"><h2>Стиль 2 · Закладки-паузы</h2><span>тёмный, глянцевый, дорогой</span></div>
+    <div class="bookmarks">
+      <article class="bm"><span class="thread"></span><span class="tag">01 · зима</span><h3>Первое дыхание зимы</h3><p>Прислушайся к утренней тишине за окном. Вечером зажги первую свечу декабря.</p><span class="rec">Бродский · «Откуда к нам пришла зима»</span></article>
+      <article class="bm"><span class="thread"></span><span class="tag">04 · зима</span><h3>Тепло внутри</h3><p>Найди одно тёплое воспоминание осени и положи его в «мысленную шкатулку».</p><span class="rec">Андрей Белый · «Воспоминание»</span></article>
+      <article class="bm"><span class="thread"></span><span class="tag">12 · зима</span><h3>Три дара</h3><p>Время — 10 минут внимания. Слово — послание в карман. Жест — бескорыстный поступок.</p><span class="rec">Agnes Obel · Familiar</span></article>
+    </div>
+  </section>
+
+  <section class="stage">
+    <div class="stage-title"><h2>Стиль 3 · Одна линия</h2><span>светлый, рукотворный, открытка</span></div>
+    <div class="lines">
+      <article class="ln">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--wine)" stroke-width="1.1" stroke-linecap="round">
+          <path d="M32 46v8M28 54h8M27 26c0-3 2-5 5-5s5 2 5 5v9c0 5-2 9-5 9s-5-4-5-9v-9Z"/>
+          <path d="M32 21c-3-5-8-6-10-2s4 7 10 5Z"/>
+        </svg>
+        <h3>Первое дыхание зимы</h3>
+        <p>Прислушайся к утренней тишине за окном. Вечером зажги первую свечу декабря.</p>
+        <span class="rec">Бродский · «Откуда к нам пришла зима»</span>
+      </article>
+      <article class="ln">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--wine)" stroke-width="1.1" stroke-linecap="round">
+          <path d="M8 12h48v40H8zM8 32h48M32 12v40"/>
+          <path d="M20 20h8M20 44h8"/>
+        </svg>
+        <h3>Тепло внутри</h3>
+        <p>Найди одно тёплое воспоминание осени и положи его в «мысленную шкатулку».</p>
+        <span class="rec">Андрей Белый · «Воспоминание»</span>
+      </article>
+      <article class="ln">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--wine)" stroke-width="1.1" stroke-linecap="round">
+          <path d="M32 12v40M32 12l-10 12M32 12l10 12M32 28l-10 12M32 28l10 12M32 44l-10 8M32 44l10 8"/>
+          <circle cx="32" cy="12" r="2"/>
+          <circle cx="22" cy="24" r="2"/><circle cx="42" cy="24" r="2"/>
+          <circle cx="22" cy="40" r="2"/><circle cx="42" cy="40" r="2"/>
+          <circle cx="22" cy="52" r="2"/><circle cx="42" cy="52" r="2"/>
+        </svg>
+        <h3>Три дара</h3>
+        <p>Время — 10 минут внимания. Слово — послание в карман. Жест — бескорыстный поступок.</p>
+        <span class="rec">Agnes Obel · Familiar</span>
+      </article>
+    </div>
+  </section>
+</div>
+</body>
+</html>

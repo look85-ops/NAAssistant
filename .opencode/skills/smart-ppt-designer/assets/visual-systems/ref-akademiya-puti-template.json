@@ -1,0 +1,152 @@
+{
+  "system_name": "ref-akademiya-puti-template",
+  "label": "Академия пути: рабочий шаблон",
+  "mode": "dark",
+  "usage": "由参考稿《АП_шаблон презентации_работа в межмодуле.pptx》自动提取；Академия пути: рабочий шаблон。适合场景请对照 style-index.json 的 keywords 选用，未确认前不要当默认。",
+  "colors": {
+    "primary": "#003162",
+    "secondary": "#002346",
+    "accent": "#ED7D31",
+    "background": "002060",
+    "text": "#F2F2F2",
+    "text_light": "#B9BDC7"
+  },
+  "fonts": {
+    "title": "Arial",
+    "body": "微软雅黑",
+    "title_size": [
+      36,
+      44
+    ],
+    "section_size": [
+      28,
+      32
+    ],
+    "page_title_size": [
+      20,
+      24
+    ],
+    "module_size": [
+      16,
+      18
+    ],
+    "body_size": [
+      13,
+      15
+    ],
+    "caption_size": [
+      10,
+      11
+    ],
+    "metric_size": [
+      40,
+      60
+    ]
+  },
+  "decorations": {
+    "title_bar": "rule",
+    "card_border": "hairline",
+    "section_divider": "band"
+  },
+  "navigation": {
+    "mode": "sidebar",
+    "active_color": "#ED7D31",
+    "inactive_color": "#82441A",
+    "text_active": "#F2F2F2",
+    "text_inactive": "#B9BDC7"
+  },
+  "grid": {
+    "columns": 12,
+    "margin_cols": 1,
+    "unit_cm": 0.3,
+    "unit_in": 0.1181,
+    "tolerance_in": 0.02,
+    "content_x_in": 1.38,
+    "content_w_in": 11.45
+  },
+  "icon_style": "solid",
+  "transition": "fade",
+  "layers": {
+    "L1_background": 0,
+    "L2_decoration": [
+      10,
+      19
+    ],
+    "L3_content": [
+      20,
+      29
+    ],
+    "L4_title": [
+      30,
+      39
+    ],
+    "notes": "构建脚本按 z_index 升序绘制；装饰层不得高于内容层（红线第 11 条）"
+  },
+  "image_style": "tech",
+  "chart_palette": [
+    "#003162",
+    "#E5EAEF",
+    "#C00000",
+    "#00B0F0"
+  ],
+  "density": {
+    "max_modules_per_page": 5,
+    "max_bullets_per_module": 4
+  },
+  "extraction": {
+    "source_file": "АП_шаблон презентации_работа в межмодуле.pptx",
+    "method": "zipfile/XML 频次统计（pptx）或渲染帧取色（pdf）",
+    "date": "2026-11-17",
+    "confidence": "high",
+    "signals": {
+      "pages": 11,
+      "canvas_in": [
+        22.222,
+        12.5
+      ],
+      "top_colors": [
+        {
+          "hex": "003162",
+          "count": 46
+        },
+        {
+          "hex": "E5EAEF",
+          "count": 17
+        },
+        {
+          "hex": "C00000",
+          "count": 2
+        },
+        {
+          "hex": "00B0F0",
+          "count": 2
+        }
+      ],
+      "fonts_raw": [
+        "Arial",
+        "Mont SemiBold",
+        "Calibri",
+        "Verdana"
+      ],
+      "sizes_pt_top": [
+        11.0,
+        18.0,
+        20.0,
+        24.0,
+        26.67,
+        27.0,
+        28.0,
+        30.0,
+        32.0,
+        33.33
+      ],
+      "objects": {
+        "shapes": 52,
+        "tables": 1,
+        "charts": 0,
+        "media": 42
+      }
+    },
+    "note": "自动提取仅供调用起点；标签、适用场景与语义化命名建议人工校订后使用。"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "_note": "规格 v9.9 前置功能「模板填充模式」的用户模板库索引：**只登记，不复制原文件**。生成前先读本索引（几 KB），按关键词/风格标签检索出 2-3 份候选，再按需读取对应原文件；不得整体读取全部模板。新增素材后重跑 scripts/index_user_templates.py 刷新。",
+  "sources": [
+    "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references"
+  ],
+  "missing_sources": [],
+  "count": 3,
+  "templates": [
+    {
+      "id": "ut-001",
+      "name": "АП_шаблон презентации_работа в межмодуле",
+      "path": "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references\\АП_шаблон презентации_работа в межмодуле.pptx",
+      "rel_in_source": "АП_шаблон презентации_работа в межмодуле.pptx",
+      "source_dir": "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references",
+      "format": "pptx",
+      "style_tags": [
+        "未归类"
+      ],
+      "keywords": [
+        "АП_шаблон",
+        "презентации_работа",
+        "межмодуле"
+      ],
+      "size_mb": 18.97,
+      "pages": 11,
+      "slide_size_emu": [
+        20320000,
+        11430000
+      ],
+      "aspect": 1.778,
+      "theme_fonts": [
+        "Mont Bold",
+        "Mont Light"
+      ],
+      "theme_colors": [
+        "44546A",
+        "E7E6E6",
+        "5B9BD5",
+        "ED7D31",
+        "A5A5A5",
+        "FFC000",
+        "4472C4",
+        "70AD47"
+      ]
+    },
+    {
+      "id": "ut-002",
+      "name": "Иконки (Slidesgo) (1)",
+      "path": "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references\\Иконки (Slidesgo) (1).pptx",
+      "rel_in_source": "Иконки (Slidesgo) (1).pptx",
+      "source_dir": "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references",
+      "format": "pptx",
+      "style_tags": [
+        "未归类"
+      ],
+      "keywords": [
+        "Иконки",
+        "Slidesgo"
+      ],
+      "size_mb": 1.16,
+      "pages": 7,
+      "slide_size_emu": [
+        9144000,
+        5143500
+      ],
+      "aspect": 1.778,
+      "theme_fonts": [
+        "Arial"
+      ],
+      "theme_colors": [
+        "000000",
+        "FFFFFF",
+        "595959",
+        "EEEEEE",
+        "FFAB40",
+        "212121",
+        "78909C",
+        "0097A7"
+      ]
+    },
+    {
+      "id": "ut-003",
+      "name": "Иконки для бизнеса",
+      "path": "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references\\Иконки для бизнеса.pptx",
+      "rel_in_source": "Иконки для бизнеса.pptx",
+      "source_dir": "C:\\Users\\marcenuk\\Desktop\\Методики, фреймы\\_academy_references",
+      "format": "pptx",
+      "style_tags": [
+        "未归类"
+      ],
+      "keywords": [
+        "Иконки",
+        "для",
+        "бизнеса"
+      ],
+      "size_mb": 8.02,
+      "pages": 30,
+      "slide_size_emu": [
+        12192000,
+        6858000
+      ],
+      "aspect": 1.778,
+      "theme_fonts": [
+        "Calibri"
+      ],
+      "theme_colors": [
+        "11233F",
+        "F7FAFF",
+        "182F54",
+        "FFFFFF",
+        "0085B8",
+        "4D546B",
+        "D8A023",
+        "4E3470"
+      ]
+    }
+  ]
+}

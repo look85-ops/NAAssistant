@@ -11,43 +11,44 @@
   .instructions{max-width:760px;margin:24px auto;padding:20px;background:#fff;font-size:14px;line-height:1.5}
   .instructions h1{margin:0 0 8px;font-size:24px;letter-spacing:-.04em}
   .instructions p{margin:6px 0}
-  .sheet{width:210mm;height:297mm;margin:14px auto;padding:8.5mm 7.5mm;display:grid;grid-template-columns:95mm 95mm;grid-template-rows:135mm 135mm;gap:5mm;background:#fff;page-break-after:always}
-  .card{width:95mm;height:135mm;position:relative;overflow:hidden;padding:9mm;display:flex;flex-direction:column;border:1px solid var(--ink);background:var(--milk);break-inside:avoid}
+   /* 3 mm bleed on every side; trim is 148 x 210 mm inside the page. */
+   .sheet{width:154mm;height:216mm;margin:14px auto;padding:0;display:block;background:#fff;page-break-after:always}
+   .card{width:154mm;height:216mm;position:relative;overflow:hidden;padding:17mm;display:flex;flex-direction:column;border:1px solid var(--ink);background:var(--milk);break-inside:avoid}
   .front{background:var(--blue)}
   .front.tone-evening{background:var(--coral)}
   .front.tone-trip,.front.tone-air{background:var(--sage)}
   .front.tone-art,.front.tone-walk{background:var(--milk)}
-  .number{font-size:10px;letter-spacing:.14em;text-transform:uppercase}
-  .badge{position:absolute;right:9mm;top:9mm;min-width:17mm;padding:2.5mm 2mm;border:1px solid var(--ink);border-radius:999px;font-size:8px;line-height:1.1;text-align:center;text-transform:uppercase}
-  .front h2{margin:auto 0 5mm;max-width:74mm;font-size:29px;line-height:.9;letter-spacing:-.07em;text-wrap:balance}
-  .front .mood{font-size:11px;line-height:1.35;max-width:65mm;margin:0}
-  .front .footer{margin-top:7mm;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+   .number{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+   .badge{position:absolute;right:17mm;top:17mm;min-width:21mm;padding:2.5mm 2mm;border:1px solid var(--ink);border-radius:999px;font-size:10px;line-height:1.1;text-align:center;text-transform:uppercase}
+   .front h2{margin:auto 0 7mm;max-width:105mm;font-size:42px;line-height:.9;letter-spacing:-.07em;text-wrap:balance}
+   .front .mood{font-size:15px;line-height:1.35;max-width:95mm;margin:0}
+   .front .footer{margin-top:9mm;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
   .cover{background:linear-gradient(135deg,var(--blue) 0%,var(--coral) 47%,var(--sage) 76%,var(--milk) 100%);color:var(--ink);justify-content:space-between}
   .cover:before{content:"";position:absolute;inset:0;background:linear-gradient(165deg,rgba(204,213,255,.36),rgba(252,139,105,.2) 48%,rgba(195,214,168,.3));mix-blend-mode:multiply}
-  .cover h2{position:relative;z-index:1;max-width:72mm;margin:auto 0;font-size:37px;line-height:.88;letter-spacing:-.075em}
-  .cover .footer{font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+   .cover h2{position:relative;z-index:1;max-width:105mm;margin:auto 0;font-size:52px;line-height:.88;letter-spacing:-.075em}
+   .cover .footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
   .about{background:var(--milk)}
-  .about h2{margin:6mm 0 6mm;font-size:28px;line-height:.9;letter-spacing:-.07em}
-  .about p{font-size:12px;line-height:1.45;margin:0 0 5mm}
-  .about ol{margin:0;padding-left:17px;font-size:11px;line-height:1.45}.about li{padding-left:2mm;margin-bottom:2mm}
+   .about h2{margin:8mm 0 8mm;font-size:40px;line-height:.9;letter-spacing:-.07em}
+   .about p{font-size:15px;line-height:1.45;margin:0 0 7mm}
+   .about ol{margin:0;padding-left:22px;font-size:14px;line-height:1.45}.about li{padding-left:2mm;margin-bottom:3mm}
   .about .qr-block{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:2mm;text-align:center}
-  .about .qr-caption{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
-  .about .qr{width:22mm;height:22mm;display:block}
+   .about .qr-caption{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+   .about .qr{width:28mm;height:28mm;display:block}
   .blank{border-color:transparent;background:transparent}
   .back{background:var(--white)}
-  .back .eyebrow{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .back h2{margin:5mm 0 5mm;font-size:21px;line-height:.95;letter-spacing:-.055em;text-wrap:balance}
-  .back dl{margin:0;font-size:10px;line-height:1.35}
+   .back .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+   .back h2{margin:7mm 0 7mm;font-size:31px;line-height:.95;letter-spacing:-.055em;text-wrap:balance}
+   .back dl{margin:0;font-size:14px;line-height:1.4}
   .back dd{overflow-wrap:anywhere}
-  .back dt{margin-top:3mm;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+   .back dt{margin-top:5mm;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .back dd{margin:1mm 0 0}
-  .back .soundtrack{margin-top:auto;padding:4mm;border:1px solid var(--ink);font-size:10px;line-height:1.35}
+   .back .soundtrack{margin-top:auto;padding:5mm;border:1px solid var(--ink);font-size:14px;line-height:1.4}
   .soundtrack.tone-morning{background:var(--blue)}
   .soundtrack.tone-evening{background:var(--coral)}
   .soundtrack.tone-trip,.soundtrack.tone-air{background:var(--sage)}
   .soundtrack.tone-art,.soundtrack.tone-walk{background:var(--milk)}
-  .back .soundtrack b{display:block;margin-bottom:1mm;font-size:8px;letter-spacing:.1em;text-transform:uppercase}
-  @page{size:A4 portrait;margin:0}
+   .back .soundtrack b{display:block;margin-bottom:1mm;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+   @page{size:154mm 216mm;margin:0}
   @media print{body{background:#fff}.instructions{display:none}.sheet{margin:0}}
   @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
@@ -55,9 +56,8 @@
 <body>
 <section class="instructions">
   <h1>Минск, который станет нашим</h1>
-  <p><b>25 карточек · 16 листов A4 · 4 карточки на лист</b></p>
-  <p>Печать: масштаб 100%, без подгонки. Сначала напечатай лицевые стороны, затем вставь листы обратно и напечатай обороты. Для обычного принтера выбери двустороннюю печать с переворотом по длинному краю.</p>
-  <p>Обороты уже переставлены зеркально: на втором проходе верхняя левая карточка соответствует верхней правой на лицевой стороне.</p>
+   <p><b>25 карточек · формат A5 · 148 × 210 мм</b></p>
+   <p>Каждая сторона — отдельная страница. Для двусторонней печати выбери масштаб 100% и переворот по длинному краю.</p>
 </section>
 <main id="pages"></main>
 <script>
@@ -90,20 +90,18 @@ const cards=[
 ];
 const pages=document.getElementById('pages');
 const t=text=>String(text).replace(/\s(в|во|и|а|но|к|ко|с|со|у|о|об|от|до|из|на|по|за|для|без|над|под|при|про)\s/gi,' $1&nbsp;');
-const coverFront=document.createElement('section');coverFront.className='sheet';coverFront.appendChild(coverCard());[0,1,2].forEach(()=>coverFront.appendChild(blankCard()));pages.appendChild(coverFront);
-const coverBack=document.createElement('section');coverBack.className='sheet';coverBack.appendChild(blankCard());coverBack.appendChild(aboutCard());[0,1].forEach(()=>coverBack.appendChild(blankCard()));pages.appendChild(coverBack);
+const coverFront=document.createElement('section');coverFront.className='sheet';coverFront.appendChild(coverCard());pages.appendChild(coverFront);
+const coverBack=document.createElement('section');coverBack.className='sheet';coverBack.appendChild(aboutCard());pages.appendChild(coverBack);
 function coverCard(){const el=document.createElement('article');el.className='card cover';el.innerHTML='<span class="number">Колода прогулок · Минск</span><h2>Минск,<br>который<br>станет<br>нашим</h2><span class="footer">маршруты, музыка, выходные</span>';return el}
 function aboutCard(){const el=document.createElement('article');el.className='card back about';el.innerHTML='<span class="eyebrow">как пользоваться колодой</span><h2>Двадцать пять поводов<br>выйти из дома</h2><p>Маршруты по Минску: прогулки, завтраки, театры и маленькие поездки.</p><ol><li>В понедельник вытяните одну карточку.</li><li>Посмотрите маршрут и выберите подходящий выходной.</li><li>Включите саундтрек и отправляйтесь без спешки.</li><li>После прогулки положите карточку отдельно.</li></ol><div class="qr-block"><p class="qr-caption">Саундтрек ко всей колоде</p><svg class="qr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h41v41H0z"/><path stroke="#000000" d="M4 4.5h7m2 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h7M4 5.5h1m5 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h1m5 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m4 0h5m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h1m1 0h1m5 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h4m1 0h6m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m1 0h1m8 0h1m4 0h1m1 0h1m1 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 11.5h2m1 0h2m1 0h1m1 0h1m1 0h4m1 0h2M4 12.5h1m1 0h5m2 0h3m1 0h2m2 0h1m4 0h3m1 0h5M4 13.5h5m3 0h2m3 0h1m2 0h5m1 0h2m2 0h2m1 0h4M6 14.5h1m1 0h1m1 0h1m2 0h1m2 0h4m1 0h1m3 0h1m3 0h1m2 0h1m1 0h2M6 15.5h1m2 0h1m5 0h1m1 0h1m1 0h5m1 0h2m1 0h1m3 0h5M4 16.5h1m1 0h2m2 0h1m1 0h5m1 0h1m1 0h1m3 0h5m3 0h2M5 17.5h2m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m2 0h3m1 0h1m2 0h2m2 0h4M4 18.5h3m1 0h6m2 0h1m2 0h4m2 0h1m3 0h2m1 0h1m1 0h2M5 19.5h1m3 0h1m1 0h1m1 0h2m3 0h2m3 0h4m1 0h4m2 0h1M4 20.5h4m1 0h2m2 0h4m2 0h1m1 0h1m4 0h1m1 0h2m1 0h3m2 0h1M4 21.5h1m2 0h2m2 0h1m6 0h1m1 0h1m1 0h3m2 0h1m2 0h2m1 0h4M6 22.5h1m1 0h1m1 0h2m1 0h2m3 0h2m2 0h1m1 0h2m3 0h4m1 0h2M4 23.5h1m1 0h1m1 0h2m4 0h1m3 0h2m4 0h2m1 0h3m1 0h5M5 24.5h2m3 0h1m2 0h3m2 0h2m2 0h1m1 0h1m1 0h1m1 0h2m2 0h2m2 0h1M4 25.5h2m1 0h1m3 0h2m1 0h8m1 0h1m5 0h1m3 0h1m2 0h1M4 26.5h1m1 0h5m1 0h1m2 0h4m2 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1M4 27.5h1m2 0h2m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m2 0h1m1 0h5M4 28.5h1m1 0h1m1 0h7m1 0h1m3 0h2m2 0h1m1 0h7m2 0h1M12 29.5h1m1 0h2m2 0h1m1 0h5m1 0h3m3 0h1m1 0h1m1 0h1M4 30.5h7m2 0h1m1 0h3m1 0h3m4 0h3m1 0h1m1 0h1m1 0h2M4 31.5h1m5 0h1m1 0h1m5 0h1m1 0h3m1 0h5m3 0h3M4 32.5h1m1 0h3m1 0h1m1 0h3m3 0h1m1 0h1m5 0h1m1 0h6m1 0h2M4 33.5h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h1m1 0h5m1 0h3m2 0h2m1 0h2M4 34.5h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h3m3 0h8m2 0h1M4 35.5h1m5 0h1m2 0h1m1 0h2m2 0h1m3 0h4m1 0h1m3 0h3M4 36.5h7m1 0h1m5 0h2m1 0h4m1 0h3m2 0h1m3 0h1"/></svg></div>';return el}
 function blankCard(){const el=document.createElement('article');el.className='card blank';return el}
 function toneFor(category){if(category==='вечер'||category==='вид'||category==='ужин')return 'tone-evening';if(category==='поездка'||category==='воздух'||category==='природа')return 'tone-trip';if(category==='искусство'||category==='винтаж')return 'tone-art';if(category==='прогулка'||category==='исследование')return 'tone-walk';return 'tone-morning'}
-for(let start=0;start<cards.length;start+=4){
-  const front=document.createElement('section');front.className='sheet';
-  cards.slice(start,start+4).forEach((card,index)=>front.appendChild(frontCard(card,start+index+1)));pages.appendChild(front);
-  const back=document.createElement('section');back.className='sheet';
-  [1,0,3,2].forEach(index=>{if(cards[start+index]) back.appendChild(backCard(cards[start+index],start+index+1))});pages.appendChild(back);
-}
-function frontCard(card,n){const el=document.createElement('article');el.className=`card front ${toneFor(card[1])}`;el.innerHTML=`<span class="number">${String(n).padStart(2,'0')} / ${t(card[1])}</span><span class="badge">${t(card[3])}</span><h2>${t(card[0])}</h2><p class="mood">${t(card[4])}</p><span class="footer">Минск, который станет нашим</span>`;return el}
-function backCard(card,n){const el=document.createElement('article');el.className='card back';el.innerHTML=`<span class="eyebrow">карточка ${String(n).padStart(2,'0')} · ${t(card[1])}</span><h2>${t(card[0])}</h2><dl><dt>Куда</dt><dd>${t(card[2])}</dd><dt>Остановки</dt><dd>${t(card[5])}</dd><dt>Ритм дня</dt><dd>${t(card[3])}</dd></dl><p class="soundtrack ${toneFor(card[1])}"><b>Саундтрек</b>${t(card[6])}<br><span>${t(card[7])}</span></p>`;return el}
+ cards.forEach((card,index)=>{
+   const front=document.createElement('section');front.className='sheet';front.appendChild(frontCard(card,index+1));pages.appendChild(front);
+   const back=document.createElement('section');back.className='sheet';back.appendChild(backCard(card,index+1));pages.appendChild(back);
+ });
+function frontCard(card,n){const el=document.createElement('article');el.className=`card front ${toneFor(card[1])}`;el.innerHTML=`<span class="number">${t(card[1])}</span><span class="badge">${t(card[3])}</span><h2>${t(card[0])}</h2><p class="mood">${t(card[4])}</p><span class="footer">Минск, который станет нашим</span>`;return el}
+function backCard(card,n){const el=document.createElement('article');el.className='card back';el.innerHTML=`<span class="eyebrow">${t(card[1])}</span><h2>${t(card[0])}</h2><dl><dt>Куда</dt><dd>${t(card[2])}</dd><dt>Остановки</dt><dd>${t(card[5])}</dd><dt>Ритм дня</dt><dd>${t(card[3])}</dd></dl><p class="soundtrack ${toneFor(card[1])}"><b>Саундтрек</b>${t(card[6])}<br><span>${t(card[7])}</span></p>`;return el}
 </script>
 </body>
 </html>

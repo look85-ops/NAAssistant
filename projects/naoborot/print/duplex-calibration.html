@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Калибровка двусторонней печати — Наоборот</title>
+<style>
+  :root{--ink:#211b18;--wine:#641f2c;--paper:#fffdf8;--muted:#6f655c}
+  *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{margin:0;background:#ddd;font-family:Arial,sans-serif;color:var(--ink)}
+  .page{width:210mm;height:297mm;margin:10mm auto;background:var(--paper);position:relative;page-break-after:always;overflow:hidden}
+  .frame{position:absolute;left:10mm;top:10mm;right:10mm;bottom:10mm;border:0.3mm solid var(--ink)}
+  .grid{position:absolute;left:10mm;top:10mm;right:10mm;bottom:10mm;
+    background-image:linear-gradient(to right,rgba(33,27,24,.18) 0.2mm,transparent 0.2mm),linear-gradient(to bottom,rgba(33,27,24,.18) 0.2mm,transparent 0.2mm);
+    background-size:20mm 20mm}
+  .head{position:absolute;left:14mm;top:13mm;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+  .hint{position:absolute;left:14mm;right:14mm;top:18mm;font-size:8.5pt;line-height:1.4;color:var(--muted)}
+  .cross{position:absolute;width:10mm;height:10mm;transform:translate(-50%,-50%)}
+  .cross:before,.cross:after{content:"";position:absolute;background:var(--wine)}
+  .cross:before{left:50%;top:0;width:0.25mm;height:100%}
+  .cross:after{top:50%;left:0;height:0.25mm;width:100%}
+  .center{left:50%;top:50%;width:24mm;height:24mm}
+  .center:before{width:0.4mm}.center:after{height:0.4mm}
+  .ruler{position:absolute;left:50%;top:50%;transform:translate(14mm,-4mm);display:flex;gap:1mm;align-items:flex-start}
+  .ruler i{display:block;width:0.2mm;height:6mm;background:var(--ink)}
+  .ruler i.big{height:9mm;background:var(--wine)}
+  .label{position:absolute;font-size:8pt;color:var(--muted);letter-spacing:.06em}
+  @page{size:A4 portrait;margin:0}
+  @media print{html,body{background:#fff}.page{margin:0}}
+</style>
+</head>
+<body>
+  <section class="page">
+    <div class="frame"></div><div class="grid"></div>
+    <div class="head">Калибровка дуплекса · лицо</div>
+    <div class="hint">Напечатай этот лист двусторонним. Затем посмотри на просвет: кресты на обороте должны совпасть с крестами на лице. Если смещены — измерь сдвиг по линейке и запиши в мм (X вправо/влево, Y вверх/вниз).</div>
+    <div class="cross" style="left:10mm;top:10mm"></div>
+    <div class="cross" style="left:200mm;top:10mm"></div>
+    <div class="cross" style="left:10mm;top:287mm"></div>
+    <div class="cross" style="left:200mm;top:287mm"></div>
+    <div class="cross center"></div>
+    <div class="ruler"><i></i><i></i><i></i><i class="big"></i><i></i><i></i><i></i><i></i><i></i><i class="big"></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="label" style="left:14mm;top:270mm">Совмести лист с оборотом на просвет</div>
+  </section>
+
+  <section class="page">
+    <div class="frame"></div><div class="grid"></div>
+    <div class="head">Калибровка дуплекса · оборот</div>
+    <div class="hint">Геометрия идентична лицу. Совпадение крестов = принтер печатает ровно. Смещение 1–2 мм — норма для офисного принтера; компенсируй сдвигом оборота в макете.</div>
+    <div class="cross" style="left:10mm;top:10mm"></div>
+    <div class="cross" style="left:200mm;top:10mm"></div>
+    <div class="cross" style="left:10mm;top:287mm"></div>
+    <div class="cross" style="left:200mm;top:287mm"></div>
+    <div class="cross center"></div>
+    <div class="ruler"><i></i><i></i><i></i><i class="big"></i><i></i><i></i><i></i><i></i><i></i><i class="big"></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="label" style="left:14mm;top:270mm">Сдвиг по X и Y — в мм</div>
+  </section>
+</body>
+</html>

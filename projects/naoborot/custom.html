@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сделаем наоборот — Наоборот</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap');
+:root{--wine:#641f2c;--deep:#42131d;--acid:#d9e85c;--paper:#f4f0e8;--muted:#796e66;--display:"DM Sans",Arial,sans-serif;--sans:Manrope,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:#211b18;font:15px/1.55 var(--sans)}a{color:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+nav{display:flex;justify-content:flex-end;padding:28px 0}nav a{text-decoration:none;font-size:12px}.brand{font:600 21px/1 var(--display);letter-spacing:-.06em}
+.hero{padding:80px 0 100px;color:var(--paper);background:var(--wine)}.hero h1{max-width:700px;margin:0 0 24px;font:600 clamp(54px,9vw,120px)/.84 var(--display);letter-spacing:-.1em}.hero p{max-width:520px;color:rgba(244,240,232,.78);font-size:17px}
+.cases{padding:90px 0}.intro{max-width:650px;margin-bottom:70px}.intro h2{margin:0 0 16px;font:500 clamp(42px,6vw,78px)/.88 var(--display);letter-spacing:-.09em}.intro p{margin:0;color:var(--muted)}
+.case{display:grid;grid-template-columns:1.15fr .85fr;gap:8vw;align-items:center;padding:70px 0;border-top:1px solid rgba(33,27,24,.18)}.case:nth-child(even){grid-template-columns:.85fr 1.15fr}.case:nth-child(even) .gallery{order:2}.case:nth-child(even) .case-copy{order:1}.gallery{min-width:0}.viewport{aspect-ratio:1.38;position:relative;overflow:hidden;background:var(--deep);box-shadow:16px 16px 0 var(--acid)}.slide{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;justify-content:space-between;color:var(--paper);opacity:0;transition:opacity .2s}.slide.active{opacity:1}.slide small{color:var(--acid);font-size:10px;letter-spacing:.14em;text-transform:uppercase}.slide h3{max-width:75%;margin:0;font:500 clamp(32px,5vw,64px)/.86 var(--display);letter-spacing:-.1em}.slide.light{color:var(--deep);background:var(--acid)}.slide.warm{color:var(--deep);background:#dcd7cb}.slide.wine{background:var(--wine)}.controls{display:flex;align-items:center;gap:12px;margin-top:20px}.controls button{width:34px;height:34px;border:1px solid var(--wine);color:var(--wine);background:transparent;border-radius:50%;cursor:pointer}.controls button:hover{color:var(--paper);background:var(--wine)}.dots{font-size:11px;color:var(--muted)}
+.case-copy small{display:block;margin-bottom:18px;color:var(--wine);font-size:11px;letter-spacing:.15em}.case-copy h2{margin:0 0 18px;font:500 clamp(36px,5vw,62px)/.9 var(--display);letter-spacing:-.09em}.case-copy p{max-width:470px;margin:0 0 18px;color:var(--muted)}.button{display:inline-flex;margin-top:8px;padding:13px 18px;color:var(--paper);background:var(--wine);border-radius:999px;text-decoration:none;font-size:13px;font-weight:600}.button:hover{background:var(--deep)}
+footer{padding:28px 0;color:rgba(244,240,232,.65);background:var(--deep);font-size:12px}footer .wrap{display:flex;justify-content:space-between}
+:focus-visible{outline:3px solid var(--acid);outline-offset:4px}
+.viewport img.slide{width:100%;height:100%;object-fit:contain;padding:16px;background:#fffdf8}
+.gallery.portrait .viewport{aspect-ratio:3/4}
+.viewport img{pointer-events:none}
+.viewport img.active{pointer-events:auto;cursor:zoom-in}
+dialog.lightbox{width:auto;max-width:94vw;max-height:94vh;padding:0;border:0;background:transparent}
+dialog.lightbox::backdrop{background:rgba(18,10,8,.85)}
+dialog.lightbox img{display:block;width:auto;height:auto;max-width:90vw;max-height:86vh;background:#fffdf8;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.lightbox-close{position:fixed;top:14px;right:18px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,253,248,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.lightbox-close:hover{background:rgba(255,253,248,.3)}
+.hero .button{display:inline-flex;margin-top:22px;padding:14px 22px;background:var(--acid);color:var(--deep);border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}
+.hero .note{margin:14px 0 0;font-size:12px;color:rgba(244,240,232,.6)}
+.divider{height:1px;margin:76px 0;background:rgba(33,27,24,.18)}
+.case-group{background:#fffdf8;border:0;padding:10px 34px;margin:0}
+.group-title{margin:26px 0 0;font:500 22px/.9 var(--display);letter-spacing:-.06em;color:var(--wine)}
+.case-group .case{grid-template-columns:1.15fr .85fr;gap:7vw;padding:38px 0;border-top:0}
+.case-group .case+.case{border-top:1px solid rgba(33,27,24,.18)}
+.divider+.case{border-top:0}
+.case-group .case .gallery,.case-group .case .case-copy{order:0}
+.inside-title{display:block;margin:18px 0 8px;color:var(--wine);font-weight:600;font-size:13px}
+.inside{margin:0;padding:0;list-style:none}
+.inside li{position:relative;padding-left:14px;margin-bottom:6px;font-size:13px;color:var(--muted)}
+.inside li:before{content:"—";position:absolute;left:0;color:var(--wine)}
+@media(max-width:760px){.case-group{padding:8px 18px}.divider{margin:52px 0}.case-group .case{grid-template-columns:1fr;gap:30px}}
+@media(max-width:760px){.wrap{width:min(100% - 32px,560px)}.hero{padding:60px 0 72px}.cases{padding:65px 0}.case,.case:nth-child(even){grid-template-columns:1fr;gap:34px;padding:52px 0}.case:nth-child(even) .gallery,.case:nth-child(even) .case-copy{order:initial}.viewport{box-shadow:10px 10px 0 var(--acid)}.slide{padding:22px}.slide h3{max-width:90%;font-size:42px}footer .wrap{display:block}footer p+p{margin-top:8px}}
+</style>
+</head>
+<body>
+<div class="wrap"><nav><a href="index.html">← назад</a></nav></div>
+<header class="hero"><div class="wrap"><h1>Сделаем<br>наоборот.</h1><p>Иногда готового сценария недостаточно, потому что у каждого человека — свой ритм, свои мечты и особенные поводы.</p><p>Расскажите нам немного о том, кого хотите удивить.</p><p>Мы продумаем детали, атмосферу и соберём всё в единую историю.</p><a class="button" href="mailto:look85@gmail.com?subject=Наоборот%20/%20Создать%20историю">Создать историю</a><p class="note">Срок разработки — от 10 рабочих дней.</p></div></header>
+<main class="cases"><div class="wrap"><div class="intro"><h2>Из архива</h2></div>
+  <article class="case">
+    <div class="gallery" data-gallery="birthday"><div class="viewport"><img class="slide active" src="assets/dr-1.png" alt="Сценарий дня: обложка"><img class="slide" src="assets/dr-2.png" alt="Сценарий дня: отель"><img class="slide" src="assets/dr-3.png" alt="Сценарий дня: план"></div><div class="controls"><button type="button" data-prev aria-label="Предыдущий слайд">←</button><span class="dots">1 / 3</span><button type="button" data-next aria-label="Следующий слайд">→</button></div></div>
+    <div class="case-copy"><h2>Особенный день</h2><p>Для Антона мы собрали день рождения в Минске: отель в старом городе, медленный завтрак, прогулка без спешки, праздничный обед и основной подарок.</p><span class="inside-title">Что внутри</span><ul class="inside"><li>Драматургия вечера и маршрута: продуманный ритм от первой минуты до финала.</li><li>Тактильные артефакты и ритуалы: персональные конверты и карточки-воспоминания.</li><li>Пошаговый гид для близкого человека, который готовит сюрприз.</li></ul><a class="button" href="mailto:look85@gmail.com?subject=Наоборот%20/%20Сценарий%20дня">Собрать похожее →</a></div>
+  </article>
+  <div class="divider"></div>
+  <section class="case-group">
+    <h3 class="group-title">Города и маршруты</h3>
+    <article class="case">
+      <div class="gallery portrait" data-gallery="moscow"><div class="viewport"><img class="slide active" src="assets/povody-1.png" alt="Приятные поводы: обложка колоды"><img class="slide" src="assets/povody-2.png" alt="Приятные поводы: карточка"><img class="slide" src="assets/povody-3.png" alt="Приятные поводы: карточка"><img class="slide" src="assets/povody-4.png" alt="Приятные поводы: карточка"></div><div class="controls"><button type="button" data-prev aria-label="Предыдущий слайд">←</button><span class="dots">1 / 4</span><button type="button" data-next aria-label="Следующий слайд">→</button></div></div>
+      <div class="case-copy"><h2>Приятные поводы</h2><p>Для Глеба и Кати собрали коллекцию готовых сценариев для выходных в Москве и Подмосковье. От тихих маршрутов по старым переулкам и камерных галерей до неспешных загородных вылазок в Подмосковье.</p><a class="button" href="mailto:look85@gmail.com?subject=Наоборот%20/%20Колода%20для%20двоих">Собрать похожее →</a></div>
+    </article>
+    <article class="case">
+      <div class="gallery portrait" data-gallery="minsk"><div class="viewport"><img class="slide active" src="assets/minsk-1.png" alt="Минск, который станет нашим: обложка"><img class="slide" src="assets/minsk-2.png" alt="Минск: карточка маршрута"><img class="slide" src="assets/minsk-3.png" alt="Минск: карточка маршрута"><img class="slide" src="assets/minsk-4.png" alt="Минск: карточка маршрута"></div><div class="controls"><button type="button" data-prev aria-label="Предыдущий слайд">←</button><span class="dots">1 / 4</span><button type="button" data-next aria-label="Следующий слайд">→</button></div></div>
+      <div class="case-copy"><h2>Минск, который станет нашим</h2><p>Для пары, переехавшей в Минск, собрали серию маршрутов для знакомства с городом. Каждая карточка — готовый сценарий одного дня или вечера. К каждому маршруту подобран саундтрек, превращающий прогулку в личное кино.</p><a class="button" href="mailto:look85@gmail.com?subject=Наоборот%20/%20Маршруты%20по%20городу">Собрать похожее →</a></div>
+    </article>
+  </section>
+  <div class="divider"></div>
+  <article class="case">
+    <div class="gallery" data-gallery="team"><div class="viewport"><img class="slide active" src="assets/team-1.png" alt="Зимний журнал: общая страница"><img class="slide" src="assets/team-2.png" alt="Зимний журнал: карточка-задание"><img class="slide" src="assets/team-3.png" alt="Зимний журнал: окошко дня"></div><div class="controls"><button type="button" data-prev aria-label="Предыдущий слайд">←</button><span class="dots">1 / 3</span><button type="button" data-next aria-label="Следующий слайд">→</button></div></div>
+    <div class="case-copy"><h2>Адвент-календарь для команды</h2><p>Закрытое цифровое пространство для команды Корпоративного университета РЖД. Две недели лёгкого предвкушения, юмора и тепла. Даже если сотрудники работают из разных городов, утреннее окошко становится общим поводом для обсуждения в рабочем чате.</p><a class="button" href="mailto:look85@gmail.com?subject=Наоборот%20/%20Командный%20проект">Собрать похожее →</a></div>
+  </article>
+</div></main>
+<footer><div class="wrap"><p>Наоборот · подарки-состояния</p><p>Минск · Беларусь</p></div></footer>
+<dialog class="lightbox" id="lightbox"><button class="lightbox-close" type="button" data-close-lightbox aria-label="Закрыть">×</button><img alt=""></dialog>
+<script>
+(function(){var re=/\s+(в|во|и|а|но|к|ко|с|со|у|о|об|от|до|из|на|по|за|для|без|над|под|при|про|не|что|как|же)\s+/gi;document.querySelectorAll('.hero p, .case-copy p, .inside li').forEach(function(el){el.innerHTML=el.innerHTML.replace(re,' $1\u00A0');});})();
+document.querySelectorAll('[data-gallery]').forEach(g=>{const slides=[...g.querySelectorAll('.slide')],dots=g.querySelector('.dots');let i=0;const show=n=>{i=(n+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===i));dots.textContent=`${i+1} / ${slides.length}`};g.querySelector('[data-prev]').addEventListener('click',()=>show(i-1));g.querySelector('[data-next]').addEventListener('click',()=>show(i+1))});
+</script>
+<script>(function(){var lb=document.getElementById('lightbox'),im=lb.querySelector('img');document.querySelectorAll('.viewport img.slide').forEach(function(x){x.addEventListener('click',function(e){e.preventDefault();im.src=x.currentSrc||x.src;im.alt=x.alt||'';lb.showModal();});});lb.querySelector('[data-close-lightbox]').addEventListener('click',function(){lb.close();});lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});})();</script>
+</body>
+</html>

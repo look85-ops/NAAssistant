@@ -63,5 +63,18 @@ dvor-mvp-mobile.png
 .venv/
 **/.venv/
 
+# Node
+node_modules/
+**/node_modules/
+
 # Temp / scratch
 tmp/
+
+# Root scratch and check-screenshots (audit 24.11.2026)
+/tmp_archived.txt
+/tmp_scenarios.txt
+/*-check.png
+/pplus-scenario-page*.png
+/projects/-22-nov.pdf
+/attic/nov-2026-checks/
+/attic/smart-ppt-designer-dotgit/

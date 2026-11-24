@@ -17,6 +17,8 @@
 - [Оценка агентов (RACI-стандарт)](ai/agent-eval-racistandard.md)
 - [Промптинг для управленцев (7+5 техник + светофор)](ai/prompting-playbook-kulinich.md)
 - [Промпт «Продвинутый поиск идей» (модель OMS)](ai/ideation-oms-prompt.md)
+- [Вайб-кодинг: полезный сигнал (12.11.2026)](ai/vibecoding-channel-signal-2026-11-12.md)
+- [Склад: полезный сигнал (16.11.2026)](ai/sklad-channel-signal-2026-11-16.md)
 
 ## career/ — Карьера, вакансии, LinkedIn
 

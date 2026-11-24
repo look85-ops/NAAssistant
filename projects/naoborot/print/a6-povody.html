@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Приятные поводы — A6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap');
+:root{--wine:#641f2c;--deep:#42131d;--acid:#d9e85c;--paper:#f4f0e8;--white:#fffdf8;--ink:#211b18;--muted:#6f655c;--display:"DM Sans",Arial,sans-serif;--sans:Manrope,Arial,sans-serif;
+--pw:121mm;--ph:164mm;--tw:105mm;--th:148mm;--sw:95mm;--sh:138mm}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;background:#ddd;font-family:var(--sans);color:var(--ink)}
+.page{position:relative;width:var(--pw);height:var(--ph);background:#fff;page-break-after:always;overflow:hidden;margin:0 auto}
+.page:last-child{page-break-after:auto}
+.trim{position:absolute;left:8mm;top:8mm;width:var(--tw);height:var(--th);overflow:hidden}
+.front .trim{background:var(--wine);color:var(--paper)}
+.back .trim{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 0.2mm rgba(33,27,24,.12)}
+.safe{position:absolute;left:13mm;top:13mm;width:var(--sw);height:var(--sh);display:flex;flex-direction:column}
+.front .safe{justify-content:flex-end}
+.cat{font-size:6.5pt;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:auto}
+h1{margin:0 0 2mm;font:600 17pt/.98 var(--display);letter-spacing:-.03em;text-wrap:balance;max-width:100%}
+.mood{font-size:7.5pt;line-height:1.35;margin:0;opacity:.82;max-width:100%}
+h2{margin:0 0 2mm;font:600 12pt/1.05 var(--display);letter-spacing:-.02em;text-wrap:balance}
+.body{font-size:7.4pt;line-height:1.38;color:#3b332b;text-wrap:pretty}
+.body p{margin:0 0 1.6mm}
+.sparkle{color:var(--wine);font-size:11pt;margin-bottom:3mm}
+.meta{margin:2.5mm 0 0;font-size:7pt;line-height:1.35;color:var(--muted)}
+.meta dt{font-size:5.8pt;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);margin-top:1.6mm}
+.meta dd{margin:0.4mm 0 0;color:var(--ink)}
+.rec{margin-top:auto;padding-top:2.5mm;border-top:0.2mm solid rgba(33,27,24,.18);font-size:7pt;line-height:1.35;color:var(--wine)}
+.rec b{display:block;font-size:5.8pt;letter-spacing:.1em;text-transform:uppercase;margin-bottom:0.6mm}
+.mark{position:absolute;background:var(--ink)}
+@page{size:var(--pw) var(--ph);margin:0}
+@media print{html,body{background:#fff}.page{margin:0}}
+</style></head><body><main id="pages"></main>
+<script>
+const DATA = [["Практика", "театр", "Большой Козихинский переулок, 30", "вечер", "Камерный театр, после которого хочется идти медленнее.", "театр → Патриаршие пруды → поздний ужин", "David Bowie — Modern Love", "городская сцена и разговор после"], ["ММОМА", "искусство", "ММОМА, Петровка, 25", "2–3 часа", "Выставка и прогулка по центру без обязательного финала.", "ММОМА → Петровка → Столешников переулок → тихий двор или кафе", "Khruangbin — Friday Morning", "искусство и городская пауза"], ["Сколково: город науки", "технологии", "Инновационный центр «Сколково»", "1–3 часа", "Выбрать маршрут по настроению: наука и технологии, футуристичные кадры или дубы, пруд и арт-объекты.", "Сколтех → Парк наук → MatRex → Технопарк → робот-бариста", "M83 — Outro", "технологии без офисной скуки"], ["Прогулки на трамвае №39", "транспорт", "м. Чистые пруды → м. Университет", "2–3 часа", "Сесть у окна и проехать Москву насквозь: Яуза, Красная площадь, Донской монастырь.", "Чистые пруды → Яуза → центр → Донской монастырь → Университет", "Nina Simone — Feeling Good", "сидеть у окна и не спешить"], ["Кусково", "усадьба", "ул. Юности, 2", "3–5 часов", "Дворец, парк, павильоны и возможность выбрать выставку, концерт или просто длинную прогулку.", "дворец → Итальянский домик → Грот → парк → павильоны", "Vashti Bunyan — Diamond Day", "дворянская пауза в городе"], ["Экслибрис своими руками", "искусство", "Российская государственная библиотека", "2–3 часа", "Сделать собственный знак для книг и уйти с маленьким личным артефактом.", "экскурсия → история экслибриса → мастерская", "The Books — All You Need", "вещь, которую можно оставить себе"], ["Истра: искусство и сыр", "выезд", "Музейный комплекс Новый Иерусалим → Сыроварня Олега Сироты", "целый день", "Музей, дорога и сыр как честный финал большого дня.", "Музейный комплекс Новый Иерусалим → прогулка по Истре → сыроварня", "Beirut — Nantes", "выезд, который стоит километров"], ["Ивановская горка", "прогулка", "Славянская площадь → Маросейка", "3 часа", "Историческая библиотека, лютеранский собор, усадьбы и переулки старой Москвы.", "Славянская площадь → Покровский бульвар → Хохловский переулок → Маросейка", "Leonard Cohen — Dance Me to the End of Love", "город читается ногами"], ["Fonoteca Listening Bar", "музыка", "Кривоколенный переулок, 7", "вечер", "Вечер, где музыка — не фон, а главный собеседник.", "бар → пластинка → один выбранный трек на двоих", "Sade — By Your Side", "слушать внимательнее"], ["Палеонтологический музей", "наука", "ул. Профсоюзная, 123", "3 часа", "Доисторические скелеты, масштаб времени и прогулка после музея.", "залы музея → динозавры → Тропарёво", "Ólafur Arnalds — Near Light", "когда один день становится миллионами лет"], ["ЗИЛАРТ", "архитектура", "ЗИЛАРТ, Автозаводская, 23", "2–3 часа", "Музей и новый городской квартал на месте промышленной Москвы.", "музей → набережная Марка Шагала → корпуса ЗИЛАРТа", "Massive Attack — Teardrop", "бетон, вода и новая Москва"], ["Переделкино", "литература", "Библиотека в Доме творчества, Переделкино", "3–4 часа", "Зависнуть в библиотеке, пройтись по писательскому посёлку и не торопиться обратно.", "Библиотека → писательские дома → дачный маршрут", "José González — Heartbeats", "читать город между строк"], ["Московский ипподром", "спорт", "Центральный Московский ипподром, Беговая, 22", "2–3 часа", "Старые трибуны, лошади и городская скорость без пробок.", "ипподром → трибуны → Беговая → кофе", "Tom Waits — Hold On", "городская механика и немного риска"], ["МАММ и Остоженка", "искусство", "Мультимедиа Арт Музей, Остоженка, 16", "2–3 часа", "Медиакультура, фотография и маршрут по улице, где Москва умеет быть тихой.", "МАММ → Остоженка → Пречистенка → Храм Христа Спасителя", "The xx — Intro", "смотреть на город как на монтаж"], ["Покровское-Стрешнево", "парк", "парк Покровское-Стрешнево", "3–4 часа", "Лес, пруды и прогулка, в которой Москва постепенно растворяется.", "усадьба → пруды → лесные дорожки → чай", "Nick Drake — Northern Sky", "воздух вместо расписания"], ["Серпухов", "выезд", "Серпуховский историко-художественный музей", "целый день", "Музей, старый город и ощущение, что Москва закончилась мягко, а не резко.", "музей → посад → Соборная гора → чай", "The Beatles — Here Comes the Sun", "малый город с большим воздухом"], ["Хлебозавод", "архитектура", "ул. Новодмитровская, д. 1", "2–3 часа", "Памятник конструктивизма и обед там, где промышленная история стала городской сценой.", "Хлебозавод → конструктивистские корпуса → обед", "Talking Heads — This Must Be the Place", "форма следует за функцией"], ["Иван-чайное купе", "еда", "Садовническая улица, 80", "2–3 часа", "Кафе в атмосфере железнодорожного путешествия: иван-чай, исторические сладости и разговор.", "чайное купе → пастила → чайная полка → прогулка по Садовнической", "Django Reinhardt — Minor Swing", "перестук колёс без поезда"], ["Внутри", "театр", "ул. Казакова, 8, стр. 3", "вечер", "Театр в десяти минутах от Курской: выбрать спектакль и остаться в атмосфере места.", "театр → Казаковский переулок → кофе или бар", "Portishead — Roads", "камерность без церемоний"], ["Дубровицы → Александрово-Щапово → Поливаново", "усадьбы", "Московская область", "целый день", "Три усадьбы за один выезд: церковь, парк, вода и дорога между ними.", "Дубровицы → Александрово-Щапово → Поливаново", "Vangelis — La Mort du Loup", "архитектура и дорога без суеты"], ["Музей Яндекса", "технологии", "г. Москва, ул. Тимура Фрунзе, д. 11/13", "2 часа", "Легендарные компьютеры, игровые приставки и вещи, изменившие повседневность.", "экспонаты → история интерфейсов → магазин музея", "Daft Punk — Digital Love", "прошлое, которое ещё работает"], ["Арт-усадьба Веретьево", "искусство", "Талдомский район, дер. Веретьево; 56.696625, 37.274229", "целый день", "Парк Александра Бродского: деревянные скульптуры, лес, беседки и пикник.", "лесные скульптуры → поляна → беседки → пикник", "Fleetwood Mac — Dreams", "архитектура, которую можно потрогать взглядом"], ["Старица на выходные", "выезд", "Старица, Тверская область", "2 дня", "Монастырь, Волга, пещеры, купеческий город и Берново с пушкинским маршрутом.", "Свято-Успенский монастырь → Волга → пещеры → Берново", "Bon Iver — Holocene", "длинный разговор и другая скорость"], ["Музей транспорта Москвы", "транспорт", "Гараж Мельникова, Новорязанская ул., 27", "3 часа", "Транспорт, конструктивизм и разговор о том, как город перемещает людей.", "гараж Мельникова → экспозиция → конструктивистская прогулка", "Kraftwerk — Autobahn", "машины как городская память"], ["Масловка и городок художников", "искусство", "ул. Верхняя Масловка, 3", "2–3 часа", "Музей Масловки и прогулка по городку художников — место, где быт и искусство живут рядом.", "музей → мастерские → городок художников → кофе", "Erik Satie — Gymnopédie No. 1", "тихая московская богема"], ["Звенигород и Музей русского десерта", "выезд", "Звенигород", "целый день", "Старинный город, музей сладостей и повод ехать за пределы Москвы без большого плана.", "Вал Звенигородского Кремля → музей → прогулка → чай и десерт", "Antônio Carlos Jobim — Águas de Março", "сладкий финал дороги"]];
+const KIND = "route";
+const TW = 105, TH = 148;
+const re = /\s+(в|во|и|а|но|к|ко|с|со|у|о|об|от|до|из|на|по|за|для|без|над|под|при|про|не|что|как|же)\s+/gi;
+const t = s => String(s == null ? '' : s).replace(re, ' $1\u00A0');
+const el = (tag, cls, html) => { const n=document.createElement(tag); if(cls)n.className=cls; if(html!=null)n.innerHTML=html; return n; };
+const pages = document.getElementById('pages');
+function marks(){
+  const m = el('div','marks');
+  const pos = [[8,8,'h'],[8,8,'v'],[8+TW,8,'h'],[8+TW,8,'v'],[8,8+TH,'h'],[8,8+TH,'v'],[8+TW,8+TH,'h'],[8+TW,8+TH,'v']];
+  pos.forEach(([x,y,dir])=>{
+    const line = el('div','mark');
+    if(dir==='h'){ line.style.cssText += `left:${x-4}mm;top:${y}mm;width:4mm;height:0.2mm`; }
+    else { line.style.cssText += `left:${x}mm;top:${y-4}mm;width:0.2mm;height:4mm`; }
+    m.appendChild(line);
+  });
+  return m;
+}
+DATA.forEach((c) => {
+  const front = el('section','page front');
+  const trimF = el('div','trim');
+  const safeF = el('div','safe');
+  if (KIND === 'state') {
+    safeF.appendChild(el('div','cat','зима · открытка'));
+    safeF.appendChild(el('h1', null, t(c[0])));
+    safeF.appendChild(el('p','mood', ''));
+  } else {
+    safeF.appendChild(el('div','cat', t(c[1])));
+    safeF.appendChild(el('h1', null, t(c[0])));
+    safeF.appendChild(el('p','mood', t(c[7])));
+  }
+  trimF.appendChild(safeF); front.appendChild(trimF); front.appendChild(marks()); pages.appendChild(front);
+
+  const back = el('section','page back');
+  const trimB = el('div','trim');
+  const safeB = el('div','safe');
+  safeB.appendChild(el('div','sparkle','✦'));
+  safeB.appendChild(el('h2', null, t(c[0])));
+  if (KIND === 'state') {
+    const body = el('div','body');
+    String(c[1]).split(/\n+/).filter(Boolean).forEach(p => body.appendChild(el('p', null, t(p))));
+    safeB.appendChild(body);
+    safeB.appendChild(el('div','rec', `<b>Рекомендация</b>${t(c[2])}`));
+  } else {
+    const meta = el('dl','meta');
+    const rows = [['Куда', c[2]], ['Остановки', c[5]], ['Ритм', c[3]]];
+    rows.forEach(([k,v]) => { if(v){ meta.appendChild(el('dt', null, k)); meta.appendChild(el('dd', null, t(v))); } });
+    safeB.appendChild(meta);
+    safeB.appendChild(el('div','rec', `<b>Саундтрек</b>${t(c[6])}`));
+  }
+  trimB.appendChild(safeB); back.appendChild(trimB); back.appendChild(marks()); pages.appendChild(back);
+});
+</script></body></html>

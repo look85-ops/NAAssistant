@@ -47,12 +47,6 @@
     .kit-row strong { min-width: 230px; }
     .kit-row span { color: var(--muted); font-size: .92rem; flex: 1; }
     .kit-row a { font-weight: 700; white-space: nowrap; text-underline-offset: 4px; }
-    .roles { margin-top: 34px; border: 1px solid var(--line); }
-    .role { display: grid; grid-template-columns: 210px 1fr auto; gap: 20px; align-items: baseline; padding: 18px 22px; border-bottom: 1px solid var(--line); }
-    .role:last-child { border-bottom: 0; }
-    .role strong { font-size: 1.05rem; }
-    .role span { color: var(--muted); font-size: .94rem; }
-    .role a { font-weight: 700; white-space: nowrap; text-underline-offset: 4px; }
     pre { overflow: auto; padding: 22px; background: #18221d; color: #dce9df; font: .88rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; }
     .carousel { position: relative; margin-top: 34px; }
     .carousel-track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 18px; scrollbar-width: thin; }
@@ -61,7 +55,7 @@
     figcaption { padding-top: 10px; color: var(--muted); font-size: .9rem; }
     .carousel-note { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }
     .footer { margin-top: 100px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: .92rem; }
-    @media (max-width: 760px) { .statement, .materials, .gallery { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr; gap: 24px; } .kit-row { display: block; } .kit-row span, .kit-row a { display: block; margin-top: 5px; } .role { display: block; } .role span, .role a { display: block; margin-top: 5px; } .footer { display: block; } }
+    @media (max-width: 760px) { .statement, .materials, .gallery { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr; gap: 24px; } .kit-row { display: block; } .kit-row span, .kit-row a { display: block; margin-top: 5px; } .footer { display: block; } }
     @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
   </style>
 </head>
@@ -125,19 +119,6 @@
 
 После моего подтверждения обработай только тестовый блок.
 Не угадывай слабые соответствия и не изменяй исходные файлы.</pre>
-    </section>
-
-    <section class="section" aria-labelledby="roles-title">
-      <h2 id="roles-title">Одна задача — пять ролей</h2>
-      <p>Запусти агентов последовательно: каждый получает результат предыдущего, добавляет свой слой работы и не переписывает чужие решения молча.</p>
-      <div class="roles">
-        <div class="role"><strong>1. Аналитик задачи</strong><span>Превращает запрос в brief: аудитория, контекст, ограничения, признаки успеха.</span><a href="https://github.com/look85-ops/ai-learning-multi-agent-prompts/blob/main/01-task-analyst.md">Промпт →</a></div>
-        <div class="role"><strong>2. Методист</strong><span>Строит логику: цель, практика, обратная связь и перенос.</span><a href="https://github.com/look85-ops/ai-learning-multi-agent-prompts/blob/main/02-learning-designer.md">Промпт →</a></div>
-        <div class="role"><strong>3. Автор сценария</strong><span>Превращает learning_spec в рабочий сценарий занятия.</span><a href="https://github.com/look85-ops/ai-learning-multi-agent-prompts/blob/main/03-scenario-writer.md">Промпт →</a></div>
-        <div class="role"><strong>4. Критик</strong><span>Ищет методические, фактические, реализуемые и этические слабые места.</span><a href="https://github.com/look85-ops/ai-learning-multi-agent-prompts/blob/main/04-critic.md">Промпт →</a></div>
-        <div class="role"><strong>5. Eval Owner</strong><span>Проверяет по рубрике и решает, что передать человеку на утверждение.</span><a href="https://github.com/look85-ops/ai-learning-multi-agent-prompts/blob/main/05-eval-owner.md">Промпт →</a></div>
-      </div>
-      <div class="actions"><a class="button" href="https://github.com/look85-ops/ai-learning-multi-agent-prompts">Открыть весь комплект →</a></div>
     </section>
 
     <section class="section" aria-labelledby="examples-title">

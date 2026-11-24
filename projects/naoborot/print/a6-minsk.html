@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Минск, который станет нашим — A6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap');
+:root{--wine:#641f2c;--deep:#42131d;--acid:#d9e85c;--paper:#f4f0e8;--white:#fffdf8;--ink:#211b18;--muted:#6f655c;--display:"DM Sans",Arial,sans-serif;--sans:Manrope,Arial,sans-serif;
+--pw:121mm;--ph:164mm;--tw:105mm;--th:148mm;--sw:95mm;--sh:138mm}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;background:#ddd;font-family:var(--sans);color:var(--ink)}
+.page{position:relative;width:var(--pw);height:var(--ph);background:#fff;page-break-after:always;overflow:hidden;margin:0 auto}
+.page:last-child{page-break-after:auto}
+.trim{position:absolute;left:8mm;top:8mm;width:var(--tw);height:var(--th);overflow:hidden}
+.front .trim{background:var(--wine);color:var(--paper)}
+.back .trim{background:var(--white);color:var(--ink);box-shadow:inset 0 0 0 0.2mm rgba(33,27,24,.12)}
+.safe{position:absolute;left:13mm;top:13mm;width:var(--sw);height:var(--sh);display:flex;flex-direction:column}
+.front .safe{justify-content:flex-end}
+.cat{font-size:6.5pt;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:auto}
+h1{margin:0 0 2mm;font:600 17pt/.98 var(--display);letter-spacing:-.03em;text-wrap:balance;max-width:100%}
+.mood{font-size:7.5pt;line-height:1.35;margin:0;opacity:.82;max-width:100%}
+h2{margin:0 0 2mm;font:600 12pt/1.05 var(--display);letter-spacing:-.02em;text-wrap:balance}
+.body{font-size:7.4pt;line-height:1.38;color:#3b332b;text-wrap:pretty}
+.body p{margin:0 0 1.6mm}
+.sparkle{color:var(--wine);font-size:11pt;margin-bottom:3mm}
+.meta{margin:2.5mm 0 0;font-size:7pt;line-height:1.35;color:var(--muted)}
+.meta dt{font-size:5.8pt;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);margin-top:1.6mm}
+.meta dd{margin:0.4mm 0 0;color:var(--ink)}
+.rec{margin-top:auto;padding-top:2.5mm;border-top:0.2mm solid rgba(33,27,24,.18);font-size:7pt;line-height:1.35;color:var(--wine)}
+.rec b{display:block;font-size:5.8pt;letter-spacing:.1em;text-transform:uppercase;margin-bottom:0.6mm}
+.mark{position:absolute;background:var(--ink)}
+@page{size:var(--pw) var(--ph);margin:0}
+@media print{html,body{background:#fff}.page{margin:0}}
+</style></head><body><main id="pages"></main>
+<script>
+const DATA = [["От нового дома к библиотеке", "рядом с домом", "Логойский тракт, 37, корпус 2 → Национальная библиотека", "3–4 часа", "Выйти из нового дома и дойти до самого популярного здания в Минске.", "Логойский тракт → Полоцкий парк → скульптура Сыщик → библиотека", "The Cinematic Orchestra — To Build a Home", "медленно и с предвкушением"], ["Завтрак с видом", "утро", "Grand Cafe → Верхний город → набережная Свислочи", "3 часа", "Начать с завтрака на Ленина, пройти через Верхний город и закончить у воды.", "ул. Ленина, 2 → площадь Свободы → ул. Герцена → Троицкое предместье → Комсомольское озеро", "Khruangbin — Friday Morning", "мягкое утро без обязательных дел"], ["После театра", "вечер", "Новый драматический театр → Осмоловка → Mon Nom", "3–4 часа", "Спектакль, тихие улицы и десерт, который можно обсуждать вместе с постановкой.", "ул. Лизы Чайкиной, 16 → ул. Кисёлева → ул. Богдановича → ул. Клумова, 11", "Chet Baker — I Fall in Love Too Easily", "город уже звучит тише"], ["Искусство и Октябрьская", "город", "Галерея «Ў» → Октябрьская улица", "2–3 часа", "Начать с выставки и пройти улицу, где бывшая промышленная архитектура стала городской сценой.", "ул. Октябрьская, 19 → ул. Октябрьская, 23 → ул. Октябрьская, 16 → ул. Ленина", "David Bowie — Modern Love", "чуть смелее обычного"], ["Прогулка у воды", "рядом с домом", "Логойский тракт, 37, корпус 2 → Цнянское водохранилище", "3–5 часов", "Идти без цели, свернуть к воде и оставить финал открытым.", "Lake Side Park → берег Цны → лесные дорожки у водохранилища", "Nick Drake — Northern Sky", "воздух, вода и длинная дорога"], ["День за городом: Прилуки", "поездка", "Усадьба Чапского в Прилуках", "4–5 часов", "Дворец, парк и дорога, которую приятно обсуждать по пути.", "усадьба Чапского → дворцовый парк → берег Свислочи → деревенская улица Прилук", "Vashti Bunyan — Diamond Day", "маленькое путешествие"], ["День за городом: Станьково", "поездка", "Дворцово-парковый комплекс в Станьково", "4–5 часов", "Пряничный дворец, парк и дуб желаний.", "вход в комплекс → дворец Чапских → парк → дуб желаний → зона у воды", "Fleetwood Mac — Dreams", "день, который никуда не торопится"], ["Смиловичи → Червень", "поездка", "Пространство Хаима Сутина → Червень", "целый день", "История местечек, искусство и дорога в сторону Центральной Беларуси.", "Смиловичи → пространство Хаима Сутина → дворцово-парковый комплекс Монюшко-Ваньковичей → Червень", "Vangelis — La Mort du Loup", "дорога с ощущением открытия"], ["Музей наивного искусства", "искусство", "Naif Arts, пр-т Победителей, 84", "2–3 часа", "Выставка плюс мастер-класс: не только смотреть, но и сделать что-то своими руками.", "ТЦ «Арена Сити», 2 этаж → выставочные залы → мастер-класс → магазин музея", "The Beatles — Here Comes the Sun", "искусство, в котором можно участвовать"], ["Музей-мастерская Заира Азгура", "искусство", "ул. Азгура, 8", "2 часа", "Мастерская скульптора, где пространство важнее парадной витрины.", "ул. Азгура, 8 → мастерская → двор → скульптуры под открытым небом", "Erik Satie — Gymnopédie No. 1", "тихая сосредоточенность"], ["Музей валунов", "воздух", "Музей валунов, Уручье", "2–3 часа", "Каменная карта Беларуси под открытым небом и прогулка без музейной тишины.", "вход в парк → геологическая карта Беларуси → большие валуны → дальняя часть экспозиции", "Ólafur Arnalds — Near Light", "медленный северный пейзаж"], ["Театр Купалы и Верхний город", "вечер", "Театр им. Янки Купалы → Верхний город", "3–4 часа", "Спектакль в центре, затем медленная прогулка по старым улицам.", "ул. Энгельса, 7 → площадь Свободы → ул. Герцена → Раковское предместье", "Nina Simone — Feeling Good", "вечер начинается заново"], ["ТЮЗ и вечерний центр", "вечер", "Белорусский ТЮЗ → площадь Свободы", "3 часа", "Театр, городские огни и маршрут, который не требует специального повода.", "ул. Энгельса, 26 → ул. Интернациональная → ул. Герцена → площадь Свободы", "Ella Fitzgerald — Cheek to Cheek", "нарядиться без причины"], ["Куклы для взрослых", "вечер", "Белорусский театр кукол → Герцена", "3 часа", "Спектакль, который начинается с кукольной сцены, а заканчивается разговором о взрослых вещах.", "ул. Энгельса, 20 → ул. Интернациональная → ул. Герцена → Верхний город", "Tom Waits — Hold On", "немного странности к месту"], ["Осмоловка без спешки", "прогулка", "Осмоловка → тихие дворы → кофейня", "2–3 часа", "Рассматривать дома, выбирать окна и искать место для возвращения.", "ул. Богдановича → ул. Кисёлева → ул. Коммунистическая → ул. Старовиленская", "José González — Heartbeats", "идти рядом и молчать"], ["Зыбицкая → Герцена", "вечер", "Зыбицкая → улица Герцена", "2–3 часа", "За один вечер увидеть шумный и тихий Минск: бары, монастырская стена, купеческие дома.", "ул. Зыбицкая → ул. Интернациональная → ул. Герцена → монастырская стена", "Portishead — Roads", "два разных города за один вечер"], ["Верхний город и Раковское предместье", "прогулка", "площадь Свободы → набережная Свислочи", "2–3 часа", "Верхний город и Раковское предместье — совсем рядом: дворики, старые фасады, купеческие дома и выход к воде.", "площадь Свободы → ул. Кирилла и Мефодия → ул. Витебская → ул. Раковская → набережная Свислочи", "Leonard Cohen — Dance Me to the End of Love", "старый город и длинный разговор"], ["Красный дворик", "город", "Красный дворик → Революционная улица", "2 часа", "Начать с арки и закончить прогулкой по центру, где город меняет масштаб.", "ул. Революционная, 7/11 → ул. Комсомольская → ул. Интернациональная → проспект Независимости", "La Femme — Où va le monde", "короткий маршрут с характером"], ["Ресторан The View", "ужин", "Royal Plaza, 28 этаж · пр-т Победителей, 7а", "2–3 часа", "Fine cuisine на 28 этаже небоскрёба: панорама на Свислочь и Троицкое предместье, вечером — подсветка исторических кварталов.", "Royal Plaza → 28 этаж → панорамные окна → вечерняя набережная", "John Coltrane — In a Sentimental Mood", "город внизу и хороший ужин"], ["Посиделки в «Чайной почте»", "чай", "пл. Победы: пр. Независимости, 44-3Н", "ежедневно · 12:00–22:00", "Выбрать новый сорт, познакомиться с чайными традициями и согреться в уютной атмосфере вместо привычного кофе на вынос.", "«Чайная почта» → чайная полка → разговор за столом", "Sade — By Your Side", "замедлиться и согреться"], ["Смотровая площадка гостиницы «Беларусь»", "вид", "ул. Сторожовская, 15", "ежедневно · 10:00–23:00", "Посмотреть на вечерний Минск с высоты 22-го этажа, когда город уже зажёг огни. Последний подъём в 22:30.", "вход в гостиницу → 22-й этаж → вечерний город", "M83 — Outro", "город внизу становится тише"], ["Квартал Минска, о котором мало кто знает", "исследование", "ул. Маневича, 1", "2–3 часа", "Найти квартал, который легко пропустить, и рассмотреть его без заранее заданного маршрута.", "ул. Маневича, 1 → квартал → ближайшая тихая улица", "Beirut — Nantes", "маленькое открытие внутри города"], ["Экотропа «Погребищенские родники»", "природа", "54.257727, 28.015182", "3–4 часа", "Пройти экотропу длиной 1,2 км и выбраться из городского ритма к родникам.", "начало экотропы → родники → лесная дорожка → выход", "Bon Iver — Holocene", "лес, вода и короткая дорога"], ["Комок", "винтаж", "ул. Николая Дрозда, 25А, корп. 4", "2–3 часа", "Зайти в самый большой магазин Беларуси с предметами искусства, антикварной и дизайнерской мебелью, фарфором, книгами и виниловыми пластинками.", "ангар 600 кв. м → искусство → книги и фарфор → виниловые пластинки", "Antônio Carlos Jobim — Águas de Março", "вещи с историей и время для рассматривания"], ["Фермерский рынок «ЎсёСваё»", "рынок", "адрес уточнить у @usesvae_belarus", "суббота · 9:00–15:00", "Закупиться продуктами местных хозяйств: крафтовые сыры, хлеб на закваске, колбасы и рыба из белорусских озёр.", "рыночные ряды → крафтовые сыры → хлеб на закваске → рыба и колбасы", "Simon & Garfunkel — The 59th Street Bridge Song", "суббота, рынок и приятная суета"]];
+const KIND = "route";
+const TW = 105, TH = 148;
+const re = /\s+(в|во|и|а|но|к|ко|с|со|у|о|об|от|до|из|на|по|за|для|без|над|под|при|про|не|что|как|же)\s+/gi;
+const t = s => String(s == null ? '' : s).replace(re, ' $1\u00A0');
+const el = (tag, cls, html) => { const n=document.createElement(tag); if(cls)n.className=cls; if(html!=null)n.innerHTML=html; return n; };
+const pages = document.getElementById('pages');
+function marks(){
+  const m = el('div','marks');
+  const pos = [[8,8,'h'],[8,8,'v'],[8+TW,8,'h'],[8+TW,8,'v'],[8,8+TH,'h'],[8,8+TH,'v'],[8+TW,8+TH,'h'],[8+TW,8+TH,'v']];
+  pos.forEach(([x,y,dir])=>{
+    const line = el('div','mark');
+    if(dir==='h'){ line.style.cssText += `left:${x-4}mm;top:${y}mm;width:4mm;height:0.2mm`; }
+    else { line.style.cssText += `left:${x}mm;top:${y-4}mm;width:0.2mm;height:4mm`; }
+    m.appendChild(line);
+  });
+  return m;
+}
+DATA.forEach((c) => {
+  const front = el('section','page front');
+  const trimF = el('div','trim');
+  const safeF = el('div','safe');
+  if (KIND === 'state') {
+    safeF.appendChild(el('div','cat','зима · открытка'));
+    safeF.appendChild(el('h1', null, t(c[0])));
+    safeF.appendChild(el('p','mood', ''));
+  } else {
+    safeF.appendChild(el('div','cat', t(c[1])));
+    safeF.appendChild(el('h1', null, t(c[0])));
+    safeF.appendChild(el('p','mood', t(c[7])));
+  }
+  trimF.appendChild(safeF); front.appendChild(trimF); front.appendChild(marks()); pages.appendChild(front);
+
+  const back = el('section','page back');
+  const trimB = el('div','trim');
+  const safeB = el('div','safe');
+  safeB.appendChild(el('div','sparkle','✦'));
+  safeB.appendChild(el('h2', null, t(c[0])));
+  if (KIND === 'state') {
+    const body = el('div','body');
+    String(c[1]).split(/\n+/).filter(Boolean).forEach(p => body.appendChild(el('p', null, t(p))));
+    safeB.appendChild(body);
+    safeB.appendChild(el('div','rec', `<b>Рекомендация</b>${t(c[2])}`));
+  } else {
+    const meta = el('dl','meta');
+    const rows = [['Куда', c[2]], ['Остановки', c[5]], ['Ритм', c[3]]];
+    rows.forEach(([k,v]) => { if(v){ meta.appendChild(el('dt', null, k)); meta.appendChild(el('dd', null, t(v))); } });
+    safeB.appendChild(meta);
+    safeB.appendChild(el('div','rec', `<b>Саундтрек</b>${t(c[6])}`));
+  }
+  trimB.appendChild(safeB); back.appendChild(trimB); back.appendChild(marks()); pages.appendChild(back);
+});
+</script></body></html>
