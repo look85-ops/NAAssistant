@@ -96,26 +96,6 @@
       <div class="actions"><a class="button primary" href="algorithm-kit/ПРОМПТ_ДЛЯ_АГЕНТА.md">Взять промпт для AI</a><a class="button" href="start-here.html">Как проверить на малом блоке</a></div>
     </section>
 
-    <section class="section" aria-labelledby="kit-title">
-      <h2 id="kit-title">Полный комплект для скачивания</h2>
-      <p>Все материалы из рабочей папки «Слайды в сценарий: алгоритм». Можно читать по отдельности или скачать архивом.</p>
-      <div class="actions"><a class="button primary" href="algorithm-kit.zip" download>Скачать весь комплект ZIP</a></div>
-      <div class="kit">
-        <div class="kit-row"><strong>ПРОМПТ_ДЛЯ_АГЕНТА.md</strong><span>Главная инструкция для AI-помощника</span><a href="algorithm-kit/ПРОМПТ_ДЛЯ_АГЕНТА.md" download>Скачать</a></div>
-        <div class="kit-row"><strong>АЛГОРИТМ.md</strong><span>Подробно: Render → Match → Insert</span><a href="algorithm-kit/АЛГОРИТМ.md" download>Скачать</a></div>
-        <div class="kit-row"><strong>ЧЕКЛИСТ_ПРОВЕРКИ.md</strong><span>Как принять или вернуть результат</span><a href="algorithm-kit/ЧЕКЛИСТ_ПРОВЕРКИ.md" download>Скачать</a></div>
-        <div class="kit-row"><strong>ПРИМЕР.md</strong><span>Эталонный прогон и типичные ошибки</span><a href="algorithm-kit/ПРИМЕР.md" download>Скачать</a></div>
-        <div class="kit-row"><strong>README.md</strong><span>Быстрый старт и требования</span><a href="algorithm-kit/README.md" download>Скачать</a></div>
-        <div class="kit-row"><strong>1_render.py</strong><span>Экспорт слайдов в PNG</span><a href="algorithm-kit/1_render.py" download>Скачать</a></div>
-        <div class="kit-row"><strong>2_match.py</strong><span>Сопоставление сценария и колоды</span><a href="algorithm-kit/2_match.py" download>Скачать</a></div>
-        <div class="kit-row"><strong>3_insert.py</strong><span>Вставка номеров и скриншотов в DOCX</span><a href="algorithm-kit/3_insert.py" download>Скачать</a></div>
-      </div>
-    </section>
-    <hr class="rule">
-    <section class="statement">
-      <h2>Для большой колоды ручная сверка становится отдельным проектом.</h2>
-      <p>ИИ может помочь, но ему нельзя просто сказать «вставь слайды по порядку». В реальных материалах есть анимация, повторяющиеся заголовки, сдвиги и несколько слайдов на один фрагмент сценария. Алгоритм заставляет помощника сначала понять задачу, затем проверить небольшой блок и только потом переходить к полному файлу.</p>
-    </section>
     <section class="case-summary" aria-labelledby="case-title">
       <h2 id="case-title">Синхронизация сценария преподавателя и презентации</h2>
       <h3>Задача</h3>
@@ -141,37 +121,12 @@
       <p>Это не универсальная кнопка загрузки: сначала нужен малый тестовый блок и проверка якорей.</p>
       <p class="quote">Система не угадывает спорные соответствия, а формирует список для проверки.</p>
     </section>
-    <section class="steps" aria-label="Алгоритм работы">
-      <div class="step"><strong>1. Дать</strong><span>Алгоритм, сценарий и презентацию.</span></div>
-      <div class="step"><strong>2. Уточнить</strong><span>Попросить помощника пересказать задачу и назвать риски.</span></div>
-      <div class="step"><strong>3. Прогнать</strong><span>Взять блок на 5–10 фрагментов и слайдов.</span></div>
-      <div class="step"><strong>4. Сверить</strong><span>Проверить карту соответствий и спорные места.</span></div>
-      <div class="step"><strong>5. Запустить</strong><span>Только после подтверждения обработать весь файл.</span></div>
-    </section>
-    <div class="callout"><p><strong>Главное правило:</strong> слабое соответствие не заполняется догадкой. Помощник оставляет место на проверку и объясняет, что именно не сошлось.</p><p>Работайте с копиями. В рабочих документах заранее обезличьте персональные и закрытые данные.</p></div>
-
     <section class="section" aria-labelledby="materials-title">
       <h2 id="materials-title">Что взять с собой</h2>
       <div class="materials">
-        <article class="material"><h3>Алгоритм для ИИ-помощника</h3><p>Готовый текст: сначала понять, потом сделать маленький тест, затем дождаться подтверждения и только после этого идти в полный прогон.</p><a class="link" href="algorithm-kit/ПРОМПТ_ДЛЯ_АГЕНТА.md">Открыть промпт →</a></article>
-        <article class="material"><h3>Полный технический разбор</h3><p>Почему используются Render → Match → Review → Insert → Validate и где автоматизация должна остановиться.</p><a class="link" href="cases/scenario-to-deck.md">Читать разбор →</a></article>
+        <article class="material"><h3>Комплект для запуска</h3><p>Алгоритм, промпт для помощника, чек-лист проверки, пример и три скрипта одним архивом.</p><a class="link" href="algorithm-kit.zip" download>Скачать комплект →</a></article>
+        <article class="material"><h3>Технический разбор</h3><p>Как устроен Render → Match → Review → Insert → Validate и где автоматизация должна остановиться.</p><a class="link" href="cases/scenario-to-deck.md">Читать разбор →</a></article>
       </div>
-    </section>
-
-    <section class="section" aria-labelledby="prompt-title">
-      <h2 id="prompt-title">Первое сообщение помощнику</h2>
-      <p>После алгоритма приложите рабочие материалы и отправьте примерно такой запрос:</p>
-      <pre>Прочитай алгоритм и приложенные сценарий DOCX и презентацию PPTX.
-Пока ничего не изменяй.
-
-Сначала:
-1. Перескажи задачу своими словами.
-2. Назови входы, ожидаемый результат и ограничения.
-3. Скажи, какие места могут потребовать моего решения.
-4. Предложи тестовый прогон на 5–10 фрагментах.
-
-После моего подтверждения обработай только тестовый блок.
-Не угадывай слабые соответствия и не изменяй исходные файлы.</pre>
     </section>
 
     <section class="section" aria-labelledby="examples-title">
