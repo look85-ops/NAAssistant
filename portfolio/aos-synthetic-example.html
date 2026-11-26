@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AOS Analyzer — синтетический пример</title>
+  <style>
+    body { max-width: 980px; margin: 0 auto; padding: 40px 22px; color: #18221d; background: #f6f8f4; font: 16px/1.55 system-ui, sans-serif; }
+    h1, h2 { line-height: 1.1; letter-spacing: -.035em; }
+    table { width: 100%; border-collapse: collapse; background: #fff; margin: 20px 0 34px; }
+    th, td { padding: 10px 12px; border: 1px solid #cbd6cf; text-align: left; }
+    th { background: #dce9df; }
+    code { background: #e5ece7; padding: 2px 5px; }
+    .result { padding: 22px; background: #18382a; color: #f6f8f4; }
+    .result strong { color: #f0a286; }
+    .privacy { padding: 20px; background: #fff; border: 1px solid #cbd6cf; }
+    a { color: inherit; text-underline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html#ai">← К AI-системам для L&amp;D</a></p>
+  <h1>AOS Analyzer: синтетический вход → проверяемый выход</h1>
+  <p>Пример не содержит реальных ответов участников. Он показывает формат работы инструмента на маленьком наборе данных.</p>
+
+  <div class="privacy"><strong>Важно о данных.</strong> AOS Analyzer не выполняет автоматическое обезличивание входного файла. Перед загрузкой удалите ФИО, email и другие идентификаторы; замените их на «Слушатель 1», «Слушатель 2» и т. д. В AI-слой передаются агрегированные метрики и аномалии, но за подготовку безопасного входного файла отвечает пользователь.</div>
+
+  <h2>Вход: синтетическая выгрузка</h2>
+  <table>
+    <thead><tr><th>Респондент</th><th>Понятность</th><th>Включённость</th><th>Применимость</th><th>Комментарий</th></tr></thead>
+    <tbody>
+      <tr><td>S-001</td><td>10</td><td>9</td><td>10</td><td>Много практики</td></tr>
+      <tr><td>S-002</td><td>10</td><td>10</td><td>10</td><td>Всё понятно</td></tr>
+      <tr><td>S-003</td><td>10</td><td>10</td><td>10</td><td>Без комментария</td></tr>
+      <tr><td>S-004</td><td>7</td><td>6</td><td>7</td><td>Нужны дополнительные примеры</td></tr>
+      <tr><td>S-005</td><td>9</td><td>8</td><td>9</td><td>Полезно для работы</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Выход: карточка вывода</h2>
+  <div class="result">
+    <p><strong>Вывод:</strong> оценки высокие, но распределение требует проверки: 3 из 5 строк содержат максимальные значения по всем вопросам.</p>
+    <p><strong>Статус:</strong> REVIEW</p>
+    <p><strong>Основание:</strong> доля полностью максимальных строк = 60%; свободные комментарии короткие и не позволяют подтвердить однородность опыта.</p>
+    <p><strong>Ограничение:</strong> маленькая синтетическая выборка не доказывает социальную желательность ответов.</p>
+    <p><strong>Решение человека:</strong> уточнить — проверить распределение на полной волне и сравнить с предыдущим модулем.</p>
+    <p><strong>Следующее действие:</strong> методист смотрит сырые ответы и решает, нужны ли дополнительные вопросы или интервью.</p>
+  </div>
+
+  <p><a href="https://github.com/look85-ops/aos-analyzer">Открыть репозиторий AOS Analyzer →</a></p>
+</body>
+</html>
