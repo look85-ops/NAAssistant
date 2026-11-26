@@ -3,8 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Алгоритм для ИИ-помощника: как получить сценарий преподавателя со скриншотами и номерами слайдов из DOCX и PPTX.">
-  <title>Сценарий со слайдами | AI Learning Systems Lab</title>
+  <meta name="description" content="Scenario-to-Deck: синхронизация сценария преподавателя и презентации DOCX + PPTX на 100+ страниц и 200+ слайдов. Workflow Render, Match, Review, Insert, Validate.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://look85-ops.github.io/NAAssistant/portfolio/ai-learning-lab/scenario-to-deck.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Scenario-to-Deck — сценарий преподавателя со слайдами">
+  <meta property="og:description" content="Проверяемый workflow для синхронизации сценария преподавателя и презентации на 100+ страниц и 200+ слайдов.">
+  <meta property="og:url" content="https://look85-ops.github.io/NAAssistant/portfolio/ai-learning-lab/scenario-to-deck.html">
+  <meta property="og:site_name" content="AI Learning Systems Lab">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scenario-to-Deck — сценарий преподавателя со слайдами">
+  <meta name="twitter:description" content="Render → Match → Review → Insert → Validate для больших учебных сценариев и презентаций.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Синхронизация сценария преподавателя и презентации",
+    "description": "Проверяемый workflow для получения сценария преподавателя со скриншотами и номерами слайдов из DOCX и PPTX.",
+    "url": "https://look85-ops.github.io/NAAssistant/portfolio/ai-learning-lab/scenario-to-deck.html",
+    "author": {"@type": "Person", "name": "Наталья Марценюк"},
+    "about": ["L&D", "образовательные сценарии", "PowerPoint", "AI workflow"]
+  }
+  </script>
   <style>
     :root { --ink: #18221d; --muted: #56635b; --line: #cbd6cf; --field: #dce9df; --signal: #df5f39; --max: 1080px; }
     * { box-sizing: border-box; }
@@ -33,6 +53,14 @@
     .callout { margin: 54px 0; padding: 28px; background: var(--field); max-width: 820px; }
     .callout p { margin: 0; }
     .callout p + p { margin-top: 12px; }
+    .case-summary { margin-top: 76px; padding: 34px; background: #fff; border: 1px solid var(--line); }
+    .case-summary h2 { margin: 0 0 22px; font-size: clamp(2rem, 4vw, 3.4rem); }
+    .case-summary h3 { margin: 34px 0 12px; font-size: 1.25rem; letter-spacing: -.025em; }
+    .case-summary p { max-width: 72ch; }
+    .case-summary ul { max-width: 72ch; padding-left: 22px; }
+    .case-summary li { margin: 7px 0; }
+    .case-summary .result { margin-top: 28px; padding: 22px; background: var(--field); }
+    .case-summary .quote { margin: 28px 0 0; padding: 20px 24px; background: #18382a; color: #f6f8f4; font-size: 1.08rem; }
     .section { margin-top: 96px; }
     .section > h2 { max-width: 680px; }
     .section > p { max-width: 68ch; color: var(--muted); }
@@ -87,6 +115,31 @@
     <section class="statement">
       <h2>Для большой колоды ручная сверка становится отдельным проектом.</h2>
       <p>ИИ может помочь, но ему нельзя просто сказать «вставь слайды по порядку». В реальных материалах есть анимация, повторяющиеся заголовки, сдвиги и несколько слайдов на один фрагмент сценария. Алгоритм заставляет помощника сначала понять задачу, затем проверить небольшой блок и только потом переходить к полному файлу.</p>
+    </section>
+    <section class="case-summary" aria-labelledby="case-title">
+      <h2 id="case-title">Синхронизация сценария преподавателя и презентации</h2>
+      <h3>Задача</h3>
+      <p>Получить рабочий сценарий преподавателя со скриншотами и номерами слайдов из пары <code>.docx</code> + <code>.pptx</code>. Особенно критично для документов на 100+ страниц и колод на 200+ слайдов.</p>
+      <h3>До системы</h3>
+      <p>Слайды сверялись и вставлялись вручную. 2–3 часа на сценарий одного тренингового дня объёмом 220–250 страниц.</p>
+      <h3>Что сделано</h3>
+      <p>Проверяемый workflow <strong>Render → Match → Review → Insert → Validate</strong>:</p>
+      <ul>
+        <li>экспорт слайдов в PNG;</li>
+        <li>текстовое сопоставление сценария и слайда через TF-IDF;</li>
+        <li>монотонное выравнивание порядка;</li>
+        <li>подтверждение якорей и спорных мест;</li>
+        <li>вставка в DOCX через XML/ZIP без разрушительного пересохранения;</li>
+        <li>проверка порядка, ссылок, изображений и открытия файла.</li>
+      </ul>
+      <div class="result"><strong>Результат:</strong> время на отработку одного сценария с учётом ручной проверки сократилось до 40 минут. Это типичный результат для такого сценария, а не обещание для любой пары файлов.</div>
+      <h3>Роль AI</h3>
+      <p>AI/скрипты строят карту соответствий и выполняют повторяемые операции. Человек подтверждает спорные места и не даёт системе угадывать при слабом совпадении.</p>
+      <h3>Доказательство</h3>
+      <p>На странице кейса показаны фрагменты готового сценария со встроенными слайдами. Открытый алгоритм и скрипты опубликованы в <a href="https://look85-ops.github.io/NAAssistant/portfolio/ai-learning-lab/">Lab</a> и репозитории <a href="https://github.com/look85-ops/pptx-scenario-layout">pptx-scenario-layout</a>.</p>
+      <h3>Ограничение</h3>
+      <p>Это не универсальная кнопка загрузки: сначала нужен малый тестовый блок и проверка якорей.</p>
+      <p class="quote">Система не угадывает спорные соответствия, а формирует список для проверки.</p>
     </section>
     <section class="steps" aria-label="Алгоритм работы">
       <div class="step"><strong>1. Дать</strong><span>Алгоритм, сценарий и презентацию.</span></div>
